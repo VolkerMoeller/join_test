@@ -1,0 +1,109 @@
+.overlay-fst-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    background-color: var(--main-background);
+}
+
+.fst-page-bg-anim {
+    animation-delay: var(--anim-fst-pg-delay);
+    animation-duration: var(--anim-fst-pg);
+    animation-name: change-bg-clr-dsk;
+    animation-fill-mode: forwards;
+}
+
+@keyframes change-bg-clr-mbl {
+    from {
+        background-color: var(--main);
+    }
+
+    to {
+        background-color: var(--main-transp);
+    }
+}
+
+@keyframes change-bg-clr-dsk {
+    from {
+        background-color: var(--main-background);
+    }
+
+    to {
+        background-color: var(--black-transp);
+    }
+}
+
+.logo-desktop-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 274px;
+    height: 374px;
+}
+
+.fst-page-logo-anim {
+    animation-delay: var(--anim-fst-pg-delay);
+    animation-duration: var(--anim-fst-pg);
+    animation-name: change-pos-dsk;
+    animation-fill-mode: forwards;
+}
+
+@keyframes change-pos-dsk {
+    from {
+        width: 274px;
+        height: 374px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        width: 101px;
+        height: 123px;
+        top: 80px;
+        left: 77px;
+        transform: translate(0%, 0%);
+    }
+}
+
+@keyframes change-pos-mbl {
+    from {
+        width: 101px;
+        height: 123px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        width: 64px;
+        height: 79px;
+        top: 37px;
+        left: 38px;
+        transform: translate(0%, 0%);
+    }
+}
+
+@media (max-width: 1440px) {
+    .overlay-fst-page {
+        background-color: var(--main);
+    }
+
+    .fst-page-bg-anim {
+        animation-delay: var(--anim-fst-pg-delay);
+        animation-duration: var(--anim-fst-pg);
+        animation-name: change-bg-clr-mbl;
+    }
+
+    .fst-page-logo-anim {
+        animation-name: change-pos-mbl;
+    }
+
+    .logo-desktop-main {
+        width: 101px;
+        height: 123px;
+    }
+}

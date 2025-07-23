@@ -1,2 +1,2 @@
-# join_test
+# join-test
 only testing

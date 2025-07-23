@@ -1,0 +1,41 @@
+/* anim logo fst-page */
+
+.path-def-1st {
+    fill: var(--main);
+}
+
+.path-def-2nd {
+    fill: var(--main2nd);
+}
+
+.fst-page-svg-clr-anim {
+    /* animation-delay: 0ms; */
+    animation-duration: 3000ms;
+    animation-name: change-svg-clr-dsk;
+}
+
+@keyframes change-svg-clr-dsk {
+    from {
+        fill: var(--main);
+    }
+
+    to {
+        fill: var(--main);
+    }
+}
+
+@keyframes change-svg-clr-mbl {
+    from {
+        fill: var(--white);
+    }
+
+    to {
+        fill: var(--main);
+    }
+}
+
+@media (max-width: 1440px) {
+    .fst-page-svg-clr-anim {
+        animation-name: change-svg-clr-mbl;
+    }
+}

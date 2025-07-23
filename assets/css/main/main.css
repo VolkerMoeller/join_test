@@ -1,0 +1,49 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter";
+    color: var(--main);
+    background-color: var(--main-background);
+}
+
+.display {
+    display: flex;
+}
+
+.display-none {
+    display: none;
+}
+
+.opacity {
+    opacity: 1;
+}
+
+.opacity-none {
+    opacity: 0;
+}
+
+.main-cnt {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    transition: all 3000ms ease-in-out;
+    opacity: 1;
+}

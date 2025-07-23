@@ -1,0 +1,66 @@
+.clr-scheme-panel {
+    padding: 16px;
+    position: relative;
+    border-radius: 10px;
+    background-color: var(--main-background);
+    opacity: 1;
+    box-shadow: 0px 0px 14px 3px var(--black-transp-04);
+}
+
+.clr-scheme-panel button {
+    height: 48px;
+    width: 48px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.clr-scheme-panel:hover button {
+    transition: all 80ms ease-in-out;
+    opacity: 1;
+}
+
+.clr-scheme-panel:hover button:hover {
+    box-shadow: 2px 2px 3px 0px var(--black-transp-40);
+}
+
+.clr-scheme-panel:hover button:nth-child(1) {
+    background-color: #2a364785;
+    color: var(--white);
+}
+
+.clr-scheme-panel:hover button:nth-child(1):hover {
+    background-color: #2a3647;
+}
+
+.clr-scheme-panel:hover button:nth-child(2) {
+    background-color: #8D001085;
+    color: var(--white);
+}
+
+.clr-scheme-panel:hover button:nth-child(2):hover {
+    background-color: #8D0010;
+}
+
+.clr-scheme-panel:hover button:nth-child(3) {
+    background-color: #4455ff85;
+    color: var(--white);
+}
+
+.clr-scheme-panel:hover button:nth-child(3):hover {
+    background-color: #4455ff;
+}
+
+@media (max-width: 1440px) {
+    .clr-scheme-panel {
+        padding-top: 7px;
+        padding-bottom: 6px;
+    }
+
+    .clr-scheme-panel button {
+        height: 24px;
+        width: 24px;
+        border-radius: 5px;
+    }
+}

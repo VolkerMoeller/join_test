@@ -1,17 +1,22 @@
-.overlay-fst-page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    background-color: var(--main-background);
+.fst-page-bg-anim {
+    animation-duration: 3000;
+    animation-name: change-bg-clr-dsk;
+    animation-fill-mode: forwards;
 }
 
-.fst-page-bg-anim {
+.logo-desktop-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 274px;
+    height: 374px;
+}
+
+.fst-page-logo-anim {
     animation-delay: var(--anim-fst-pg-delay);
     animation-duration: var(--anim-fst-pg);
-    animation-name: change-bg-clr-dsk;
+    animation-name: change-pos-dsk;
     animation-fill-mode: forwards;
 }
 
@@ -35,21 +40,6 @@
     }
 }
 
-.logo-desktop-main {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 274px;
-    height: 374px;
-}
-
-.fst-page-logo-anim {
-    animation-delay: var(--anim-fst-pg-delay);
-    animation-duration: var(--anim-fst-pg);
-    animation-name: change-pos-dsk;
-    animation-fill-mode: forwards;
-}
 
 @keyframes change-pos-dsk {
     from {

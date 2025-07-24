@@ -31,7 +31,7 @@ body {
     opacity: 0;
 }
 
-.main-cnt {
+.cnt-main {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -41,9 +41,28 @@ body {
 
 .hide {
     opacity: 0;
+    z-index: -1;
 }
 
-.show {
+.show-dly {
     transition: all 3000ms ease-in-out;
     opacity: 1;
+    z-index: 0;
+}
+
+.ovl-frame {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--main-background);
+}
+
+.ovl-anim {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/img/svg/favicon.svg" type="image/svg" />
     <link id="linkClrs" rel="stylesheet" href="./assets/css/main/clrSchemes/1-colors.css">
-    <title>Join V3 - FirstPage</title>
-    <script src="./js/main/main.js"></script>
-    <script src="./js/pages/firstPage.js"></script>
+    <title>Join V3</title>
+    <script src="./js/main.js"></script>
+    <script src="./js/pages/signPages/logIn.js"></script>
     <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/main/main.css">
     <link rel="stylesheet" href="./assets/css/main/rootColors.css">
     <link rel="stylesheet" href="./assets/css/main/rootParam.css">
     <link rel="stylesheet" href="./assets/css/main/clrSchemePanel.css">
     <link rel="stylesheet" href="./assets/css/main/svgMain.css">
-    <link id="pageCSS" rel="stylesheet" href="./assets/css/pages/logIn.css">
+    <!-- <link id="pageCSS" rel="stylesheet" href="./assets/css/pages/logIn.css"> -->
+    <link id="pageCSS" rel="stylesheet" href="./assets/css/pages/anim.css">
 
 </head>
 
-<body onload="initFirstPage()">
-    <div class="overlay fst-page-bg-anim">
-        <div w3-include-svg="./assets/img/svgHTML/1_logo.html"></div>
-    </div>
-    <div id="cntMain" class="opacity-none" w3-include-html="./assets/templates/fstPage/contentMain.html"></div>
+<body onload="initLogIn()">
+    <div class="cnt-main hide" w3-include-html="./assets/templates/signPages/logIn/cntMain.html"></div>
+    <div class="ovl-frame" w3-include-html="./assets/templates/overlays/ovlAnim.html"></div>
 </body>
 
 </html>

@@ -1,5 +1,11 @@
 async function initLogIn() {
     await includeHTML();
+    firstPageAnim();
+    setPageCSS();
+}
+
+
+function firstPageAnim() {
     animBg();
     animLogo();
     animClr();
@@ -33,4 +39,10 @@ function hideOvl() {
     const ovlFrame = document.querySelector('.ovl-frame');
     ovlFrame.classList.add('hide-dly');
 
+}
+
+function setPageCSS() {
+    setTimeout(() => {
+        document.getElementById('pageCSS').setAttribute('href', './assets/css/pages/logIn.css')
+    }, 3000);
 }

@@ -1,9 +1,3 @@
-.fst-page-bg-anim {
-    animation-duration: 3000;
-    animation-name: change-bg-clr-dsk;
-    animation-fill-mode: forwards;
-}
-
 .logo-desktop-main {
     position: absolute;
     top: 50%;
@@ -13,9 +7,27 @@
     height: 374px;
 }
 
-.fst-page-logo-anim {
-    animation-delay: var(--anim-fst-pg-delay);
-    animation-duration: var(--anim-fst-pg);
+.path-def-1st {
+    fill: var(--main);
+}
+
+.path-def-2nd {
+    fill: var(--main2nd);
+}
+
+.clr-anim {
+    animation-duration: 3s;
+    animation-name: change-svg-clr-dsk;
+}
+
+.bg-anim {
+    animation-duration: 3s;
+    animation-name: change-bg-clr-dsk;
+    animation-fill-mode: forwards;
+}
+
+.logo-anim {
+    animation-duration: 3s;
     animation-name: change-pos-dsk;
     animation-fill-mode: forwards;
 }
@@ -39,7 +51,6 @@
         background-color: var(--black-transp);
     }
 }
-
 
 @keyframes change-pos-dsk {
     from {
@@ -77,23 +88,46 @@
     }
 }
 
+@keyframes change-svg-clr-dsk {
+    from {
+        fill: var(--main);
+    }
+
+    to {
+        fill: var(--main);
+    }
+}
+
+@keyframes change-svg-clr-mbl {
+    from {
+        fill: var(--white);
+    }
+
+    to {
+        fill: var(--main);
+    }
+}
+
 @media (max-width: 1440px) {
-    .overlay-fst-page {
-        background-color: var(--main);
-    }
-
-    .fst-page-bg-anim {
-        animation-delay: var(--anim-fst-pg-delay);
-        animation-duration: var(--anim-fst-pg);
-        animation-name: change-bg-clr-mbl;
-    }
-
-    .fst-page-logo-anim {
-        animation-name: change-pos-mbl;
-    }
-
     .logo-desktop-main {
         width: 101px;
         height: 123px;
     }
+
+    .ovl-frame {
+        background-color: var(--main);
+    }
+
+    .bg-anim {
+        animation-name: change-bg-clr-mbl;
+    }
+
+    .logo-anim {
+        animation-name: change-pos-mbl;
+    }
+
+    .clr-anim {
+        animation-name: change-svg-clr-mbl;
+    }
+
 }

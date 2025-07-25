@@ -1,7 +1,7 @@
 async function initLogIn() {
     await includeHTML();
     firstPageAnim();
-    // setPageCSS();
+    setPageCSS();
 }
 
 

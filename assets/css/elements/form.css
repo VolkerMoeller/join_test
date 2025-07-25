@@ -1,0 +1,138 @@
+.form-sign {
+    position: relative;
+    padding: 48px 115px 48px 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    border-radius: 30px;
+    background-color: var(--white);
+    box-shadow: 0px 0px 14px 3px var(--black-transp-04);
+    width: clamp(320px, 100%, 652px);
+}
+
+.form-sign input {
+    z-index: 1;
+}
+
+.form-sign a {
+    z-index: 1;
+}
+
+.form-sign button {
+    z-index: 1;
+}
+
+.header-form {
+    margin: 0px 0px 16px 0px;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.vector-5 {
+    position: absolute;
+    top: 60px;
+    height: 150px;
+    border: 3px solid var(--main2nd);
+    rotate: -90deg;
+}
+
+.input-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field input {
+    width: 100%;
+}
+
+.input-field label {
+    display: none;
+}
+
+
+.remember-me {
+    width: 100%;
+    padding-top: 8px;
+    padding-left: 36px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 8px;
+}
+
+.remember-me span {
+    padding-top: 2.5px;
+    color: var(--text-default2nd);
+}
+
+.housing-log-in {
+    width: clamp(0px, 120%, 422px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.housing-log-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.housing-log-panel input {
+    cursor: pointer
+}
+
+.housing-log-panel .button-wo-img {
+    width: 100%;
+}
+
+.housing-log-panel .button-wo-img:disabled {
+    background-color: var(--input-border);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+@media (max-width: 1440px) {
+
+    .form-sign {
+        padding: 32px 0px 32px 0px;
+    }
+
+    .form-input {
+        padding: 32px 0px 32px 0px;
+    }
+
+    .version-2-t1 {
+        font-size: 47px !important;
+        line-height: 56.4px !important;
+    }
+
+    .vector-5 {
+        position: absolute;
+        top: 54px;
+        height: 88px;
+    }
+
+    .housing-log-panel {
+        flex-direction: column;
+    }
+
+    .version-btn {
+        font-family: 'Inter';
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    .housing-log-in {
+        width: clamp(0px, 85%, 422px);
+    }
+}

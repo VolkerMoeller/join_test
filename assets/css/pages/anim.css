@@ -7,14 +7,12 @@
     height: 374px;
 }
 
-
 .frame-anim {
     animation-delay: 1000ms;
     animation-duration: 2000ms;
     animation-name: hide-frame;
     animation-fill-mode: forwards;
 }
-
 
 .clr-anim {
     animation-duration: 3s;
@@ -142,5 +140,4 @@
     .clr-anim {
         animation-name: change-svg-clr-mbl;
     }
-
 }

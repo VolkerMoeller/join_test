@@ -40,6 +40,7 @@ async function includeHTMLById(name) {
 async function includeHTML() {
     await includeHTMLById('w3-include-html');
     await includeHTMLById('w3-include-template');
+    await includeHTMLById('w3-include-variable');
     await includeHTMLById('w3-include-svg');
 }
 
@@ -66,4 +67,12 @@ function loadLocalStorageObject(key) {
     let obj = localStorage.getItem(key);
     obj = JSON.parse(obj);
     if (obj) return obj;
+}
+
+// navigation
+
+async function changeCntCenter(target) {
+    const cntCenter = document.querySelector('.content-center');
+    cntCenter.setAttribute('w3-include-variable', `./assets/templates/signPages/${target}/cntCenter.html`);
+    await includeHTMLById('w3-include-variable');
 }

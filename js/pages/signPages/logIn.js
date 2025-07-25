@@ -1,15 +1,16 @@
 async function initLogIn() {
     await includeHTML();
     firstPageAnim();
-    setPageCSS();
+    // setPageCSS();
 }
 
 
 function firstPageAnim() {
+    // showOvlFrame()
     animBg();
     animLogo();
     animClr();
-    hideOvl();
+    hideOvlDly();
 }
 
 
@@ -35,10 +36,16 @@ function animClr() {
 }
 
 
-function hideOvl() {
+function hideOvlDly() {
     const ovlFrame = document.querySelector('.ovl-frame');
+    ovlFrame.classList.remove('show');
     ovlFrame.classList.add('hide-dly');
+}
 
+
+function showOvlFrame() {
+    const ovlFrame = document.querySelector('.ovl-frame');
+    ovlFrame.classList.add('show');
 }
 
 function setPageCSS() {

@@ -1,7 +1,6 @@
 async function initLogIn() {
     await includeHTML();
     firstPageAnim();
-    setPageCSS();
 }
 
 
@@ -47,11 +46,4 @@ function animClr() {
 function animFrame() {
     const frame = document.querySelector('.ovl-frame');
     frame.classList.add('frame-anim');
-}
-
-
-function setPageCSS() {
-    setTimeout(() => {
-        document.getElementById('pageCSS').setAttribute('href', './assets/css/pages/logIn.css')
-    }, 3000);
 }

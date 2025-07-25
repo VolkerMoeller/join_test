@@ -1,0 +1,153 @@
+.version-2-body {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+}
+
+.version-2-t6 {
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.version-2-t7 {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+}
+
+.version-2-t6-left {
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: start;
+}
+
+.version-2-t5 {
+    font-family: 'Inter';
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 32.4px;
+}
+
+.version-2-t1 {
+    font-family: 'Inter';
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 73.2px;
+}
+
+.version-2-t2 {
+    font-family: 'Inter';
+    font-size: 47px;
+    font-weight: 500;
+    line-height: 56.4px;
+}
+
+.version-2-t2-white {
+    font-family: 'Inter';
+    font-size: 47px;
+    font-weight: 500;
+    line-height: 56.4px;
+    color: var(--white);
+}
+
+.version-2-label {
+    font-family: 'Inter';
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15.6px;
+}
+
+.version-btn {
+    font-family: 'Inter';
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 25.2px;
+}
+
+.version-btn-2nd {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+}
+
+.version-btn-3rd {
+    font-family: 'Inter';
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 32.4px;
+}
+
+.version-initial-main {
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--main);
+}
+
+.version-initial-white {
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--white);
+}
+
+.version-initial {
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--main2nd);
+}
+
+.version-initial-mobile {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    color: var(--main2nd);
+}
+
+.version-greeting {
+    font-family: 'Inter';
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 76.8px;
+}
+
+.version-warning {
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    color: var(--warning-text);
+    opacity: 0;
+}
+
+.version-warning-default {
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+}
+
+.version-no-task {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    line-height: 19.2px;
+}
+
+.version-task-category {
+    font-family: 'Inter';
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 27.6px;
+}

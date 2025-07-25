@@ -17,6 +17,8 @@ function endAnim() {
     setTimeout(() => {
         const frame = document.querySelector('.ovl-frame');
         frame.classList.add('hide');
+        frame.classList.remove('frame-anim');
+        changeToLogIn();
     }, 3000);
 }
 

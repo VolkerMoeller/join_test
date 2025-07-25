@@ -39,6 +39,7 @@ async function includeHTMLById(name) {
 
 async function includeHTML() {
     await includeHTMLById('w3-include-html');
+    await includeHTMLById('w3-include-overlay');
     await includeHTMLById('w3-include-template');
     await includeHTMLById('w3-include-variable');
     await includeHTMLById('w3-include-svg');
@@ -76,9 +77,13 @@ function changeToSignUp() {
     changeCntRight('signUp');
 }
 
+function backToLogIn() {
+    changeCntCenter('logIn');
+    changeCntRight('logIn');
+}
+
 function changeToLogIn() {
-    changeCntCenter('LogIn');
-    changeCntRight('LogIn');
+    changeOvl('ovlLogin');
 }
 
 async function changeCntCenter(target) {
@@ -91,4 +96,10 @@ async function changeCntRight(target) {
     const cntCenter = document.querySelector('.content-right');
     cntCenter.setAttribute('w3-include-variable', `./assets/templates/signPages/${target}/cntRight.html`);
     await includeHTMLById('w3-include-variable');
+}
+
+async function changeOvl(target) {
+    const cntCenter = document.querySelector('.ovl-frame');
+    cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/${target}.html`);
+    await includeHTMLById('w3-include-overlay');
 }

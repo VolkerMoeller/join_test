@@ -9,7 +9,8 @@ function firstPageAnim() {
     animBg();
     animLogo();
     animClr();
-    hideOvlDly();
+    animFrame();
+    // hideOvlDly();
 }
 
 
@@ -32,6 +33,12 @@ function animClr() {
     paths.forEach(path => {
         path.classList.add('clr-anim');
     });
+}
+
+
+function animFrame() {
+    const frame = document.querySelector('.ovl-frame');
+    frame.classList.add('frame-anim');
 }
 
 

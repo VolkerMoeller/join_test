@@ -8,6 +8,14 @@
 }
 
 
+.frame-anim {
+    animation-delay: 500ms;
+    animation-duration: 2500ms;
+    animation-name: hide-frame;
+    animation-fill-mode: forwards;
+}
+
+
 .clr-anim {
     animation-duration: 3s;
     animation-name: change-svg-clr-dsk;
@@ -25,6 +33,18 @@
     animation-duration: 2500ms;
     animation-name: change-pos-dsk;
     animation-fill-mode: forwards;
+}
+
+@keyframes hide-frame {
+    from {
+        opacity: 1;
+        z-index: 0;
+    }
+
+    to {
+        opacity: 0;
+        z-index: -1;
+    }
 }
 
 @keyframes change-bg-clr-mbl {

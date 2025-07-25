@@ -72,3 +72,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.path-def-1st {
+    fill: var(--main);
+}
+
+.path-def-2nd {
+    fill: var(--main2nd);
+}

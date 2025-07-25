@@ -7,17 +7,11 @@
     height: 374px;
 }
 
-.path-def-1st {
-    fill: var(--main);
-}
-
-.path-def-2nd {
-    fill: var(--main2nd);
-}
 
 .clr-anim {
     animation-duration: 3s;
     animation-name: change-svg-clr-dsk;
+    animation-fill-mode: forwards;
 }
 
 .bg-anim {
@@ -27,7 +21,8 @@
 }
 
 .logo-anim {
-    animation-duration: 3s;
+    animation-delay: 225ms;
+    animation-duration: 2775ms;
     animation-name: change-pos-dsk;
     animation-fill-mode: forwards;
 }

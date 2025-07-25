@@ -15,3 +15,145 @@
         left: 38px;
     }
 }
+
+/* user interaction: */
+
+#rememberBtn {
+    z-index: 1;
+}
+
+#submitBtn {
+    z-index: 1;
+}
+
+#guestLogInBtn {
+    z-index: 1;
+}
+
+#linkToSignUp {
+    z-index: 1;
+}
+
+.inside {
+    height: 100%;
+    display: flex;
+}
+
+.inside-resp {
+    height: unset;
+    display: flex;
+}
+
+.outside-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outside-top span {
+    height: 80px;
+}
+
+.outside-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.outside-bottom a {
+    height: 48px;
+    width: 110px;
+}
+
+.content-left {
+    padding-left: 77px;
+    padding-top: 0px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex: 1;
+}
+
+.content-center {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+}
+
+.content-right {
+    padding-right: 77px;
+    padding-left: 16px;
+    padding-top: 0px;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    flex: 1;
+}
+
+.logo-desktop {
+    display: flex;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+.nav-outside {
+    padding: 0px 16px 0px 16px;
+    display: flex;
+    gap: 48px;
+    text-align: center;
+}
+
+.nav-outside a {
+    z-index: 1;
+}
+
+@media (max-width: 1440px) {
+    .inside {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .inside-resp {
+        flex-direction: column;
+    }
+
+    .content-center {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+    }
+
+    .content-left {
+        padding-top: 0px;
+        padding-left: 38px;
+        padding-bottom: 16px;
+        align-items: start;
+        justify-content: left;
+    }
+
+    .content-right {
+        padding-right: 0px;
+        padding-bottom: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-desktop {
+        display: none;
+    }
+
+    .logo-mobile {
+        position: fixed;
+        top: 37px;
+        z-index: 1;
+        display: flex;
+    }
+
+    .outside-top span {
+        height: 37px;
+    }
+}

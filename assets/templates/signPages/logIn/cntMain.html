@@ -1,3 +1,13 @@
-<h1>template: cntMain</h1>
 <div w3-include-svg="./assets/img/svgHTML/1_logo.html"></div>
-<button>Hallo</button>
+<div class="cnt-main">
+    <div class="outside-top" w3-include-template="./assets/templates/signPages/logIn/contentOutsideTop.html"></div>
+    <div id="inside" class="inside">
+        <div class="content-left" w3-include-html="./assets/templates/signPages/logInPage/contentLeft.html">
+        </div>
+        <div class="content-center" w3-include-html="./assets/templates/signPages/logInPage/contentCenter.html">
+        </div>
+        <div id="contentRight" class="content-right"
+            w3-include-html="./assets/templates/signPages/logInPage/contentRight.html"></div>
+    </div>
+    <div class="outside-bottom" w3-include-html="./assets/templates/signPages/contentOutsideBottom.html"></div>
+</div>

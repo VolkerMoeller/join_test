@@ -14,7 +14,7 @@ function setClrScheme(colorSchemeId) {
 
 function changeClrScheme() {
     let schemeId = loadLocalStorageObject('colorScheme');
-    document.getElementById('linkClrs').setAttribute('href', `./assets/css/clrSchemes/${schemeId}-colors.css`);
+    document.getElementById('linkClrs').setAttribute('href', `./assets/css/main/clrSchemes/${schemeId}-colors.css`);
 }
 
 
@@ -39,6 +39,7 @@ async function includeHTMLById(name) {
 
 async function includeHTML() {
     await includeHTMLById('w3-include-html');
+    await includeHTMLById('w3-include-template');
     await includeHTMLById('w3-include-svg');
 }
 

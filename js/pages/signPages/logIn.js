@@ -6,11 +6,10 @@ async function initLogIn() {
 
 
 function firstPageAnim() {
+    animFrame();
     animBg();
     animLogo();
     animClr();
-    animFrame();
-    // hideOvlDly();
 }
 
 
@@ -39,13 +38,6 @@ function animClr() {
 function animFrame() {
     const frame = document.querySelector('.ovl-frame');
     frame.classList.add('frame-anim');
-}
-
-
-function hideOvlDly() {
-    const ovlFrame = document.querySelector('.ovl-frame');
-    ovlFrame.classList.remove('show');
-    ovlFrame.classList.add('hide-dly');
 }
 
 

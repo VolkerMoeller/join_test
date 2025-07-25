@@ -21,8 +21,8 @@
 }
 
 .logo-anim {
-    animation-delay: 225ms;
-    animation-duration: 2775ms;
+    animation-delay: 500ms;
+    animation-duration: 2500ms;
     animation-name: change-pos-dsk;
     animation-fill-mode: forwards;
 }

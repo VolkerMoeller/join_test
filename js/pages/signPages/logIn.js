@@ -10,6 +10,15 @@ function firstPageAnim() {
     animBg();
     animLogo();
     animClr();
+    endAnim();
+}
+
+
+function endAnim() {
+    setTimeout(() => {
+        const frame = document.querySelector('.ovl-frame');
+        frame.classList.add('hide');
+    }, 3000);
 }
 
 

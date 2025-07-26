@@ -19,6 +19,7 @@ function endAnim() {
         frame.classList.add('hide');
         frame.classList.remove('frame-anim');
         changeOvl('ovlSign.html');
+        noAnimCSS();
     }, 3000);
 }
 
@@ -48,4 +49,9 @@ function animClr() {
 function animFrame() {
     const frame = document.querySelector('.ovl-frame');
     frame.classList.add('frame-anim');
+}
+
+function noAnimCSS() {
+    const animCSS = document.getElementById('animCSS');
+    animCSS.setAttribute('href', './assets/css/main/noAnim.css');
 }

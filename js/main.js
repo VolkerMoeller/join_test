@@ -113,6 +113,7 @@ async function changeToWorkPages() {
     cntMain.setAttribute('w3-include-html', './assets/templates/workPages/cntMain.html');
     changeOvl('ovlSum.html');
     includeHTML();
+    changeSvgPathClass(container, actualClass, targetClass)
 }
 
 

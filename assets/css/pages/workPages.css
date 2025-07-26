@@ -11,6 +11,14 @@
     opacity: 1;
 }
 
+.center {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .headline-main h1 {
     color: var(--text-default2);
 }
@@ -170,10 +178,6 @@
 }
 
 @media (max-width: 1440px) {
-    .main {
-        padding: 81px 0px 0px 0px;
-    }
-
     .outside+.left {
         display: none;
     }

@@ -23,14 +23,6 @@ body {
     display: none;
 }
 
-.cnt-main {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .ovl-frame {
     position: absolute;
     top: 0;

@@ -109,7 +109,7 @@ async function changeOvl(target) {
 async function changeToWorkPages() {
     const pageCSS = document.getElementById('pageCSS');
     pageCSS.setAttribute('href', './assets/css/pages/workPages.css');
-    const cntMain = document.querySelector('.cnt-main');
+    const cntMain = document.querySelector('.main');
     cntMain.setAttribute('w3-include-html', './assets/templates/workPages/cntMain.html');
     changeOvl('ovlSum.html');
     includeHTML();

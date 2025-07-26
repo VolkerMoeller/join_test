@@ -1,0 +1,258 @@
+.main {
+    background-color: var(--main-background);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+}
+
+.headline-main h1 {
+    color: var(--text-default2);
+}
+
+.outside {
+    position: absolute;
+}
+
+.left {
+    width: 232px;
+    background-color: var(--main);
+}
+
+.outside+.left {
+    top: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 3;
+}
+
+.headline-work-pages {
+    position: fixed;
+    z-index: 2;
+    background-color: var(--main-background);
+    width: auto;
+}
+
+.headline-work-pages-board {
+    justify-content: space-between;
+    align-items: start !important;
+    z-index: 2;
+    background-color: var(--main-background);
+    width: auto;
+}
+
+.top {
+    position: fixed;
+    z-index: 3;
+    background-color: var(--white);
+    width: 100%;
+    padding: 20px 40px 20px 348px;
+    box-shadow: 0px 4px 4px 0px var(--black-transp-15);
+}
+
+.content {
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.bottom {
+    display: none;
+}
+
+.tmp {
+    background-color: var(--main2nd);
+    height: 1024px;
+    width: 232px;
+    border: solid 1px var(--main);
+}
+
+.content-left {
+    z-index: 3;
+    overflow: auto;
+}
+
+.content-left::-webkit-scrollbar {
+    display: none;
+}
+
+.headline-vector {
+    border-radius: 3px;
+    height: 59px;
+    border: solid 3px var(--main2nd);
+}
+
+.headline-main {
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 206px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: var(--text-default);
+}
+
+.headline-main-float {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--white);
+    color: var(--text-default);
+}
+
+.headline-main-2nd {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.housing-headline-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.housing-headline-top-left {
+    display: flex;
+}
+
+.housing-headline-top-left h1:nth-child(1) {
+    display: flex;
+}
+
+.housing-headline-top-left div:nth-child(2) {
+    display: none;
+}
+
+.housing-headline-top-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.housing-headline-top .housing-headline-top-right:nth-child(2) {
+    display: none;
+    width: 41px;
+    height: 41px;
+}
+
+.housing-headline-top .housing-headline-top-right:nth-child(3) {
+    width: 104px;
+    height: 56px;
+}
+
+.housing-headline-top .housing-headline-top-right:nth-child(4) {
+    display: none;
+    width: 104px;
+    height: 56px;
+}
+
+.housing-headline-top .housing-headline-top-right:nth-child(5) {
+    width: 104px;
+    height: 56px;
+}
+
+@media (max-width: 1000px) {
+    .headline-work-pages {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .main {
+        padding: 81px 0px 0px 0px;
+    }
+
+    .outside+.left {
+        display: none;
+    }
+
+    .top {
+        padding: 20px 16px 20px 16px;
+    }
+
+    .content {
+        justify-content: center;
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: center;
+        background-color: var(--main);
+    }
+
+    .housing-headline-top-left h1:nth-child(1) {
+        display: none;
+    }
+
+    .housing-headline-top-left div:nth-child(2) {
+        display: flex;
+    }
+
+    .housing-headline-top .housing-headline-top-right:nth-child(2) {
+        display: flex;
+    }
+
+    .housing-headline-top .housing-headline-top-right:nth-child(3) {
+        display: none;
+    }
+
+    .housing-headline-top .housing-headline-top-right:nth-child(4) {
+        display: flex;
+    }
+
+    .housing-headline-top .housing-headline-top-right:nth-child(5) {
+        display: none;
+    }
+
+    .housing-headline-top .housing-headline-top-right:nth-child(3) {
+        height: 40px;
+    }
+
+    .housing-headline-top .housing-headline-top-right:nth-child(4) {
+        width: 40px;
+        height: 40px;
+    }
+
+    .housing-headline-top .housing-headline-top-right:nth-child(5) {
+        height: 40px;
+    }
+
+    .headline-main {
+        padding-top: 0px;
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+    }
+
+    .headline-main div {
+        order: 2;
+    }
+
+    .headline-vector {
+        height: 0px;
+        width: 90px;
+        rotate: 0deg;
+    }
+
+    .version-2-t5 {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    .headline-vector {
+        border: solid 2px var(--main2nd);
+    }
+}

@@ -118,6 +118,5 @@ async function changeToWorkPages() {
     cntMain.setAttribute('w3-include-html', './assets/templates/workPages/cntMain.html');
     const cntCenter = document.querySelector('.ovl-frame');
     cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/ovlSum.html`);
-    await includeHTMLById('w3-include-html');
-    await includeHTMLById('w3-include-overlay');
+    includeHTML();
 }

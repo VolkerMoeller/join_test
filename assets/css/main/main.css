@@ -40,14 +40,6 @@ body {
     background: var(--main-background);
 }
 
-.ovl-anim {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .path-def-1st {
     fill: var(--main);
 }

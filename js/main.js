@@ -70,6 +70,7 @@ function loadLocalStorageObject(key) {
     if (obj) return obj;
 }
 
+
 // navigation
 
 function changeToSignUp() {
@@ -77,14 +78,17 @@ function changeToSignUp() {
     changeCntRight('signUp');
 }
 
+
 function backToLogIn() {
     changeCntCenter('logIn');
     changeCntRight('logIn');
 }
 
+
 function changeToLogIn() {
     changeOvl('ovlLogin');
 }
+
 
 async function changeCntCenter(target) {
     const cntCenter = document.querySelector('.content-center');
@@ -92,14 +96,28 @@ async function changeCntCenter(target) {
     await includeHTMLById('w3-include-variable');
 }
 
+
 async function changeCntRight(target) {
     const cntCenter = document.querySelector('.content-right');
     cntCenter.setAttribute('w3-include-variable', `./assets/templates/signPages/${target}/cntRight.html`);
     await includeHTMLById('w3-include-variable');
 }
 
+
 async function changeOvl(target) {
     const cntCenter = document.querySelector('.ovl-frame');
     cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/${target}.html`);
+    await includeHTMLById('w3-include-overlay');
+}
+
+
+async function changeToWorkPages() {
+    const pageCSS = document.getElementById('pageCSS');
+    pageCSS.setAttribute('href', './assets/css/pages/workPages.css');
+    const cntMain = document.querySelector('.cnt-main');
+    cntMain.setAttribute('w3-include-html', './assets/templates/workPages/cntMain.html');
+    const cntCenter = document.querySelector('.ovl-frame');
+    cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/ovlSum.html`);
+    await includeHTMLById('w3-include-html');
     await includeHTMLById('w3-include-overlay');
 }

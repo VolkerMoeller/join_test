@@ -18,7 +18,7 @@ function endAnim() {
         const frame = document.querySelector('.ovl-frame');
         frame.classList.add('hide');
         frame.classList.remove('frame-anim');
-        changeToLogIn();
+        changeOvl('ovlSign.html');
     }, 3000);
 }
 

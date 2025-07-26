@@ -85,11 +85,6 @@ function backToLogIn() {
 }
 
 
-function changeToLogIn() {
-    changeOvl('ovlLogin');
-}
-
-
 async function changeCntCenter(target) {
     const cntCenter = document.querySelector('.content-center');
     cntCenter.setAttribute('w3-include-variable', `./assets/templates/signPages/${target}/cntCenter.html`);
@@ -106,7 +101,7 @@ async function changeCntRight(target) {
 
 async function changeOvl(target) {
     const cntCenter = document.querySelector('.ovl-frame');
-    cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/${target}.html`);
+    cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/${target}`);
     await includeHTMLById('w3-include-overlay');
 }
 
@@ -116,7 +111,6 @@ async function changeToWorkPages() {
     pageCSS.setAttribute('href', './assets/css/pages/workPages.css');
     const cntMain = document.querySelector('.cnt-main');
     cntMain.setAttribute('w3-include-html', './assets/templates/workPages/cntMain.html');
-    const cntCenter = document.querySelector('.ovl-frame');
-    cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/ovlSum.html`);
+    changeOvl('ovlSum.html');
     includeHTML();
 }

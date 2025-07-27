@@ -16,7 +16,7 @@ function firstPageAnim() {
 function endAnim() {
     setTimeout(() => {
         const frame = document.querySelector('.ovl-frame');
-        frame.classList.add('hide');
+        frame.classList.add('ovl-hide');
         frame.classList.remove('frame-anim');
         changeOvl('ovlSign.html');
         noAnimCSS();

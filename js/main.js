@@ -141,3 +141,10 @@ async function changeToSignPages() {
     changeOvl('ovlSign.html');
     includeHTML();
 }
+
+
+function toggleOverlay() {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.toggle('ovl-hide');
+    overlay.classList.toggle('ovl-show');
+}

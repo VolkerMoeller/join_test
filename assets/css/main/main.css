@@ -44,6 +44,10 @@ body {
     fill: var(--white);
 }
 
-.hide {
+.ovl-hide {
     z-index: -1;
+}
+
+.ovl-show {
+    z-index: 3;
 }

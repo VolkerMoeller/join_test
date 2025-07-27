@@ -40,6 +40,10 @@ body {
     fill: var(--main2nd);
 }
 
+.path-white {
+    fill: var(--white);
+}
+
 .hide {
     z-index: -1;
 }

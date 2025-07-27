@@ -107,13 +107,29 @@ async function changeOvl(target) {
 
 
 async function changeToWorkPages() {
-    const pageCSS = document.getElementById('pageCSS');
-    pageCSS.setAttribute('href', './assets/css/pages/workPages.css');
+    changePageCSS();
+    changeCntMain();
+    changeOvl('ovlSum.html');
+    await includeHTML();
+    invertLogoClr();
+}
+
+
+function changeCntMain() {
     const cntMain = document.querySelector('.main');
     cntMain.setAttribute('w3-include-html', './assets/templates/workPages/cntMain.html');
-    changeOvl('ovlSum.html');
-    includeHTML();
-    changeSvgPathClass(container, actualClass, targetClass)
+}
+
+
+function changePageCSS() {
+    const pageCSS = document.getElementById('pageCSS');
+    pageCSS.setAttribute('href', './assets/css/pages/workPages.css');
+}
+
+
+function invertLogoClr() {
+    const logo = document.querySelector('.logo-desktop-main');
+    changeSvgPathClass(logo, 'path-def-1st', 'path-white')
 }
 
 

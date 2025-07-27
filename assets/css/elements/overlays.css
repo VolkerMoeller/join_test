@@ -21,3 +21,27 @@
     justify-content: center;
     align-items: center;
 }
+
+.msg-signPage {
+    transform: translateX(100%);
+}
+
+.show-msg-signPage {
+    position: absolute;
+    top: 100%;
+    z-index: 3;
+    animation-duration: 1s;
+    animation-name: slide-msg;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes slide-msg {
+    from {
+        top: 100%;
+    }
+
+    to {
+        top: 50%;
+    }
+}

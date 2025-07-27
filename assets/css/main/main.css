@@ -30,6 +30,7 @@ body {
     bottom: 0;
     left: 0;
     background: var(--main-background);
+    overflow: hidden;
 }
 
 .path-def-1st {
@@ -43,7 +44,6 @@ body {
 .path-white {
     fill: var(--white);
 }
-
 
 .ovl-hide {
     z-index: -1;

@@ -150,7 +150,7 @@ function toggleOverlay() {
 }
 
 
-function animMessage(className = 'show-msg-signPage') {
+function animMessage(className = 'show-msg-btm-cnt') {
     toggleOverlay();
     slideMessage(className);
     setTimeout(() => {

@@ -49,23 +49,44 @@
     color: white;
 }
 
-.show-msg-signPage {
+.show-msg-btm-cnt {
     position: absolute;
     top: 100%;
     left: 50%;
     z-index: 3;
     animation-duration: 1s;
-    animation-name: slide-msg;
+    animation-name: slide-msg-btm-cnt;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-@keyframes slide-msg {
+@keyframes slide-msg-btm-cnt {
     from {
         top: 100%;
     }
 
     to {
         top: 50%;
+    }
+}
+
+.show-msg-rgt-cnt {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    z-index: 3;
+    animation-duration: 1s;
+    animation-name: slide-msg-rgt-cnt;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes slide-msg-rgt-cnt {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 50%;
     }
 }

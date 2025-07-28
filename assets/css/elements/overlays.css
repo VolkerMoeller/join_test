@@ -26,9 +26,17 @@
     transform: translateX(100%);
 }
 
+.msg-cnt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
 .show-msg-signPage {
     position: absolute;
     top: 100%;
+    left: 50%;
     z-index: 3;
     animation-duration: 1s;
     animation-name: slide-msg;

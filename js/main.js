@@ -155,7 +155,7 @@ function animMessage(className = 'show-msg-signPage') {
     slideMessage(className);
     setTimeout(() => {
         toggleOverlay();
-    }, 1000);
+    }, 1500);
 }
 
 

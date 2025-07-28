@@ -45,24 +45,3 @@ body {
     fill: var(--white);
 }
 
-.ovl-hide {
-    z-index: -1;
-}
-
-.ovl-show {
-    z-index: 3;
-    animation-duration: 1s;
-    animation-name: shadow-bg;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-@keyframes shadow-bg {
-    from {
-        background-color: var(--main-background);
-    }
-
-    to {
-        background-color: var(--black-transp-40);
-    }
-}

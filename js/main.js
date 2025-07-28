@@ -148,3 +148,18 @@ function toggleOverlay() {
     overlay.classList.toggle('ovl-hide');
     overlay.classList.toggle('ovl-show');
 }
+
+
+function animMessage(className = 'show-msg-signPage') {
+    toggleOverlay();
+    slideMessage(className);
+    setTimeout(() => {
+        toggleOverlay();
+    }, 1000);
+}
+
+
+function slideMessage(className) {
+    const message = document.querySelector('.msg-cnt');
+    message.classList.toggle(className);
+}

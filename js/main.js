@@ -112,8 +112,8 @@ async function switchToWorkPages() {
     window.location.assign('workPage.html');
 }
 
-async function switchToSignPage() {
-    window.location.assign('index.html');
+async function switchToSignPages() {
+    window.location.assign('signPage.html');
 }
 
 
@@ -135,14 +135,14 @@ function invertLogoClr() {
 }
 
 
-async function changeToSignPages() {
-    const pageCSS = document.getElementById('pageCSS');
-    pageCSS.setAttribute('href', './assets/css/pages/signPages.css');
-    const cntMain = document.querySelector('.main');
-    cntMain.setAttribute('w3-include-html', './assets/templates/signPages/cntMain.html');
-    changeOvl('ovlSign.html');
-    includeHTML();
-}
+// async function changeToSignPages() {
+//     const pageCSS = document.getElementById('pageCSS');
+//     pageCSS.setAttribute('href', './assets/css/pages/signPages.css');
+//     const cntMain = document.querySelector('.main');
+//     cntMain.setAttribute('w3-include-html', './assets/templates/signPages/cntMain.html');
+//     changeOvl('ovlSign.html');
+//     includeHTML();
+// }
 
 
 function toggleOverlay() {

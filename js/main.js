@@ -73,6 +73,8 @@ function loadLocalStorageObject(key) {
 
 // navigation
 
+
+
 function changeToSignUp() {
     changeCntCenter('signUp');
     changeCntRight('signUp');
@@ -106,12 +108,17 @@ async function changeOvl(target) {
 }
 
 
-async function changeToWorkPages() {
-    changePageCSS();
-    changeCntMain();
-    changeOvl('ovlSum.html');
-    await includeHTML();
-    invertLogoClr();
+async function switchToWorkPages() {
+    window.location.assign('workPage.html');
+    // changePageCSS();
+    // changeCntMain();
+    // changeOvl('ovlSum.html');
+    // await includeHTML();
+    // invertLogoClr();
+}
+
+async function switchToSignPage() {
+    window.location.assign('index.html');
 }
 
 

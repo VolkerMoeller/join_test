@@ -112,6 +112,7 @@ async function switchToWorkPages() {
     window.location.assign('workPage.html');
 }
 
+
 async function switchToSignPages() {
     window.location.assign('signPage.html');
 }
@@ -133,16 +134,6 @@ function invertLogoClr() {
     const logo = document.querySelector('.logo-desktop-main');
     changeSvgPathClass(logo, 'path-def-1st', 'path-white')
 }
-
-
-// async function changeToSignPages() {
-//     const pageCSS = document.getElementById('pageCSS');
-//     pageCSS.setAttribute('href', './assets/css/pages/signPages.css');
-//     const cntMain = document.querySelector('.main');
-//     cntMain.setAttribute('w3-include-html', './assets/templates/signPages/cntMain.html');
-//     changeOvl('ovlSign.html');
-//     includeHTML();
-// }
 
 
 function toggleOverlay() {

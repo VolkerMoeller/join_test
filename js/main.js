@@ -110,11 +110,6 @@ async function changeOvl(target) {
 
 async function switchToWorkPages() {
     window.location.assign('workPage.html');
-    // changePageCSS();
-    // changeCntMain();
-    // changeOvl('ovlSum.html');
-    // await includeHTML();
-    // invertLogoClr();
 }
 
 async function switchToSignPage() {

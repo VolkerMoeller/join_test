@@ -11,6 +11,7 @@ function firstPageAnim() {
     animLogo();
     animClr();
     endAnim();
+    switchToSignPage();
 }
 
 
@@ -59,6 +60,6 @@ function noAnimCSS() {
 
 function switchToSignPage() {
     setTimeout(() => {
-        window.location.assign('signPage.html');
+        history.replaceState({}, '', 'signPage.html');
     }, 3000);
 }

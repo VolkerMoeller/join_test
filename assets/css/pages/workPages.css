@@ -183,6 +183,7 @@
     .content {
         justify-content: center;
         align-items: center;
+        padding-left: 0;
     }
 
     .bottom {

@@ -1,3 +1,48 @@
 <h1>cntCenter - LogIn</h1>
 <button onclick="switchToWorkPages()">Log In</button>
 <button onclick="switchToWorkPages()">Log In - guest</button>
+<form id="formLogIn" class="form-sign" onsubmit="checkInput(); return false;">
+    <h1 class="header-form version-2-t1">Log in</h1>
+    <div class="vector-5"></div>
+    <div class="input-field">
+        <div class="housing-log-in">
+            <div class="log-in">
+                <label for="eMail">E-Mail</label>
+                <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email" required
+                    autocomplete="off" onclick="initAddWarning(); overlayPasswordOn(); submitBtnOn()">
+                <div class="housing-password">
+                    <label for="password">Password</label>
+                    <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
+                        required autocomplete="off"
+                        onclick="initChangeVisibilty('password'); overlayPasswordOn(); submitBtnOn()">
+                    <span id="warningText" class="version-2-label display-none">Check your email and password.
+                        Please try
+                        again.</span>
+                    <button onclick="changeVisibility('password'); overlayPasswordOn();" type="button"></button>
+                </div>
+            </div>
+            <div class="remember-me">
+                <button id="rememberBtn" class="picto-button" type="button">
+                    <div id="checkedBtn" class="picto-clk-images display-none" onclick="handleUnSelectBtn()">
+                        <div class="picto-clk" w3-include-html-child="./assets/templates/svg/3-checked.html">
+                        </div>
+                        <div class="picto-clk-hover"
+                            w3-include-html-child="./assets/templates/svg/2-checked_hover.html"></div>
+                    </div>
+                    <div id="defaultBtn" class="picto-def-images" onclick="handleSelectBtn()">
+                        <div class="picto-def-hover"
+                            w3-include-html-child="./assets/templates/svg/4-default_hover.html"></div>
+                        <div class="picto-def" w3-include-html-child="./assets/templates/svg/5-default.html">
+                        </div>
+                    </div>
+                </button>
+                <span class="version-2-body">Remember me</span>
+            </div>
+        </div>
+    </div>
+    <div class="housing-log-panel">
+        <input id="submitBtn" class="button-wo-img log-in-btn-submit version-btn" type="submit" value="Log in">
+        <input id="guestLogInBtn" class="button-wo-img-2nd log-in-btn-guest version-btn" type="button"
+            onclick="handleGuestLogin()" value="Guest Log in">
+    </div>
+</form>

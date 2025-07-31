@@ -15,6 +15,20 @@ body {
     background-color: var(--main-background);
 }
 
+p,
+h1,
+h2,
+input[type="text"] {
+  cursor: text;
+}
+
+a,
+a *,
+button,
+button * {
+  cursor: pointer;
+}
+
 .display {
     display: flex;
 }

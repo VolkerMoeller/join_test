@@ -11,7 +11,7 @@
     width: clamp(320px, 100%, 652px);
 }
 
-.form-sign input {
+/* .form-sign input {
     z-index: 1;
 }
 
@@ -21,7 +21,7 @@
 
 .form-sign button {
     z-index: 1;
-}
+} */
 
 .header-form {
     margin: 0px 0px 16px 0px;

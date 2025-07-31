@@ -5,7 +5,6 @@ async function initFstPage() {
 
 
 function firstPageAnim() {
-    console.log('hello');
     animFrame();
     animBg();
     animLogo();

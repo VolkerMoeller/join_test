@@ -1,3 +1,6 @@
+let userStatus = 'guest'; // default user status
+
+
 // setClrScheme
 
 function setClrScheme(colorSchemeId) {

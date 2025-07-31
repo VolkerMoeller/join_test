@@ -19,14 +19,18 @@ p,
 h1,
 h2,
 input[type="text"] {
-  cursor: text;
+    cursor: text;
 }
 
 a,
 a *,
 button,
 button * {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: var(--input-border);
 }
 
 .display {

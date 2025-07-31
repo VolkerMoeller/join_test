@@ -1,0 +1,84 @@
+.log-in {
+    width: clamp(0px, 100%, 422px);
+    height: 152px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.log-in label {
+    width: 100%;
+    display: none;
+}
+
+.log-in input {
+    width: 100%;
+    padding: 12px 48px 12px 21px;
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    outline: none;
+}
+
+.log-in input[type=email] {
+    background-image: var(--picto-mail);
+    background-position: calc(100% - 16px) center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+}
+
+.log-in input[type=email]:focus {
+    border: 1px solid var(--main2nd);
+}
+
+.log-in input[type=password] {
+    background-image: var(--picto-lock);
+    background-position: calc(100% - 16px) center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+}
+
+.log-in input[type=password]:focus {
+    background-image: url('/assets/img/logIn/visibilityOff.svg');
+    border: 1px solid var(--main2nd);
+}
+
+.log-in input[type=text]:focus {
+    border: 1px solid var(--main2nd);
+}
+
+.wrongLogin {
+    border: 1px solid var(--warning) !important;
+}
+
+.housing-password {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.housing-password span {
+    color: var(--warning-text);
+}
+
+.housing-password button {
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    top: 2px;
+    left: calc(100% - 49px);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    background-color: var(--white);
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+.housing-password button:active {
+    opacity: 1;
+}

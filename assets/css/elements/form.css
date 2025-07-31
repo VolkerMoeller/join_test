@@ -40,18 +40,19 @@
     rotate: -90deg;
 }
 
-.input-field {
+.form-sign-center {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
-.input-field input {
+.form-sign-center input {
     width: 100%;
 }
 
-.input-field label {
+.form-sign-center label {
     display: none;
 }
 

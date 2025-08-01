@@ -72,7 +72,9 @@
 }
 
 .frame-panel input {
-    cursor: pointer
+    cursor: pointer;
+    height: 48px;
+    padding: 0px 24px;
 }
 
 .frame-panel .button-wo-img {

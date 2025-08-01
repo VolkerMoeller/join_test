@@ -3,10 +3,11 @@
     padding: 15px 24px;
     display: flex;
     gap: 10px;
-    background: var(--main);
-    color: white;
+    color: var(--white);
     font-size: 21px;
     font-weight: bold;
+    background: var(--main);
+    border: none;
 }
 
 .btn-wo-icn-2nd {
@@ -17,6 +18,32 @@
     color: var(--main);
     font-size: 21px;
     font-weight: bold;
+    border: solid 1px var(--main);
+    background-color: unset;
+}
+
+.btn-wo-icn:hover {
+    transition: var(--smart-animation-in-out);
+    background-color: var(--main2nd);
+    box-shadow: var(--stronger);
+}
+
+.btn-wo-icn-2nd:hover {
+    transition: var(--smart-animation-in-out);
+    box-shadow: var(--stronger);
+    border: solid 2px var(--main2nd);
+    color: var(--main2nd);
+}
+
+.btn-wo-icn:active {
+    transition: var(--smart-animation-in-out);
+    background-color: var(--main);
+}
+
+.btn-wo-icn-2nd:active {
+    transition: var(--smart-animation-in-out);
+    border: solid 2px var(--main);
+    color: var(--main);
 }
 
 @media (max-width: 1440px) {

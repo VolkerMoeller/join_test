@@ -64,22 +64,22 @@
     gap: 20px;
 }
 
-.housing-log-panel {
+.frame-panel {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 35px;
 }
 
-.housing-log-panel input {
+.frame-panel input {
     cursor: pointer
 }
 
-.housing-log-panel .button-wo-img {
+.frame-panel .button-wo-img {
     width: 100%;
 }
 
-.housing-log-panel .button-wo-img:disabled {
+.frame-panel .button-wo-img:disabled {
     background-color: var(--input-border);
     box-shadow: none;
     cursor: not-allowed;
@@ -99,7 +99,7 @@
         width: 88px;
     }
 
-    .housing-log-panel {
+    .frame-panel {
         flex-direction: column;
     }
 

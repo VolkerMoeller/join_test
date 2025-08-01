@@ -1,0 +1,12 @@
+    :root {
+        --nuevo: 0px 0px 4px 0px var(--black-transp-10);
+        --stronger: 0px 4px 4px 0px var(--black-transp-40);
+        --backlog-box: 0px 0px 14px 3px var(--black-transp-04);
+        --drop-shadow: 4px 0px 6px 0px var(--black-transp-08);
+        --task-card: 0px 0px 10px 3px var(--black-transp-08);
+
+        --boton-gradient: linear-gradient(var(--rect-btn-activ), var(--gradient-boton));
+
+        --smart-animation-out: all 100ms ease-out;
+        --smart-animation-in-out: all 100ms ease-in-out;
+    }

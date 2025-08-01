@@ -62,3 +62,15 @@ input::placeholder {
 .path-white {
     fill: var(--white);
 }
+
+h1 {
+    font-size: 61px;
+    line-height: 120%;
+    margin: 0;
+}
+
+@media(max-width: 1440px) {
+    h1 {
+        font-size: 47px;
+    }
+}

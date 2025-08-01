@@ -11,33 +11,18 @@
     width: clamp(320px, 100%, 652px);
 }
 
-/* .form-sign input {
-    z-index: 1;
-}
-
-.form-sign a {
-    z-index: 1;
-}
-
-.form-sign button {
-    z-index: 1;
-} */
-
-.header-form {
-    margin: 0px 0px 16px 0px;
-    color: var(--black);
+.form-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
 }
 
-.vector-5 {
-    position: absolute;
-    top: 60px;
-    height: 150px;
+.form-logo p {
+    height: 0;
+    margin: 0;
+    width: 150px;
     border: 3px solid var(--main2nd);
-    rotate: -90deg;
 }
 
 .form-sign-center {
@@ -110,15 +95,8 @@
         padding: 32px 0px 32px 0px;
     }
 
-    .version-2-t1 {
-        font-size: 47px !important;
-        line-height: 56.4px !important;
-    }
-
-    .vector-5 {
-        position: absolute;
-        top: 54px;
-        height: 88px;
+    .form-logo p {
+        width: 88px;
     }
 
     .housing-log-panel {

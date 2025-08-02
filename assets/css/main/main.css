@@ -34,11 +34,11 @@ input::placeholder {
 }
 
 .display {
-    display: flex;
+    display: flex !important;
 }
 
 .display-none {
-    display: none;
+    display: none !important;
 }
 
 .ovl-frame {

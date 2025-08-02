@@ -77,6 +77,13 @@ function loadLocalStorageObject(key) {
 // navigation
 
 
+function toggleFormsSign() {
+    const formLogIn = document.getElementById('formLogIn');
+    formLogIn.classList.toggle('display-none');
+    const formSignUp = document.getElementById('formSignUp');
+    formSignUp.classList.toggle('display-none');
+}
+
 
 function changeToSignUp() {
     changeCntCenter('signUp');

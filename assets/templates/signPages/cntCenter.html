@@ -1,0 +1,97 @@
+<form id="formLogIn" class="form-sign" onsubmit="checkInput(); return false;">
+    <div class="form-logo">
+        <h1>Log in</h1>
+        <p>&nbsp</p>
+    </div>
+    <!-- <div class="form-sign-center">
+        <div class="housing-log-in">
+            <div class="log-in">
+                <label for="eMail">E-Mail</label>
+                <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email" required
+                    autocomplete="off" onclick="initAddWarning(); overlayPasswordOn(); submitBtnOn()">
+                <div class="housing-password">
+                    <label for="password">Password</label>
+                    <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
+                        required autocomplete="off"
+                        onclick="initChangeVisibilty('password'); overlayPasswordOn(); submitBtnOn()">
+                    <span id="warningText" class="version-2-label display-none">Check your email and password.
+                        Please try
+                        again.</span>
+                    <button onclick="changeVisibility('password'); overlayPasswordOn();" type="button"></button>
+                </div>
+            </div>
+            <div class="remember-me">
+                <button id="rememberBtn" class="picto-button" type="button">
+                    <div id="checkedBtn" class="picto-clk-images display-none" onclick="handleUnSelectBtn()">
+                        <div class="picto-clk" w3-include-html-child="./assets/templates/svg/3-checked.html">
+                        </div>
+                        <div class="picto-clk-hover"
+                            w3-include-html-child="./assets/templates/svg/2-checked_hover.html">
+                        </div>
+                    </div>
+                    <div id="defaultBtn" class="picto-def-images" onclick="handleSelectBtn()">
+                        <div class="picto-def-hover"
+                            w3-include-html-child="./assets/templates/svg/4-default_hover.html">
+                        </div>
+                        <div class="picto-def" w3-include-html-child="./assets/templates/svg/5-default.html">
+                        </div>
+                    </div>
+                </button>
+                <span class="version-2-body">Remember me</span>
+            </div>
+        </div> -->
+    </div>
+    <div class="frame-panel">
+        <input id="submitBtn" class="btn-wo-icn" type="submit" onclick="" value="Log in">
+        <input id="guestLogInBtn" class="btn-wo-icn-2nd" type="button" onclick="toggleFormsSign()" value="Guest Log in">
+    </div>
+</form>
+
+<form id="formSignUp" class="form-sign display-none" onsubmit="checkInput(); return false;">
+    <div class="form-logo">
+        <h1>Sign up</h1>
+        <p>&nbsp</p>
+    </div>
+    <!-- <div class="form-sign-center">
+        <div class="housing-log-in">
+            <div class="log-in">
+                <label for="eMail">E-Mail</label>
+                <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email" required
+                    autocomplete="off" onclick="initAddWarning(); overlayPasswordOn(); submitBtnOn()">
+                <div class="housing-password">
+                    <label for="password">Password</label>
+                    <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
+                        required autocomplete="off"
+                        onclick="initChangeVisibilty('password'); overlayPasswordOn(); submitBtnOn()">
+                    <span id="warningText" class="version-2-label display-none">Check your email and password.
+                        Please try
+                        again.</span>
+                    <button onclick="changeVisibility('password'); overlayPasswordOn();" type="button"></button>
+                </div>
+            </div>
+            <div class="remember-me">
+                <button id="rememberBtn" class="picto-button" type="button">
+                    <div id="checkedBtn" class="picto-clk-images display-none" onclick="handleUnSelectBtn()">
+                        <div class="picto-clk" w3-include-html-child="./assets/templates/svg/3-checked.html">
+                        </div>
+                        <div class="picto-clk-hover"
+                            w3-include-html-child="./assets/templates/svg/2-checked_hover.html">
+                        </div>
+                    </div>
+                    <div id="defaultBtn" class="picto-def-images" onclick="handleSelectBtn()">
+                        <div class="picto-def-hover"
+                            w3-include-html-child="./assets/templates/svg/4-default_hover.html">
+                        </div>
+                        <div class="picto-def" w3-include-html-child="./assets/templates/svg/5-default.html">
+                        </div>
+                    </div>
+                </button>
+                <span class="version-2-body">Remember me</span>
+            </div>
+        </div> -->
+    </div>
+    <div class="frame-panel">
+        <input id="submitBtn" class="btn-wo-icn" type="submit" onclick="" value="Log in">
+        <input id="guestLogInBtn" class="btn-wo-icn-2nd" type="button" onclick="toggleFormsSign()" value="Guest Log in">
+    </div>
+</form>

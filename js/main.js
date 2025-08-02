@@ -82,6 +82,10 @@ function toggleFormsSign() {
     formLogIn.classList.toggle('display-none');
     const formSignUp = document.getElementById('formSignUp');
     formSignUp.classList.toggle('display-none');
+    const btnToSignUp = document.getElementById('btnToSignUp');
+    btnToSignUp.classList.toggle('display-none');
+    const btnToLogIn = document.getElementById('btnToLogIn');
+    btnToLogIn.classList.toggle('display-none');
 }
 
 

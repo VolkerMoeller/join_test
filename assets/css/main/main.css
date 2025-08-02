@@ -73,3 +73,10 @@ h1 {
         font-size: 47px;
     }
 }
+
+/* test */
+#btnToLogIn {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+}

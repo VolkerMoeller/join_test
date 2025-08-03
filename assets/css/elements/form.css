@@ -87,7 +87,40 @@
     cursor: not-allowed;
 }
 
-@media (max-width: 1440px) {
+/* frame sign */
+
+.frame-sign {
+    display: flex;
+    position: relative;
+    width: clamp(320px, 100%, 652px);
+}
+
+
+.btn-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 1;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-frame button {
+    width: 45px;
+    height: 45px;
+}
+
+#btnToLogInHover {
+    position: relative;
+    z-index: 1;
+}
+
+#btnToLogIn {
+    position: absolute;
+}
+
+@media(max-width: 1440px) {
 
     .form-sign {
         padding: 32px 0px 32px 0px;
@@ -114,5 +147,10 @@
 
     .housing-log-in {
         width: clamp(0px, 85%, 422px);
+    }
+
+    .btn-frame {
+        top: 0;
+        left: 0;
     }
 }

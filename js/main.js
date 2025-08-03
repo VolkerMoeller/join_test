@@ -86,6 +86,8 @@ function toggleFormsSign() {
     btnToSignUp.classList.toggle('display-none');
     const btnToLogIn = document.getElementById('btnToLogIn');
     btnToLogIn.classList.toggle('display-none');
+    const btnFrame = document.getElementById('btnFrame');
+    btnFrame.classList.toggle('display-none');
 }
 
 
@@ -169,4 +171,13 @@ function animMessage(className = 'show-msg-btm-cnt') {
 function slideMessage(className) {
     const message = document.querySelector('.msg-cnt');
     message.classList.toggle(className);
+}
+
+// toggle elements
+
+function toggleElements(id1st, id2nd) {
+    const element1st = document.getElementById(id1st);
+    const element2nd = document.getElementById(id2nd);
+    element1st.classList.toggle('display-none');
+    element2nd.classList.toggle('display-none');
 }

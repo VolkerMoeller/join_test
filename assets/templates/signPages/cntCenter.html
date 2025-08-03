@@ -1,23 +1,32 @@
-<!-- <div class="frame-forms"> -->
-<button id="btnToLogIn" class="display-none" onclick="toggleFormsSign()">Log In</button>
-<form id="formLogIn" class="form-sign" onsubmit="checkInput(); return false;">
-    <div class="form-logo">
-        <h1>Log in</h1>
-        <p>&nbsp</p>
+<div class="frame-sign">
+    <div id="btnFrame" class="btn-frame display-none">
+        <button id="btnToLogInHvr" class="display-none" onmouseleave="toggleElements('btnToLogIn','btnToLogInHvr')"
+            onclick="toggleFormsSign()" w3-include-svg="./assets/img/svgHTML/6-leftArrowHover.html">
+        </button>
+        <button id="btnToLogIn" class="display-none" onmouseover="toggleElements('btnToLogIn','btnToLogInHvr')"
+            w3-include-svg="./assets/img/svgHTML/7-leftArrow.html">
+        </button>
     </div>
-    <div class="frame-panel">
-        <input id="submitBtn" class="btn-wo-icn" type="submit" onclick="" value="Log in">
-        <input id="guestLogInBtn" class="btn-wo-icn-2nd" type="button" onclick="toggleFormsSign()" value="Guest Log in">
-    </div>
-</form>
-<form id="formSignUp" class="form-sign display-none" onsubmit="checkInput(); return false;">
-    <div class="form-logo">
-        <h1>Sign up</h1>
-        <p>&nbsp</p>
-    </div>
-    <div class="frame-panel">
-        <input id="submitBtn" class="btn-wo-icn" type="submit" onclick="" value="Log in">
-        <input id="guestLogInBtn" class="btn-wo-icn-2nd" type="button" onclick="toggleFormsSign()" value="Guest Log in">
-    </div>
-</form>
-<!-- </div> -->
+    <form id="formLogIn" class="form-sign" onsubmit="checkInput(); return false;">
+        <div class="form-logo">
+            <h1>Log in</h1>
+            <p>&nbsp</p>
+        </div>
+        <div class="frame-panel">
+            <input id="submitBtn" class="btn-wo-icn" type="submit" onclick="" value="Log in">
+            <input id="guestLogInBtn" class="btn-wo-icn-2nd" type="button" onclick="toggleFormsSign()"
+                value="Guest Log in">
+        </div>
+    </form>
+    <form id="formSignUp" class="form-sign display-none" onsubmit="checkInput(); return false;">
+        <div class="form-logo">
+            <h1>Sign up</h1>
+            <p>&nbsp</p>
+        </div>
+        <div class="frame-panel">
+            <input id="submitBtn" class="btn-wo-icn" type="submit" onclick="" value="Log in">
+            <input id="guestLogInBtn" class="btn-wo-icn-2nd" type="button" onclick="toggleFormsSign()"
+                value="Guest Log in">
+        </div>
+    </form>
+</div>

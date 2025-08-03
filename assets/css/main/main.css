@@ -29,6 +29,10 @@ button * {
     cursor: pointer;
 }
 
+button {
+    border: none;
+}
+
 input::placeholder {
     color: var(--input-border);
 }
@@ -75,8 +79,40 @@ h1 {
 }
 
 /* test */
+.frame-sign {
+    display: flex;
+    position: relative;
+    width: clamp(320px, 100%, 652px);
+}
+
+
+.btn-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 1;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-frame button {
+    width: 45px;
+    height: 45px;
+}
+
+#btnToLogInHover {
+    position: relative;
+    z-index: 1;
+}
+
 #btnToLogIn {
     position: absolute;
-    z-index: 1;
-    top: 50%;
+}
+
+@media(max-width: 1440px) {
+    .btn-frame {
+        top: 0;
+        left: 0;
+    }
 }

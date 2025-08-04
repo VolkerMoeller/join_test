@@ -91,16 +91,16 @@ function toggleFormsSign() {
 }
 
 
-function changeToSignUp() {
-    changeCntCenter('signUp');
-    changeCntRight('signUp');
-}
+// function changeToSignUp() {
+//     changeCntCenter('signUp');
+//     changeCntRight('signUp');
+// }
 
 
-function backToLogIn() {
-    changeCntCenter('logIn');
-    changeCntRight('logIn');
-}
+// function backToLogIn() {
+//     changeCntCenter('logIn');
+//     changeCntRight('logIn');
+// }
 
 
 async function changeCntCenter(target) {

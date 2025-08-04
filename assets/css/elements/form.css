@@ -98,17 +98,17 @@
 
 .btn-frame {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10px;
+    left: 10px;
     display: flex;
     z-index: 1;
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
 }
 
 .btn-frame button {
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 32px;
 }
 
 #btnToLogInHover {
@@ -150,7 +150,7 @@
     }
 
     .btn-frame {
-        top: 0;
-        left: 0;
+        top: 48px;
+        left: 40px;
     }
 }

@@ -103,18 +103,18 @@ function toggleFormsSign() {
 // }
 
 
-async function changeCntCenter(target) {
-    const cntCenter = document.querySelector('.content-center');
-    cntCenter.setAttribute('w3-include-variable', `./assets/templates/signPages/${target}/cntCenter.html`);
-    await includeHTMLById('w3-include-variable');
-}
+// async function changeCntCenter(target) {
+//     const cntCenter = document.querySelector('.content-center');
+//     cntCenter.setAttribute('w3-include-variable', `./assets/templates/signPages/${target}/cntCenter.html`);
+//     await includeHTMLById('w3-include-variable');
+// }
 
 
-async function changeCntRight(target) {
-    const cntCenter = document.querySelector('.content-right');
-    cntCenter.setAttribute('w3-include-variable', `./assets/templates/signPages/${target}/cntRight.html`);
-    await includeHTMLById('w3-include-variable');
-}
+// async function changeCntRight(target) {
+//     const cntCenter = document.querySelector('.content-right');
+//     cntCenter.setAttribute('w3-include-variable', `./assets/templates/signPages/${target}/cntRight.html`);
+//     await includeHTMLById('w3-include-variable');
+// }
 
 
 async function changeOvl(target) {

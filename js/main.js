@@ -184,16 +184,3 @@ function toggleElements(id1st, id2nd) {
 
 // show body
 
-function showBody() {
-    const element = document.querySelector('body');
-    element.classList.toggle('display-none');
-}
-
-function showBodySmooth() {
-    const element = document.querySelector('body');
-    element.classList.toggle('display-none');
-    element.classList.toggle('opacity-0');
-    setTimeout(() => {
-        element.classList.add('show-body');
-    }, 100);
-}

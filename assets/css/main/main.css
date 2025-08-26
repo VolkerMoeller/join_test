@@ -57,8 +57,13 @@ input::placeholder {
 }
 
 .show-body {
-    transition: opacity 0.3 ease-in-out;
+    transition: opacity 60ms ease-in;
     opacity: 1 !important;
+}
+
+.hide-body {
+    display: none !important;
+    opacity: 0 !important;
 }
 
 .ovl-frame {

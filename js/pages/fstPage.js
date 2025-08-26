@@ -1,5 +1,6 @@
 async function initFstPage() {
     await includeHTML();
+    showBody();
     firstPageAnim();
 }
 

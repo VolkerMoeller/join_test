@@ -13,6 +13,8 @@ body {
     font-family: "Inter";
     color: var(--main);
     background-color: var(--main-background);
+    transition: opacity 225ms ease-in-out;
+    opacity: 0;
 }
 
 p,
@@ -46,6 +48,14 @@ input::placeholder {
 
 .display-none {
     display: none !important;
+}
+
+.opacity-1 {
+    opacity: 1 !important;
+}
+
+.opacity-0 {
+    opacity: 0 !important;
 }
 
 .ovl-frame {

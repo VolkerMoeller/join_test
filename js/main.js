@@ -181,3 +181,10 @@ function toggleElements(id1st, id2nd) {
     element1st.classList.toggle('display-none');
     element2nd.classList.toggle('display-none');
 }
+
+// show body
+
+function showBody() {
+    const element = document.querySelector('body');
+    element.classList.toggle('opacity-1');
+}

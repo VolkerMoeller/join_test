@@ -9,4 +9,6 @@
 
         --smart-animation-out: all 100ms ease-out;
         --smart-animation-in-out: all 100ms ease-in-out;
+        --smart-animation-in-out-clr: color 100ms ease-in-out;
+        --smart-animation-in-out-shadow: box-shadow 100ms ease-in-out;
     }

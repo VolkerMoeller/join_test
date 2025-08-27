@@ -65,11 +65,11 @@
 }
 
 .frame-panel {
-    width: 100%;
+    width: 77%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 35px;
+    /* gap: 35px; */
 }
 
 .frame-panel input {
@@ -137,6 +137,7 @@
 
     .frame-panel {
         flex-direction: column;
+        gap: 35px;
     }
 
     .version-btn {

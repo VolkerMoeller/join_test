@@ -3,6 +3,20 @@ let userStatus = 'guest'; // default user status
 
 // setClrScheme
 
+function setClrSchemeInit() {
+    let colorSchemeId = checkColorSchemeId();
+    setClrScheme(colorSchemeId);
+}
+
+
+function checkColorSchemeId() {
+    let colorSchemeId =loadLocalStorageObject('colorScheme');
+    if (colorSchemeId) {
+        return colorSchemeId
+    } else return 1;
+}
+
+
 function setClrScheme(colorSchemeId) {
     if (!colorSchemeId) {
         saveLocalStorageObject('colorScheme', 1);

@@ -1,5 +1,6 @@
 async function initSign() {
     await includeHTML();
+    setClrSchemeInit();
 }
 
 

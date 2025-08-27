@@ -1,7 +1,5 @@
 async function initSign() {
     await includeHTML();
-    focusInputBy('eMail');
-
 }
 
 
@@ -14,6 +12,7 @@ function checkLogInInput() {
     checkValidInput('eMail');
     checkValidInput('password');
 }
+
 
 function checkValidInput(id) {
     let inputField = document.getElementById(id);

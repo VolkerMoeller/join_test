@@ -1,10 +1,11 @@
 async function initFstPage() {
     await includeHTML();
     firstPageAnim();
+    localStorage.clear();
 }
 
 
-function firstPageAnim() {
+async function firstPageAnim() {
     animFrame();
     animBg();
     animLogo();
@@ -60,5 +61,6 @@ function noAnimCSS() {
 function switchToSignPage() {
     setTimeout(() => {
         history.replaceState({}, '', 'signPage.html');
+        document.getElementById('eMail').focus();
     }, 3000);
 }

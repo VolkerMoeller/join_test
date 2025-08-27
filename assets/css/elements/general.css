@@ -31,7 +31,6 @@
 .btn-wo-icn-2nd:hover {
     transition: var(--smart-animation-in-out-clr);
     transition: var(--smart-animation-in-out-shadow);
-    transition: var(--smart-animation-in-out-border);
     box-shadow: var(--stronger);
     border: solid 2px var(--main2nd);
     color: var(--main2nd);

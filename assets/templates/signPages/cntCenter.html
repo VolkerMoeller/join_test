@@ -23,8 +23,8 @@
             <div class="log-in">
                 <label for="eMail">E-Mail</label>
                 <div class="input-container">
-                    <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email" required
-                        autocomplete="off" onclick="">
+                    <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email"
+                        autocomplete="off" required>
                     <div class="input-icon" onclick="focusInputBy('eMail')"
                         w3-include-svg="./assets/img/svgHTML/7-leftArrow.html">
                     </div>
@@ -32,7 +32,7 @@
                 <div class="housing-password">
                     <label for="password">Password</label>
                     <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
-                        required autocomplete="off" onclick="">
+                        autocomplete="off" onclick="" required>
                     <span id="warningText" class="version-2-label display-none">Check your email and password.
                         Please try
                         again.</span>
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="frame-panel">
-            <input id="submitBtnLogIn" class="btn-wo-icn" type="submit" onclick="" value="Log in">
+            <input id="submitBtnLogIn" class="btn-wo-icn" type="submit" onclick="checkLogInInput()" value="Log in">
             <input id="guestLogInBtn" class="btn-wo-icn-2nd" type="button" onclick="switchToWorkPages()"
                 value="Guest-Log-in">
         </div>

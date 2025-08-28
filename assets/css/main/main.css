@@ -75,6 +75,10 @@ input::placeholder {
     fill: var(--main);
 }
 
+.path-def-1st-pale {
+    fill: var(--main-pale);
+}
+
 .path-def-2nd {
     fill: var(--main2nd);
 }

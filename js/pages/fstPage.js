@@ -61,6 +61,6 @@ function noAnimCSS() {
 function switchToSignPage() {
     setTimeout(() => {
         history.replaceState({}, '', 'signPage.html');
-        document.getElementById('eMail').focus();
+        // document.getElementById('eMail').focus();
     }, 3000);
 }

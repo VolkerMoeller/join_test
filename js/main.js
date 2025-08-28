@@ -147,7 +147,7 @@ function toggleOverlay() {
 }
 
 
-function animMessage(className = 'show-msg-btm-cnt') {
+function animMessage(className = 'from-bottom-to-top') {
     toggleOverlay();
     slideMessage(className);
     setTimeout(() => {

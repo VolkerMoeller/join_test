@@ -67,7 +67,7 @@
     color: var(--warning-text);
 }
 
-.housing-password button {
+/* .housing-password button {
     height: 48px;
     width: 48px;
     position: absolute;
@@ -85,7 +85,7 @@
 
 .housing-password button:active {
     opacity: 1;
-}
+} */
 
 .input-container {
     position: relative;
@@ -98,5 +98,9 @@
     top: 50%;
     transform: translateY(-50%);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
     cursor: text;
 }

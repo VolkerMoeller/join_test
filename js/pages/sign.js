@@ -19,9 +19,17 @@ function checkValidInput(id) {
     let inputField = document.getElementById(id);
     if (inputField.checkValidity()) {
         inputField.classList.remove('invalid-input');
-        return true;
     } else {
         inputField.classList.add('invalid-input');
-        return false;
+    }
+}
+
+
+function visibilityPassword() {
+    let inputPw = document.getElementById('password');
+    if (inputPw.type === 'password') {
+        inputPw.type = 'text';
+    } else {
+        inputPw.type = 'password';
     }
 }

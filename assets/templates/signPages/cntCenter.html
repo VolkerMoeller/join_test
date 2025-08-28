@@ -28,8 +28,13 @@
                 </div>
                 <div class="housing-password">
                     <label for="password">Password</label>
-                    <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
-                        autocomplete="off" onclick="" required>
+                    <div class="input-container">
+                        <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
+                            autocomplete="off" required>
+                        <div class="input-icon" onclick="focusInputBy('password')"
+                            w3-include-svg="./assets/img/svgHTML/15-lock.html">
+                        </div>
+                    </div>
                     <span id="warningText" class="version-2-label display-none">Check your email and password.
                         Please try
                         again.</span>

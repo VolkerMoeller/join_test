@@ -36,6 +36,11 @@
     }
 }
 
+.ovl-show-input {
+    z-index: 3;
+    background-color: var(--black-transp-50);
+}
+
 .msg-signPage {
     transform: translateX(100%);
 }

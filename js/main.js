@@ -146,6 +146,12 @@ function toggleOverlay() {
     overlay.classList.toggle('ovl-show');
 }
 
+function toggleOverlayForInput() {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.toggle('ovl-hide');
+    overlay.classList.toggle('ovl-show-input');
+}
+
 
 function animMessage(className = 'from-bottom-to-top') {
     toggleOverlay();
@@ -168,4 +174,32 @@ function toggleElements(id1st, id2nd) {
     const element2nd = document.getElementById(id2nd);
     element1st.classList.toggle('display-none');
     element2nd.classList.toggle('display-none');
+}
+
+// handle overlay
+
+function handleOverlay() {
+    toggleOverlayForInput();
+    toggleMsg();
+    document.getElementById('pwInputCnt').classList.add('z-index-4');
+}
+
+function toggleMsg() {
+    let element = document.querySelector('.msg-cnt');
+    if (!element.classList.contains('display-none')) {
+        element.classList.toggle('display-none');
+    }
+}
+
+function overlayBack() {
+    toggleOverlayForInput();
+    toggleMsg();
+    document.getElementById('pwInputCnt').classList.remove('z-index-4');
+    hideVisibilityBtn()
+}
+
+// test
+
+function doSth() {
+    console.log('Button clicked');
 }

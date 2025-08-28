@@ -28,23 +28,22 @@
                 </div>
                 <div class="housing-password">
                     <label for="password">Password</label>
-                    <div class="input-container">
+                    <div id="pwInputCnt" class="input-container">
                         <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
-                            autocomplete="off" required onfocus="showVisibilityBtn()" onblur="hideVisibilityBtn()">
-                        <div id="lockIcon" class="input-icon" onclick="focusInputBy('password')"
-                            w3-include-svg="./assets/img/svgHTML/15-lock.html">
+                            autocomplete="off" required onfocus="handleOverlay(); showVisibilityBtn()">
+                        <div class="input-icon">
+                            <div id="lockIcon" onclick="focusInputBy('password')"
+                                w3-include-svg="./assets/img/svgHTML/15-lock.html">
+                            </div>
+                            <div class="visibility-container display-none">
+                                <button type="button" onclick="doSth()"
+                                    w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
+                                </button>
+                                <button type="button" class="display-none" onclick=""
+                                    w3-include-svg="./assets/img/svgHTML/16-visibility.html">
+                                </button>
+                            </div>
                         </div>
-                        <div class="visibility-container display-none">
-                            <button type="button" class="input-icon" onclick=""
-                                w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
-                            </button>
-                            <button type="button" class="input-icon" onclick=""
-                                w3-include-svg="./assets/img/svgHTML/16-visibility.html">
-                            </button>
-                        </div>
-                        <!-- <div class="input-icon" onclick="focusInputBy('password')"
-                            w3-include-svg="./assets/img/svgHTML/15-lock.html">
-                        </div> -->
                     </div>
                     <span id="warningText" class="version-2-label display-none">Check your email and password.
                         Please try

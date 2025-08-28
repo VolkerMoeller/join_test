@@ -10,7 +10,7 @@ function setClrSchemeInit() {
 
 
 function checkColorSchemeId() {
-    let colorSchemeId =loadLocalStorageObject('colorScheme');
+    let colorSchemeId = loadLocalStorageObject('colorScheme');
     if (colorSchemeId) {
         return colorSchemeId
     } else return 1;
@@ -169,6 +169,3 @@ function toggleElements(id1st, id2nd) {
     element1st.classList.toggle('display-none');
     element2nd.classList.toggle('display-none');
 }
-
-// show body
-

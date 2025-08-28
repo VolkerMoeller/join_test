@@ -2,6 +2,7 @@ async function initFstPage() {
     await includeHTML();
     firstPageAnim();
     localStorage.clear();
+    setClrSchemeInit();
 }
 
 

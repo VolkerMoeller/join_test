@@ -21,32 +21,36 @@
     outline: none;
 }
 
-.log-in input[type=email] {
+.log-in input:focus {
+    border: 1px solid var(--main2nd);
+}
+
+/* .log-in input[type=email] {
     background-image: var(--picto-mail);
     background-position: calc(100% - 16px) center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
-}
+} */
 
-.log-in input[type=email]:focus {
+/* .log-in input[type=email]:focus {
     border: 1px solid var(--main2nd);
-}
+} */
 
-.log-in input[type=password] {
+/* .log-in input[type=password] {
     background-image: var(--picto-lock);
     background-position: calc(100% - 16px) center;
     background-repeat: no-repeat;
     background-size: 24px 24px;
-}
+} */
 
-.log-in input[type=password]:focus {
+/* .log-in input[type=password]:focus {
     background-image: url('/assets/img/logIn/visibilityOff.svg');
     border: 1px solid var(--main2nd);
-}
+} */
 
-.log-in input[type=text]:focus {
+/* .log-in input[type=text]:focus {
     border: 1px solid var(--main2nd);
-}
+} */
 
 .wrongLogin {
     border: 1px solid var(--warning) !important;

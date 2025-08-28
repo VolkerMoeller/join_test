@@ -33,3 +33,13 @@ function visibilityPassword() {
         inputPw.type = 'password';
     }
 }
+
+function showVisibilityBtn() {
+    document.querySelector('.visibility-container').classList.remove('display-none');
+    document.getElementById('lockIcon').classList.add('display-none');
+}
+
+function hideVisibilityBtn() {
+    document.querySelector('.visibility-container').classList.add('display-none');
+    document.getElementById('lockIcon').classList.remove('display-none');
+}   

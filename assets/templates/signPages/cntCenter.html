@@ -36,10 +36,12 @@
                                 w3-include-svg="./assets/img/svgHTML/15-lock.html">
                             </div>
                             <div class="visibility-container display-none">
-                                <button type="button" onclick="doSth()"
+                                <button id="visibilityOffBtn" type="button"
+                                    onclick="visibilityPassword(); toggleElements('visibilityOffBtn', 'visibilityOnBtn')"
                                     w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
                                 </button>
-                                <button type="button" class="display-none" onclick=""
+                                <button id="visibilityOnBtn" type="button" class="display-none"
+                                    onclick="visibilityPassword(); toggleElements('visibilityOffBtn', 'visibilityOnBtn')"
                                     w3-include-svg="./assets/img/svgHTML/16-visibility.html">
                                 </button>
                             </div>

@@ -44,4 +44,7 @@ function hideVisibilityBtn() {
     document.getElementById('lockIcon').classList.remove('display-none');
 }
 
-
+function handleVisibilityBtn() {
+    visibilityPassword();
+    toggleElements('visibilityOffBtn', 'visibilityOnBtn');
+}

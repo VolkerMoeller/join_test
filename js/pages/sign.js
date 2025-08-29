@@ -42,4 +42,6 @@ function showVisibilityBtn() {
 function hideVisibilityBtn() {
     document.querySelector('.visibility-container').classList.add('display-none');
     document.getElementById('lockIcon').classList.remove('display-none');
-}   
+}
+
+

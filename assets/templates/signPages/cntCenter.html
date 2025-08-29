@@ -26,11 +26,14 @@
                         w3-include-svg="./assets/img/svgHTML/14-eMail.html">
                     </div>
                 </div>
+
+
                 <div class="housing-password">
                     <label for="password">Password</label>
                     <div id="pwInputCnt" class="input-container">
                         <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
-                            autocomplete="off" required onfocus="handleOverlay(); showVisibilityBtn()">
+                            autocomplete="off" required onfocus="handleOverlay()"
+                            onkeydown="checkOverlay()">
                         <div class="input-icon">
                             <div id="lockIcon" onclick="focusInputBy('password')"
                                 w3-include-svg="./assets/img/svgHTML/15-lock.html">
@@ -38,11 +41,12 @@
                             <div class="visibility-container display-none">
                                 <button id="visibilityOffBtn" type="button"
                                     onclick="visibilityPassword(); toggleElements('visibilityOffBtn', 'visibilityOnBtn')"
+                                    onkeydown="checkOverlay()"
                                     w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
                                 </button>
                                 <button id="visibilityOnBtn" type="button" class="display-none"
                                     onclick="visibilityPassword(); toggleElements('visibilityOffBtn', 'visibilityOnBtn')"
-                                    w3-include-svg="./assets/img/svgHTML/16-visibility.html">
+                                    onkeydown="checkOverlay()" w3-include-svg="./assets/img/svgHTML/16-visibility.html">
                                 </button>
                             </div>
                         </div>
@@ -51,6 +55,9 @@
                         Please try
                         again.</span>
                 </div>
+
+
+
             </div>
         </div>
         <div class="frame-panel">

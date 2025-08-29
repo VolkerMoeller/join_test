@@ -182,7 +182,17 @@ function handleOverlay() {
     toggleOverlayForInput();
     toggleMsg();
     document.getElementById('pwInputCnt').classList.add('z-index-4');
+    showVisibilityBtn();
 }
+
+
+function handleOverlayBack() {
+    toggleOverlayForInput();
+    toggleMsg();
+    document.getElementById('pwInputCnt').classList.remove('z-index-4');
+    hideVisibilityBtn();
+}
+
 
 function toggleMsg() {
     let element = document.querySelector('.msg-cnt');
@@ -191,11 +201,12 @@ function toggleMsg() {
     }
 }
 
-function overlayBack() {
-    toggleOverlayForInput();
-    toggleMsg();
-    document.getElementById('pwInputCnt').classList.remove('z-index-4');
-    hideVisibilityBtn()
+
+function checkOverlay() {
+    let overlay = document.querySelector('.ovl-frame');
+    if (!overlay.classList.contains('ovl-show-input')) {
+        handleOverlay();
+    }
 }
 
 // test

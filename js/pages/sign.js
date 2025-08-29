@@ -9,7 +9,7 @@ function focusInputBy(id) {
 }
 
 
-function checkLogInInput() {
+function checkValidLogInInput() {
     checkValidInput('eMail');
     checkValidInput('password');
 }
@@ -34,15 +34,18 @@ function visibilityPassword() {
     }
 }
 
+
 function showVisibilityBtn() {
     document.querySelector('.visibility-container').classList.remove('display-none');
     document.getElementById('lockIcon').classList.add('display-none');
 }
 
+
 function hideVisibilityBtn() {
     document.querySelector('.visibility-container').classList.add('display-none');
     document.getElementById('lockIcon').classList.remove('display-none');
 }
+
 
 function handleVisibilityBtn() {
     let element = document.querySelector('.ovl-frame');

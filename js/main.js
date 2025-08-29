@@ -184,7 +184,6 @@ function handleOverlay() {
     if (overlayNotShown) {
         toggleOverlayForInput();
         toggleMsg();
-        document.getElementById('pwInputCnt').classList.add('z-index-4');
         showVisibilityBtn();
     }
 }
@@ -193,7 +192,6 @@ function handleOverlay() {
 function handleOverlayBack() {
     toggleOverlayForInput();
     toggleMsg();
-    document.getElementById('pwInputCnt').classList.remove('z-index-4');
     hideVisibilityBtn();
 }
 

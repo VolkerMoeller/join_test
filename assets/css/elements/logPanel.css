@@ -25,33 +25,6 @@
     border: 1px solid var(--main2nd);
 }
 
-/* .log-in input[type=email] {
-    background-image: var(--picto-mail);
-    background-position: calc(100% - 16px) center;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-} */
-
-/* .log-in input[type=email]:focus {
-    border: 1px solid var(--main2nd);
-} */
-
-/* .log-in input[type=password] {
-    background-image: var(--picto-lock);
-    background-position: calc(100% - 16px) center;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-} */
-
-/* .log-in input[type=password]:focus {
-    background-image: url('/assets/img/logIn/visibilityOff.svg');
-    border: 1px solid var(--main2nd);
-} */
-
-/* .log-in input[type=text]:focus {
-    border: 1px solid var(--main2nd);
-} */
-
 .wrongLogin {
     border: 1px solid var(--warning) !important;
 }
@@ -67,26 +40,6 @@
     color: var(--warning-text);
 }
 
-/* .housing-password button {
-    height: 48px;
-    width: 48px;
-    position: absolute;
-    top: 2px;
-    left: calc(100% - 49px);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    opacity: 0;
-    background-color: var(--white);
-    padding: 0;
-    margin: 0;
-    z-index: 1;
-}
-
-.housing-password button:active {
-    opacity: 1;
-} */
-
 .input-container {
     position: relative;
     width: 100%;
@@ -95,7 +48,7 @@
 
 .input-icon {
     position: absolute;
-    right: 16px;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     display: flex;

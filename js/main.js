@@ -216,5 +216,5 @@ function checkOverlay() {
 // test
 
 function doSth() {
-    console.log('Button clicked');
+    console.log('doSth()');
 }

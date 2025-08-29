@@ -47,14 +47,6 @@ function hideVisibilityBtn() {
 }
 
 
-function handleVisibilityBtn() {
-    let element = document.querySelector('.ovl-frame');
-    if (element.classList.contains('ovl-show-input')) {
-        toggleElements('visibilityOffBtn', 'visibilityOnBtn');
-    }
-}
-
-
 function handleInputIcon() {
     let element = document.getElementById('lockIcon');
     let elementNotShown = element.classList.contains('display-none')

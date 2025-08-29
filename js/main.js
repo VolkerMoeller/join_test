@@ -193,6 +193,8 @@ function handleOverlayBack() {
     toggleOverlayForInput();
     toggleMsg();
     hideVisibilityBtn();
+    let inputPw = document.getElementById('password');
+    inputPw.type = 'password';
 }
 
 

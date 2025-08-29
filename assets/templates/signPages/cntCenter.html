@@ -33,19 +33,24 @@
                     <div id="pwInputCnt" class="input-container">
                         <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
                             autocomplete="off" required onfocus="handleOverlay()" onkeydown="checkOverlay()">
-                        <div class="input-icon">
-                            <div id="lockIcon" onclick="focusInputBy('password')"
-                                w3-include-svg="./assets/img/svgHTML/15-lock.html">
+                        <div class="input-icon" onclick="focusInputBy('password'); handleInputIcon()">
+                            <div id="lockIcon" w3-include-svg="./assets/img/svgHTML/15-lock.html">
                             </div>
-                            <div class="visibility-container display-none">
-                                <button id="visibilityOffBtn" type="button" onclick="handleVisibilityBtn()"
+                            <div id="visibilityIcon" class="visibility-container display-none">
+                                <!-- <button id="visibilityOffBtn" type="button" onclick="handleVisibilityBtn()"
                                     onkeydown="checkOverlay()"
                                     w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
+                                </button> -->
+                                <button id="visibilityOffBtn" type="button" onkeydown="checkOverlay()"
+                                    w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
                                 </button>
-                                <button id="visibilityOnBtn" type="button" onclick="handleVisibilityBtn()"
+                                <button id="visibilityOnBtn" type="button" onkeydown="checkOverlay()"
+                                    w3-include-svg="./assets/img/svgHTML/16-visibility.html" class="display-none">
+                                </button>
+                                <!-- <button id="visibilityOnBtn" type="button" onclick="handleVisibilityBtn()"
                                     onkeydown="checkOverlay()" w3-include-svg="./assets/img/svgHTML/16-visibility.html"
                                     class="display-none">
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </div>

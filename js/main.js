@@ -179,10 +179,14 @@ function toggleElements(id1st, id2nd) {
 // handle overlay
 
 function handleOverlay() {
-    toggleOverlayForInput();
-    toggleMsg();
-    document.getElementById('pwInputCnt').classList.add('z-index-4');
-    showVisibilityBtn();
+    let overlay = document.querySelector('.ovl-frame');
+    let overlayNotShown = overlay.classList.contains('ovl-hide');
+    if (overlayNotShown) {
+        toggleOverlayForInput();
+        toggleMsg();
+        document.getElementById('pwInputCnt').classList.add('z-index-4');
+        showVisibilityBtn();
+    }
 }
 
 

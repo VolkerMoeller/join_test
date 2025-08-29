@@ -27,6 +27,7 @@ a *,
 button,
 button * {
     cursor: pointer;
+    z-index: 4;
 }
 
 button {
@@ -34,6 +35,9 @@ button {
     padding: 0;
     border: none;
     background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 input::placeholder {

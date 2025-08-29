@@ -45,6 +45,21 @@ function hideVisibilityBtn() {
 }
 
 function handleVisibilityBtn() {
-    visibilityPassword();
-    toggleElements('visibilityOffBtn', 'visibilityOnBtn');
+    let element = document.querySelector('.ovl-frame');
+    if (element.classList.contains('ovl-show-input')) {
+        toggleElements('visibilityOffBtn', 'visibilityOnBtn');
+    }
+}
+
+
+function handleInputIcon() {
+    let element = document.getElementById('lockIcon');
+    let elementNotShown = element.classList.contains('display-none')
+    if (!elementNotShown) {
+        element.classList.add('display-none');
+    } else {
+        visibilityPassword();
+        toggleElements('visibilityOffBtn', 'visibilityOnBtn');
+    }
+
 }

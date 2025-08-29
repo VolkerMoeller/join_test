@@ -8,6 +8,7 @@
     font-weight: bold;
     background: var(--main);
     border: none;
+    z-index: 4;
 }
 
 .btn-wo-icn-2nd {
@@ -20,6 +21,7 @@
     font-weight: bold;
     border: solid 1px var(--main);
     background-color: unset;
+    z-index: 4;
 }
 
 .btn-wo-icn:hover {

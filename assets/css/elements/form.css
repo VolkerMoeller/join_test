@@ -102,9 +102,9 @@
     top: 10px;
     left: 10px;
     display: flex;
-    z-index: 1;
     width: 32px;
     height: 32px;
+    z-index: 1;
 }
 
 .btn-frame button {

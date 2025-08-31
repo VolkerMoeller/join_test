@@ -89,3 +89,19 @@ function warningTextOff() {
         warning.classList.add('display-none');
     }
 }
+
+
+function toggleSignElementsOnTop() {
+    // let selectors = ['.input-container', '.btn-wo-icn', '.btn-wo-icn-2nd', '.content-right button', '.outside-bottom a'];
+    let selectors = ['.input-container', '.form-sign input', '.content-right button', '.outside-bottom a', '.btn-frame'];
+    for (let i = 0; i < selectors.length; i++) {
+        let elements = document.querySelectorAll(selectors[i]);
+        if (elements) {
+            elements.forEach(element => {
+                console.log(element);
+                element.classList.toggle('z-index-4');
+            });
+        }
+    }
+
+}

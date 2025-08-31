@@ -38,7 +38,8 @@
 
 .ovl-show-input {
     z-index: 3;
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: green;
 }
 
 .msg-signPage {

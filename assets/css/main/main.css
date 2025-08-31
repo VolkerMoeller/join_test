@@ -59,6 +59,10 @@ input::placeholder {
     opacity: 0 !important;
 }
 
+.z-index-4 {
+    z-index: 4 !important;
+}
+
 .hide-body {
     display: none !important;
     opacity: 0 !important;

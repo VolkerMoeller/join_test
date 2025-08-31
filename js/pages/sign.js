@@ -102,3 +102,16 @@ function toggleSignElementsOnTop() {
         }
     }
 }
+
+
+function emptySignInputFields() {
+    let selectors = ['.input-container input'];
+    for (let i = 0; i < selectors.length; i++) {
+        let elements = document.querySelectorAll(selectors[i]);
+        if (elements) {
+            elements.forEach(element => {
+                element.value = '';
+            });
+        }
+    }
+}

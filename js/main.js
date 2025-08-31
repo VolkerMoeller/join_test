@@ -92,6 +92,7 @@ function loadLocalStorageObject(key) {
 
 
 function toggleFormsSign() {
+    emptySignInputFields();
     const formLogIn = document.getElementById('formLogIn');
     formLogIn.classList.toggle('display-none');
     const formSignUp = document.getElementById('formSignUp');

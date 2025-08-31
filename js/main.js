@@ -183,14 +183,17 @@ function handleOverlay() {
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
         toggleOverlayForInput();
+        toggleSignElementsOnTop()
         toggleMsg();
         showVisibilityBtn();
+
     }
 }
 
 
 function handleOverlayBack() {
     toggleOverlayForInput();
+    toggleSignElementsOnTop()
     toggleMsg();
     hideVisibilityBtn();
     let inputPw = document.getElementById('password');

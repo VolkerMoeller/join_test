@@ -57,8 +57,8 @@
 
 .txt-btn:hover {
     transition: var(--smart-animation-in-out-clr);
-    color: var(--main);
-    text-decoration: underline;
+    color: var(--main2nd);
+    font-weight: bold;
 }
 
 @media (max-width: 1440px) {

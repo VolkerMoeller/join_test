@@ -92,6 +92,13 @@
     z-index: 1;
 }
 
+.nav-sign-bottom {
+    width: 247px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
 .invalid-input {
     border: 1px solid var(--warning) !important;
 }

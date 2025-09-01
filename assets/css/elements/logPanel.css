@@ -1,8 +1,15 @@
 .sign-form {
     width: clamp(0px, 100%, 422px);
-    height: 152px;
     display: flex;
     flex-direction: column;
+}
+
+.sign-form-sign-up {
+    gap: 20px;
+}
+
+
+.sign-form-log-in {
     gap: 32px;
 }
 
@@ -55,5 +62,5 @@
     align-items: center;
     width: 48px;
     height: 48px;
-    cursor: pointer;
+    cursor: text;
 }

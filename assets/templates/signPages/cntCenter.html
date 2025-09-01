@@ -18,7 +18,7 @@
             <p>&nbsp</p>
         </div>
         <div class="housing-sign-form">
-            <div class="sign-form">
+            <div class="sign-form sign-form-log-in">
                 <label for="eMailLogIn">E-Mail</label>
                 <div class="input-container">
                     <input class="version-2-t6" type="email" id="eMailLogIn" name="eMail" placeholder="Email"
@@ -33,7 +33,8 @@
                         <input class="version-2-t6" type="password" id="passwordLogIn" name="password"
                             placeholder="Password" autocomplete="off" required onfocus="handleOverlay()"
                             onkeydown="checkOverlay()">
-                        <div class="input-icon" onclick="focusInputBy('passwordLogIn'); handleInputIcon()">
+                        <div id="lockLogIn" class="input-icon"
+                            onclick="focusInputBy('passwordLogIn'); handleInputIcon()">
                             <div id="lockIcnLogIn" w3-include-svg="./assets/img/svgHTML/15-lock.html">
                             </div>
                             <div class="visibility-container display-none">
@@ -53,8 +54,8 @@
             </div>
         </div>
         <div class="frame-panel">
-            <input class="btn-wo-icn" type="submit" onclick="checkValidLogInInput()" value="sign-form">
-            <input class="btn-wo-icn-2nd" type="button" onclick="switchToWorkPages()" value="Guest-sign-form">
+            <input class="btn-wo-icn" type="submit" onclick="checkValidLogInInput()" value="Log in">
+            <input class="btn-wo-icn-2nd" type="button" onclick="switchToWorkPages()" value="Guest Log in">
         </div>
     </form>
 
@@ -67,8 +68,29 @@
             <p>&nbsp</p>
         </div>
         <div class="housing-sign-form">
-            <div class="sign-form">
-                sing-form
+            <div class="sign-form sign-form-sign-up">
+                <label for="nameSignUp">Name</label>
+                <div class="input-container">
+                    <input class="version-2-t6" type="text" id="nameSignUp" name="name" placeholder="Name"
+                        autocomplete="off" required>
+                    <div class="input-icon" onclick="focusInputBy('nameSignUp')"
+                        w3-include-svg="./assets/img/svgHTML/14-eMail.html">
+                    </div>
+                </div>
+                <label for="eMailSignUp">E-Mail</label>
+                <div class="input-container">
+                    <input class="version-2-t6" type="email" id="eMailSignUp" name="eMail" placeholder="Email"
+                        autocomplete="off" required>
+                    <div class="input-icon" onclick="focusInputBy('eMailSignUp')"
+                        w3-include-svg="./assets/img/svgHTML/14-eMail.html">
+                    </div>
+                </div>
+                <div class="housing-password">
+                    housing-password
+                </div>
+                <div class="housing-password">
+                    housing-password
+                </div>
             </div>
         </div>
         <div class="frame-panel">

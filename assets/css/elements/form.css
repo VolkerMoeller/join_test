@@ -68,7 +68,8 @@
     width: 77%;
     display: flex;
     justify-content: space-between;
-    gap: 35px;
+    padding-top: 16px;
+    gap: 32px;
     align-items: center;
 }
 
@@ -110,13 +111,17 @@
     height: 32px;
 }
 
-#btnLogInHover {
+/* #btnLogInHover {
     position: relative;
     z-index: 1;
-}
+} */
 
-#btnLogIn {
+/* #btnLogIn {
     position: absolute;
+} */
+
+#lockLogIn {
+    cursor: pointer;
 }
 
 @media(max-width: 1440px) {

@@ -56,7 +56,7 @@ function handleInputIcon() {
         element.classList.add('display-none');
     } else {
         visibilityPassword();
-        toggleElements('visibilityOffBtn', 'visibilityOnBtn');
+        toggleElements('vsbOffBtnLogIn', 'vsbOnBtnLogIn');
     }
 
 }

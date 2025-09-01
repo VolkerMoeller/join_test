@@ -30,16 +30,17 @@
                 <div class="housing-password">
                     <label for="password">Password</label>
                     <div class="input-container">
-                        <input class="version-2-t6" type="password" id="passwordLogIn" name="password" placeholder="Password"
-                            autocomplete="off" required onfocus="handleOverlay()" onkeydown="checkOverlay()">
+                        <input class="version-2-t6" type="password" id="passwordLogIn" name="password"
+                            placeholder="Password" autocomplete="off" required onfocus="handleOverlay()"
+                            onkeydown="checkOverlay()">
                         <div class="input-icon" onclick="focusInputBy('passwordLogIn'); handleInputIcon()">
                             <div id="lockIcnLogIn" w3-include-svg="./assets/img/svgHTML/15-lock.html">
                             </div>
-                            <div id="visibilityIcon" class="visibility-container display-none">
-                                <button id="visibilityOffBtn" type="button"
+                            <div class="visibility-container display-none">
+                                <button id="vsbOffBtnLogIn" type="button"
                                     w3-include-svg="./assets/img/svgHTML/17-visibilityOffV4.html">
                                 </button>
-                                <button id="visibilityOnBtn" type="button"
+                                <button id="vsbOnBtnLogIn" type="button"
                                     w3-include-svg="./assets/img/svgHTML/16-visibilityV4.html" class="display-none">
                                 </button>
                             </div>
@@ -52,9 +53,8 @@
             </div>
         </div>
         <div class="frame-panel">
-            <input id="submitBtnLogIn" class="btn-wo-icn" type="submit" onclick="checkValidLogInInput()" value="Log in">
-            <input id="guestLogInBtn" class="btn-wo-icn-2nd" type="button" onclick="switchToWorkPages()"
-                value="Guest-Log-in">
+            <input class="btn-wo-icn" type="submit" onclick="checkValidLogInInput()" value="Log in">
+            <input class="btn-wo-icn-2nd" type="button" onclick="switchToWorkPages()" value="Guest-Log-in">
         </div>
     </form>
 

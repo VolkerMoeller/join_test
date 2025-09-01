@@ -68,6 +68,7 @@
     width: 77%;
     display: flex;
     justify-content: space-between;
+    gap: 35px;
     align-items: center;
 }
 

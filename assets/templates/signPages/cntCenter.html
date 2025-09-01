@@ -19,7 +19,7 @@
         </div>
         <div class="housing-log-in">
             <div class="log-in">
-                <label for="eMail">E-Mail</label>
+                <label for="eMailLogIn">E-Mail</label>
                 <div class="input-container">
                     <input class="version-2-t6" type="email" id="eMailLogIn" name="eMail" placeholder="Email"
                         autocomplete="off" required>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="housing-password">
-                    <label for="password">Password</label>
+                    <label for="passwordLogIn">Password</label>
                     <div class="input-container">
                         <input class="version-2-t6" type="password" id="passwordLogIn" name="password"
                             placeholder="Password" autocomplete="off" required onfocus="handleOverlay()"
@@ -67,7 +67,9 @@
             <p>&nbsp</p>
         </div>
         <div class="frame-panel">
-            <input id="submitBtnSignUp" class="btn-wo-icn" type="submit" onclick="doSth()" value="Sign up" disabled>
+            <div class="ghost"></div>
+            <input class="btn-wo-icn" type="submit" onclick="doSth()" value="Sign up" disabled>
+            <div class="ghost"></div>
         </div>
     </form>
 </div>

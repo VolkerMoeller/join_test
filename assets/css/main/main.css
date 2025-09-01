@@ -43,6 +43,10 @@ input::placeholder {
     color: var(--input-border);
 }
 
+.ghost {
+    opacity: 0;
+}
+
 .display {
     display: flex !important;
 }

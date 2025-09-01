@@ -115,3 +115,16 @@ function emptySignInputFields() {
         }
     }
 }
+
+// handle Overlays for SignUp and LogIn
+
+
+function toggleSignOvls() {
+    let ovls = document.querySelectorAll('.ovl');
+    for (let i = 0; i < ovls.length; i++) {
+        const ovl = ovls[i];
+        let ovlNotShown = ovl.classList.contains('display-none');
+        if (!ovlNotShown) { ovl.classList.add('display-none') }
+        else { ovl.classList.remove('display-none') };
+    }
+}

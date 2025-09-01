@@ -185,9 +185,8 @@ function handleOverlay() {
     if (overlayNotShown) {
         toggleOverlayForInput();
         toggleSignElementsOnTop()
-        toggleMsg();
+        // toggleMsg();
         showVisibilityBtn();
-
     }
 }
 
@@ -203,10 +202,13 @@ function handleOverlayBack() {
 
 
 function toggleMsg() {
-    let element = document.querySelector('.msg-cnt');
-    if (!element.classList.contains('display-none')) {
-        element.classList.toggle('display-none');
-    }
+    let messages = document.querySelectorAll('.msg-cnt');
+    messages.forEach(message => {
+        if (!message.classList.contains('display-none')) {
+            message.classList.add('display-none');
+        }
+        else message.classList.remove('display-none');
+    });
 }
 
 

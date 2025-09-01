@@ -69,7 +69,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 35px; */
 }
 
 .frame-panel input {
@@ -78,15 +77,13 @@
     padding: 0px 24px;
 }
 
-.frame-panel .button-wo-img {
-    width: 100%;
-}
 
-.frame-panel .button-wo-img:disabled {
+.frame-panel .btn-wo-icn:disabled {
     background-color: var(--input-border);
     box-shadow: none;
     cursor: not-allowed;
 }
+
 
 /* frame sign */
 

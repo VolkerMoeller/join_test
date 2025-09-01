@@ -10,6 +10,13 @@
     border: none;
 }
 
+
+/* .btn-wo-icn:disabled {
+    background-color: var(--input-border);
+    box-shadow: none;
+    cursor: not-allowed;
+} */
+
 .btn-wo-icn-2nd {
     border-radius: 8px;
     padding: 15px 24px;

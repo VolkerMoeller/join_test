@@ -93,6 +93,11 @@ function loadLocalStorageObject(key) {
 
 function toggleFormsSign() {
     emptySignInputFields();
+    toggleFormSign();
+}
+
+
+function toggleFormSign() {
     const formLogIn = document.getElementById('formLogIn');
     formLogIn.classList.toggle('display-none');
     const formSignUp = document.getElementById('formSignUp');
@@ -103,6 +108,9 @@ function toggleFormsSign() {
     btnToLogIn.classList.toggle('display-none');
     const btnFrame = document.getElementById('btnFrame');
     btnFrame.classList.toggle('display-none');
+
+
+
 }
 
 

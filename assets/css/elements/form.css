@@ -112,12 +112,12 @@
     height: 32px;
 }
 
-#btnToLogInHover {
+#btnLogInHover {
     position: relative;
     z-index: 1;
 }
 
-#btnToLogIn {
+#btnLogIn {
     position: absolute;
 }
 

@@ -97,8 +97,8 @@
 
 .btn-frame {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 64px;
+    left: 32px;
     display: flex;
     width: 32px;
     height: 32px;
@@ -150,7 +150,14 @@
     }
 
     .btn-frame {
-        top: 48px;
-        left: 40px;
+        top: 40px;
+        left: 24px;
+    }
+}
+
+@media(max-width: 414px) {
+    .btn-frame {
+        top: 10px;
+        left: 10px;
     }
 }

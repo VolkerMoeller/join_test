@@ -1,4 +1,4 @@
-.log-in {
+.sign-form {
     width: clamp(0px, 100%, 422px);
     height: 152px;
     display: flex;
@@ -6,12 +6,12 @@
     gap: 32px;
 }
 
-.log-in label {
+.sign-form label {
     width: 100%;
     display: none;
 }
 
-.log-in input {
+.sign-form input {
     width: 100%;
     padding: 12px 48px 12px 21px;
     display: flex;
@@ -21,7 +21,7 @@
     outline: none;
 }
 
-.log-in input:focus {
+.sign-form input:focus {
     border: 1px solid var(--main2nd);
 }
 

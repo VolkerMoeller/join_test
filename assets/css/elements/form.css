@@ -56,7 +56,7 @@
     color: var(--text-default2nd);
 }
 
-.housing-log-in {
+.housing-sign-form {
     width: clamp(0px, 120%, 422px);
     display: flex;
     flex-direction: column;
@@ -145,7 +145,7 @@
         line-height: 24px;
     }
 
-    .housing-log-in {
+    .housing-sign-form {
         width: clamp(0px, 85%, 422px);
     }
 

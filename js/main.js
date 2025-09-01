@@ -98,19 +98,11 @@ function toggleFormsSign() {
 
 
 function toggleFormSign() {
-    const formLogIn = document.getElementById('formLogIn');
-    formLogIn.classList.toggle('display-none');
-    const formSignUp = document.getElementById('formSignUp');
-    formSignUp.classList.toggle('display-none');
-    const btnToSignUp = document.getElementById('btnToSignUp');
-    btnToSignUp.classList.toggle('display-none');
-    const btnToLogIn = document.getElementById('btnToLogIn');
-    btnToLogIn.classList.toggle('display-none');
-    const btnFrame = document.getElementById('btnFrame');
-    btnFrame.classList.toggle('display-none');
-
-
-
+    const elements = ['formLogIn', 'formSignUp', 'btnToSignUp', 'btnToLogIn', 'btnFrame'];
+    for (let i = 0; i < elements.length; i++) {
+        const element = document.getElementById(elements[i]);
+        element.classList.toggle('display-none');
+    }
 }
 
 

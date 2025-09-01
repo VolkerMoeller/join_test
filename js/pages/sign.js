@@ -10,7 +10,7 @@ function focusInputBy(id) {
 
 
 function checkValidLogInInput() {
-    checkValidInput('eMail');
+    checkValidInput('eMailLogIn');
     checkValidInput('password');
     warningTextLogIn();
 
@@ -64,7 +64,7 @@ function handleInputIcon() {
 // warning text
 
 function warningTextLogIn() {
-    let eMail = document.getElementById('eMail');
+    let eMail = document.getElementById('eMailLogIn');
     let password = document.getElementById('password');
     if (!password.validity.valid || !eMail.validity.valid) {
         warningTextOn();

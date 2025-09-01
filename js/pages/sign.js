@@ -11,7 +11,7 @@ function focusInputBy(id) {
 
 function checkValidLogInInput() {
     checkValidInput('eMailLogIn');
-    checkValidInput('password');
+    checkValidInput('passwordLogIn');
     warningTextLogIn();
 
 }
@@ -28,7 +28,7 @@ function checkValidInput(id) {
 
 
 function visibilityPassword() {
-    let inputPw = document.getElementById('password');
+    let inputPw = document.getElementById('passwordLogIn');
     if (inputPw.type === 'password') {
         inputPw.type = 'text';
     } else {
@@ -39,18 +39,18 @@ function visibilityPassword() {
 
 function showVisibilityBtn() {
     document.querySelector('.visibility-container').classList.remove('display-none');
-    document.getElementById('lockIcon').classList.add('display-none');
+    document.getElementById('lockIcnLogIn').classList.add('display-none');
 }
 
 
 function hideVisibilityBtn() {
     document.querySelector('.visibility-container').classList.add('display-none');
-    document.getElementById('lockIcon').classList.remove('display-none');
+    document.getElementById('lockIcnLogIn').classList.remove('display-none');
 }
 
 
 function handleInputIcon() {
-    let element = document.getElementById('lockIcon');
+    let element = document.getElementById('lockIcnLogIn');
     let elementNotShown = element.classList.contains('display-none')
     if (!elementNotShown) {
         element.classList.add('display-none');
@@ -65,7 +65,7 @@ function handleInputIcon() {
 
 function warningTextLogIn() {
     let eMail = document.getElementById('eMailLogIn');
-    let password = document.getElementById('password');
+    let password = document.getElementById('passwordLogIn');
     if (!password.validity.valid || !eMail.validity.valid) {
         warningTextOn();
     } else

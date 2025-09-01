@@ -98,7 +98,7 @@ function toggleFormsSign() {
 
 
 function toggleFormSign() {
-    const elements = ['formLogIn', 'formSignUp', 'cntRight', 'btnFrameBackToLogIn'];
+    const elements = ['formLogIn', 'formSignUp', 'cntRightSignUp', 'cntRightLogIn', 'btnFrameBackToLogIn'];
     for (let i = 0; i < elements.length; i++) {
         const element = document.getElementById(elements[i]);
         element.classList.toggle('display-none');

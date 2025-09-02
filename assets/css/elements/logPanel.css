@@ -1,24 +1,24 @@
-.sign-form {
+.form-inputs {
     width: clamp(0px, 100%, 422px);
     display: flex;
     flex-direction: column;
 }
 
-.sign-form-sign-up {
+.form-inputs-sign-up {
     gap: 20px;
 }
 
 
-.sign-form-log-in {
+.form-inputs-log-in {
     gap: 32px;
 }
 
-.sign-form label {
+.form-inputs label {
     width: 100%;
     display: none;
 }
 
-.sign-form input {
+.form-inputs input {
     width: 100%;
     padding: 12px 48px 12px 21px;
     display: flex;
@@ -28,7 +28,7 @@
     outline: none;
 }
 
-.sign-form input:focus {
+.form-inputs input:focus {
     border: 1px solid var(--main2nd);
 }
 
@@ -36,14 +36,14 @@
     border: 1px solid var(--warning) !important;
 }
 
-.housing-password {
+.housing-input {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.housing-password span {
+.housing-input span {
     color: var(--warning-text);
 }
 
@@ -52,7 +52,7 @@
     width: 100%;
 }
 
-.input-icon {
+.input-icon-container {
     position: absolute;
     right: 0;
     top: 50%;

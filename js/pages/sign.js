@@ -74,25 +74,34 @@ function warningTextLogIn() {
 
 
 function warningTextOn() {
-    let warning = document.querySelector('.version-warning');
-    let warningOff = warning.classList.contains('display-none');
-    if (warningOff) {
-        warning.classList.remove('display-none');
-    }
+    let warnings = document.querySelectorAll('.version-warning');
+    warnings.forEach(warning => {
+        let warningOff = warning.classList.contains('opacity-0');
+        if (warningOff) {
+            warning.classList.remove('opacity-0');
+        }
+    });
 }
 
 
 function warningTextOff() {
-    let warning = document.querySelector('.version-warning');
-    let warningOff = warning.classList.contains('display-none');
-    if (!warningOff) {
-        warning.classList.add('display-none');
-    }
+    let warnings = document.querySelectorAll('.version-warning');
+    warnings.forEach(warning => {
+        let warningOff = warning.classList.contains('opacity-0');
+        if (!warningOff) {
+            warning.classList.remove('opacity-0');
+        }
+    });
+    // let warning = document.querySelector('.version-warning');
+    // let warningOff = warning.classList.contains('display-none');
+    // if (!warningOff) {
+    //     warning.classList.add('display-none');
+    // }
 }
 
 
 function toggleSignElementsOnTop() {
-    let selectors = ['.input-container', '.form-sign input', '.content-right button', '.outside-bottom a', '.btn-frame', '.clr-scheme-panel'];
+    let selectors = ['.input-container', '.form-sign input', '.content-right button', '.outside-bottom a', '.form-btn-frame', '.clr-scheme-panel'];
     for (let i = 0; i < selectors.length; i++) {
         let elements = document.querySelectorAll(selectors[i]);
         if (elements) {

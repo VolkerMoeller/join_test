@@ -11,14 +11,14 @@
     width: clamp(320px, 100%, 652px);
 }
 
-.form-logo {
+.form-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
 }
 
-.form-logo p {
+.form-title p {
     height: 0;
     margin: 0;
     width: 150px;
@@ -56,7 +56,7 @@
     color: var(--text-default2nd);
 }
 
-.housing-sign-form {
+.form-frame-inputs {
     width: clamp(0px, 120%, 422px);
     display: flex;
     flex-direction: column;
@@ -96,7 +96,7 @@
 }
 
 
-.btn-frame {
+.form-btn-frame {
     position: absolute;
     top: 64px;
     left: 32px;
@@ -106,7 +106,7 @@
     z-index: 1;
 }
 
-.btn-frame button {
+.form-btn-frame button {
     width: 32px;
     height: 32px;
 }
@@ -130,11 +130,12 @@
         padding: 32px 0px 32px 0px;
     }
 
-    .form-input {
+    .form-frame-inputs {
         padding: 32px 0px 32px 0px;
+        width: clamp(0px, 85%, 422px);
     }
 
-    .form-logo p {
+    .form-title p {
         width: 88px;
     }
 
@@ -150,18 +151,14 @@
         line-height: 24px;
     }
 
-    .housing-sign-form {
-        width: clamp(0px, 85%, 422px);
-    }
-
-    .btn-frame {
+    .form-btn-frame {
         top: 40px;
         left: 24px;
     }
 }
 
 @media(max-width: 414px) {
-    .btn-frame {
+    .form-btn-frame {
         top: 10px;
         left: 10px;
     }

@@ -1,5 +1,5 @@
 <div class="frame-sign">
-    <div id="btnFrameBackToLogIn" class="btn-frame display-none">
+    <div id="btnBack" class="form-btn-frame display-none">
         <button id="btnHvrBackToLogIn" class="display-none" onclick="toggleFormsSign()"
             onmouseleave="toggleElements('btnBackToLogIn','btnHvrBackToLogIn')"
             w3-include-svg="./assets/img/svgHTML/6-leftArrowHover.html">
@@ -13,27 +13,34 @@
     <!-- form log in -->
 
     <form id="formLogIn" class="form-sign" onsubmit="checkInput(); return false;">
-        <div class="form-logo">
+        <div class="form-title log-in">
             <h1>Log in</h1>
             <p>&nbsp</p>
         </div>
-        <div class="housing-sign-form">
-            <div class="sign-form sign-form-log-in">
-                <label for="eMailLogIn">E-Mail</label>
-                <div class="input-container">
-                    <input class="version-2-t6" type="email" id="eMailLogIn" name="eMail" placeholder="Email"
-                        autocomplete="off" required>
-                    <div class="input-icon" onclick="focusInputBy('eMailLogIn')"
-                        w3-include-svg="./assets/img/svgHTML/14-eMail.html">
+        <div class="form-title sign-up">
+            <h1>Sign up</h1>
+            <p>&nbsp</p>
+        </div>
+        <div class="form-frame-inputs">
+            <div class="form-inputs form-inputs-log-in">
+                <div class="housing-input">
+                    <label for="eMailLogIn">E-Mail</label>
+                    <div class="input-container">
+                        <input class="version-2-t6" type="email" id="eMailLogIn" name="eMail" placeholder="Email"
+                            autocomplete="off" required>
+                        <div class="input-icon-container" onclick="focusInputBy('eMailLogIn')">
+                            <div w3-include-svg="./assets/img/svgHTML/14-eMail.html"></div>
+                        </div>
                     </div>
+                    <span class="version-warning display-none">required</span>
                 </div>
-                <div class="housing-password">
+                <div class="housing-input">
                     <label for="passwordLogIn">Password</label>
                     <div class="input-container">
                         <input class="version-2-t6" type="password" id="passwordLogIn" name="password"
                             placeholder="Password" autocomplete="off" required onfocus="handleOverlay()"
                             onkeydown="checkOverlay()">
-                        <div id="lockLogIn" class="input-icon"
+                        <div id="lockLogIn" class="input-icon-container"
                             onclick="focusInputBy('passwordLogIn'); handleInputIcon()">
                             <div id="lockIcnLogIn" w3-include-svg="./assets/img/svgHTML/15-lock.html">
                             </div>
@@ -47,11 +54,12 @@
                             </div>
                         </div>
                     </div>
-                    <span class="version-warning display-none">Check your email and password.
-                        Please try
-                        again.</span>
+                    <span class="version-warning display-none">required</span>
                 </div>
             </div>
+            <span class="version-warning opacity-0">Check your email and password.
+                Please try
+                again.</span>
         </div>
         <div class="frame-panel">
             <input class="btn-wo-icn" type="submit" onclick="checkValidLogInInput()" value="Log in">
@@ -63,17 +71,17 @@
     <!-- form sign up -->
 
     <form id="formSignUp" class="form-sign display-none" onsubmit="checkInput(); return false;">
-        <div class="form-logo">
+        <div class="form-title">
             <h1>Sign up</h1>
             <p>&nbsp</p>
         </div>
-        <div class="housing-sign-form">
-            <div class="sign-form sign-form-sign-up">
+        <div class="form-frame-inputs">
+            <div class="form-inputs form-inputs-sign-up">
                 <label for="nameSignUp">Name</label>
                 <div class="input-container">
                     <input class="version-2-t6" type="text" id="nameSignUp" name="name" placeholder="Name"
                         autocomplete="off" required>
-                    <div class="input-icon" onclick="focusInputBy('nameSignUp')"
+                    <div class="input-icon-container" onclick="focusInputBy('nameSignUp')"
                         w3-include-svg="./assets/img/svgHTML/20-person.html">
                     </div>
                 </div>
@@ -81,15 +89,15 @@
                 <div class="input-container">
                     <input class="version-2-t6" type="email" id="eMailSignUp" name="eMail" placeholder="Email"
                         autocomplete="off" required>
-                    <div class="input-icon" onclick="focusInputBy('eMailSignUp')"
+                    <div class="input-icon-container" onclick="focusInputBy('eMailSignUp')"
                         w3-include-svg="./assets/img/svgHTML/14-eMail.html">
                     </div>
                 </div>
-                <div class="housing-password">
-                    housing-password
+                <div class="housing-input">
+                    housing-input
                 </div>
-                <div class="housing-password">
-                    housing-password
+                <div class="housing-input">
+                    housing-input
                 </div>
             </div>
         </div>

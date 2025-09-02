@@ -112,6 +112,24 @@
     height: 32px;
 }
 
+/* #btnLogInHover {
+    position: relative;
+    z-index: 1;
+} */
+
+/* #btnLogIn {
+    position: absolute;
+} */
+
+
+
+#lockLogIn {
+    cursor: pointer;
+}
+
+#lockSignUp {
+    cursor: pointer;
+}
 
 @media(max-width: 1440px) {
 

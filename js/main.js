@@ -176,7 +176,7 @@ function handleOverlay() {
     if (overlayNotShown) {
         toggleOverlayForInput();
         toggleSignElementsOnTop()
-        // toggleMsg();
+        toggleMsg();
         showVisibilityBtn();
     }
 }

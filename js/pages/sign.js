@@ -10,8 +10,8 @@ function focusInputBy(id) {
 
 
 function checkValidLogInInput() {
-    checkValidInput('eMailLogIn');
-    checkValidInput('passwordLogIn');
+    checkValidInput('eMail');
+    checkValidInput('password');
     warningTextLogIn();
 
 }
@@ -64,8 +64,8 @@ function handleInputIcon() {
 // warning text
 
 function warningTextLogIn() {
-    let eMail = document.getElementById('eMailLogIn');
-    let password = document.getElementById('passwordLogIn');
+    let eMail = document.getElementById('eMail');
+    let password = document.getElementById('password');
     if (!password.validity.valid || !eMail.validity.valid) {
         warningTextOn();
     } else
@@ -92,11 +92,6 @@ function warningTextOff() {
             warning.classList.remove('opacity-0');
         }
     });
-    // let warning = document.querySelector('.version-warning');
-    // let warningOff = warning.classList.contains('display-none');
-    // if (!warningOff) {
-    //     warning.classList.add('display-none');
-    // }
 }
 
 

@@ -93,16 +93,6 @@ function loadLocalStorageObject(key) {
 
 function toggleFormsSign() {
     emptySignInputFields();
-    toggleFormSign();
-}
-
-
-function toggleFormSign() {
-    const elements = ['formLogIn', 'formSignUp', 'cntRightSignUp', 'cntRightLogIn', 'btnBack'];
-    for (let i = 0; i < elements.length; i++) {
-        const element = document.getElementById(elements[i]);
-        element.classList.toggle('display-none');
-    }
 }
 
 
@@ -146,6 +136,7 @@ function toggleOverlay() {
     overlay.classList.toggle('ovl-hide');
     overlay.classList.toggle('ovl-show');
 }
+
 
 function toggleOverlayForInput() {
     const overlay = document.querySelector('.ovl-frame');

@@ -141,6 +141,11 @@
         flex-direction: column;
     }
 
+    .frame-panel input {
+        width: 180px;
+        height: 51px;
+    }
+
     .version-btn {
         font-family: 'Inter';
         font-size: 20px;

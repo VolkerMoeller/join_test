@@ -52,8 +52,12 @@ function showVisibilityBtn() {
 
 
 function hideVisibilityBtn() {
-    document.querySelector('.visibility-container').classList.add('display-none');
+    let containers = document.querySelectorAll('.visibility-container');
+    containers.forEach(container => {
+        container.classList.add('display-none');
+    });
     document.getElementById('lockIcnLogIn').classList.remove('display-none');
+    document.getElementById('lockIcnSignUp').classList.remove('display-none');
 }
 
 

@@ -27,8 +27,12 @@ function checkValidInput(id) {
 }
 
 
-function visibilityPassword() {
-    let inputPw = document.getElementById('password');
+function visibilityPassword(id) {
+    let pwToSet = {
+        lockIcnLogIn: 'password',
+        lockIcnSignUp: 'passwordConfirm'
+    }
+    let inputPw = document.getElementById(pwToSet[id]);
     if (inputPw.type === 'password') {
         inputPw.type = 'text';
     } else {
@@ -38,8 +42,12 @@ function visibilityPassword() {
 
 
 function showVisibilityBtn() {
-    document.querySelector('.visibility-container').classList.remove('display-none');
+    let containers = document.querySelectorAll('.visibility-container');
+    containers.forEach(container => {
+        container.classList.remove('display-none');
+    });
     document.getElementById('lockIcnLogIn').classList.add('display-none');
+    document.getElementById('lockIcnSignUp').classList.add('display-none');
 }
 
 
@@ -49,14 +57,18 @@ function hideVisibilityBtn() {
 }
 
 
-function handleInputIcon() {
-    let element = document.getElementById('lockIcnLogIn');
+function handleInputIcon(id) {
+    let toToggle = {
+        lockIcnLogIn: ['pwVsbOff', 'pwVsbOn'],
+        lockIcnSignUp: ['pwConfirmVsbOff', 'pwConfirmVsbOn']
+    }
+    let element = document.getElementById(id);
     let elementNotShown = element.classList.contains('display-none')
     if (!elementNotShown) {
         element.classList.add('display-none');
     } else {
-        visibilityPassword();
-        toggleElements('pwVsbOff', 'pwVsbOn');
+        visibilityPassword(id);
+        toggleElements(toToggle[id][0], toToggle[id][1]);
     }
 
 }
@@ -135,6 +147,17 @@ function toggleSignOvls() {
 
 
 // toggle form sign-up / form log-in
+
+function toggleSignFormsBack() {
+    toggleSignForms();
+    setSignUpRequiredOff();
+}
+
+function toggleSignFormsForward() {
+    toggleSignForms();
+    setSignUpRequiredOn();
+}
+
 
 function toggleSignForms() {
     changeFormInputs();

@@ -4,13 +4,12 @@
     flex-direction: column;
 }
 
-.form-inputs-sign-up {
-    gap: 20px;
-}
-
-
 .form-inputs-log-in {
     gap: 32px;
+}
+
+.form-inputs-sign-up {
+    gap: 20px;
 }
 
 .form-inputs label {

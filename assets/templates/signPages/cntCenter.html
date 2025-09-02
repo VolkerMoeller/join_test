@@ -10,46 +10,78 @@
     </div>
 
 
-    <!-- form log in -->
+    <!-- form -->
 
     <form id="formLogIn" class="form-sign" onsubmit="checkInput(); return false;">
         <div class="form-title log-in">
             <h1>Log in</h1>
             <p>&nbsp</p>
         </div>
-        <div class="form-title sign-up">
+        <div class="form-title sign-up display-none">
             <h1>Sign up</h1>
             <p>&nbsp</p>
         </div>
         <div class="form-frame-inputs">
-            <div class="form-inputs form-inputs-log-in">
-                <div class="housing-input">
-                    <label for="eMailLogIn">E-Mail</label>
+            <div id="formInputs" class="form-inputs form-inputs-log-in">
+                <div class="housing-input sign-up display-none">
+                    <label for="name">Name</label>
                     <div class="input-container">
-                        <input class="version-2-t6" type="email" id="eMailLogIn" name="eMail" placeholder="Email"
+                        <input class="version-2-t6" type="text" id="name" name="name" placeholder="Name"
                             autocomplete="off" required>
-                        <div class="input-icon-container" onclick="focusInputBy('eMailLogIn')">
+                        <div class="input-icon-container" onclick="focusInputBy('name')">
+                            <div w3-include-svg="./assets/img/svgHTML/20-person.html"></div>
+                        </div>
+                    </div>
+                    <span class="version-warning display-none">required</span>
+                </div>
+                <div class="housing-input">
+                    <label for="eMail">E-Mail</label>
+                    <div class="input-container">
+                        <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email"
+                            autocomplete="off" required>
+                        <div class="input-icon-container" onclick="focusInputBy('eMail')">
                             <div w3-include-svg="./assets/img/svgHTML/14-eMail.html"></div>
                         </div>
                     </div>
                     <span class="version-warning display-none">required</span>
                 </div>
                 <div class="housing-input">
-                    <label for="passwordLogIn">Password</label>
+                    <label for="password">Password</label>
                     <div class="input-container">
-                        <input class="version-2-t6" type="password" id="passwordLogIn" name="password"
-                            placeholder="Password" autocomplete="off" required onfocus="handleOverlay()"
-                            onkeydown="checkOverlay()">
+                        <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
+                            autocomplete="off" required onfocus="handleOverlay()" onkeydown="checkOverlay()">
                         <div id="lockLogIn" class="input-icon-container"
                             onclick="focusInputBy('passwordLogIn'); handleInputIcon()">
                             <div id="lockIcnLogIn" w3-include-svg="./assets/img/svgHTML/15-lock.html">
                             </div>
                             <div class="visibility-container display-none">
-                                <button id="vsbOffBtnLogIn" type="button"
-                                    w3-include-svg="./assets/img/svgHTML/17-visibilityOffV4.html">
+                                <button id="pwVsbOff" type="button"
+                                    w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
                                 </button>
-                                <button id="vsbOnBtnLogIn" type="button"
-                                    w3-include-svg="./assets/img/svgHTML/16-visibilityV4.html" class="display-none">
+                                <button id="pwVsbOn" type="button"
+                                    w3-include-svg="./assets/img/svgHTML/16-visibility.html" class="display-none">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="version-warning display-none">required</span>
+                </div>
+                <div class="housing-input sign-up display-none">
+                    <label for="passwordConfirm">PasswordConfirm</label>
+                    <div class="input-container">
+                        <input class="version-2-t6" type="password" id="passwordConfirm" name="passwordConfirm"
+                            placeholder="Confirm Password" autocomplete="off" required onfocus="handleOverlay()"
+                            onkeydown="checkOverlay()">
+                        <div id="lockLogIn" class="input-icon-container"
+                            onclick="focusInputBy('passwordConfirm'); handleInputIcon()">
+                            <div id="lockIcnLogIn" w3-include-svg="./assets/img/svgHTML/15-lock.html">
+                            </div>
+                            <div class="visibility-container display-none">
+                                <button id="pwConfirmVsbOff" type="button"
+                                    w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
+                                </button>
+                                <button id="pwConfirmVsbOn" type="button"
+                                    w3-include-svg="./assets/img/svgHTML/16-visibility.html" class="display-none">
                                 </button>
                             </div>
                         </div>
@@ -61,47 +93,11 @@
                 Please try
                 again.</span>
         </div>
-        <div class="frame-panel">
+        <div class="frame-panel log-in">
             <input class="btn-wo-icn" type="submit" onclick="checkValidLogInInput()" value="Log in">
             <input class="btn-wo-icn-2nd" type="button" onclick="switchToWorkPages()" value="Guest Log in">
         </div>
-    </form>
-
-
-    <!-- form sign up -->
-
-    <form id="formSignUp" class="form-sign display-none" onsubmit="checkInput(); return false;">
-        <div class="form-title">
-            <h1>Sign up</h1>
-            <p>&nbsp</p>
-        </div>
-        <div class="form-frame-inputs">
-            <div class="form-inputs form-inputs-sign-up">
-                <label for="nameSignUp">Name</label>
-                <div class="input-container">
-                    <input class="version-2-t6" type="text" id="nameSignUp" name="name" placeholder="Name"
-                        autocomplete="off" required>
-                    <div class="input-icon-container" onclick="focusInputBy('nameSignUp')"
-                        w3-include-svg="./assets/img/svgHTML/20-person.html">
-                    </div>
-                </div>
-                <label for="eMailSignUp">E-Mail</label>
-                <div class="input-container">
-                    <input class="version-2-t6" type="email" id="eMailSignUp" name="eMail" placeholder="Email"
-                        autocomplete="off" required>
-                    <div class="input-icon-container" onclick="focusInputBy('eMailSignUp')"
-                        w3-include-svg="./assets/img/svgHTML/14-eMail.html">
-                    </div>
-                </div>
-                <div class="housing-input">
-                    housing-input
-                </div>
-                <div class="housing-input">
-                    housing-input
-                </div>
-            </div>
-        </div>
-        <div class="frame-panel">
+        <div class="frame-panel sign-up display-none">
             <div class="ghost"></div>
             <input class="btn-wo-icn" type="submit" onclick="doSth()" value="Sign up" disabled>
             <div class="ghost"></div>

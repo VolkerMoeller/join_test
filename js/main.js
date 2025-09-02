@@ -196,8 +196,10 @@ function handleOverlayBack() {
     toggleSignElementsOnTop()
     toggleMsg();
     hideVisibilityBtn();
-    let inputPw = document.getElementById('passwordLogIn');
+    let inputPw = document.getElementById('password');
     inputPw.type = 'password';
+    let inputPwConfirm = document.getElementById('passwordConfirm');
+    inputPwConfirm.type = 'password';
 }
 
 

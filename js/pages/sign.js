@@ -56,7 +56,7 @@ function handleInputIcon() {
         element.classList.add('display-none');
     } else {
         visibilityPassword();
-        toggleElements('vsbOffBtnLogIn', 'vsbOnBtnLogIn');
+        toggleElements('pwVsbOff', 'pwVsbOn');
     }
 
 }
@@ -136,4 +136,15 @@ function toggleSignOvls() {
         if (!ovlNotShown) { ovl.classList.add('display-none') }
         else { ovl.classList.remove('display-none') };
     }
+}
+
+
+// toggle form sign-up / form log-in
+
+function changeClasses() {
+    let classes = ['form-inputs-log-in', 'form-inputs-sign-up'];
+    let formInput = document.getElementById('formInputs');
+    classes.forEach(cls => {
+        formInput.toggle(cls);
+    });
 }

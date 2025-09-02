@@ -28,7 +28,7 @@ function checkValidInput(id) {
 
 
 function visibilityPassword() {
-    let inputPw = document.getElementById('passwordLogIn');
+    let inputPw = document.getElementById('password');
     if (inputPw.type === 'password') {
         inputPw.type = 'text';
     } else {
@@ -163,4 +163,20 @@ function toggleSignUpElements() {
     signUpElements.forEach(signUpElement => {
         signUpElement.classList.toggle('display-none');
     });
+}
+
+
+function setSignUpRequiredOff() {
+    let name = document.getElementById('name');
+    name.required = false;
+    let passwordConfirm = document.getElementById('passwordConfirm');
+    passwordConfirm.required = false;
+}
+
+
+function setSignUpRequiredOn() {
+    let name = document.getElementById('name');
+    name.required = true;
+    let passwordConfirm = document.getElementById('passwordConfirm');
+    passwordConfirm.required = true;
 }

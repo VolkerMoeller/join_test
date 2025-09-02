@@ -92,7 +92,7 @@ function loadLocalStorageObject(key) {
 
 
 function toggleFormsSign() {
-    emptySignInputFields();
+    emptyInputFields();
 }
 
 

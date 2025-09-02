@@ -145,7 +145,7 @@ function toggleSignElementsOnTop() {
 }
 
 
-function emptySignInputFields() {
+function emptyInputFields() {
     let selectors = ['.input-container input'];
     for (let i = 0; i < selectors.length; i++) {
         let elements = document.querySelectorAll(selectors[i]);
@@ -176,11 +176,13 @@ function toggleSignOvls() {
 function toggleSignFormsBack() {
     toggleSignForms();
     setSignUpRequiredOff();
+    emptyInputFields();
 }
 
 function toggleSignFormsForward() {
     toggleSignForms();
     setSignUpRequiredOn();
+    emptyInputFields();
 }
 
 

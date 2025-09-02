@@ -54,10 +54,10 @@
 }
 
 @media (max-width: 1440px) {
-    .clr-scheme-panel {
+    /* .clr-scheme-panel {
         padding-top: 7px;
         padding-bottom: 6px;
-    }
+    } */
 
     .clr-scheme-panel button {
         height: 24px;

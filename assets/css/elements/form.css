@@ -1,6 +1,6 @@
 .form-sign {
     position: relative;
-    padding: 48px 115px 48px 115px;
+    padding: 48px 115px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,10 +8,11 @@
     border-radius: 30px;
     background-color: var(--white);
     box-shadow: 0px 0px 14px 3px var(--black-transp-04);
-    width: clamp(320px, 100%, 652px);
+    /* width: clamp(320px, 100%, 652px); */
 }
 
 .form-title {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,7 +58,7 @@
 }
 
 .form-frame-inputs {
-    width: clamp(0px, 120%, 422px);
+    width: clamp(0px, 100%, 422px);
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -89,8 +90,10 @@
 /* frame sign */
 
 .frame-sign {
+    width: 100%;
     display: flex;
     position: relative;
+    justify-content: center;
     width: clamp(320px, 100%, 652px);
 }
 
@@ -126,12 +129,12 @@
 @media(max-width: 1440px) {
 
     .form-sign {
-        padding: 32px 0px 32px 0px;
+        padding: 48px 88px;
     }
 
-    .form-frame-inputs {
+    /* .form-frame-inputs {
         width: clamp(0px, 85%, 422px);
-    }
+    } */
 
     .form-title p {
         width: 88px;

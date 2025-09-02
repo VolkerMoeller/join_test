@@ -139,7 +139,6 @@
 
     .frame-panel {
         flex-direction: column;
-        gap: 35px;
     }
 
     .version-btn {

@@ -141,10 +141,31 @@ function toggleSignOvls() {
 
 // toggle form sign-up / form log-in
 
-function changeClasses() {
+function toggleSignForms() {
+    changeFormInputs();
+    toggleLoginElements();
+    toggleSignUpElements();
+}
+
+
+function changeFormInputs() {
     let classes = ['form-inputs-log-in', 'form-inputs-sign-up'];
     let formInput = document.getElementById('formInputs');
     classes.forEach(cls => {
-        formInput.toggle(cls);
+        formInput.classList.toggle(cls);
+    });
+}
+
+function toggleLoginElements() {
+    let logInElements = document.querySelectorAll('.log-in');
+    logInElements.forEach(logInElement => {
+        logInElement.classList.toggle('display-none');
+    });
+}
+
+function toggleSignUpElements() {
+    let signUpElements = document.querySelectorAll('.sign-up');
+    signUpElements.forEach(signUpElement => {
+        signUpElement.classList.toggle('display-none');
     });
 }

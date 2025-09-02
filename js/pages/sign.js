@@ -41,6 +41,27 @@ function visibilityPassword(id) {
 }
 
 
+function visibilityPasswordOff() {
+    document.getElementById('password').type = 'password';
+    document.getElementById('passwordConfirm').type = 'password';
+}
+
+
+function setVisibilityIconsDefault() {
+    let ids = {
+        pwIdsShown: ['pwVsbOff', 'pwConfirmVsbOff'],
+        pwIdsNotShown: ['pwVsbOn', 'pwConfirmVsbOn']
+    }
+    ids['pwIdsShown'].forEach(id => {
+        document.getElementById(id).classList.remove('display-none');
+    });
+    ids['pwIdsNotShown'].forEach(id => {
+        document.getElementById(id).classList.add('display-none');
+    });
+}
+
+
+
 function showVisibilityBtn() {
     let containers = document.querySelectorAll('.visibility-container');
     containers.forEach(container => {

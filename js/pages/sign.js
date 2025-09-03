@@ -100,18 +100,27 @@ function handleInputIcon(id) {
 
 // warning text
 
+function initWarningTextLogIn() {
+    setSignUpRequiredOff();
+    warningTextLogIn()
+}
+
+
+
 function warningTextLogIn() {
+    warningTextOff();
     let eMail = document.getElementById('eMail');
     let password = document.getElementById('password');
-    if (!password.validity.valid || !eMail.validity.valid) {
-        warningTextOn();
-    } else
+    if (password.validity.valid && eMail.validity.valid) {
         warningTextOff();
+    } else
+        warningTextOn();
 }
 
 
 function warningTextOn() {
     let warnings = document.querySelectorAll('.version-warning');
+    console.log(warnings);
     warnings.forEach(warning => {
         let warningOff = warning.classList.contains('opacity-0');
         if (warningOff) {
@@ -126,7 +135,7 @@ function warningTextOff() {
     warnings.forEach(warning => {
         let warningOff = warning.classList.contains('opacity-0');
         if (!warningOff) {
-            warning.classList.remove('opacity-0');
+            warning.classList.add('opacity-0');
         }
     });
 }

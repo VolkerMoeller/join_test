@@ -115,9 +115,23 @@ function hideVisibilityBtn() {
 
 // warning text
 
-function initWarningTextLogIn() {
+function logIn() {
     setSignUpRequiredOff();
-    warningTextLogIn();
+    // let valid = checkValidation();
+    // if (!valid) {
+    //     warningTextOn();
+    // } else { warningTextOff() }
+}
+
+
+function checkValidation() {
+    let valid = false;
+    let validEmail = document.getElementById('eMail').validity.valid;
+    let validPassword = document.getElementById('password').validity.valid;
+    if (validEmail && validPassword) {
+        valid = true;
+    }
+    return valid
 }
 
 
@@ -128,7 +142,13 @@ function initWarningTextSignUp() {
 
 
 function warningTextSignUp() {
-    console.log('warningTextSignUp()');
+    warningTextOff();
+    let password = document.getElementById('password').value;
+    let passwordConfirm = document.getElementById('passwordConfirm').value;
+    if (password == passwordConfirm) {
+        warningTextOff();
+    } else
+        warningTextOn();
 }
 
 
@@ -208,12 +228,22 @@ function toggleSignOvls() {
 
 function toggleSignFormsBack() {
     setSignUpRequiredOff();
-    defaultFormSettings()
+    defaultFormSettings();
+    setTimeout(() => {
+        blurInputField();
+    }, 1);
+
 }
+
+
+function blurInputField() {
+    document.getElementById('eMail').blur();
+}
+
 
 function toggleSignFormsForward() {
     setSignUpRequiredOn();
-    defaultFormSettings()
+    defaultFormSettings();
 }
 
 
@@ -273,4 +303,19 @@ function setSignUpRequiredOn() {
     name.required = true;
     let passwordConfirm = document.getElementById('passwordConfirm');
     passwordConfirm.required = true;
+}
+
+// test
+
+function checkInput() {
+    let form = checkCurrentForm();
+    console.log(form);
+}
+
+function checkCurrentForm() {
+    let form = 'LogIn';
+    let element = document.querySelector('.form-title');
+    if (element.classList.contains('display-none')) { form = 'SignUp' }
+    return form;
+
 }

@@ -137,11 +137,11 @@
 
 
 
-#lockLogIn {
+#lockPw {
     cursor: pointer;
 }
 
-#lockSignUp {
+#lockPwConfirm {
     cursor: pointer;
 }
 

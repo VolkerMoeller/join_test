@@ -7,20 +7,20 @@ async function initSign() {
 // focus input fields
 
 function handleFocusInputFields(fieldId, lockIcnId) {
-    focusInputBy(fieldId);
+    focusInput(fieldId);
     handleInputIcon(lockIcnId);
 }
 
 
-function focusInputBy(fieldId) {
+function focusInput(fieldId) {
     document.getElementById(fieldId).focus();
 }
 
 
 function handleInputIcon(lockIcnId) {
     let toToggle = {
-        lockIcnLogIn: ['pwVsbOff', 'pwVsbOn'],
-        lockIcnSignUp: ['pwConfirmVsbOff', 'pwConfirmVsbOn']
+        lockIcnPw: ['pwVsbOff', 'pwVsbOn'],
+        lockIcnPwConfirm: ['pwConfirmVsbOff', 'pwConfirmVsbOn']
     }
     let element = document.getElementById(lockIcnId);
     let elementNotShown = element.classList.contains('display-none')
@@ -54,8 +54,8 @@ function checkValidInput(id) {
 
 function visibilityPassword(id) {
     let pwToSet = {
-        lockIcnLogIn: 'password',
-        lockIcnSignUp: 'passwordConfirm'
+        lockIcnPw: 'password',
+        lockIcnPwConfirm: 'passwordConfirm'
     }
     let inputPw = document.getElementById(pwToSet[id]);
     if (inputPw.type === 'password') {
@@ -85,13 +85,22 @@ function setVisibilityIconsDefault() {
     });
 }
 
+// function showVisibilityBtn() {
+//     let containers = document.querySelectorAll('.visibility-container');
+//     containers.forEach(container => {
+//         container.classList.remove('display-none');
+//     });
+//     document.getElementById('lockIcnPw').classList.add('display-none');
+//     document.getElementById('lockIcnPwConfirm').classList.add('display-none');
+// }
+
 function showVisibilityBtn() {
     let containers = document.querySelectorAll('.visibility-container');
     containers.forEach(container => {
         container.classList.remove('display-none');
     });
-    document.getElementById('lockIcnLogIn').classList.add('display-none');
-    document.getElementById('lockIcnSignUp').classList.add('display-none');
+    document.getElementById('lockIcnPw').classList.add('display-none');
+    document.getElementById('lockIcnPwConfirm').classList.add('display-none');
 }
 
 
@@ -100,8 +109,8 @@ function hideVisibilityBtn() {
     containers.forEach(container => {
         container.classList.add('display-none');
     });
-    document.getElementById('lockIcnLogIn').classList.remove('display-none');
-    document.getElementById('lockIcnSignUp').classList.remove('display-none');
+    document.getElementById('lockIcnPw').classList.remove('display-none');
+    document.getElementById('lockIcnPwConfirm').classList.remove('display-none');
 }
 
 
@@ -152,7 +161,6 @@ function toggleSignElementsOnTop() {
     let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-frame', '.clr-scheme-panel'];
     for (let i = 0; i < selectors.length; i++) {
         let elements = document.querySelectorAll(selectors[i]);
-        console.log(elements);
         if (elements) {
             elements.forEach(element => {
                 element.classList.toggle('z-index-4');

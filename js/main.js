@@ -175,7 +175,7 @@ function handleOverlay() {
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
         toggleOverlayForInput();
-        toggleSignElementsOnTop()
+        toggleSignElementsOnTop();
         toggleMsg();
         showVisibilityBtn();
     }

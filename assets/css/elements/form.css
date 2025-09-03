@@ -74,7 +74,6 @@
 
 .frame-panel {
     display: flex;
-    justify-content: space-between;
     gap: 32px;
     align-items: center;
 }
@@ -90,6 +89,14 @@
     background-color: var(--input-border);
     box-shadow: none;
     cursor: not-allowed;
+}
+
+.frame-panel-log-in {
+    justify-content: space-between;
+}
+
+.frame-panel-sign-up {
+    justify-content: center;
 }
 
 
@@ -152,7 +159,7 @@
         width: 88px;
     }
 
-    .frame-panel {
+    .frame-panel-log-in {
         flex-direction: column;
     }
 

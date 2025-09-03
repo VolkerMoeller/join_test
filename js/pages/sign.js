@@ -8,6 +8,7 @@ async function initSign() {
 
 function handleFocusInputFields(fieldId, lockIcnId) {
     focusInput(fieldId);
+    showVisibilityBtn(lockIcnId);
     handleInputIcon(lockIcnId);
 }
 

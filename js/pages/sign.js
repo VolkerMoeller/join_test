@@ -194,12 +194,17 @@ function toggleSignForms() {
 
 
 function changeFormInputs() {
-    let classes = ['form-inputs-log-in', 'form-inputs-sign-up'];
-    let formInput = document.getElementById('formInputs');
-    classes.forEach(cls => {
-        formInput.classList.toggle(cls);
+    let classes = {
+        formInputs: ['form-inputs-log-in', 'form-inputs-sign-up'],
+        formSign: ['form-sign-log-in', 'form-sign-sign-up']
+    };
+    Object.entries(classes).forEach(([key, value]) => {
+        let formInput = document.getElementById(key);
+        formInput.classList.toggle(value[0]);
+        formInput.classList.toggle(value[1]);
     });
 }
+
 
 function toggleLoginElements() {
     let logInElements = document.querySelectorAll('.log-in');
@@ -207,6 +212,7 @@ function toggleLoginElements() {
         logInElement.classList.toggle('display-none');
     });
 }
+
 
 function toggleSignUpElements() {
     let signUpElements = document.querySelectorAll('.sign-up');

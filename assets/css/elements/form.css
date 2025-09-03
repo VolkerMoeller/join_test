@@ -1,6 +1,5 @@
 .form-sign {
     position: relative;
-    padding: 48px 115px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +7,18 @@
     border-radius: 30px;
     background-color: var(--white);
     box-shadow: 0px 0px 14px 3px var(--black-transp-04);
-    /* width: clamp(320px, 100%, 652px); */
+}
+
+.form-sign-log-in {
+    /* padding: 48px 115px; */
+    width: clamp(0px, 100%, 652px);
+    padding: 48px 0px;
+}
+
+.form-sign-sign-up {
+    /* padding: 48px 88px; */
+    width: clamp(0px, 100%, 396px);
+    padding: 48px 0px;
 }
 
 .form-title {
@@ -58,7 +68,7 @@
 }
 
 .form-frame-inputs {
-    width: clamp(0px, 100%, 422px);
+    width: clamp(0px, 95%, 422px);
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -133,9 +143,9 @@
 
 @media(max-width: 1440px) {
 
-    .form-sign {
+    /* .form-sign {
         padding: 48px 88px;
-    }
+    } */
 
     /* .form-frame-inputs {
         width: clamp(0px, 85%, 422px);

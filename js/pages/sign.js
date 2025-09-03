@@ -6,16 +6,34 @@ async function initSign() {
 
 // focus input fields
 
-function handleFocusInputFields(fieldId, lockIconId) {
+function handleFocusInputFields(fieldId, lockIcnId) {
     focusInputBy(fieldId);
-    handleInputIcon(lockIconId);
+    handleInputIcon(lockIcnId);
 }
 
 
-function focusInputBy(id) {
-    document.getElementById(id).focus();
+function focusInputBy(fieldId) {
+    document.getElementById(fieldId).focus();
 }
 
+
+function handleInputIcon(lockIcnId) {
+    let toToggle = {
+        lockIcnLogIn: ['pwVsbOff', 'pwVsbOn'],
+        lockIcnSignUp: ['pwConfirmVsbOff', 'pwConfirmVsbOn']
+    }
+    let element = document.getElementById(lockIcnId);
+    let elementNotShown = element.classList.contains('display-none')
+    if (!elementNotShown) {
+        element.classList.add('display-none');
+    } else {
+        visibilityPassword(lockIcnId);
+        toggleElements(toToggle[lockIcnId][0], toToggle[lockIcnId][1]);
+    }
+
+}
+
+// Validation
 
 function checkValidLogInInput() {
     checkValidInput('eMail');
@@ -54,8 +72,6 @@ function visibilityPasswordOff() {
 }
 
 
-// 
-
 function setVisibilityIconsDefault() {
     let ids = {
         pwIdsShown: ['pwVsbOff', 'pwConfirmVsbOff'],
@@ -89,21 +105,6 @@ function hideVisibilityBtn() {
 }
 
 
-function handleInputIcon(id) {
-    let toToggle = {
-        lockIcnLogIn: ['pwVsbOff', 'pwVsbOn'],
-        lockIcnSignUp: ['pwConfirmVsbOff', 'pwConfirmVsbOn']
-    }
-    let element = document.getElementById(id);
-    let elementNotShown = element.classList.contains('display-none')
-    if (!elementNotShown) {
-        element.classList.add('display-none');
-    } else {
-        visibilityPassword(id);
-        toggleElements(toToggle[id][0], toToggle[id][1]);
-    }
-
-}
 
 // warning text
 

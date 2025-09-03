@@ -4,6 +4,14 @@ async function initSign() {
 }
 
 
+// focus input fields
+
+function handleFocusInputFields(fieldId, lockIconId) {
+    focusInputBy(fieldId);
+    handleInputIcon(lockIconId);
+}
+
+
 function focusInputBy(id) {
     document.getElementById(id).focus();
 }
@@ -13,7 +21,6 @@ function checkValidLogInInput() {
     checkValidInput('eMail');
     checkValidInput('password');
     warningTextLogIn();
-
 }
 
 
@@ -47,6 +54,8 @@ function visibilityPasswordOff() {
 }
 
 
+// 
+
 function setVisibilityIconsDefault() {
     let ids = {
         pwIdsShown: ['pwVsbOff', 'pwConfirmVsbOff'],
@@ -59,8 +68,6 @@ function setVisibilityIconsDefault() {
         document.getElementById(id).classList.add('display-none');
     });
 }
-
-
 
 function showVisibilityBtn() {
     let containers = document.querySelectorAll('.visibility-container');

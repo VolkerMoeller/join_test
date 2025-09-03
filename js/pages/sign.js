@@ -133,7 +133,7 @@ function warningTextOff() {
 
 
 function toggleSignElementsOnTop() {
-    let selectors = ['.input-container', '.form-sign input', '.content-right button', '.outside-bottom a', '.form-btn-frame', '.clr-scheme-panel'];
+    let selectors = ['.input-container', '.form-sign input', '.content-right button', '.outside-bottom a', 'cnt-right button', '.form-btn-frame', '.clr-scheme-panel'];
     for (let i = 0; i < selectors.length; i++) {
         let elements = document.querySelectorAll(selectors[i]);
         if (elements) {

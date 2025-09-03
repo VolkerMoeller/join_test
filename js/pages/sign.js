@@ -94,13 +94,10 @@ function setVisibilityIconsDefault() {
 //     document.getElementById('lockIcnPwConfirm').classList.add('display-none');
 // }
 
-function showVisibilityBtn() {
-    let containers = document.querySelectorAll('.visibility-container');
-    containers.forEach(container => {
-        container.classList.remove('display-none');
-    });
-    document.getElementById('lockIcnPw').classList.add('display-none');
-    document.getElementById('lockIcnPwConfirm').classList.add('display-none');
+function showVisibilityBtn(lockIcnId) {
+    let containerId = lockIcnId + 'VsbCont'
+    document.getElementById(lockIcnId).classList.add('display-none');
+    document.getElementById(containerId).classList.remove('display-none');
 }
 
 

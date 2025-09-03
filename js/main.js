@@ -170,14 +170,14 @@ function toggleElements(id1st, id2nd) {
 
 // handle overlay
 
-function handleOverlay() {
+function handleOverlay(lockIcnId) {
     let overlay = document.querySelector('.ovl-frame');
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
         toggleOverlayForInput();
         toggleSignElementsOnTop();
         toggleMsg();
-        showVisibilityBtn();
+        showVisibilityBtn(lockIcnId);
     }
 }
 

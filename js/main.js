@@ -177,7 +177,6 @@ function handleOverlay(lockIcnId) {
         toggleOverlayForInput();
         toggleSignElementsOnTop();
         toggleMsg();
-        // showVisibilityBtn(lockIcnId);
     }
 }
 

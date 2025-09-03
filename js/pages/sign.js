@@ -117,9 +117,19 @@ function hideVisibilityBtn() {
 
 function initWarningTextLogIn() {
     setSignUpRequiredOff();
-    warningTextLogIn()
+    warningTextLogIn();
 }
 
+
+function initWarningTextSignUp() {
+    setSignUpRequiredOn();
+    warningTextSignUp();
+}
+
+
+function warningTextSignUp() {
+    console.log('warningTextSignUp()');
+}
 
 
 function warningTextLogIn() {
@@ -197,15 +207,20 @@ function toggleSignOvls() {
 // toggle form sign-up / form log-in
 
 function toggleSignFormsBack() {
-    toggleSignForms();
     setSignUpRequiredOff();
-    emptyInputFields();
+    defaultFormSettings()
 }
 
 function toggleSignFormsForward() {
-    toggleSignForms();
     setSignUpRequiredOn();
+    defaultFormSettings()
+}
+
+
+function defaultFormSettings() {
+    toggleSignForms();
     emptyInputFields();
+    warningTextOff();
 }
 
 

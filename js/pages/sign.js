@@ -106,7 +106,6 @@ function initWarningTextLogIn() {
 }
 
 
-
 function warningTextLogIn() {
     warningTextOff();
     let eMail = document.getElementById('eMail');
@@ -120,7 +119,6 @@ function warningTextLogIn() {
 
 function warningTextOn() {
     let warnings = document.querySelectorAll('.version-warning');
-    console.log(warnings);
     warnings.forEach(warning => {
         let warningOff = warning.classList.contains('opacity-0');
         if (warningOff) {

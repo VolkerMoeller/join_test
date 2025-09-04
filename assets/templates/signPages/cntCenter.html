@@ -1,6 +1,6 @@
 <div class="frame-sign">
     <form id="formSign" class="form-sign form-sign-log-in" onsubmit="checkInput(); return false;">
-        <div id="btnBack" class="form-btn-frame sign-up display-none">
+        <div id="btnBack" class="form-btn-back sign-up display-none">
             <button id="btnHvrBackToLogIn" class="display-none" onclick="toggleSignFormsBack()"
                 onmouseleave="toggleElements('btnBackToLogIn','btnHvrBackToLogIn')"
                 w3-include-svg="./assets/img/svgHTML/6-leftArrowHover.html">
@@ -17,10 +17,10 @@
             <h1>Sign up</h1>
             <p>&nbsp</p>
         </div>
-        <div class="form-frame-inputs">
+        <div class="form-inputs-frame">
             <div id="formInputs" class="form-inputs form-inputs-log-in">
                 <div class="housing-input sign-up display-none">
-                    <label for="name">Name</label>
+                    <label for="name" class="display-none">Name</label>
                     <div class="input-container">
                         <input class="version-2-t6" type="text" id="name" name="name" placeholder="Name"
                             autocomplete="off" required>
@@ -31,7 +31,7 @@
                     <span class="version-warning display-none">required</span>
                 </div>
                 <div class="housing-input">
-                    <label for="eMail">E-Mail</label>
+                    <label for="eMail" class="display-none">E-Mail</label>
                     <div class="input-container">
                         <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email"
                             autocomplete="off" required>
@@ -42,7 +42,7 @@
                     <span class="version-warning display-none">required</span>
                 </div>
                 <div class="housing-input">
-                    <label for="password">Password</label>
+                    <label for="password" class="display-none">Password</label>
                     <div class="input-container">
                         <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
                             autocomplete="off" required onfocus="handleOverlay('lockIcnPw')" onkeydown="checkOverlay()">
@@ -62,7 +62,7 @@
                     <span class="version-warning display-none">required</span>
                 </div>
                 <div class="housing-input sign-up display-none">
-                    <label for="passwordConfirm">PasswordConfirm</label>
+                    <label for="passwordConfirm" class="display-none">PasswordConfirm</label>
                     <div class="input-container">
                         <input class="version-2-t6" type="password" id="passwordConfirm" name="passwordConfirm"
                             placeholder="Confirm Password" autocomplete="off" required
@@ -83,14 +83,14 @@
                     <span class="version-warning display-none">required</span>
                 </div>
             </div>
-            <span class="version-warning sign-up opacity-0">Check your email and password. Please try again.</span>
-            <span class="version-warning log-in opacity-0 display-none">Ups! your password don’t match</span>
+            <span class="version-warning log-in opacity-0">Check your email and password. Please try again.</span>
+            <span class="version-warning sign-up opacity-0 display-none">Ups! your password don’t match</span>
         </div>
-        <div class="frame-panel log-in frame-panel-log-in">
+        <div class="form-panel form-panel-log-in log-in ">
             <input class="btn-wo-icn" type="submit" onclick="logIn()" value="Log in">
             <input class="btn-wo-icn-2nd" type="button" onclick="switchToWorkPages()" value="Guest Log in">
         </div>
-        <div class="frame-panel sign-up frame-panel-sign-up display-none">
+        <div class="form-panel form-panel-sign-up sign-up display-none">
             <div class="ghost"></div>
             <input class="btn-wo-icn" type="submit" value="Sign up">
             <div class="ghost"></div>

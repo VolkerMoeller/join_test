@@ -115,13 +115,7 @@ function hideVisibilityBtn() {
 
 // warning text
 
-function logIn() {
-    setSignUpRequiredOff();
-    // let valid = checkValidation();
-    // if (!valid) {
-    //     warningTextOn();
-    // } else { warningTextOff() }
-}
+
 
 
 function checkValidation() {
@@ -309,7 +303,7 @@ function setSignUpRequiredOn() {
 
 function checkInput() {
     let form = checkCurrentForm();
-    console.log(form);
+    if (form == 'LogIn') { console.log('LogIn') } else { console.log('SignUp'); }
 }
 
 function checkCurrentForm() {

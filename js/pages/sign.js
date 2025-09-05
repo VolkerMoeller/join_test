@@ -299,17 +299,40 @@ function setSignUpRequiredOn() {
     passwordConfirm.required = true;
 }
 
-// test
+
+// checkInput
 
 function checkInput() {
     let form = checkCurrentForm();
-    if (form == 'LogIn') { console.log('LogIn') } else { console.log('SignUp'); }
+    if (form == 'LogIn') { checkInputLogIn(); } else { checkInputSignUp(); }
 }
+
 
 function checkCurrentForm() {
     let form = 'LogIn';
     let element = document.querySelector('.form-title');
-    if (element.classList.contains('display-none')) { form = 'SignUp' }
+    if (element.classList.contains('display-none')) { form = 'SignUp'; }
     return form;
+}
 
+
+function checkInputLogIn() {
+    let fits = checkEmailAndPassword();
+    if (!fits) { warningTextOn(); }
+}
+
+
+function checkInputSignUp() {
+    let fits = checkPwAndPwConfirm();
+    if (!fits) { warningTextOn(); }
+}
+
+
+function checkEmailAndPassword() {
+    return false;
+}
+
+
+function checkPwAndPwConfirm() {
+    return false;
 }

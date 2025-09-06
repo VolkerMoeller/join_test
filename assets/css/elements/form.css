@@ -159,13 +159,14 @@
         width: 88px;
     }
 
+    .form-panel {
+        gap: 21px;
+    }
+
     .form-panel-log-in {
         flex-direction: column;
     }
 
-    .form-panel {
-        gap: 21px;
-    }
 
     .form-panel input {
         width: 180px;

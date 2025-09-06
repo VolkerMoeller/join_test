@@ -163,6 +163,10 @@
         flex-direction: column;
     }
 
+    .form-panel {
+        gap: 21px;
+    }
+
     .form-panel input {
         width: 180px;
         height: 51px;

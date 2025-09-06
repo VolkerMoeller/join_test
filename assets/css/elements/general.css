@@ -4,8 +4,8 @@
     display: flex;
     gap: 10px;
     color: var(--white);
-    font-size: 21px;
-    font-weight: bold;
+    /* font-size: 21px;
+    font-weight: bold; */
     background: var(--main);
     border: none;
 }
@@ -16,8 +16,8 @@
     display: flex;
     gap: 10px;
     color: var(--main);
-    font-size: 21px;
-    font-weight: bold;
+    /* font-size: 21px;
+    font-weight: bold; */
     border: solid 1px var(--main);
     background-color: unset;
 }
@@ -34,7 +34,7 @@
     box-shadow: var(--stronger);
     border: solid 2px var(--main2nd);
     color: var(--main2nd);
-    padding: 0px 23px;
+    /* padding: 0px 23px; */
 }
 
 .btn-wo-icn:active {
@@ -64,9 +64,11 @@
 @media (max-width: 1440px) {
     .btn-wo-icn {
         font-size: 16px;
+        line-height: 120%;
     }
 
     .btn-wo-icn-2nd {
         font-size: 16px;
+        line-height: 120%;
     }
 }

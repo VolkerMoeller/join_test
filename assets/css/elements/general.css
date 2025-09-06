@@ -53,6 +53,7 @@
     gap: 8px;
     padding: 8px;
     color: var(--icon-grey);
+    text-align: center;
 }
 
 .txt-btn:hover {

@@ -34,7 +34,7 @@
                     <label for="eMail" class="display-none">E-Mail</label>
                     <div class="input-container">
                         <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email"
-                            autocomplete="off" required>
+                            autocomplete="off" onkeyup="checkWarningStyle('eMail')" required>
                         <div class="input-container-icon" onclick="focusInput('eMail')">
                             <div w3-include-svg="./assets/img/svgHTML/14-eMail.html"></div>
                         </div>
@@ -45,7 +45,8 @@
                     <label for="password" class="display-none">Password</label>
                     <div class="input-container">
                         <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
-                            autocomplete="off" required onfocus="handleOverlay()" onkeydown="checkOverlay()">
+                            autocomplete="off" required onfocus="handleOverlay()" onkeydown="checkOverlay()"
+                            onkeyup="checkWarningStyle('password')">
                         <div id="lockPw" class="input-container-icon" type="button"
                             onclick="handleFocusInputFields('password', 'lockIcnPw')">
                             <div id="lockIcnPw" w3-include-svg="./assets/img/svgHTML/15-lock.html"></div>
@@ -66,7 +67,7 @@
                     <div class="input-container">
                         <input class="version-2-t6" type="password" id="passwordConfirm" name="passwordConfirm"
                             placeholder="Confirm Password" autocomplete="off" required onfocus="handleOverlay()"
-                            onkeydown="checkOverlay()">
+                            onkeydown="checkOverlay()" onkeyup="checkWarningStyle('passwordConfirm')">
                         <div id="lockPwConfirm" class="input-container-icon"
                             onclick="handleFocusInputFields('passwordConfirm', 'lockIcnPwConfirm')">
                             <div id="lockIcnPwConfirm" w3-include-svg="./assets/img/svgHTML/15-lock.html"></div>

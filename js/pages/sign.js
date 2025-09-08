@@ -381,3 +381,15 @@ function checkPwAndPwConfirm() {
         }
     }
 }
+
+
+function checkWarningStyle(id) {
+    let noMatch = document.getElementById(id).classList.contains('no-match-input');
+    if (noMatch) {
+        // document.getElementById(id).classList.remove('no-match-input');
+        removeWarningNoMatchLogIn();
+        removeWarningNoMatchSignUp();
+        warningTextOff();
+    }
+
+}

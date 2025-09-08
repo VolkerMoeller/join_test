@@ -274,9 +274,6 @@ function checkInput() {
     if (form == 'LogIn') {
         checkInputLogIn();
     }
-    // else {
-    //     checkInputSignUp();
-    // }
 }
 
 
@@ -295,11 +292,11 @@ function checkInputLogIn() {
     let fits = checkEmailAndPassword();
     if (!fits) {
         warningTextOn();
-        toggleWarningNoMatchLogIn();
+        addWarningNoMatchLogIn();
     } else {
         warningTextOff();
-        toggleWarningNoMatchLogIn();
-        console.log('Hurra!');
+        removeWarningNoMatchLogIn();
+        console.log('msg Log In');
     }
 }
 
@@ -311,20 +308,45 @@ function toggleWarningNoMatchLogIn() {
     });
 }
 
+function addWarningNoMatchLogIn() {
+    let matchInputs = ['eMail', 'password'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.add('no-match-input');
+    });
+}
+
+function removeWarningNoMatchLogIn() {
+    let matchInputs = ['eMail', 'password'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.remove('no-match-input');
+    });
+}
+
 
 function checkInputSignUp() {
     let fits = checkPwAndPwConfirm();
     if (!fits) {
         warningTextOn();
-        toggleWarningNoMatchSignUp();
+        addWarningNoMatchSignUp();
     } else {
-        console.log('Hurra!');
+        removeWarningNoMatchSignUp();
+        console.log('msg Sign up');
     }
 }
 
 
 function toggleWarningNoMatchSignUp() {
     document.getElementById('passwordConfirm').classList.toggle('no-match-input');
+}
+
+
+function addWarningNoMatchSignUp() {
+    document.getElementById('passwordConfirm').classList.add('no-match-input');
+}
+
+
+function removeWarningNoMatchSignUp() {
+    document.getElementById('passwordConfirm').classList.remove('no-match-input');
 }
 
 
@@ -350,9 +372,11 @@ function checkEmailAndPassword() {
 function checkPwAndPwConfirm() {
     let currentPw = document.getElementById('password').value;
     let currentConfirm = document.getElementById('passwordConfirm').value;
-    if (currentPw == currentConfirm) {
-        return true;
-    } else {
-        return false;
+    if (!currentPw == '' || !currentPw == '') {
+        if (currentPw == currentConfirm) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

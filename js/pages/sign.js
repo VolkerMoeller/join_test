@@ -329,6 +329,7 @@ function checkInputSignUp() {
         warningTextOn();
         addWarningNoMatchSignUp();
     } else {
+        warningTextOff();
         removeWarningNoMatchSignUp();
         console.log('msg Sign up');
     }

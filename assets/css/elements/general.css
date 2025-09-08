@@ -67,4 +67,8 @@
         font-size: 16px;
         line-height: 120%;
     }
+
+    .btn-wo-icn-2nd:hover {
+        height: 54px;
+    }
 }

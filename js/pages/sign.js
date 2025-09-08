@@ -18,8 +18,6 @@ function focusInput(fieldId) {
 }
 
 
-
-
 function handleInputIcon(lockIcnId) {
     let toToggle = {
         lockIcnPw: ['pwVsbOff', 'pwVsbOn'],
@@ -273,7 +271,12 @@ function setSignUpRequiredOn() {
 
 function checkInput() {
     let form = checkCurrentForm();
-    if (form == 'LogIn') { checkInputLogIn(); } else { checkInputSignUp(); }
+    if (form == 'LogIn') {
+        checkInputLogIn();
+    }
+    else {
+        checkInputSignUp();
+    }
 }
 
 
@@ -290,6 +293,10 @@ function checkInputLogIn() {
     if (!fits) {
         warningTextOn();
         toggleWarningNoMatchLogIn();
+    } else {
+        warningTextOff();
+        toggleWarningNoMatchLogIn();
+        console.log('Hurra!');
     }
 }
 
@@ -307,15 +314,14 @@ function checkInputSignUp() {
     if (!fits) {
         warningTextOn();
         toggleWarningNoMatchSignUp();
+    } else {
+        console.log('Hurra!');
     }
 }
 
 
 function toggleWarningNoMatchSignUp() {
-    let matchInputs = ['password', 'passwordConfirm'];
-    matchInputs.forEach(input => {
-        document.getElementById(input).classList.toggle('no-match-input');
-    });
+    document.getElementById(input).classList.toggle('no-match-input');
 }
 
 
@@ -328,7 +334,13 @@ function resetWarningNoMatch() {
 
 
 function checkEmailAndPassword() {
-    return false;
+    let currentEMail = document.getElementById('eMail').value;
+    let currentPw = document.getElementById('password').value;
+    if (currentEMail == 'gans@gmx.de' && currentPw == '123') {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 

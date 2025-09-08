@@ -8,6 +8,7 @@
     color: var(--white);
     background: var(--main);
     border: none;
+    cursor: pointer;
 }
 
 .btn-wo-icn-2nd {
@@ -18,6 +19,7 @@
     color: var(--main);
     border: solid 1px var(--main);
     background-color: unset;
+    cursor: pointer;
 }
 
 .btn-wo-icn:hover {

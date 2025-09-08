@@ -131,6 +131,15 @@ function invertLogoClr() {
 }
 
 
+function animMessage(className = 'from-bottom-to-top') {
+    toggleOverlay();
+    slideMessage(className);
+    setTimeout(() => {
+        toggleOverlay();
+    }, 1500);
+}
+
+
 function toggleOverlay() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.toggle('ovl-hide');
@@ -142,15 +151,6 @@ function toggleOverlayForInput() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.toggle('ovl-hide');
     overlay.classList.toggle('ovl-show-input');
-}
-
-
-function animMessage(className = 'from-bottom-to-top') {
-    toggleOverlay();
-    slideMessage(className);
-    setTimeout(() => {
-        toggleOverlay();
-    }, 1500);
 }
 
 
@@ -170,13 +170,13 @@ function toggleElements(id1st, id2nd) {
 
 // handle overlay
 
-function handleOverlay(lockIcnId) {
+function handleOverlay() {
     let overlay = document.querySelector('.ovl-frame');
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
         toggleOverlayForInput();
         toggleSignElementsOnTop();
-        toggleMsg();
+        // toggleMsg();
     }
 }
 
@@ -184,7 +184,7 @@ function handleOverlay(lockIcnId) {
 function handleOverlayBack() {
     toggleOverlayForInput();
     toggleSignElementsOnTop()
-    toggleMsg();
+    // toggleMsg();
     hideVisibilityBtn();
     visibilityPasswordOff();
     setVisibilityIconsDefault();

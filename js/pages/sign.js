@@ -274,16 +274,19 @@ function checkInput() {
     if (form == 'LogIn') {
         checkInputLogIn();
     }
-    else {
-        checkInputSignUp();
-    }
+    // else {
+    //     checkInputSignUp();
+    // }
 }
 
 
 function checkCurrentForm() {
     let form = 'LogIn';
     let element = document.querySelector('.form-title');
-    if (element.classList.contains('display-none')) { form = 'SignUp'; }
+    if (element.classList.contains('display-none')) {
+        form = 'SignUp';
+
+    }
     return form;
 }
 
@@ -321,7 +324,7 @@ function checkInputSignUp() {
 
 
 function toggleWarningNoMatchSignUp() {
-    document.getElementById(input).classList.toggle('no-match-input');
+    document.getElementById('passwordConfirm').classList.toggle('no-match-input');
 }
 
 
@@ -345,5 +348,11 @@ function checkEmailAndPassword() {
 
 
 function checkPwAndPwConfirm() {
-    return false;
+    let currentPw = document.getElementById('password').value;
+    let currentConfirm = document.getElementById('passwordConfirm').value;
+    if (currentPw == currentConfirm) {
+        return true;
+    } else {
+        return false;
+    }
 }

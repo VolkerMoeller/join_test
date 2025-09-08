@@ -87,9 +87,8 @@
             <span class="version-warning sign-up opacity-0 display-none">Ups! your password don’t match</span>
         </div>
         <div class="form-panel form-panel-log-in log-in ">
-
-            <input class="btn-wo-icn version-btn" type="submit" onclick="setSignUpRequiredOff()" value="Log in">
-
+            <input class="btn-wo-icn version-btn" type="submit" name="logIn" onclick="setSignUpRequiredOff()"
+                value="Log in">
             <div class="hover-container">
                 <input class="btn-wo-icn-2nd version-btn" type="button" onclick="switchToWorkPages()"
                     value="Guest Log in">
@@ -97,7 +96,8 @@
         </div>
         <div class="form-panel form-panel-sign-up sign-up display-none">
             <div class="ghost"></div>
-            <input class="btn-wo-icn version-btn" type="submit" value="Sign up">
+            <input class="btn-wo-icn version-btn" type="submit" name="signUp" value="Sign up"
+                onclick="checkInputSignUp()">
             <div class="ghost"></div>
         </div>
     </form>

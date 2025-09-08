@@ -212,6 +212,7 @@ function defaultFormSettings() {
     toggleSignForms();
     clearInputs();
     warningTextOff();
+    resetWarningNoMatch();
 }
 
 

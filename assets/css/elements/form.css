@@ -33,21 +33,7 @@
     border: 3px solid var(--main2nd);
 }
 
-/* .form-sign-center {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
 
-.form-sign-center input {
-    width: 100%;
-}
-
-.form-sign-center label {
-    display: none;
-} */
 
 .remember-me {
     width: 100%;
@@ -64,6 +50,8 @@
     color: var(--text-default2nd);
 }
 
+
+
 .form-inputs-frame {
     width: clamp(0px, 95%, 422px);
     display: flex;
@@ -72,18 +60,13 @@
     gap: 20px;
 }
 
+
+
 .form-panel {
     display: flex;
     gap: 32px;
     align-items: center;
 }
-
-/* .form-panel input {
-    cursor: pointer;
-    height: 48px;
-    padding: 0px 24px;
-} */
-
 
 .form-panel .btn-wo-icn:disabled {
     background-color: var(--input-border);
@@ -126,17 +109,6 @@
     height: 32px;
 }
 
-/* #btnLogInHover {
-    position: relative;
-    z-index: 1;
-} */
-
-/* #btnLogIn {
-    position: absolute;
-} */
-
-
-
 #lockPw {
     cursor: pointer;
 }
@@ -146,14 +118,6 @@
 }
 
 @media(max-width: 1440px) {
-
-    /* .form-sign {
-        padding: 48px 88px;
-    } */
-
-    /* .form-inputs-frame {
-        width: clamp(0px, 85%, 422px);
-    } */
 
     .form-title p {
         width: 88px;
@@ -172,13 +136,6 @@
         width: 180px;
         height: 51px;
     }
-
-    /* .version-btn {
-        font-family: 'Inter';
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 24px;
-    } */
 
     .form-btn-back {
         top: 40px;

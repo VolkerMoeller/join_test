@@ -59,22 +59,22 @@
 .version-2-label {
     font-family: 'Inter';
     font-size: 13px;
+    line-height: 120%;
     font-weight: 400;
-    line-height: 15.6px;
 }
 
 .version-btn {
     font-family: 'Inter';
     font-size: 21px;
+    line-height: 120%;
     font-weight: 700;
-    line-height: 25.2px;
 }
 
 .version-btn-2nd {
     font-family: 'Inter';
     font-size: 16px;
+    line-height: 120%;
     font-weight: 700;
-    line-height: 19.2px;
 }
 
 .version-btn-3rd {

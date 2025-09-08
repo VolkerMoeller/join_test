@@ -34,24 +34,8 @@ function handleInputIcon(lockIcnId) {
 
 }
 
-// Validation
 
-function checkValidLogInInput() {
-    checkValidInput('eMail');
-    checkValidInput('password');
-    warningTextLogIn();
-}
-
-
-function checkValidInput(id) {
-    let inputField = document.getElementById(id);
-    if (inputField.checkValidity()) {
-        inputField.classList.remove('invalid-input');
-    } else {
-        inputField.classList.add('invalid-input');
-    }
-}
-
+// visibility btn
 
 function visibilityPassword(id) {
     let pwToSet = {
@@ -86,14 +70,6 @@ function setVisibilityIconsDefault() {
     });
 }
 
-// function showVisibilityBtn() {
-//     let containers = document.querySelectorAll('.visibility-container');
-//     containers.forEach(container => {
-//         container.classList.remove('display-none');
-//     });
-//     document.getElementById('lockIcnPw').classList.add('display-none');
-//     document.getElementById('lockIcnPwConfirm').classList.add('display-none');
-// }
 
 function showVisibilityBtn(lockIcnId) {
     let containerId = lockIcnId + 'VsbCont'
@@ -112,21 +88,7 @@ function hideVisibilityBtn() {
 }
 
 
-
 // warning text
-
-
-
-
-function checkValidation() {
-    let valid = false;
-    let validEmail = document.getElementById('eMail').validity.valid;
-    let validPassword = document.getElementById('password').validity.valid;
-    if (validEmail && validPassword) {
-        valid = true;
-    }
-    return valid
-}
 
 
 function initWarningTextSignUp() {
@@ -179,6 +141,9 @@ function warningTextOff() {
 }
 
 
+// input overlay
+
+
 function toggleSignElementsOnTop() {
     let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel'];
     for (let i = 0; i < selectors.length; i++) {
@@ -191,8 +156,10 @@ function toggleSignElementsOnTop() {
     }
 }
 
+// clear input fields
 
-function emptyInputFields() {
+
+function clearInputs() {
     let selectors = ['.input-container input'];
     for (let i = 0; i < selectors.length; i++) {
         let elements = document.querySelectorAll(selectors[i]);
@@ -204,7 +171,7 @@ function emptyInputFields() {
     }
 }
 
-// handle Overlays for SignUp and LogIn
+// handle overlays for signUp and logIn
 
 
 function toggleSignOvls() {
@@ -243,7 +210,7 @@ function toggleSignFormsForward() {
 
 function defaultFormSettings() {
     toggleSignForms();
-    emptyInputFields();
+    clearInputs();
     warningTextOff();
 }
 
@@ -318,13 +285,43 @@ function checkCurrentForm() {
 
 function checkInputLogIn() {
     let fits = checkEmailAndPassword();
-    if (!fits) { warningTextOn(); }
+    if (!fits) {
+        warningTextOn();
+        toggleWarningNoMatchLogIn();
+    }
+}
+
+
+function toggleWarningNoMatchLogIn() {
+    let matchInputs = ['eMail', 'password'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.toggle('no-match-input');
+    });
 }
 
 
 function checkInputSignUp() {
     let fits = checkPwAndPwConfirm();
-    if (!fits) { warningTextOn(); }
+    if (!fits) {
+        warningTextOn();
+        toggleWarningNoMatchSignUp();
+    }
+}
+
+
+function toggleWarningNoMatchSignUp() {
+    let matchInputs = ['password', 'passwordConfirm'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.toggle('no-match-input');
+    });
+}
+
+
+function resetWarningNoMatch() {
+    let matchInputs = ['name', 'eMail', 'password', 'passwordConfirm'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.remove('no-match-input');
+    });
 }
 
 

@@ -100,7 +100,7 @@
     padding-bottom: 40px;
 }
 
-.invalid-input {
+.no-match-input {
     border: 1px solid var(--warning) !important;
 }
 

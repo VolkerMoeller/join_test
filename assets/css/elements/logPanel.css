@@ -26,9 +26,9 @@
     border: 1px solid var(--main2nd);
 }
 
-.wrongLogin {
+/* .wrongLogin {
     border: 1px solid var(--warning) !important;
-}
+} */
 
 .housing-input {
     position: relative;
@@ -37,16 +37,12 @@
     gap: 8px;
 }
 
-.housing-input span {
-    color: var(--warning-text);
-}
-
 .input-container {
     position: relative;
     width: 100%;
 }
 
-.input-icon-container {
+.input-container-icon {
     position: absolute;
     right: 0;
     top: 50%;

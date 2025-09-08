@@ -18,6 +18,8 @@ function focusInput(fieldId) {
 }
 
 
+
+
 function handleInputIcon(lockIcnId) {
     let toToggle = {
         lockIcnPw: ['pwVsbOff', 'pwVsbOn'],
@@ -143,7 +145,6 @@ function warningTextOff() {
 
 // input overlay
 
-
 function toggleSignElementsOnTop() {
     let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel'];
     for (let i = 0; i < selectors.length; i++) {
@@ -156,8 +157,8 @@ function toggleSignElementsOnTop() {
     }
 }
 
-// clear input fields
 
+// clear input fields
 
 function clearInputs() {
     let selectors = ['.input-container input'];
@@ -171,8 +172,8 @@ function clearInputs() {
     }
 }
 
-// handle overlays for signUp and logIn
 
+// handle overlays for signUp and logIn
 
 function toggleSignOvls() {
     let ovls = document.querySelectorAll('.ovl');

@@ -373,12 +373,14 @@ function checkEmailAndPassword() {
 function checkPwAndPwConfirm() {
     let currentPw = document.getElementById('password').value;
     let currentConfirm = document.getElementById('passwordConfirm').value;
-    if (!currentPw == '' || !currentPw == '') {
+    if (currentPw !== '' || currentConfirm !== '') {
         if (currentPw == currentConfirm) {
             return true;
         } else {
             return false;
         }
+    } else {
+        return true;
     }
 }
 

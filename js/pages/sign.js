@@ -323,6 +323,15 @@ function removeWarningNoMatchLogIn() {
 }
 
 
+function initCheckInputSignUp() {
+    let currentPw = document.getElementById('password').value;
+    let currentConfirm = document.getElementById('passwordConfirm').value;
+    if (currentPw !== '' && currentConfirm !== '') {
+        checkInputSignUp();
+    }
+}
+
+
 function checkInputSignUp() {
     let fits = checkPwAndPwConfirm();
     if (!fits) {
@@ -373,14 +382,10 @@ function checkEmailAndPassword() {
 function checkPwAndPwConfirm() {
     let currentPw = document.getElementById('password').value;
     let currentConfirm = document.getElementById('passwordConfirm').value;
-    if (currentPw !== '' || currentConfirm !== '') {
-        if (currentPw == currentConfirm) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
+    if (currentPw == currentConfirm) {
         return true;
+    } else {
+        return false;
     }
 }
 

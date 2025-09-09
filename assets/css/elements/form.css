@@ -43,6 +43,8 @@
 }
 
 .accept-terms-container a {
+    position: relative;
+    z-index: 2;
     color: var(--main2nd);
 }
 

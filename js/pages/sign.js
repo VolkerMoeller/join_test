@@ -386,7 +386,6 @@ function checkPwAndPwConfirm() {
 function checkWarningStyle(id) {
     let noMatch = document.getElementById(id).classList.contains('no-match-input');
     if (noMatch) {
-        // document.getElementById(id).classList.remove('no-match-input');
         removeWarningNoMatchLogIn();
         removeWarningNoMatchSignUp();
         warningTextOff();
@@ -398,8 +397,18 @@ function checkWarningStyle(id) {
 // check accept terms
 
 function handleCheckAcceptTerms() {
+    toggleCheckboxIcns();
     checkAcceptTerms();
 }
+
+
+function toggleCheckboxIcns() {
+    let icns = ['checkboxChecked', 'checkboxDefault'];
+    icns.forEach(icn => {
+        document.getElementById(icn).classList.toggle('display-none');
+    });
+}
+
 
 function checkAcceptTerms() {
     let btn = document.getElementById('signUpBtn');

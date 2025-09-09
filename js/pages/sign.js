@@ -144,7 +144,7 @@ function warningTextOff() {
 // input overlay
 
 function toggleSignElementsOnTop() {
-    let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel'];
+    let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
     for (let i = 0; i < selectors.length; i++) {
         let elements = document.querySelectorAll(selectors[i]);
         if (elements) {
@@ -395,9 +395,14 @@ function checkWarningStyle(id) {
 }
 
 
-
 // check accept terms
 
 function checkAcceptTerms() {
-    console.log('hier');
+    let btn = document.getElementById('signUpBtn');
+    let status = btn.hasAttribute('disabled');
+    if (status) {
+        btn.disabled = false;
+    } else {
+        btn.disabled = true;
+    }
 }

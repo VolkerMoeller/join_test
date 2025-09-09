@@ -45,11 +45,12 @@
 }
 
 .accept-terms-container a {
-    /* padding-top: 2.5px; */
     color: var(--main2nd);
 }
 
-
+.accept-terms-container input[type="checkbox"] {
+    cursor: pointer
+}
 
 .form-inputs-frame {
     width: clamp(0px, 95%, 422px);

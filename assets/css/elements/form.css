@@ -40,7 +40,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
 }
 
 .accept-terms-container a {
@@ -50,6 +49,7 @@
 .accept-terms-container input[type="checkbox"] {
     cursor: pointer;
     opacity: 0;
+    margin-left: 6px;
 }
 
 .accept-terms-container input[type="checkbox"]:checked {

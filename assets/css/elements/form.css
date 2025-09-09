@@ -33,9 +33,8 @@
     border: 3px solid var(--main2nd);
 }
 
-
-
 .accept-terms-container {
+    position: relative;
     width: 100%;
     padding-top: 8px;
     display: flex;
@@ -49,7 +48,38 @@
 }
 
 .accept-terms-container input[type="checkbox"] {
-    cursor: pointer
+    cursor: pointer;
+    opacity: 0;
+}
+
+.accept-terms-container input[type="checkbox"]:checked {
+    opacity: 0;
+}
+
+
+.checkbox-wth-icn-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 264px;
+}
+
+.checkbox-icn-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0
+}
+
+.checkbox-icn-container button:first-child {
+    position: relative;
+
+}
+
+.checkbox-icn-container button:last-child {
+    position: absolute;
+
 }
 
 .form-inputs-frame {

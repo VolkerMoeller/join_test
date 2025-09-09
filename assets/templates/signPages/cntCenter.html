@@ -87,7 +87,15 @@
             <span class="version-warning log-in opacity-0">Check your email and password. Please try again.</span>
             <span class="version-warning sign-up opacity-0 display-none">Ups! your password don’t match</span>
             <div class="accept-terms-container sign-up display-none">
-                <input type="checkbox" id="acceptTerms" name="acceptTerms" onclick="checkAcceptTerms()">
+                <div class="checkbox-wth-icn-container">
+                    <div class="checkbox-icn-container">
+                        <button type="button" w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
+                        </button>
+                        <button type="button" w3-include-svg="./assets/img/svgHTML/16-visibility.html">
+                        </button>
+                    </div>
+                    <input type="checkbox" id="acceptTerms" name="acceptTerms" onclick="handleCheckAcceptTerms()">
+                </div>
                 <label for="acceptTerms"><span>I accept the </span><a href="privacy.html" target="_blank"
                         rel="noopener noreferrer">Privacy policy</a></label>
             </div>

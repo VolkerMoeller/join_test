@@ -397,6 +397,10 @@ function checkWarningStyle(id) {
 
 // check accept terms
 
+function handleCheckAcceptTerms() {
+    checkAcceptTerms();
+}
+
 function checkAcceptTerms() {
     let btn = document.getElementById('signUpBtn');
     let status = btn.hasAttribute('disabled');

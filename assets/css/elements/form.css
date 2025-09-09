@@ -57,7 +57,6 @@
     opacity: 0;
 }
 
-
 .checkbox-wth-icn-container {
     position: absolute;
     display: flex;
@@ -76,11 +75,13 @@
 }
 
 .checkbox-icn-container button:first-child {
+    transition: 0.2s all linear;
     position: relative;
 
 }
 
 .checkbox-icn-container button:last-child {
+    transition: 0.2s all linear;
     position: absolute;
 
 }

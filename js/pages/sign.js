@@ -421,11 +421,10 @@ function checkAcceptTerms() {
 }
 
 
-function hoverCheckboxIcns(defaultBtn, hoverBtn) {
-    console.log('hier');
-    document.getElementById(defaultBtn).classList.toggle('opacity-1');
-    document.getElementById(hoverBtn).classList.toggle('opacity-1');
-    document.getElementById(defaultBtn).classList.toggle('opacity-0');
-    document.getElementById(hoverBtn).classList.toggle('opacity-0');
-
+function hoverCheckboxIcns() {
+    let icns = document.querySelectorAll('.checkbox-icn-container button');
+    icns.forEach(icn => {
+        icn.classList.toggle('opacity-0');
+        icn.classList.toggle('opacity-1');
+    });
 }

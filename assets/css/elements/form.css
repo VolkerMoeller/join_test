@@ -39,6 +39,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 24px;
+    ;
 }
 
 .accept-terms-container a {
@@ -75,13 +77,13 @@
 }
 
 .checkbox-icn-container button:first-child {
-    transition: 0.2s all linear;
+    transition: 0.1s all linear;
     position: relative;
 
 }
 
 .checkbox-icn-container button:last-child {
-    transition: 0.2s all linear;
+    transition: 0.1s all linear;
     position: absolute;
 
 }

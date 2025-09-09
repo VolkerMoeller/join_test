@@ -89,11 +89,18 @@
             <div class="accept-terms-container sign-up display-none">
                 <div class="checkbox-wth-icn-container">
                     <div class="checkbox-icn-container">
-                        <button id='checkboxChecked' type="button" w3-include-svg="./assets/img/svgHTML/3-checked.html"
-                            class="display-none">
-                        </button>
-                        <button id='checkboxDefault' type="button" w3-include-svg="./assets/img/svgHTML/5-default.html">
-                        </button>
+                        <div id='checkboxChecked' class="display-none">
+                            <button type="button" w3-include-svg="./assets/img/svgHTML/3-checked.html">
+                            </button>
+                            <button type="button" w3-include-svg="./assets/img/svgHTML/2-checked-hover.html">
+                            </button>
+                        </div>
+                        <div id='checkboxDefault' class="display-none">
+                            <button type="button" w3-include-svg="./assets/img/svgHTML/5-default.html">
+                            </button>
+                            <button type="button" w3-include-svg="./assets/img/svgHTML/4-default-hover.html">
+                            </button>
+                        </div>
                     </div>
                     <input type="checkbox" id="acceptTerms" name="acceptTerms" onclick="handleCheckAcceptTerms()">
                 </div>

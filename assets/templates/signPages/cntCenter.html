@@ -86,6 +86,10 @@
             </div>
             <span class="version-warning log-in opacity-0">Check your email and password. Please try again.</span>
             <span class="version-warning sign-up opacity-0 display-none">Ups! your password don’t match</span>
+            <div class="accept-terms-container sign-up display-none">
+                <input type="checkbox" id="acceptTerms" name="acceptTerms" onclick="checkAcceptTerms()">
+                <label for="acceptTerms"><span>I accept the </span><a>Privacy policy</a></label>
+            </div>
         </div>
         <div class="form-panel form-panel-log-in log-in ">
             <input class="btn-wo-icn version-btn" type="submit" name="logIn" onclick="setSignUpRequiredOff()"
@@ -98,7 +102,7 @@
         <div class="form-panel form-panel-sign-up sign-up display-none">
             <div class="ghost"></div>
             <input class="btn-wo-icn version-btn" type="submit" name="signUp" value="Sign up"
-                onclick="checkInputSignUp()">
+                onclick="checkInputSignUp()" disabled>
             <div class="ghost"></div>
         </div>
     </form>

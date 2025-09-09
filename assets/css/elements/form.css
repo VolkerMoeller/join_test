@@ -35,19 +35,18 @@
 
 
 
-.remember-me {
+.accept-terms-container {
     width: 100%;
     padding-top: 8px;
-    padding-left: 36px;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     gap: 8px;
 }
 
-.remember-me span {
-    padding-top: 2.5px;
-    color: var(--text-default2nd);
+.accept-terms-container a {
+    /* padding-top: 2.5px; */
+    color: var(--main2nd);
 }
 
 

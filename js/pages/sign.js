@@ -393,3 +393,11 @@ function checkWarningStyle(id) {
     }
 
 }
+
+
+
+// check accept terms
+
+function checkAcceptTerms() {
+    console.log('hier');
+}

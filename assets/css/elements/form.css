@@ -86,6 +86,7 @@
 
 }
 
+
 .form-inputs-frame {
     width: clamp(0px, 95%, 422px);
     display: flex;

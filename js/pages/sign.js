@@ -419,3 +419,13 @@ function checkAcceptTerms() {
         btn.disabled = true;
     }
 }
+
+
+function hoverCheckboxIcns(defaultBtn, hoverBtn) {
+    console.log('hier');
+    document.getElementById(defaultBtn).classList.toggle('opacity-1');
+    document.getElementById(hoverBtn).classList.toggle('opacity-1');
+    document.getElementById(defaultBtn).classList.toggle('opacity-0');
+    document.getElementById(hoverBtn).classList.toggle('opacity-0');
+
+}

@@ -89,20 +89,26 @@
             <div class="accept-terms-container sign-up display-none">
                 <div class="checkbox-wth-icn-container">
                     <div class="checkbox-icn-container">
-                        <div id='checkboxChecked' class="display-none">
-                            <button type="button" w3-include-svg="./assets/img/svgHTML/3-checked.html">
+                        <div id='checkboxDefault' class="checkbox-icn-container">
+                            <button id="checkboxDefaultHover" type="button" class="opacity-0"
+                                w3-include-svg="./assets/img/svgHTML/4-default-hover.html">
                             </button>
-                            <button type="button" w3-include-svg="./assets/img/svgHTML/2-checked-hover.html">
+                            <button id="checkboxDefaultDefault" type="button"
+                                w3-include-svg="./assets/img/svgHTML/5-default.html">
                             </button>
                         </div>
-                        <div id='checkboxDefault'>
-                            <button type="button" w3-include-svg="./assets/img/svgHTML/5-default.html">
+                        <div id='checkboxChecked' class="checkbox-icn-container display-none">
+                            <button id="checkboxCheckedHover" type="button" class="opacity-0"
+                                w3-include-svg="./assets/img/svgHTML/2-checked-hover.html">
                             </button>
-                            <button type="button" w3-include-svg="./assets/img/svgHTML/4-default-hover.html">
+                            <button id="checkboxCheckedDefault" type="button"
+                                w3-include-svg="./assets/img/svgHTML/3-checked.html">
                             </button>
                         </div>
                     </div>
-                    <input type="checkbox" id="acceptTerms" name="acceptTerms" onclick="handleCheckAcceptTerms()">
+                    <input type="checkbox" id="acceptTerms" name="acceptTerms" onclick="handleCheckAcceptTerms()"
+                        onmouseover="hoverCheckboxIcns('checkboxDefaultDefault','checkboxDefaultHover')"
+                        onmouseleave="hoverCheckboxIcns('checkboxDefaultDefault','checkboxDefaultHover')">
                 </div>
                 <label for="acceptTerms"><span>I accept the </span><a href="privacy.html" target="_blank"
                         rel="noopener noreferrer">Privacy policy</a></label>

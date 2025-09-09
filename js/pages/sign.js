@@ -159,14 +159,12 @@ function toggleSignElementsOnTop() {
 // clear input fields
 
 function clearInputs() {
-    let selectors = ['.input-container input'];
-    for (let i = 0; i < selectors.length; i++) {
-        let elements = document.querySelectorAll(selectors[i]);
-        if (elements) {
-            elements.forEach(element => {
-                element.value = '';
-            });
-        }
+    let selector = ['.input-container input'];
+    let containers = document.querySelectorAll(selector);
+    if (containers) {
+        containers.forEach(container => {
+            container.value = '';
+        });
     }
 }
 
@@ -308,12 +306,14 @@ function toggleWarningNoMatchLogIn() {
     });
 }
 
+
 function addWarningNoMatchLogIn() {
     let matchInputs = ['eMail', 'password'];
     matchInputs.forEach(input => {
         document.getElementById(input).classList.add('no-match-input');
     });
 }
+
 
 function removeWarningNoMatchLogIn() {
     let matchInputs = ['eMail', 'password'];

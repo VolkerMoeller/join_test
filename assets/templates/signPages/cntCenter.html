@@ -1,11 +1,11 @@
 <div class="frame-sign">
     <form id="formSign" class="form-sign form-sign-log-in" onsubmit="checkInput(); return false;">
-        <div id="btnBack" class="form-btn-back sign-up display-none" onclick="toggleSignFormsBack()">
-            <button id="btnHvrBackToLogIn" class="display-none"
+        <div id="btnBack" class="form-btn-back sign-up display-none">
+            <button id="btnHvrBackToLogIn" type="button" class="display-none" onclick="toggleSignFormsBack()"
                 onmouseleave="toggleElements('btnBackToLogIn','btnHvrBackToLogIn')"
                 w3-include-svg="./assets/img/svgHTML/6-leftArrowHover.html">
             </button>
-            <button id="btnBackToLogIn" onmouseover="toggleElements('btnBackToLogIn','btnHvrBackToLogIn')"
+            <button id="btnBackToLogIn" type="button" onmouseover="toggleElements('btnBackToLogIn','btnHvrBackToLogIn')"
                 w3-include-svg="./assets/img/svgHTML/7-leftArrow.html">
             </button>
         </div>

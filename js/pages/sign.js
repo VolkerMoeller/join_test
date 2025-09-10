@@ -441,13 +441,32 @@ function hoverCheckboxIcns() {
 function animMessages() {
     let currentForm = checkCurrentForm();
     showOverlay();
+    showCurrentMessage(currentForm);
+    slideMessages();
+    setTimeout(() => {
+        resetOverlay();
+    }, 1000);
+    setTimeout(() => {
+        switchToLoginForm(currentForm);
+    }, 1000);
+}
+
+
+function showCurrentMessage(currentForm) {
     if (currentForm == 'SignUp') {
         document.querySelector('.msg-log-in').classList.add('display-none');
     } else {
         document.querySelector('.msg-sign-up').classList.add('display-none');
     }
-    slideMessages();
 }
+
+
+function switchToLoginForm(currentForm) {
+    if (currentForm == 'SignUp') {
+        toggleSignFormsBack();
+    }
+}
+
 
 function slideMessages() {
     document.querySelector('.msg-log-in').classList.add('from-right-to-center');

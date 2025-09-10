@@ -151,6 +151,8 @@ function resetOverlay() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.add('ovl-hide');
     overlay.classList.remove('ovl-show');
+    overlay.classList.remove('ovl-show-input');
+
 }
 
 

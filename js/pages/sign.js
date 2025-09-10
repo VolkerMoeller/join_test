@@ -330,7 +330,7 @@ function initCheckInputSignUp() {
         success = checkInputSignUp();
     }
     if (success) {
-        console.log('msg Sign up');
+        animMessages();
     }
 }
 

@@ -321,8 +321,8 @@ function checkInputLogIn() {
     } else {
         warningTextOff();
         removeWarningNoMatchLogIn();
-        initAnimMessages();
-        console.log('msg Log In');
+        // initAnimMessages();
+        console.log('go to Sum');
     }
 }
 

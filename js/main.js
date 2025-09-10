@@ -173,12 +173,6 @@ function resetOverlayMsg() {
 }
 
 
-// function setupOverlayForInput() {
-//     const overlay = document.querySelector('.ovl-frame');
-//     overlay.classList.toggle('ovl-hide');
-//     overlay.classList.toggle('ovl-show-input');
-// }
-
 function setupOverlayForInput() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');

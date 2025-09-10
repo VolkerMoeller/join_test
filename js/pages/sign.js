@@ -325,8 +325,12 @@ function removeWarningNoMatchLogIn() {
 function initCheckInputSignUp() {
     let currentPw = document.getElementById('password').value;
     let currentConfirm = document.getElementById('passwordConfirm').value;
+    let success = false;
     if (currentPw !== '' && currentConfirm !== '') {
-        checkInputSignUp();
+        success = checkInputSignUp();
+    }
+    if (success) {
+        console.log('msg Sign up');
     }
 }
 
@@ -336,10 +340,11 @@ function checkInputSignUp() {
     if (!fits) {
         warningTextOn();
         addWarningNoMatchSignUp();
+        return false;
     } else {
         warningTextOff();
         removeWarningNoMatchSignUp();
-        console.log('msg Sign up');
+        return true;
     }
 }
 
@@ -453,9 +458,9 @@ function animMessages() {
 
 function showCurrentMessage(currentForm) {
     if (currentForm == 'SignUp') {
-        document.querySelector('.msg-log-in').classList.add('display-none');
+        document.querySelector('.msg-log-in').classList.remove('display-none');
     } else {
-        document.querySelector('.msg-sign-up').classList.add('display-none');
+        document.querySelector('.msg-sign-up').classList.remove('display-none');
     }
 }
 

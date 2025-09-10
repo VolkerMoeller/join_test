@@ -161,7 +161,7 @@ function resetOverlayMsg() {
         for (let i = 0; i < msgAnims.length; i++) {
             const msgAnim = msgAnims[i];
             overlMsg.classList.remove(msgAnim);
-            overlMsg.classList.remove('display-none');
+            overlMsg.classList.add('display-none');
         }
     });
 }

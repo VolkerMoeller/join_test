@@ -94,7 +94,7 @@
 }
 
 .nav-sign-bottom {
-    width: 247px;
+    width: 252px;
     display: flex;
     justify-content: space-between;
     padding-bottom: 40px;
@@ -120,6 +120,13 @@
     align-items: center;
     width: 180px;
     height: 50px;
+}
+
+.hover-container-v2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 @media (max-width: 1440px) {

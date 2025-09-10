@@ -47,6 +47,10 @@
     position: absolute;
     background-color: var(--main);
     color: white;
+    box-shadow: var(--nuevo);
+    height: 74px;
+    border-radius: 20px;
+    padding: 25px 25px;
 }
 
 .msg-cnt h1 {

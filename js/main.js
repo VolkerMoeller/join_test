@@ -204,17 +204,6 @@ function handleOverlayBack() {
 }
 
 
-// function toggleMsg() {
-//     let messages = document.querySelectorAll('.msg-cnt');
-//     messages.forEach(message => {
-//         if (!message.classList.contains('display-none')) {
-//             message.classList.add('display-none');
-//         }
-//         else message.classList.remove('display-none');
-//     });
-// }
-
-
 function checkOverlay() {
     let overlay = document.querySelector('.ovl-frame');
     if (!overlay.classList.contains('ovl-show-input')) {

@@ -280,7 +280,6 @@ function checkCurrentForm() {
     let element = document.querySelector('.form-title');
     if (element.classList.contains('display-none')) {
         form = 'SignUp';
-
     }
     return form;
 }

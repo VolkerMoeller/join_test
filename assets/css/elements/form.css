@@ -51,7 +51,9 @@
 .accept-terms-container input[type="checkbox"] {
     cursor: pointer;
     opacity: 0;
-    margin-left: 6px;
+    margin: 0;
+    width: 24px;
+    height: 24px;
 }
 
 .accept-terms-container input[type="checkbox"]:checked {

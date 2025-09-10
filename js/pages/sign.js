@@ -143,13 +143,39 @@ function warningTextOff() {
 
 // input overlay
 
-function toggleSignElementsOnTop() {
+// function setupSignElementsOnTop() {
+//     let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
+//     for (let i = 0; i < selectors.length; i++) {
+//         let elements = document.querySelectorAll(selectors[i]);
+//         if (elements) {
+//             elements.forEach(element => {
+//                 element.classList.toggle('z-index-4');
+//             });
+//         }
+//     }
+// }
+
+
+function setupSignElementsOnTop() {
     let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
     for (let i = 0; i < selectors.length; i++) {
         let elements = document.querySelectorAll(selectors[i]);
         if (elements) {
             elements.forEach(element => {
-                element.classList.toggle('z-index-4');
+                element.classList.add('z-index-4');
+            });
+        }
+    }
+}
+
+
+function resetSignElementsOnTop() {
+    let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
+    for (let i = 0; i < selectors.length; i++) {
+        let elements = document.querySelectorAll(selectors[i]);
+        if (elements) {
+            elements.forEach(element => {
+                element.classList.remove('z-index-4');
             });
         }
     }
@@ -187,6 +213,7 @@ function toggleSignOvls() {
 function toggleSignFormsBack() {
     setSignUpRequiredOff();
     defaultFormSettings();
+    resetOverlayFrame();
     setTimeout(() => {
         blurInputField();
     }, 1);
@@ -202,6 +229,7 @@ function blurInputField() {
 function toggleSignFormsForward() {
     setSignUpRequiredOn();
     defaultFormSettings();
+    resetOverlayFrame();
 }
 
 
@@ -293,6 +321,7 @@ function checkInputLogIn() {
     } else {
         warningTextOff();
         removeWarningNoMatchLogIn();
+        initAnimMessages();
         console.log('msg Log In');
     }
 }
@@ -330,7 +359,7 @@ function initCheckInputSignUp() {
         success = checkInputSignUp();
     }
     if (success) {
-        animMessages();
+        initAnimMessages();
     }
 }
 
@@ -442,25 +471,34 @@ function hoverCheckboxIcns() {
 
 // messages
 
-function animMessages() {
+function initAnimMessages() {
     let currentForm = checkCurrentForm();
+    resetSignElementsOnTop();
+    animMessages(currentForm);
+    if (currentForm == 'SignUp') {
+        setTimeout(() => {
+            switchToLoginForm(currentForm);
+        }, 1000);
+    }
+}
+
+function animMessages(currentForm) {
     showOverlay();
     showCurrentMessage(currentForm);
     slideMessages();
     setTimeout(() => {
         resetOverlay();
     }, 1000);
-    setTimeout(() => {
-        switchToLoginForm(currentForm);
-    }, 1000);
 }
 
 
 function showCurrentMessage(currentForm) {
     if (currentForm == 'SignUp') {
-        document.querySelector('.msg-log-in').classList.remove('display-none');
-    } else {
+        document.querySelector('.msg-log-in').classList.add('display-none');
         document.querySelector('.msg-sign-up').classList.remove('display-none');
+    } else {
+        document.querySelector('.msg-log-in').classList.remove('display-none');
+        document.querySelector('.msg-sign-up').classList.add('display-none');
     }
 }
 

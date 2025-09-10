@@ -147,12 +147,16 @@ function showOverlay() {
 
 
 function resetOverlay() {
+    resetOverlayFrame();
     resetOverlayMsg();
+}
+
+
+function resetOverlayFrame() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.add('ovl-hide');
     overlay.classList.remove('ovl-show');
     overlay.classList.remove('ovl-show-input');
-
 }
 
 
@@ -169,10 +173,22 @@ function resetOverlayMsg() {
 }
 
 
-function toggleOverlayForInput() {
+// function setupOverlayForInput() {
+//     const overlay = document.querySelector('.ovl-frame');
+//     overlay.classList.toggle('ovl-hide');
+//     overlay.classList.toggle('ovl-show-input');
+// }
+
+function setupOverlayForInput() {
     const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.toggle('ovl-hide');
-    overlay.classList.toggle('ovl-show-input');
+    overlay.classList.remove('ovl-hide');
+    overlay.classList.add('ovl-show-input');
+}
+
+function resetOverlayForInput() {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.add('ovl-hide');
+    overlay.classList.rmove('ovl-show-input');
 }
 
 
@@ -191,15 +207,15 @@ function handleOverlay() {
     let overlay = document.querySelector('.ovl-frame');
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
-        toggleOverlayForInput();
-        toggleSignElementsOnTop();
+        setupOverlayForInput();
+        setupSignElementsOnTop();
     }
 }
 
 
 function handleOverlayBack() {
-    toggleOverlayForInput();
-    toggleSignElementsOnTop()
+    setupOverlayForInput();
+    setupSignElementsOnTop()
     hideVisibilityBtn();
     visibilityPasswordOff();
     setVisibilityIconsDefault();

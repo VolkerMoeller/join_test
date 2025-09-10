@@ -42,24 +42,34 @@
     /* background-color: var(--black-transp-50); */
 }
 
-.msg-signPage {
-    transform: translateX(100%);
-}
 
 .msg-cnt {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
     background-color: var(--main);
     color: white;
 }
 
-.from-bottom-to-top {
+.msg-cnt h1 {
+    white-space: nowrap;
+}
+
+.msg-sign-up {
+    transform: translate(-50%, -50%);
     position: absolute;
-    top: 100%;
+    top: 90%;
     left: 50%;
     z-index: 3;
+}
+
+.msg-log-in {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    z-index: 3;
+}
+
+.from-bottom-to-center {
     animation-duration: 1s;
     animation-name: slide-msg-btm-cnt;
     animation-fill-mode: forwards;
@@ -76,12 +86,7 @@
     }
 }
 
-
-.from-right-to-left {
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    z-index: 3;
+.from-right-to-center {
     animation-duration: 1s;
     animation-name: slide-msg-rgt-cnt;
     animation-fill-mode: forwards;

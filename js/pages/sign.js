@@ -435,3 +435,31 @@ function hoverCheckboxIcns() {
         icn.classList.toggle('opacity-1');
     });
 }
+
+// messages
+
+function animMessages() {
+    let currentForm = checkCurrentForm();
+    showOverlay();
+    slideMessages();
+    // if (currentForm == 'SignUp') {
+    //     document.querySelector('.msg-sign-up').classList.remove('display-none');
+    //     document.querySelector('.msg-log-in').classList.add('display-none');
+    // } else {
+    //     document.querySelector('.msg-sign-up').classList.remove('display-none');
+    //     document.querySelector('.msg-log-in').classList.add('display-none');
+    // }
+    // setTimeout(() => {
+    //     if (currentForm == 'SignUp') {
+    //         slideMessages();
+    //     }
+    //     setTimeout(() => {
+    //         resetOverlay();
+    //     }, 1000);
+    // }, 100);
+}
+
+function slideMessages() {
+    document.querySelector('.msg-log-in').classList.add('from-right-to-center');
+    document.querySelector('.msg-sign-up').classList.add('from-bottom-to-center');
+}

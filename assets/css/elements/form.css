@@ -40,7 +40,6 @@
     justify-content: center;
     align-items: center;
     padding-left: 24px;
-    ;
 }
 
 .accept-terms-container a {
@@ -79,15 +78,12 @@
 .checkbox-icn-container button:first-child {
     transition: 0.1s all linear;
     position: relative;
-
 }
 
 .checkbox-icn-container button:last-child {
     transition: 0.1s all linear;
     position: absolute;
-
 }
-
 
 .form-inputs-frame {
     width: clamp(0px, 95%, 422px);
@@ -96,8 +92,6 @@
     align-items: start;
     gap: 20px;
 }
-
-
 
 .form-panel {
     display: flex;

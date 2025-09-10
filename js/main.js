@@ -131,19 +131,38 @@ function invertLogoClr() {
 }
 
 
-function animMessage(className = 'from-bottom-to-top') {
-    toggleOverlay();
-    slideMessage(className);
-    setTimeout(() => {
-        toggleOverlay();
-    }, 1500);
-}
-
 
 function toggleOverlay() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.toggle('ovl-hide');
     overlay.classList.toggle('ovl-show');
+}
+
+
+function showOverlay() {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.remove('ovl-hide');
+    overlay.classList.add('ovl-show');
+}
+
+
+function resetOverlay() {
+    resetOverlayMsg();
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.add('ovl-hide');
+    overlay.classList.remove('ovl-show');
+}
+
+
+function resetOverlayMsg() {
+    let msgAnims = ['from-bottom-to-center', 'from-right-to-center'];
+    let overlMsgs = document.querySelectorAll('.msg-cnt');
+    overlMsgs.forEach(overlMsg => {
+        for (let i = 0; i < msgAnims.length; i++) {
+            const msgAnim = msgAnims[i];
+            overlMsg.classList.remove(msgAnim);
+        }
+    });
 }
 
 
@@ -153,11 +172,6 @@ function toggleOverlayForInput() {
     overlay.classList.toggle('ovl-show-input');
 }
 
-
-function slideMessage(className) {
-    const message = document.querySelector('.msg-cnt');
-    message.classList.toggle(className);
-}
 
 // toggle elements
 
@@ -176,7 +190,6 @@ function handleOverlay() {
     if (overlayNotShown) {
         toggleOverlayForInput();
         toggleSignElementsOnTop();
-        // toggleMsg();
     }
 }
 
@@ -184,22 +197,21 @@ function handleOverlay() {
 function handleOverlayBack() {
     toggleOverlayForInput();
     toggleSignElementsOnTop()
-    // toggleMsg();
     hideVisibilityBtn();
     visibilityPasswordOff();
     setVisibilityIconsDefault();
 }
 
 
-function toggleMsg() {
-    let messages = document.querySelectorAll('.msg-cnt');
-    messages.forEach(message => {
-        if (!message.classList.contains('display-none')) {
-            message.classList.add('display-none');
-        }
-        else message.classList.remove('display-none');
-    });
-}
+// function toggleMsg() {
+//     let messages = document.querySelectorAll('.msg-cnt');
+//     messages.forEach(message => {
+//         if (!message.classList.contains('display-none')) {
+//             message.classList.add('display-none');
+//         }
+//         else message.classList.remove('display-none');
+//     });
+// }
 
 
 function checkOverlay() {

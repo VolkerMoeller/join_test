@@ -26,10 +26,6 @@
     border: 1px solid var(--main2nd);
 }
 
-/* .wrongLogin {
-    border: 1px solid var(--warning) !important;
-} */
-
 .housing-input {
     position: relative;
     display: flex;

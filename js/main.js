@@ -91,9 +91,7 @@ function loadLocalStorageObject(key) {
 // navigation
 
 
-function toggleFormsSign() {
-    clearInputs();
-}
+
 
 
 async function changeOvl(target) {

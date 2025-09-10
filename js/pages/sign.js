@@ -4,6 +4,13 @@ async function initSign() {
 }
 
 
+// navigation
+
+// function toggleFormsSign() {
+//     clearInputs();
+// }
+
+
 // focus input fields
 
 function handleFocusInputFields(fieldId, lockIcnId) {
@@ -31,11 +38,10 @@ function handleInputIcon(lockIcnId) {
         visibilityPassword(lockIcnId);
         toggleElements(toToggle[lockIcnId][0], toToggle[lockIcnId][1]);
     }
-
 }
 
 
-// visibility btn
+// XXX
 
 function visibilityPassword(id) {
     let pwToSet = {
@@ -197,15 +203,15 @@ function clearInputs() {
 
 // handle overlays for signUp and logIn
 
-function toggleSignOvls() {
-    let ovls = document.querySelectorAll('.ovl');
-    for (let i = 0; i < ovls.length; i++) {
-        const ovl = ovls[i];
-        let ovlNotShown = ovl.classList.contains('display-none');
-        if (!ovlNotShown) { ovl.classList.add('display-none') }
-        else { ovl.classList.remove('display-none') };
-    }
-}
+    // function toggleSignOvls() {
+    //     let ovls = document.querySelectorAll('.ovl');
+    //     for (let i = 0; i < ovls.length; i++) {
+    //         const ovl = ovls[i];
+    //         let ovlNotShown = ovl.classList.contains('display-none');
+    //         if (!ovlNotShown) { ovl.classList.add('display-none') }
+    //         else { ovl.classList.remove('display-none') };
+    //     }
+    // }
 
 
 // toggle form sign-up / form log-in

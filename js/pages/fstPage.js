@@ -10,7 +10,7 @@ async function initFstPage() {
 
 // + 1st-level-functions:
 
-// includeHTML() -> main.js
+// includeHTML() --> main.js
 
 async function firstPageAnim() {
     animFrame();
@@ -21,7 +21,7 @@ async function firstPageAnim() {
     switchToSignPage();
 }
 
-// setClrSchemeInit() -> main.js
+// setClrSchemeInit() --> main.js
 
 // ++ 2nd-level-functions:
 

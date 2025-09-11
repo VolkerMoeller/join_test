@@ -71,7 +71,7 @@ function switchToSignPage() {
 }
 
 
-// +++ 2nd-level-sub-functions
+// +++ 3rd-level-functions
 
 // changeOvl('ovlSign.html') --> main.js
 

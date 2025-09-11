@@ -90,10 +90,6 @@ function loadLocalStorageObject(key) {
 
 // navigation
 
-
-
-
-
 async function changeOvl(target) {
     const cntCenter = document.querySelector('.ovl-frame');
     cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/${target}`);

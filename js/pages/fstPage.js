@@ -6,6 +6,12 @@ async function initFstPage() {
 }
 
 
+
+// ++ 1st-level functions:
+
+
+// includeHTML() -> main.js
+
 async function firstPageAnim() {
     animFrame();
     animBg();
@@ -15,15 +21,15 @@ async function firstPageAnim() {
     switchToSignPage();
 }
 
+// setClrSchemeInit() -> main.js
 
-function endAnim() {
-    setTimeout(() => {
-        const frame = document.querySelector('.ovl-frame');
-        frame.classList.add('ovl-hide');
-        frame.classList.remove('frame-anim');
-        changeOvl('ovlSign.html');
-        noAnimCSS();
-    }, 3000);
+
+
+// ++ 2nd-level functions:
+
+function animFrame() {
+    const frame = document.querySelector('.ovl-frame');
+    frame.classList.add('frame-anim');
 }
 
 
@@ -49,18 +55,30 @@ function animClr() {
 }
 
 
-function animFrame() {
-    const frame = document.querySelector('.ovl-frame');
-    frame.classList.add('frame-anim');
+function endAnim() {
+    setTimeout(() => {
+        const frame = document.querySelector('.ovl-frame');
+        frame.classList.add('ovl-hide');
+        frame.classList.remove('frame-anim');
+        changeOvl('ovlSign.html');
+        noAnimCSS();
+    }, 3000);
 }
 
-function noAnimCSS() {
-    const animCSS = document.getElementById('animCSS');
-    animCSS.setAttribute('href', './assets/css/main/noAnim.css');
-}
 
 function switchToSignPage() {
     setTimeout(() => {
         history.replaceState({}, '', 'signPage.html');
     }, 3000);
+}
+
+
+
+// ++ 2nd-level-sub functions
+
+// changeOvl('ovlSign.html') --> main.js
+
+function noAnimCSS() {
+    const animCSS = document.getElementById('animCSS');
+    animCSS.setAttribute('href', './assets/css/main/noAnim.css');
 }

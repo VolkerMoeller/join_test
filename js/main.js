@@ -1,40 +1,5 @@
 let userStatus = 'guest'; // default user status
 
-
-// setClrScheme
-
-function setClrSchemeInit() {
-    let colorSchemeId = checkColorSchemeId();
-    setClrScheme(colorSchemeId);
-}
-
-
-function checkColorSchemeId() {
-    let colorSchemeId = loadLocalStorageObject('colorScheme');
-    if (colorSchemeId) {
-        return colorSchemeId
-    } else return 1;
-}
-
-
-function setClrScheme(colorSchemeId) {
-    if (!colorSchemeId) {
-        saveLocalStorageObject('colorScheme', 1);
-        changeClrScheme();
-    }
-    if (colorSchemeId) {
-        saveLocalStorageObject('colorScheme', colorSchemeId);
-        changeClrScheme();
-    }
-}
-
-
-function changeClrScheme() {
-    let schemeId = loadLocalStorageObject('colorScheme');
-    document.getElementById('linkClrs').setAttribute('href', `./assets/css/main/clrSchemes/${schemeId}-colors.css`);
-}
-
-
 // include HTML
 
 async function includeHTMLById(name) {
@@ -71,6 +36,41 @@ function changeSvgPathClass(container, actualClass, targetClass) {
         pathsMain[i].setAttribute('class', targetClass);
     }
 }
+
+// setClrScheme
+
+function setClrSchemeInit() {
+    let colorSchemeId = checkColorSchemeId();
+    setClrScheme(colorSchemeId);
+}
+
+
+function checkColorSchemeId() {
+    let colorSchemeId = loadLocalStorageObject('colorScheme');
+    if (colorSchemeId) {
+        return colorSchemeId
+    } else return 1;
+}
+
+
+function setClrScheme(colorSchemeId) {
+    if (!colorSchemeId) {
+        saveLocalStorageObject('colorScheme', 1);
+        changeClrScheme();
+    }
+    if (colorSchemeId) {
+        saveLocalStorageObject('colorScheme', colorSchemeId);
+        changeClrScheme();
+    }
+}
+
+
+function changeClrScheme() {
+    let schemeId = loadLocalStorageObject('colorScheme');
+    document.getElementById('linkClrs').setAttribute('href', `./assets/css/main/clrSchemes/${schemeId}-colors.css`);
+}
+
+
 
 
 // local storage

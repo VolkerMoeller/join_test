@@ -1,3 +1,5 @@
+// fstPage.js + main.js
+
 async function initFstPage() {
     await includeHTML();
     firstPageAnim();
@@ -6,9 +8,7 @@ async function initFstPage() {
 }
 
 
-
-// ++ 1st-level functions:
-
+// + 1st-level-functions:
 
 // includeHTML() -> main.js
 
@@ -23,9 +23,7 @@ async function firstPageAnim() {
 
 // setClrSchemeInit() -> main.js
 
-
-
-// ++ 2nd-level functions:
+// ++ 2nd-level-functions:
 
 function animFrame() {
     const frame = document.querySelector('.ovl-frame');
@@ -73,8 +71,7 @@ function switchToSignPage() {
 }
 
 
-
-// ++ 2nd-level-sub functions
+// +++ 2nd-level-sub-functions
 
 // changeOvl('ovlSign.html') --> main.js
 

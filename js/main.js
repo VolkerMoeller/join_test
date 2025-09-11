@@ -203,11 +203,17 @@ function handleOverlay() {
 
 function handleOverlayBack() {
     setupOverlayForInput();
-    setupSignElementsOnTop()
+    setupSignElementsOnTop();
+    setupPasswordBtn();
+}
+
+
+function setupPasswordBtn() {
     hideVisibilityBtn();
     visibilityPasswordOff();
     setVisibilityIconsDefault();
 }
+
 
 
 function checkOverlay() {

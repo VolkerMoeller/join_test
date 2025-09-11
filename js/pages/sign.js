@@ -245,6 +245,7 @@ function defaultFormSettings() {
     clearInputs();
     warningTextOff();
     resetWarningNoMatch();
+    resetCheckbox();
 }
 
 
@@ -441,11 +442,34 @@ function checkWarningStyle(id) {
 }
 
 
-// check accept terms
+// checkbox Icon and Button Sign up
 
-function handleCheckAcceptTerms() {
+function switchCheckboxIcnAndSignUpBtn() {
     toggleCheckboxIcns();
-    checkAcceptTerms();
+    toggleOnOffSignUpBtn();
+}
+
+
+function resetCheckbox() {
+    let btn = document.getElementById('signUpBtn');
+    let status = btn.hasAttribute('disabled');
+    if (status == false) {
+        btn.disabled = true;
+        toggleCheckboxIcns()
+    }
+}
+
+
+function toggleOnOffSignUpBtn() {
+    let btn = document.getElementById('signUpBtn');
+    let status = btn.hasAttribute('disabled');
+    if (status) {
+        btn.disabled = false;
+        return false;
+    } else {
+        btn.disabled = true;
+        return true;
+    }
 }
 
 
@@ -457,15 +481,6 @@ function toggleCheckboxIcns() {
 }
 
 
-function checkAcceptTerms() {
-    let btn = document.getElementById('signUpBtn');
-    let status = btn.hasAttribute('disabled');
-    if (status) {
-        btn.disabled = false;
-    } else {
-        btn.disabled = true;
-    }
-}
 
 
 function hoverCheckboxIcns() {

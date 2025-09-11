@@ -106,3 +106,21 @@
         left: 50%;
     }
 }
+
+@media (max-width: 1440) {
+
+    .from-bottom-to-center {
+        animation-name: slide-msg-btm-cnt-mobile;
+    }
+
+    @keyframes slide-msg-btm-cnt-mobile {
+        from {
+            top: 100%;
+        }
+
+        to {
+            top: 80%;
+        }
+    }
+
+}

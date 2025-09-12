@@ -1,7 +1,15 @@
+// -------------------
+// signPage-functions:
+// -------------------
+
+// initSign()
+
+
 async function initSign() {
     await includeHTML();
     setClrSchemeInit();
 }
+
 
 // -------------------
 // 1st-level-functions
@@ -9,9 +17,6 @@ async function initSign() {
 
 // includeHTML() --> main.js
 // setClrSchemeInit() -- main.js
-
-
-
 
 
 // --------------------
@@ -191,8 +196,6 @@ function removeWarningNoMatchLogIn() {
 }
 
 
-
-
 function warningTextOff() {
     let warnings = document.querySelectorAll('.version-warning');
     warnings.forEach(warning => {
@@ -307,6 +310,7 @@ function checkEmailAndPassword() {
         return false;
     }
 }
+
 
 function warningTextOn() {
     let warnings = document.querySelectorAll('.version-warning');
@@ -588,52 +592,6 @@ function setVisibilityIconsDefault() {
         document.getElementById(id).classList.add('display-none');
     });
 }
-
-
-
-// warning text
-
-
-// function initWarningTextSignUp() {
-//     setSignUpRequiredOn();
-//     warningTextSignUp();
-// }
-
-
-// function warningTextSignUp() {
-//     warningTextOff();
-//     let password = document.getElementById('password').value;
-//     let passwordConfirm = document.getElementById('passwordConfirm').value;
-//     if (password == passwordConfirm) {
-//         warningTextOff();
-//     } else
-//         warningTextOn();
-// }
-
-
-// function warningTextLogIn() {
-//     warningTextOff();
-//     let eMail = document.getElementById('eMail');
-//     let password = document.getElementById('password');
-//     if (password.validity.valid && eMail.validity.valid) {
-//         warningTextOff();
-//     } else
-//         warningTextOn();
-// }
-
-
-// function toggleWarningNoMatchLogIn() {
-//     let matchInputs = ['eMail', 'password'];
-//     matchInputs.forEach(input => {
-//         document.getElementById(input).classList.toggle('no-match-input');
-//     });
-// }
-
-
-// function toggleWarningNoMatchSignUp() {
-//     document.getElementById('passwordConfirm').classList.toggle('no-match-input');
-// }
-
 
 
 // --------------------

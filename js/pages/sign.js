@@ -16,6 +16,26 @@ async function initSign() {
 
 // checkInput()
 // toggleSignFormsBack()
+// toggleElements() --> main.js
+// focusInput() --> main.js
+// checkWarningStyle()
+// handleOverlay() --> main.js
+// checkOverlay() --> main.js
+// checkWarningStyle() see above
+// focusInputField()
+// handleOverlay() see above
+// checkOverlay() see above
+// checkWarningStyle() see above
+// focusInputField() see above
+// switchCheckboxIcnAndSignUpBtn()
+// hoverCheckboxIcns() 
+// hoverCheckboxIcns() see above
+// hoverCheckboxIcns() see above
+// hoverCheckboxIcns() see above
+// hoverCheckboxIcns() see above
+// setSignUpRequiredOff()
+// switchToWorkPages() --> main.js
+// initCheckInputSignUp()
 
 
 function checkInput() {
@@ -36,6 +56,59 @@ function toggleSignFormsBack() {
 }
 
 
+function checkWarningStyle(id) {
+    let noMatch = document.getElementById(id).classList.contains('no-match-input');
+    if (noMatch) {
+        removeWarningNoMatchLogIn();
+        removeWarningNoMatchSignUp();
+        warningTextOff();
+    }
+}
+
+
+function focusInputField(fieldId, lockIcnId) {
+    focusInput(fieldId);
+    handlePwIcn(lockIcnId);
+}
+
+
+function switchCheckboxIcnAndSignUpBtn() {
+    toggleCheckboxIcns();
+    toggleOnOffSignUpBtn();
+}
+
+
+function hoverCheckboxIcns() {
+    let icns = document.querySelectorAll('.checkbox-icn-container button');
+    icns.forEach(icn => {
+        icn.classList.toggle('opacity-0');
+        icn.classList.toggle('opacity-1');
+    });
+}
+
+
+function setSignUpRequiredOff() {
+    let name = document.getElementById('name');
+    name.required = false;
+    let passwordConfirm = document.getElementById('passwordConfirm');
+    passwordConfirm.required = false;
+}
+
+
+function initCheckInputSignUp() {
+    let currentPw = document.getElementById('password').value;
+    let currentConfirm = document.getElementById('passwordConfirm').value;
+    let success = false;
+    if (currentPw !== '' && currentConfirm !== '') {
+        success = checkInputSignUp();
+    }
+    if (success) {
+        initAnimMessages();
+    }
+}
+
+
+
 // ----------------------
 // + 1st-level-functions:
 // ----------------------
@@ -45,6 +118,8 @@ function toggleSignFormsBack() {
 // setSignUpRequiredOff()
 // defaultFormSettings()
 // resetOverlayFrame() --> main.js
+// blurInputField()
+
 
 
 function checkCurrentForm() {
@@ -70,12 +145,6 @@ function checkInputLogIn() {
 }
 
 
-function setSignUpRequiredOff() {
-    let name = document.getElementById('name');
-    name.required = false;
-    let passwordConfirm = document.getElementById('passwordConfirm');
-    passwordConfirm.required = false;
-}
 
 
 function defaultFormSettings() {
@@ -230,10 +299,6 @@ function toggleLoginElements() {
 }
 
 
-function focusInputField(fieldId, lockIcnId) {
-    focusInput(fieldId);
-    handlePwIcn(lockIcnId);
-}
 
 
 function handlePwIcn(lockIcnId) {
@@ -242,9 +307,6 @@ function handlePwIcn(lockIcnId) {
 }
 
 
-function focusInput(fieldId) {
-    document.getElementById(fieldId).focus();
-}
 
 
 function handleInputIcon(lockIcnId) {
@@ -430,23 +492,6 @@ function toggleWarningNoMatchLogIn() {
 
 
 
-
-
-
-
-function initCheckInputSignUp() {
-    let currentPw = document.getElementById('password').value;
-    let currentConfirm = document.getElementById('passwordConfirm').value;
-    let success = false;
-    if (currentPw !== '' && currentConfirm !== '') {
-        success = checkInputSignUp();
-    }
-    if (success) {
-        initAnimMessages();
-    }
-}
-
-
 function checkInputSignUp() {
     let fits = checkPwAndPwConfirm();
     if (!fits) {
@@ -492,23 +537,11 @@ function checkPwAndPwConfirm() {
 }
 
 
-function checkWarningStyle(id) {
-    let noMatch = document.getElementById(id).classList.contains('no-match-input');
-    if (noMatch) {
-        removeWarningNoMatchLogIn();
-        removeWarningNoMatchSignUp();
-        warningTextOff();
-    }
-
-}
 
 
 // checkbox Icon and Button Sign up
 
-function switchCheckboxIcnAndSignUpBtn() {
-    toggleCheckboxIcns();
-    toggleOnOffSignUpBtn();
-}
+
 
 
 
@@ -530,17 +563,6 @@ function toggleCheckboxIcns() {
     let icns = ['checkboxChecked', 'checkboxDefault'];
     icns.forEach(icn => {
         document.getElementById(icn).classList.toggle('display-none');
-    });
-}
-
-
-
-
-function hoverCheckboxIcns() {
-    let icns = document.querySelectorAll('.checkbox-icn-container button');
-    icns.forEach(icn => {
-        icn.classList.toggle('opacity-0');
-        icn.classList.toggle('opacity-1');
     });
 }
 

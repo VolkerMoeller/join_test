@@ -223,6 +223,14 @@ function checkOverlay() {
     }
 }
 
+
+//  helpers
+
+function focusInput(fieldId) {
+    document.getElementById(fieldId).focus();
+}
+
+
 // test
 
 function doSth() {

@@ -71,8 +71,6 @@ function changeClrScheme() {
 }
 
 
-
-
 // local storage
 
 function saveLocalStorageObject(key, obj) {
@@ -188,32 +186,6 @@ function toggleElements(id1st, id2nd) {
     element1st.classList.toggle('display-none');
     element2nd.classList.toggle('display-none');
 }
-
-// handle overlay
-
-function handleOverlay() {
-    let overlay = document.querySelector('.ovl-frame');
-    let overlayNotShown = overlay.classList.contains('ovl-hide');
-    if (overlayNotShown) {
-        setupOverlayForInput();
-        setupSignElementsOnTop();
-    }
-}
-
-
-function handleOverlayBack() {
-    setupOverlayForInput();
-    setupSignElementsOnTop();
-    setupPasswordBtn();
-}
-
-
-function setupPasswordBtn() {
-    hideVisibilityBtn();
-    visibilityPasswordOff();
-    setVisibilityIconsDefault();
-}
-
 
 
 function checkOverlay() {

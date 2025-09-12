@@ -11,7 +11,7 @@ async function initSign() {
 
 
 // --------------------
-// sign-form-functions:
+// cntCenter-functions:
 // --------------------
 
 // checkInput()
@@ -66,6 +66,16 @@ function checkWarningStyle(id) {
 }
 
 
+function handleOverlay() {
+    let overlay = document.querySelector('.ovl-frame');
+    let overlayNotShown = overlay.classList.contains('ovl-hide');
+    if (overlayNotShown) {
+        setupOverlayForInput();
+        setupSignElementsOnTop();
+    }
+}
+
+
 function focusInputField(fieldId, lockIcnId) {
     focusInput(fieldId);
     handlePwIcn(lockIcnId);
@@ -115,11 +125,20 @@ function initCheckInputSignUp() {
 
 // checkCurrentForm()
 // checkInputLogIn()
-// setSignUpRequiredOff()
+// setSignUpRequiredOff() see above
 // defaultFormSettings()
 // resetOverlayFrame() --> main.js
 // blurInputField()
-
+// removeWarningNoMatchLogIn()
+// removeWarningNoMatchSignUp()
+// warningTextOff()
+// setupOverlayForInput() --> main.js
+// setupSignElementsOnTop()
+// focusInput() --> main.js
+// handlePwIcn()
+// toggleCheckboxIcns()
+// toggleOnOffSignUpBtn()
+// checkInputSignUp()
 
 
 function checkCurrentForm() {
@@ -145,8 +164,6 @@ function checkInputLogIn() {
 }
 
 
-
-
 function defaultFormSettings() {
     toggleSignForms();
     clearInputs();
@@ -161,9 +178,103 @@ function blurInputField() {
 }
 
 
+function removeWarningNoMatchLogIn() {
+    let matchInputs = ['eMail', 'password'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.remove('no-match-input');
+    });
+}
+
+
+
+
+function warningTextOff() {
+    let warnings = document.querySelectorAll('.version-warning');
+    warnings.forEach(warning => {
+        let warningOff = warning.classList.contains('opacity-0');
+        if (!warningOff) {
+            warning.classList.add('opacity-0');
+        }
+    });
+}
+
+
+function setupSignElementsOnTop() {
+    let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
+    for (let i = 0; i < selectors.length; i++) {
+        let elements = document.querySelectorAll(selectors[i]);
+        if (elements) {
+            elements.forEach(element => {
+                element.classList.add('z-index-4');
+            });
+        }
+    }
+}
+
+
+function handlePwIcn(lockIcnId) {
+    handleLockIcn(lockIcnId);
+    handleInputIcon(lockIcnId);
+}
+
+
+function toggleCheckboxIcns() {
+    let icns = ['checkboxChecked', 'checkboxDefault'];
+    icns.forEach(icn => {
+        document.getElementById(icn).classList.toggle('display-none');
+    });
+}
+
+
+function toggleOnOffSignUpBtn() {
+    let btn = document.getElementById('signUpBtn');
+    let status = btn.hasAttribute('disabled');
+    if (status) {
+        btn.disabled = false;
+        return false;
+    } else {
+        btn.disabled = true;
+        return true;
+    }
+}
+
+
+function checkInputSignUp() {
+    let fits = checkPwAndPwConfirm();
+    if (!fits) {
+        warningTextOn();
+        addWarningNoMatchSignUp();
+        return false;
+    } else {
+        warningTextOff();
+        removeWarningNoMatchSignUp();
+        return true;
+    }
+}
+
+
 // -----------------------
 // ++ 2nd-level-functions:
 // -----------------------
+
+// checkEmailAndPassword()
+// warningTextOn()
+// addWarningNoMatchLogIn()
+// warningTextOff() - see above
+// removeWarningNoMatchLogIn - see above
+// toggleSignForms()
+// clearInputs()
+// warningTextOff() - see above
+// resetWarningNoMatch()
+// resetCheckbox()
+// handleLockIcn()
+// handleInputIcon()
+// warningTextOn() - see above
+// addWarningNoMatchSignUp()
+// warningTextOff() - see above
+// removeWarningNoMatchSignUp()
+
+
 
 
 function checkEmailAndPassword() {
@@ -195,25 +306,6 @@ function addWarningNoMatchLogIn() {
 }
 
 
-function warningTextOff() {
-    let warnings = document.querySelectorAll('.version-warning');
-    warnings.forEach(warning => {
-        let warningOff = warning.classList.contains('opacity-0');
-        if (!warningOff) {
-            warning.classList.add('opacity-0');
-        }
-    });
-}
-
-
-function removeWarningNoMatchLogIn() {
-    let matchInputs = ['eMail', 'password'];
-    matchInputs.forEach(input => {
-        document.getElementById(input).classList.remove('no-match-input');
-    });
-}
-
-
 function toggleSignForms() {
     changeFormInputs();
     toggleLoginElements();
@@ -232,9 +324,6 @@ function clearInputs() {
 }
 
 
-// function warningTextOff() --> see above
-
-
 function resetWarningNoMatch() {
     let matchInputs = ['name', 'eMail', 'password', 'passwordConfirm'];
     matchInputs.forEach(input => {
@@ -248,65 +337,16 @@ function resetCheckbox() {
     let status = btn.hasAttribute('disabled');
     if (status == false) {
         btn.disabled = true;
-        toggleCheckboxIcns()
+        toggleCheckboxIcns();
     }
 }
 
 
-// -----------------------
-// ++ 3rd-level-functions:
-// -----------------------
-
-// changeFormInputs();
-// toggleLoginElements();
-// toggleSignUpElements();
-
-
-function changeFormInputs() {
-    let classes = {
-        formInputs: ['form-inputs-log-in', 'form-inputs-sign-up'],
-        formSign: ['form-sign-log-in', 'form-sign-sign-up']
-    };
-    Object.entries(classes).forEach(([key, value]) => {
-        let formInput = document.getElementById(key);
-        formInput.classList.toggle(value[0]);
-        formInput.classList.toggle(value[1]);
-    });
+function handleLockIcn(lockIcnId) {
+    let containerId = lockIcnId + 'VsbCont'
+    document.getElementById(lockIcnId).classList.add('display-none');
+    document.getElementById(containerId).classList.remove('display-none');
 }
-
-
-
-function toggleSignUpElements() {
-    let signUpElements = document.querySelectorAll('.sign-up');
-    signUpElements.forEach(signUpElement => {
-        signUpElement.classList.toggle('display-none');
-    });
-}
-
-
-
-
-
-
-
-
-
-function toggleLoginElements() {
-    let logInElements = document.querySelectorAll('.log-in');
-    logInElements.forEach(logInElement => {
-        logInElement.classList.toggle('display-none');
-    });
-}
-
-
-
-
-function handlePwIcn(lockIcnId) {
-    handleLockIcn(lockIcnId);
-    handleInputIcon(lockIcnId);
-}
-
-
 
 
 function handleInputIcon(lockIcnId) {
@@ -325,7 +365,56 @@ function handleInputIcon(lockIcnId) {
 }
 
 
-// XXX
+function addWarningNoMatchSignUp() {
+    document.getElementById('passwordConfirm').classList.add('no-match-input');
+}
+
+
+function removeWarningNoMatchSignUp() {
+    document.getElementById('passwordConfirm').classList.remove('no-match-input');
+}
+
+
+// -----------------------
+// +++ 3rd-level-functions:
+// -----------------------
+
+// changeFormInputs()
+// toggleLoginElements()
+// toggleSignUpElements()
+// toggleCheckboxIcns() - see above
+// visibilityPassword()
+// toggleElements() --> main.js
+
+
+function changeFormInputs() {
+    let classes = {
+        formInputs: ['form-inputs-log-in', 'form-inputs-sign-up'],
+        formSign: ['form-sign-log-in', 'form-sign-sign-up']
+    };
+    Object.entries(classes).forEach(([key, value]) => {
+        let formInput = document.getElementById(key);
+        formInput.classList.toggle(value[0]);
+        formInput.classList.toggle(value[1]);
+    });
+}
+
+
+function toggleLoginElements() {
+    let logInElements = document.querySelectorAll('.log-in');
+    logInElements.forEach(logInElement => {
+        logInElement.classList.toggle('display-none');
+    });
+}
+
+
+function toggleSignUpElements() {
+    let signUpElements = document.querySelectorAll('.sign-up');
+    signUpElements.forEach(signUpElement => {
+        signUpElement.classList.toggle('display-none');
+    });
+}
+
 
 function visibilityPassword(id) {
     let pwToSet = {
@@ -338,6 +427,62 @@ function visibilityPassword(id) {
     } else {
         inputPw.type = 'password';
     }
+}
+
+
+// ----------------------
+// cntRight-functions:
+// ----------------------
+
+// toggleSignFormsForward()
+
+
+function toggleSignFormsForward() {
+    setSignUpRequiredOn();
+    defaultFormSettings();
+    resetOverlayFrame();
+    setupPasswordBtn();
+}
+
+// ----------------------
+// + 1st-level-functions
+// ----------------------
+
+// setSignUpRequiredOn()
+// defaultFormSettings() --> see above
+// resetOverlayFrame() --> main.js
+// setupPasswordBtn()
+
+
+function setSignUpRequiredOn() {
+    let name = document.getElementById('name');
+    name.required = true;
+    let passwordConfirm = document.getElementById('passwordConfirm');
+    passwordConfirm.required = true;
+}
+
+function setupPasswordBtn() {
+    hideVisibilityBtn();
+    visibilityPasswordOff();
+    setVisibilityIconsDefault();
+}
+
+// ----------------------
+// ++ 2nd-level-functions
+// ----------------------
+
+// hideVisibilityBtn()
+// visibilityPasswordOff()
+// setVisibilityIconsDefault()
+
+
+function hideVisibilityBtn() {
+    let containers = document.querySelectorAll('.visibility-container');
+    containers.forEach(container => {
+        container.classList.add('display-none');
+    });
+    document.getElementById('lockIcnPw').classList.remove('display-none');
+    document.getElementById('lockIcnPwConfirm').classList.remove('display-none');
 }
 
 
@@ -361,70 +506,60 @@ function setVisibilityIconsDefault() {
 }
 
 
-function handleLockIcn(lockIcnId) {
-    let containerId = lockIcnId + 'VsbCont'
-    document.getElementById(lockIcnId).classList.add('display-none');
-    document.getElementById(containerId).classList.remove('display-none');
-}
 
 
-function hideVisibilityBtn() {
-    let containers = document.querySelectorAll('.visibility-container');
-    containers.forEach(container => {
-        container.classList.add('display-none');
-    });
-    document.getElementById('lockIcnPw').classList.remove('display-none');
-    document.getElementById('lockIcnPwConfirm').classList.remove('display-none');
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // warning text
 
 
-function initWarningTextSignUp() {
-    setSignUpRequiredOn();
-    warningTextSignUp();
-}
+// function initWarningTextSignUp() {
+//     setSignUpRequiredOn();
+//     warningTextSignUp();
+// }
 
 
-function warningTextSignUp() {
-    warningTextOff();
-    let password = document.getElementById('password').value;
-    let passwordConfirm = document.getElementById('passwordConfirm').value;
-    if (password == passwordConfirm) {
-        warningTextOff();
-    } else
-        warningTextOn();
-}
+// function warningTextSignUp() {
+//     warningTextOff();
+//     let password = document.getElementById('password').value;
+//     let passwordConfirm = document.getElementById('passwordConfirm').value;
+//     if (password == passwordConfirm) {
+//         warningTextOff();
+//     } else
+//         warningTextOn();
+// }
 
 
-function warningTextLogIn() {
-    warningTextOff();
-    let eMail = document.getElementById('eMail');
-    let password = document.getElementById('password');
-    if (password.validity.valid && eMail.validity.valid) {
-        warningTextOff();
-    } else
-        warningTextOn();
-}
+// function warningTextLogIn() {
+//     warningTextOff();
+//     let eMail = document.getElementById('eMail');
+//     let password = document.getElementById('password');
+//     if (password.validity.valid && eMail.validity.valid) {
+//         warningTextOff();
+//     } else
+//         warningTextOn();
+// }
 
 
-
-
-
-
-
-function setupSignElementsOnTop() {
-    let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
-    for (let i = 0; i < selectors.length; i++) {
-        let elements = document.querySelectorAll(selectors[i]);
-        if (elements) {
-            elements.forEach(element => {
-                element.classList.add('z-index-4');
-            });
-        }
-    }
-}
 
 
 function resetSignElementsOnTop() {
@@ -440,21 +575,6 @@ function resetSignElementsOnTop() {
 }
 
 
-// clear input fields
-
-
-
-
-
-
-
-
-function toggleSignFormsForward() {
-    setSignUpRequiredOn();
-    defaultFormSettings();
-    resetOverlayFrame();
-    setupPasswordBtn();
-}
 
 
 
@@ -472,12 +592,6 @@ function toggleSignFormsForward() {
 
 
 
-function setSignUpRequiredOn() {
-    let name = document.getElementById('name');
-    name.required = true;
-    let passwordConfirm = document.getElementById('passwordConfirm');
-    passwordConfirm.required = true;
-}
 
 
 
@@ -492,18 +606,6 @@ function toggleWarningNoMatchLogIn() {
 
 
 
-function checkInputSignUp() {
-    let fits = checkPwAndPwConfirm();
-    if (!fits) {
-        warningTextOn();
-        addWarningNoMatchSignUp();
-        return false;
-    } else {
-        warningTextOff();
-        removeWarningNoMatchSignUp();
-        return true;
-    }
-}
 
 
 function toggleWarningNoMatchSignUp() {
@@ -511,14 +613,8 @@ function toggleWarningNoMatchSignUp() {
 }
 
 
-function addWarningNoMatchSignUp() {
-    document.getElementById('passwordConfirm').classList.add('no-match-input');
-}
 
 
-function removeWarningNoMatchSignUp() {
-    document.getElementById('passwordConfirm').classList.remove('no-match-input');
-}
 
 
 
@@ -546,25 +642,8 @@ function checkPwAndPwConfirm() {
 
 
 
-function toggleOnOffSignUpBtn() {
-    let btn = document.getElementById('signUpBtn');
-    let status = btn.hasAttribute('disabled');
-    if (status) {
-        btn.disabled = false;
-        return false;
-    } else {
-        btn.disabled = true;
-        return true;
-    }
-}
 
 
-function toggleCheckboxIcns() {
-    let icns = ['checkboxChecked', 'checkboxDefault'];
-    icns.forEach(icn => {
-        document.getElementById(icn).classList.toggle('display-none');
-    });
-}
 
 
 // messages
@@ -612,3 +691,15 @@ function slideMessages() {
     document.querySelector('.msg-log-in').classList.add('from-right-to-center');
     document.querySelector('.msg-sign-up').classList.add('from-bottom-to-center');
 }
+
+
+// handle overlay
+
+
+
+function handleOverlayBack() {
+    setupOverlayForInput();
+    setupSignElementsOnTop();
+    setupPasswordBtn();
+}
+

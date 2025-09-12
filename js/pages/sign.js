@@ -283,6 +283,7 @@ function initAnimMessages() {
 // resetCheckbox()
 // handleLockIcn()
 // handleInputIcon()
+// checkPwAndPwConfirm()
 // warningTextOn() - see above
 // addWarningNoMatchSignUp()
 // warningTextOff() - see above
@@ -377,6 +378,17 @@ function handleInputIcon(lockIcnId) {
     } else {
         visibilityPassword(lockIcnId);
         toggleElements(toToggle[lockIcnId][0], toToggle[lockIcnId][1]);
+    }
+}
+
+
+function checkPwAndPwConfirm() {
+    let currentPw = document.getElementById('password').value;
+    let currentConfirm = document.getElementById('passwordConfirm').value;
+    if (currentPw == currentConfirm) {
+        return true;
+    } else {
+        return false;
     }
 }
 
@@ -522,7 +534,7 @@ function toggleSignFormsForward() {
 // setSignUpRequiredOn()
 // defaultFormSettings() --> see above
 // resetOverlayFrame() --> main.js
-// setupPasswordBtn()
+// setupPasswordBtn() 
 
 
 function setSignUpRequiredOn() {
@@ -624,19 +636,23 @@ function setVisibilityIconsDefault() {
 // }
 
 
-function checkPwAndPwConfirm() {
-    let currentPw = document.getElementById('password').value;
-    let currentConfirm = document.getElementById('passwordConfirm').value;
-    if (currentPw == currentConfirm) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
+// --------------------
+// ovlSign-functions:
+// --------------------
 
 function handleOverlayBack() {
     setupOverlayForInput();
     setupSignElementsOnTop();
     setupPasswordBtn();
 }
+
+// --------------------
+// 1st-level-functions:
+// --------------------
+
+// setupOverlayForInput() --> main.js
+// setupSignElementsOnTop() see above
+// setupPasswordBtn() see above
+
+

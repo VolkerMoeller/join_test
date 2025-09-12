@@ -139,6 +139,7 @@ function initCheckInputSignUp() {
 // toggleCheckboxIcns()
 // toggleOnOffSignUpBtn()
 // checkInputSignUp()
+// initAnimMessages()
 
 
 function checkCurrentForm() {
@@ -253,6 +254,19 @@ function checkInputSignUp() {
 }
 
 
+function initAnimMessages() {
+    let currentForm = checkCurrentForm();
+    resetSignElementsOnTop();
+    animMessages(currentForm);
+    if (currentForm == 'SignUp') {
+        setTimeout(() => {
+            switchToLoginForm(currentForm);
+        }, 1000);
+    }
+}
+
+
+
 // -----------------------
 // ++ 2nd-level-functions:
 // -----------------------
@@ -273,6 +287,9 @@ function checkInputSignUp() {
 // addWarningNoMatchSignUp()
 // warningTextOff() - see above
 // removeWarningNoMatchSignUp()
+// checkCurrentForm() - see above
+// resetSignElementsOnTop()
+// animMessages()
 
 
 
@@ -375,6 +392,29 @@ function removeWarningNoMatchSignUp() {
 }
 
 
+function resetSignElementsOnTop() {
+    let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
+    for (let i = 0; i < selectors.length; i++) {
+        let elements = document.querySelectorAll(selectors[i]);
+        if (elements) {
+            elements.forEach(element => {
+                element.classList.remove('z-index-4');
+            });
+        }
+    }
+}
+
+
+function animMessages(currentForm) {
+    showOverlay();
+    showCurrentMessage(currentForm);
+    slideMessages();
+    setTimeout(() => {
+        resetOverlay();
+    }, 1000);
+}
+
+
 // -----------------------
 // +++ 3rd-level-functions:
 // -----------------------
@@ -385,6 +425,10 @@ function removeWarningNoMatchSignUp() {
 // toggleCheckboxIcns() - see above
 // visibilityPassword()
 // toggleElements() --> main.js
+// showOverlay() --> main.js
+// showCurrentMessage()
+// slideMessages()
+// resetOverlay()
 
 
 function changeFormInputs() {
@@ -427,6 +471,24 @@ function visibilityPassword(id) {
     } else {
         inputPw.type = 'password';
     }
+}
+
+
+function showCurrentMessage(currentForm) {
+    if (currentForm == 'SignUp') {
+        document.querySelector('.msg-log-in').classList.add('display-none');
+        document.querySelector('.msg-sign-up').classList.remove('display-none');
+    } else {
+        document.querySelector('.msg-log-in').classList.remove('display-none');
+        document.querySelector('.msg-sign-up').classList.add('display-none');
+    }
+}
+
+
+
+function slideMessages() {
+    document.querySelector('.msg-log-in').classList.add('from-right-to-center');
+    document.querySelector('.msg-sign-up').classList.add('from-bottom-to-center');
 }
 
 
@@ -511,24 +573,6 @@ function setVisibilityIconsDefault() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // warning text
 
 
@@ -562,39 +606,6 @@ function setVisibilityIconsDefault() {
 
 
 
-function resetSignElementsOnTop() {
-    let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
-    for (let i = 0; i < selectors.length; i++) {
-        let elements = document.querySelectorAll(selectors[i]);
-        if (elements) {
-            elements.forEach(element => {
-                element.classList.remove('z-index-4');
-            });
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function toggleWarningNoMatchLogIn() {
@@ -605,21 +616,9 @@ function toggleWarningNoMatchLogIn() {
 }
 
 
-
-
-
 function toggleWarningNoMatchSignUp() {
     document.getElementById('passwordConfirm').classList.toggle('no-match-input');
 }
-
-
-
-
-
-
-
-
-
 
 
 function checkPwAndPwConfirm() {
@@ -633,51 +632,10 @@ function checkPwAndPwConfirm() {
 }
 
 
-
-
-// checkbox Icon and Button Sign up
-
-
-
-
-
-
-
-
-
-
 // messages
 
-function initAnimMessages() {
-    let currentForm = checkCurrentForm();
-    resetSignElementsOnTop();
-    animMessages(currentForm);
-    if (currentForm == 'SignUp') {
-        setTimeout(() => {
-            switchToLoginForm(currentForm);
-        }, 1000);
-    }
-}
-
-function animMessages(currentForm) {
-    showOverlay();
-    showCurrentMessage(currentForm);
-    slideMessages();
-    setTimeout(() => {
-        resetOverlay();
-    }, 1000);
-}
 
 
-function showCurrentMessage(currentForm) {
-    if (currentForm == 'SignUp') {
-        document.querySelector('.msg-log-in').classList.add('display-none');
-        document.querySelector('.msg-sign-up').classList.remove('display-none');
-    } else {
-        document.querySelector('.msg-log-in').classList.remove('display-none');
-        document.querySelector('.msg-sign-up').classList.add('display-none');
-    }
-}
 
 
 function switchToLoginForm(currentForm) {
@@ -687,14 +645,9 @@ function switchToLoginForm(currentForm) {
 }
 
 
-function slideMessages() {
-    document.querySelector('.msg-log-in').classList.add('from-right-to-center');
-    document.querySelector('.msg-sign-up').classList.add('from-bottom-to-center');
-}
 
 
 // handle overlay
-
 
 
 function handleOverlayBack() {

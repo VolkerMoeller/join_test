@@ -73,6 +73,25 @@ function addWarningNoMatchLogIn() {
 }
 
 
+function warningTextOff() {
+    let warnings = document.querySelectorAll('.version-warning');
+    warnings.forEach(warning => {
+        let warningOff = warning.classList.contains('opacity-0');
+        if (!warningOff) {
+            warning.classList.add('opacity-0');
+        }
+    });
+}
+
+
+function removeWarningNoMatchLogIn() {
+    let matchInputs = ['eMail', 'password'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.remove('no-match-input');
+    });
+}
+
+
 
 
 
@@ -199,15 +218,6 @@ function warningTextLogIn() {
 
 
 
-function warningTextOff() {
-    let warnings = document.querySelectorAll('.version-warning');
-    warnings.forEach(warning => {
-        let warningOff = warning.classList.contains('opacity-0');
-        if (!warningOff) {
-            warning.classList.add('opacity-0');
-        }
-    });
-}
 
 
 function setupSignElementsOnTop() {
@@ -350,12 +360,6 @@ function toggleWarningNoMatchLogIn() {
 
 
 
-function removeWarningNoMatchLogIn() {
-    let matchInputs = ['eMail', 'password'];
-    matchInputs.forEach(input => {
-        document.getElementById(input).classList.remove('no-match-input');
-    });
-}
 
 
 function initCheckInputSignUp() {

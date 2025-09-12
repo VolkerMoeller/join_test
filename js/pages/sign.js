@@ -580,8 +580,6 @@ function setVisibilityIconsDefault() {
 
 
 
-
-
 // warning text
 
 
@@ -613,21 +611,17 @@ function setVisibilityIconsDefault() {
 // }
 
 
+// function toggleWarningNoMatchLogIn() {
+//     let matchInputs = ['eMail', 'password'];
+//     matchInputs.forEach(input => {
+//         document.getElementById(input).classList.toggle('no-match-input');
+//     });
+// }
 
 
-
-
-function toggleWarningNoMatchLogIn() {
-    let matchInputs = ['eMail', 'password'];
-    matchInputs.forEach(input => {
-        document.getElementById(input).classList.toggle('no-match-input');
-    });
-}
-
-
-function toggleWarningNoMatchSignUp() {
-    document.getElementById('passwordConfirm').classList.toggle('no-match-input');
-}
+// function toggleWarningNoMatchSignUp() {
+//     document.getElementById('passwordConfirm').classList.toggle('no-match-input');
+// }
 
 
 function checkPwAndPwConfirm() {
@@ -639,8 +633,6 @@ function checkPwAndPwConfirm() {
         return false;
     }
 }
-
-
 
 
 function handleOverlayBack() {

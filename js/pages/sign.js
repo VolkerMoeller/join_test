@@ -3,8 +3,12 @@ async function initSign() {
     setClrSchemeInit();
 }
 
+// -------------------
+// 1st-level-functions
+// -------------------
 
-// + 1st-level-functions --> main.js
+// includeHTML() --> main.js
+// setClrSchemeInit() -- main.js
 
 
 
@@ -510,9 +514,6 @@ function slideMessages() {
 }
 
 
-
-
-
 // ----------------------
 // cntRight-functions:
 // ----------------------
@@ -590,8 +591,6 @@ function setVisibilityIconsDefault() {
 
 
 
-
-
 // warning text
 
 
@@ -654,5 +653,3 @@ function handleOverlayBack() {
 // setupOverlayForInput() --> main.js
 // setupSignElementsOnTop() see above
 // setupPasswordBtn() see above
-
-

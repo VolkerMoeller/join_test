@@ -511,7 +511,6 @@ function showCurrentMessage(currentForm) {
 }
 
 
-
 function slideMessages() {
     document.querySelector('.msg-log-in').classList.add('from-right-to-center');
     document.querySelector('.msg-sign-up').classList.add('from-bottom-to-center');
@@ -605,7 +604,7 @@ function handleOverlayBack() {
 }
 
 // --------------------
-// 1st-level-functions:
+// + 1st-level-functions:
 // --------------------
 
 // setupOverlayForInput() --> main.js

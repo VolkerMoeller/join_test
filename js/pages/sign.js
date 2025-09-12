@@ -290,8 +290,7 @@ function initAnimMessages() {
 // checkCurrentForm() - see above
 // resetSignElementsOnTop()
 // animMessages()
-
-
+// switchToLoginForm()
 
 
 function checkEmailAndPassword() {
@@ -415,6 +414,13 @@ function animMessages(currentForm) {
 }
 
 
+function switchToLoginForm(currentForm) {
+    if (currentForm == 'SignUp') {
+        toggleSignFormsBack();
+    }
+}
+
+
 // -----------------------
 // +++ 3rd-level-functions:
 // -----------------------
@@ -428,7 +434,7 @@ function animMessages(currentForm) {
 // showOverlay() --> main.js
 // showCurrentMessage()
 // slideMessages()
-// resetOverlay()
+// resetOverlay() --> main.js
 
 
 function changeFormInputs() {
@@ -490,6 +496,9 @@ function slideMessages() {
     document.querySelector('.msg-log-in').classList.add('from-right-to-center');
     document.querySelector('.msg-sign-up').classList.add('from-bottom-to-center');
 }
+
+
+
 
 
 // ----------------------
@@ -632,22 +641,6 @@ function checkPwAndPwConfirm() {
 }
 
 
-// messages
-
-
-
-
-
-function switchToLoginForm(currentForm) {
-    if (currentForm == 'SignUp') {
-        toggleSignFormsBack();
-    }
-}
-
-
-
-
-// handle overlay
 
 
 function handleOverlayBack() {
@@ -655,4 +648,3 @@ function handleOverlayBack() {
     setupSignElementsOnTop();
     setupPasswordBtn();
 }
-

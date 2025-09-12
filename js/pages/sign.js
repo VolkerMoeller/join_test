@@ -8,7 +8,15 @@ async function initSign() {
 
 
 
+
+
+// --------------------
 // sign-form-functions:
+// --------------------
+
+// checkInput()
+// toggleSignFormsBack()
+
 
 function checkInput() {
     let form = checkCurrentForm();
@@ -25,11 +33,19 @@ function toggleSignFormsBack() {
     setTimeout(() => {
         blurInputField();
     }, 1);
-
 }
 
 
+// ----------------------
 // + 1st-level-functions:
+// ----------------------
+
+// checkCurrentForm()
+// checkInputLogIn()
+// setSignUpRequiredOff()
+// defaultFormSettings()
+// resetOverlayFrame() --> main.js
+
 
 function checkCurrentForm() {
     let form = 'LogIn';
@@ -71,8 +87,15 @@ function defaultFormSettings() {
 }
 
 
+function blurInputField() {
+    document.getElementById('eMail').blur();
+}
 
+
+// -----------------------
 // ++ 2nd-level-functions:
+// -----------------------
+
 
 function checkEmailAndPassword() {
     let currentEMail = document.getElementById('eMail').value;
@@ -122,16 +145,89 @@ function removeWarningNoMatchLogIn() {
 }
 
 
-// resetOverlayFrame() --> main.js
+function toggleSignForms() {
+    changeFormInputs();
+    toggleLoginElements();
+    toggleSignUpElements();
+}
 
 
-function blurInputField() {
-    document.getElementById('eMail').blur();
+function clearInputs() {
+    let selector = ['.input-container input'];
+    let containers = document.querySelectorAll(selector);
+    if (containers) {
+        containers.forEach(container => {
+            container.value = '';
+        });
+    }
+}
+
+
+// function warningTextOff() --> see above
+
+
+function resetWarningNoMatch() {
+    let matchInputs = ['name', 'eMail', 'password', 'passwordConfirm'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.remove('no-match-input');
+    });
+}
+
+
+function resetCheckbox() {
+    let btn = document.getElementById('signUpBtn');
+    let status = btn.hasAttribute('disabled');
+    if (status == false) {
+        btn.disabled = true;
+        toggleCheckboxIcns()
+    }
+}
+
+
+// -----------------------
+// ++ 3rd-level-functions:
+// -----------------------
+
+// changeFormInputs();
+// toggleLoginElements();
+// toggleSignUpElements();
+
+
+function changeFormInputs() {
+    let classes = {
+        formInputs: ['form-inputs-log-in', 'form-inputs-sign-up'],
+        formSign: ['form-sign-log-in', 'form-sign-sign-up']
+    };
+    Object.entries(classes).forEach(([key, value]) => {
+        let formInput = document.getElementById(key);
+        formInput.classList.toggle(value[0]);
+        formInput.classList.toggle(value[1]);
+    });
+}
+
+
+
+function toggleSignUpElements() {
+    let signUpElements = document.querySelectorAll('.sign-up');
+    signUpElements.forEach(signUpElement => {
+        signUpElement.classList.toggle('display-none');
+    });
 }
 
 
 
 
+
+
+
+
+
+function toggleLoginElements() {
+    let logInElements = document.querySelectorAll('.log-in');
+    logInElements.forEach(logInElement => {
+        logInElement.classList.toggle('display-none');
+    });
+}
 
 
 function focusInputField(fieldId, lockIcnId) {
@@ -284,15 +380,7 @@ function resetSignElementsOnTop() {
 
 // clear input fields
 
-function clearInputs() {
-    let selector = ['.input-container input'];
-    let containers = document.querySelectorAll(selector);
-    if (containers) {
-        containers.forEach(container => {
-            container.value = '';
-        });
-    }
-}
+
 
 
 
@@ -310,40 +398,14 @@ function toggleSignFormsForward() {
 
 
 
-function toggleSignForms() {
-    changeFormInputs();
-    toggleLoginElements();
-    toggleSignUpElements();
-}
 
 
-function changeFormInputs() {
-    let classes = {
-        formInputs: ['form-inputs-log-in', 'form-inputs-sign-up'],
-        formSign: ['form-sign-log-in', 'form-sign-sign-up']
-    };
-    Object.entries(classes).forEach(([key, value]) => {
-        let formInput = document.getElementById(key);
-        formInput.classList.toggle(value[0]);
-        formInput.classList.toggle(value[1]);
-    });
-}
 
 
-function toggleLoginElements() {
-    let logInElements = document.querySelectorAll('.log-in');
-    logInElements.forEach(logInElement => {
-        logInElement.classList.toggle('display-none');
-    });
-}
 
 
-function toggleSignUpElements() {
-    let signUpElements = document.querySelectorAll('.sign-up');
-    signUpElements.forEach(signUpElement => {
-        signUpElement.classList.toggle('display-none');
-    });
-}
+
+
 
 
 
@@ -414,12 +476,6 @@ function removeWarningNoMatchSignUp() {
 }
 
 
-function resetWarningNoMatch() {
-    let matchInputs = ['name', 'eMail', 'password', 'passwordConfirm'];
-    matchInputs.forEach(input => {
-        document.getElementById(input).classList.remove('no-match-input');
-    });
-}
 
 
 
@@ -455,14 +511,6 @@ function switchCheckboxIcnAndSignUpBtn() {
 }
 
 
-function resetCheckbox() {
-    let btn = document.getElementById('signUpBtn');
-    let status = btn.hasAttribute('disabled');
-    if (status == false) {
-        btn.disabled = true;
-        toggleCheckboxIcns()
-    }
-}
 
 
 function toggleOnOffSignUpBtn() {

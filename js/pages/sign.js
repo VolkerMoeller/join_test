@@ -4,18 +4,89 @@ async function initSign() {
 }
 
 
-// navigation
-
-// function toggleFormsSign() {
-//     clearInputs();
-// }
+// + 1st-level-functions --> main.js
 
 
-// focus input fields
 
-function handleFocusInputFields(fieldId, lockIcnId) {
+// sign-form-functions:
+
+function checkInput() {
+    let form = checkCurrentForm();
+    if (form == 'LogIn') {
+        checkInputLogIn();
+    }
+}
+
+// + 1st-level-functions:
+
+function checkCurrentForm() {
+    let form = 'LogIn';
+    let element = document.querySelector('.form-title');
+    if (element.classList.contains('display-none')) {
+        form = 'SignUp';
+    }
+    return form;
+}
+
+
+function checkInputLogIn() {
+    let fits = checkEmailAndPassword();
+    if (!fits) {
+        warningTextOn();
+        addWarningNoMatchLogIn();
+    } else {
+        warningTextOff();
+        removeWarningNoMatchLogIn();
+        console.log('go to Sum');
+    }
+}
+
+
+// ++ 2nd-level-functions:
+
+function checkEmailAndPassword() {
+    let currentEMail = document.getElementById('eMail').value;
+    let currentPw = document.getElementById('password').value;
+    if (currentEMail == 'gans@gmx.de' && currentPw == '123') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function warningTextOn() {
+    let warnings = document.querySelectorAll('.version-warning');
+    warnings.forEach(warning => {
+        let warningOff = warning.classList.contains('opacity-0');
+        if (warningOff) {
+            warning.classList.remove('opacity-0');
+        }
+    });
+}
+
+
+function addWarningNoMatchLogIn() {
+    let matchInputs = ['eMail', 'password'];
+    matchInputs.forEach(input => {
+        document.getElementById(input).classList.add('no-match-input');
+    });
+}
+
+
+
+
+
+
+
+
+function focusInputField(fieldId, lockIcnId) {
     focusInput(fieldId);
-    showVisibilityBtn(lockIcnId);
+    handlePwIcn(lockIcnId);
+}
+
+
+function handlePwIcn(lockIcnId) {
+    handleLockIcn(lockIcnId);
     handleInputIcon(lockIcnId);
 }
 
@@ -77,7 +148,7 @@ function setVisibilityIconsDefault() {
 }
 
 
-function showVisibilityBtn(lockIcnId) {
+function handleLockIcn(lockIcnId) {
     let containerId = lockIcnId + 'VsbCont'
     document.getElementById(lockIcnId).classList.add('display-none');
     document.getElementById(containerId).classList.remove('display-none');
@@ -125,15 +196,7 @@ function warningTextLogIn() {
 }
 
 
-function warningTextOn() {
-    let warnings = document.querySelectorAll('.version-warning');
-    warnings.forEach(warning => {
-        let warningOff = warning.classList.contains('opacity-0');
-        if (warningOff) {
-            warning.classList.remove('opacity-0');
-        }
-    });
-}
+
 
 
 function warningTextOff() {
@@ -145,21 +208,6 @@ function warningTextOff() {
         }
     });
 }
-
-
-// input overlay
-
-// function setupSignElementsOnTop() {
-//     let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
-//     for (let i = 0; i < selectors.length; i++) {
-//         let elements = document.querySelectorAll(selectors[i]);
-//         if (elements) {
-//             elements.forEach(element => {
-//                 element.classList.toggle('z-index-4');
-//             });
-//         }
-//     }
-// }
 
 
 function setupSignElementsOnTop() {
@@ -199,19 +247,6 @@ function clearInputs() {
         });
     }
 }
-
-
-// handle overlays for signUp and logIn
-
-// function toggleSignOvls() {
-//     let ovls = document.querySelectorAll('.ovl');
-//     for (let i = 0; i < ovls.length; i++) {
-//         const ovl = ovls[i];
-//         let ovlNotShown = ovl.classList.contains('display-none');
-//         if (!ovlNotShown) { ovl.classList.add('display-none') }
-//         else { ovl.classList.remove('display-none') };
-//     }
-// }
 
 
 // toggle form sign-up / form log-in
@@ -301,38 +336,7 @@ function setSignUpRequiredOn() {
 }
 
 
-// checkInput
 
-function checkInput() {
-    let form = checkCurrentForm();
-    if (form == 'LogIn') {
-        checkInputLogIn();
-    }
-}
-
-
-function checkCurrentForm() {
-    let form = 'LogIn';
-    let element = document.querySelector('.form-title');
-    if (element.classList.contains('display-none')) {
-        form = 'SignUp';
-    }
-    return form;
-}
-
-
-function checkInputLogIn() {
-    let fits = checkEmailAndPassword();
-    if (!fits) {
-        warningTextOn();
-        addWarningNoMatchLogIn();
-    } else {
-        warningTextOff();
-        removeWarningNoMatchLogIn();
-        // initAnimMessages();
-        console.log('go to Sum');
-    }
-}
 
 
 function toggleWarningNoMatchLogIn() {
@@ -343,12 +347,7 @@ function toggleWarningNoMatchLogIn() {
 }
 
 
-function addWarningNoMatchLogIn() {
-    let matchInputs = ['eMail', 'password'];
-    matchInputs.forEach(input => {
-        document.getElementById(input).classList.add('no-match-input');
-    });
-}
+
 
 
 function removeWarningNoMatchLogIn() {
@@ -409,15 +408,7 @@ function resetWarningNoMatch() {
 }
 
 
-function checkEmailAndPassword() {
-    let currentEMail = document.getElementById('eMail').value;
-    let currentPw = document.getElementById('password').value;
-    if (currentEMail == 'gans@gmx.de' && currentPw == '123') {
-        return true;
-    } else {
-        return false;
-    }
-}
+
 
 
 function checkPwAndPwConfirm() {
@@ -490,6 +481,7 @@ function hoverCheckboxIcns() {
         icn.classList.toggle('opacity-1');
     });
 }
+
 
 // messages
 

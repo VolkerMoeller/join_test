@@ -48,7 +48,7 @@
                             autocomplete="off" required onfocus="handleOverlay()" onkeydown="checkOverlay()"
                             onkeyup="checkWarningStyle('password')">
                         <div id="lockPw" class="input-container-icon" type="button"
-                            onclick="handleFocusInputFields('password', 'lockIcnPw')">
+                            onclick="focusInputField('password', 'lockIcnPw')">
                             <div id="lockIcnPw" w3-include-svg="./assets/img/svgHTML/15-lock.html"></div>
                             <div id="lockIcnPwVsbCont" class="visibility-container display-none">
                                 <button id="pwVsbOff" type="button"
@@ -69,7 +69,7 @@
                             placeholder="Confirm Password" autocomplete="off" required onfocus="handleOverlay()"
                             onkeydown="checkOverlay()" onkeyup="checkWarningStyle('passwordConfirm')">
                         <div id="lockPwConfirm" class="input-container-icon"
-                            onclick="handleFocusInputFields('passwordConfirm', 'lockIcnPwConfirm')">
+                            onclick="focusInputField('passwordConfirm', 'lockIcnPwConfirm')">
                             <div id="lockIcnPwConfirm" w3-include-svg="./assets/img/svgHTML/15-lock.html"></div>
                             <div id="lockIcnPwConfirmVsbCont" class="visibility-container display-none">
                                 <button id="pwConfirmVsbOff" type="button"

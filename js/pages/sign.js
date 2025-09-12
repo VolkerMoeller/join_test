@@ -17,6 +17,18 @@ function checkInput() {
     }
 }
 
+
+function toggleSignFormsBack() {
+    setSignUpRequiredOff();
+    defaultFormSettings();
+    resetOverlayFrame();
+    setTimeout(() => {
+        blurInputField();
+    }, 1);
+
+}
+
+
 // + 1st-level-functions:
 
 function checkCurrentForm() {
@@ -40,6 +52,24 @@ function checkInputLogIn() {
         console.log('go to Sum');
     }
 }
+
+
+function setSignUpRequiredOff() {
+    let name = document.getElementById('name');
+    name.required = false;
+    let passwordConfirm = document.getElementById('passwordConfirm');
+    passwordConfirm.required = false;
+}
+
+
+function defaultFormSettings() {
+    toggleSignForms();
+    clearInputs();
+    warningTextOff();
+    resetWarningNoMatch();
+    resetCheckbox();
+}
+
 
 
 // ++ 2nd-level-functions:
@@ -92,6 +122,12 @@ function removeWarningNoMatchLogIn() {
 }
 
 
+// resetOverlayFrame() --> main.js
+
+
+function blurInputField() {
+    document.getElementById('eMail').blur();
+}
 
 
 
@@ -259,22 +295,8 @@ function clearInputs() {
 }
 
 
-// toggle form sign-up / form log-in
-
-function toggleSignFormsBack() {
-    setSignUpRequiredOff();
-    defaultFormSettings();
-    resetOverlayFrame();
-    setTimeout(() => {
-        blurInputField();
-    }, 1);
-
-}
 
 
-function blurInputField() {
-    document.getElementById('eMail').blur();
-}
 
 
 function toggleSignFormsForward() {
@@ -285,13 +307,7 @@ function toggleSignFormsForward() {
 }
 
 
-function defaultFormSettings() {
-    toggleSignForms();
-    clearInputs();
-    warningTextOff();
-    resetWarningNoMatch();
-    resetCheckbox();
-}
+
 
 
 function toggleSignForms() {
@@ -330,12 +346,6 @@ function toggleSignUpElements() {
 }
 
 
-function setSignUpRequiredOff() {
-    let name = document.getElementById('name');
-    name.required = false;
-    let passwordConfirm = document.getElementById('passwordConfirm');
-    passwordConfirm.required = false;
-}
 
 
 function setSignUpRequiredOn() {

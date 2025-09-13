@@ -5,18 +5,32 @@ let userStatus = 'guest'; // default user status
 // main-functions:
 // -------------------
 
+// --- initial-functions:
+
 // includeHTML()
 // changeSvgPathClass()
 // setClrSchemeInit()
+// invertLogoClr()
+
+// --- local-storage-functions:
+
 // saveLocalStorageObject()
 // loadLocalStorageObject()
+
+// --- basic-navigation-functions:
+
 // switchToWorkPages()
 // switchToSignPages()
 // changeCntMain()
 // changePageCSS()
-// invertLogoClr()
+
+// --- overlay-functions:
+
 // showOverlay()
 // resetOverlay()
+
+// --- help-functions:
+
 // toggleElements()
 // focusInput()
 // doSth()
@@ -43,6 +57,12 @@ function changeSvgPathClass(container, actualClass, targetClass) {
 function setClrSchemeInit() {
     let colorSchemeId = checkColorSchemeId();
     setClrScheme(colorSchemeId);
+}
+
+
+function invertLogoClr() {
+    const logo = document.querySelector('.logo-desktop-main');
+    changeSvgPathClass(logo, 'path-def-1st', 'path-white')
 }
 
 
@@ -88,10 +108,6 @@ function changePageCSS() {
 }
 
 
-function invertLogoClr() {
-    const logo = document.querySelector('.logo-desktop-main');
-    changeSvgPathClass(logo, 'path-def-1st', 'path-white')
-}
 
 
 function showOverlay() {
@@ -150,6 +166,7 @@ function doSth() {
 // includeHTMLById()
 // checkColorSchemeId()
 // setClrScheme()
+// changeSvgPathClass() --> see above
 // includeHTMLById() --> see above
 // resetOverlayFrame()
 // resetOverlayMsg()

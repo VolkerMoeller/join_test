@@ -17,7 +17,8 @@ let userStatus = 'guest'; // default user status
 // invertLogoClr()
 // showOverlay()
 // resetOverlay()
-
+// setupOverlayForInput()
+// toggleElements()
 
 
 
@@ -105,6 +106,37 @@ function resetOverlay() {
 }
 
 
+function handleOverlay() {
+    let overlay = document.querySelector('.ovl-frame');
+    let overlayNotShown = overlay.classList.contains('ovl-hide');
+    if (overlayNotShown) {
+        setupOverlayForInput();
+        setupSignElementsOnTop();
+    }
+}
+
+
+function setupOverlayForInput() {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.remove('ovl-hide');
+    overlay.classList.add('ovl-show-input');
+}
+
+
+function toggleElements(id1st, id2nd) {
+    const element1st = document.getElementById(id1st);
+    const element2nd = document.getElementById(id2nd);
+    element1st.classList.toggle('display-none');
+    element2nd.classList.toggle('display-none');
+}
+
+
+function checkOverlay() {
+    let overlay = document.querySelector('.ovl-frame');
+    if (!overlay.classList.contains('ovl-show-input')) {
+        handleOverlay();
+    }
+}
 
 
 // -------------------
@@ -114,8 +146,10 @@ function resetOverlay() {
 // includeHTMLById()
 // checkColorSchemeId()
 // setClrScheme()
-// includeHTMLById() - see above
+// includeHTMLById() --> see above
 // resetOverlayFrame()
+// resetOverlayMsg()
+// handleOverlay() --> see above
 
 
 async function includeHTMLById(name) {
@@ -163,6 +197,19 @@ function resetOverlayFrame() {
 }
 
 
+function resetOverlayMsg() {
+    let msgAnims = ['from-bottom-to-center', 'from-right-to-center'];
+    let overlMsgs = document.querySelectorAll('.msg-cnt');
+    overlMsgs.forEach(overlMsg => {
+        for (let i = 0; i < msgAnims.length; i++) {
+            const msgAnim = msgAnims[i];
+            overlMsg.classList.remove(msgAnim);
+            overlMsg.classList.add('display-none');
+        }
+    });
+}
+
+
 // -------------------
 // 3rd-level-functions
 // -------------------
@@ -206,51 +253,17 @@ function changeClrScheme() {
 // }
 
 
-
-
-
-function resetOverlayMsg() {
-    let msgAnims = ['from-bottom-to-center', 'from-right-to-center'];
-    let overlMsgs = document.querySelectorAll('.msg-cnt');
-    overlMsgs.forEach(overlMsg => {
-        for (let i = 0; i < msgAnims.length; i++) {
-            const msgAnim = msgAnims[i];
-            overlMsg.classList.remove(msgAnim);
-            overlMsg.classList.add('display-none');
-        }
-    });
-}
-
-
-function setupOverlayForInput() {
-    const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show-input');
-}
-
-function resetOverlayForInput() {
-    const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.add('ovl-hide');
-    overlay.classList.rmove('ovl-show-input');
-}
+// function resetOverlayForInput() {
+//     const overlay = document.querySelector('.ovl-frame');
+//     overlay.classList.add('ovl-hide');
+//     overlay.classList.rmove('ovl-show-input');
+// }
 
 
 // toggle elements
 
-function toggleElements(id1st, id2nd) {
-    const element1st = document.getElementById(id1st);
-    const element2nd = document.getElementById(id2nd);
-    element1st.classList.toggle('display-none');
-    element2nd.classList.toggle('display-none');
-}
 
 
-function checkOverlay() {
-    let overlay = document.querySelector('.ovl-frame');
-    if (!overlay.classList.contains('ovl-show-input')) {
-        handleOverlay();
-    }
-}
 
 
 //  helpers

@@ -32,16 +32,16 @@ async function initSign() {
 // checkOverlay() --> main.js
 // checkWarningStyle() see above
 // focusInputField()
-// handleOverlay() see above
-// checkOverlay() see above
-// checkWarningStyle() see above
-// focusInputField() see above
+// handleOverlay() --> see above
+// checkOverlay() --> see above
+// checkWarningStyle() --> see above
+// focusInputField() --> see above
 // switchCheckboxIcnAndSignUpBtn()
 // hoverCheckboxIcns() 
-// hoverCheckboxIcns() see above
-// hoverCheckboxIcns() see above
-// hoverCheckboxIcns() see above
-// hoverCheckboxIcns() see above
+// hoverCheckboxIcns() --> see above
+// hoverCheckboxIcns() --> see above
+// hoverCheckboxIcns() --> see above
+// hoverCheckboxIcns() --> see above
 // setSignUpRequiredOff()
 // switchToWorkPages() --> main.js
 // initCheckInputSignUp()
@@ -71,16 +71,6 @@ function checkWarningStyle(id) {
         removeWarningNoMatchLogIn();
         removeWarningNoMatchSignUp();
         warningTextOff();
-    }
-}
-
-
-function handleOverlay() {
-    let overlay = document.querySelector('.ovl-frame');
-    let overlayNotShown = overlay.classList.contains('ovl-hide');
-    if (overlayNotShown) {
-        setupOverlayForInput();
-        setupSignElementsOnTop();
     }
 }
 

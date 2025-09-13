@@ -118,9 +118,9 @@ function initCheckInputSignUp() {
 
 
 
-// ----------------------
-// + 1st-level-functions:
-// ----------------------
+// --------------------
+// 1st-level-functions:
+// --------------------
 
 // checkCurrentForm()
 // checkInputLogIn()
@@ -263,10 +263,9 @@ function initAnimMessages() {
 }
 
 
-
-// -----------------------
-// ++ 2nd-level-functions:
-// -----------------------
+// --------------------
+// 2nd-level-functions:
+// --------------------
 
 // checkEmailAndPassword()
 // warningTextOn()
@@ -431,9 +430,9 @@ function switchToLoginForm(currentForm) {
 }
 
 
-// -----------------------
-// +++ 3rd-level-functions:
-// -----------------------
+// --------------------
+// 3rd-level-functions:
+// --------------------
 
 // changeFormInputs()
 // toggleLoginElements()
@@ -521,9 +520,9 @@ function toggleSignFormsForward() {
     setupPasswordBtn();
 }
 
-// ----------------------
-// + 1st-level-functions
-// ----------------------
+// -------------------
+// 1st-level-functions
+// -------------------
 
 // setSignUpRequiredOn()
 // defaultFormSettings() --> see above
@@ -544,9 +543,9 @@ function setupPasswordBtn() {
     setVisibilityIconsDefault();
 }
 
-// ----------------------
-// ++ 2nd-level-functions
-// ----------------------
+// -------------------
+// 2nd-level-functions
+// -------------------
 
 // hideVisibilityBtn()
 // visibilityPasswordOff()
@@ -583,9 +582,9 @@ function setVisibilityIconsDefault() {
 }
 
 
-// --------------------
+// ------------------
 // ovlSign-functions:
-// --------------------
+// ------------------
 
 function handleOverlayBack() {
     setupOverlayForInput();
@@ -594,7 +593,7 @@ function handleOverlayBack() {
 }
 
 // --------------------
-// + 1st-level-functions:
+// 1st-level-functions:
 // --------------------
 
 // setupOverlayForInput() --> main.js

@@ -16,7 +16,7 @@ async function initSign() {
 // -------------------
 
 // includeHTML() --> main.js
-// setClrSchemeInit() -- main.js
+// setClrSchemeInit() --> main.js
 
 
 // --------------------

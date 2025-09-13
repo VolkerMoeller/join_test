@@ -57,7 +57,7 @@
     white-space: nowrap;
 }
 
-.msg-sign-up {
+.msg-btm-cnt {
     transform: translate(-50%, -50%);
     position: absolute;
     top: 90%;
@@ -65,7 +65,7 @@
     z-index: 3;
 }
 
-.msg-log-in {
+.msg-rgt-cnt {
     transform: translate(-50%, -50%);
     position: absolute;
     top: 50%;

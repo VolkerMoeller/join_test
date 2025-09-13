@@ -491,18 +491,18 @@ function visibilityPassword(id) {
 
 function showCurrentMessage(currentForm) {
     if (currentForm == 'SignUp') {
-        document.querySelector('.msg-log-in').classList.add('display-none');
-        document.querySelector('.msg-sign-up').classList.remove('display-none');
+        document.querySelector('.msg-rgt-cnt').classList.add('display-none');
+        document.querySelector('.msg-btm-cnt').classList.remove('display-none');
     } else {
-        document.querySelector('.msg-log-in').classList.remove('display-none');
-        document.querySelector('.msg-sign-up').classList.add('display-none');
+        document.querySelector('.msg-rgt-cnt').classList.remove('display-none');
+        document.querySelector('.msg-btm-cnt').classList.add('display-none');
     }
 }
 
 
 function slideMessages() {
-    document.querySelector('.msg-log-in').classList.add('from-right-to-center');
-    document.querySelector('.msg-sign-up').classList.add('from-bottom-to-center');
+    document.querySelector('.msg-rgt-cnt').classList.add('from-right-to-center');
+    document.querySelector('.msg-btm-cnt').classList.add('from-bottom-to-center');
 }
 
 

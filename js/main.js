@@ -1,22 +1,24 @@
 let userStatus = 'guest'; // default user status
 
-// include HTML
 
-async function includeHTMLById(name) {
-    let selector = '[' + name + ']';
-    let includeElement = document.querySelectorAll(selector);
-    for (let i = 0; i < includeElement.length; i++) {
-        const element = includeElement[i];
-        let attr = element.getAttribute(name);
-        let resp = await fetch(attr);
-        if (resp.ok) {
-            let content = await resp.text();
-            element.innerHTML = content;
-        } else {
-            element.innerHTML = "Page not found";
-        }
-    }
-}
+// -------------------
+// main-functions:
+// -------------------
+
+// includeHTML()
+// changeSvgPathClass()
+// setClrSchemeInit()
+// saveLocalStorageObject()
+// loadLocalStorageObject()
+// switchToWorkPages()
+// switchToSignPages()
+// changeCntMain()
+// changePageCSS()
+// invertLogoClr()
+// showOverlay()
+// resetOverlay()
+
+
 
 
 async function includeHTML() {
@@ -28,8 +30,6 @@ async function includeHTML() {
 }
 
 
-// change svg path class
-
 function changeSvgPathClass(container, actualClass, targetClass) {
     let pathsMain = container.querySelectorAll(`path[class=${actualClass}]`);
     for (let i = 0; i < pathsMain.length; i++) {
@@ -37,41 +37,12 @@ function changeSvgPathClass(container, actualClass, targetClass) {
     }
 }
 
-// setClrScheme
 
 function setClrSchemeInit() {
     let colorSchemeId = checkColorSchemeId();
     setClrScheme(colorSchemeId);
 }
 
-
-function checkColorSchemeId() {
-    let colorSchemeId = loadLocalStorageObject('colorScheme');
-    if (colorSchemeId) {
-        return colorSchemeId
-    } else return 1;
-}
-
-
-function setClrScheme(colorSchemeId) {
-    if (!colorSchemeId) {
-        saveLocalStorageObject('colorScheme', 1);
-        changeClrScheme();
-    }
-    if (colorSchemeId) {
-        saveLocalStorageObject('colorScheme', colorSchemeId);
-        changeClrScheme();
-    }
-}
-
-
-function changeClrScheme() {
-    let schemeId = loadLocalStorageObject('colorScheme');
-    document.getElementById('linkClrs').setAttribute('href', `./assets/css/main/clrSchemes/${schemeId}-colors.css`);
-}
-
-
-// local storage
 
 function saveLocalStorageObject(key, obj) {
     let objAsString = JSON.stringify(obj);
@@ -85,8 +56,6 @@ function loadLocalStorageObject(key) {
     if (obj) return obj;
 }
 
-
-// navigation
 
 async function changeOvl(target) {
     const cntCenter = document.querySelector('.ovl-frame');
@@ -123,14 +92,6 @@ function invertLogoClr() {
 }
 
 
-
-function toggleOverlay() {
-    const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.toggle('ovl-hide');
-    overlay.classList.toggle('ovl-show');
-}
-
-
 function showOverlay() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
@@ -144,12 +105,108 @@ function resetOverlay() {
 }
 
 
+
+
+// -------------------
+// 1st-level-functions
+// -------------------
+
+// includeHTMLById()
+// checkColorSchemeId()
+// setClrScheme()
+// includeHTMLById() - see above
+// resetOverlayFrame()
+
+
+async function includeHTMLById(name) {
+    let selector = '[' + name + ']';
+    let includeElement = document.querySelectorAll(selector);
+    for (let i = 0; i < includeElement.length; i++) {
+        const element = includeElement[i];
+        let attr = element.getAttribute(name);
+        let resp = await fetch(attr);
+        if (resp.ok) {
+            let content = await resp.text();
+            element.innerHTML = content;
+        } else {
+            element.innerHTML = "Page not found";
+        }
+    }
+}
+
+
+function checkColorSchemeId() {
+    let colorSchemeId = loadLocalStorageObject('colorScheme');
+    if (colorSchemeId) {
+        return colorSchemeId
+    } else return 1;
+}
+
+
+function setClrScheme(colorSchemeId) {
+    if (!colorSchemeId) {
+        saveLocalStorageObject('colorScheme', 1);
+        changeClrScheme();
+    }
+    if (colorSchemeId) {
+        saveLocalStorageObject('colorScheme', colorSchemeId);
+        changeClrScheme();
+    }
+}
+
+
 function resetOverlayFrame() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.add('ovl-hide');
     overlay.classList.remove('ovl-show');
     overlay.classList.remove('ovl-show-input');
 }
+
+
+// -------------------
+// 3rd-level-functions
+// -------------------
+
+// loadLocalStorageObject() - see above
+// saveLocalStorageObject() - see above
+// changeClrScheme()
+
+
+function changeClrScheme() {
+    let schemeId = loadLocalStorageObject('colorScheme');
+    document.getElementById('linkClrs').setAttribute('href', `./assets/css/main/clrSchemes/${schemeId}-colors.css`);
+}
+
+
+// -------------------
+// 4th-level-functions
+// -------------------
+
+// loadLocalStorageObject() - see above
+
+
+
+
+
+
+
+
+
+
+// function showOverlay() {
+//     const overlay = document.querySelector('.ovl-frame');
+//     overlay.classList.remove('ovl-hide');
+//     overlay.classList.add('ovl-show');
+// }
+
+
+// function resetOverlay() {
+//     resetOverlayFrame();
+//     resetOverlayMsg();
+// }
+
+
+
 
 
 function resetOverlayMsg() {

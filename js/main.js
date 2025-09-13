@@ -17,8 +17,9 @@ let userStatus = 'guest'; // default user status
 // invertLogoClr()
 // showOverlay()
 // resetOverlay()
-// setupOverlayForInput()
 // toggleElements()
+// focusInput()
+// doSth()
 
 
 
@@ -116,13 +117,6 @@ function handleOverlay() {
 }
 
 
-function setupOverlayForInput() {
-    const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show-input');
-}
-
-
 function toggleElements(id1st, id2nd) {
     const element1st = document.getElementById(id1st);
     const element2nd = document.getElementById(id2nd);
@@ -139,6 +133,16 @@ function checkOverlay() {
 }
 
 
+function focusInput(fieldId) {
+    document.getElementById(fieldId).focus();
+}
+
+
+function doSth() {
+    console.log('doSth()');
+}
+
+
 // -------------------
 // 1st-level-functions
 // -------------------
@@ -149,6 +153,8 @@ function checkOverlay() {
 // includeHTMLById() --> see above
 // resetOverlayFrame()
 // resetOverlayMsg()
+// setupOverlayForInput()
+// setupSignElementsOnTop() --> sign.js
 // handleOverlay() --> see above
 
 
@@ -210,6 +216,13 @@ function resetOverlayMsg() {
 }
 
 
+function setupOverlayForInput() {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.remove('ovl-hide');
+    overlay.classList.add('ovl-show-input');
+}
+
+
 // -------------------
 // 3rd-level-functions
 // -------------------
@@ -230,51 +243,3 @@ function changeClrScheme() {
 // -------------------
 
 // loadLocalStorageObject() - see above
-
-
-
-
-
-
-
-
-
-
-// function showOverlay() {
-//     const overlay = document.querySelector('.ovl-frame');
-//     overlay.classList.remove('ovl-hide');
-//     overlay.classList.add('ovl-show');
-// }
-
-
-// function resetOverlay() {
-//     resetOverlayFrame();
-//     resetOverlayMsg();
-// }
-
-
-// function resetOverlayForInput() {
-//     const overlay = document.querySelector('.ovl-frame');
-//     overlay.classList.add('ovl-hide');
-//     overlay.classList.rmove('ovl-show-input');
-// }
-
-
-// toggle elements
-
-
-
-
-
-//  helpers
-
-function focusInput(fieldId) {
-    document.getElementById(fieldId).focus();
-}
-
-
-// test
-
-function doSth() {
-    console.log('doSth()');
-}

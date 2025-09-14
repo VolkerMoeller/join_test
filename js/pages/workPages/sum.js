@@ -1,5 +1,3 @@
-async function initSum() {
-    await includeHTML();
-    setClrSchemeInit();
-    invertLogoClr();
-}
+// -----------------
+// sum.js-functions:
+// -----------------

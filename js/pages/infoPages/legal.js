@@ -4,12 +4,11 @@
 
 // initLegal()
 
-
 async function initLegal() {
     await includeHTML();
     setClrSchemeInit();
     invertLogoClr();
-    externalView();
+    defaultHeaderView();
 }
 
 
@@ -20,4 +19,4 @@ async function initLegal() {
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
-// externalView() --> info.js
+// defaultHeaderView() --> main.js

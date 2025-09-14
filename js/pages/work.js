@@ -44,4 +44,5 @@ function externalHeader() {
 
 function userHeader() {
     console.log('user Header');
+    document.querySelector('.housing-header-right').classList.remove('display-none');
 };

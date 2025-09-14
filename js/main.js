@@ -1,6 +1,3 @@
-let userStatus = 'external'; // default user status
-
-
 // -------------------
 // main-functions:
 // -------------------

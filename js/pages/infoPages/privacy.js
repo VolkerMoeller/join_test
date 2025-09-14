@@ -1,6 +1,6 @@
-// -------------------
+// ---------------------
 // privacy.js-functions:
-// -------------------
+// ---------------------
 
 // initPrivacy()
 
@@ -8,7 +8,7 @@ async function initPrivacy() {
     await includeHTML();
     setClrSchemeInit();
     invertLogoClr();
-    externalView();
+    defaultHeaderView();
 }
 
 
@@ -19,4 +19,4 @@ async function initPrivacy() {
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
-// externalView() --> info.js
+// defaultHeaderView() --> work.js

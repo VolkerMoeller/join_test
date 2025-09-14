@@ -68,7 +68,11 @@ function invertLogoClr() {
 
 
 function setUserStatusExternal() {
-    saveLocalStorageObject('userStatus', userStatus);
+    saveLocalStorageObject('userStatus', 'external');
+}
+
+function setUserStatusUser() {
+    saveLocalStorageObject('userStatus', 'user');
 }
 
 

@@ -160,7 +160,7 @@ function checkInputLogIn() {
     } else {
         warningTextOff();
         removeWarningNoMatchLogIn();
-        console.log('go to Sum');
+        setUserStatusUser();
     }
 }
 
@@ -264,6 +264,7 @@ function initAnimMessages() {
 }
 
 
+
 // --------------------
 // 2nd-level-functions:
 // --------------------
@@ -271,21 +272,22 @@ function initAnimMessages() {
 // checkEmailAndPassword()
 // warningTextOn()
 // addWarningNoMatchLogIn()
-// warningTextOff() - see above
+// warningTextOff() --> see above
 // removeWarningNoMatchLogIn - see above
+// setUserStatusUser() --> main.js
 // toggleSignForms()
 // clearInputs()
-// warningTextOff() - see above
+// warningTextOff() --> see above
 // resetWarningNoMatch()
 // resetCheckbox()
 // handleLockIcn()
 // handleInputIcon()
 // checkPwAndPwConfirm()
-// warningTextOn() - see above
+// warningTextOn() --> see above
 // addWarningNoMatchSignUp()
-// warningTextOff() - see above
+// warningTextOff() --> see above
 // removeWarningNoMatchSignUp()
-// checkCurrentForm() - see above
+// checkCurrentForm() --> see above
 // resetSignElementsOnTop()
 // animMessages()
 // switchToLoginForm()

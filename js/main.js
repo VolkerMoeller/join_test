@@ -1,4 +1,4 @@
-let userStatus = 'guest'; // default user status
+let userStatus = 'external'; // default user status
 
 
 // -------------------

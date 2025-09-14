@@ -11,9 +11,9 @@ async function initSign() {
 }
 
 
-// -------------------
-// 1st-level-functions
-// -------------------
+// --------------------
+// 1st-level-functions:
+// --------------------
 
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js

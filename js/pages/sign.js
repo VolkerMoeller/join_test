@@ -161,6 +161,7 @@ function checkInputLogIn() {
         warningTextOff();
         removeWarningNoMatchLogIn();
         setUserStatusUser();
+        navToSumPage();
     }
 }
 
@@ -275,18 +276,23 @@ function initAnimMessages() {
 // warningTextOff() --> see above
 // removeWarningNoMatchLogIn - see above
 // setUserStatusUser() --> main.js
+// navToSumPage()
+// ---
 // toggleSignForms()
 // clearInputs()
 // warningTextOff() --> see above
 // resetWarningNoMatch()
 // resetCheckbox()
+// ---
 // handleLockIcn()
 // handleInputIcon()
+// ---
 // checkPwAndPwConfirm()
 // warningTextOn() --> see above
 // addWarningNoMatchSignUp()
 // warningTextOff() --> see above
 // removeWarningNoMatchSignUp()
+// ---
 // checkCurrentForm() --> see above
 // resetSignElementsOnTop()
 // animMessages()
@@ -320,6 +326,10 @@ function addWarningNoMatchLogIn() {
     matchInputs.forEach(input => {
         document.getElementById(input).classList.add('no-match-input');
     });
+}
+
+function navToSumPage() {
+    location.assign('./workPage.html');
 }
 
 

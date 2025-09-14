@@ -7,7 +7,6 @@
 function externalView() {
     let userStatus = loadLocalStorageObject('userStatus');
     if (userStatus == 'external') { externalHeader(); }
-
 }
 
 
@@ -19,6 +18,5 @@ function externalView() {
 // externalHeader()
 
 function externalHeader() {
-    let userBtn = document.querySelector('.housing-header-right');
-    userBtn.classList.add('display-none');
+    console.log('external Header');
 };

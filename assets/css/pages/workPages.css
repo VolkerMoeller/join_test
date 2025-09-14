@@ -118,14 +118,27 @@
     margin-bottom: 0px;
 }
 
-.housing-headline-top {
+/* header */
+
+.housing-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.housing-headline-top-left {
+.housing-header-left h1:first-child {
     display: flex;
+}
+
+.housing-header-left div:last-child {
+    display: none;
+}
+
+/* svg-class: */
+
+.logo-header-mobile {
+    width: 32px;
+    height: 39.02px;
 }
 
 .housing-headline-top-left h1:nth-child(1) {
@@ -190,6 +203,14 @@
         display: flex;
         justify-content: center;
         background-color: var(--main);
+    }
+
+    .housing-header-left h1:first-child {
+        display: none;
+    }
+
+    .housing-header-left div:last-child {
+        display: flex;
     }
 
     .housing-headline-top-left h1:nth-child(1) {

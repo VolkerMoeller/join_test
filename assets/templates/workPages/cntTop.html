@@ -1,7 +1,16 @@
-<header class="housing-headline-top">
-    <div class="housing-headline-top-left">
+<header class="housing-header">
+    <div class="housing-header-left">
         <h1 class="version-2-t6">Kanban Project Management Tool</h1>
-        <div class="icn-33-40" w3-include-html-child="./assets/templates/svg/1_1-logo.html"></div>
+        <div w3-include-svg="./assets/img/svgHTML/1-logo-resp.html"></div>
+    </div>
+    <div class="form-btn-back sign-up display-none">
+        <button id="btnBack1Hvr" type="button" class="display-none" onclick="toggleSignFormsBack()"
+            onmouseleave="toggleElements('btnBack1','btnBack1Hvr')"
+            w3-include-svg="./assets/img/svgHTML/6-leftArrowHover.html">
+        </button>
+        <button id="btnBack1" type="button" onmouseover="toggleElements('btnBack1','btnBack1Hvr')"
+            w3-include-svg="./assets/img/svgHTML/7-leftArrow.html">
+        </button>
     </div>
     <button onclick="switchToSignPages()">switchToSignPages</button>
 </header>

@@ -170,12 +170,13 @@
 .initial {
     height: 56px;
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -1;
 }
 
 .guest-icn {

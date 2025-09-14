@@ -158,6 +158,37 @@
 }
 
 
+/* svg classes: */
+
+.housing-logo-user {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.initial {
+    height: 56px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guest-icn {
+    fill: white;
+    fill-opacity: 0.12;
+}
+
+.guest-icn:hover {
+    fill: var(--guest-icon-hover);
+}
+
+
+
 
 .housing-headline-top .housing-headline-top-right:nth-child(2) {
     display: none;

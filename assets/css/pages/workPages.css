@@ -160,12 +160,16 @@
 
 /* svg classes: */
 
-.housing-logo-user {
+.housing-icn-btn {
+    width: 58px;
+    height: 58px;
+    padding: 5px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .initial {
     height: 56px;

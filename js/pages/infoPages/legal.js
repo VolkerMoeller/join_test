@@ -20,23 +20,4 @@ async function initLegal() {
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
-// externalView()
-
-
-function externalView() {
-    let userStatus = loadLocalStorageObject('userStatus');
-    if (userStatus == 'external') { externalHeader(); }
-
-}
-
-
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// externalHeader()
-
-function externalHeader() {
-    let userBtn = document.querySelector('.housing-header-right');
-    userBtn.classList.add('display-none');
-};
+// externalView() --> info.js

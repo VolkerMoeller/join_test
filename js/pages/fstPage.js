@@ -1,16 +1,24 @@
-// fstPage.js + main.js
+// -------------------
+// fstPage-functions:
+// -------------------
 
 async function initFstPage() {
     await includeHTML();
     firstPageAnim();
     localStorage.clear();
     setClrSchemeInit();
+    setUserStatusExternal();
 }
 
 
-// + 1st-level-functions:
+// --------------------
+// 1st-level-functions:
+// --------------------
 
 // includeHTML() --> main.js
+// firstPageAnim()
+// setClrSchemeInit() --> main.js
+// setUserStatusExternal() --> main.js
 
 async function firstPageAnim() {
     animFrame();
@@ -21,10 +29,9 @@ async function firstPageAnim() {
     switchToSignPage();
 }
 
-
-// setClrSchemeInit() --> main.js
-
-// ++ 2nd-level-functions:
+// --------------------
+// 2nd-level-functions:
+// --------------------
 
 function animFrame() {
     const frame = document.querySelector('.ovl-frame');
@@ -72,9 +79,12 @@ function switchToSignPage() {
 }
 
 
-// +++ 3rd-level-functions
+// --------------------
+// 3rd-level-functions:
+// --------------------
 
 // changeOvl('ovlSign.html') --> main.js
+// noAnimCSS()
 
 function noAnimCSS() {
     const animCSS = document.getElementById('animCSS');

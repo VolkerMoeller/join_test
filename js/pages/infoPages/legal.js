@@ -9,6 +9,7 @@ async function initLegal() {
     await includeHTML();
     setClrSchemeInit();
     invertLogoClr();
+    externelView();
 }
 
 
@@ -19,3 +20,10 @@ async function initLegal() {
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
+// externelView()
+
+
+function externelView() {
+    let userStatus = loadLocalStorageObject('userStatus');
+    if (userStatus) { console.log(userStatus); }
+}

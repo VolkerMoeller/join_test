@@ -11,6 +11,7 @@ let userStatus = 'external'; // default user status
 // changeSvgPathClass()
 // setClrSchemeInit()
 // invertLogoClr()
+// setUserStatusExternal()
 
 // --- local-storage-functions:
 
@@ -66,6 +67,11 @@ function invertLogoClr() {
 }
 
 
+function setUserStatusExternal() {
+    saveLocalStorageObject('userStatus', userStatus);
+}
+
+
 function saveLocalStorageObject(key, obj) {
     let objAsString = JSON.stringify(obj);
     localStorage.setItem(key, objAsString);
@@ -106,8 +112,6 @@ function changePageCSS() {
     const pageCSS = document.getElementById('pageCSS');
     pageCSS.setAttribute('href', './assets/css/pages/workPages.css');
 }
-
-
 
 
 function showOverlay() {
@@ -157,6 +161,9 @@ function focusInput(fieldId) {
 function doSth() {
     console.log('doSth()');
 }
+
+
+
 
 
 // -------------------

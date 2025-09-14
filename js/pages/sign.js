@@ -19,6 +19,8 @@ async function initSign() {
 // setClrSchemeInit() --> main.js
 
 
+
+
 // --------------------
 // cntCenter-functions:
 // --------------------
@@ -115,7 +117,6 @@ function initCheckInputSignUp() {
         initAnimMessages();
     }
 }
-
 
 
 // --------------------

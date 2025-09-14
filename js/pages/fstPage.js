@@ -29,9 +29,17 @@ async function firstPageAnim() {
     switchToSignPage();
 }
 
+
 // --------------------
 // 2nd-level-functions:
 // --------------------
+
+// animFrame()
+// animBg()
+// animLogo()
+// animClr()
+// endAnim()
+// switchToSignPage()
 
 function animFrame() {
     const frame = document.querySelector('.ovl-frame');

@@ -141,14 +141,6 @@
     height: 39.02px;
 }
 
-/* .housing-headline-top-left h1:nth-child(1) {
-    display: flex;
-}
-
-.housing-headline-top-left div:nth-child(2) {
-    display: none;
-} */
-
 .housing-header-right {
     position: relative;
     display: flex;
@@ -156,6 +148,9 @@
     align-items: center;
     gap: 16px;
 }
+
+
+
 
 
 /* svg classes: */
@@ -313,5 +308,9 @@
 
     .headline-vector {
         border: solid 2px var(--main2nd);
+    }
+
+    .header-help-btn {
+        display: none;
     }
 }

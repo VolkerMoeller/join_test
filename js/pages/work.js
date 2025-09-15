@@ -4,6 +4,7 @@
 
 // initWork()
 // returnToLogIn()
+// animSmallMenu()
 
 
 async function initWork() {
@@ -17,6 +18,12 @@ async function initWork() {
 function returnToLogIn() {
     window.close();
     saveLocalStorageObject('userStatus', 'external');
+}
+
+
+function animSmallMenu() {
+    showOverlay();
+    console.log('animate');
 }
 
 // --------------------

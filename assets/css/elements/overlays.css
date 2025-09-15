@@ -38,10 +38,9 @@
 
 .ovl-show-input {
     z-index: 3;
-    background-color: transparent;
-    /* background-color: var(--black-transp-50); */
+    /* background-color: transparent; */
+    background-color: var(--black-transp-50);
 }
-
 
 .msg-cnt {
     position: absolute;
@@ -52,8 +51,6 @@
     border-radius: 20px;
     padding: 25px 25px;
 }
-
-
 
 .msg-cnt h1 {
     white-space: nowrap;
@@ -75,46 +72,10 @@
     z-index: 3;
 }
 
-
-
-.from-bottom-to-center {
-    animation-duration: 0.8s;
-    animation-name: slide-msg-btm-cnt;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-@keyframes slide-msg-btm-cnt {
-    from {
-        top: 100%;
-    }
-
-    to {
-        top: 50%;
-    }
-}
-
-.from-right-to-center {
-    animation-duration: 0.8s;
-    animation-name: slide-msg-rgt-cnt;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-@keyframes slide-msg-rgt-cnt {
-    from {
-        left: 100%;
-    }
-
-    to {
-        left: 50%;
-    }
-}
-
 .nav-top-rgt {
     position: absolute;
     top: 98px;
-    right: 16px;
+    right: 100%;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -144,4 +105,57 @@
 .nav-cnt a:hover {
     transition: var(--smart-animation-in);
     background-color: var(--menu-button-hover);
+}
+
+/* animation */
+
+.from-bottom-to-center {
+    animation-duration: 0.8s;
+    animation-name: slide-msg-btm-cnt;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes slide-msg-btm-cnt {
+    from {
+        top: 100%;
+    }
+
+    to {
+        top: 50%;
+    }
+}
+
+.from-right-to-center {
+    animation-duration: 0.8s;
+    animation-name: slide-nav-tip-rgt;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes slide-nav-tip-rgt {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+.from-top-right-into-view {
+    animation-duration: 0.8s;
+    animation-name: slide-msg-rgt-cnt;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes slide-msg-rgt-cnt {
+    from {
+        right: 100%;
+    }
+
+    to {
+        right: 50%;
+    }
 }

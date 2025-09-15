@@ -186,14 +186,9 @@
     fill: var(--guest-icon-hover);
 }
 
-/* .header-help-btn {
-    position: relative;
-    display: flex;
-} */
 
 
-
-
+/* 
 .housing-headline-top .housing-headline-top-right:nth-child(2) {
     display: none;
     width: 41px;
@@ -214,7 +209,7 @@
 .housing-headline-top .housing-headline-top-right:nth-child(5) {
     width: 104px;
     height: 56px;
-}
+} */
 
 @media (max-width: 1000px) {
     .headline-work-pages {

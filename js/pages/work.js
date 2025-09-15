@@ -33,6 +33,7 @@ function returnToLogIn() {
 
 function defaultHeaderView() {
     let userStatus = loadLocalStorageObject('userStatus');
+    // default external:
     if (userStatus == 'external') { externalHeader(); }
     if (userStatus == 'guest') { guestHeader(); }
     if (userStatus == 'user') { userHeader(); }
@@ -53,9 +54,14 @@ function externalHeader() {
 
 function guestHeader() {
     console.log('guest Header');
+    document.querySelector('.housing-header-right').classList.remove('display-none');
+    document.querySelector('.header-user-btn').classList.add('display-none');
+    document.querySelector('.header-guest-btn').classList.remove('display-none');
 };
 
 function userHeader() {
     console.log('user Header');
     document.querySelector('.housing-header-right').classList.remove('display-none');
+    document.querySelector('.header-user-btn').classList.remove('display-none');
+    document.querySelector('.header-guest-btn').classList.add('display-none');
 };

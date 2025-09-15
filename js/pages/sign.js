@@ -519,9 +519,9 @@ function slideMessages() {
 }
 
 
-// ----------------------
+// -------------------
 // cntRight-functions:
-// ----------------------
+// -------------------
 
 // toggleSignFormsForward()
 
@@ -599,6 +599,8 @@ function setVisibilityIconsDefault() {
 // ovlSign-functions:
 // ------------------
 
+// resetOverlyForInput()
+
 function resetOverlayForInput() {
     setupOverlayForInput();
     setupSignElementsOnTop();
@@ -610,5 +612,5 @@ function resetOverlayForInput() {
 // --------------------
 
 // setupOverlayForInput() --> main.js
-// setupSignElementsOnTop() see above
-// setupPasswordBtn() see above
+// setupSignElementsOnTop() --> see above - cntCenter-functions
+// setupPasswordBtn() --> see above - cntRight-functions

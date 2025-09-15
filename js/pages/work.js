@@ -28,12 +28,15 @@ function returnToLogIn() {
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
 // defaultHeaderView()
+// saveLocalStorageObject() --> main.js
 
 
 function defaultHeaderView() {
     let userStatus = loadLocalStorageObject('userStatus');
     if (userStatus == 'external') { externalHeader(); }
+    if (userStatus == 'guest') { guestHeader(); }
     if (userStatus == 'user') { userHeader(); }
+
 }
 
 
@@ -46,6 +49,10 @@ function defaultHeaderView() {
 
 function externalHeader() {
     console.log('external Header');
+};
+
+function guestHeader() {
+    console.log('guest Header');
 };
 
 function userHeader() {

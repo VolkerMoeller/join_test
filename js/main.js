@@ -100,6 +100,7 @@ async function switchToWorkPages() {
 
 async function switchToSignPages() {
     window.location.assign('signPage.html');
+    saveLocalStorageObject('userStatus', 'external');
 }
 
 

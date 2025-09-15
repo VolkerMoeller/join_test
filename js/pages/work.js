@@ -3,6 +3,7 @@
 // -----------------
 
 // initWork()
+// returnToLogIn()
 
 
 async function initWork() {
@@ -12,6 +13,11 @@ async function initWork() {
     defaultHeaderView();
 }
 
+
+function returnToLogIn() {
+    window.close();
+    saveLocalStorageObject('userStatus', 'external');
+}
 
 // --------------------
 // 1st-level-functions:

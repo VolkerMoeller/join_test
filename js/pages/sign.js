@@ -599,7 +599,7 @@ function setVisibilityIconsDefault() {
 // ovlSign-functions:
 // ------------------
 
-function handleOverlayBack() {
+function resetOverlayForInput() {
     setupOverlayForInput();
     setupSignElementsOnTop();
     setupPasswordBtn();

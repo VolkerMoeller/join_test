@@ -45,7 +45,7 @@ async function initSign() {
 // hoverCheckboxIcns() --> see above
 // hoverCheckboxIcns() --> see above
 // setSignUpRequiredOff()
-// switchToWorkPages() --> main.js
+// switchToWorkPagesAsGuest() --> main.js
 // initCheckInputSignUp()
 
 

@@ -17,7 +17,7 @@
 
 // --- basic-navigation-functions:
 
-// switchToWorkPages()
+// switchToWorkPagesAsGuest()
 // switchToSignPages()
 // changeCntMain()
 // changePageCSS()
@@ -93,12 +93,13 @@ async function changeOvl(target) {
 }
 
 
-async function switchToWorkPages() {
+function switchToWorkPagesAsGuest() {
     window.location.assign('workPage.html');
+    saveLocalStorageObject('userStatus', 'guest');
 }
 
 
-async function switchToSignPages() {
+function switchToSignPages() {
     window.location.assign('signPage.html');
     saveLocalStorageObject('userStatus', 'external');
 }

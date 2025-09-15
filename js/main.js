@@ -9,6 +9,8 @@
 // setClrSchemeInit()
 // invertLogoClr()
 // setUserStatusExternal()
+// setUserStatusGuest()
+// setUserStatusUser()
 
 // --- local-storage-functions:
 
@@ -32,7 +34,6 @@
 // toggleElements()
 // focusInput()
 // doSth()
-
 
 
 async function includeHTML() {
@@ -68,8 +69,14 @@ function setUserStatusExternal() {
     saveLocalStorageObject('userStatus', 'external');
 }
 
+
 function setUserStatusUser() {
     saveLocalStorageObject('userStatus', 'user');
+}
+
+
+function setUserStatusGuest() {
+    saveLocalStorageObject('userStatus', 'guest');
 }
 
 
@@ -95,13 +102,13 @@ async function changeOvl(target) {
 
 function switchToWorkPagesAsGuest() {
     window.location.assign('workPage.html');
-    saveLocalStorageObject('userStatus', 'guest');
+    setUserStatusGuest();
 }
 
 
 function switchToSignPages() {
     window.location.assign('signPage.html');
-    saveLocalStorageObject('userStatus', 'external');
+    setUserStatusExternal();
 }
 
 

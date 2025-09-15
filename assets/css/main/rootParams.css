@@ -7,6 +7,7 @@
 
         --boton-gradient: linear-gradient(var(--rect-btn-activ), var(--gradient-boton));
 
+        --smart-animation-in: all 100ms ease-in;
         --smart-animation-out: all 100ms ease-out;
         --smart-animation-in-out: all 100ms ease-in-out;
         --smart-animation-in-out-clr: color 100ms ease-in-out;

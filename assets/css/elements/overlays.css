@@ -53,6 +53,8 @@
     padding: 25px 25px;
 }
 
+
+
 .msg-cnt h1 {
     white-space: nowrap;
 }
@@ -72,6 +74,8 @@
     left: 90%;
     z-index: 3;
 }
+
+
 
 .from-bottom-to-center {
     animation-duration: 0.8s;
@@ -107,20 +111,50 @@
     }
 }
 
-@media (max-width: 1440) {
+.nav-top-rgt {
+    position: absolute;
+    top: 98px;
+    right: 16px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
 
-    .from-bottom-to-center {
-        animation-name: slide-msg-btm-cnt-mobile;
-    }
+.nav-cnt {
+    background-color: var(--main);
+    color: var(--text-light);
+    box-shadow: var(--nuevo);
+    border-radius: 20px 0px 20px 20px;
+    padding: 10px;
+}
 
-    @keyframes slide-msg-btm-cnt-mobile {
-        from {
-            top: 100%;
-        }
+.nav-cnt a {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    width: 130px;
+    height: 46px;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-align: start;
+}
 
-        to {
-            top: 80%;
-        }
-    }
+.nav-cnt a {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    width: 130px;
+    height: 46px;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-align: start;
+}
 
+.nav-cnt a:hover {
+    transition: var(--smart-animation-in);
+    background-color: var(--menu-button-hover);
 }

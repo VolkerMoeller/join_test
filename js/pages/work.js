@@ -4,7 +4,6 @@
 
 // initWork()
 // returnToLogIn()
-// animSmallMenu()
 
 
 async function initWork() {
@@ -20,11 +19,6 @@ function returnToLogIn() {
     saveLocalStorageObject('userStatus', 'external');
 }
 
-
-function animSmallMenu() {
-    showOverlay();
-    console.log('animate');
-}
 
 // --------------------
 // 1st-level-functions:
@@ -72,3 +66,54 @@ function userHeader() {
     document.querySelector('.header-user-btn').classList.remove('display-none');
     document.querySelector('.header-guest-btn').classList.add('display-none');
 };
+
+
+// -----------------
+// cntTop-functions:
+// -----------------
+
+// animSmallMenu()
+// toggleOvlHeader()
+
+// function animSmallMenu() {
+//     showOverlay();
+//     toggleOvlHeader();
+//     // resetOvls();
+//     console.log('animate SmallNav');
+// }
+
+function toggleAnimSmallMenu() {
+    let headerOvl = document.querySelector('.overlay-header');
+    let headerOvlNotShown = headerOvl.classList.contains('display-none');
+    if (headerOvlNotShown) {
+        showSmallMenu();
+    } else {
+        hideSmallMenu();
+    }
+}
+
+function showSmallMenu() {
+    toggleOvlHeader();
+    showOverlay();
+}
+
+function hideSmallMenu() {
+    toggleOvlHeader();
+    resetOverlay();
+}
+
+
+function resetOvls() {
+    toggleOvlHeader();
+    toggleOvls();
+}
+
+function toggleOvlHeader() {
+    let headerOvl = document.querySelector('.overlay-header');
+    headerOvl.classList.toggle('display-none');
+}
+
+function toggleOvls() {
+    let headerOvl = document.querySelector('.overlay-header');
+    let showOvls = headerOvl.classList.contains('display-none');
+}

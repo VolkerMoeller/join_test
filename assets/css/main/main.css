@@ -83,6 +83,7 @@ input::placeholder {
     left: 0;
     background: var(--main-background);
     overflow: hidden;
+    z-index: 2;
 }
 
 .path-def-1st {

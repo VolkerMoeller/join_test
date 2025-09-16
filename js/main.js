@@ -237,6 +237,7 @@ function resetOverlayFrame() {
     overlay.classList.add('ovl-hide');
     overlay.classList.remove('ovl-show');
     overlay.classList.remove('ovl-show-input');
+    overlay.classList.remove('ovl-show-nav');
 }
 
 

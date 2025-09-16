@@ -18,6 +18,11 @@
     z-index: -1;
 }
 
+.ovl-show-nav {
+    z-index: 3;
+    background-color: transparent;
+}
+
 .ovl-show {
     z-index: 3;
     animation-duration: 2s;
@@ -73,9 +78,10 @@
 }
 
 .nav-top-rgt {
+    transform: translateX(100%);
     position: absolute;
     top: 98px;
-    right: 100%;
+    right: 16px;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -128,12 +134,12 @@
 
 .from-right-to-center {
     animation-duration: 0.8s;
-    animation-name: slide-nav-tip-rgt;
+    animation-name: slide-nav-rgt-cnt;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-@keyframes slide-nav-tip-rgt {
+@keyframes slide-nav-rgt-cnt {
     from {
         left: 100%;
     }
@@ -152,10 +158,10 @@
 
 @keyframes slide-msg-rgt-cnt {
     from {
-        right: 100%;
+        transform: translateX(100%);
     }
 
     to {
-        right: 50%;
+        transform: translateX(0%);
     }
 }

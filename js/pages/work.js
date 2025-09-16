@@ -83,6 +83,9 @@ function hideSmallMenu() {
 }
 
 function animSmallMenu() {
+    let ovlFrame = document.querySelector('.ovl-frame');
+    ovlFrame.classList.remove('ovl-show');
+    ovlFrame.classList.add('ovl-show-nav');
     let smallNav = document.querySelector('.nav-cnt');
     smallNav.classList.remove('display-none');
     smallNav.classList.add('from-top-right-into-view');

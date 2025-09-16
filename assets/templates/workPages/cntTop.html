@@ -13,15 +13,13 @@
                 w3-include-svg="./assets/img/svgHTML/12-helpDefault.html">
             </button>
         </div>
-        <div class="header-guest-btn">
-            <button type="button" w3-include-svg="./assets/img/svgHTML/21-guestDefault.html"
-                onclick="toggleAnimSmallMenu()">
+        <div class="header-guest-btn" onclick="showSmallMenu()">
+            <button type="button" w3-include-svg="./assets/img/svgHTML/21-guestDefault.html">
             </button>
         </div>
-        <div class="header-user-btn display-none">
+        <div class="header-user-btn display-none" onclick="showSmallMenu()">
             <button id="btnUser" type="button" w3-include-svg="./assets/img/svgHTML/24-userDefault.html">
             </button>
         </div>
     </div>
 </header>
-<div class="overlay-header display-none"></div>

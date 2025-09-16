@@ -160,15 +160,15 @@
 }
 
 .header-help-btn {
-    z-index: 1;
+    z-index: 0;
 }
 
 .header-guest-btn {
-    z-index: 2;
+    z-index: 0;
 }
 
 .header-user-btn {
-    z-index: 2;
+    z-index: 0;
 }
 
 

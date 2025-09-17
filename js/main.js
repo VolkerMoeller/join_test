@@ -128,7 +128,7 @@ function changePageCSS() {
 function showOverlay() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show');
+    overlay.classList.add('ovl-show-anim-bg');
 }
 
 
@@ -235,7 +235,7 @@ function setClrScheme(colorSchemeId) {
 function resetOverlayFrame() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.add('ovl-hide');
-    overlay.classList.remove('ovl-show');
+    overlay.classList.remove('ovl-show-anim-bg');
     overlay.classList.remove('ovl-show-input');
     overlay.classList.remove('ovl-show-nav');
 }

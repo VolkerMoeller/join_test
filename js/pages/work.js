@@ -75,18 +75,23 @@ function userHeader() {
 
 function showSmallMenu() {
     showOverlay();
-    animSmallMenu();
+    animSmallMenuFwd();
 }
+
 
 function hideSmallMenu() {
-    resetOverlay();
+    setTimeout(() => {
+        resetOverlay();
+    }, 1000);
 }
 
-function animSmallMenu() {
+
+function animSmallMenuFwd() {
     let ovlFrame = document.querySelector('.ovl-frame');
-    ovlFrame.classList.remove('ovl-show');
+    ovlFrame.classList.remove('ovl-show-anim-bg');
     ovlFrame.classList.add('ovl-show-nav');
     let smallNav = document.querySelector('.nav-cnt');
     smallNav.classList.remove('display-none');
+    smallNav.classList.remove('from-left-out-off-sight');
     smallNav.classList.add('from-top-right-into-view');
 }

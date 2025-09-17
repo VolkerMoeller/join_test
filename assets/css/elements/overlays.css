@@ -23,7 +23,7 @@
     background-color: transparent;
 }
 
-.ovl-show {
+.ovl-show-anim-bg {
     z-index: 3;
     animation-duration: 2s;
     animation-name: shadow-bg;
@@ -164,5 +164,23 @@
 
     to {
         transform: translateX(0%);
+    }
+}
+
+
+.from-left-out-off-sight {
+    animation-duration: 0.8s;
+    animation-name: slide-nav-lft-oos;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes slide-nav-lft-oos {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(150%);
     }
 }

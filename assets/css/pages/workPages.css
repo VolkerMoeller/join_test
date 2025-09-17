@@ -255,6 +255,14 @@
         font-weight: 400;
     }
 
+    .housing-header-left h1:first-child {
+        display: none;
+    }
+
+    .housing-header-left div:last-child {
+        display: flex;
+    }
+
     .headline-vector {
         border: solid 2px var(--main2nd);
     }

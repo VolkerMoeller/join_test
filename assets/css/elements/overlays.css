@@ -43,8 +43,8 @@
 
 .ovl-show-input {
     z-index: 3;
-    /* background-color: transparent; */
-    background-color: var(--black-transp-50);
+    background-color: transparent;
+    /* background-color: var(--black-transp-50); */
 }
 
 .msg-cnt {
@@ -95,7 +95,7 @@
     padding: 10px;
 }
 
-.nav-cnt a {
+.nav-cnt button {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -106,9 +106,10 @@
     border-radius: 8px;
     padding: 8px 12px;
     text-align: start;
+    color: var(--text-light);
 }
 
-.nav-cnt a:hover {
+.nav-cnt button:hover {
     transition: var(--smart-animation-in);
     background-color: var(--menu-button-hover);
 }

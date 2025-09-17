@@ -163,27 +163,17 @@
     z-index: 0;
 }
 
-.header-guest-btn {
+.header-guest-btn button {
+    width: 56px;
+    height: 56px;
     z-index: 0;
 }
 
-.header-user-btn {
+.header-user-btn button {
+    width: 56px;
+    height: 56px;
     z-index: 0;
 }
-
-
-/* svg classes: */
-
-.housing-icn-btn {
-    width: 58px;
-    height: 58px;
-    padding: 2px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 
 .initial {
     position: absolute;
@@ -205,30 +195,15 @@
     fill: var(--guest-icon-hover);
 }
 
+/* svg classes: */
 
-
-/* 
-.housing-headline-top .housing-headline-top-right:nth-child(2) {
-    display: none;
-    width: 41px;
-    height: 41px;
+.housing-icn-btn {
+    padding: 2px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.housing-headline-top .housing-headline-top-right:nth-child(3) {
-    width: 104px;
-    height: 56px;
-}
-
-.housing-headline-top .housing-headline-top-right:nth-child(4) {
-    display: none;
-    width: 104px;
-    height: 56px;
-}
-
-.housing-headline-top .housing-headline-top-right:nth-child(5) {
-    width: 104px;
-    height: 56px;
-} */
 
 @media (max-width: 1000px) {
     .headline-work-pages {
@@ -237,6 +212,7 @@
 }
 
 @media (max-width: 1440px) {
+
     .outside+.left {
         display: none;
     }
@@ -255,51 +231,6 @@
         display: flex;
         justify-content: center;
         background-color: var(--main);
-    }
-
-    .housing-header-left h1:first-child {
-        display: none;
-    }
-
-    .housing-header-left div:last-child {
-        display: flex;
-    }
-
-    .housing-headline-top-left h1:nth-child(1) {
-        display: none;
-    }
-
-    .housing-headline-top-left div:nth-child(2) {
-        display: flex;
-    }
-
-    .housing-headline-top .housing-headline-top-right:nth-child(2) {
-        display: flex;
-    }
-
-    .housing-headline-top .housing-headline-top-right:nth-child(3) {
-        display: none;
-    }
-
-    .housing-headline-top .housing-headline-top-right:nth-child(4) {
-        display: flex;
-    }
-
-    .housing-headline-top .housing-headline-top-right:nth-child(5) {
-        display: none;
-    }
-
-    .housing-headline-top .housing-headline-top-right:nth-child(3) {
-        height: 40px;
-    }
-
-    .housing-headline-top .housing-headline-top-right:nth-child(4) {
-        width: 40px;
-        height: 40px;
-    }
-
-    .housing-headline-top .housing-headline-top-right:nth-child(5) {
-        height: 40px;
     }
 
     .headline-main {
@@ -331,4 +262,15 @@
     .header-help-btn {
         display: none;
     }
+
+    .header-guest-btn button {
+        width: 42px;
+        height: 42px;
+    }
+
+    .header-user-btn button {
+        width: 42px;
+        height: 42px;
+    }
+
 }

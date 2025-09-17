@@ -269,7 +269,7 @@ function setupOverlayForInput() {
 
 
 // -------------------
-// 3rd-level-functions
+// 2nd-level-functions
 // -------------------
 
 // loadLocalStorageObject() - see above
@@ -284,7 +284,7 @@ function changeClrScheme() {
 
 
 // -------------------
-// 4th-level-functions
+// 3rd-level-functions
 // -------------------
 
 // loadLocalStorageObject() - see above

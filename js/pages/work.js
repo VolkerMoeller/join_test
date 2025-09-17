@@ -75,7 +75,7 @@ function userHeader() {
 
 function showSmallMenu() {
     showOverlay();
-    animSmallMenuFwd();
+    animSmallMenu();
 }
 
 
@@ -86,12 +86,23 @@ function hideSmallMenu() {
 }
 
 
-function animSmallMenuFwd() {
+function animSmallMenu() {
+    initOvlFrameForAnimMenu();
+    animSmallMenuFwd();
+}
+
+
+function initOvlFrameForAnimMenu() {
     let ovlFrame = document.querySelector('.ovl-frame');
     ovlFrame.classList.remove('ovl-show-anim-bg');
     ovlFrame.classList.add('ovl-show-nav');
+}
+
+
+function animSmallMenuFwd() {
     let smallNav = document.querySelector('.nav-cnt');
     smallNav.classList.remove('display-none');
     smallNav.classList.remove('from-left-out-off-sight');
     smallNav.classList.add('from-top-right-into-view');
 }
+

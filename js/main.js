@@ -256,8 +256,10 @@ function resetOverlayMsg() {
 function resetOverlayNav() {
     let msgAnim = 'from-top-right-into-view';
     let overlNav = document.querySelector('.nav-cnt');
-    overlNav.classList.remove(msgAnim);
-    overlNav.classList.add('display-none');
+    if (overlNav) {
+        overlNav.classList.remove(msgAnim);
+        overlNav.classList.add('display-none');
+    }
 }
 
 

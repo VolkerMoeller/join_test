@@ -46,6 +46,11 @@ input::placeholder {
     color: var(--input-border);
 }
 
+menu {
+    margin: 0;
+    padding: 0;
+}
+
 .ghost {
     opacity: 0;
 }

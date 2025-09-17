@@ -82,7 +82,7 @@ function showSmallMenu() {
 function hideSmallMenu() {
     setTimeout(() => {
         resetOverlay();
-    }, 1000);
+    }, 800);
 }
 
 

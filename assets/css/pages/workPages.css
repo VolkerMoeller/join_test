@@ -61,12 +61,45 @@
 }
 
 .content-left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
     z-index: 3;
     overflow: auto;
+    padding: 64px 0px;
 }
 
 .content-left::-webkit-scrollbar {
     display: none;
+}
+
+.left-element {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-element button {
+    color: white;
+}
+
+.left-element a {
+    color: white;
+}
+
+.left-element-log {
+    flex: 0.8;
+    /* background-color: antiquewhite; */
+}
+
+.left-element-mnu {
+    flex: 1;
+    /* background-color: aquamarine; */
+}
+
+.left-element-nav {
+    flex: 1;
+    justify-content: end;
+    /* background-color: cadetblue; */
 }
 
 .headline-main h1 {

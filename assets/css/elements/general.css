@@ -118,3 +118,13 @@
     background-color: var(--menu-button-hover);
     color: white;
 }
+
+/* svg-class: */
+
+.menu-icon {
+    fill: var(--text-light);
+}
+
+.menu-icon:hover {
+    fill: var(--white);
+}

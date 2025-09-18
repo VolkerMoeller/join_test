@@ -98,6 +98,8 @@
 }
 
 .left-element-nav {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     justify-content: end;
     /* background-color: cadetblue; */

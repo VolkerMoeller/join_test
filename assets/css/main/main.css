@@ -13,6 +13,7 @@ body {
     font-family: "Inter";
     color: var(--main);
     background-color: var(--main-background);
+    line-height: 120%;
 }
 
 p,
@@ -20,6 +21,7 @@ h1,
 h2,
 input[type="text"] {
     cursor: text;
+    line-height: 120%;
 }
 
 a,

@@ -2,28 +2,24 @@
     font-family: 'Inter';
     font-size: 16px;
     font-weight: 400;
-    line-height: 120%;
 }
 
 .version-2-t6 {
     font-family: 'Inter';
     font-size: 20px;
     font-weight: 400;
-    line-height: 24px;
 }
 
 .version-2-t7 {
     font-family: 'Inter';
     font-size: 12px;
     font-weight: 400;
-    line-height: 14.4px;
 }
 
 .version-2-t6-left {
     font-family: 'Inter';
     font-size: 20px;
     font-weight: 400;
-    line-height: 24px;
     text-align: start;
 }
 
@@ -31,49 +27,42 @@
     font-family: 'Inter';
     font-size: 27px;
     font-weight: 400;
-    line-height: 32.4px;
 }
 
 .version-2-t1 {
     font-family: 'Inter';
     font-size: 61px;
     font-weight: 700;
-    line-height: 73.2px;
 }
 
 .version-2-t2 {
     font-family: 'Inter';
     font-size: 47px;
     font-weight: 500;
-    line-height: 56.4px;
 }
 
 .version-2-t2-white {
     font-family: 'Inter';
     font-size: 47px;
     font-weight: 500;
-    line-height: 56.4px;
     color: var(--white);
 }
 
 .version-2-label {
     font-family: 'Inter';
     font-size: 13px;
-    line-height: 120%;
     font-weight: 400;
 }
 
 .version-btn {
     font-family: 'Inter';
     font-size: 21px;
-    line-height: 120%;
     font-weight: 700;
 }
 
 .version-btn-2nd {
     font-family: 'Inter';
     font-size: 16px;
-    line-height: 120%;
     font-weight: 700;
 }
 
@@ -81,14 +70,12 @@
     font-family: 'Inter';
     font-size: 27px;
     font-weight: 700;
-    line-height: 32.4px;
 }
 
 .version-initial-main {
     font-family: 'Inter';
     font-size: 20px;
     font-weight: 400;
-    line-height: 24px;
     color: var(--main);
 }
 
@@ -96,7 +83,6 @@
     font-family: 'Inter';
     font-size: 20px;
     font-weight: 400;
-    line-height: 24px;
     color: var(--white);
 }
 
@@ -104,15 +90,12 @@
     font-family: 'Inter';
     font-size: 20px;
     font-weight: bold;
-    line-height: 120%;
     color: var(--main2nd);
 }
 
 .version-initial-mobile {
     font-family: 'Inter';
     font-size: 16px;
-    font-weight: 700;
-    line-height: 19.2px;
     color: var(--main2nd);
 }
 
@@ -120,26 +103,22 @@
     font-family: 'Inter';
     font-size: 64px;
     font-weight: 700;
-    line-height: 76.8px;
 }
 
 .version-warning {
     font-family: 'Poppins';
     font-size: 12px;
     font-weight: 400;
-    line-height: 14.4px;
     color: var(--warning-text);
 }
 
 .version-no-task {
     font-family: 'Open Sans';
     font-weight: 400;
-    line-height: 19.2px;
 }
 
 .version-task-category {
     font-family: 'Inter';
     font-size: 23px;
     font-weight: 400;
-    line-height: 27.6px;
 }

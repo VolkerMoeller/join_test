@@ -58,6 +58,7 @@ function showLeftMenu() {
 // guestHeader()
 // userHeader()
 
+
 function externalHeader() {
     console.log('external Header');
 };

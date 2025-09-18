@@ -23,6 +23,7 @@
 // switchToSignPages()
 // changeCntMain()
 // changePageCSS()
+// resetNavigationView()
 
 // --- overlay-functions:
 
@@ -123,6 +124,16 @@ function changeCntMain() {
 function changePageCSS() {
     const pageCSS = document.getElementById('pageCSS');
     pageCSS.setAttribute('href', './assets/css/pages/workPages.css');
+}
+
+
+function resetNavigationView() {
+    let navBtns = document.querySelectorAll('.menu-btn-hvr');
+    navBtns.forEach(navBtn => {
+        navBtn.classList.remove('display-none');
+    });
+    let fstNavBtn = document.querySelector('.menu-btn-hvr');
+    fstNavBtn.classList.add('display-none');
 }
 
 

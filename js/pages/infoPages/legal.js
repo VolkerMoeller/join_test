@@ -25,20 +25,24 @@ async function initLegal() {
 
 
 function navigationView() {
+    resetNavigationView();
     let userStatus = readingUserStatus();
     if (userStatus == 'external') {
-        toggleUserNav();
+        toggleExternalNav();
         setTimeout(() => {
             showLeftMenu();
-        }, timeout);
+        }, 10);
     };
 }
 
-function toggleUserNav() {
-    let navBtns = document.querySelectorAll(".menu-btn-hvr");
+
+function toggleExternalNav() {
+    let navBtns = document.querySelectorAll('.menu-btn-hvr');
     navBtns.forEach(navBtn => {
         navBtn.classList.toggle('display-none');
     });
+    let fstNavBtn = document.querySelector('.menu-btn-hvr');
+    fstNavBtn.classList.remove('display-none');
 }
 
 
@@ -46,5 +50,6 @@ function toggleUserNav() {
 // 2nd-level-functions:
 // --------------------
 
+// resetNavigationView() --> main.js
 // readingUserStatus() --> main.js
 // showLeftMenu() --> work.js

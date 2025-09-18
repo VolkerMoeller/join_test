@@ -1,109 +1,99 @@
-.version-2-body {
-    font-family: 'Inter';
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.version-2-t6 {
-    font-family: 'Inter';
-    font-size: 20px;
-    font-weight: 400;
-}
-
 .version-2-t7 {
-    font-family: 'Inter';
     font-size: 12px;
     font-weight: 400;
 }
 
+.version-2-label {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.version-2-body {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.version-btn-2nd {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.version-initial-mobile {
+    font-size: 16px;
+    color: var(--main2nd);
+}
+
+.version-2-t6 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
 .version-2-t6-left {
-    font-family: 'Inter';
     font-size: 20px;
     font-weight: 400;
     text-align: start;
 }
 
-.version-2-t5 {
-    font-family: 'Inter';
-    font-size: 27px;
-    font-weight: 400;
-}
-
-.version-2-t1 {
-    font-family: 'Inter';
-    font-size: 61px;
-    font-weight: 700;
-}
-
-.version-2-t2 {
-    font-family: 'Inter';
-    font-size: 47px;
-    font-weight: 500;
-}
-
-.version-2-t2-white {
-    font-family: 'Inter';
-    font-size: 47px;
-    font-weight: 500;
-    color: var(--white);
-}
-
-.version-2-label {
-    font-family: 'Inter';
-    font-size: 13px;
-    font-weight: 400;
-}
-
-.version-btn {
-    font-family: 'Inter';
-    font-size: 21px;
-    font-weight: 700;
-}
-
-.version-btn-2nd {
-    font-family: 'Inter';
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.version-btn-3rd {
-    font-family: 'Inter';
-    font-size: 27px;
-    font-weight: 700;
-}
-
 .version-initial-main {
-    font-family: 'Inter';
     font-size: 20px;
     font-weight: 400;
     color: var(--main);
 }
 
 .version-initial-white {
-    font-family: 'Inter';
     font-size: 20px;
     font-weight: 400;
     color: var(--white);
 }
 
 .version-initial {
-    font-family: 'Inter';
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--main2nd);
 }
 
-.version-initial-mobile {
-    font-family: 'Inter';
-    font-size: 16px;
-    color: var(--main2nd);
+.version-task-category {
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.version-btn {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.version-2-t5 {
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.version-btn-3rd {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.version-2-t2 {
+    font-size: 47px;
+    font-weight: 500;
+}
+
+.version-2-t2-white {
+    font-size: 47px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.version-2-t1 {
+    font-size: 61px;
+    font-weight: 700;
 }
 
 .version-greeting {
-    font-family: 'Inter';
     font-size: 64px;
     font-weight: 700;
 }
+
+/* Poppins */
 
 .version-warning {
     font-family: 'Poppins';
@@ -112,13 +102,9 @@
     color: var(--warning-text);
 }
 
+/* Open Sans */
+
 .version-no-task {
     font-family: 'Open Sans';
-    font-weight: 400;
-}
-
-.version-task-category {
-    font-family: 'Inter';
-    font-size: 23px;
     font-weight: 400;
 }

@@ -10,9 +10,9 @@ html {
 
 body {
     margin: 0;
-    font-family: "Inter";
     color: var(--main);
     background-color: var(--main-background);
+    font-family: "Inter";
     line-height: 120%;
 }
 
@@ -21,6 +21,7 @@ h1,
 h2,
 input[type="text"] {
     cursor: text;
+    font-family: "Inter";
     line-height: 120%;
 }
 

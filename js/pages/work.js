@@ -106,3 +106,13 @@ function animSmallMenuFwd() {
     smallNav.classList.add('from-top-right-into-view');
 }
 
+// ------------------
+// cntLeft-functions:
+// ------------------
+
+function toggleUserNav() {
+    let navBtns = document.querySelectorAll(".menu-btn-hvr");
+    navBtns.forEach(navBtn => {
+        navBtn.classList.toggle('display-none');
+    });
+}

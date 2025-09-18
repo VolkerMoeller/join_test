@@ -89,3 +89,7 @@
     display: flex;
     gap: 8px;
 }
+
+.menu-btn-hvr:hover {
+    background-color: var(--menu-button-hover);
+}

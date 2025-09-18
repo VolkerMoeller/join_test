@@ -116,4 +116,5 @@
 
 .menu-btn-hvr:hover {
     background-color: var(--menu-button-hover);
+    color: white;
 }

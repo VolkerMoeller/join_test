@@ -9,6 +9,7 @@ async function initPrivacy() {
     setClrSchemeInit();
     invertLogoClr();
     defaultHeaderView();
+    navigationView();
 }
 
 
@@ -20,3 +21,4 @@ async function initPrivacy() {
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
 // defaultHeaderView() --> work.js
+// navigationView() --> info.js

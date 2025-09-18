@@ -34,6 +34,7 @@
 
 // toggleElements()
 // focusInput()
+// readingUserStatus()
 // doSth()
 
 
@@ -167,6 +168,12 @@ function checkOverlay() {
 
 function focusInput(fieldId) {
     document.getElementById(fieldId).focus();
+}
+
+
+function readingUserStatus() {
+    const userStatus = loadLocalStorageObject('userStatus');
+    return userStatus;
 }
 
 

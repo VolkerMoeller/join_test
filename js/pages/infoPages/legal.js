@@ -9,6 +9,7 @@ async function initLegal() {
     setClrSchemeInit();
     invertLogoClr();
     defaultHeaderView();
+    navigationView();
 }
 
 
@@ -20,3 +21,30 @@ async function initLegal() {
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
 // defaultHeaderView() --> main.js
+// navigationView()
+
+
+function navigationView() {
+    let userStatus = readingUserStatus();
+    if (userStatus == 'external') {
+        toggleUserNav();
+        setTimeout(() => {
+            showLeftMenu();
+        }, timeout);
+    };
+}
+
+function toggleUserNav() {
+    let navBtns = document.querySelectorAll(".menu-btn-hvr");
+    navBtns.forEach(navBtn => {
+        navBtn.classList.toggle('display-none');
+    });
+}
+
+
+// --------------------
+// 2nd-level-functions:
+// --------------------
+
+// readingUserStatus() --> main.js
+// showLeftMenu() --> work.js

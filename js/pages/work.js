@@ -11,6 +11,7 @@ async function initWork() {
     setClrSchemeInit();
     invertLogoClr();
     defaultHeaderView();
+    showLeftMenu();
 }
 
 
@@ -18,6 +19,7 @@ function returnToLogIn() {
     window.close();
     saveLocalStorageObject('userStatus', 'external');
 }
+
 
 
 // --------------------
@@ -29,16 +31,22 @@ function returnToLogIn() {
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
 // defaultHeaderView()
+// showLeftMenu()
+
 // saveLocalStorageObject() --> main.js
 
 
 function defaultHeaderView() {
-    let userStatus = loadLocalStorageObject('userStatus');
-    // default external:
-    if (userStatus == 'external') { externalHeader(); }
+    let userStatus = readingUserStatus()
     if (userStatus == 'guest') { guestHeader(); }
     if (userStatus == 'user') { userHeader(); }
+}
 
+
+function showLeftMenu() {
+    setTimeout(() => {
+        document.getElementById('left-menu').classList.remove('display-none');
+    }, 10);
 }
 
 
@@ -46,8 +54,9 @@ function defaultHeaderView() {
 // 2nd-level-functions:
 // --------------------
 
-// laodLocalStorageObject() --> main.js
-// externalHeader()
+// readingUserStatus() --> main.js
+// guestHeader()
+// userHeader()
 
 function externalHeader() {
     console.log('external Header');
@@ -104,15 +113,4 @@ function animSmallMenuFwd() {
     smallNav.classList.remove('display-none');
     smallNav.classList.remove('from-left-out-off-sight');
     smallNav.classList.add('from-top-right-into-view');
-}
-
-// ------------------
-// cntLeft-functions:
-// ------------------
-
-function toggleUserNav() {
-    let navBtns = document.querySelectorAll(".menu-btn-hvr");
-    navBtns.forEach(navBtn => {
-        navBtn.classList.toggle('display-none');
-    });
 }

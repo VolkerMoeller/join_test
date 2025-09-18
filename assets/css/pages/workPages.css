@@ -79,11 +79,12 @@
 }
 
 .left-element button {
-    color: white;
+    color: var(--text-light);
+    justify-content: left;
 }
 
 .left-element a {
-    color: white;
+    color: var(--text-light);
 }
 
 .left-element-log {

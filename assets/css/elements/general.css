@@ -77,6 +77,17 @@
     font-weight: bold;
 }
 
+.txt-btn-left-selected {
+    display: flex;
+    justify-content: left;
+    gap: 8px;
+    padding: 8px 60px;
+    color: var(--icon-grey);
+    background-color: var(--nav-left-button);
+    cursor: auto;
+}
+
+
 @media (max-width: 1440px) {
 
     .btn-wo-icn {

@@ -134,13 +134,13 @@ function resetNavigationView() {
         navBtnSelected.classList.add('menu-btn-hvr');
     });
 
-    // XXX
-
     let navBtns = document.querySelectorAll('.menu-btn-hvr');
     navBtns.forEach(navBtn => {
         navBtn.classList.remove('display-none');
         navBtn.disabled = false;
     });
+
+    
     let fstNavBtn = document.querySelector('.menu-btn-hvr');
     fstNavBtn.classList.add('display-none');
 }

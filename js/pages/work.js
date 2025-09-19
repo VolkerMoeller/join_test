@@ -64,6 +64,7 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 // invertLogoClr() --> main.js
 // defaultHeaderView()
 // defaultNavView()
+// currentNavView()
 // showLeftMenu()
 // saveLocalStorageObject() --> main.js
 
@@ -77,7 +78,14 @@ function defaultHeaderView() {
 
 function defaultNavView() {
     resetNavigationView();
-    setSumBtnToDefault();
+    setCurrentBtnById('mnuBtn2nd');
+    showLeftMenu();
+}
+
+
+function currentNavView(currentBtnId) {
+    resetNavigationView();
+    setCurrentBtnById(currentBtnId);
     showLeftMenu();
 }
 
@@ -98,7 +106,8 @@ function showLeftMenu() {
 // guestHeader()
 // userHeader()
 // resetNavigationView() --> main.js
-// setSumBtnToDefault() 
+// setCurrentBtnById()
+// showLeftMenu() --> see above
 
 
 function guestHeader() {
@@ -115,8 +124,8 @@ function userHeader() {
 };
 
 
-function setSumBtnToDefault() {
-    let sumNavBtn = document.getElementById('mnuBtn2nd');
+function setCurrentBtnById(defBtnId) {
+    let sumNavBtn = document.getElementById(defBtnId);
     sumNavBtn.classList.remove('menu-btn-hvr');
     sumNavBtn.classList.add('menu-btn-hvr-selected');
     sumNavBtn.disabled = true;

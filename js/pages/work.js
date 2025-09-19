@@ -21,9 +21,17 @@ function returnToLogIn() {
     saveLocalStorageObject('userStatus', 'external');
 }
 
-function toggleMenuIcnClrSVG(icnId) {
+
+function setMenuIcnHvrClrSVG(icnId) {
     let menuIcn = document.getElementById(icnId);
-    console.log(menuIcn);
+    menuIcn.classList.remove('menu-icon');
+    menuIcn.classList.add('menu-icon-hvr');
+}
+
+function resetMenuIcnHvrClrSVG(icnId) {
+    let menuIcn = document.getElementById(icnId);
+    menuIcn.classList.add('menu-icon');
+    menuIcn.classList.remove('menu-icon-hvr');
 }
 
 

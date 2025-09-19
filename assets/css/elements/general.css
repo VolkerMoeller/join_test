@@ -125,6 +125,6 @@
     fill: var(--text-light);
 }
 
-.menu-icon:hover {
+.menu-icon-hvr {
     fill: var(--white);
 }

@@ -169,3 +169,51 @@ function animSmallMenuFwd() {
     smallNav.classList.remove('from-left-out-off-sight');
     smallNav.classList.add('from-top-right-into-view');
 }
+
+
+// ------------------
+// cntMenu-functions:
+// ------------------
+
+// viewSum()
+// viewAdd()
+// viewBoard()
+// viewCont()
+
+
+function viewSum() {
+    resetSVGHvr();
+    currentNavView('mnuBtn2nd');
+}
+
+
+function viewAdd() {
+    resetSVGHvr();
+    currentNavView('mnuBtn3rd');
+}
+
+
+function viewBoard() {
+    resetSVGHvr();
+    currentNavView('mnuBtn4th');
+}
+
+
+function viewCont() {
+    resetSVGHvr();
+    currentNavView('mnuBtn5th');
+}
+
+// --------------------
+// 1st-level-functions:
+// --------------------
+
+// resetSVGHvr()
+
+function resetSVGHvr() {
+    let svgIcons = document.querySelectorAll('.menu-icon-hvr');
+    svgIcons.forEach(svgIcon => {
+        svgIcon.classList.remove('menu-icon-hvr');
+        svgIcon.classList.remove('menu-icon');
+    });
+}

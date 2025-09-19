@@ -116,7 +116,7 @@
 
 .menu-btn-hvr:hover {
     background-color: var(--menu-button-hover);
-    color: white;
+    color: var(--white);
 }
 
 .menu-btn-hvr-selected {
@@ -128,7 +128,9 @@
     gap: 8px;
     background-color: var(--nav-left-button);
     cursor: default;
+    color: var(--white) !important;
 }
+
 
 .menu-btn-hvr-selected div:first-child {
     cursor: default;

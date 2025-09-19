@@ -10,7 +10,6 @@
 // invertLogoClr()
 // setUserStatusExternal()
 // setUserStatusGuest()
-// workPageSumView()
 // setUserStatusUser()
 
 // --- local-storage-functions:
@@ -84,12 +83,6 @@ function setUserStatusGuest() {
 }
 
 
-function workPageSumView() {
-    console.log('workPageSumView()');
-    disableNavBtnDefault('mnuBtn2nd');
-}
-
-
 function saveLocalStorageObject(key, obj) {
     let objAsString = JSON.stringify(obj);
     localStorage.setItem(key, objAsString);
@@ -140,9 +133,13 @@ function resetNavigationView() {
         navBtnSelected.classList.remove('menu-btn-hvr-selected');
         navBtnSelected.classList.add('menu-btn-hvr');
     });
+
+    // XXX
+
     let navBtns = document.querySelectorAll('.menu-btn-hvr');
     navBtns.forEach(navBtn => {
         navBtn.classList.remove('display-none');
+        navBtn.disabled = false;
     });
     let fstNavBtn = document.querySelector('.menu-btn-hvr');
     fstNavBtn.classList.add('display-none');

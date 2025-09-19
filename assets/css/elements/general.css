@@ -84,7 +84,7 @@
     padding: 8px 60px;
     color: var(--icon-grey);
     background-color: var(--nav-left-button);
-    cursor: auto;
+    cursor: default;
 }
 
 
@@ -122,6 +122,11 @@
     display: flex;
     gap: 8px;
     background-color: var(--nav-left-button);
+    cursor: default;
+}
+
+.menu-btn-hvr-selected div {
+    cursor: default;
 }
 
 .menu-btn-hvr:hover {

@@ -4,6 +4,7 @@
 
 // initWork()
 // returnToLogIn()
+// toggleMenuIcnClrSVG()
 
 
 async function initWork() {
@@ -20,6 +21,10 @@ function returnToLogIn() {
     saveLocalStorageObject('userStatus', 'external');
 }
 
+function toggleMenuIcnClrSVG(icnId) {
+    let menuIcn = document.getElementById(icnId);
+    console.log(menuIcn);
+}
 
 
 // --------------------

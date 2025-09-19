@@ -1,14 +1,21 @@
 <div class="left-element left-element-log" w3-include-svg="./assets/img/svgHTML/1-logo.html"></div>
 <menu id="left-menu" class="left-element left-element-mnu display-none">
-    <button class="menu-btn-hvr version-2-body display-none" onclick="returnToLogIn()">
+    <button id="menuIcn1st" class="menu-btn-hvr version-2-body display-none" onclick="returnToLogIn()"
+        onmouseover="toggleMenuIcnClrSVG('menuIcn1st')" onmouseleave="toggleMenuIcnClrSVG('menuIcn1st')">
         <div w3-include-svg="./assets/img/svgHTML/8-login.html"></div> Log in
     </button>
-    <button class="menu-btn-hvr version-2-body" onclick="doSth()">
+    <button id="menuIcn2nd" class="menu-btn-hvr version-2-body" onclick="doSth()"
+        onmouseover="toggleMenuIcnClrSVG('menuIcn2nd')" onmouseleave="toggleMenuIcnClrSVG('menuIcn2nd')">
         Summary
     </button>
-    <button class="menu-btn-hvr version-2-body" onclick="doSth()">Add Task</button>
-    <button class="menu-btn-hvr version-2-body" onclick="doSth()">Board</button>
-    <button class="menu-btn-hvr version-2-body" onclick="doSth()">Contacts</button>
+    <button id="menuIcn3rd" class="menu-btn-hvr version-2-body" onclick="doSth()"
+        onmouseover="toggleMenuIcnClrSVG('menuIcn3rd')" onmouseleave="toggleMenuIcnClrSVG('menuIcn3rd')">Add
+        Task</button>
+    <button id="menuIcn4th" class="menu-btn-hvr version-2-body" onclick="doSth()"
+        onmouseover="toggleMenuIcnClrSVG('menuIcn4th')" onmouseleave="toggleMenuIcnClrSVG('menuIcn4th')">Board</button>
+    <button id="menuIcn5th" class="menu-btn-hvr version-2-body" onclick="doSth()"
+        onmouseover="toggleMenuIcnClrSVG('menuIcn5th')"
+        onmouseleave="toggleMenuIcnClrSVG('menuIcn5th')">Contacts</button>
 </menu>
 <nav class="left-element-nav">
     <button class="txt-btn-left version-2-body" onclick="doSth()">Privacy Policy</button>

@@ -12,7 +12,7 @@ async function initWork() {
     setClrSchemeInit();
     invertLogoClr();
     defaultHeaderView();
-    showLeftMenu();
+    defaultNavView();
 }
 
 
@@ -58,6 +58,7 @@ function resetMenuIcnHvrClrSVG(icnId1, icnId2) {
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
 // defaultHeaderView()
+// defaultNavView()
 // showLeftMenu()
 
 // saveLocalStorageObject() --> main.js
@@ -70,11 +71,20 @@ function defaultHeaderView() {
 }
 
 
+function defaultNavView() {
+    resetNavigationView();
+    document.getElementById('mnuBtn2nd').classList.remove('menu-btn-hvr');
+    document.getElementById('mnuBtn2nd').classList.add('menu-btn-hvr-selected');
+    showLeftMenu();
+}
+
+
 function showLeftMenu() {
     setTimeout(() => {
         document.getElementById('left-menu').classList.remove('display-none');
     }, 10);
 }
+
 
 
 // --------------------
@@ -84,6 +94,7 @@ function showLeftMenu() {
 // readingUserStatus() --> main.js
 // guestHeader()
 // userHeader()
+// disableNavBtnDefault()
 
 
 function guestHeader() {
@@ -97,6 +108,12 @@ function userHeader() {
     document.querySelector('.header-user-btn').classList.remove('display-none');
     document.querySelector('.header-guest-btn').classList.add('display-none');
 };
+
+function disableNavBtnDefault(btnId) {
+    console.log(btnId);
+    document.getElementById(btnId).classList.remove('menu-btn-hvr');
+    document.getElementById(btnId).classList.add('menu-btn-hvr-selected');
+}
 
 
 // -----------------

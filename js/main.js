@@ -85,7 +85,8 @@ function setUserStatusGuest() {
 
 
 function workPageSumView() {
-    console.log('workPageSumView()')
+    console.log('workPageSumView()');
+    disableNavBtnDefault('mnuBtn2nd');
 }
 
 
@@ -112,7 +113,6 @@ async function changeOvl(target) {
 function switchToWorkPagesAsGuest() {
     window.location.assign('workPage.html');
     setUserStatusGuest();
-    workPageSumView();
 }
 
 
@@ -135,6 +135,11 @@ function changePageCSS() {
 
 
 function resetNavigationView() {
+    let navBtnsSelected = document.querySelectorAll('.menu-btn-hvr-selected');
+    navBtnsSelected.forEach(navBtnSelected => {
+        navBtnSelected.classList.remove('menu-btn-hvr-selected');
+        navBtnSelected.classList.add('menu-btn-hvr');
+    });
     let navBtns = document.querySelectorAll('.menu-btn-hvr');
     navBtns.forEach(navBtn => {
         navBtn.classList.remove('display-none');
@@ -200,9 +205,6 @@ function doSth() {
 }
 
 
-
-
-
 // -------------------
 // 1st-level-functions
 // -------------------
@@ -211,6 +213,10 @@ function doSth() {
 // checkColorSchemeId()
 // setClrScheme()
 // changeSvgPathClass() --> see above
+// saveLocalStorageObject() --> see above
+// saveLocalStorageObject() --> see above
+// saveLocalStorageObject() --> see above
+// setUserStatusGuest() --> see above
 // includeHTMLById() --> see above
 // resetOverlayFrame()
 // resetOverlayMsg()
@@ -218,6 +224,7 @@ function doSth() {
 // setupOverlayForInput()
 // setupSignElementsOnTop() --> sign.js
 // handleOverlay() --> see above
+// loadLocalStorageObject() --> see above
 
 
 async function includeHTMLById(name) {

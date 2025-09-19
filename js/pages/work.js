@@ -22,16 +22,30 @@ function returnToLogIn() {
 }
 
 
-function setMenuIcnHvrClrSVG(icnId) {
-    let menuIcn = document.getElementById(icnId);
-    menuIcn.classList.remove('menu-icon');
-    menuIcn.classList.add('menu-icon-hvr');
+function setMenuIcnHvrClrSVG(icnId1, icnId2) {
+    let menuIcnIds = [icnId1, icnId2];
+    for (let i = 0; i < menuIcnIds.length; i++) {
+        const menuIcnId = menuIcnIds[i];
+        if (menuIcnId) {
+            let menuIcn = document.getElementById(menuIcnId);
+            menuIcn.classList.remove('menu-icon');
+            menuIcn.classList.add('menu-icon-hvr');
+        }
+    }
 }
 
-function resetMenuIcnHvrClrSVG(icnId) {
-    let menuIcn = document.getElementById(icnId);
-    menuIcn.classList.add('menu-icon');
-    menuIcn.classList.remove('menu-icon-hvr');
+
+function resetMenuIcnHvrClrSVG(icnId1, icnId2) {
+    let menuIcnIds = [icnId1, icnId2];
+    for (let i = 0; i < menuIcnIds.length; i++) {
+        const menuIcnId = menuIcnIds[i];
+        if (menuIcnId) {
+            let menuIcn = document.getElementById(menuIcnId);
+            menuIcn.classList.add('menu-icon');
+            menuIcn.classList.remove('menu-icon-hvr');
+        }
+    }
+
 }
 
 

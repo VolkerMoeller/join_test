@@ -106,7 +106,6 @@ async function changeOvl(target) {
 function switchToWorkPagesAsGuest() {
     window.location.assign('workPage.html');
     setUserStatusGuest();
-    // saveLocalStorageObject('currentView', 'sum');
 }
 
 

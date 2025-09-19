@@ -214,6 +214,6 @@ function resetSVGHvr() {
     let svgIcons = document.querySelectorAll('.menu-icon-hvr');
     svgIcons.forEach(svgIcon => {
         svgIcon.classList.remove('menu-icon-hvr');
-        svgIcon.classList.remove('menu-icon');
+        svgIcon.classList.add('menu-icon');
     });
 }

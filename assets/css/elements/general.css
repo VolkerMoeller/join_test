@@ -142,6 +142,7 @@
 
 .menu-btn-hvr-selected div:first-child svg:first-child path {
     cursor: default;
+    fill: var(--white);
 }
 
 

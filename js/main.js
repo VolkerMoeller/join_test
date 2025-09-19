@@ -282,6 +282,7 @@ function resetOverlayMsg() {
     });
 }
 
+
 function resetOverlayNav() {
     let msgAnim = 'from-top-right-into-view';
     let overlNav = document.querySelector('.nav-cnt');

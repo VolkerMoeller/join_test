@@ -43,7 +43,7 @@ async function includeHTML() {
     await includeHTMLById('w3-include-html');
     await includeHTMLById('w3-include-overlay');
     await includeHTMLById('w3-include-template');
-    await includeHTMLById('w3-include-variable');
+    await includeHTMLById('w3-include-variant');
     await includeHTMLById('w3-include-svg');
 }
 

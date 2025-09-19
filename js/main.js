@@ -10,6 +10,7 @@
 // invertLogoClr()
 // setUserStatusExternal()
 // setUserStatusGuest()
+// workPageSumView()
 // setUserStatusUser()
 
 // --- local-storage-functions:
@@ -83,6 +84,11 @@ function setUserStatusGuest() {
 }
 
 
+function workPageSumView() {
+    console.log('workPageSumView()')
+}
+
+
 function saveLocalStorageObject(key, obj) {
     let objAsString = JSON.stringify(obj);
     localStorage.setItem(key, objAsString);
@@ -106,6 +112,7 @@ async function changeOvl(target) {
 function switchToWorkPagesAsGuest() {
     window.location.assign('workPage.html');
     setUserStatusGuest();
+    workPageSumView();
 }
 
 

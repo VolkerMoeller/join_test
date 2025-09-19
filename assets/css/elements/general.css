@@ -114,6 +114,16 @@
     gap: 8px;
 }
 
+.menu-btn-hvr-selected {
+    width: 232px;
+    height: 46px;
+    border-radius: 8px;
+    padding: 8px 56px;
+    display: flex;
+    gap: 8px;
+    background-color: var(--nav-left-button);
+}
+
 .menu-btn-hvr:hover {
     background-color: var(--menu-button-hover);
     color: white;

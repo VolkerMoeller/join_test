@@ -114,6 +114,11 @@
     gap: 8px;
 }
 
+.menu-btn-hvr:hover {
+    background-color: var(--menu-button-hover);
+    color: white;
+}
+
 .menu-btn-hvr-selected {
     width: 232px;
     height: 46px;
@@ -125,14 +130,18 @@
     cursor: default;
 }
 
-.menu-btn-hvr-selected div {
+.menu-btn-hvr-selected div:first-child {
     cursor: default;
 }
 
-.menu-btn-hvr:hover {
-    background-color: var(--menu-button-hover);
-    color: white;
+.menu-btn-hvr-selected div:first-child svg:first-child {
+    cursor: default;
 }
+
+.menu-btn-hvr-selected div:first-child svg:first-child path {
+    cursor: default;
+}
+
 
 /* svg-class: */
 

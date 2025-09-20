@@ -130,7 +130,6 @@
 
 @media (max-width: 1440px) {
     .inside {
-        /* height: auto; */
         padding-top: 56px;
         flex-direction: column;
     }

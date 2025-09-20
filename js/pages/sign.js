@@ -503,6 +503,7 @@ function visibilityPassword(id) {
 
 
 function showCurrentMessage(currentForm) {
+    resetMessages();
     let windowWidth = getWindowWidth();
     if (windowWidth >= 1440) {
         animMsgDesktop(currentForm);
@@ -512,31 +513,40 @@ function showCurrentMessage(currentForm) {
 }
 
 
-function animMsgDesktop(currentForm) {
-    if (currentForm == 'SignUp') {
-        document.querySelector('.msg-rgt-cnt').classList.add('display-none');
-        document.querySelector('.msg-btm-cnt').classList.remove('display-none');
-    } else {
-        document.querySelector('.msg-rgt-cnt').classList.remove('display-none');
-        document.querySelector('.msg-btm-cnt').classList.add('display-none');
-    }
-}
-
-
-function animMsgMobile(currentForm) {
-    if (currentForm == 'SignUp') {
-        document.querySelector('.msg-rgt-cnt').classList.add('display-none');
-        document.querySelector('.msg-btm-cnt').classList.remove('display-none');
-    } else {
-        document.querySelector('.msg-rgt-cnt').classList.remove('display-none');
-        document.querySelector('.msg-btm-cnt').classList.add('display-none');
-    }
+function resetMessages() {
+    let msgs = document.querySelectorAll('.msg-cnt');
+    msgs.forEach(msg => {
+        msg.classList.add('display-none');
+    });
 }
 
 
 function slideMessages() {
     document.querySelector('.msg-rgt-cnt').classList.add('from-right-to-center');
     document.querySelector('.msg-btm-cnt').classList.add('from-bottom-to-center');
+    document.querySelector('.msg-btm-cnt-mbl').classList.add('from-bottom-to-center-mbl');
+}
+
+
+// -------------------
+// level-4-functions:
+// -------------------
+
+// animMsgDesktop()
+// animMsgMobile()
+
+
+function animMsgDesktop(currentForm) {
+    if (currentForm == 'SignUp') {
+        document.querySelector('.msg-btm-cnt').classList.remove('display-none');
+    }
+}
+
+
+function animMsgMobile(currentForm) {
+    if (currentForm == 'SignUp') {
+        document.querySelector('.msg-btm-cnt-mbl').classList.remove('display-none');
+    }
 }
 
 

@@ -76,6 +76,7 @@
 .left-element {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .left-element button {

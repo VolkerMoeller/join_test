@@ -455,6 +455,7 @@ function switchToLoginForm(currentForm) {
 // toggleElements() --> main.js
 // showOverlay() --> main.js
 // showCurrentMessage()
+// resetMessages()
 // slideMessages()
 // resetOverlay() --> main.js
 

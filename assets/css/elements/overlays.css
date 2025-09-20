@@ -184,9 +184,3 @@
         transform: translateX(150%);
     }
 }
-
-@media (max-width: 1440px) {
-    .nav-top-rgt {
-        top: 82px;
-    }
-}

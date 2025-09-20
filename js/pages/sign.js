@@ -503,6 +503,27 @@ function visibilityPassword(id) {
 
 
 function showCurrentMessage(currentForm) {
+    let windowWidth = getWindowWidth();
+    if (windowWidth >= 1440) {
+        animMsgDesktop(currentForm);
+    } else {
+        animMsgMobile(currentForm);
+    }
+}
+
+
+function animMsgDesktop(currentForm) {
+    if (currentForm == 'SignUp') {
+        document.querySelector('.msg-rgt-cnt').classList.add('display-none');
+        document.querySelector('.msg-btm-cnt').classList.remove('display-none');
+    } else {
+        document.querySelector('.msg-rgt-cnt').classList.remove('display-none');
+        document.querySelector('.msg-btm-cnt').classList.add('display-none');
+    }
+}
+
+
+function animMsgMobile(currentForm) {
     if (currentForm == 'SignUp') {
         document.querySelector('.msg-rgt-cnt').classList.add('display-none');
         document.querySelector('.msg-btm-cnt').classList.remove('display-none');

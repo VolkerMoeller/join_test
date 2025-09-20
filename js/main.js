@@ -36,6 +36,8 @@
 // toggleElements()
 // focusInput()
 // readingUserStatus()
+// getWindowWidth()
+// getWindowHeight()
 // doSth()
 
 
@@ -140,7 +142,7 @@ function resetNavigationView() {
         navBtn.disabled = false;
     });
 
-    
+
     let fstNavBtn = document.querySelector('.menu-btn-hvr');
     fstNavBtn.classList.add('display-none');
 }
@@ -199,6 +201,16 @@ function readingUserStatus() {
 
 function doSth() {
     console.log('doSth()');
+}
+
+
+function getWindowWidth() {
+    return window.innerWidth;
+}
+
+
+function getWindowHeight() {
+    return window.innerHeight;
 }
 
 

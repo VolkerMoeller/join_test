@@ -227,10 +227,8 @@ function animSmallMenuFwd() {
 // cntMenu-functions:
 // ------------------
 
-// viewSum()
-// viewAdd()
-// viewBoard()
-// viewCont()
+// viewDefaultContent()
+// viewDefaultBtnById()
 
 
 function viewDefaultContent(defaultBtnId) {

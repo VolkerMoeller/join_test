@@ -78,18 +78,25 @@ function defaultHeaderView() {
 
 function defaultNavView() {
     resetNavigationView();
-    // resetNavigationViewMbl();
+    resetNavigationViewMbl();
     setCurrentBtnById('mnuBtn2nd');
-    // setCurrentBtnById('mnuBtnHvr2nd');
+    setCurrentBtnById('mnuBtnMbl2nd');
     showLeftAndBottomMenu();
 }
 
 
 function currentNavView(currentBtnId) {
     resetNavigationView();
-    // resetNavigationViewMbl();
+    resetNavigationViewMbl();
     setCurrentBtnById(currentBtnId);
     showLeftAndBottomMenu();
+}
+
+
+function currentNavViewMbl(currentBtnId) {
+    resetNavigationViewMbl();
+    // setCurrentBtnById(currentBtnId);
+    // showLeftAndBottomMenu();
 }
 
 
@@ -130,11 +137,17 @@ function userHeader() {
 
 function setCurrentBtnById(defBtnId) {
     let sumNavBtn = document.getElementById(defBtnId);
-    sumNavBtn.classList.remove('menu-btn-hvr');
-    sumNavBtn.classList.add('menu-btn-hvr-selected');
-    sumNavBtn.disabled = true;
+    if (sumNavBtn.classList.contains('menu-btn-hvr')) {
+        sumNavBtn.classList.remove('menu-btn-hvr');
+        sumNavBtn.classList.add('menu-btn-hvr-selected');
+        sumNavBtn.disabled = true;
+    }
+    if (sumNavBtn.classList.contains('menu-btn-hvr-mbl')) {
+        sumNavBtn.classList.remove('menu-btn-hvr-mbl');
+        sumNavBtn.classList.add('menu-btn-hvr-mbl-selected');
+        sumNavBtn.disabled = true;
+    }
 }
-
 
 // -----------------
 // cntTop-functions:
@@ -185,10 +198,14 @@ function animSmallMenuFwd() {
 // viewCont()
 
 
+function viewDefaultBtnById(defaultBtnId) {
+    resetSVGHvr();
+    currentNavView(defaultBtnId);
+}
+
 function viewSum() {
     resetSVGHvr();
     currentNavView('mnuBtn2nd');
-    // currentNavView('mnuBtnMbl2nd');
 }
 
 
@@ -207,6 +224,30 @@ function viewBoard() {
 function viewCont() {
     resetSVGHvr();
     currentNavView('mnuBtn5th');
+}
+
+
+function viewSumMbl() {
+    resetSVGHvr();
+    currentNavViewMbl('mnuBtnMbl2nd');
+}
+
+
+function viewAddMbl() {
+    resetSVGHvr();
+    currentNavViewMbl('mnuBtnMbl3rd');
+}
+
+
+function viewBoardMbl() {
+    resetSVGHvr();
+    currentNavViewMbl('mnuBtnMbl4th');
+}
+
+
+function viewContMbl() {
+    resetSVGHvr();
+    currentNavViewMbl('mnuBtnMbl5th');
 }
 
 // --------------------

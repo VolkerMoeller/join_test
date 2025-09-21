@@ -152,8 +152,14 @@
     height: 76px;
     border-radius: 8px;
     display: flex;
+    gap: 10px;
+}
+
+.menu-btn-hvr-inside-mbl {
+    display: flex;
     flex-direction: column;
     gap: 8px;
+
 }
 
 .menu-btn-hvr-mbl:hover {

@@ -145,6 +145,48 @@
     fill: var(--white);
 }
 
+/* menu-button-hover mobile*/
+
+.menu-btn-hvr-mbl {
+    width: 80px;
+    height: 76px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-btn-hvr-mbl:hover {
+    background-color: var(--menu-button-hover);
+    color: var(--white);
+}
+
+.menu-btn-hvr-mbl-selected {
+    width: 232px;
+    height: 46px;
+    border-radius: 0;
+    padding: 8px 56px;
+    display: flex;
+    gap: 8px;
+    background-color: var(--nav-left-button);
+    cursor: default;
+    color: var(--white) !important;
+}
+
+
+.menu-btn-hvr-mbl-selected div:first-child {
+    cursor: default;
+}
+
+.menu-btn-hvr-mbl-selected div:first-child svg:first-child {
+    cursor: default;
+}
+
+.menu-btn-hvr-mbl-selected div:first-child svg:first-child path {
+    cursor: default;
+    fill: var(--white);
+}
+
 
 /* svg-class: */
 

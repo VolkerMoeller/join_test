@@ -107,17 +107,19 @@
 }
 
 .btm-element {
-    position: fixed;
-    top: 100%;
-    transform: translateY(-100%);
     background-color: var(--main);
-    width: 100%;
+    width: 428px;
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color: white;
     gap: 15px;
+}
+
+.btm-element button {
+    color: var(--text-light);
+    align-content: end;
 }
 
 .headline-main h1 {
@@ -282,7 +284,7 @@
     .bottom {
         display: flex;
         justify-content: center;
-        background-color: var(--main);
+        background-color: crimson;
     }
 
     .headline-main {

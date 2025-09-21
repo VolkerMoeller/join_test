@@ -229,16 +229,23 @@ function animSmallMenuFwd() {
 
 // viewDefaultContent()
 // viewDefaultBtnById()
+// viewDefaultContentById()
 
 
 function viewDefaultContent(defaultBtnId) {
     viewDefaultBtnById(defaultBtnId);
+    viewDefaultContentById(defaultBtnId);
 }
 
 
 function viewDefaultBtnById(defaultBtnId) {
     resetSVGHvr();
     currentNavView(defaultBtnId);
+}
+
+
+function viewDefaultContentById(defaultBtn) {
+    console.log(defaultBtn);
 }
 
 

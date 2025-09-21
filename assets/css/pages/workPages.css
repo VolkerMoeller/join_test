@@ -115,6 +115,7 @@
     align-items: center;
     color: white;
     gap: 15px;
+    padding-bottom: 4px;
 }
 
 .btm-element button {
@@ -256,6 +257,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.icn-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 100%;
 }
 
 @media (max-width: 1000px) {

@@ -158,8 +158,6 @@
 .menu-btn-hvr-inside-mbl {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-
 }
 
 .menu-btn-hvr-mbl:hover {

@@ -249,6 +249,7 @@ function viewDefaultBtnById(defaultBtnId) {
 // resetSVGHvr()
 // currentNavView() --> work.js
 
+
 function resetSVGHvr() {
     let svgIcons = document.querySelectorAll('.menu-icon-hvr');
     svgIcons.forEach(svgIcon => {

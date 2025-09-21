@@ -203,52 +203,6 @@ function viewDefaultBtnById(defaultBtnId) {
     currentNavView(defaultBtnId);
 }
 
-function viewSum() {
-    resetSVGHvr();
-    currentNavView('mnuBtn2nd');
-}
-
-
-function viewAdd() {
-    resetSVGHvr();
-    currentNavView('mnuBtn3rd');
-}
-
-
-function viewBoard() {
-    resetSVGHvr();
-    currentNavView('mnuBtn4th');
-}
-
-
-function viewCont() {
-    resetSVGHvr();
-    currentNavView('mnuBtn5th');
-}
-
-
-function viewSumMbl() {
-    resetSVGHvr();
-    currentNavViewMbl('mnuBtnMbl2nd');
-}
-
-
-function viewAddMbl() {
-    resetSVGHvr();
-    currentNavViewMbl('mnuBtnMbl3rd');
-}
-
-
-function viewBoardMbl() {
-    resetSVGHvr();
-    currentNavViewMbl('mnuBtnMbl4th');
-}
-
-
-function viewContMbl() {
-    resetSVGHvr();
-    currentNavViewMbl('mnuBtnMbl5th');
-}
 
 // --------------------
 // 1st-level-functions:

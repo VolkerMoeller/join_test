@@ -24,6 +24,7 @@
 // changeCntMain()
 // changePageCSS()
 // resetNavigationView()
+// resetNavigationViewMbl()
 
 // --- overlay-functions:
 
@@ -144,6 +145,25 @@ function resetNavigationView() {
 
 
     let fstNavBtn = document.querySelector('.menu-btn-hvr');
+    fstNavBtn.classList.add('display-none');
+}
+
+
+function resetNavigationViewMbl() {
+    let navBtnsSelected = document.querySelectorAll('.menu-btn-hvr-mbl-selected');
+    navBtnsSelected.forEach(navBtnSelected => {
+        navBtnSelected.classList.remove('menu-btn-hvr-mbl-selected');
+        navBtnSelected.classList.add('menu-btn-hvr-mbl');
+    });
+
+    let navBtns = document.querySelectorAll('.menu-btn-hvr-mbl');
+    navBtns.forEach(navBtn => {
+        navBtn.classList.remove('display-none');
+        navBtn.disabled = false;
+    });
+
+
+    let fstNavBtn = document.querySelector('.menu-btn-hvr-mbl');
     fstNavBtn.classList.add('display-none');
 }
 

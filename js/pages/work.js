@@ -78,13 +78,16 @@ function defaultHeaderView() {
 
 function defaultNavView() {
     resetNavigationView();
+    // resetNavigationViewMbl();
     setCurrentBtnById('mnuBtn2nd');
+    // setCurrentBtnById('mnuBtnHvr2nd');
     showLeftAndBottomMenu();
 }
 
 
 function currentNavView(currentBtnId) {
     resetNavigationView();
+    // resetNavigationViewMbl();
     setCurrentBtnById(currentBtnId);
     showLeftAndBottomMenu();
 }
@@ -185,6 +188,7 @@ function animSmallMenuFwd() {
 function viewSum() {
     resetSVGHvr();
     currentNavView('mnuBtn2nd');
+    // currentNavView('mnuBtnMbl2nd');
 }
 
 

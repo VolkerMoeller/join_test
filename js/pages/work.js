@@ -233,6 +233,11 @@ function animSmallMenuFwd() {
 // viewCont()
 
 
+function viewDefaultContent(defaultBtnId) {
+    viewDefaultBtnById(defaultBtnId)
+}
+
+
 function viewDefaultBtnById(defaultBtnId) {
     resetSVGHvr();
     currentNavView(defaultBtnId);

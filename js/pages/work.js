@@ -86,17 +86,12 @@ function defaultNavView() {
 
 
 function currentNavView(currentBtnId) {
+    let twinBtn = getTheButtonTwin(currentBtnId);
     resetNavigationView();
     resetNavigationViewMbl();
     setCurrentBtnById(currentBtnId);
+    setCurrentBtnById(twinBtn);
     showLeftAndBottomMenu();
-}
-
-
-function currentNavViewMbl(currentBtnId) {
-    resetNavigationViewMbl();
-    // setCurrentBtnById(currentBtnId);
-    // showLeftAndBottomMenu();
 }
 
 
@@ -148,6 +143,45 @@ function setCurrentBtnById(defBtnId) {
         sumNavBtn.disabled = true;
     }
 }
+
+
+function getTheButtonTwin(defBtnId) {
+    let twinBtnId;
+    switch (defBtnId) {
+        case 'mnuBtnMbl1st':
+            twinBtnId = 'mnuBtn1st';
+            break
+        case 'mnuBtnMbl2nd':
+            twinBtnId = 'mnuBtn2nd';
+            break
+        case 'mnuBtnMbl3rd':
+            twinBtnId = 'mnuBtn3rd';
+            break
+        case 'mnuBtnMbl4th':
+            twinBtnId = 'mnuBtn4th';
+            break
+        case 'mnuBtnMbl5th':
+            twinBtnId = 'mnuBtn5th';
+            break
+        case 'mnuBtn1st':
+            twinBtnId = 'mnuBtnMbl1st';
+            break
+        case 'mnuBtn2nd':
+            twinBtnId = 'mnuBtnMbl2nd';
+            break
+        case 'mnuBtn3rd':
+            twinBtnId = 'mnuBtnMbl3rd';
+            break
+        case 'mnuBtn4th':
+            twinBtnId = 'mnuBtnMbl4th';
+            break
+        case 'mnuBtn5th':
+            twinBtnId = 'mnuBtnMbl5th';
+            break
+    }
+    return twinBtnId;
+}
+
 
 // -----------------
 // cntTop-functions:

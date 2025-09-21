@@ -114,6 +114,7 @@ function showLeftAndBottomMenu() {
 // resetNavigationView() --> main.js
 // setCurrentBtnById()
 // showLeftAndBottomMenu() --> see above
+// getTheButtonTwin()
 
 
 function guestHeader() {

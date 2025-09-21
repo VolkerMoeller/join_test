@@ -1,0 +1,134 @@
+<div class="frame-sign">
+    <form id="formSign" class="form-sign form-sign-log-in" onsubmit="checkInput(); return false;">
+        <div class="form-btn-back sign-up display-none">
+            <button id="btnBack1Hvr" type="button" class="display-none" onclick="toggleSignFormsBack()"
+                onmouseleave="toggleElements('btnBack1','btnBack1Hvr')"
+                w3-include-svg="./assets/img/svgHTML/6-leftArrowHover.html">
+            </button>
+            <button id="btnBack1" type="button" onmouseover="toggleElements('btnBack1','btnBack1Hvr')"
+                w3-include-svg="./assets/img/svgHTML/7-leftArrow.html">
+            </button>
+        </div>
+        <div class="form-title log-in">
+            <h1>Log in</h1>
+            <p>&nbsp</p>
+        </div>
+        <div class="form-title sign-up display-none">
+            <h1>Sign up</h1>
+            <p>&nbsp</p>
+        </div>
+        <div class="form-inputs-frame">
+            <div id="formInputs" class="form-inputs form-inputs-log-in">
+                <div class="housing-input sign-up display-none">
+                    <label for="name" class="display-none">Name</label>
+                    <div class="input-container">
+                        <input class="version-2-t6" type="text" id="name" name="name" placeholder="Name"
+                            autocomplete="off" required>
+                        <div class="input-container-icon" onclick="focusInput('name')">
+                            <div w3-include-svg="./assets/img/svgHTML/20-person.html"></div>
+                        </div>
+                    </div>
+                    <span class="version-warning display-none">ghost</span>
+                </div>
+                <div class="housing-input">
+                    <label for="eMail" class="display-none">E-Mail</label>
+                    <div class="input-container">
+                        <input class="version-2-t6" type="email" id="eMail" name="eMail" placeholder="Email"
+                            autocomplete="off" onkeyup="checkWarningStyle('eMail')" required>
+                        <div class="input-container-icon" onclick="focusInput('eMail')">
+                            <div w3-include-svg="./assets/img/svgHTML/14-eMail.html"></div>
+                        </div>
+                    </div>
+                    <span class="version-warning display-none">ghost</span>
+                </div>
+                <div class="housing-input">
+                    <label for="password" class="display-none">Password</label>
+                    <div class="input-container">
+                        <!-- <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
+                            autocomplete="off" required onfocus="handleOverlay()" onkeydown="checkOverlay()"
+                            onkeyup="checkWarningStyle('password')"> -->
+                        <input class="version-2-t6" type="password" id="password" name="password" placeholder="Password"
+                            autocomplete="off" required onfocus="handleOverlay()" onkeydown="checkOverlay()">
+                        <div id="lockPw" class="input-container-icon" type="button"
+                            onclick="focusInputField('password', 'lockIcnPw')">
+                            <div id="lockIcnPw" w3-include-svg="./assets/img/svgHTML/15-lock.html"></div>
+                            <div id="lockIcnPwVsbCont" class="visibility-container display-none">
+                                <button id="pwVsbOff" type="button"
+                                    w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
+                                </button>
+                                <button id="pwVsbOn" type="button"
+                                    w3-include-svg="./assets/img/svgHTML/16-visibility.html" class="display-none">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="version-warning display-none">ghost</span>
+                </div>
+                <div class="housing-input sign-up display-none">
+                    <label for="passwordConfirm" class="display-none">PasswordConfirm</label>
+                    <div class="input-container">
+                        <input class="version-2-t6" type="password" id="passwordConfirm" name="passwordConfirm"
+                            placeholder="Confirm Password" autocomplete="off" required onfocus="handleOverlay()"
+                            onkeydown="checkOverlay()" onkeyup="checkWarningStyle('passwordConfirm')">
+                        <div id="lockPwConfirm" class="input-container-icon"
+                            onclick="focusInputField('passwordConfirm', 'lockIcnPwConfirm')">
+                            <div id="lockIcnPwConfirm" w3-include-svg="./assets/img/svgHTML/15-lock.html"></div>
+                            <div id="lockIcnPwConfirmVsbCont" class="visibility-container display-none">
+                                <button id="pwConfirmVsbOff" type="button"
+                                    w3-include-svg="./assets/img/svgHTML/17-visibilityOff.html">
+                                </button>
+                                <button id="pwConfirmVsbOn" type="button"
+                                    w3-include-svg="./assets/img/svgHTML/16-visibility.html" class="display-none">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="version-warning display-none">ghost</span>
+                </div>
+            </div>
+            <span class="version-warning log-in opacity-0">Check your email and password. Please try again.</span>
+            <span class="version-warning sign-up opacity-0 display-none">Ups! your password don’t match</span>
+            <div class="accept-terms-container sign-up display-none">
+                <div class="checkbox-wth-icn-container">
+                    <div class="checkbox-icn-container">
+                        <div id='checkboxDefault' class="checkbox-icn-container">
+                            <button type="button" class="opacity-0"
+                                w3-include-svg="./assets/img/svgHTML/4-default-hover.html">
+                            </button>
+                            <button type="button" class="opacity-1"
+                                w3-include-svg="./assets/img/svgHTML/5-default.html">
+                            </button>
+                        </div>
+                        <div id='checkboxChecked' class="checkbox-icn-container display-none">
+                            <button type="button" class="opacity-0"
+                                w3-include-svg="./assets/img/svgHTML/2-checked-hover.html">
+                            </button>
+                            <button type="button" class="opacity-1"
+                                w3-include-svg="./assets/img/svgHTML/3-checked.html">
+                            </button>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="acceptTerms" name="acceptTerms" onclick="switchCheckboxIcnAndSignUpBtn()"
+                        onmouseover="hoverCheckboxIcns()" onmouseleave="hoverCheckboxIcns()">
+                </div>
+                <label for="acceptTerms"><span>I accept the </span><a href="privacy.html" target="_blank"
+                        rel="noopener noreferrer" onmouseover="hoverCheckboxIcns()"
+                        onmouseleave="hoverCheckboxIcns()">Privacy policy</a></label>
+            </div>
+        </div>
+        <div class="form-panel form-panel-log-in log-in ">
+            <input class="btn-wo-icn version-btn" type="submit" name="logIn" onclick="setSignUpRequiredOff()"
+                value="Log in">
+            <div class="hover-container">
+                <input class="btn-wo-icn-2nd version-btn" type="button" onclick="switchToWorkPagesAsGuest()"
+                    value="Guest Log in">
+            </div>
+        </div>
+        <div class="form-panel form-panel-sign-up sign-up display-none">
+            <div class="ghost"></div>
+            <input id="signUpBtn" class="btn-wo-icn version-btn" type="submit" name="signUp" value="Sign up"
+                onclick="initCheckInputSignUp()" disabled>
+            <div class="ghost"></div>
+        </div>
+    </form>
+</div>

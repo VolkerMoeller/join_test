@@ -1,0 +1,25 @@
+<header class="housing-header">
+    <div class="housing-header-left">
+        <h1 class="version-2-t6">Kanban Project Management Tool</h1>
+        <div w3-include-svg="./assets/img/svgHTML/1-logo-resp.html"></div>
+    </div>
+    <div class="housing-header-right display-none">
+        <div class="header-help-btn">
+            <button id="btnHelp1Hvr" class="display-none" type="button" onclick="doSth()"
+                onmouseleave="toggleElements('btnHelp1','btnHelp1Hvr')"
+                w3-include-svg="./assets/img/svgHTML/13-helpHover.html">
+            </button>
+            <button id="btnHelp1" type="button" onmouseover="toggleElements('btnHelp1','btnHelp1Hvr')"
+                w3-include-svg="./assets/img/svgHTML/12-helpDefault.html">
+            </button>
+        </div>
+        <div class="header-guest-btn" onclick="showSmallMenu()">
+            <button type="button" w3-include-svg="./assets/img/svgHTML/21-guestDefault.html">
+            </button>
+        </div>
+        <div class="header-user-btn display-none" onclick="showSmallMenu()">
+            <button id="btnUser" type="button" w3-include-svg="./assets/img/svgHTML/24-userDefault.html">
+            </button>
+        </div>
+    </div>
+</header>

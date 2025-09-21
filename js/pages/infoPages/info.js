@@ -12,7 +12,7 @@ function navigationView() {
     if (userStatus == 'external') {
         toggleExternalNav();
         setTimeout(() => {
-            showLeftMenu();
+            showLeftAndBottomMenu();
         }, 10);
     };
 }
@@ -34,4 +34,4 @@ function toggleExternalNav() {
 
 // resetNavigationView() --> main.js
 // readingUserStatus() --> main.js
-// showLeftMenu() --> work.js
+// showLeftAndBottomMenu() --> work.js

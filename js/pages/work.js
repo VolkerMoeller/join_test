@@ -65,7 +65,7 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 // defaultHeaderView()
 // defaultNavView()
 // currentNavView()
-// showLeftMenu()
+// showLeftAndBottomMenu()
 // saveLocalStorageObject() --> main.js
 
 
@@ -79,20 +79,21 @@ function defaultHeaderView() {
 function defaultNavView() {
     resetNavigationView();
     setCurrentBtnById('mnuBtn2nd');
-    showLeftMenu();
+    showLeftAndBottomMenu();
 }
 
 
 function currentNavView(currentBtnId) {
     resetNavigationView();
     setCurrentBtnById(currentBtnId);
-    showLeftMenu();
+    showLeftAndBottomMenu();
 }
 
 
-function showLeftMenu() {
+function showLeftAndBottomMenu() {
     setTimeout(() => {
         document.getElementById('left-menu').classList.remove('display-none');
+        document.getElementById('btm-menu').classList.remove('display-none');
     }, 10);
 }
 
@@ -107,7 +108,7 @@ function showLeftMenu() {
 // userHeader()
 // resetNavigationView() --> main.js
 // setCurrentBtnById()
-// showLeftMenu() --> see above
+// showLeftAndBottomMenu() --> see above
 
 
 function guestHeader() {

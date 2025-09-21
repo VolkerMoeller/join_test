@@ -232,7 +232,7 @@ function animSmallMenuFwd() {
 
 
 function viewDefaultContent(defaultBtnId) {
-    viewDefaultBtnById(defaultBtnId)
+    viewDefaultBtnById(defaultBtnId);
 }
 
 

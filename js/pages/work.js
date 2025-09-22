@@ -6,9 +6,7 @@
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
-// hideAllWorkContent()
-// getIdOfCurrentContent()
-// provideCurrentContentId()
+// showCurrentContent(
 
 
 
@@ -219,6 +217,8 @@ function getTheButtonTwin(defBtnId) {
 }
 
 
+
+
 // -----------------
 // cntTop-functions:
 // -----------------
@@ -258,12 +258,13 @@ function animSmallMenuFwd() {
 }
 
 
+
+
 // ------------------
 // cntMenu-functions:
 // ------------------
 
 // viewDefaultContent()
-// viewDefaultContentById()
 
 
 function viewDefaultContent(defaultBtnId) {
@@ -272,20 +273,20 @@ function viewDefaultContent(defaultBtnId) {
 }
 
 
-function viewDefaultBtnById(defaultBtnId) {
-    resetSVGHvr();
-    currentNavView(defaultBtnId);
-}
-
-
 // --------------------
 // 1st-level-functions:
 // --------------------
 
-// viewDefaultBtnById() --> work.js
-// showCurrentContent() --> work.js
+// viewDefaultBtnById()
+// showCurrentContent() --> see above
 // resetSVGHvr()
-// currentNavView() --> work.js
+// currentNavView() --> see above
+
+
+function viewDefaultBtnById(defaultBtnId) {
+    resetSVGHvr();
+    currentNavView(defaultBtnId);
+}
 
 
 function resetSVGHvr() {

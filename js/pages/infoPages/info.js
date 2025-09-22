@@ -23,7 +23,11 @@ function toggleExternalNav() {
     navBtns.forEach(navBtn => {
         navBtn.classList.toggle('display-none');
     });
-    let fstNavBtn = document.querySelector('.menu-btn-hvr');
+    let navBtnsMbl = document.querySelectorAll('.menu-btn-hvr-mbl');
+    navBtnsMbl.forEach(navBtnMbl => {
+        navBtnMbl.classList.toggle('display-none');
+    });
+    let fstNavBtn = document.querySelector('.menu-btn-hvr-mbl');
     fstNavBtn.classList.remove('display-none');
 }
 

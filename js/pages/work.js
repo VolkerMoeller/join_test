@@ -7,6 +7,7 @@
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
 // showCurrentContent()
+// showHelpContent()
 
 
 
@@ -63,6 +64,16 @@ function showCurrentContent() {
     let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
     let currentCntId = provideCurrentContentId(selectedMenuBtnId);
     document.getElementById(currentCntId).classList.remove('display-none');
+    document.getElementById('btnHelp').classList.remove('display-none');
+    document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
+}
+
+
+function showHelpContent() {
+    hideAllWorkContent();
+    document.getElementById('cntCenterHelp').classList.remove('display-none');
+    document.getElementById('btnHelp').classList.add('display-none');
+    document.getElementById('helpBtnSmallMenu').classList.add('display-none');
 }
 
 
@@ -130,11 +141,16 @@ function provideCurrentContentId(menuBtnId) {
         mnuBtn2nd: 'cntCenterSum',
         mnuBtn3rd: 'cntCenterAdd',
         mnuBtn4th: 'cntCenterBoard',
-        mnuBtn5th: 'cntCenterContacts',
-        btnHelp1Hvr: 'cntCenterHelp'
+        mnuBtn5th: 'cntCenterContacts'
     }
     let contentId = referenceObject[menuBtnId];
     return contentId;
+}
+
+
+function resetHelpBtns() {
+    document.getElementById('btnHelp1Hvr').classList.remove('display-none');
+    document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
 }
 
 // --------------------

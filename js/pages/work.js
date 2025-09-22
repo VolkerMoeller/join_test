@@ -133,6 +133,9 @@ function provideCurrentContentId(menuBtnId) {
         mnuBtn3rd: 'cntCenterAdd',
         mnuBtn4th: 'cntCenterBoard',
         mnuBtn5th: 'cntCenterContacts',
+        mnuBtn6th: 'cntCenterHelp',
+        mnuBtn7th: 'cntCenterPrivacy',
+        mnuBtn8th: 'cntCenterLegal',
     }
     let contentId = referenceObject[menuBtnId];
     return contentId;

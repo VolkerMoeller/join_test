@@ -59,32 +59,12 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 }
 
 
-function hideAllWorkContent() {
-    let contents = document.querySelectorAll('.content');
-    contents.forEach(content => {
-        content.classList.add('display-none');
-    });
-}
-
-
 function showCurrentContent() {
     hideAllWorkContent();
     let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
     let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
     let currentCntId = provideCurrentContentId(selectedMenuBtnId);
     document.getElementById(currentCntId).classList.remove('display-none');
-}
-
-
-function provideCurrentContentId(menuBtnId) {
-    let referenceObject = {
-        mnuBtn2nd: 'cntCenterSum',
-        mnuBtn3rd: 'cntCenterAdd',
-        mnuBtn4th: 'cntCenterBoard',
-        mnuBtn5th: 'cntCenterContacts',
-    }
-    let contentId = referenceObject[menuBtnId];
-    return contentId;
 }
 
 
@@ -101,6 +81,8 @@ function provideCurrentContentId(menuBtnId) {
 // currentNavView()
 // showLeftAndBottomMenu()
 // saveLocalStorageObject() --> main.js
+// hideAllWorkContent()
+// provideCurrentContentId()
 
 
 function defaultHeaderView() {
@@ -137,6 +119,24 @@ function showLeftAndBottomMenu() {
 }
 
 
+function hideAllWorkContent() {
+    let contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.classList.add('display-none');
+    });
+}
+
+
+function provideCurrentContentId(menuBtnId) {
+    let referenceObject = {
+        mnuBtn2nd: 'cntCenterSum',
+        mnuBtn3rd: 'cntCenterAdd',
+        mnuBtn4th: 'cntCenterBoard',
+        mnuBtn5th: 'cntCenterContacts',
+    }
+    let contentId = referenceObject[menuBtnId];
+    return contentId;
+}
 
 // --------------------
 // 2nd-level-functions:

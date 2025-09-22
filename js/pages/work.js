@@ -62,9 +62,24 @@ function hideAllWorkContent() {
     });
 }
 
+
 function getIdOfCurrentContent() {
     let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
-    console.log(selectedMenuBtn);
+    let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
+    let currentCntId = provideCurrentContentId(selectedMenuBtnId);
+    console.log(currentCntId);
+}
+
+
+function provideCurrentContentId(menuBtnId) {
+    let referenceObject = {
+        mnuBtn2nd: 'cntCenterSum',
+        mnuBtn3rd: 'cntCenterAdd',
+        mnuBtn4th: 'cntCenterBoard',
+        mnuBtn5th: 'cntCenterContacts',
+    }
+    let contentId = referenceObject[menuBtnId];
+    return contentId;
 }
 
 

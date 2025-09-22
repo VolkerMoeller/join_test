@@ -64,8 +64,7 @@ function showCurrentContent() {
     let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
     let currentCntId = provideCurrentContentId(selectedMenuBtnId);
     document.getElementById(currentCntId).classList.remove('display-none');
-    document.getElementById('btnHelp').classList.remove('display-none');
-    document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
+    resetHelpBtns();
 }
 
 
@@ -74,6 +73,12 @@ function showHelpContent() {
     document.getElementById('cntCenterHelp').classList.remove('display-none');
     document.getElementById('btnHelp').classList.add('display-none');
     document.getElementById('helpBtnSmallMenu').classList.add('display-none');
+}
+
+function showPrivacyContent() {
+    hideAllWorkContent();
+    document.getElementById('cntCenterPrivacy').classList.remove('display-none');
+    resetHelpBtns();
 }
 
 
@@ -149,7 +154,7 @@ function provideCurrentContentId(menuBtnId) {
 
 
 function resetHelpBtns() {
-    document.getElementById('btnHelp1Hvr').classList.remove('display-none');
+    document.getElementById('btnHelp').classList.remove('display-none');
     document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
 }
 

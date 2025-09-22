@@ -133,9 +133,7 @@ function provideCurrentContentId(menuBtnId) {
         mnuBtn3rd: 'cntCenterAdd',
         mnuBtn4th: 'cntCenterBoard',
         mnuBtn5th: 'cntCenterContacts',
-        mnuBtn6th: 'cntCenterHelp',
-        mnuBtn7th: 'cntCenterPrivacy',
-        mnuBtn8th: 'cntCenterLegal',
+        btnHelp1Hvr: 'cntCenterHelp'
     }
     let contentId = referenceObject[menuBtnId];
     return contentId;
@@ -265,13 +263,12 @@ function animSmallMenuFwd() {
 // ------------------
 
 // viewDefaultContent()
-// viewDefaultBtnById()
 // viewDefaultContentById()
 
 
 function viewDefaultContent(defaultBtnId) {
     viewDefaultBtnById(defaultBtnId);
-    viewDefaultContentById(defaultBtnId);
+    showCurrentContent();
 }
 
 
@@ -281,15 +278,12 @@ function viewDefaultBtnById(defaultBtnId) {
 }
 
 
-function viewDefaultContentById(defaultBtn) {
-    console.log(defaultBtn);
-}
-
-
 // --------------------
 // 1st-level-functions:
 // --------------------
 
+// viewDefaultBtnById() --> work.js
+// showCurrentContent() --> work.js
 // resetSVGHvr()
 // currentNavView() --> work.js
 

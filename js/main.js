@@ -143,7 +143,6 @@ function resetNavigationView() {
         navBtn.disabled = false;
     });
 
-
     let fstNavBtn = document.querySelector('.menu-btn-hvr');
     fstNavBtn.classList.add('display-none');
 }

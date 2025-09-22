@@ -82,6 +82,7 @@ function hideHelpBtns() {
 
 
 function showInfoContent(cntId) {
+    resetNavigationView();
     hideAllWorkContent();
     document.getElementById(cntId).classList.remove('display-none');
     hideHelpBtns();

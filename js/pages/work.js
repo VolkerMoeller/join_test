@@ -8,7 +8,7 @@
 // resetMenuIcnHvrClrSVG()
 // showCurrentContent()
 // showHelpContent()
-
+// showInfoContentById(
 
 
 async function initWork() {
@@ -75,35 +75,14 @@ function showHelpContent() {
 }
 
 
-function hideHelpBtns() {
-    document.getElementById('btnHelp').classList.add('display-none');
-    document.getElementById('helpBtnSmallMenu').classList.add('display-none');
-}
-
-
-function showInfoContent(cntId) {
+function showInfoContentById(cntId) {
     resetNavigationView();
     hideAllWorkContent();
     document.getElementById(cntId).classList.remove('display-none');
     hideHelpBtns();
-    setTxtBtnInfo(cntId);
+    setTxtBtnInfoById(cntId);
 }
 
-
-function setTxtBtnInfo(cntId) {
-    if (cntId == 'cntCenterPrivacy') {
-        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left');
-        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left-selected');
-        document.getElementById('txtBtnLegal').classList.add('txt-btn-left');
-        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left-selected');
-    }
-    if (cntId == 'cntCenterLegal') {
-        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left');
-        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left-selected');
-        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left');
-        document.getElementById('txtBtnLegal').classList.add('txt-btn-left-selected');
-    }
-}
 
 
 // --------------------
@@ -121,6 +100,13 @@ function setTxtBtnInfo(cntId) {
 // saveLocalStorageObject() --> main.js
 // hideAllWorkContent()
 // provideCurrentContentId()
+// resetHelpBtns() 
+// hideAllWorkContent()
+// hideHelpBtns()
+// resetNavigationView() --> main.js
+// hideAllWorkContent()
+// hideHelpBtns() --> see above
+// setTxtBtnInfoById()
 
 
 function defaultHeaderView() {
@@ -182,6 +168,28 @@ function resetHelpBtns() {
     document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
 }
 
+
+function hideHelpBtns() {
+    document.getElementById('btnHelp').classList.add('display-none');
+    document.getElementById('helpBtnSmallMenu').classList.add('display-none');
+}
+
+
+function setTxtBtnInfoById(cntId) {
+    if (cntId == 'cntCenterPrivacy') {
+        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left');
+        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left-selected');
+        document.getElementById('txtBtnLegal').classList.add('txt-btn-left');
+        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left-selected');
+    }
+    if (cntId == 'cntCenterLegal') {
+        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left');
+        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left-selected');
+        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left');
+        document.getElementById('txtBtnLegal').classList.add('txt-btn-left-selected');
+    }
+}
+
 // --------------------
 // 2nd-level-functions:
 // --------------------
@@ -193,6 +201,11 @@ function resetHelpBtns() {
 // setCurrentBtnById()
 // showLeftAndBottomMenu() --> see above
 // getTheButtonTwin()
+// resetNavigationView() --> see above
+// resetNavigationViewMbl() --> main.js
+// setCurrentBtnById() --> see above
+// setCurrentBtnById() --> see above
+// showLeftAndBottomMenu() --> see above
 
 
 function guestHeader() {

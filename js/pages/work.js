@@ -86,6 +86,23 @@ function showInfoContent(cntId) {
     hideAllWorkContent();
     document.getElementById(cntId).classList.remove('display-none');
     hideHelpBtns();
+    setTxtBtnInfo(cntId);
+}
+
+
+function setTxtBtnInfo(cntId) {
+    if (cntId == 'cntCenterPrivacy') {
+        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left');
+        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left-selected');
+        document.getElementById('txtBtnLegal').classList.add('txt-btn-left');
+        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left-selected');
+    }
+    if (cntId == 'cntCenterLegal') {
+        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left');
+        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left-selected');
+        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left');
+        document.getElementById('txtBtnLegal').classList.add('txt-btn-left-selected');
+    }
 }
 
 

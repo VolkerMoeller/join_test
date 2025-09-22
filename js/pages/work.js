@@ -71,14 +71,20 @@ function showCurrentContent() {
 function showHelpContent() {
     hideAllWorkContent();
     document.getElementById('cntCenterHelp').classList.remove('display-none');
+    hideHelpBtns();
+}
+
+
+function hideHelpBtns() {
     document.getElementById('btnHelp').classList.add('display-none');
     document.getElementById('helpBtnSmallMenu').classList.add('display-none');
 }
 
-function showPrivacyContent() {
+
+function showInfoContent(cntId) {
     hideAllWorkContent();
-    document.getElementById('cntCenterPrivacy').classList.remove('display-none');
-    resetHelpBtns();
+    document.getElementById(cntId).classList.remove('display-none');
+    hideHelpBtns();
 }
 
 

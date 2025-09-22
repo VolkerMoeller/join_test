@@ -4,7 +4,8 @@
 
 // initWork()
 // returnToLogIn()
-// toggleMenuIcnClrSVG()
+// setMenuIcnHvrClrSVG()
+// resetMenuIcnHvrClrSVG()
 
 
 async function initWork() {
@@ -51,6 +52,19 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
             }
         }
     }
+}
+
+
+function hideAllWorkContent() {
+    let contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.classList.add('display-none');
+    });
+}
+
+function getIdOfCurrentContent() {
+    let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
+    console.log(selectedMenuBtn);
 }
 
 

@@ -6,7 +6,7 @@
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
-// showCurrentContent(
+// showCurrentContent()
 
 
 

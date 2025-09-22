@@ -6,6 +6,10 @@
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
+// hideAllWorkContent()
+// getIdOfCurrentContent()
+// provideCurrentContentId()
+
 
 
 async function initWork() {
@@ -63,11 +67,12 @@ function hideAllWorkContent() {
 }
 
 
-function getIdOfCurrentContent() {
+function showCurrentContent() {
+    hideAllWorkContent();
     let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
     let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
     let currentCntId = provideCurrentContentId(selectedMenuBtnId);
-    console.log(currentCntId);
+    document.getElementById(currentCntId).classList.remove('display-none');
 }
 
 

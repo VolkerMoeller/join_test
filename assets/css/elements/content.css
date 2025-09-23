@@ -1,3 +1,5 @@
 .main-center {
-    padding-left: 48px;
+    padding-left: 96px;
+    padding-top: calc(96px + 110px);
+    padding-right: 96px;
 }

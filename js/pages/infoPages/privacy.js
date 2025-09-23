@@ -17,6 +17,7 @@ async function initPrivacy() {
 
 function switchToLegalPage() {
     window.location.href = 'legal.html';
+    history.replaceState({}, '', 'privacy.html');
 }
 
 

@@ -1,9 +1,22 @@
 .main-center {
+    position: relative;
     padding: 96px;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.scroll-ghost {
+    opacity: 0;
+    height: 0;
 }
 
 @media(max-width: 1440px) {
     .main-center {
         padding: 48px 16px;
+    }
+
+    .scroll-ghost {
+        opacity: 0;
+        height: 300vh;
     }
 }

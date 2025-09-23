@@ -10,6 +10,7 @@ async function initLegal() {
     invertLogoClr();
     defaultHeaderView();
     navigationView();
+    setNavBtnMblSelected();
 }
 
 
@@ -22,3 +23,11 @@ async function initLegal() {
 // invertLogoClr() --> main.js
 // defaultHeaderView() --> main.js
 // navigationView() --> info.js
+// setNavBtnMblSelected()
+
+function setNavBtnMblSelected() {
+    let navBtnMbl = document.getElementById('txtBtnLegalMbl');
+    navBtnMbl.disabled = true;
+    navBtnMbl.classList.remove('txt-btn-btm');
+    navBtnMbl.classList.add('txt-btn-btm-selected');
+}

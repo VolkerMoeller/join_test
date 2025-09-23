@@ -237,6 +237,15 @@ function windowClose() {
     window.close();
 }
 
+function windowBack() {
+    history.back();
+}
+
+function goBack() {
+
+    console.log('goBack()');
+}
+
 
 // -------------------
 // 1st-level-functions

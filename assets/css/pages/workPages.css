@@ -349,4 +349,8 @@
         height: 42px;
     }
 
+    .btm-element {
+        padding-bottom: 0;
+    }
+
 }

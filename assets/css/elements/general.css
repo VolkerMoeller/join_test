@@ -87,6 +87,30 @@
     cursor: default;
 }
 
+.txt-btn-btm {
+    display: flex;
+    justify-content: left;
+    gap: 8px;
+    padding: 8px 60px;
+    color: var(--icon-grey);
+}
+
+.txt-btn-btm:hover {
+    transition: var(--smart-animation-in-out-clr);
+    color: var(--main2nd);
+    font-weight: bold;
+}
+
+.txt-btn-btm-selected {
+    display: flex;
+    justify-content: left;
+    gap: 8px;
+    padding: 8px 60px;
+    color: var(--icon-grey);
+    background-color: var(--nav-left-button);
+    cursor: default;
+}
+
 
 @media (max-width: 1440px) {
 

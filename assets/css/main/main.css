@@ -113,6 +113,13 @@ menu {
 h1 {
     font-size: 61px;
     margin: 0;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 27px;
+    margin: 0;
+    margin-bottom: 0.5em;
 }
 
 @media(max-width: 1440px) {

@@ -189,6 +189,7 @@
 
 .housing-header-left h1:first-child {
     display: flex;
+    margin: 0;
 }
 
 .housing-header-left div:last-child {

@@ -25,10 +25,10 @@ async function initPrivacy() {
 // navigationView() --> info.js
 // setNavBtnMblSelected()
 
+
 function setNavBtnMblSelected() {
     let navBtnMbl = document.getElementById('txtBtnPrivacyMbl');
     navBtnMbl.disabled = true;
     navBtnMbl.classList.remove('txt-btn-btm');
     navBtnMbl.classList.add('txt-btn-btm-selected');
-
 }

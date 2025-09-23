@@ -25,6 +25,7 @@ async function initLegal() {
 // navigationView() --> info.js
 // setNavBtnMblSelected()
 
+
 function setNavBtnMblSelected() {
     let navBtnMbl = document.getElementById('txtBtnLegalMbl');
     navBtnMbl.disabled = true;

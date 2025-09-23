@@ -40,6 +40,7 @@
 // getWindowWidth()
 // getWindowHeight()
 // doSth()
+// windowClose()
 
 
 async function includeHTML() {
@@ -218,11 +219,6 @@ function readingUserStatus() {
 }
 
 
-function doSth() {
-    console.log('doSth()');
-}
-
-
 function getWindowWidth() {
     return window.innerWidth;
 }
@@ -230,6 +226,15 @@ function getWindowWidth() {
 
 function getWindowHeight() {
     return window.innerHeight;
+}
+
+
+function doSth() {
+    console.log('doSth()');
+}
+
+function windowClose() {
+    window.close();
 }
 
 

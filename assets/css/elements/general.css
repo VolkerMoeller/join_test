@@ -112,7 +112,7 @@
     background-color: var(--nav-left-button);
     color: var(--white) !important;
     cursor: default;
-    border-radius: 16px;
+    border-radius: 8px;
 }
 
 

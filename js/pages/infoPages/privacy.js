@@ -3,6 +3,7 @@
 // ---------------------
 
 // initPrivacy()
+// switchToLegalPage()
 
 async function initPrivacy() {
     await includeHTML();
@@ -11,6 +12,11 @@ async function initPrivacy() {
     defaultHeaderView();
     navigationView();
     setNavBtnMblSelected();
+}
+
+
+function switchToLegalPage() {
+    window.location.href = 'legal.html';
 }
 
 

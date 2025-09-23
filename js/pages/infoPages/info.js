@@ -30,8 +30,10 @@ function toggleExternalNav() {
     let fstNavBtn = document.querySelector('.menu-btn-hvr-mbl');
     fstNavBtn.classList.remove('display-none');
 
-
-    document.querySelector('.btm-element-nav').classList.remove('display-none');
+    let txtBtnPrivacyMbl = document.getElementById('txtBtnPrivacyMbl');
+    txtBtnPrivacyMbl.classList.remove('display-none');
+    let txtBtnLegalMbl = document.getElementById('txtBtnLegalMbl');
+    txtBtnLegalMbl.classList.remove('display-none');
 }
 
 

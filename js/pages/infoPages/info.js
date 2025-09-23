@@ -29,6 +29,9 @@ function toggleExternalNav() {
     });
     let fstNavBtn = document.querySelector('.menu-btn-hvr-mbl');
     fstNavBtn.classList.remove('display-none');
+
+
+    document.querySelector('.btm-element-nav').classList.remove('display-none');
 }
 
 

@@ -106,6 +106,10 @@
     /* background-color: cadetblue; */
 }
 
+.btm-element-nav {
+    display: flex;
+}
+
 .btm-element {
     background-color: var(--main);
     width: 428px;

@@ -89,26 +89,30 @@
 
 .txt-btn-btm {
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    height: 76px;
     gap: 8px;
-    padding: 8px 60px;
+    padding: 0px 12px 0px 12px;
     color: var(--icon-grey);
+    border-radius: 8px;
 }
 
 .txt-btn-btm:hover {
-    transition: var(--smart-animation-in-out-clr);
-    color: var(--main2nd);
-    font-weight: bold;
+    background-color: var(--menu-button-hover);
+    color: var(--white);
 }
 
 .txt-btn-btm-selected {
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    height: 76px;
     gap: 8px;
-    padding: 8px 60px;
-    color: var(--icon-grey);
+    padding: 0px 12px 0px 12px;
+    color: var(--white);
     background-color: var(--nav-left-button);
+    color: var(--white) !important;
     cursor: default;
+    border-radius: 16px;
 }
 
 

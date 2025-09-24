@@ -7,7 +7,7 @@
 
 .scroll-ghost {
     opacity: 0;
-    height: 0;
+    height: 100vh;
 }
 
 .btn-back-2 {

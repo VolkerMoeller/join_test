@@ -126,6 +126,10 @@ h2 {
     margin-bottom: 0.5em;
 }
 
+h2~p span {
+    color: var(--main2nd);
+}
+
 h3 {
     font-size: 16px;
     margin: 0;

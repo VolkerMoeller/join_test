@@ -27,6 +27,11 @@
     height: 32px;
 }
 
+.help-list-row {
+    display: flex;
+    gap: 32px;
+}
+
 @media(max-width: 1440px) {
     .main-center {
         padding: 48px 16px;

@@ -19,6 +19,14 @@
     height: 32px;
 }
 
+.btn-back-3 {
+    position: absolute;
+    top: 64px;
+    right: 32px;
+    width: 32px;
+    height: 32px;
+}
+
 @media(max-width: 1440px) {
     .main-center {
         padding: 48px 16px;

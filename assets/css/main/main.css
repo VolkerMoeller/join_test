@@ -147,8 +147,16 @@ ul span {
     color: var(--main2nd);
 }
 
+#helpBtnSmallMenu {
+    display: none;
+}
+
 @media(max-width: 1440px) {
     h1 {
         font-size: 47px;
+    }
+
+    #helpBtnSmallMenu {
+        display: flex;
     }
 }

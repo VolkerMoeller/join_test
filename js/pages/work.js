@@ -21,7 +21,7 @@ async function initWork() {
 
 
 function returnToLogIn() {
-    window.close();
+    window.location.assign('./signPage.html');
     saveLocalStorageObject('userStatus', 'external');
 }
 

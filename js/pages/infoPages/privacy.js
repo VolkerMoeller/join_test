@@ -12,12 +12,12 @@ async function initPrivacy() {
     defaultHeaderView();
     navigationView();
     setNavBtnMblSelected();
+    setHistoryState();
 }
 
 
 function switchToLegalPage() {
-    window.location.href = 'legal.html';
-    history.replaceState({}, '', 'privacy.html');
+    window.location.assign('./legal.html');
 }
 
 
@@ -31,6 +31,8 @@ function switchToLegalPage() {
 // defaultHeaderView() --> work.js
 // navigationView() --> info.js
 // setNavBtnMblSelected()
+// setHistoryState()
+
 
 
 function setNavBtnMblSelected() {
@@ -38,4 +40,9 @@ function setNavBtnMblSelected() {
     navBtnMbl.disabled = true;
     navBtnMbl.classList.remove('txt-btn-btm');
     navBtnMbl.classList.add('txt-btn-btm-selected');
+}
+
+
+function setHistoryState() {
+    history.pushState({}, '', 'signPage.html');
 }

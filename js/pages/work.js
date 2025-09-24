@@ -61,26 +61,11 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 function showCurrentContent() {
     hideAllWorkContent();
     let selectedMenuBtn = getSelectedMenuBtn();
-    // let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
     let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
     let currentCntId = provideCurrentContentId(selectedMenuBtnId);
     document.getElementById(currentCntId).classList.remove('display-none');
     resetHelpBtns();
 }
-
-
-
-// XXX
-
-function getSelectedMenuBtn() {
-    let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
-    if (!selectedMenuBtn) {
-        selectedMenuBtn = document.querySelector('.menu-btn-hvr-mbl-selected');
-    }
-    return selectedMenuBtn;
-}
-
-
 
 
 function showHelpContent() {
@@ -114,6 +99,7 @@ function showInfoContentById(cntId) {
 // showLeftAndBottomMenu()
 // saveLocalStorageObject() --> main.js
 // hideAllWorkContent()
+// getSelectedMenuBtn()
 // provideCurrentContentId()
 // resetHelpBtns() 
 // hideAllWorkContent()
@@ -163,6 +149,15 @@ function hideAllWorkContent() {
     contents.forEach(content => {
         content.classList.add('display-none');
     });
+}
+
+
+function getSelectedMenuBtn() {
+    let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
+    if (!selectedMenuBtn) {
+        selectedMenuBtn = document.querySelector('.menu-btn-hvr-mbl-selected');
+    }
+    return selectedMenuBtn;
 }
 
 

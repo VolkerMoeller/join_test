@@ -12,7 +12,7 @@ async function initLegal() {
     defaultHeaderView();
     navigationView();
     setNavBtnMblSelected();
-    setHistoryState();
+    // setHistoryState();
 }
 
 

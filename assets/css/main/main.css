@@ -122,6 +122,10 @@ h2 {
     margin-bottom: 0.5em;
 }
 
+ul span {
+    color: var(--main2nd);
+}
+
 @media(max-width: 1440px) {
     h1 {
         font-size: 47px;

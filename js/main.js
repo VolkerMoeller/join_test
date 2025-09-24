@@ -233,17 +233,14 @@ function doSth() {
     console.log('doSth()');
 }
 
+
 function windowClose() {
     window.close();
 }
 
-function windowBack() {
-    history.back();
-}
 
 function goBack() {
-
-    console.log('goBack()');
+    history.back();
 }
 
 

@@ -67,7 +67,9 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 
 async function genHvrBtns() {
     let btnRefs = {
-        'btnBackHelp': ['bntBack4', 'showCurrentContent()']
+        'btnBackHelp': ['bntBack4', 'showCurrentContent()'],
+        'btnBackLegal': ['bntBack6', 'showCurrentContent()'],
+        'btnBackPrivacy': ['bntBack5', 'showCurrentContent()']
     };
     Object.keys(btnRefs).forEach(element => {
         document.getElementById(element).innerHTML = genHovBtn(btnRefs[element][0], btnRefs[element][1]);

@@ -33,6 +33,10 @@
     border: 3px solid var(--main2nd);
 }
 
+.form-title h1 {
+    margin: 0;
+}
+
 .accept-terms-container {
     position: relative;
     width: 100%;

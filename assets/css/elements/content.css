@@ -5,6 +5,17 @@
     scrollbar-width: thin;
 }
 
+.main-center-header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-center-header h1 {
+    margin-bottom: 0
+}
+
 .scroll-ghost {
     opacity: 0;
     height: 0;

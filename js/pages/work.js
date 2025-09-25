@@ -74,7 +74,7 @@ async function genHvrBtns() {
     Object.keys(btnRefs).forEach(element => {
         document.getElementById(element).innerHTML = genHovBtn(btnRefs[element][0], btnRefs[element][1]);
     });
-    await includeHTMLById('w3-include-svg');
+    await includeHTMLById('w3-include-hvr-btn');
 }
 
 

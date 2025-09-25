@@ -1,0 +1,14 @@
+.main-center-tablet {
+    display: flex;
+}
+
+.main-center-dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-center-welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

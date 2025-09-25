@@ -158,6 +158,6 @@ ul span {
     }
 
     #helpBtnSmallMenu {
-        display: flex;
+        display: flex !important;
     }
 }

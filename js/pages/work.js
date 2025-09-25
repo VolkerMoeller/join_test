@@ -2,13 +2,19 @@
 // work.js-functions:
 // -----------------
 
+// initial functions:
+
 // initWork()
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
+// genHvrBtns();
+
+// content functions:
+
 // showCurrentContent()
 // showHelpContent()
-// showInfoContentById(
+// showInfoContentById()
 
 
 async function initWork() {
@@ -17,6 +23,7 @@ async function initWork() {
     invertLogoClr();
     defaultHeaderView();
     defaultNavView();
+    genHvrBtns();
 }
 
 
@@ -58,6 +65,21 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 }
 
 
+function genHvrBtns() {
+    let btnReferences = {
+        'btnBackHelp': 'showCurrentContent()'
+    };
+    Object.keys(btnReferences).forEach(btnBack => {
+        document.getElementById(btnBack).innerHTML = genHovBtn(btnBack, btnReferences[btnBack]);
+    });
+}
+
+
+// ------------------
+// content-functions:
+// ------------------
+
+
 function showCurrentContent() {
     hideAllWorkContent();
     let selectedMenuBtn = getSelectedMenuBtn();
@@ -82,7 +104,6 @@ function showInfoContentById(cntId) {
     hideHelpBtns();
     setTxtBtnInfoById(cntId);
 }
-
 
 
 // --------------------

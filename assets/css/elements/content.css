@@ -52,6 +52,7 @@
 
 @media(max-width: 1440px) {
     .main-center {
+        width: 100%;
         padding: 48px 16px;
     }
 
@@ -64,5 +65,20 @@
         display: flex;
         top: 40px;
         right: 24px;
+    }
+
+    .main-center-header {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 8px;
+    }
+
+    .main-center-header p {
+        width: 90px;
+        height: 0px;
+        margin: 8px 0px;
+        border: 3px solid var(--main2nd);
+        order: 3;
     }
 }

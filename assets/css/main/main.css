@@ -164,4 +164,8 @@ ul span {
     #helpBtnSmallMenu {
         display: flex !important;
     }
+
+    h1~span {
+        font-size: 20px;
+    }
 }

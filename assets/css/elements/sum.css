@@ -3,6 +3,8 @@
 }
 
 .main-center-dashboard {
+    width: 560px;
+    height: 562px;
     display: flex;
     flex-direction: column;
 }
@@ -11,4 +13,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.dashbord-top-row {
+    display: flex;
+}
+
+.dashbord-top-row button {
+    transition: var(--smart-animation-in-out);
+    width: 264px;
+    height: 168px;
+    background-color: var(--white);
+    border-radius: 30px;
+}
+
+.dashbord-top-row button:hover {
+    width: 282.5px;
+    height: 184px;
+    background-color: var(--main);
+    color: var(--white);
 }

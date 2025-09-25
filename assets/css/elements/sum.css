@@ -17,8 +17,10 @@
 
 .main-center-welcome {
     display: flex;
-    justify-content: center;
+    flex: 1;
+    justify-content: start;
     align-items: center;
+    padding-left: 96px;
 }
 
 

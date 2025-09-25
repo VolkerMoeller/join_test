@@ -3,10 +3,16 @@
 }
 
 .main-center-dashboard {
+    position: relative;
     width: 560px;
     height: 562px;
     display: flex;
     flex-direction: column;
+    background-color: crimson;
+}
+
+.main-center-dashboard button {
+    position: absolute;
 }
 
 .main-center-welcome {
@@ -16,11 +22,7 @@
 }
 
 
-.dashbord-top-row {
-    display: flex;
-}
-
-.dashbord-top-row button {
+.rectangle-btn {
     transition: var(--smart-animation-in-out);
     width: 264px;
     height: 168px;
@@ -28,9 +30,41 @@
     border-radius: 30px;
 }
 
-.dashbord-top-row button:hover {
+.rectangle-btn:hover {
     width: 282.5px;
     height: 184px;
     background-color: var(--main);
     color: var(--white);
+}
+
+.abs-top-lft {
+    top: 0;
+    left: 0;
+}
+
+.abs-top-rgt {
+    top: 0;
+    right: 0;
+}
+
+.abs-cnt {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.abs-btm-lft {
+    bottom: 0;
+    left: 0;
+}
+
+.abs-btm-rgt {
+    bottom: 0;
+    right: 0;
+}
+
+.abs-btm-cnt {
+    bottom: 0;
+    right: 50%;
+    transform: translateY(-50%);
 }

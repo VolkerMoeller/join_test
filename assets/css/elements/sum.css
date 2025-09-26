@@ -112,3 +112,23 @@
 .pencil-btn {
     padding: 38px 19px;
 }
+
+.pencil-btn:hover .rect-btn-cnt-lft svg g path {
+    fill: var(--main);
+}
+
+.pencil-btn:hover .rect-btn-cnt-lft svg circle {
+    fill: var(--white);
+}
+
+/* svg class: */
+
+.pencil-btn-path {
+    transition: var(--smart-animation-80-in-out);
+    fill: var(--white);
+}
+
+.pencil-btn-circle {
+    transition: var(--smart-animation-80-in-out);
+    fill: var(--main);
+}

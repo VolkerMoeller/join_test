@@ -61,6 +61,8 @@
     position: absolute;
     width: 264px;
     height: 168px;
+    display: flex;
+    gap: 18px;
 }
 
 .rectangle-btn:hover {

@@ -79,6 +79,28 @@
     height: 184px;
 }
 
+.btn-square-anchor {
+    position: relative;
+    width: 168px;
+    height: 168px;
+    background-color: lightgreen;
+}
+
+.square-btn {
+    position: absolute;
+    width: 168px;
+    height: 168px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightblue;
+}
+
+.square-btn:hover {
+    width: 184px;
+    height: 184px;
+}
+
 .abs-top-lft {
     top: 0;
     left: 0;

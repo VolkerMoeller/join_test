@@ -100,6 +100,13 @@
     position: absolute;
     width: 168px;
     height: 168px;
+    display: flex;
+    flex-direction: column;
+}
+
+.square-btn span:first-child {
+    font-size: 61px;
+    font-weight: 600;
 }
 
 .square-btn:hover {

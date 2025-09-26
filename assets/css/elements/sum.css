@@ -3,16 +3,12 @@
 }
 
 .main-center-dashboard {
-    position: relative;
-    width: 560px;
-    height: 562px;
     display: flex;
     flex-direction: column;
-    background-color: crimson;
-}
-
-.main-center-dashboard button {
-    position: absolute;
+    justify-content: center;
+    width: 560px;
+    height: 562px;
+    background-color: rgb(205, 174, 235);
 }
 
 .main-center-welcome {
@@ -24,7 +20,109 @@
 }
 
 
+/* main-center-dashboard: */
+
+
+.dashboard-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.frame-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 200px;
+    height: 200px; */
+    background-color: lightcoral;
+    /* flex: 1; */
+}
+
+.btn-anchor {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: lightgreen;
+}
+
 .rectangle-btn {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightblue;
+}
+
+.rectangle-btn:hover {
+    width: 170px;
+    height: 170px;
+}
+
+
+.dashboard-rowXX {
+    width: 560px;
+    display: flex;
+    justify-content: space-between;
+    background-color: lightpink;
+}
+
+.frame-btnXX {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.btn-anchorXX {
+    /* position: absolute; */
+    /* width: 9px; */
+    /* height: 9px; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: aquamarine;
+}
+
+
+.rectangle-btnXX {
+    width: 264px;
+    height: 168px;
+    /* display: flex; */
+    background-color: lightgray;
+}
+
+.urgency-btnXX {
+    width: 560px;
+    height: 168px;
+    /* display: flex; */
+    background-color: lightblue;
+}
+
+.square-btnXX {
+    width: 168px;
+    height: 168px;
+    /* display: flex; */
+    background-color: yellowgreen;
+}
+
+/* 
+.btn-anchor {
+    position: absolute;
+} */
+
+/* .btn-anchor button:hover {
+    width: 150px;
+    height: 150px;
+} */
+
+.btn-anchorXXX button {
+    top: 50%;
+    left: 50%
+}
+
+.rectangle-btnXXX {
     transition: var(--smart-animation-in-out);
     width: 264px;
     height: 168px;
@@ -32,7 +130,7 @@
     border-radius: 30px;
 }
 
-.rectangle-btn:hover {
+.rectangle-btnXXX:hover {
     width: 282.5px;
     height: 184px;
     background-color: var(--main);
@@ -42,6 +140,11 @@
 .abs-top-lft {
     top: 0;
     left: 0;
+}
+
+.abs-top-lft-testing {
+    top: 50%;
+    left: 50%;
 }
 
 .abs-top-rgt {

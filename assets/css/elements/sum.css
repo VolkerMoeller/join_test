@@ -121,6 +121,14 @@
     fill: var(--white);
 }
 
+.pencil-btn:active .rect-btn-cnt-lft svg g path {
+    fill: var(--white);
+}
+
+.pencil-btn:active .rect-btn-cnt-lft svg circle {
+    fill: var(--main);
+}
+
 /* svg class: */
 
 .sum-btn-path {

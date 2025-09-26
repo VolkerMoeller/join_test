@@ -8,7 +8,6 @@
     justify-content: space-between;
     width: 560px;
     height: 562px;
-    background-color: rgb(205, 174, 235);
 }
 
 .main-center-welcome {
@@ -19,27 +18,34 @@
     padding-left: 96px;
 }
 
-
 /* main-center-dashboard: */
-
 
 .dashboard-row {
     display: flex;
     justify-content: space-between;
 }
 
+.dashboard-row button {
+    transition: var(--smart-animation-in-out);
+    background-color: var(--white);
+    border-radius: 30px;
+}
+
+.dashboard-row button:hover {
+    background-color: var(--main);
+    color: var(--white);
+}
+
 .frame-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightcoral;
 }
 
 .btn-rectangle-anchor {
     position: relative;
     width: 264px;
     height: 168px;
-    background-color: lightgreen;
 }
 
 .rectangle-btn {
@@ -49,7 +55,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: lightblue;
+    background-color: var(--white);
 }
 
 .rectangle-btn:hover {
@@ -61,7 +67,6 @@
     position: relative;
     width: 560px;
     height: 168px;
-    background-color: lightgreen;
 }
 
 .urgency-btn {
@@ -71,7 +76,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: lightblue;
 }
 
 .urgency-btn:hover {
@@ -83,7 +87,6 @@
     position: relative;
     width: 168px;
     height: 168px;
-    background-color: lightgreen;
 }
 
 .square-btn {
@@ -93,47 +96,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: lightblue;
 }
 
 .square-btn:hover {
     width: 184px;
     height: 184px;
-}
-
-.abs-top-lft {
-    top: 0;
-    left: 0;
-}
-
-.abs-top-lft-testing {
-    top: 50%;
-    left: 50%;
-}
-
-.abs-top-rgt {
-    top: 0;
-    right: 0;
-}
-
-.abs-cnt {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.abs-btm-lft {
-    bottom: 0;
-    left: 0;
-}
-
-.abs-btm-rgt {
-    bottom: 0;
-    right: 0;
-}
-
-.abs-btm-cnt {
-    bottom: 0;
-    right: 50%;
-    transform: translateY(-50%);
 }

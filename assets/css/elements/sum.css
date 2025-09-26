@@ -31,6 +31,7 @@
     background-color: var(--white);
     border-radius: 30px;
     box-shadow: var(--nuevo);
+    font-size: 20px;
 }
 
 .dashboard-row button:hover {

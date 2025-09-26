@@ -5,7 +5,7 @@
 .main-center-dashboard {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     width: 560px;
     height: 562px;
     background-color: rgb(205, 174, 235);
@@ -32,23 +32,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 200px;
-    height: 200px; */
     background-color: lightcoral;
-    /* flex: 1; */
 }
 
-.btn-anchor {
+.btn-rectangle-anchor {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 264px;
+    height: 168px;
     background-color: lightgreen;
 }
 
 .rectangle-btn {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 264px;
+    height: 168px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -56,85 +53,30 @@
 }
 
 .rectangle-btn:hover {
-    width: 170px;
-    height: 170px;
+    width: 282.5px;
+    height: 184px;
 }
 
-
-.dashboard-rowXX {
-    width: 560px;
-    display: flex;
-    justify-content: space-between;
-    background-color: lightpink;
-}
-
-.frame-btnXX {
-    /* position: relative; */
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-}
-
-.btn-anchorXX {
-    /* position: absolute; */
-    /* width: 9px; */
-    /* height: 9px; */
-    display: flex;
-    /* justify-content: center; */
-    /* align-items: center; */
-    background-color: aquamarine;
-}
-
-
-.rectangle-btnXX {
-    width: 264px;
-    height: 168px;
-    /* display: flex; */
-    background-color: lightgray;
-}
-
-.urgency-btnXX {
+.btn-urgency-anchor {
+    position: relative;
     width: 560px;
     height: 168px;
-    /* display: flex; */
+    background-color: lightgreen;
+}
+
+.urgency-btn {
+    position: absolute;
+    width: 560px;
+    height: 168px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: lightblue;
 }
 
-.square-btnXX {
-    width: 168px;
-    height: 168px;
-    /* display: flex; */
-    background-color: yellowgreen;
-}
-
-/* 
-.btn-anchor {
-    position: absolute;
-} */
-
-/* .btn-anchor button:hover {
-    width: 150px;
-    height: 150px;
-} */
-
-.btn-anchorXXX button {
-    top: 50%;
-    left: 50%
-}
-
-.rectangle-btnXXX {
-    transition: var(--smart-animation-in-out);
-    width: 264px;
-    height: 168px;
-    background-color: var(--white);
-    border-radius: 30px;
-}
-
-.rectangle-btnXXX:hover {
-    width: 282.5px;
+.urgency-btn:hover {
+    width: 576px;
     height: 184px;
-    background-color: var(--main);
-    color: var(--white);
 }
 
 .abs-top-lft {

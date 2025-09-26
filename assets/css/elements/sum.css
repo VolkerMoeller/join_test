@@ -1,5 +1,6 @@
 .main-center-tablet {
     display: flex;
+    margin-top: 48px;
 }
 
 .main-center-dashboard {
@@ -26,14 +27,22 @@
 }
 
 .dashboard-row button {
-    transition: var(--smart-animation-in-out);
+    transition: var(--smart-animation-80-in-out);
     background-color: var(--white);
     border-radius: 30px;
+    box-shadow: var(--nuevo);
 }
 
 .dashboard-row button:hover {
     background-color: var(--main);
     color: var(--white);
+    box-shadow: var(--stronger);
+}
+
+.dashboard-row button:active {
+    transition: var(--smart-animation-100-in-out);
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .frame-btn {
@@ -91,4 +100,12 @@
 .square-btn:hover {
     width: 184px;
     height: 184px;
+}
+
+.check-btn {
+    padding: 38px 58px;
+}
+
+.pencil-btn {
+    padding: 38px 19px;
 }

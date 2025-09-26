@@ -23,26 +23,26 @@
 }
 
 .btn-wo-icn:hover {
-    transition: var(--smart-animation-in-out);
+    transition: var(--smart-animation-80-in-out);
     background-color: var(--main2nd);
     box-shadow: var(--stronger);
 }
 
 .btn-wo-icn-2nd:hover {
-    transition: var(--smart-animation-in-out-clr);
-    transition: var(--smart-animation-in-out-shadow);
+    transition: var(--smart-animation-80-in-out-clr);
+    transition: var(--smart-animation-80-in-out-shadow);
     box-shadow: var(--stronger);
     border: solid 2px var(--main2nd);
     color: var(--main2nd);
 }
 
 .btn-wo-icn:active {
-    transition: var(--smart-animation-in-out);
+    transition: var(--smart-animation-80-in-out);
     background-color: var(--main);
 }
 
 .btn-wo-icn-2nd:active {
-    transition: var(--smart-animation-in-out);
+    transition: var(--smart-animation-80-in-out);
     border: solid 2px var(--main);
     color: var(--main);
 }
@@ -58,7 +58,7 @@
 }
 
 .txt-btn:hover {
-    transition: var(--smart-animation-in-out-clr);
+    transition: var(--smart-animation-80-in-out-clr);
     color: var(--main2nd);
     font-weight: bold;
 }
@@ -72,7 +72,7 @@
 }
 
 .txt-btn-left:hover {
-    transition: var(--smart-animation-in-out-clr);
+    transition: var(--smart-animation-80-in-out-clr);
     color: var(--main2nd);
     font-weight: bold;
 }

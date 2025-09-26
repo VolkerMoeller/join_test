@@ -110,7 +110,7 @@
 }
 
 .nav-cnt button:hover {
-    transition: var(--smart-animation-in);
+    transition: var(--smart-animation-80-in);
     background-color: var(--menu-button-hover);
 }
 

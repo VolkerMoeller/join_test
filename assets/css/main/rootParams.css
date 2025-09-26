@@ -7,9 +7,10 @@
 
         --boton-gradient: linear-gradient(var(--rect-btn-activ), var(--gradient-boton));
 
-        --smart-animation-in: all 80ms ease-in;
-        --smart-animation-out: all 80ms ease-out;
-        --smart-animation-in-out: all 80ms ease-in-out;
-        --smart-animation-in-out-clr: color 80ms ease-in-out;
-        --smart-animation-in-out-shadow: box-shadow 80ms ease-in-out;
+        --smart-animation-80-in: all 80ms ease-in;
+        --smart-animation-80-out: all 80ms ease-out;
+        --smart-animation-80-in-out: all 80ms ease-in-out;
+        --smart-animation-80-in-out-clr: color 80ms ease-in-out;
+        --smart-animation-80-in-out-shadow: box-shadow 80ms ease-in-out;
+        --smart-animation-100-in-out: all 100ms ease-in-out;
     }

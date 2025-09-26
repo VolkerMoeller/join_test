@@ -123,12 +123,12 @@
 
 /* svg class: */
 
-.pencil-btn-path {
+.sum-btn-path {
     transition: var(--smart-animation-80-in-out);
     fill: var(--white);
 }
 
-.pencil-btn-circle {
+.sum-btn-circle {
     transition: var(--smart-animation-80-in-out);
     fill: var(--main);
 }

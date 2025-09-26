@@ -113,7 +113,7 @@
     padding: 38px 19px;
 }
 
-.pencil-btn:hover .rect-btn-cnt-lft svg g path {
+/* .pencil-btn:hover .rect-btn-cnt-lft svg g path {
     fill: var(--main);
 }
 
@@ -127,6 +127,26 @@
 
 .pencil-btn:active .rect-btn-cnt-lft svg circle {
     fill: var(--main);
+} */
+
+.rectangle-btn:hover .rect-btn-cnt-lft svg g path {
+    fill: var(--main);
+}
+
+.rectangle-btn:hover .rect-btn-cnt-lft svg circle {
+    fill: var(--white);
+}
+
+.rectangle-btn:hover .rect-btn-cnt-lft svg path {
+    stroke: var(--main);
+}
+
+.rectangle-btn:active .rect-btn-cnt-lft svg g path {
+    fill: var(--white);
+}
+
+.rectangle-btn:active .rect-btn-cnt-lft svg circle {
+    fill: var(--main);
 }
 
 /* svg class: */
@@ -139,4 +159,9 @@
 .sum-btn-circle {
     transition: var(--smart-animation-80-in-out);
     fill: var(--main);
+}
+
+.sum-btn-path-stroke {
+    transition: var(--smart-animation-80-in-out);
+    stroke: var(--white);
 }

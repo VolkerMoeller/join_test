@@ -156,25 +156,10 @@ ul span {
     display: none;
 }
 
-.testing {
-    position: absolute;
-    height: 9px;
-    width: 9px;
-    background-color: gold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.testing button {
-    background-color: greenyellow
-}
-
-
-.testing button:hover {
-    width: 90px;
-    height: 90px;
-    background-color: aqua;
+.abs-cnt {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media(max-width: 1440px) {

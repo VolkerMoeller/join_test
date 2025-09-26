@@ -52,10 +52,6 @@
     position: absolute;
     width: 264px;
     height: 168px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--white);
 }
 
 .rectangle-btn:hover {
@@ -73,9 +69,6 @@
     position: absolute;
     width: 560px;
     height: 168px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .urgency-btn:hover {
@@ -93,9 +86,6 @@
     position: absolute;
     width: 168px;
     height: 168px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .square-btn:hover {

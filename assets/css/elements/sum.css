@@ -113,22 +113,6 @@
     padding: 38px 19px;
 }
 
-/* .pencil-btn:hover .rect-btn-cnt-lft svg g path {
-    fill: var(--main);
-}
-
-.pencil-btn:hover .rect-btn-cnt-lft svg circle {
-    fill: var(--white);
-}
-
-.pencil-btn:active .rect-btn-cnt-lft svg g path {
-    fill: var(--white);
-}
-
-.pencil-btn:active .rect-btn-cnt-lft svg circle {
-    fill: var(--main);
-} */
-
 .rectangle-btn:hover .rect-btn-cnt-lft svg g path {
     fill: var(--main);
 }
@@ -147,6 +131,16 @@
 
 .rectangle-btn:active .rect-btn-cnt-lft svg circle {
     fill: var(--main);
+}
+
+.rect-btn-cnt-rgt {
+    display: flex;
+    flex-direction: column;
+}
+
+.rect-btn-cnt-rgt span:first-child {
+    font-size: 64px;
+    font-weight: 600;
 }
 
 /* svg class: */

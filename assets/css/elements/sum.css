@@ -81,6 +81,9 @@
     position: absolute;
     width: 560px;
     height: 168px;
+    display: flex;
+    gap: 61px;
+    font-size: 16px;
 }
 
 .urgency-btn:hover {
@@ -158,4 +161,30 @@
 .sum-btn-path-stroke {
     transition: var(--smart-animation-80-in-out);
     stroke: var(--white);
+}
+
+/* urgency-btn */
+
+.urgency-btn-lft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.rect-btn-vector {
+    border-radius: 2px;
+    height: 102.02px;
+    border: solid 2px var(--input-border);
+}
+
+.urgency-btn-cnt-rgt {
+    display: flex;
+    flex-direction: column;
+}
+
+.urgency-btn-cnt-rgt span:first-child {
+    font-size: 61px;
+    font-weight: 600;
+
 }

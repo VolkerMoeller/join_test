@@ -213,13 +213,13 @@
     flex-direction: column;
 }
 
-.greeting span:first-child {
+.greeting span:nth-child(1) {
     font-size: 47px;
     font-weight: 500;
     line-height: normal;
 }
 
-.greeting span:last-child {
+.greeting span:nth-child(2) {
     font-size: 64px;
     font-weight: 700;
     line-height: normal;

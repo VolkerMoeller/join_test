@@ -2,20 +2,23 @@
 // work.js-functions:
 // -----------------
 
-// initial functions:
+// --> initial functions:
 
 // initWork()
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
-// genHvrBtns();
 
-// content functions:
+// --> content functions:
 
 // showCurrentContent()
 // showHelpContent()
 // showInfoContentById()
 
+
+// ------------------
+// initial-functions:
+// ------------------
 
 async function initWork() {
     await includeHTML();
@@ -24,6 +27,7 @@ async function initWork() {
     defaultHeaderView();
     defaultNavView();
     genHvrBtns();
+    initSumView();
 }
 
 
@@ -65,73 +69,25 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 }
 
 
-async function genHvrBtns() {
-    let btnRefs = {
-        'btnBackHelp': ['bntBack4', 'showCurrentContent()'],
-        'btnBackLegal': ['bntBack6', 'showCurrentContent()'],
-        'btnBackPrivacy': ['bntBack5', 'showCurrentContent()']
-    };
-    Object.keys(btnRefs).forEach(element => {
-        document.getElementById(element).innerHTML = genHovBtn(btnRefs[element][0], btnRefs[element][1]);
-    });
-    await includeHTMLById('w3-include-hvr-btn');
-}
-
-
-// ------------------
-// content-functions:
-// ------------------
-
-
-function showCurrentContent() {
-    hideAllWorkContent();
-    let selectedMenuBtn = getSelectedMenuBtn();
-    let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
-    let currentCntId = provideCurrentContentId(selectedMenuBtnId);
-    document.getElementById(currentCntId).classList.remove('display-none');
-    resetHelpBtns();
-}
-
-
-function showHelpContent() {
-    hideAllWorkContent();
-    document.getElementById('cntCenterHelp').classList.remove('display-none');
-    hideHelpBtns();
-}
-
-
-function showInfoContentById(cntId) {
-    resetNavigationView();
-    hideAllWorkContent();
-    document.getElementById(cntId).classList.remove('display-none');
-    hideHelpBtns();
-    setTxtBtnInfoById(cntId);
-}
-
-
 // --------------------
 // 1st-level-functions:
 // --------------------
 
+
+// --> initWork()
 
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
 // defaultHeaderView()
 // defaultNavView()
-// currentNavView()
-// showLeftAndBottomMenu()
+// genHvrBtns()
+// initSumView()
+
+// --> returnToLogIn()
+
 // saveLocalStorageObject() --> main.js
-// hideAllWorkContent()
-// getSelectedMenuBtn()
-// provideCurrentContentId()
-// resetHelpBtns() 
-// hideAllWorkContent()
-// hideHelpBtns()
-// resetNavigationView() --> main.js
-// hideAllWorkContent()
-// hideHelpBtns() --> see above
-// setTxtBtnInfoById()
+
 
 
 function defaultHeaderView() {
@@ -150,83 +106,26 @@ function defaultNavView() {
 }
 
 
-function currentNavView(currentBtnId) {
-    let twinBtn = getTheButtonTwin(currentBtnId);
-    resetNavigationView();
-    resetNavigationViewMbl();
-    setCurrentBtnById(currentBtnId);
-    setCurrentBtnById(twinBtn);
-    showLeftAndBottomMenu();
-}
-
-
-function showLeftAndBottomMenu() {
-    setTimeout(() => {
-        document.getElementById('left-menu').classList.remove('display-none');
-        document.getElementById('btm-menu').classList.remove('display-none');
-    }, 10);
-}
-
-
-function hideAllWorkContent() {
-    let contents = document.querySelectorAll('.content');
-    contents.forEach(content => {
-        content.classList.add('display-none');
+async function genHvrBtns() {
+    let btnRefs = {
+        'btnBackHelp': ['bntBack4', 'showCurrentContent()'],
+        'btnBackLegal': ['bntBack6', 'showCurrentContent()'],
+        'btnBackPrivacy': ['bntBack5', 'showCurrentContent()']
+    };
+    Object.keys(btnRefs).forEach(element => {
+        document.getElementById(element).innerHTML = genHovBtn(btnRefs[element][0], btnRefs[element][1]);
     });
+    await includeHTMLById('w3-include-hvr-btn');
 }
 
 
-function getSelectedMenuBtn() {
-    let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
-    if (!selectedMenuBtn) {
-        selectedMenuBtn = document.querySelector('.menu-btn-hvr-mbl-selected');
-    }
-    return selectedMenuBtn;
-}
-
-
-function provideCurrentContentId(menuBtnId) {
-    let referenceObject = {
-        mnuBtn2nd: 'cntCenterSum',
-        mnuBtn3rd: 'cntCenterAdd',
-        mnuBtn4th: 'cntCenterBoard',
-        mnuBtn5th: 'cntCenterContacts',
-        mnuBtnMbl2nd: 'cntCenterSum',
-        mnuBtnMbl3rd: 'cntCenterAdd',
-        mnuBtnMbl4th: 'cntCenterBoard',
-        mnuBtnMbl5th: 'cntCenterContacts'
-    }
-    let contentId = referenceObject[menuBtnId];
-    return contentId;
-}
-
-
-function resetHelpBtns() {
-    document.getElementById('btnHelp').classList.remove('display-none');
-    document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
-}
-
-
-function hideHelpBtns() {
-    document.getElementById('btnHelp').classList.add('display-none');
-    document.getElementById('helpBtnSmallMenu').classList.add('display-none');
-}
-
-
-function setTxtBtnInfoById(cntId) {
-    if (cntId == 'cntCenterPrivacy') {
-        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left');
-        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left-selected');
-        document.getElementById('txtBtnLegal').classList.add('txt-btn-left');
-        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left-selected');
-    }
-    if (cntId == 'cntCenterLegal') {
-        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left');
-        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left-selected');
-        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left');
-        document.getElementById('txtBtnLegal').classList.add('txt-btn-left-selected');
+function initSumView() {
+    let userStatus = loadLocalStorageObject('userStatus');
+    if (userStatus == 'user') {
+        toggleGreeting();
     }
 }
+
 
 // --------------------
 // 2nd-level-functions:
@@ -235,6 +134,7 @@ function setTxtBtnInfoById(cntId) {
 // readingUserStatus() --> main.js
 // guestHeader()
 // userHeader()
+
 // resetNavigationView() --> main.js
 // setCurrentBtnById()
 // showLeftAndBottomMenu() --> see above
@@ -244,6 +144,11 @@ function setTxtBtnInfoById(cntId) {
 // setCurrentBtnById() --> see above
 // setCurrentBtnById() --> see above
 // showLeftAndBottomMenu() --> see above
+
+// genHovBtn() --> genHovBtn.js
+// includeHTMLById() --> main.js
+// loadLocalStorageObject() --> main.js
+// toggleGreeting() --> sum.js
 
 
 function guestHeader() {
@@ -312,6 +217,139 @@ function getTheButtonTwin(defBtnId) {
     return twinBtnId;
 }
 
+
+// ------------------
+// content-functions:
+// ------------------
+
+
+function showCurrentContent() {
+    hideAllWorkContent();
+    let selectedMenuBtn = getSelectedMenuBtn();
+    let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
+    let currentCntId = provideCurrentContentId(selectedMenuBtnId);
+    document.getElementById(currentCntId).classList.remove('display-none');
+    resetHelpBtns();
+}
+
+
+function showHelpContent() {
+    hideAllWorkContent();
+    document.getElementById('cntCenterHelp').classList.remove('display-none');
+    hideHelpBtns();
+}
+
+
+function showInfoContentById(cntId) {
+    resetNavigationView();
+    hideAllWorkContent();
+    document.getElementById(cntId).classList.remove('display-none');
+    hideHelpBtns();
+    setTxtBtnInfoById(cntId);
+}
+
+
+// --------------------
+// 1st-level-functions:
+// --------------------
+
+
+// hideAllWorkContent()
+// getSelectedMenuBtn()
+// provideCurrentContentId()
+// resetHelpBtns() 
+
+// hideAllWorkContent()
+// hideHelpBtns()
+
+// resetNavigationView() --> main.js
+// hideAllWorkContent()
+// hideHelpBtns() --> see above
+// setTxtBtnInfoById()
+
+
+function hideAllWorkContent() {
+    let contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.classList.add('display-none');
+    });
+}
+
+
+function getSelectedMenuBtn() {
+    let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
+    if (!selectedMenuBtn) {
+        selectedMenuBtn = document.querySelector('.menu-btn-hvr-mbl-selected');
+    }
+    return selectedMenuBtn;
+}
+
+
+function provideCurrentContentId(menuBtnId) {
+    let referenceObject = {
+        mnuBtn2nd: 'cntCenterSum',
+        mnuBtn3rd: 'cntCenterAdd',
+        mnuBtn4th: 'cntCenterBoard',
+        mnuBtn5th: 'cntCenterContacts',
+        mnuBtnMbl2nd: 'cntCenterSum',
+        mnuBtnMbl3rd: 'cntCenterAdd',
+        mnuBtnMbl4th: 'cntCenterBoard',
+        mnuBtnMbl5th: 'cntCenterContacts'
+    }
+    let contentId = referenceObject[menuBtnId];
+    return contentId;
+}
+
+
+function resetHelpBtns() {
+    document.getElementById('btnHelp').classList.remove('display-none');
+    document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
+}
+
+
+function hideHelpBtns() {
+    document.getElementById('btnHelp').classList.add('display-none');
+    document.getElementById('helpBtnSmallMenu').classList.add('display-none');
+}
+
+
+function setTxtBtnInfoById(cntId) {
+    if (cntId == 'cntCenterPrivacy') {
+        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left');
+        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left-selected');
+        document.getElementById('txtBtnLegal').classList.add('txt-btn-left');
+        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left-selected');
+    }
+    if (cntId == 'cntCenterLegal') {
+        document.getElementById('txtBtnPrivacy').classList.add('txt-btn-left');
+        document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left-selected');
+        document.getElementById('txtBtnLegal').classList.remove('txt-btn-left');
+        document.getElementById('txtBtnLegal').classList.add('txt-btn-left-selected');
+    }
+}
+
+
+// showLeftAndBottomMenu()
+// saveLocalStorageObject() --> main.js
+
+
+
+function currentNavView(currentBtnId) {
+    let twinBtn = getTheButtonTwin(currentBtnId);
+    resetNavigationView();
+    resetNavigationViewMbl();
+    setCurrentBtnById(currentBtnId);
+    setCurrentBtnById(twinBtn);
+    showLeftAndBottomMenu();
+}
+
+
+function showLeftAndBottomMenu() {
+    setTimeout(() => {
+        document.getElementById('left-menu').classList.remove('display-none');
+        document.getElementById('btm-menu').classList.remove('display-none');
+    }, 10);
+}
 
 
 

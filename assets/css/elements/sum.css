@@ -225,3 +225,13 @@
     line-height: normal;
     color: var(--main2nd);
 }
+
+@media (max-width: 1440px) {
+    .main-center-welcome {
+        display: none;
+    }
+
+    .main-center-tablet {
+        justify-content: center;
+    }
+}

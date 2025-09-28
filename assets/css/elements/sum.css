@@ -13,7 +13,6 @@
 
 .main-center-welcome {
     display: flex;
-    flex: 1;
     justify-content: start;
     align-items: center;
     padding-left: 96px;
@@ -205,4 +204,24 @@
 .urgency-btn-info span:first-child {
     font-size: 21px;
     font-weight: 700;
+}
+
+/* .main-center-welcome: */
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+}
+
+.greeting span:first-child {
+    font-size: 47px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.greeting span:last-child {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--main2nd);
 }

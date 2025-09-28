@@ -28,7 +28,7 @@
 
 // --- overlay-functions:
 
-// showOverlay()
+// showOverlayForMsg()
 // resetOverlay()
 // handleOverlay()
 
@@ -168,7 +168,7 @@ function resetNavigationViewMbl() {
 }
 
 
-function showOverlay() {
+function showOverlayForMsg() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-anim-bg');

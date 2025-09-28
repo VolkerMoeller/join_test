@@ -359,7 +359,7 @@ function showLeftAndBottomMenu() {
 
 
 function showSmallMenu() {
-    showOverlay();
+    // showOverlayForMsg();
     animSmallMenu();
 }
 

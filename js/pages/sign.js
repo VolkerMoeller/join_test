@@ -427,7 +427,7 @@ function resetSignElementsOnTop() {
 
 
 function animMessages(currentForm) {
-    showOverlay();
+    showOverlayForMsg();
     showCurrentMessage(currentForm);
     slideMessages();
     setTimeout(() => {
@@ -453,7 +453,7 @@ function switchToLoginForm(currentForm) {
 // toggleCheckboxIcns() - see above
 // visibilityPassword()
 // toggleElements() --> main.js
-// showOverlay() --> main.js
+// showOverlayForMsg() --> main.js
 // showCurrentMessage()
 // resetMessages()
 // slideMessages()

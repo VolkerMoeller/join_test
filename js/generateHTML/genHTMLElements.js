@@ -41,11 +41,11 @@ function genHTMLWelcomeDesktop() {
 function genHTMLWelcomeMobile() {
     return `
     <div class="main-center-welcome-mobile">
-        <div id="greetingUser" class="greeting display-none">
+        <div id="greetingUser" class="greeting-mobile display-none">
             <span>Good Morning,</span>
             <span>Sophia Müller</span>
         </div>
-        <div id="greetingGuest" class="greeting">
+        <div id="greetingGuest" class="greeting-mobile">
             <span>Good Morning!</span>
         </div> 
     <div>

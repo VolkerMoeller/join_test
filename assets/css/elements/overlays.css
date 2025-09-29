@@ -43,7 +43,7 @@
 
 .ovl-fade-out {
     animation-delay: 1s;
-    animation-duration: 1s;
+    animation-duration: 0.8s;
     animation-name: fade-out;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;

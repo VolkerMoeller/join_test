@@ -21,9 +21,11 @@
 .main-center-welcome-mobile {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 
 .dashboard-row {
     display: flex;
@@ -227,6 +229,25 @@
 }
 
 .greeting span:nth-child(2) {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: normal;
+    color: var(--main2nd);
+}
+
+.greeting-mobile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.greeting-mobile span:nth-child(1) {
+    font-size: 47px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.greeting-mobile span:nth-child(2) {
     font-size: 64px;
     font-weight: 700;
     line-height: normal;

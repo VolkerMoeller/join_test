@@ -32,8 +32,10 @@ function genWelcomeMobile() {
 
 
 // toggleElements() --> main.js
+
 // appropriateGreeting()
 // genHTMLWelcomeDesktop() --> genHTMLElements.js
+
 // appropriateGreeting() --> see above
 // genHTMLWelcomeMobile() --> genHTMLElements.js
 

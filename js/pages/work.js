@@ -113,7 +113,7 @@ async function genHvrBtns() {
         'btnBackPrivacy': ['bntBack5', 'showCurrentContent()']
     };
     Object.keys(btnRefs).forEach(element => {
-        document.getElementById(element).innerHTML = genHovBtn(btnRefs[element][0], btnRefs[element][1]);
+        document.getElementById(element).innerHTML = genHTMLHvrBtn(btnRefs[element][0], btnRefs[element][1]);
     });
     await includeHTMLById('w3-include-hvr-btn');
 }
@@ -145,7 +145,7 @@ function initSumView() {
 // setCurrentBtnById() --> see above
 // showLeftAndBottomMenu() --> see above
 
-// genHovBtn() --> genHovBtn.js
+// genHTMLHvrBtn() --> genHovBtn.js
 // includeHTMLById() --> main.js
 // loadLocalStorageObject() --> main.js
 // toggleGreeting() --> sum.js
@@ -359,7 +359,7 @@ function showLeftAndBottomMenu() {
 
 
 function showSmallMenu() {
-    // genSmallMenu();
+    genSmallMenu();
     animSmallMenu();
 }
 
@@ -368,12 +368,6 @@ function hideSmallMenu() {
     setTimeout(() => {
         resetOverlay();
     }, 10);
-}
-
-
-function animSmallMenu() {
-    initOvlFrameForAnimMenu();
-    animSmallMenuFwd();
 }
 
 
@@ -391,6 +385,35 @@ function animSmallMenuFwd() {
     smallNav.classList.add('from-top-right-into-view');
 }
 
+
+// --------------------
+// 1st-level-functions:
+// --------------------
+
+// genSmallMenu()
+// animSmallMenu()
+// resetOverlay() --> main.js
+
+
+function genSmallMenu() {
+    document.getElementById('ovlFrame').innerHtml = '';
+    document.getElementById('ovlFrame').innerHtml = genHTMLSmallMenu();
+}
+
+
+function animSmallMenu() {
+    initOvlFrameForAnimMenu();
+    animSmallMenuFwd();
+}
+
+
+// --------------------
+// 2nd-level-functions:
+// --------------------
+
+// genHTMLSmallMenu() --> genOvls.js
+// initOvlFrameForAnimMenu() --> work.js
+// animSmallMenuFwd() --> work.js
 
 
 

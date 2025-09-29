@@ -396,8 +396,8 @@ function animSmallMenuFwd() {
 
 
 function genSmallMenu() {
-    document.getElementById('ovlFrame').innerHtml = '';
-    document.getElementById('ovlFrame').innerHtml = genHTMLSmallMenu();
+    document.getElementById('ovlFrame').innerHTML = '';
+    document.getElementById('ovlFrame').innerHTML = genHTMLSmallMenu();
 }
 
 

@@ -16,10 +16,14 @@ function showWelcome() {
     animWelcome();
 }
 
-function genWelcome() {
+function genWelcomeDesktop() {
     document.getElementById('mainCenterWelcome').innerHTML = '';
-    document.getElementById('mainCenterWelcome').innerHTML = genHTMLWelcome();
+    document.getElementById('mainCenterWelcome').innerHTML = genHTMLWelcomeDesktop();
+}
 
+function genWelcomeMobile() {
+    document.getElementById('ovlFrame').innerHTML = '';
+    document.getElementById('ovlFrame').innerHTML = genHTMLWelcomeMobile();
 }
 
 

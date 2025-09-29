@@ -122,10 +122,11 @@ async function genHvrBtns() {
 function initSumView() {
     let windowWidth = getWindowWidth();
     if (windowWidth > 1440) {
-        genWelcome();
+        genWelcomeDesktop();
         resetOverlayV2();
     } else {
         document.getElementById('ovlFrame').classList.add('ovl-fade-out');
+        genWelcomeMobile();
         setTimeout(() => {
             resetOverlayV2();
         }, 2000);

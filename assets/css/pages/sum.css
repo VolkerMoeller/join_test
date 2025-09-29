@@ -18,6 +18,13 @@
     padding-left: 96px;
 }
 
+.main-center-welcome-mobile {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dashboard-row {
     display: flex;
     justify-content: space-between;

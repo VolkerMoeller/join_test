@@ -27,6 +27,14 @@ function genWelcomeMobile() {
 
 function appropriateGreeting() {
     let greeting = 'Guten Morgen';
+    let now = Date.now();
+    let date = new Date(now);
+    let hour = date.getHours();
+    if (hour > 5 && hour <= 12) { greeting = 'Good morning' }
+    if (hour > 12 && hour <= 14) { greeting = 'Hello' }
+    if (hour > 14 && hour <= 17) { greeting = 'Good afternoon' }
+    if (hour > 17 && hour <= 24) { greeting = 'Good evening' }
+    if (hour > 24 && hour <= 5) { greeting = 'Good night' }
     return greeting;
 }
 

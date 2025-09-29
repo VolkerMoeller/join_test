@@ -366,7 +366,12 @@ function showSmallMenu() {
 
 function hideSmallMenu() {
     setTimeout(() => {
-        resetOverlay();
+        // resetOverlay();
+        let ovlFrame = document.getElementById('ovlFrame');
+        ovlFrame.innerHTML = '';
+        console.log(ovlFrame);
+        ovlFrame.setAttribute('class', '');
+        ovlFrame.classList.add('ovl-frame', 'ovl-hide');
     }, 10);
 }
 

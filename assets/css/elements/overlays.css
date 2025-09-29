@@ -41,6 +41,24 @@
     }
 }
 
+.ovl-fade-out {
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-name: fade-out;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 .ovl-show-input {
     z-index: 3;
     background-color: transparent;

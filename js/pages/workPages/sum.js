@@ -16,6 +16,12 @@ function showWelcome() {
     animWelcome();
 }
 
+function genWelcome() {
+    document.getElementById('mainCenterWelcome').innerHTML = '';
+    document.getElementById('mainCenterWelcome').innerHTML = genHTMLWelcome();
+
+}
+
 
 // --------------------
 // 1st-level-functions:

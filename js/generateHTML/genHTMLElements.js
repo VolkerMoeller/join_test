@@ -9,6 +9,7 @@ function genHTMLHvrBtn(btnId, onclick) {
   `;
 }
 
+
 function genHTMLSmallMenu() {
     return `
     <div class="ovl" onclick="hideSmallMenu()">
@@ -20,5 +21,18 @@ function genHTMLSmallMenu() {
             <button class="version-2-body" onclick="switchToSignPages()">Log out</button>
         </div>
     </div>
+    `;
+}
+
+
+function genHTMLWelcome() {
+    return `
+    <div id="greetingUser" class="greeting display-none">
+        <span>Good Morning,</span>
+        <span>Sophia Müller</span>
+    </div>
+    <div id="greetingGuest" class="greeting">
+        <span>Good Morning!</span>
+    </div> 
     `;
 }

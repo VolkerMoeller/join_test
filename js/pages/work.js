@@ -123,6 +123,8 @@ function initSumView() {
     let windowWidth = getWindowWidth();
     if (windowWidth > 1440) {
         resetOverlayV2();
+    } else {
+        document.getElementById('ovlFrame').classList.add('ovl-fade-out');
     }
     let userStatus = loadLocalStorageObject('userStatus');
     if (userStatus == 'user') {

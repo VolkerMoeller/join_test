@@ -9,8 +9,8 @@
 // setClrSchemeInit()
 // invertLogoClr()
 // setUserStatusExternal()
-// setUserStatusGuest()
 // setUserStatusUser()
+// setUserStatusGuest()
 
 // --- local-storage-functions:
 
@@ -28,9 +28,12 @@
 
 // --- overlay-functions:
 
+// changeOvl()
 // showOverlayForMsg()
 // resetOverlay()
 // handleOverlay()
+// checkOverlay()
+
 
 // --- help-functions:
 
@@ -41,6 +44,10 @@
 // getWindowHeight()
 // doSth()
 // windowClose()
+// goBack()
+
+
+// --- initial-functions:
 
 
 async function includeHTML() {
@@ -87,6 +94,9 @@ function setUserStatusGuest() {
 }
 
 
+// --- local-storage-functions:
+
+
 function saveLocalStorageObject(key, obj) {
     let objAsString = JSON.stringify(obj);
     localStorage.setItem(key, objAsString);
@@ -100,11 +110,7 @@ function loadLocalStorageObject(key) {
 }
 
 
-async function changeOvl(target) {
-    const cntCenter = document.querySelector('.ovl-frame');
-    cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/${target}`);
-    await includeHTMLById('w3-include-overlay');
-}
+// --- basic-navigation-functions:
 
 
 function switchToWorkPagesAsGuest() {
@@ -162,9 +168,18 @@ function resetNavigationViewMbl() {
         navBtn.disabled = false;
     });
 
-
     let fstNavBtn = document.querySelector('.menu-btn-hvr-mbl');
     fstNavBtn.classList.add('display-none');
+}
+
+
+// --- overlay-functions:
+
+
+async function changeOvl(target) {
+    const cntCenter = document.querySelector('.ovl-frame');
+    cntCenter.setAttribute('w3-include-overlay', `./assets/templates/overlays/${target}`);
+    await includeHTMLById('w3-include-overlay');
 }
 
 
@@ -192,19 +207,21 @@ function handleOverlay() {
 }
 
 
-function toggleElements(id1st, id2nd) {
-    const element1st = document.getElementById(id1st);
-    const element2nd = document.getElementById(id2nd);
-    element1st.classList.toggle('display-none');
-    element2nd.classList.toggle('display-none');
-}
-
-
 function checkOverlay() {
     let overlay = document.querySelector('.ovl-frame');
     if (!overlay.classList.contains('ovl-show-input')) {
         handleOverlay();
     }
+}
+
+// --- help-functions:
+
+
+function toggleElements(id1st, id2nd) {
+    const element1st = document.getElementById(id1st);
+    const element2nd = document.getElementById(id2nd);
+    element1st.classList.toggle('display-none');
+    element2nd.classList.toggle('display-none');
 }
 
 

@@ -197,6 +197,14 @@ function resetOverlay() {
 }
 
 
+function resetOverlayV2() {
+    let ovlFrame = document.getElementById('ovlFrame');
+    ovlFrame.innerHTML = '';
+    ovlFrame.setAttribute('class', '');
+    ovlFrame.classList.add('ovl-frame', 'ovl-hide');
+}
+
+
 function handleOverlayForInput() {
     let overlay = document.querySelector('.ovl-frame');
     let overlayNotShown = overlay.classList.contains('ovl-hide');

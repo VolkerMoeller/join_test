@@ -229,7 +229,7 @@ function showCurrentContent() {
     let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
     let currentCntId = provideCurrentContentId(selectedMenuBtnId);
     document.getElementById(currentCntId).classList.remove('display-none');
-    resetHelpBtns();
+    // resetHelpBtns();
 }
 
 
@@ -301,10 +301,10 @@ function provideCurrentContentId(menuBtnId) {
 }
 
 
-function resetHelpBtns() {
-    document.getElementById('btnHelp').classList.remove('display-none');
-    document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
-}
+// function resetHelpBtns() {
+//     document.getElementById('btnHelp').classList.remove('display-none');
+//     document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
+// }
 
 
 function hideHelpBtns() {
@@ -366,12 +366,7 @@ function showSmallMenu() {
 
 function hideSmallMenu() {
     setTimeout(() => {
-        // resetOverlay();
-        let ovlFrame = document.getElementById('ovlFrame');
-        ovlFrame.innerHTML = '';
-        console.log(ovlFrame);
-        ovlFrame.setAttribute('class', '');
-        ovlFrame.classList.add('ovl-frame', 'ovl-hide');
+        resetOverlayV2();
     }, 10);
 }
 

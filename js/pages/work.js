@@ -158,6 +158,12 @@ function initSumView() {
 
 // genHTMLHvrBtn() --> genHovBtn.js
 // includeHTMLById() --> main.js
+
+// getWindowWidth() --> main.js
+// genWelcomeDesktop() --> sum.js
+// resetOverlayV2() --> main.js
+// genWelcomeMobile() --> sum .js
+// resetOverlayV2() --> main.js
 // loadLocalStorageObject() --> main.js
 // toggleGreeting() --> sum.js
 

@@ -114,7 +114,7 @@ function initCheckInputSignUp() {
         success = checkInputSignUp();
     }
     if (success) {
-        initAnimMessages();
+        initanimSignMessages();
     }
 }
 
@@ -139,7 +139,7 @@ function initCheckInputSignUp() {
 // toggleCheckboxIcns()
 // toggleOnOffSignUpBtn()
 // checkInputSignUp()
-// initAnimMessages()
+// initanimSignMessages()
 
 
 function checkCurrentForm() {
@@ -253,10 +253,10 @@ function checkInputSignUp() {
 }
 
 
-function initAnimMessages() {
+function initanimSignMessages() {
     let currentForm = checkCurrentForm();
     resetSignElementsOnTop();
-    animMessages(currentForm);
+    animSignMessages(currentForm);
     if (currentForm == 'SignUp') {
         setTimeout(() => {
             switchToLoginForm(currentForm);
@@ -295,7 +295,7 @@ function initAnimMessages() {
 // ---
 // checkCurrentForm() --> see above
 // resetSignElementsOnTop()
-// animMessages()
+// animSignMessages()
 // switchToLoginForm()
 
 
@@ -426,7 +426,7 @@ function resetSignElementsOnTop() {
 }
 
 
-function animMessages(currentForm) {
+function animSignMessages(currentForm) {
     showOverlayForMsg();
     showCurrentMessage(currentForm);
     slideMessages();

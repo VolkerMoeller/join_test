@@ -125,6 +125,9 @@ function initSumView() {
         resetOverlayV2();
     } else {
         document.getElementById('ovlFrame').classList.add('ovl-fade-out');
+        setTimeout(() => {
+            resetOverlayV2();
+        }, 2000);
     }
     let userStatus = loadLocalStorageObject('userStatus');
     if (userStatus == 'user') {
@@ -379,7 +382,8 @@ function hideSmallMenu() {
 
 function initOvlFrameForAnimMenu() {
     let ovlFrame = document.querySelector('.ovl-frame');
-    ovlFrame.classList.remove('ovl-show-anim-bg');
+    // ovlFrame.classList.remove('ovl-show-anim-bg');
+    ovlFrame.classList.remove('ovl-hide');
     ovlFrame.classList.add('ovl-show-nav');
 }
 

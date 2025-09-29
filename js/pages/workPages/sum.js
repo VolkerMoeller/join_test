@@ -3,7 +3,8 @@
 // -----------------
 
 // toggleGreeting()
-// showWelcome()
+// genWelcomeDesktop()
+// genWelcomeMobile()
 
 
 function toggleGreeting() {
@@ -11,21 +12,23 @@ function toggleGreeting() {
 }
 
 
-function showWelcome() {
-    initOvlFrameForAnimWelcome();
-    animWelcome();
+function genWelcomeDesktop() {
+    let greeting = appropriateGreeting();
+    document.getElementById('mainCenterWelcome').innerHTML = '';
+    document.getElementById('mainCenterWelcome').innerHTML = genHTMLWelcomeDesktop(greeting);
 }
 
-function genWelcomeDesktop() {
-    document.getElementById('mainCenterWelcome').innerHTML = '';
-    document.getElementById('mainCenterWelcome').innerHTML = genHTMLWelcomeDesktop();
-}
 
 function genWelcomeMobile() {
+    let greeting = appropriateGreeting();
     document.getElementById('ovlFrame').innerHTML = '';
-    document.getElementById('ovlFrame').innerHTML = genHTMLWelcomeMobile();
+    document.getElementById('ovlFrame').innerHTML = genHTMLWelcomeMobile(greeting);
 }
 
+function appropriateGreeting() {
+    let greeting = 'Guten Morgen';
+    return greeting;
+}
 
 // --------------------
 // 1st-level-functions:
@@ -33,16 +36,3 @@ function genWelcomeMobile() {
 
 
 // toggleElements() --> main.js
-// initOvlFrameForAnimWelcome()
-
-
-
-function initOvlFrameForAnimWelcome() {
-    let ovlFrame = document.querySelector('.ovl-frame');
-    ovlFrame.classList.remove('ovl-show-anim-bg');
-    ovlFrame.classList.add('ovl-show-nav');
-}
-
-function animWelcome() {
-    console.log('animWelcome()');
-}

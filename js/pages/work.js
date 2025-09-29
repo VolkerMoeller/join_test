@@ -120,6 +120,10 @@ async function genHvrBtns() {
 
 
 function initSumView() {
+    let windowWidth = getWindowWidth();
+    if (windowWidth > 1440) {
+        resetOverlayV2();
+    }
     let userStatus = loadLocalStorageObject('userStatus');
     if (userStatus == 'user') {
         toggleGreeting();

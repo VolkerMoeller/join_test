@@ -30,11 +30,11 @@ async function initSign() {
 // toggleElements() --> main.js
 // focusInput() --> main.js
 // checkWarningStyle()
-// handleOverlay() --> main.js
+// handleOverlayForInput() --> main.js
 // checkOverlay() --> main.js
 // checkWarningStyle() see above
 // focusInputField()
-// handleOverlay() --> see above
+// handleOverlayForInput() --> see above
 // checkOverlay() --> see above
 // checkWarningStyle() --> see above
 // focusInputField() --> see above

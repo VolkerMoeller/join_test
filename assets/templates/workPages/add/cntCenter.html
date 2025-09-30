@@ -8,10 +8,21 @@
             <div class="form-inputs-frame-v2">
                 <div class="form-inputs">
                     <div class="housing-input">
-                        <label for="title">Title</label>
+                        <label for="title">Title<span>*</span></label>
                         <div class="input-container">
                             <input class="version-2-t6" type="text" id="title" name="title" placeholder="Enter a title"
                                 autocomplete="off" required>
+                        </div>
+                        <span class="version-warning">ghost</span>
+                    </div>
+                </div>
+                <div class="form-inputs">
+                    <div class="housing-input">
+                        <label for="description">Description</label>
+                        <div class="input-container">
+                            <textarea class="version-2-t6" type="text" id="description" name="description"
+                                placeholder="Enter a description" autocomplete="off">
+                            </textarea>
                             <div class="input-container-icon" onclick="focusInput('title')">
                                 <div w3-include-svg="./assets/img/svgHTML/20-person.html"></div>
                             </div>

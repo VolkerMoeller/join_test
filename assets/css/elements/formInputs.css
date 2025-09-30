@@ -21,7 +21,8 @@
     gap: 20px;
 }
 
-.form-inputs input {
+.form-inputs input,
+textarea {
     width: 100%;
     padding: 12px 48px 12px 21px;
     display: flex;
@@ -31,7 +32,8 @@
     outline: none;
 }
 
-.form-inputs input:focus {
+.form-inputs input,
+textarea:focus {
     border: 1px solid var(--main2nd);
 }
 

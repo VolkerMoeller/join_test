@@ -19,10 +19,15 @@ body {
 p,
 h1,
 h2,
-input[type="text"] {
+input[type="text"],
+textarea {
     cursor: text;
     font-family: "Inter";
     line-height: 120%;
+}
+
+textarea {
+    resize: none;
 }
 
 a,
@@ -47,6 +52,10 @@ button {
 }
 
 input::placeholder {
+    color: var(--input-border);
+}
+
+textarea::placeholder {
     color: var(--input-border);
 }
 
@@ -160,6 +169,15 @@ ul span {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+label {
+    font-size: 20px;
+}
+
+label span {
+    color: var(--warning);
+    font-size: 20px;
 }
 
 @media(max-width: 1440px) {

@@ -178,3 +178,41 @@
         left: 10px;
     }
 }
+
+
+/* form add task */
+
+.form-add {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    border-radius: 0px;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 48px 0px;
+}
+
+.form-title-v2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+}
+
+.form-title-v2 h1 {
+    margin: 0;
+}
+
+@media (width <=1440px) {
+
+    .form-title-v2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+}

@@ -91,14 +91,6 @@
     position: absolute;
 }
 
-.form-inputs-frame {
-    width: clamp(0px, 95%, 422px);
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-}
-
 .form-panel {
     display: flex;
     gap: 32px;

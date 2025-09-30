@@ -22,9 +22,20 @@
                         <div class="input-container">
                             <textarea class="version-2-t6" type="text" id="description" name="description"
                                 placeholder="Enter a description" autocomplete="off"></textarea>
-                            <div class="input-container-icon" onclick="focusInput('title')">
-                                <div w3-include-svg="./assets/img/svgHTML/20-person.html"></div>
+                            <div class="input-container-icon description-icon" onclick="focusInput('title')">
+                                <div w3-include-svg="./assets/img/svgHTML/33-recurso.html"></div>
                             </div>
+                        </div>
+                        <span class="version-warning">ghost</span>
+                    </div>
+                </div>
+                <div class="form-inputs">
+                    <div class="housing-input">
+                        <label for="dueDate">Due date<span>*</span></label>
+                        <div class="input-container">
+                            <input class="version-2-t6" type="text" id="dueDate" name="dueDate" placeholder="dd/mm/yyyy"
+                                pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" autocomplete="off"
+                                required>
                         </div>
                         <span class="version-warning">ghost</span>
                     </div>

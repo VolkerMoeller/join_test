@@ -254,8 +254,8 @@ function getWindowHeight() {
 }
 
 
-function doSth() {
-    console.log('doSth()');
+function doSth(msg) {
+    console.log(msg);
 }
 
 

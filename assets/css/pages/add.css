@@ -1,0 +1,11 @@
+.add-task-vector {
+    border-radius: 2px;
+    height: 424px;
+    border: solid 2px var(--input-border);
+}
+
+@media (width <=1440px) {
+    .add-task-vector {
+        display: none;
+    }
+}

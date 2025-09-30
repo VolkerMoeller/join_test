@@ -194,6 +194,13 @@
     padding: 48px 0px;
 }
 
+.form-inputs-frame-container {
+    width: 100%;
+    display: flex;
+    gap: 48px;
+    background-color: lightgreen;
+}
+
 .form-title-v2 {
     width: 100%;
     display: flex;
@@ -215,5 +222,10 @@
         align-items: center;
         gap: 16px;
         text-align: center;
+    }
+
+    .form-inputs-frame-container {
+        flex-direction: column;
+        align-items: center;
     }
 }

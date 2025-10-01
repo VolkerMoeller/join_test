@@ -219,13 +219,8 @@
 
 @media (width <=1440px) {
 
-    .form-title-v2 {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        text-align: center;
+    .form-add {
+        padding: 0;
     }
 
     .form-inputs-frame-container {

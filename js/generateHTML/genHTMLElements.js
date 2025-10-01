@@ -29,7 +29,7 @@ function genHTMLWelcomeDesktop(greeting) {
     return `
     <div id="greetingUser" class="greeting display-none">
         <span>${greeting},</span>
-        <span>Sophia Müller</span>
+        <span>Sofia Müller</span>
     </div>
     <div id="greetingGuest" class="greeting">
         <span>${greeting}!</span>

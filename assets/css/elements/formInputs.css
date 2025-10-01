@@ -131,6 +131,9 @@
 }
 
 @media (width <=1440px) {
+    .housing-input {
+        gap: 4px;
+    }
 
     .form-inputs-frame-v2 {
         align-items: center;

@@ -56,6 +56,10 @@
     gap: 8px;
 }
 
+.housing-input span {
+    color: var(--warning-V2);
+}
+
 .input-container {
     position: relative;
     width: 100%;
@@ -67,7 +71,7 @@
 
 .input-container-icon {
     position: absolute;
-    right: 0;
+    right: 2px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;

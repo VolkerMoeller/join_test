@@ -147,12 +147,22 @@ input[type="radio"]:hover {
     box-shadow: var(--stronger);
 }
 
-input[type="radio"]:active {
+.radio-urgent input[type="radio"]:checked {
     transition: var(--smart-animation-100-in-out);
     background-color: var(--urgent);
 }
 
-input[type="radio"]:active~label {
+.radio-medium input[type="radio"]:checked {
+    transition: var(--smart-animation-100-in-out);
+    background-color: var(--medium);
+}
+
+.radio-low input[type="radio"]:checked {
+    transition: var(--smart-animation-100-in-out);
+    background-color: var(--low);
+}
+
+input[type="radio"]:checked~label {
     transition: var(--smart-animation-100-in-out);
     color: var(--white);
     font-weight: bold;

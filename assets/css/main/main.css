@@ -181,15 +181,24 @@ label span {
 }
 
 fieldset {
+    width: 100%;
     display: flex;
-    gap: 16px;
+    justify-content: space-between;
     border: none;
     margin: 0;
     padding: 0;
 }
 
 fieldset label {
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+legend {
+    margin-bottom: 8px;
 }
 
 @media(max-width: 1440px) {

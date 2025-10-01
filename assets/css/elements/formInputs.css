@@ -130,6 +130,24 @@
     border: 1px solid var(--main2nd);
 }
 
+
+input[type="radio"] {
+    width: 136px;
+    height: 56px;
+    display: flex;
+    appearance: none;
+    background-color: var(--white);
+    padding: 16px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.radio-frame {
+    position: relative;
+    display: flex;
+}
+
 @media (width <=1440px) {
     .housing-input {
         gap: 4px;

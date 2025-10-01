@@ -253,7 +253,7 @@ function showCurrentContent() {
 function showHelpContent() {
     hideAllWorkContent();
     document.getElementById('cntCenterHelp').classList.remove('display-none');
-    hideHelpBtns();
+    // hideHelpBtns();
 }
 
 
@@ -261,7 +261,7 @@ function showInfoContentById(cntId) {
     resetNavigationView();
     hideAllWorkContent();
     document.getElementById(cntId).classList.remove('display-none');
-    hideHelpBtns();
+    // hideHelpBtns();
     setTxtBtnInfoById(cntId);
 }
 
@@ -324,10 +324,10 @@ function provideCurrentContentId(menuBtnId) {
 // }
 
 
-function hideHelpBtns() {
-    document.getElementById('btnHelp').classList.add('display-none');
-    document.getElementById('helpBtnSmallMenu').classList.add('display-none');
-}
+// function hideHelpBtns() {
+//     document.getElementById('btnHelp').classList.add('display-none');
+//     document.getElementById('helpBtnSmallMenu').classList.add('display-none');
+// }
 
 
 function setTxtBtnInfoById(cntId) {

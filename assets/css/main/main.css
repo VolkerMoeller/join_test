@@ -175,11 +175,6 @@ label {
     font-size: 20px;
 }
 
-label span {
-    color: var(--warning-V2);
-    font-size: 20px;
-}
-
 fieldset {
     width: 100%;
     display: flex;

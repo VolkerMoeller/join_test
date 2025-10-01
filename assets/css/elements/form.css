@@ -225,6 +225,7 @@
 }
 
 .footnote span {
+    color: var(--warning-V2);
     font-size: 20px;
 }
 

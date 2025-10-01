@@ -93,7 +93,6 @@
     flex-direction: column;
     align-items: start;
     gap: 24px;
-    background-color: lightseagreen;
 }
 
 .form-inputs-v2 {
@@ -141,7 +140,27 @@ input[type="radio"] {
     border-radius: 10px;
     cursor: pointer;
     margin: 0;
+    box-shadow: var(--nuevo);
 }
+
+input[type="radio"]:hover {
+    box-shadow: var(--stronger);
+}
+
+input[type="radio"]:active {
+    transition: var(--smart-animation-100-in-out);
+    background-color: var(--urgent);
+}
+
+input[type="radio"]:active~label {
+    transition: var(--smart-animation-100-in-out);
+    color: var(--white);
+    font-weight: bold;
+}
+
+
+
+
 
 .radio-frame {
     position: relative;

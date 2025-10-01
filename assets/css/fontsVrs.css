@@ -13,6 +13,12 @@
     font-weight: 400;
 }
 
+.version-warning-V2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--warning-V2);
+}
+
 .version-btn-2nd {
     font-size: 16px;
     font-weight: 700;
@@ -101,6 +107,7 @@
     font-weight: 400;
     color: var(--warning-text);
 }
+
 
 /* Open Sans */
 

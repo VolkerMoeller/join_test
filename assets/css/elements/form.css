@@ -218,6 +218,15 @@
     margin: 0;
 }
 
+.footnote {
+    position: absolute;
+    top: 100%;
+}
+
+.footnote span {
+    font-size: 20px;
+}
+
 @media (width <=1440px) {
 
     .form-add {

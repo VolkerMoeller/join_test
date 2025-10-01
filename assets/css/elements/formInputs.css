@@ -41,8 +41,6 @@
     outline: none;
 }
 
-
-
 .form-inputs input:focus {
     border: 1px solid var(--main2nd);
 }

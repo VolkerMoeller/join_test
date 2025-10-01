@@ -85,7 +85,7 @@
     height: 26px;
 }
 
-/* frame add task */
+/* frame add task (v2)*/
 
 .form-inputs-frame-v2 {
     width: clamp(0%, 100%, 440px);
@@ -94,6 +94,40 @@
     align-items: start;
     gap: 24px;
     background-color: lightseagreen;
+}
+
+.form-inputs-v2 {
+    width: clamp(0px, 100%, 440px);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-inputs-v2 input {
+    width: 100%;
+    padding: 12px 48px 12px 21px;
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    outline: none;
+}
+
+.form-inputs-v2 textarea {
+    width: 100%;
+    padding: 12px 48px 12px 21px;
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--input-border);
+    outline: none;
+}
+
+.form-inputs-v2 input:focus {
+    border: 1px solid var(--main2nd);
+}
+
+.form-inputs-v2 textarea:focus {
+    border: 1px solid var(--main2nd);
 }
 
 @media (width <=1440px) {

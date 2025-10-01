@@ -137,4 +137,8 @@
         gap: 16px;
     }
 
+    .form-inputs-v2 input {
+        padding: 10px 48px 10px 21px;
+    }
+
 }

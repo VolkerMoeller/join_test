@@ -109,3 +109,9 @@
     font-size: 14px;
     font-weight: 400;
 }
+
+@media (width <=1440px) {
+    .version-2-t6 {
+        font-size: 16px;
+    }
+}

@@ -176,7 +176,7 @@ label {
 }
 
 label span {
-    color: var(--warning);
+    color: var(--warning-V2);
     font-size: 20px;
 }
 

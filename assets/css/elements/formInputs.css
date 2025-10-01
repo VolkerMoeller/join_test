@@ -147,11 +147,21 @@ input[type="radio"]:hover {
     box-shadow: var(--stronger);
 }
 
+input[type="radio"]:checked~label div svg path {
+    transition: var(--smart-animation-80-in-out);
+    fill: var(--white);
+}
+
+input[type="radio"]:checked~label div svg g path {
+    transition: var(--smart-animation-80-in-out);
+    fill: var(--white);
+}
 
 .radio-urgent input[type="radio"]:checked {
     transition: var(--smart-animation-80-in-out);
     background-color: var(--urgent);
 }
+
 
 .radio-medium input[type="radio"]:checked {
     transition: var(--smart-animation-80-in-out);
@@ -199,10 +209,9 @@ input[type="radio"]:checked~.label-frame {
     padding-bottom: 6px;
 }
 
-.prioUrgent {
+.prioAlta {
     padding-bottom: 0px;
 }
-
 
 @media (width <=1440px) {
     .housing-input {

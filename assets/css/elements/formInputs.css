@@ -147,4 +147,8 @@
     .description-icon {
         display: none;
     }
+
+    .input-container textarea {
+        height: 88px;
+    }
 }

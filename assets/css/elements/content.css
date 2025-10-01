@@ -1,4 +1,5 @@
 .main-center {
+    height: 100%;
     position: relative;
     padding: 96px;
     overflow: auto;

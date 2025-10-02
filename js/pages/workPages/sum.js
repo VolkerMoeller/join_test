@@ -45,9 +45,10 @@ function appropriateGreeting() {
     let now = Date.now();
     let date = new Date(now);
     let hour = date.getHours();
-    if (hour <= 12) { greeting = 'Good morning' }
-    if (hour > 12 && hour <= 14) { greeting = 'Hello' }
-    if (hour > 14 && hour <= 17) { greeting = 'Good afternoon' }
-    if (hour > 17 && hour <= 24) { greeting = 'Good evening' }
+    console.log(hour)
+    if (hour <= 11) { greeting = 'Good morning' }
+    if (hour > 11 && hour <= 13) { greeting = 'Hello' }
+    if (hour > 13 && hour <= 16) { greeting = 'Good afternoon' }
+    if (hour > 16 && hour <= 24) { greeting = 'Good evening' }
     return greeting;
 }

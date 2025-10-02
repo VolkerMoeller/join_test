@@ -39,6 +39,7 @@
 
 // toggleElements()
 // focusInput()
+// blurInput()
 // readingUserStatus()
 // getWindowWidth()
 // getWindowHeight()
@@ -235,6 +236,11 @@ function toggleElements(id1st, id2nd) {
 
 function focusInput(fieldId) {
     document.getElementById(fieldId).focus();
+}
+
+
+function blurInput(fieldId) {
+    document.getElementById(fieldId).blur();
 }
 
 

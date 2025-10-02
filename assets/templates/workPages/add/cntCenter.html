@@ -47,55 +47,57 @@
             </div>
             <p class="add-task-vector"></p>
             <div class="form-inputs-frame-v2">
-                <fieldset>
-                    <legend class="version-2-t6">Priority</legend>
-                    <div class="radio-frame radio-urgent">
-                        <input type="radio" id="urgentBtn" name="priority" value="urgent" />
-                        <label class="label-frame" for="urgentBtn">
-                            <span>Urgent</span>
-                            <div class="prioAlta" w3-include-svg="./assets/img/svgHTML/35-prioAlta.html"></div>
-                        </label>
-                    </div>
-                    <div class="radio-frame radio-medium">
-                        <input type="radio" id="mediumBtn" name="priority" value="medium" />
-                        <label class="label-frame" for="mediumBtn">
-                            <span>Medium</span>
-                            <div class="prioMedia" w3-include-svg="./assets/img/svgHTML/36-prioMedia.html"></div>
-                        </label>
+                <div class="housing-fieldset">
+                    <fieldset>
+                        <legend class="version-2-t6">Priority</legend>
+                        <div class="radio-frame radio-urgent">
+                            <input type="radio" id="urgentBtn" name="priority" value="urgent" />
+                            <label class="label-frame" for="urgentBtn">
+                                <span>Urgent</span>
+                                <div class="prioAlta" w3-include-svg="./assets/img/svgHTML/35-prioAlta.html"></div>
+                            </label>
+                        </div>
+                        <div class="radio-frame radio-medium">
+                            <input type="radio" id="mediumBtn" name="priority" value="medium" />
+                            <label class="label-frame" for="mediumBtn">
+                                <span>Medium</span>
+                                <div class="prioMedia" w3-include-svg="./assets/img/svgHTML/36-prioMedia.html"></div>
+                            </label>
 
-                    </div>
-                    <div class="radio-frame radio-low">
-                        <input type="radio" id="lowBtn" name="priority" value="low" />
-                        <label class="label-frame" for="lowBtn">
-                            <span>Low</span>
-                            <div class="prioBaja" w3-include-svg="./assets/img/svgHTML/37-prioBaja.html"></div>
-                        </label>
-                    </div>
-                </fieldset>
+                        </div>
+                        <div class="radio-frame radio-low">
+                            <input type="radio" id="lowBtn" name="priority" value="low" />
+                            <label class="label-frame" for="lowBtn">
+                                <span>Low</span>
+                                <div class="prioBaja" w3-include-svg="./assets/img/svgHTML/37-prioBaja.html"></div>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <span class="version-warning-V2 ghost">ghost</span>
+                </div>
                 <div class="form-inputs-v2">
                     <div class="housing-input">
                         <label for="assigned">Assigned to</label>
                         <div class="input-container">
                             <input class="version-2-t6" type="text" id="assigned" name="assigned"
                                 placeholder="Select contacts to assign" autocomplete="off">
-                            <div class="input-container-icon" onclick="focusInput('assigned')">
-                                <div id="dropDownOpen" onclick="toggleElements('dropDownOpen','dropDownClose')">
-                                    <button type="button" id="arrDropOpn" type="button"
-                                        onmouseover="toggleElements('arrDropOpn','arrDropOpnHvr')"
-                                        w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
-                                    <button type="button" id="arrDropOpnHvr" class="display-none" type="button"
-                                        onmouseleave="toggleElements('arrDropOpn','arrDropOpnHvr')"
-                                        w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_open_hvr.html"></button>
-                                </div>
-                                <div id="dropDownClose" class="display-none"
-                                    onclick="toggleElements('dropDownOpen','dropDownClose')">
-                                    <button type="button" id="arrDropClo" type="button"
-                                        onmouseover="toggleElements('arrDropClo','arrDropCloHvr')"
-                                        w3-include-svg="./assets/img/svgHTML/40-arrow_drop_down_close.html"></button>
-                                    <button type="button" id="arrDropCloHvr" class="display-none"
-                                        onmouseleave="toggleElements('arrDropClo','arrDropCloHvr')"
-                                        w3-include-svg="./assets/img/svgHTML/41-arrow_drop_down_close_hvr.html"></button>
-                                </div>
+                            <div id="dropDownOpen" class="input-container-icon"
+                                onclick="toggleElements('dropDownOpen','dropDownClose');focusInput('assigned')">
+                                <button type="button" id="arrDropOpn" type="button"
+                                    onmouseover="toggleElements('arrDropOpn','arrDropOpnHvr')"
+                                    w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
+                                <button type="button" id="arrDropOpnHvr" class="display-none" type="button"
+                                    onmouseleave="toggleElements('arrDropOpn','arrDropOpnHvr')"
+                                    w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_open_hvr.html"></button>
+                            </div>
+                            <div id="dropDownClose" class="input-container-icon display-none"
+                                onclick="toggleElements('dropDownOpen','dropDownClose');blurInput('assigned')">
+                                <button type="button" id="arrDropClo" type="button"
+                                    onmouseover="toggleElements('arrDropClo','arrDropCloHvr')"
+                                    w3-include-svg="./assets/img/svgHTML/40-arrow_drop_down_close.html"></button>
+                                <button type="button" id="arrDropCloHvr" class="display-none"
+                                    onmouseleave="toggleElements('arrDropClo','arrDropCloHvr')"
+                                    w3-include-svg="./assets/img/svgHTML/41-arrow_drop_down_close_hvr.html"></button>
                             </div>
                         </div>
                         <span class="version-warning-V2 ghost">ghost</span>

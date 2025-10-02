@@ -390,7 +390,7 @@ function setupOverlayForSelect() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-select');
-    overlay.setAttribute('onclick', 'resetOverlayFrame()')
+    overlay.setAttribute('onclick', 'resetOverlayFrameSelect()')
 }
 
 

@@ -80,9 +80,9 @@
                         <label for="assigned">Assigned to</label>
                         <div class="input-container">
                             <input class="version-2-t6" type="text" id="assigned" name="assigned"
-                                placeholder="Select contacts to assign" autocomplete="off" onclick="downDropOpen()">
+                                placeholder="Select contacts to assign" autocomplete="off">
                             <div id="dropDownOpen" class="input-container-icon"
-                                onclick="toggleElements('dropDownOpen','dropDownClose');focusInput('assigned')">
+                                onclick="toggleElements('dropDownOpen','dropDownClose')">
                                 <button type="button" id="arrDropOpn" type="button"
                                     onmouseover="toggleElements('arrDropOpn','arrDropOpnHvr')"
                                     w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
@@ -90,6 +90,15 @@
                                     onmouseleave="toggleElements('arrDropOpn','arrDropOpnHvr')"
                                     w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_open_hvr.html"></button>
                             </div>
+                            <!-- <div id="dropDownOpen" class="input-container-icon"
+                                onclick="toggleElements('dropDownOpen','dropDownClose');focusInput('assigned')">
+                                <button type="button" id="arrDropOpn" type="button"
+                                    onmouseover="toggleElements('arrDropOpn','arrDropOpnHvr')"
+                                    w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
+                                <button type="button" id="arrDropOpnHvr" class="display-none" type="button"
+                                    onmouseleave="toggleElements('arrDropOpn','arrDropOpnHvr')"
+                                    w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_open_hvr.html"></button>
+                            </div> -->
                             <div id="dropDownClose" class="input-container-icon display-none"
                                 onclick="toggleElements('dropDownOpen','dropDownClose');blurInput('assigned')">
                                 <button type="button" id="arrDropClo" type="button"

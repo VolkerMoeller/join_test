@@ -79,18 +79,23 @@
                             <input class="version-2-t6" type="text" id="assigned" name="assigned"
                                 placeholder="Select contacts to assign" autocomplete="off">
                             <div class="input-container-icon" onclick="focusInput('assigned')">
-                                <button id="arrDropOpn" type="button"
-                                    onmouseover="toggleElements('arrDropOpn','arrDropOpnHvr')"
-                                    w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
-                                <button id="arrDropOpnHvr" class="display-none" type="button"
-                                    onmouseleave="toggleElements('arrDropOpn','arrDropOpnHvr')"
-                                    w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_open_hvr.html"></button>
-                                <button id="arrDropClo" type="button"
-                                    onmouseover="toggleElements('arrDropClo','arrDropCloHvr')"
-                                    w3-include-svg="./assets/img/svgHTML/40-arrow_drop_down_close.html"></button>
-                                <button id="arrDropCloHvr" class="display-none"
-                                    onmouseleave="toggleElements('arrDropClo','arrDropCloHvr')"
-                                    w3-include-svg="./assets/img/svgHTML/41-arrow_drop_down_close_hvr.html"></button>
+                                <div id="dropDownOpen" onclick="toggleElements('dropDownOpen','dropDownClose')">
+                                    <button type="button" id="arrDropOpn" type="button"
+                                        onmouseover="toggleElements('arrDropOpn','arrDropOpnHvr')"
+                                        w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
+                                    <button type="button" id="arrDropOpnHvr" class="display-none" type="button"
+                                        onmouseleave="toggleElements('arrDropOpn','arrDropOpnHvr')"
+                                        w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_open_hvr.html"></button>
+                                </div>
+                                <div id="dropDownClose" class="display-none"
+                                    onclick="toggleElements('dropDownOpen','dropDownClose')">
+                                    <button type="button" id="arrDropClo" type="button"
+                                        onmouseover="toggleElements('arrDropClo','arrDropCloHvr')"
+                                        w3-include-svg="./assets/img/svgHTML/40-arrow_drop_down_close.html"></button>
+                                    <button type="button" id="arrDropCloHvr" class="display-none"
+                                        onmouseleave="toggleElements('arrDropClo','arrDropCloHvr')"
+                                        w3-include-svg="./assets/img/svgHTML/41-arrow_drop_down_close_hvr.html"></button>
+                                </div>
                             </div>
                         </div>
                         <span class="version-warning-V2 ghost">ghost</span>

@@ -10,4 +10,15 @@ function setupAddElementsOnTop() {
 
 function resetOverlayFrameSelect() {
     resetOverlayFrame();
+    resetInputAssigned();
+}
+
+
+
+function resetInputAssigned() {
+    toggleElements('dropDownOpen', 'dropDownClose');
+}
+
+
+function initToggleDropDown() {
 }

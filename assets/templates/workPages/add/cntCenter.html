@@ -80,7 +80,8 @@
                         <label for="assigned">Assigned to</label>
                         <div class="input-container">
                             <input class="version-2-t6" type="text" id="assigned" name="assigned"
-                                placeholder="Select contacts to assign" autocomplete="off">
+                                placeholder="Select contacts to assign" autocomplete="off"
+                                onfocus="handleOverlayForDropDown()">
                             <div id="dropDownOpen" class="input-container-icon"
                                 onclick="toggleElements('dropDownOpen','dropDownClose')">
                                 <button type="button" id="arrDropOpn" type="button"

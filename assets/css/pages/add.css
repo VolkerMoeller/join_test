@@ -3,6 +3,14 @@
     border: solid 2px var(--input-border);
 }
 
+/* .drop-down-icn {
+    fill: ;
+}
+
+.drop-down-icn:hover {
+    fill: var(--drop-down-icon-V2);
+} */
+
 @media (width <=1440px) {
     .add-task-vector {
         display: none;

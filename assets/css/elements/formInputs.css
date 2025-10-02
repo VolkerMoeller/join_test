@@ -82,6 +82,14 @@
     cursor: text;
 }
 
+.input-container-icon button:nth-child(1) {
+    position: relative;
+}
+
+.input-container-icon button:nth-child(2) {
+    position: absolute;
+}
+
 .description-icon {
     top: 100%;
     transform: translateY(-100%);

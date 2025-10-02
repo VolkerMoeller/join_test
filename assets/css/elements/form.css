@@ -218,7 +218,7 @@
 
 .footnote {
     position: absolute;
-    top: calc(96px);
+    top: 100%;
     left: 0;
     transform: translateY(-100%);
 }

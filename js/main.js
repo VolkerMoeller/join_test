@@ -32,6 +32,7 @@
 // showOverlayForMsg()
 // resetOverlay()
 // handleOverlayForInput()
+// handleOverlayForSelect()
 // checkOverlay()
 
 
@@ -215,6 +216,15 @@ function handleOverlayForInput() {
     }
 }
 
+function handleOverlayForSelect() {
+    let overlay = document.querySelector('.ovl-frame');
+    let overlayNotShown = overlay.classList.contains('ovl-hide');
+    if (overlayNotShown) {
+        setupOverlayForSelect();
+        setupSignElementsOnTop();
+    }
+}
+
 
 function checkOverlay() {
     let overlay = document.querySelector('.ovl-frame');
@@ -292,6 +302,7 @@ function goBack() {
 // resetOverlayMsg()
 // resetOverlayNav()
 // setupOverlayForInput()
+// setupOverlayForSelect()
 // setupSignElementsOnTop() --> sign.js
 // handleOverlayForInput() --> see above
 // loadLocalStorageObject() --> see above
@@ -370,6 +381,13 @@ function setupOverlayForInput() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-input');
+}
+
+
+function setupOverlayForSelect() {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.remove('ovl-hide');
+    overlay.classList.add('ovl-show-select');
 }
 
 

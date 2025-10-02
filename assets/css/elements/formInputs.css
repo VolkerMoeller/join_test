@@ -82,13 +82,10 @@
     cursor: text;
 }
 
-/* .input-container-icon button:nth-child(1) {
-    position: relative;
-}
 
-.input-container-icon button:nth-child(2) {
-    position: absolute;
-} */
+.input-container-icon button:hover svg rect {
+    fill: var(--drop-down-icon-V2);
+}
 
 .description-icon {
     top: 100%;

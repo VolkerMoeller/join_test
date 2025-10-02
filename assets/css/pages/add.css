@@ -7,10 +7,6 @@
     fill: none;
 }
 
-.input-container-icon button:hover svg rect {
-    fill: var(--drop-down-icon-V2);
-}
-
 
 @media (width <=1440px) {
     .add-task-vector {

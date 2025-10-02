@@ -221,7 +221,7 @@ function handleOverlayForSelect() {
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
         setupOverlayForSelect();
-        setupSignElementsOnTop();
+        setupAddElementsOnTop();
     }
 }
 
@@ -351,6 +351,8 @@ function resetOverlayFrame() {
     overlay.classList.remove('ovl-show-anim-bg');
     overlay.classList.remove('ovl-show-input');
     overlay.classList.remove('ovl-show-nav');
+    overlay.classList.remove('ovl-show-select');
+    overlay.removeAttribute('onclick');
 }
 
 
@@ -388,6 +390,7 @@ function setupOverlayForSelect() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-select');
+    overlay.setAttribute('onclick', 'resetOverlayFrame()')
 }
 
 

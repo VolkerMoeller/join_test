@@ -67,8 +67,8 @@
 
 .ovl-show-select {
     z-index: 2;
-    /* background-color: transparent; */
-    background-color: lightcoral;
+    background-color: transparent;
+    /* background-color: lightcoral; */
 }
 
 .msg-cnt {

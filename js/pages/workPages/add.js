@@ -88,3 +88,10 @@ function selectAssignedBtnDefault() {
     dropDownOpen = document.getElementById('dropDownClose').classList.contains('display-none');
     return dropDownOpen;
 }
+
+
+
+function checkIfChecked() {
+    let checked = document.getElementById('contact0').checked;
+    console.log(checked);
+}

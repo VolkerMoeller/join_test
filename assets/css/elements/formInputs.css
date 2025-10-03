@@ -63,6 +63,7 @@
 .input-container {
     position: relative;
     width: 100%;
+    z-index: 1;
 }
 
 .input-container textarea {
@@ -197,8 +198,6 @@ input[type="radio"]:checked~.label-frame {
     position: relative;
     display: flex;
 }
-
-
 
 .label-frame {
     position: absolute;

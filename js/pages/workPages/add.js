@@ -3,6 +3,8 @@
 // ----------------
 
 // setupAddElementsOnTop()
+// resetOverlayFrameSelect()
+// initFocusInputAssigned()
 
 
 function setupAddElementsOnTop() {
@@ -13,28 +15,6 @@ function setupAddElementsOnTop() {
 function resetOverlayFrameSelect() {
     resetOverlayFrame();
     resetInputAssigned();
-}
-
-
-function resetInputAssigned() {
-    toggleElements('dropDownOpen', 'dropDownClose');
-    emptyInputFieldById('assigned');
-}
-
-
-function initToggleDropDown() {
-    let assignedBtnDefault = selectAssignedBtnDefault();
-    if (assignedBtnDefault) {
-        toggleElements('dropDownOpen', 'dropDownClose');
-        focusInput('assigned');
-    }
-}
-
-
-function selectAssignedBtnDefault() {
-    let dropDownOpen = false;
-    dropDownOpen = document.getElementById('dropDownClose').classList.contains('display-none');
-    return dropDownOpen;
 }
 
 
@@ -54,4 +34,57 @@ function initOnclickDropDownClose() {
     toggleElements('dropDownOpen', 'dropDownClose');
     resetOverlayFrame();
     emptyInputFieldById('assigned');
+}
+
+
+// --------------------
+// 1st-level-functions:
+// --------------------
+
+// resetOverlayFrame() --> main.js
+// resetInputAssigned()
+
+// handleOverlayForSelect() --> main.js
+// initToggleDropDown()
+
+// toggleElements() --> main.js
+// focusInput() --> main.js
+
+// toggleElements() --> main.js
+// resetOverlayFrame() --> main.js
+// emptyInputFieldById() --> main.js
+
+
+function resetInputAssigned() {
+    toggleElements('dropDownOpen', 'dropDownClose');
+    emptyInputFieldById('assigned');
+}
+
+
+function initToggleDropDown() {
+    let assignedBtnDefault = selectAssignedBtnDefault();
+    if (assignedBtnDefault) {
+        toggleElements('dropDownOpen', 'dropDownClose');
+        focusInput('assigned');
+    }
+}
+
+// --------------------
+// 2nd-level-functions:
+// --------------------
+
+// toggleElements() --> main.js
+// emptyInputFieldById() --> main-js
+
+// selectAssignedBtnDefault()
+
+// toggleElements() --> main.js
+// focusInput() --> main.js
+
+
+
+function selectAssignedBtnDefault() {
+    let dropDownOpen = false;
+    dropDownOpen = document.getElementById('dropDownClose').classList.contains('display-none');
+    return dropDownOpen;
 }

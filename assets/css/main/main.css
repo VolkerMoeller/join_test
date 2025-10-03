@@ -179,7 +179,6 @@ label {
 fieldset {
     width: 100%;
     display: flex;
-    justify-content: space-between;
     border: none;
     margin: 0;
     padding: 0;

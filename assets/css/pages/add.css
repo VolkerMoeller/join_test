@@ -7,6 +7,35 @@
     fill: none;
 }
 
+.priority-list {
+    justify-content: space-between;
+}
+
+.user-contact-list {
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--backlog-box);
+}
+
+.user-contact-list legend {
+    display: none;
+}
+
+.user-contact-list label {
+    display: flex;
+}
+
+.user-contact-list input {
+    width: auto;
+    display: flex;
+}
+
+.contactListBtn {
+    display: flex;
+}
+
 
 @media (width <=1440px) {
     .add-task-vector {

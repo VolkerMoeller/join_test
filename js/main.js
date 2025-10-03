@@ -47,6 +47,7 @@
 // doSth()
 // windowClose()
 // goBack()
+// emptyInputFieldById()
 
 
 // --- initial-functions:
@@ -282,6 +283,12 @@ function windowClose() {
 
 function goBack() {
     history.back();
+}
+
+
+function emptyInputFieldById(id) {
+    let valueInputField = document.getElementById(id).value = '';
+    return valueInputField;
 }
 
 

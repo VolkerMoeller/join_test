@@ -75,20 +75,22 @@
                     </fieldset>
                     <span class="version-warning-V2 ghost">ghost</span>
                 </div>
+
+
+
                 <div class="form-inputs-v2">
                     <div class="housing-input">
                         <label for="assigned">Assigned to</label>
                         <div id="assignedContainer" class="input-container">
                             <input class="version-2-t6" type="text" id="assigned" name="assigned"
                                 placeholder="Select contacts to assign" autocomplete="off"
-                                onfocus="handleOverlayForSelect()">
-                            <div id="dropDownOpen" class="input-container-icon"
-                                onclick="toggleElements('dropDownOpen','dropDownClose');focusInput('assigned')">
+                                onfocus="initFocusInputAssigned()">
+                            <div id="dropDownOpen" class="input-container-icon" onclick="initOnclickDropDownOpen()">
                                 <button type="button" id="arrDropOpn" type="button"
                                     w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                             </div>
                             <div id="dropDownClose" class="input-container-icon display-none"
-                                onclick="toggleElements('dropDownOpen','dropDownClose'); resetOverlayFrame()">
+                                onclick="initOnclickDropDownClose()">
                                 <button type="button" id="arrDropClo" type="button"
                                     w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                             </div>
@@ -96,6 +98,9 @@
                         <span class="version-warning-V2 ghost">ghost</span>
                     </div>
                 </div>
+
+
+
             </div>
             <div class="footnote version-2-body">
                 <span class="version-warning-V2">*</span>This field is required

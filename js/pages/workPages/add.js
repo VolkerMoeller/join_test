@@ -91,7 +91,8 @@ function selectAssignedBtnDefault() {
 
 
 
-function checkIfChecked() {
-    let checked = document.getElementById('contact0').checked;
+function checkIfChecked(id) {
+    let checked = document.getElementById(id).checked;
     console.log(checked);
+
 }

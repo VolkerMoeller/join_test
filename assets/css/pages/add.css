@@ -12,7 +12,7 @@
 }
 
 .user-contact-list {
-    height: 280px;
+    max-height: 280px;
     transform: translateY(-10px);
     padding-top: 8px;
     flex-direction: column;

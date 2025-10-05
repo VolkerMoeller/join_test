@@ -100,7 +100,6 @@ menu {
     bottom: 0;
     left: 0;
     background: var(--main-background);
-    overflow: hidden;
     z-index: 2;
 }
 
@@ -187,6 +186,24 @@ fieldset {
 legend {
     margin-bottom: 12px;
     color: var(--menu-color);
+}
+
+.abs-cnt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rel {
+    position: relative;
+}
+
+
+.flx-cnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media(max-width: 1440px) {

@@ -2,8 +2,7 @@
     height: 100%;
     position: relative;
     padding: 96px;
-    overflow: auto;
-    scrollbar-width: thin;
+
 }
 
 .main-center-header {
@@ -53,6 +52,8 @@
 
 @media(max-width: 1440px) {
     .main-center {
+        overflow: auto;
+        scrollbar-width: thin;
         width: 100%;
         padding: 48px 16px;
     }

@@ -139,5 +139,4 @@ function selectAssignedBtnDefault() {
 function checkIfChecked(id) {
     let checked = document.getElementById(id).checked;
     console.log(checked);
-
 }

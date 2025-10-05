@@ -1,3 +1,11 @@
+/* #mainCenterAddTask {
+    overflow: auto;
+} */
+
+/* #mainCenterAddTask::-webkit-scrollbar {
+    display: none;
+} */
+
 .add-task-vector {
     border-radius: 2px;
     border: solid 2px var(--input-border);
@@ -71,9 +79,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: lightsalmon;
-    width: 24px;
-    height: 24px;
+    /* width: 24px;
+    height: 24px; */
 }
 
 .drop-down-anim {

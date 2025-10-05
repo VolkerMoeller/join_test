@@ -29,7 +29,7 @@ function initFocusInputAssigned() {
 function initOnclickDropDownOpen() {
     toggleElements('dropDownOpen', 'dropDownClose');
     focusInput('assigned');
-    dropDownOpen();
+    dropDownOpenById('userContactList');
 }
 
 
@@ -37,6 +37,7 @@ function initOnclickDropDownClose() {
     toggleElements('dropDownOpen', 'dropDownClose');
     resetOverlayFrame();
     emptyInputFieldById('assigned');
+    dropDownCloseById('userContactList');
 }
 
 
@@ -52,6 +53,7 @@ function initOnclickDropDownClose() {
 
 // toggleElements() --> main.js
 // focusInput() --> main.js
+// dropDownOpenById()
 
 // toggleElements() --> main.js
 // resetOverlayFrame() --> main.js
@@ -70,6 +72,17 @@ function initToggleDropDown() {
         toggleElements('dropDownOpen', 'dropDownClose');
         focusInput('assigned');
     }
+}
+
+
+function dropDownOpenById(id) {
+    document.getElementById(id).classList.add('drop-down-anim');
+    document.getElementById(id).classList.remove('drop-up-anim');
+}
+
+function dropDownCloseById(id) {
+    document.getElementById(id).classList.remove('drop-down-anim');
+    document.getElementById(id).classList.add('drop-up-anim');
 }
 
 // --------------------

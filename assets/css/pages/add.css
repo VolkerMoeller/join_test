@@ -12,7 +12,7 @@
 }
 
 .user-contact-list {
-    max-height: 280px;
+    max-height: 0;
     transform: translateY(-10px);
     padding-top: 8px;
     flex-direction: column;
@@ -20,9 +20,10 @@
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: var(--backlog-box);
-    overflow: auto;
+    overflow: hidden;
     scrollbar-width: thin;
     border-bottom: 1px solid var(--white);
+    z-index: 3;
 }
 
 .user-contact-list legend {
@@ -75,21 +76,37 @@
 }
 
 .drop-down-anim {
-    animation-duration: 1s;
+    animation-duration: 112ms;
     animation-name: drop-down;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    animation-timing-function: ease-in-out;
 }
 
 @keyframes drop-down {
     from {
         max-height: 0px;
-        background-color: lightyellow;
     }
 
     to {
-        max-height: 500px;
-        background-color: lightsteelblue;
+        max-height: 250px;
+        overflow: auto;
+    }
+}
+
+.drop-up-anim {
+    animation-duration: 112ms;
+    animation-name: drop-up;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes drop-up {
+    from {
+        max-height: 250px;
+    }
+
+    to {
+        max-height: 0px;
     }
 }
 

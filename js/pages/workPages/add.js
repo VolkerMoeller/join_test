@@ -29,6 +29,7 @@ function initFocusInputAssigned() {
 function initOnclickDropDownOpen() {
     toggleElements('dropDownOpen', 'dropDownClose');
     focusInput('assigned');
+    dropDownOpen();
 }
 
 

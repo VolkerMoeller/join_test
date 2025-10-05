@@ -93,26 +93,6 @@
     }
 }
 
-
-/* .ovl-show-anim-bg {
-    z-index: 3;
-    animation-duration: 2s;
-    animation-name: shadow-bg;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-@keyframes shadow-bg {
-    from {
-        background-color: var(--black-transp);
-    }
-
-    to {
-        background-color: var(--black-transp-50);
-    }
-} */
-
-
 @media (width <=1440px) {
     .add-task-vector {
         display: none;

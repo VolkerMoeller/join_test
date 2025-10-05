@@ -17,6 +17,7 @@ function setupAddElementsOnTop() {
 function resetOverlayFrameSelect() {
     resetOverlayFrame();
     resetInputAssigned();
+    resetSpaceforList();
     dropDownCloseById('userContactList');
 }
 
@@ -31,7 +32,20 @@ function initFocusInputAssigned() {
 function initOnclickDropDownOpen() {
     toggleElements('dropDownOpen', 'dropDownClose');
     focusInput('assigned');
+    makeSpaceforList();
     dropDownOpenById('userContactList');
+}
+
+
+function makeSpaceforList() {
+    let assignedInputs = document.getElementById('assignedInputs');
+    assignedInputs.setAttribute('style', 'height: 300px');
+    let mainCenterAddTask = document.getElementById('mainCenterAddTask');
+    mainCenterAddTask.scrollTo({
+        top: 300,
+        left: 0,
+        behavior: "smooth",
+    });
 }
 
 
@@ -40,6 +54,18 @@ function initOnclickDropDownClose() {
     resetOverlayFrame();
     emptyInputFieldById('assigned');
     dropDownCloseById('userContactList');
+    resetSpaceforList();
+}
+
+function resetSpaceforList() {
+    let assignedInputs = document.getElementById('assignedInputs');
+    assignedInputs.setAttribute('style', 'height: auto');
+    let mainCenterAddTask = document.getElementById('mainCenterAddTask');
+    mainCenterAddTask.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
 }
 
 

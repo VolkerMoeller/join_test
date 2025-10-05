@@ -5,6 +5,8 @@
 // setupAddElementsOnTop()
 // resetOverlayFrameSelect()
 // initFocusInputAssigned()
+// initOnclickDropDownOpen()
+// initOnclickDropDownClose()
 
 
 function setupAddElementsOnTop() {

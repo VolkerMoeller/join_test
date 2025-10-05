@@ -13,7 +13,7 @@
 
 .user-contact-list {
     max-height: 0;
-    transform: translateY(-10px);
+    transform: translateY(-18px);
     padding-top: 8px;
     flex-direction: column;
     justify-content: space-between;
@@ -85,10 +85,12 @@
 @keyframes drop-down {
     from {
         max-height: 0px;
+        transform: translateY(-18px);
     }
 
     to {
         max-height: 250px;
+        transform: translateY(-10px);
         overflow: auto;
     }
 }
@@ -103,10 +105,12 @@
 @keyframes drop-up {
     from {
         max-height: 250px;
+        transform: translateY(-10px);
     }
 
     to {
         max-height: 0px;
+        transform: translateY(-18px);
     }
 }
 

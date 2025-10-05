@@ -17,12 +17,14 @@ function setupAddElementsOnTop() {
 function resetOverlayFrameSelect() {
     resetOverlayFrame();
     resetInputAssigned();
+    dropDownCloseById('userContactList');
 }
 
 
 function initFocusInputAssigned() {
     handleOverlayForSelect();
     initToggleDropDown();
+    dropDownOpenById('userContactList');
 }
 
 
@@ -79,6 +81,7 @@ function dropDownOpenById(id) {
     document.getElementById(id).classList.add('drop-down-anim');
     document.getElementById(id).classList.remove('drop-up-anim');
 }
+
 
 function dropDownCloseById(id) {
     document.getElementById(id).classList.remove('drop-down-anim');

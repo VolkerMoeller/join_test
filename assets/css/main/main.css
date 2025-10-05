@@ -101,6 +101,7 @@ menu {
     left: 0;
     background: var(--main-background);
     z-index: 2;
+    overflow: hidden;
 }
 
 .path-def-1st {

@@ -35,12 +35,9 @@
     opacity: 0;
 }
 
-.user-contact-list legend {
-    display: none;
-}
-
-.user-contact-list label {
-    display: flex;
+.user-contact-list span {
+    color: var(--black);
+    font-size: 16px;
 }
 
 .user-contact-list input {
@@ -60,6 +57,12 @@
     border-radius: 10px;
     padding: 7px 10px;
     cursor: pointer;
+}
+
+.contactListBtnLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .checkbox-assigned {
@@ -99,7 +102,7 @@
         max-height: 250px;
         z-index: 3;
         opacity: 1;
-        /* overflow: auto; */
+        overflow: auto;
     }
 }
 

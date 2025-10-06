@@ -149,10 +149,8 @@ function selectAssignedBtnDefault() {
 }
 
 
-
 function checkIfChecked(id) {
     let checked = false;
     checked = document.getElementById(id).classList.contains('display-none');
-    console.log(checked);
-    return checked
+    return checked;
 }

@@ -236,11 +236,11 @@
         gap: 16px;
     }
 
-    /* .footnote {
+    .footnote {
         width: 100%;
         position: relative;
         top: unset;
         left: unset;
         transform: unset;
-    } */
+    }
 }

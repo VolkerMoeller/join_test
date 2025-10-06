@@ -245,6 +245,13 @@ function toggleElements(id1st, id2nd) {
 }
 
 
+function toggleElementsOpacity(id) {
+    const element = document.getElementById(id);
+    element.classList.toggle('opacity-0');
+    element.classList.toggle('opacity-1');
+}
+
+
 function focusInput(fieldId) {
     document.getElementById(fieldId).focus();
 }

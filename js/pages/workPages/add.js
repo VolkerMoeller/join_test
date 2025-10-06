@@ -57,6 +57,7 @@ function initOnclickDropDownClose() {
     resetSpaceforList();
 }
 
+
 function resetSpaceforList() {
     let assignedInputs = document.getElementById('assignedInputs');
     assignedInputs.setAttribute('style', 'height: auto');
@@ -66,6 +67,20 @@ function resetSpaceforList() {
         left: 0,
         behavior: "smooth",
     });
+}
+
+
+function hoverCheckboxIcnsContactList(id1st, id2nd) {
+    console.log(id1st, id2nd);
+    let id1stDef = id1st + 'Def';
+    let id1stHvr = id1st + 'Hvr';
+    let id2ndDef = id2nd + 'Def';
+    let id2ndHvr = id2nd + 'Hvr';
+    toggleElementsOpacity(id1stDef);
+    toggleElementsOpacity(id1stHvr);
+    toggleElementsOpacity(id2ndDef);
+    toggleElementsOpacity(id2ndHvr);
+
 }
 
 

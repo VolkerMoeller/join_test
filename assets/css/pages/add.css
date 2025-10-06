@@ -72,7 +72,7 @@
 }
 
 .checkbox-assigned:hover div svg rect {
-    fill: var(--main-transp-20);
+    fill: var(--main-transp-10);
 }
 
 /* .checkbox-assigned-container {

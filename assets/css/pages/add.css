@@ -66,11 +66,16 @@
     gap: 16px;
 }
 
+
 .checkbox-assigned {
     opacity: 1;
 }
 
-.checkbox-assigned-container {
+.checkbox-assigned:hover div svg rect {
+    fill: var(--main-transp-20);
+}
+
+/* .checkbox-assigned-container {
     position: relative;
 }
 
@@ -83,7 +88,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 .drop-down-anim {
     animation-duration: 112ms;
@@ -118,14 +123,18 @@
     from {
         max-height: 250px;
         z-index: 3;
-        opacity: 1;
+        /* opacity: 1; */
     }
 
     to {
         max-height: 0px;
         z-index: 0;
-        opacity: 0;
+        /* opacity: 0; */
     }
+}
+
+.checkbox-default {
+    fill: var(--white);
 }
 
 @media (width <=1440px) {

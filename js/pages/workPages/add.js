@@ -151,6 +151,8 @@ function selectAssignedBtnDefault() {
 
 
 function checkIfChecked(id) {
-    let checked = document.getElementById(id).checked;
+    let checked = false;
+    checked = document.getElementById(id).classList.contains('display-none');
     console.log(checked);
+    return checked
 }

@@ -145,7 +145,7 @@
                         </fieldset> -->
                         <div id="userContactList" class="user-contact-list">
                             <button id="contactListBtn0" class="contactListBtn" type="button"
-                                onclick="checkIfChecked('contact0'); toggleElements('3checked0', '5default0')">
+                                onclick="toggleElements('3checked0', '5default0')">
                                 <div class=" contactListBtnLeft">
                                     <div class="rel">
                                         <div class="contactListBadge"
@@ -156,33 +156,26 @@
                                     <span>Sophia Müller YOU</span>
                                 </div>
                                 <div class="checkbox-assigned-container">
-                                    <input class="checkbox-assigned" type="checkbox" id="contact0" name="contact0"
-                                        onmouseover="hoverCheckboxIcnsContactList('3checked0', '5default0')"
-                                        onmouseleave="hoverCheckboxIcnsContactList('3checked0', '5default0')" />
-                                    <div id="3checked0" class="abs-cnt display-none">
-                                        <div id="3checked0Hvr" class="opacity-0"
-                                            w3-include-svg="./assets/img/svgHTML/2-checked-hover.html"></div>
-                                        <div id="3checked0Def" class="opacity-1"
-                                            w3-include-svg="./assets/img/svgHTML/3-checked.html">
+                                    <div class="checkbox-assigned" id="contact0" name="contact0">
+                                        <div id="5default0" class="rel"
+                                            w3-include-svg="./assets/img/svgHTML/041-default.html">
+                                        </div>
+                                        <div id="3checked0" class="abs-cnt display-none"
+                                            w3-include-svg="./assets/img/svgHTML/021-checked.html">
                                         </div>
                                     </div>
-                                    <div id="5default0" class="rel">
-                                        <div id="5default0Hvr" class="opacity-0"
-                                            w3-include-svg="./assets/img/svgHTML/4-default-hover.html"></div>
-                                        <div id="5default0Def" class="opacity-1"
-                                            w3-include-svg="./assets/img/svgHTML/5-default.html"></div>
-                                    </div>
                                 </div>
-                            </button>
                         </div>
-                        <span class="version-warning-V2 ghost">ghost</span>
+                        </button>
                     </div>
+                    <span class="version-warning-V2 ghost">ghost</span>
                 </div>
-
             </div>
+
         </div>
-        <div class="footnote version-2-body">
-            <span class="version-warning-V2">*</span>This field is required
-        </div>
-    </form>
+</div>
+<div class="footnote version-2-body">
+    <span class="version-warning-V2">*</span>This field is required
+</div>
+</form>
 </div>

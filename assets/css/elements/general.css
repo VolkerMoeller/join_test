@@ -229,3 +229,24 @@
 .menu-icon-hvr {
     fill: var(--white);
 }
+
+
+.contactListBadge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contactListInitial {
+    color: var(--white);
+    font-size: 12px;
+}
+
+.contactListBtn label div:first-child svg {
+    cursor: pointer;
+}
+
+.contactListBtn label div:last-child {
+    cursor: pointer;
+}

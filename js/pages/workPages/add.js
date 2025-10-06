@@ -32,8 +32,8 @@ function initFocusInputAssigned() {
 function initOnclickDropDownOpen() {
     toggleElements('dropDownOpen', 'dropDownClose');
     focusInput('assigned');
-    makeSpaceforList();
     dropDownOpenById('userContactList');
+    // makeSpaceforList();
 }
 
 
@@ -54,7 +54,7 @@ function initOnclickDropDownClose() {
     resetOverlayFrame();
     emptyInputFieldById('assigned');
     dropDownCloseById('userContactList');
-    resetSpaceforList();
+    // resetSpaceforList();
 }
 
 
@@ -71,7 +71,6 @@ function resetSpaceforList() {
 
 
 function hoverCheckboxIcnsContactList(id1st, id2nd) {
-    console.log(id1st, id2nd);
     let id1stDef = id1st + 'Def';
     let id1stHvr = id1st + 'Hvr';
     let id2ndDef = id2nd + 'Def';

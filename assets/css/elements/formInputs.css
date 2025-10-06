@@ -139,6 +139,14 @@
     border: 1px solid var(--main2nd);
 }
 
+/* form-inputs-v3 for priority list */
+
+.form-inputs-v3 {
+    width: clamp(0px, 100%, 440px);
+    display: flex;
+    flex-direction: column;
+}
+
 .housing-fieldset {
     width: 100%;
     display: flex;

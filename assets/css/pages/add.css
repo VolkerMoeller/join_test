@@ -32,7 +32,7 @@
     scrollbar-width: thin;
     border-bottom: 1px solid var(--white);
     z-index: 0;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .user-contact-list span {
@@ -52,6 +52,7 @@
 }
 
 .contactListBtn {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
@@ -95,13 +96,13 @@
     from {
         max-height: 0px;
         z-index: 0;
-        opacity: 0;
+        /* opacity: 0; */
     }
 
     to {
         max-height: 250px;
         z-index: 3;
-        opacity: 1;
+        /* opacity: 1; */
         overflow: auto;
     }
 }

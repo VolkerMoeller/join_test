@@ -60,6 +60,14 @@
     cursor: pointer;
 }
 
+.contactListBtn:hover {
+    background-color: var(--drop-down-icon-V2);
+}
+
+.contactListBtn:hover div svg rect {
+    fill: var(--main-transp-10);
+}
+
 .contactListBtnLeft {
     display: flex;
     align-items: center;
@@ -71,9 +79,7 @@
     opacity: 1;
 }
 
-.checkbox-assigned:hover div svg rect {
-    fill: var(--main-transp-10);
-}
+
 
 /* .checkbox-assigned-container {
     position: relative;
@@ -135,6 +141,10 @@
 
 .checkbox-default {
     fill: var(--white);
+}
+
+.checkbox-assigned:hover div svg rect {
+    fill: var(--main2nd-transp-20);
 }
 
 @media (width <=1440px) {

@@ -7,6 +7,7 @@
 // initFocusInputAssigned()
 // initOnclickDropDownOpen()
 // initOnclickDropDownClose()
+// tglContactListBtnCSS()
 
 
 function setupAddElementsOnTop() {
@@ -37,16 +38,6 @@ function initOnclickDropDownOpen() {
 }
 
 
-function makeSpaceforList() {
-    let assignedInputs = document.getElementById('assignedInputs');
-    assignedInputs.setAttribute('style', 'height: 300px');
-    let mainCenterAddTask = document.getElementById('mainCenterAddTask');
-    mainCenterAddTask.scrollTo({
-        top: 300,
-        left: 0,
-        behavior: "smooth",
-    });
-}
 
 
 function initOnclickDropDownClose() {
@@ -58,27 +49,9 @@ function initOnclickDropDownClose() {
 }
 
 
-function resetSpaceforList() {
-    let assignedInputs = document.getElementById('assignedInputs');
-    assignedInputs.setAttribute('style', 'height: auto');
-    let mainCenterAddTask = document.getElementById('mainCenterAddTask');
-    mainCenterAddTask.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-    });
-}
 
 
-function hoverCheckboxIcnsContactList(id1st, id2nd) {
-    let id1stDef = id1st + 'Def';
-    let id1stHvr = id1st + 'Hvr';
-    let id2ndDef = id2nd + 'Def';
-    let id2ndHvr = id2nd + 'Hvr';
-    toggleElementsOpacity(id1stDef);
-    toggleElementsOpacity(id1stHvr);
-    toggleElementsOpacity(id2ndDef);
-    toggleElementsOpacity(id2ndHvr);
+function tglContactListBtnCSS(id) {
 
 }
 
@@ -96,10 +69,12 @@ function hoverCheckboxIcnsContactList(id1st, id2nd) {
 // toggleElements() --> main.js
 // focusInput() --> main.js
 // dropDownOpenById()
+// makeSpaceforList()
 
 // toggleElements() --> main.js
 // resetOverlayFrame() --> main.js
 // emptyInputFieldById() --> main.js
+// resetSpaceforList()
 
 
 function resetInputAssigned() {
@@ -127,6 +102,31 @@ function dropDownCloseById(id) {
     document.getElementById(id).classList.remove('drop-down-anim');
     document.getElementById(id).classList.add('drop-up-anim');
 }
+
+
+function makeSpaceforList() {
+    let assignedInputs = document.getElementById('assignedInputs');
+    assignedInputs.setAttribute('style', 'height: 300px');
+    let mainCenterAddTask = document.getElementById('mainCenterAddTask');
+    mainCenterAddTask.scrollTo({
+        top: 300,
+        left: 0,
+        behavior: "smooth",
+    });
+}
+
+
+function resetSpaceforList() {
+    let assignedInputs = document.getElementById('assignedInputs');
+    assignedInputs.setAttribute('style', 'height: auto');
+    let mainCenterAddTask = document.getElementById('mainCenterAddTask');
+    mainCenterAddTask.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
+}
+
 
 // --------------------
 // 2nd-level-functions:

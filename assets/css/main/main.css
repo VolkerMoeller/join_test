@@ -166,9 +166,14 @@ ul span {
 }
 
 .abs-cnt {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.rel {
+    position: relative;
 }
 
 label {
@@ -188,18 +193,6 @@ legend {
     margin-bottom: 12px;
     color: var(--menu-color);
 }
-
-.abs-cnt {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.rel {
-    position: relative;
-}
-
 
 .flx-cnt {
     display: flex;

@@ -11,42 +11,60 @@
 // tglContactListBtnCSS()
 
 
-function setupAddElementsOnTop() {
-    document.getElementById('assignedContainer').classList.add('z-index-4');
+function setupAddElementsOnTop(inputId) {
+    if (inputId == 'assigned') {
+        document.getElementById('assignedContainer').classList.add('z-index-4');
+    }
+    if (inputId == 'category') {
+        document.getElementById('categoryContainer').classList.add('z-index-4');
+
+    }
 }
 
 
-function resetOverlayFrameSelect() {
+function resetOverlayFrameSelect(inputId) {
     resetOverlayFrame();
-    resetInputAssigned();
-    dropDownCloseById('userContactList');
-    // resetSpaceforList();
+    if (inputId == 'assigned') {
+        resetInputAssigned();
+        dropDownCloseById('userContactList');
+        // resetSpaceforList();
+    }
+    if (inputId == 'category') {
+        resetInputCategory();
+        dropDownCloseById('categoryList');
+    }
 }
 
 
 function initFocusInputSelect(inputId) {
-    handleOverlayForSelect();
-    initToggleDropDown();
-    dropDownOpenById('userContactList');
+    handleOverlayForSelect(inputId);
+    initToggleDropDown(inputId);
+    if (inputId == 'assigned') {
+        dropDownOpenById('userContactList');
+    }
+    if (inputId == 'category') {
+        dropDownOpenById('categoryList');
+    }
+}
+
+function initOnclickDropDownOpen(inputId) {
+    if (inputId == 'assigned') {
+        toggleElements('dropDownAssOpen', 'dropDownAssClose');
+        focusInput('assigned');
+        dropDownOpenById('userContactList');
+        // makeSpaceforList();
+    }
 }
 
 
-function initOnclickDropDownOpen() {
-    toggleElements('dropDownOpen', 'dropDownClose');
-    focusInput('assigned');
-    dropDownOpenById('userContactList');
-    // makeSpaceforList();
-}
-
-
-
-
-function initOnclickDropDownClose() {
-    toggleElements('dropDownOpen', 'dropDownClose');
-    resetOverlayFrame();
-    emptyInputFieldById('assigned');
-    dropDownCloseById('userContactList');
-    // resetSpaceforList();
+function initOnclickDropDownClose(inputId) {
+    if (inputId == 'assigned') {
+        toggleElements('dropDownAssOpen', 'dropDownAssClose');
+        resetOverlayFrame();
+        emptyInputFieldById(inputId);
+        dropDownCloseById('userContactList');
+        // resetSpaceforList();
+    }
 }
 
 
@@ -55,6 +73,7 @@ function tglContactListBtnCSS(id) {
     document.getElementById(id).classList.toggle('contactListBtnClicked');
     tglCSSCheckBox(id);
 }
+
 
 function tglCSSCheckBox(id) {
     console.log('hier');
@@ -101,16 +120,30 @@ function tglCSSRect(id, classId) {
 
 
 function resetInputAssigned() {
-    toggleElements('dropDownOpen', 'dropDownClose');
+    toggleElements('dropDownAssOpen', 'dropDownAssClose');
     emptyInputFieldById('assigned');
 }
 
+function resetInputCategory() {
+    toggleElements('dropDownCatOpen', 'dropDownCatClose');
+    emptyInputFieldById('category');
+}
 
-function initToggleDropDown() {
-    let assignedBtnDefault = selectAssignedBtnDefault();
-    if (assignedBtnDefault) {
-        toggleElements('dropDownOpen', 'dropDownClose');
-        focusInput('assigned');
+
+function initToggleDropDown(inputId) {
+    if (inputId == 'assigned') {
+        let assignedBtnDefault = selectAssignedBtnDefault();
+        if (assignedBtnDefault) {
+            toggleElements('dropDownAssOpen', 'dropDownAssClose');
+            focusInput(inputId);
+        }
+    }
+    if (inputId == 'category') {
+        let assignedBtnDefault = selectAssignedBtnDefault();
+        if (assignedBtnDefault) {
+            toggleElements('dropDownCatOpen', 'dropDownCatClose');
+            focusInput(inputId);
+        }
     }
 }
 
@@ -166,9 +199,16 @@ function resetSpaceforList() {
 
 
 function selectAssignedBtnDefault() {
-    let dropDownOpen = false;
-    dropDownOpen = document.getElementById('dropDownClose').classList.contains('display-none');
-    return dropDownOpen;
+    let dropDownAssOpen = false;
+    dropDownAssOpen = document.getElementById('dropDownAssClose').classList.contains('display-none');
+    return dropDownAssOpen;
+}
+
+
+function selectCategoryBtnDefault() {
+    let dropDownCatOpen = false;
+    dropDownCatOpen = document.getElementById('dropDownCatClose').classList.contains('display-none');
+    return dropDownCatOpen;
 }
 
 

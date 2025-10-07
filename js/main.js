@@ -218,12 +218,12 @@ function handleOverlayForInput() {
 }
 
 
-function handleOverlayForSelect() {
+function handleOverlayForSelect(inputId) {
     let overlay = document.querySelector('.ovl-frame');
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
-        setupOverlayForSelect();
-        setupAddElementsOnTop();
+        setupOverlayForSelect(inputId);
+        setupAddElementsOnTop(inputId);
     }
 }
 
@@ -401,11 +401,11 @@ function setupOverlayForInput() {
 }
 
 
-function setupOverlayForSelect() {
+function setupOverlayForSelect(inputId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-select');
-    overlay.setAttribute('onclick', 'resetOverlayFrameSelect()')
+    overlay.setAttribute('onclick', `resetOverlayFrameSelect('${inputId}')`)
 }
 
 

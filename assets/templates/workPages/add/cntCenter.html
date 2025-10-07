@@ -84,12 +84,13 @@
                             <input class="version-2-t6" type="text" id="assigned" name="assigned"
                                 placeholder="Select contacts to assign" autocomplete="off"
                                 onfocus="initFocusInputSelect('assigned')">
-                            <div id="dropDownOpen" class="input-container-icon" onclick="initOnclickDropDownOpen()">
+                            <div id="dropDownAssOpen" class="input-container-icon"
+                                onclick="initOnclickDropDownOpen('assigned')">
                                 <button type="button" id="arrDropOpn" type="button"
                                     w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                             </div>
-                            <div id="dropDownClose" class="input-container-icon display-none"
-                                onclick="initOnclickDropDownClose()">
+                            <div id="dropDownAssClose" class="input-container-icon display-none"
+                                onclick="initOnclickDropDownClose('assigned')">
                                 <button type="button" id="arrDropClo" type="button"
                                     w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                             </div>
@@ -139,25 +140,25 @@
                     </div>
                     <span class="version-warning-V2 ghost">ghost</span>
                 </div>
-                <div id="assignedInputs" class="form-inputs-v2">
+                <div id="categoryInputs" class="form-inputs-v2">
                     <div class="housing-input">
                         <label for="assigned">Category<span>*</span></label>
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6" type="text" id="category" name="category"
                                 placeholder="Select task category" autocomplete="off"
-                                onfocus="initFocusInputCategory()">
-                            <div id="dropDownCategoryOpen" class="input-container-icon"
-                                onclick="initOnclickDropDownOpen()">
+                                onfocus="initFocusInputSelect('category')">
+                            <div id="dropDownCatOpen" class="input-container-icon"
+                                onclick="initOnclickDropDownOpen('category')">
                                 <button type="button" id="arrDropOpn" type="button"
                                     w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                             </div>
-                            <div id="dropDownCategoryClose" class="input-container-icon display-none"
-                                onclick="initOnclickDropDownClose()">
+                            <div id="dropDownCatClose" class="input-container-icon display-none"
+                                onclick="initOnclickDropDownClose('category')">
                                 <button type="button" id="arrDropClo" type="button"
                                     w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                             </div>
                         </div>
-                        <div id="userContactList" class="user-contact-list">
+                        <div id="category" class="user-contact-list">
                             <button id="contactListBtn0" class="contactListBtn" type="button"
                                 onclick="toggleElements('3checked0', '5default0'); checkIfChecked('5default0'); tglContactListBtnCSS('contactListBtn0')">
                                 <div class=" contactListBtnLeft">

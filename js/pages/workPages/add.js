@@ -17,7 +17,15 @@ function setupAddElementsOnTop(inputId) {
     }
     if (inputId == 'category') {
         document.getElementById('categoryContainer').classList.add('z-index-4');
+    }
+}
 
+function resetAddElementsDefault(inputId) {
+    if (inputId == 'assigned') {
+        document.getElementById('assignedContainer').classList.remove('z-index-4');
+    }
+    if (inputId == 'category') {
+        document.getElementById('categoryContainer').classList.remove('z-index-4');
     }
 }
 
@@ -27,11 +35,12 @@ function resetOverlayFrameSelect(inputId) {
     if (inputId == 'assigned') {
         resetInputAssigned();
         dropDownCloseById('userContactList');
-        // resetSpaceforList();
+        resetAddElementsDefault(inputId);
     }
     if (inputId == 'category') {
         resetInputCategory();
         dropDownCloseById('categoryList');
+        resetAddElementsDefault(inputId);
     }
 }
 
@@ -50,9 +59,13 @@ function initFocusInputSelect(inputId) {
 function initOnclickDropDownOpen(inputId) {
     if (inputId == 'assigned') {
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
-        focusInput('assigned');
+        // focusInput('assigned');
         dropDownOpenById('userContactList');
-        // makeSpaceforList();
+    }
+    if (inputId == 'category') {
+        toggleElements('dropDownCatOpen', 'dropDownCatClose');
+        // focusInput('category');
+        dropDownOpenById('categoryList');
     }
 }
 
@@ -63,7 +76,14 @@ function initOnclickDropDownClose(inputId) {
         resetOverlayFrame();
         emptyInputFieldById(inputId);
         dropDownCloseById('userContactList');
-        // resetSpaceforList();
+        resetAddElementsDefault(inputId);
+    }
+    if (inputId == 'category') {
+        toggleElements('dropDownCatOpen', 'dropDownCatClose');
+        resetOverlayFrame();
+        emptyInputFieldById(inputId);
+        dropDownCloseById('categoryList');
+        resetAddElementsDefault(inputId);
     }
 }
 

@@ -86,12 +86,12 @@
                                 onfocus="initFocusInputSelect('assigned')">
                             <div id="dropDownAssOpen" class="input-container-icon"
                                 onclick="initOnclickDropDownOpen('assigned')">
-                                <button type="button" id="arrDropOpn" type="button"
+                                <button type="button" type="button"
                                     w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                             </div>
                             <div id="dropDownAssClose" class="input-container-icon display-none"
                                 onclick="initOnclickDropDownClose('assigned')">
-                                <button type="button" id="arrDropClo" type="button"
+                                <button type="button" type="button"
                                     w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                             </div>
                         </div>
@@ -142,62 +142,28 @@
                 </div>
                 <div id="categoryInputs" class="form-inputs-v2">
                     <div class="housing-input">
-                        <label for="assigned">Category<span>*</span></label>
+                        <label for="category">Category<span>*</span></label>
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6" type="text" id="category" name="category"
                                 placeholder="Select task category" autocomplete="off"
                                 onfocus="initFocusInputSelect('category')">
                             <div id="dropDownCatOpen" class="input-container-icon"
                                 onclick="initOnclickDropDownOpen('category')">
-                                <button type="button" id="arrDropOpn" type="button"
+                                <button type="button" type="button"
                                     w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                             </div>
                             <div id="dropDownCatClose" class="input-container-icon display-none"
                                 onclick="initOnclickDropDownClose('category')">
-                                <button type="button" id="arrDropClo" type="button"
+                                <button type="button" type="button"
                                     w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                             </div>
                         </div>
-                        <div id="category" class="user-contact-list">
-                            <button id="contactListBtn0" class="contactListBtn" type="button"
-                                onclick="toggleElements('3checked0', '5default0'); checkIfChecked('5default0'); tglContactListBtnCSS('contactListBtn0')">
-                                <div class=" contactListBtnLeft">
-                                    <div class="rel">
-                                        <div class="contactListBadge"
-                                            w3-include-svg="./assets/img/svgHTML/40-badge.html">
-                                        </div>
-                                        <div class="abs-cnt contactListInitial">SM</div>
-                                    </div>
-                                    <span>Sophia Müller YOU</span>
-                                </div>
-                                <div class="checkbox-assigned" id="contact0" name="contact0">
-                                    <div id="5default0" class="rel"
-                                        w3-include-svg="./assets/img/svgHTML/041-default.html">
-                                    </div>
-                                    <div id="3checked0" class="display-none"
-                                        w3-include-svg="./assets/img/svgHTML/021-checked.html">
-                                    </div>
-                                </div>
+                        <div id="categoryList" class="user-contact-list">
+                            <button id="categoryTechnicalTask" class="contactListBtn" type="button">
+                                <span>Technical Task</span>
                             </button>
-                            <button id="contactListBtn1" class="contactListBtn" type="button"
-                                onclick="toggleElements('3checked1', '5default1'); checkIfChecked('5default1'); tglContactListBtnCSS('contactListBtn1')">
-                                <div class=" contactListBtnLeft">
-                                    <div class="rel">
-                                        <div class="contactListBadge"
-                                            w3-include-svg="./assets/img/svgHTML/40-badge.html">
-                                        </div>
-                                        <div class="abs-cnt contactListInitial">AM</div>
-                                    </div>
-                                    <span>Anton Meyer</span>
-                                </div>
-                                <div class="checkbox-assigned" id="contact1" name="contact1">
-                                    <div id="5default1" class="rel"
-                                        w3-include-svg="./assets/img/svgHTML/041-default.html">
-                                    </div>
-                                    <div id="3checked1" class="display-none"
-                                        w3-include-svg="./assets/img/svgHTML/021-checked.html">
-                                    </div>
-                                </div>
+                            <button id="categoryUserStory" class="contactListBtn" type="button">
+                                <span>User Story</span>
                             </button>
                         </div>
                     </div>

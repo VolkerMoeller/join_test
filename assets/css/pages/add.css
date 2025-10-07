@@ -75,9 +75,18 @@
 }
 
 
-.checkbox-assigned {
-    opacity: 1;
+.checkbox-default {
+    fill: var(--white);
 }
+
+.checkbox-assigned:hover div svg rect {
+    fill: var(--main2nd-transp-20);
+}
+
+
+/* .checkbox-assigned {
+    opacity: 1;
+} */
 
 
 
@@ -139,13 +148,7 @@
     }
 }
 
-.checkbox-default {
-    fill: var(--white);
-}
 
-.checkbox-assigned:hover div svg rect {
-    fill: var(--main2nd-transp-20);
-}
 
 @media (width <=1440px) {
     .add-task-vector {

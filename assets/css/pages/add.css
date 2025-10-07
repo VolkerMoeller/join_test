@@ -104,8 +104,20 @@
     gap: 16px;
 }
 
-.checkbox-default {
+.checkbox-default-rect {
     fill: var(--white);
+}
+
+.checkbox-checked-rect {
+    fill: var(--main);
+}
+
+.checkbox-default-path {
+    stroke: var(--main);
+}
+
+.checkbox-clicked-path {
+    stroke: var(--white);
 }
 
 .checkbox-assigned:hover div svg rect {

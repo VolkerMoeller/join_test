@@ -52,8 +52,31 @@ function initOnclickDropDownClose() {
 function tglContactListBtnCSS(id) {
     document.getElementById(id).classList.toggle('contactListBtn');
     document.getElementById(id).classList.toggle('contactListBtnClicked');
+    tglCSSCheckBox(id);
 }
 
+function tglCSSCheckBox(id) {
+    console.log('hier');
+    let rectId = id + 'Rect';
+    let path0Id = id + 'Path0';
+    let path1Id = id + 'Path1';
+    let rectClassDef = 'checkbox-default-rect';
+    let pathClassDef = 'checkbox-default-path';
+    let rectClassClicked = 'checkbox-clicked-rect';
+    let pathClassClicked = 'checkbox-clicked-path';
+    tglCSSRect(rectId, rectClassDef);
+    tglCSSRect(rectId, rectClassClicked);
+    tglCSSRect(path0Id, pathClassDef);
+    tglCSSRect(path0Id, pathClassClicked);
+    tglCSSRect(path1Id, pathClassDef);
+    tglCSSRect(path1Id, pathClassClicked);
+}
+
+
+function tglCSSRect(id, classId) {
+    document.getElementById(id).classList.toggle(classId);
+
+}
 
 // --------------------
 // 1st-level-functions:

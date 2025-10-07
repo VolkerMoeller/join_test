@@ -242,11 +242,3 @@
     color: var(--white);
     font-size: 12px;
 }
-
-.contactListBtn label div:first-child svg {
-    cursor: pointer;
-}
-
-.contactListBtn label div:last-child {
-    cursor: pointer;
-}

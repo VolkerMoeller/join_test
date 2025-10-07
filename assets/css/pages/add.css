@@ -68,12 +68,28 @@
     fill: var(--main-transp-10);
 }
 
+.contactListBtnClicked {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+.contactListBtnClicked:hover {
+    background-color: var(--drop-down-icon-V2);
+}
+
+.contactListBtnClicked:hover div svg rect {
+    fill: var(--main-transp-10);
+}
+
 .contactListBtnLeft {
     display: flex;
     align-items: center;
     gap: 16px;
 }
-
 
 .checkbox-default {
     fill: var(--white);
@@ -82,28 +98,6 @@
 .checkbox-assigned:hover div svg rect {
     fill: var(--main2nd-transp-20);
 }
-
-
-/* .checkbox-assigned {
-    opacity: 1;
-} */
-
-
-
-/* .checkbox-assigned-container {
-    position: relative;
-}
-
-.checkbox-assigned-container div:first-child {
-    cursor: pointer;
-}
-
-.checkbox-assigned-container div:last-child {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
 
 .drop-down-anim {
     animation-duration: 112ms;

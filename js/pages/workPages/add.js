@@ -49,10 +49,9 @@ function initOnclickDropDownClose() {
 }
 
 
-
-
 function tglContactListBtnCSS(id) {
-
+    document.getElementById(id).classList.toggle('contactListBtn');
+    document.getElementById(id).classList.toggle('contactListBtnClicked');
 }
 
 

@@ -35,10 +35,10 @@
     /* opacity: 0; */
 }
 
-.user-contact-list span {
+/* .user-contact-list span {
     color: var(--black);
     font-size: 16px;
-}
+} */
 
 .user-contact-list input {
     position: relative;
@@ -52,12 +52,19 @@
 }
 
 .contactListBtn {
+    color: var(--black);
+    font-size: 16px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
     padding: 7px 10px;
     cursor: pointer;
+}
+
+.contactListBtn span {
+    color: var(--black);
+    font-size: 16px;
 }
 
 .contactListBtn:hover {
@@ -75,13 +82,19 @@
     border-radius: 10px;
     padding: 7px 10px;
     cursor: pointer;
+    background-color: var(--main);
+}
+
+.contactListBtnClicked span {
+    color: var(--white);
+    font-size: 16px;
 }
 
 .contactListBtnClicked:hover {
-    background-color: var(--drop-down-icon-V2);
+    background-color: var(--nav-left-button);
 }
 
-.contactListBtnClicked:hover div svg rect {
+.contactListBtnCli:hover div svg rect {
     fill: var(--main-transp-10);
 }
 

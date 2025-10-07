@@ -4,7 +4,8 @@
 
 // setupAddElementsOnTop()
 // resetOverlayFrameSelect()
-// initFocusInputAssigned()
+// initFocusInputSelect()
+// initFocusInputCategory()
 // initOnclickDropDownOpen()
 // initOnclickDropDownClose()
 // tglContactListBtnCSS()
@@ -18,12 +19,12 @@ function setupAddElementsOnTop() {
 function resetOverlayFrameSelect() {
     resetOverlayFrame();
     resetInputAssigned();
-    resetSpaceforList();
     dropDownCloseById('userContactList');
+    // resetSpaceforList();
 }
 
 
-function initFocusInputAssigned() {
+function initFocusInputSelect(inputId) {
     handleOverlayForSelect();
     initToggleDropDown();
     dropDownOpenById('userContactList');

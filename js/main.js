@@ -217,6 +217,7 @@ function handleOverlayForInput() {
     }
 }
 
+
 function handleOverlayForSelect() {
     let overlay = document.querySelector('.ovl-frame');
     let overlayNotShown = overlay.classList.contains('ovl-hide');

@@ -200,10 +200,6 @@
     border: none;
 }
 
-/* .category-list .radio-frame input[type="radio"]:focus {
-    background-color: var(--drop-down-icon-V2);
-} */
-
 .radio-urgent input[type="radio"]:checked {
     transition: var(--smart-animation-80-in-out);
     background-color: var(--urgent);

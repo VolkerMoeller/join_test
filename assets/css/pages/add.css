@@ -151,6 +151,10 @@
     animation-timing-function: ease-in;
 }
 
+.select::placeholder {
+    color: var(--black);
+}
+
 @keyframes drop-down {
     from {
         max-height: 0px;

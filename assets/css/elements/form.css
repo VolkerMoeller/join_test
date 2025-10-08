@@ -68,7 +68,7 @@
     position: absolute;
     display: flex;
     align-items: center;
-    width: 264px;
+    width: 308px;
 }
 
 .checkbox-icn-container {
@@ -169,6 +169,10 @@
     .form-btn-back {
         top: 40px;
         left: 24px;
+    }
+
+    .checkbox-wth-icn-container {
+        width: 264px;
     }
 }
 

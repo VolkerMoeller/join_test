@@ -58,14 +58,17 @@ function initFocusInputSelect(inputId) {
 
 
 function initOnclickDropDownOpen(inputId) {
+    let justOpened = false;
     if (inputId == 'assigned') {
-        handleOverlayForSelect(inputId);
+        justOpened = selectAssignedBtnDefault();
+    }
+    handleOverlayForSelect(inputId);
+    if (inputId == 'assigned') {
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
         // focusInput('assigned');
         dropDownOpenById('userContactList');
     }
     if (inputId == 'category') {
-        handleOverlayForSelect(inputId);
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
         // focusInput('category');
         dropDownOpenById('categoryList');
@@ -162,7 +165,7 @@ function initToggleDropDown(inputId) {
         }
     }
     if (inputId == 'category') {
-        let assignedBtnDefault = selectAssignedBtnDefault();
+        let assignedBtnDefault = selectCategoryBtnDefault();
         if (assignedBtnDefault) {
             toggleElements('dropDownCatOpen', 'dropDownCatClose');
             focusInput(inputId);

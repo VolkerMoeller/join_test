@@ -84,6 +84,7 @@ function initOnclickDropDownClose(inputId) {
         emptyInputFieldById(inputId);
         dropDownCloseById('userContactList');
         resetAddElementsDefault(inputId);
+        document.getElementById('userContactList').classList.remove('drop-up-anim');
     }
     if (inputId == 'category') {
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
@@ -91,6 +92,7 @@ function initOnclickDropDownClose(inputId) {
         emptyInputFieldById(inputId);
         dropDownCloseById('categoryList');
         resetAddElementsDefault(inputId);
+        document.getElementById('categoryList').classList.remove('drop-up-anim');
     }
 }
 

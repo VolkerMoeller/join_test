@@ -83,7 +83,6 @@
     cursor: text;
 }
 
-
 .input-container-icon button:hover svg rect {
     fill: var(--drop-down-icon-V2);
 }
@@ -153,7 +152,7 @@
     flex-direction: column;
 }
 
-input[type="radio"] {
+.priority-list .radio-frame input[type="radio"] {
     width: 136px;
     height: 56px;
     display: flex;
@@ -166,18 +165,39 @@ input[type="radio"] {
     box-shadow: var(--nuevo);
 }
 
-input[type="radio"]:hover {
+
+.priority-list .radio-frame input[type="radio"]:hover {
     box-shadow: var(--stronger);
 }
 
-input[type="radio"]:checked~label div svg path {
+
+.priority-list .radio-frame input[type="radio"]:checked~label div svg path {
     transition: var(--smart-animation-80-in-out);
     fill: var(--white);
 }
 
-input[type="radio"]:checked~label div svg g path {
+
+.priority-list .radio-frame input[type="radio"]:checked~label div svg g path {
     transition: var(--smart-animation-80-in-out);
     fill: var(--white);
+}
+
+.priority-list .radio-frame input[type="radio"]:checked~.label-frame {
+    transition: var(--smart-animation-100-in-out);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.category-list .radio-frame input[type="radio"] {
+    width: 100%;
+    display: flex;
+    appearance: none;
+    background-color: var(--white);
+    padding: 16px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0;
+    border: none;
 }
 
 .radio-urgent input[type="radio"]:checked {
@@ -196,28 +216,38 @@ input[type="radio"]:checked~label div svg g path {
     background-color: var(--low);
 }
 
-input[type="radio"]:checked~.label-frame {
-    transition: var(--smart-animation-100-in-out);
-    color: var(--white);
-    font-weight: bold;
-}
 
 .radio-frame {
     position: relative;
     display: flex;
 }
 
-.label-frame {
+.priority-list .radio-frame .label-frame {
+    display: flex;
+    align-items: center;
+    justify-self: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    display: flex;
     gap: 8px;
+}
+
+.category-list .radio-frame .label-frame {
     display: flex;
     align-items: center;
-    justify-self: center;
+    justify-self: left;
+    position: absolute;
+    top: 50%;
+    left: 21px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    gap: 8px;
+}
+
+.category-list .radio-frame input[type="radio"]:hover {
+    background-color: var(--drop-down-icon-V2);
 }
 
 .label-frame label {
@@ -258,7 +288,7 @@ input[type="radio"]:checked~.label-frame {
         height: 88px;
     }
 
-    input[type="radio"] {
+    .priority-list .radio-frame input[type="radio"] {
         width: 121.33px;
         height: 41px;
         padding: 18px 10px;

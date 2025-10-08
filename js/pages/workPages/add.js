@@ -124,6 +124,13 @@ function tglCSSRect(id, classId) {
 
 }
 
+
+function handleCategorySelection(text) {
+    let category = document.getElementById('category');
+    category.value = text;
+    category.placeholder = text;
+}
+
 // --------------------
 // 1st-level-functions:
 // --------------------

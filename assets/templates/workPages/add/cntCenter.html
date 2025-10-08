@@ -158,16 +158,30 @@
                                     w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                             </div>
                         </div>
-                        <div id="categoryList" class="user-contact-list">
+                        <!-- <div id="categoryList" class="user-contact-list">
                             <button id="categoryTechnicalTask" class="categoryBtn" type="button"
-                                onclick="initOnclickDropDownClose('category')">
+                                onclick="handleCategorySelection('Technical Task'); initOnclickDropDownClose('category')">
                                 <span>Technical Task</span>
                             </button>
                             <button id="categoryUserStory" class="categoryBtn" type="button"
-                                onclick="initOnclickDropDownClose('category')">
+                                onclick="handleCategorySelection('User Story'); initOnclickDropDownClose('category')">
                                 <span>User Story</span>
                             </button>
-                        </div>
+                        </div> -->
+                        <fieldset id="categoryList" class="category-list">
+                            <div class="radio-frame">
+                                <input type="radio" id="technicalTask" name="category" value="Technical Task" />
+                                <div class="label-frame">
+                                    <label for="technicalTask">Technical Task</label>
+                                </div>
+                            </div>
+                            <div class="radio-frame">
+                                <input type="radio" id="userStory" name="category" value="User Story" />
+                                <div class="label-frame">
+                                    <label for="userStory">User Story</label>
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
                     <span class="version-warning-V2 ghost">ghost</span>
                 </div>

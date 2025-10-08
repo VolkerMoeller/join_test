@@ -65,12 +65,12 @@ function initOnclickDropDownOpen(inputId) {
     handleOverlayForSelect(inputId);
     if (inputId == 'assigned') {
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
-        // focusInput('assigned');
+        focusInput('assigned');
         dropDownOpenById('userContactList');
     }
     if (inputId == 'category') {
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
-        // focusInput('category');
+        focusInput('category');
         dropDownOpenById('categoryList');
     }
 }

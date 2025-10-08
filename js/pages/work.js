@@ -246,14 +246,12 @@ function showCurrentContent() {
     let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
     let currentCntId = provideCurrentContentId(selectedMenuBtnId);
     document.getElementById(currentCntId).classList.remove('display-none');
-    // resetHelpBtns();
 }
 
 
 function showHelpContent() {
     hideAllWorkContent();
     document.getElementById('cntCenterHelp').classList.remove('display-none');
-    // hideHelpBtns();
 }
 
 
@@ -261,7 +259,6 @@ function showInfoContentById(cntId) {
     resetNavigationView();
     hideAllWorkContent();
     document.getElementById(cntId).classList.remove('display-none');
-    // hideHelpBtns();
     setTxtBtnInfoById(cntId);
 }
 
@@ -390,7 +387,6 @@ function hideSmallMenu() {
 
 function initOvlFrameForAnimMenu() {
     let ovlFrame = document.querySelector('.ovl-frame');
-    // ovlFrame.classList.remove('ovl-show-anim-bg');
     ovlFrame.classList.remove('ovl-hide');
     ovlFrame.classList.add('ovl-show-nav');
 }

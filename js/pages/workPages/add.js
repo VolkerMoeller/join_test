@@ -10,6 +10,7 @@
 // initOnclickDropDownClose()
 // tglContactListBtnCSS()
 // handleCategorySelection()
+// checkIfChecked(id)
 
 
 // 1st
@@ -116,6 +117,14 @@ function handleCategorySelection(text) {
     category.placeholder = text;
 }
 
+// 9th
+function checkIfChecked(id) {
+    let checked = false;
+    checked = document.getElementById(id).classList.contains('display-none');
+    return checked;
+}
+
+
 // --------------------
 // 1st-level-functions:
 // --------------------
@@ -200,12 +209,6 @@ function initToggleDropDown(inputId) {
 }
 
 
-function selectAssignedBtnDefault() {
-    let dropDownAssOpen = false;
-    dropDownAssOpen = document.getElementById('dropDownAssClose').classList.contains('display-none');
-    return dropDownAssOpen;
-}
-
 
 function dropDownOpenById(id) {
     document.getElementById(id).classList.add('drop-down-anim');
@@ -260,29 +263,33 @@ function tglCSSCheckBox(id) {
 // --------------------
 
 // toggleElements() --> main.js
-// emptyInputFieldById() --> main-js
+// emptyInputFieldById() --> main.js
+
+// toggleElements() --> main.js
+// emptyInputFieldById() --> main.js
 
 // selectAssignedBtnDefault()
+// toggleElements() --> main.js
+// focusInput() --> main.js
 
+// selectCategoryBtnDefault()
 // toggleElements() --> main.js
 // focusInput() --> main.js
 
 //  tglCSSRect()
 
 
+function selectAssignedBtnDefault() {
+    let dropDownAssOpen = false;
+    dropDownAssOpen = document.getElementById('dropDownAssClose').classList.contains('display-none');
+    return dropDownAssOpen;
+}
 
 
 function selectCategoryBtnDefault() {
     let dropDownCatOpen = false;
     dropDownCatOpen = document.getElementById('dropDownCatClose').classList.contains('display-none');
     return dropDownCatOpen;
-}
-
-
-function checkIfChecked(id) {
-    let checked = false;
-    checked = document.getElementById(id).classList.contains('display-none');
-    return checked;
 }
 
 

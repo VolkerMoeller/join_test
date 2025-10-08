@@ -3,14 +3,16 @@
 // ----------------
 
 // setupAddElementsOnTop()
+// resetAddElementsDefault()
 // resetOverlayFrameSelect()
 // initFocusInputSelect()
-// initFocusInputCategory()
 // initOnclickDropDownOpen()
 // initOnclickDropDownClose()
 // tglContactListBtnCSS()
+// handleCategorySelection()
 
 
+// 1st
 function setupAddElementsOnTop(inputId) {
     if (inputId == 'assigned') {
         document.getElementById('assignedContainer').classList.add('z-index-4');
@@ -20,6 +22,7 @@ function setupAddElementsOnTop(inputId) {
     }
 }
 
+// 2nd
 function resetAddElementsDefault(inputId) {
     if (inputId == 'assigned') {
         document.getElementById('assignedContainer').classList.remove('z-index-4');
@@ -30,6 +33,7 @@ function resetAddElementsDefault(inputId) {
 }
 
 
+// 3rd
 function resetOverlayFrameSelect(inputId) {
     resetOverlayFrame();
     if (inputId == 'assigned') {
@@ -45,6 +49,7 @@ function resetOverlayFrameSelect(inputId) {
 }
 
 
+// 4th
 function initFocusInputSelect(inputId) {
     handleOverlayForSelect(inputId);
     initToggleDropDown(inputId);
@@ -58,8 +63,8 @@ function initFocusInputSelect(inputId) {
 }
 
 
+// 5th
 function initOnclickDropDownOpen(inputId) {
-    let justOpened = false;
     if (inputId == 'assigned') {
         justOpened = selectAssignedBtnDefault();
     }
@@ -71,12 +76,11 @@ function initOnclickDropDownOpen(inputId) {
     }
     if (inputId == 'category') {
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
-        // focusInput('category');
         dropDownOpenById('categoryList');
     }
 }
 
-
+// 6th
 function initOnclickDropDownClose(inputId) {
     if (inputId == 'assigned') {
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
@@ -97,6 +101,7 @@ function initOnclickDropDownClose(inputId) {
 }
 
 
+// 7th
 function tglContactListBtnCSS(id) {
     document.getElementById(id).classList.toggle('contactListBtn');
     document.getElementById(id).classList.toggle('contactListBtnClicked');
@@ -104,29 +109,7 @@ function tglContactListBtnCSS(id) {
 }
 
 
-function tglCSSCheckBox(id) {
-    console.log('hier');
-    let rectId = id + 'Rect';
-    let path0Id = id + 'Path0';
-    let path1Id = id + 'Path1';
-    let rectClassDef = 'checkbox-default-rect';
-    let pathClassDef = 'checkbox-default-path';
-    let rectClassClicked = 'checkbox-clicked-rect';
-    let pathClassClicked = 'checkbox-clicked-path';
-    tglCSSRect(rectId, rectClassDef);
-    tglCSSRect(rectId, rectClassClicked);
-    tglCSSRect(path0Id, pathClassDef);
-    tglCSSRect(path0Id, pathClassClicked);
-    tglCSSRect(path1Id, pathClassDef);
-    tglCSSRect(path1Id, pathClassClicked);
-}
-
-
-function tglCSSRect(id, classId) {
-    document.getElementById(id).classList.toggle(classId);
-}
-
-
+// 8th
 function handleCategorySelection(text) {
     let category = document.getElementById('category');
     category.value = text;
@@ -137,27 +120,61 @@ function handleCategorySelection(text) {
 // 1st-level-functions:
 // --------------------
 
+// 3rd
 // resetOverlayFrame() --> main.js
 // resetInputAssigned()
+// dropDownCloseById()
+// resetAddElementsDefault() --> see above
+// resetInputCategory()
+// dropDownCloseById() --> see above
+// resetAddElementsDefault() --> see above
 
+
+// 4th
 // handleOverlayForSelect() --> main.js
 // initToggleDropDown()
+// dropDownOpenById() --> see above
+// dropDownOpenById() --> see above
 
+
+// 5th
+// selectAssignedBtnDefault()
+// handleOverlayForSelect() --> main.js
 // toggleElements() --> main.js
 // focusInput() --> main.js
-// dropDownOpenById()
-// makeSpaceforList()
+// dropDownOpenById() --> see above
+// toggleElements() --> main.js
+// dropDownOpenById() -->see above
 
+
+// 6th
 // toggleElements() --> main.js
 // resetOverlayFrame() --> main.js
 // emptyInputFieldById() --> main.js
-// resetSpaceforList()
+// dropDownCloseById() --> see above
+// resetAddElementsDefault() --> see above
+// toggleElements() --> main.js
+// resetOverlayFrame() --> main.js
+// emptyInputFieldById() --> main.js
+// dropDownCloseById() --> see above
+// resetAddElementsDefault() --> see above
+
+
+// 7th
+//  tglCSSCheckBox()
 
 
 function resetInputAssigned() {
     toggleElements('dropDownAssOpen', 'dropDownAssClose');
     emptyInputFieldById('assigned');
 }
+
+
+function dropDownCloseById(id) {
+    document.getElementById(id).classList.remove('drop-down-anim');
+    document.getElementById(id).classList.add('drop-up-anim');
+}
+
 
 function resetInputCategory() {
     toggleElements('dropDownCatOpen', 'dropDownCatClose');
@@ -183,15 +200,16 @@ function initToggleDropDown(inputId) {
 }
 
 
-function dropDownOpenById(id) {
-    document.getElementById(id).classList.add('drop-down-anim');
-    document.getElementById(id).classList.remove('drop-up-anim');
+function selectAssignedBtnDefault() {
+    let dropDownAssOpen = false;
+    dropDownAssOpen = document.getElementById('dropDownAssClose').classList.contains('display-none');
+    return dropDownAssOpen;
 }
 
 
-function dropDownCloseById(id) {
-    document.getElementById(id).classList.remove('drop-down-anim');
-    document.getElementById(id).classList.add('drop-up-anim');
+function dropDownOpenById(id) {
+    document.getElementById(id).classList.add('drop-down-anim');
+    document.getElementById(id).classList.remove('drop-up-anim');
 }
 
 
@@ -219,6 +237,24 @@ function resetSpaceforList() {
 }
 
 
+function tglCSSCheckBox(id) {
+    console.log('hier');
+    let rectId = id + 'Rect';
+    let path0Id = id + 'Path0';
+    let path1Id = id + 'Path1';
+    let rectClassDef = 'checkbox-default-rect';
+    let pathClassDef = 'checkbox-default-path';
+    let rectClassClicked = 'checkbox-clicked-rect';
+    let pathClassClicked = 'checkbox-clicked-path';
+    tglCSSRect(rectId, rectClassDef);
+    tglCSSRect(rectId, rectClassClicked);
+    tglCSSRect(path0Id, pathClassDef);
+    tglCSSRect(path0Id, pathClassClicked);
+    tglCSSRect(path1Id, pathClassDef);
+    tglCSSRect(path1Id, pathClassClicked);
+}
+
+
 // --------------------
 // 2nd-level-functions:
 // --------------------
@@ -231,13 +267,9 @@ function resetSpaceforList() {
 // toggleElements() --> main.js
 // focusInput() --> main.js
 
+//  tglCSSRect()
 
 
-function selectAssignedBtnDefault() {
-    let dropDownAssOpen = false;
-    dropDownAssOpen = document.getElementById('dropDownAssClose').classList.contains('display-none');
-    return dropDownAssOpen;
-}
 
 
 function selectCategoryBtnDefault() {
@@ -251,4 +283,9 @@ function checkIfChecked(id) {
     let checked = false;
     checked = document.getElementById(id).classList.contains('display-none');
     return checked;
+}
+
+
+function tglCSSRect(id, classId) {
+    document.getElementById(id).classList.toggle(classId);
 }

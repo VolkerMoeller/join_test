@@ -56,13 +56,16 @@ function initFocusInputSelect(inputId) {
     }
 }
 
+
 function initOnclickDropDownOpen(inputId) {
     if (inputId == 'assigned') {
+        handleOverlayForSelect(inputId);
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
         // focusInput('assigned');
         dropDownOpenById('userContactList');
     }
     if (inputId == 'category') {
+        handleOverlayForSelect(inputId);
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
         // focusInput('category');
         dropDownOpenById('categoryList');

@@ -146,7 +146,7 @@
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="category" name="category"
                                 placeholder="Select task category" autocomplete="off"
-                                onfocus="initFocusInputSelect('category')">
+                                onclick="initFocusInputSelect('category')">
                             <div id="dropDownCatOpen" class="input-container-icon"
                                 onclick="initOnclickDropDownOpen('category')">
                                 <button type="button" type="button"
@@ -170,13 +170,15 @@
                         </div> -->
                         <fieldset id="categoryList" class="category-list">
                             <div class="radio-frame">
-                                <input type="radio" id="technicalTask" name="category" value="Technical Task" />
+                                <input type="radio" id="technicalTask" name="category" value="Technical Task"
+                                    onclick="handleCategorySelection('Technical Task'); initOnclickDropDownClose('category')" />
                                 <div class="label-frame">
                                     <label for="technicalTask">Technical Task</label>
                                 </div>
                             </div>
                             <div class="radio-frame">
-                                <input type="radio" id="userStory" name="category" value="User Story" />
+                                <input type="radio" id="userStory" name="category" value="User Story"
+                                    onclick="handleCategorySelection('User Story'); initOnclickDropDownClose('category')" />
                                 <div class="label-frame">
                                     <label for="userStory">User Story</label>
                                 </div>

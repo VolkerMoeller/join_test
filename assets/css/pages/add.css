@@ -148,6 +148,7 @@
 .categoryBtn:hover {
     background-color: var(--drop-down-icon-V2);
 }
+
 .checkbox-default-rect {
     fill: var(--white);
 }

@@ -53,6 +53,7 @@ function initFocusInputSelect(inputId) {
     }
     if (inputId == 'category') {
         dropDownOpenById('categoryList');
+        document.getElementById('technicalTask').focus();
     }
 }
 
@@ -70,7 +71,7 @@ function initOnclickDropDownOpen(inputId) {
     }
     if (inputId == 'category') {
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
-        focusInput('category');
+        // focusInput('category');
         dropDownOpenById('categoryList');
     }
 }
@@ -121,7 +122,6 @@ function tglCSSCheckBox(id) {
 
 function tglCSSRect(id, classId) {
     document.getElementById(id).classList.toggle(classId);
-
 }
 
 

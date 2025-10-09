@@ -94,7 +94,7 @@
     height: 26px;
 }
 
-/* frame add task (v2)*/
+/* frame add task (v2) left */
 
 .form-inputs-frame-v2 {
     width: clamp(0%, 100%, 440px);
@@ -137,6 +137,17 @@
 .form-inputs-v2 textarea:focus {
     border: 1px solid var(--main2nd);
 }
+
+/* frame add task (v3) right*/
+
+.form-inputs-frame-v3 {
+    width: clamp(0%, 100%, 440px);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;
+}
+
 
 /* form-inputs-v3 for priority list */
 

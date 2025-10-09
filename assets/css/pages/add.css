@@ -1,14 +1,6 @@
-/* #mainCenterAddTask {
-    overflow: auto;
-} */
-
-/* #mainCenterAddTask::-webkit-scrollbar {
-    display: none;
-} */
-
 .add-task-vector {
-    border-radius: 2px;
-    border: solid 2px var(--input-border);
+    border-radius: 1px;
+    border: solid 1px var(--input-border);
 }
 
 .drop-down-icn {

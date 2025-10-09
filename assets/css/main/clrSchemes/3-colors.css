@@ -2,6 +2,7 @@
   --main: #4455ff;
   --main-pale: #4455ff50;
   --main2nd: #ffcc33;
+  --main2nd-trans-20: #ffcc3320;
   --main-background: #111111;
   --main-transp: #4455ff00;
   --main-transp-10: #4455ff10;
@@ -13,4 +14,6 @@
   --guest-icon-hover: #801224;
   --menu-button-hover: #cc4499;
   --nav-left-button: #dd4444;
+
+  --black-dark-view: white;
 }

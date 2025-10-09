@@ -25,10 +25,9 @@
     scrollbar-width: thin;
     border-bottom: 1px solid var(--white);
     z-index: 0;
+    opacity: 0;
     gap: 4px;
 }
-
-
 
 .user-contact-list span {
     color: var(--black);
@@ -121,6 +120,7 @@
     scrollbar-width: thin;
     border-bottom: 1px solid var(--white);
     z-index: 0;
+    opacity: 0;
 }
 
 .categoryBtn {
@@ -208,6 +208,7 @@
         max-height: 250px;
         z-index: 3;
         overflow: auto;
+        opacity: 1;
     }
 }
 
@@ -227,6 +228,7 @@
     to {
         max-height: 0px;
         z-index: 0;
+        opacity: 0;
     }
 }
 

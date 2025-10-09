@@ -224,8 +224,6 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    transform: translateY(-100%);
-
 }
 
 .footnote span {

@@ -188,6 +188,22 @@
     color: var(--black);
 }
 
+.checkHvr51 {
+    fill: none;
+}
+
+.input-subtask-panel div:nth-child(3):hover svg rect {
+    fill: var(--drop-down-icon-V2);
+}
+
+.closeHvr52 {
+    fill: none;
+}
+
+.input-subtask-panel div:nth-child(1):hover svg rect {
+    fill: var(--drop-down-icon-V2);
+}
+
 @keyframes drop-down {
     from {
         max-height: 0px;

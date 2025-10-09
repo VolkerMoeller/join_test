@@ -113,20 +113,7 @@
     text-align: center;
 }
 
-.hover-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 180px;
-    height: 50px;
-}
 
-.hover-container-v2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-}
 
 @media (max-width: 1440px) {
     .inside {

@@ -48,6 +48,7 @@
 // windowClose()
 // goBack()
 // emptyInputFieldById()
+// resetFormById()
 
 
 // --- initial-functions:
@@ -297,6 +298,11 @@ function goBack() {
 function emptyInputFieldById(id) {
     let valueInputField = document.getElementById(id).value = '';
     return valueInputField;
+}
+
+
+function resetFormById(formId) {
+    formId.reset();
 }
 
 

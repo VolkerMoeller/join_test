@@ -94,7 +94,6 @@ function initOnclickDropDownClose(inputId) {
     if (inputId == 'category') {
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
         resetOverlayFrame();
-        emptyInputFieldById(inputId);
         dropDownCloseById('categoryList');
         resetAddElementsDefault(inputId);
         document.getElementById('categoryList').classList.remove('drop-up-anim');
@@ -114,7 +113,6 @@ function tglContactListBtnCSS(id) {
 function handleCategorySelection(text) {
     let category = document.getElementById('category');
     category.value = text;
-    category.placeholder = text;
 }
 
 // 9th
@@ -187,7 +185,7 @@ function dropDownCloseById(id) {
 
 function resetInputCategory() {
     toggleElements('dropDownCatOpen', 'dropDownCatClose');
-    emptyInputFieldById('category');
+    // emptyInputFieldById('category');
 }
 
 

@@ -200,6 +200,29 @@ legend {
     align-items: center;
 }
 
+.hover-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 50px;
+}
+
+.hover-container-v2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.hover-container-v3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+}
+
 @media(max-width: 1440px) {
     h1 {
         font-size: 47px;

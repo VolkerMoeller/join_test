@@ -111,6 +111,14 @@
     justify-content: center;
 }
 
+.form-panel-add-task {
+    display: flex;
+    gap: 21px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
 
 /* frame sign */
 
@@ -173,6 +181,18 @@
 
     .checkbox-wth-icn-container {
         width: 264px;
+    }
+
+    .form-panel-add-task {
+        width: clamp(0px, 100%, 440px);
+        background-color: var(--main-background);
+        position: sticky;
+        z-index: 1;
+        bottom: -48px;
+        right: auto;
+        display: flex;
+        justify-content: end;
+        padding: 16px 0px;
     }
 }
 

@@ -1,6 +1,6 @@
 <div id="mainCenterAddTask" class="main-center">
     <!-- later to be generated as formAddTask element -->
-    <form id="formAddTask" class="form-add" onsubmit="doTh('createTask'); return false;">
+    <form id="formAddTask" class="form-add" onsubmit="viewDefaultContent('mnuBtn4th'); return false;">
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>
@@ -145,7 +145,7 @@
                         <label for="category">Category<span>*</span></label>
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="category" name="category"
-                                placeholder="Select task category" autocomplete="off"
+                                autocomplete="off" placeholder="Select task category"
                                 onclick="initFocusInputSelect('category')" required>
                             <div id="dropDownCatOpen" class="input-container-icon"
                                 onclick="initOnclickDropDownOpen('category')">
@@ -196,6 +196,15 @@
         </div>
         <div class="footnote version-2-body">
             <span class="version-warning-V2">*</span>This field is required
+        </div>
+        <div class="form-panel-add-task">
+            <div class="hover-container-v3 rel">
+                <input class="btn-wo-icn-2nd version-btn abs-cnt" type="button" name="logIn" onclick="doSth('clear')"
+                    value="Clear">
+            </div>
+            <div class="hover-container-v3 rel">
+                <input class="btn-wo-icn version-btn" type="submit" onclick="doSth('addTask')" value="Add Task">
+            </div>
         </div>
     </form>
 </div>

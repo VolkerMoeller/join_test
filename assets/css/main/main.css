@@ -177,7 +177,7 @@ ul span {
 }
 
 label {
-    color: var(--black);
+    color: var(--black-dark-view);
     font-size: 20px;
 }
 
@@ -191,7 +191,7 @@ fieldset {
 
 legend {
     margin-bottom: 12px;
-    color: var(--menu-color);
+    color: var(--menu-color-dark-view);
 }
 
 .flx-cnt {

@@ -222,9 +222,10 @@
 
 .footnote {
     position: absolute;
-    top: 100%;
     left: 0;
+    bottom: 0;
     transform: translateY(-100%);
+
 }
 
 .footnote span {
@@ -243,8 +244,6 @@
     .footnote {
         width: 100%;
         position: relative;
-        top: unset;
-        left: unset;
-        transform: unset;
+        width: clamp(0%, 100%, 440px);
     }
 }

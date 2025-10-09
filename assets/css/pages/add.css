@@ -176,6 +176,14 @@
     animation-timing-function: ease-in;
 }
 
+.subtask-vector {
+    border-radius: 1px;
+    border: solid 1px var(--input-border);
+    height: 24px;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+}
+
 .select::placeholder {
     color: var(--black);
 }

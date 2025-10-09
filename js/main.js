@@ -302,7 +302,8 @@ function emptyInputFieldById(id) {
 
 
 function resetFormById(formId) {
-    formId.reset();
+    let form = document.getElementById(formId);
+    form.reset();
 }
 
 

@@ -129,3 +129,41 @@ async function updateNextId(path) {
 // loadData() --> basic.js
 // putData() --> basic.js
 // paddingId() --> main.js
+
+
+
+
+
+// ------------------
+// use data functions
+// ------------------
+
+// getAllUsers()
+
+
+async function getAllUsers() {
+    let storagedUsers = await loadData(`users/`);
+    if (storagedUsers) {
+        let allUsers = buildAllUsers(storagedUsers);
+        return allUsers;
+    }
+}
+
+
+// -------------------
+// 1st-level-functions
+// -------------------
+
+// loadData() --> basic.js
+// buildAllUsers()
+
+
+function buildAllUsers(storagedUsers) {
+    let allUsersKeys = Object.keys(storagedUsers);
+    let allUsers = Object.values(storagedUsers);
+    allUsers.forEach((user, id) => {
+        let index = allUsersKeys[id];
+        user['userId'] = index;
+    });
+    return allUsers;
+}

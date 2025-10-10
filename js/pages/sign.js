@@ -193,6 +193,8 @@ function checkInputLogIn() {
         removeWarningNoMatchLogIn();
         setUserStatusUser();
         navToSumPage();
+
+
     }
 }
 
@@ -333,6 +335,9 @@ function initanimSignMessages() {
 function checkEmailAndPassword() {
     let currentEMail = document.getElementById('eMail').value;
     let currentPw = document.getElementById('password').value;
+
+    let eMailchecked = comparisonWithDatabase();
+
     if (currentEMail == 'gans@gmx.de' && currentPw == '123') {
         return true;
     } else {

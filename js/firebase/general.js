@@ -61,17 +61,33 @@ async function storageGuest() {
 
 
 
-// ----------------------
+// ------------------
 // new-user-functions
-// ----------------------
+// ------------------
 
 // initGetNextUserId()
+// storageFirebNewUser()
 
 
 async function initGetNextUserId() {
     let nextUserId = await getNextId('initData/nextUserId/');
     await updateNextId('initData/nextUserId/');
     return nextUserId;
+}
+
+async function storageFirebNewUser(newUser) {
+    let userData = {
+        'eMail': newUser['eMail'],
+        'name': newUser['name'],
+        'password': newUser['password'],
+        'color': newUser['color'],
+        'contacts': newUser['contacts'],
+        'tasks': newUser['tasks'],
+        'tasksGroups': newUser['tasksGroups'],
+        'initial': newUser['initial'],
+        'eMail': newUser['eMail'],
+    }
+    await putData(`users/${newUser['id']}`, userData);
 }
 
 
@@ -81,7 +97,8 @@ async function initGetNextUserId() {
 
 // getNextId()
 // updateNextId()
-// paddingId() --> main.js
+
+// putData() --> basic.js
 
 
 async function getNextId(path) {
@@ -97,7 +114,7 @@ async function updateNextId(path) {
     nextId = nextId.toString();
     await putData(path, nextId);
     nextId = paddingId(nextId);
-    return nextId;
+    // return nextId;
 }
 
 

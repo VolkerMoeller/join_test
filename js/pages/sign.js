@@ -15,7 +15,8 @@ async function createNewUser() {
     let userData = await getUserData();
     let newUser = new User(userData);
     await storageNewUser(newUser);
-    return newUser;
+    console.log(newUser);
+    // return newUser;
 }
 
 // --------------------
@@ -32,7 +33,7 @@ async function createNewUser() {
 async function getUserData() {
     let userData = [];
     let id = await initGetNextUserId();
-    id = paddingId(id);
+    // id = paddingId(id);
     let name = document.getElementById('name').value;
     let eMail = document.getElementById('eMail').value;
     let password = document.getElementById('password').value;

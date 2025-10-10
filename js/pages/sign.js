@@ -186,7 +186,6 @@ function checkCurrentForm() {
 async function checkInputLogIn() {
     let isUser = false;
     isUser = await checkIfUser();
-    console.log(isUser);
     if (!isUser) {
         warningTextOn();
         addWarningNoMatchLogIn();

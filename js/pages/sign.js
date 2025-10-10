@@ -14,7 +14,7 @@ async function initSign() {
 async function createNewUser() {
     let userData = await getUserData();
     let newUser = new User(userData);
-    await storageNewUser(newUser);
+    await storageFirebaseNewUser(newUser);
     console.log(newUser);
     // return newUser;
 }

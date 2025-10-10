@@ -75,7 +75,7 @@ async function initGetNextUserId() {
     return nextUserId;
 }
 
-async function storageFirebNewUser(newUser) {
+async function storageFirebaseNewUser(newUser) {
     let userData = {
         'eMail': newUser['eMail'],
         'name': newUser['name'],

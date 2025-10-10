@@ -183,9 +183,10 @@ function checkCurrentForm() {
 }
 
 
-function checkInputLogIn() {
-    console.log('hier');
-    let isUser = checkIfUser();
+async function checkInputLogIn() {
+    let isUser = false;
+    isUser = await checkIfUser();
+    console.log(isUser);
     if (!isUser) {
         warningTextOn();
         addWarningNoMatchLogIn();
@@ -345,7 +346,7 @@ function initanimSignMessages() {
 // }
 
 async function checkIfUser() {
-    let isUser = compare();
+    let isUser = await compare();
     return isUser;
 }
 
@@ -502,7 +503,6 @@ function switchToLoginForm(currentForm) {
 
 
 async function compare() {
-    debugger;
     let users = await getAllUsers();
     let email = document.getElementById('eMail').value;
     let password = document.getElementById('password').value;

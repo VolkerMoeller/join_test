@@ -331,19 +331,6 @@ function initanimSignMessages() {
 // switchToLoginForm()
 
 
-// function checkEmailAndPassword() {
-//     let currentEMail = document.getElementById('eMail').value;
-//     let currentPw = document.getElementById('password').value;
-
-//     let isUser = checkIfUser();
-
-//     if (currentEMail == 'gans@gmx.de' && currentPw == '123') {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
 async function checkIfUser() {
     let isUser = await compare();
     return isUser;
@@ -511,7 +498,7 @@ async function compare() {
         let userEmail = users[i].eMail.toLowerCase();
         let userPassword = users[i].password.toLowerCase();
         if (email == userEmail && password == userPassword) {
-            rememberCurrentUserId(users[i]);
+            rememberUserData(i, users[i]);
             return true;
         }
     }
@@ -593,13 +580,16 @@ function slideMessages() {
 // -------------------
 
 // getAllUsers() --> general.js
-// rememberCurrentUserId()
+// rememberUserData()
 // animMsgDesktop()
 // animMsgMobile()
 
 
-function rememberCurrentUserId(userId) {
-    saveLocalStorageObject('userId', userId)
+
+function rememberUserData(userId, user) {
+    let id = userId.toString();
+    let currentUser = new CurrentUser(id, user);
+    saveLocalStorageObject('currentUser', currentUser);
 }
 
 
@@ -615,6 +605,15 @@ function animMsgMobile(currentForm) {
         document.querySelector('.msg-btm-cnt-mbl').classList.remove('display-none');
     }
 }
+
+
+// -------------------
+// level-5-functions:
+// -------------------
+
+//  saveLocalStorageObject() --> main.js
+
+
 
 
 

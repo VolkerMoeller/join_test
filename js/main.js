@@ -1,5 +1,3 @@
-const userId = 'userId0000';
-
 // ---------------
 // main-functions:
 // ---------------
@@ -17,6 +15,7 @@ const userId = 'userId0000';
 // --- local-storage-functions:
 
 // saveLocalStorageObject()
+// loadLocalStorageObject()
 // loadLocalStorageObject()
 
 // --- basic-navigation-functions:
@@ -117,18 +116,25 @@ function loadLocalStorageObject(key) {
 }
 
 
+function removeLocalStorageObject(key) {
+    localStorage.removeItem(key);
+}
+
+
 // --- basic-navigation-functions:
 
 
 function switchToWorkPagesAsGuest() {
     window.location.assign('workPage.html');
     setUserStatusGuest();
+    rememberGuestData();
 }
 
 
 function switchToSignPages() {
     window.location.assign('signPage.html');
     setUserStatusExternal();
+    removeLocalStorageObject('currentUser');
 }
 
 
@@ -329,6 +335,7 @@ function paddingId(id) {
 // saveLocalStorageObject() --> see above
 // saveLocalStorageObject() --> see above
 // setUserStatusGuest() --> see above
+// rememberGuestData()
 // includeHTMLById() --> see above
 // resetOverlayFrame()
 // resetOverlayMsg()
@@ -374,6 +381,19 @@ function setClrScheme(colorSchemeId) {
         saveLocalStorageObject('colorScheme', colorSchemeId);
         changeClrScheme();
     }
+}
+
+
+function rememberGuestData() {
+    let id = '0000';
+    let guest =
+    {
+        'name': 'Guest User',
+        'initial': 'G',
+        'color': 'var(--main2nd)'
+    };
+    let currentUser = new CurrentUser(id, guest);
+    saveLocalStorageObject('currentUser', currentUser);
 }
 
 

@@ -2,16 +2,12 @@
 // new-database-functions
 // ----------------------
 
-let initData = {
-    'nextUserId': '1',
-    'nextContactId': '0',
-    'nextTaskId': '0'
-}
 
 // initDatabase()
 
 
 async function initDatabase() {
+    // all data will be deleted with ''
     await deleteData('');
     putInitDataToFirebase();
 }
@@ -26,6 +22,11 @@ async function initDatabase() {
 
 
 function putInitDataToFirebase() {
+    let initData = {
+        'nextUserId': '1',
+        'nextContactId': '0',
+        'nextTaskId': '0'
+    }
     putData(`initData/`, initData);
     storageGuest();
 }

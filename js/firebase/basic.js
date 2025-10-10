@@ -34,7 +34,7 @@ async function putData(path = '', data) {
 }
 
 
-async function deleteData() {
+async function deleteData(path) {
     let response = await fetch(BASE_URL + path + '.json', {
         method: 'DELETE',
     });

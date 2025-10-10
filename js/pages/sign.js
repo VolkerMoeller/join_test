@@ -478,7 +478,7 @@ function switchToLoginForm(currentForm) {
 // changeFormInputs()
 // toggleLoginElements()
 // toggleSignUpElements()
-// toggleCheckboxIcns() - see above
+// toggleCheckboxIcns() --> see above
 // visibilityPassword()
 // toggleElements() --> main.js
 // showOverlayForMsg() --> main.js

@@ -184,8 +184,8 @@ function checkCurrentForm() {
 
 
 function checkInputLogIn() {
-    let fits = checkEmailAndPassword();
-    if (!fits) {
+    let isUser = checkIfUser();
+    if (!isUser) {
         warningTextOn();
         addWarningNoMatchLogIn();
     } else {
@@ -303,7 +303,7 @@ function initanimSignMessages() {
 // 2nd-level-functions:
 // --------------------
 
-// checkEmailAndPassword()
+// checkIfUser()
 // warningTextOn()
 // addWarningNoMatchLogIn()
 // warningTextOff() --> see above
@@ -332,17 +332,22 @@ function initanimSignMessages() {
 // switchToLoginForm()
 
 
-function checkEmailAndPassword() {
-    let currentEMail = document.getElementById('eMail').value;
-    let currentPw = document.getElementById('password').value;
+// function checkEmailAndPassword() {
+//     let currentEMail = document.getElementById('eMail').value;
+//     let currentPw = document.getElementById('password').value;
 
-    let eMailchecked = comparisonWithDatabase();
+//     let isUser = checkIfUser();
 
-    if (currentEMail == 'gans@gmx.de' && currentPw == '123') {
-        return true;
-    } else {
-        return false;
-    }
+//     if (currentEMail == 'gans@gmx.de' && currentPw == '123') {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+async function checkIfUser() {
+    let isUser = compare();
+    return isUser;
 }
 
 
@@ -483,6 +488,7 @@ function switchToLoginForm(currentForm) {
 // 3rd-level-functions:
 // --------------------
 
+// compare()
 // changeFormInputs()
 // toggleLoginElements()
 // toggleSignUpElements()
@@ -494,6 +500,24 @@ function switchToLoginForm(currentForm) {
 // resetMessages()
 // slideMessages()
 // resetOverlay() --> main.js
+
+
+async function compare() {
+    let users = await getAllUsers();
+    let email = document.getElementById('eMail').value;
+    let password = document.getElementById('password').value;
+    email = email.toLowerCase();
+    password = password.toLowerCase();
+    for (let i = 0; i < users.length; i++) {
+        let userEmail = users[i].eMail.toLowerCase();
+        let userPassword = users[i].password.toLowerCase();
+        if (email == userEmail && password == userPassword) {
+            // rememberUserData(i, users[i]);
+            return true;
+        }
+    }
+    return false;
+}
 
 
 function changeFormInputs() {
@@ -569,9 +593,9 @@ function slideMessages() {
 // level-4-functions:
 // -------------------
 
+// getAllUsers() --> general.js
 // animMsgDesktop()
 // animMsgMobile()
-
 
 function animMsgDesktop(currentForm) {
     if (currentForm == 'SignUp') {
@@ -585,6 +609,9 @@ function animMsgMobile(currentForm) {
         document.querySelector('.msg-btm-cnt-mbl').classList.remove('display-none');
     }
 }
+
+
+
 
 
 // -------------------

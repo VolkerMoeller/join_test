@@ -115,7 +115,6 @@ async function updateNextId(path) {
     nextId = nextId.toString();
     await putData(path, nextId);
     nextId = paddingId(nextId);
-    // return nextId;
 }
 
 
@@ -140,7 +139,6 @@ async function updateNextId(path) {
 
 // getAllUsers()
 
-
 async function getAllUsers() {
     let storagedUsers = await loadData(`users/`);
     if (storagedUsers) {
@@ -156,7 +154,6 @@ async function getAllUsers() {
 
 // loadData() --> basic.js
 // buildAllUsers()
-
 
 function buildAllUsers(storagedUsers) {
     let allUsersKeys = Object.keys(storagedUsers);

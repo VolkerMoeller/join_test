@@ -511,7 +511,7 @@ async function compare() {
         let userEmail = users[i].eMail.toLowerCase();
         let userPassword = users[i].password.toLowerCase();
         if (email == userEmail && password == userPassword) {
-            // rememberUserData(i, users[i]);
+            rememberCurrentUserId(users[i]);
             return true;
         }
     }
@@ -593,8 +593,15 @@ function slideMessages() {
 // -------------------
 
 // getAllUsers() --> general.js
+// rememberCurrentUserId()
 // animMsgDesktop()
 // animMsgMobile()
+
+
+function rememberCurrentUserId(userId) {
+    saveLocalStorageObject('userId', userId)
+}
+
 
 function animMsgDesktop(currentForm) {
     if (currentForm == 'SignUp') {

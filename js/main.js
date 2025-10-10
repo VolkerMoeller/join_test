@@ -1,3 +1,5 @@
+const userId = 'userId0000';
+
 // ---------------
 // main-functions:
 // ---------------

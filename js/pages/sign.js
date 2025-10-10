@@ -184,6 +184,7 @@ function checkCurrentForm() {
 
 
 function checkInputLogIn() {
+    console.log('hier');
     let isUser = checkIfUser();
     if (!isUser) {
         warningTextOn();
@@ -193,8 +194,6 @@ function checkInputLogIn() {
         removeWarningNoMatchLogIn();
         setUserStatusUser();
         navToSumPage();
-
-
     }
 }
 
@@ -503,6 +502,7 @@ function switchToLoginForm(currentForm) {
 
 
 async function compare() {
+    debugger;
     let users = await getAllUsers();
     let email = document.getElementById('eMail').value;
     let password = document.getElementById('password').value;

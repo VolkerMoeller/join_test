@@ -4,7 +4,15 @@ class User {
     eMail = '';
     password = '';
     initial = '';
-    color = '';
+    color = 'var(--main2nd)';
+    tasksGroups = {
+        'toDo': '0',
+        'progress': '0',
+        'feedback': '0',
+        'done': '0'
+    }
+    contacts = '';
+    tasks = '';
 
     constructor(userData) {
         this.id = 'userId' + userData[0];
@@ -12,7 +20,7 @@ class User {
         this.eMail = userData[2];
         this.password = userData[3];
         this.getInitials();
-        this.getUserColor();
+        // this.getUserColor();
     }
 
     getInitials() {
@@ -25,8 +33,8 @@ class User {
         }
     }
 
-    getUserColor() {
-        let colorNr = Math.floor(Math.random() * 15);
-        this.color = `var(--variant${colorNr})`;
-    }
+    // getUserColor() {
+    //     let colorNr = Math.floor(Math.random() * 15);
+    //     this.color = `var(--variant${colorNr})`;
+    // }
 }

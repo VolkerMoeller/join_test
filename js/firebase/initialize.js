@@ -11,10 +11,12 @@ let initData = {
 
 // initDatabase()
 
+
 async function initDatabase() {
     await deleteData('');
     putInitDataToFirebase();
 }
+
 
 // -------------------
 // 1st-level-functions
@@ -28,6 +30,7 @@ function putInitDataToFirebase() {
     putData(`initData/`, initData);
     storageGuest();
 }
+
 
 // -------------------
 // 2nd-level-functions

@@ -10,11 +10,20 @@ let initData = {
 // ---------------------------------
 
 // initDatabase()
+// initGetNextUserId()
 
 
 async function initDatabase() {
     await deleteData('');
     putInitDataToFirebase();
+}
+
+
+async function initGetNextUserId() {
+    let nextUserId = await getNextId('initData/nextUserId/');
+    await updateNextId('initData/nextUserId/');
+    nextUserId = paddingId(nextUserId);
+    return nextUserId;
 }
 
 
@@ -25,10 +34,39 @@ async function initDatabase() {
 // deleteData() --> basic.js
 // putInitDataToFirebase()
 
+// getNextId()
+// updateNextId()
+// paddingId()
+
+
 
 function putInitDataToFirebase() {
     putData(`initData/`, initData);
     storageGuest();
+}
+
+
+async function getNextId(path) {
+    let nextId = await loadData(path);
+    nextId = paddingId(nextId);
+    return nextId;
+}
+
+
+async function updateNextId(path) {
+    let nextId = await loadData(path);
+    nextId++;
+    nextId = nextId.toString();
+    await putData(path, nextId);
+    nextId = paddingId(nextId);
+    return nextId;
+}
+
+
+function paddingId(id) {
+    id = id.toString();
+    id = id.padStart(4, "0");
+    return id;
 }
 
 

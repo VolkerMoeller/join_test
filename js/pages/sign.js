@@ -3,6 +3,7 @@
 // -------------------
 
 // initSign()
+// createNewUser()
 
 
 async function initSign() {
@@ -10,6 +11,12 @@ async function initSign() {
     setClrSchemeInit();
 }
 
+async function createNewUser() {
+    let userData = await getUserData();
+    let newUser = new User(userData);
+    await storageNewUser(newUser);
+    return newUser;
+}
 
 // --------------------
 // 1st-level-functions:
@@ -17,6 +24,27 @@ async function initSign() {
 
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
+
+// getUserData()
+// storageNewUser()
+
+
+async function getUserData() {
+    let userData = [];
+    let id = await initGetNextUserId();
+    id = paddingId(id);
+    let name = document.getElementById('name').value;
+    let eMail = document.getElementById('eMail').value;
+    let password = document.getElementById('password').value;
+    userData.push(id, name, eMail, password);
+    return userData;
+}
+
+
+// --------------------
+// 2nd-level-functions:
+// --------------------
+
 
 
 
@@ -106,7 +134,7 @@ function setSignUpRequiredOff() {
 }
 
 
-function initCheckInputSignUp() {
+async function initCheckInputSignUp() {
     let currentPw = document.getElementById('password').value;
     let currentConfirm = document.getElementById('passwordConfirm').value;
     let success = false;
@@ -115,8 +143,8 @@ function initCheckInputSignUp() {
     }
     if (success) {
         initanimSignMessages();
-        // XXX
-        doSth('firebase');
+        doSth('firebase createNewUser()');
+        await createNewUser();
     }
 }
 

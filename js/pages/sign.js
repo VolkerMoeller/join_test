@@ -115,6 +115,8 @@ function initCheckInputSignUp() {
     }
     if (success) {
         initanimSignMessages();
+        // XXX
+        doSth('firebase');
     }
 }
 

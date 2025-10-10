@@ -185,7 +185,6 @@ function dropDownCloseById(id) {
 
 function resetInputCategory() {
     toggleElements('dropDownCatOpen', 'dropDownCatClose');
-    // emptyInputFieldById('category');
 }
 
 

@@ -51,6 +51,7 @@
 // resetFormById()
 
 
+
 // --- initial-functions:
 
 
@@ -304,6 +305,13 @@ function emptyInputFieldById(id) {
 function resetFormById(formId) {
     let form = document.getElementById(formId);
     form.reset();
+}
+
+
+function paddingId(id) {
+    id = id.toString();
+    id = id.padStart(4, "0");
+    return id;
 }
 
 

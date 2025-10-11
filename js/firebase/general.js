@@ -48,6 +48,14 @@ async function storageGuest() {
         'color': 'var(--main2nd)',
         'initial': 'GU',
         'eMail': 'guest@user.de',
+        'tasksGroups': {
+            'toDo': '1',
+            'progress': '1',
+            'feedback': '2',
+            'done': '1',
+            'inBoard': '5',
+            'urgend': '1'
+        }
     }
     await putData(`users/userId0000/`, guestData);
 }
@@ -58,6 +66,8 @@ async function storageGuest() {
 // -------------------
 
 // putData() --> basic.js
+
+
 
 
 

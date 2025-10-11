@@ -9,7 +9,9 @@ class User {
         'toDo': '0',
         'progress': '0',
         'feedback': '0',
-        'done': '0'
+        'done': '0',
+        'inBoard': '0',
+        'urgend': '0'
     }
     contacts = '';
     tasks = '';

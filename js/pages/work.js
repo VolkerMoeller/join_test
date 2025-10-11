@@ -8,7 +8,7 @@
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
-// setUserProfileInitial()
+// genBtnUser()
 
 // --> content functions:
 
@@ -70,9 +70,10 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 }
 
 
-function setUserProfileInitial() {
-    let userInitial = loadLocalStorageObject('currentUser');
-    console.log(userInitial['initial']);
+function genBtnUser() {
+    let currentUser = loadLocalStorageObject('currentUser');
+    document.getElementById('btnUser').innerHTML = '';
+    document.getElementById('btnUser').innerHTML = genHTMLBtnUser(currentUser['initial']);
 }
 
 

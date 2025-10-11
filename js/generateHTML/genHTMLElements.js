@@ -53,7 +53,7 @@ function genHTMLWelcomeMobile(greeting, name) {
 }
 
 
-function genHTMLUserProfileInitial(initial) {
+function genHTMLBtnUser(initial) {
     return `
     <div id="userInitial" class="initial version-initial">${initial}</div>
     <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">

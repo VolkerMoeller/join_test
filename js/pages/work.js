@@ -8,7 +8,6 @@
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
-// genBtnUser()
 
 // --> content functions:
 
@@ -29,6 +28,7 @@ async function initWork() {
     defaultNavView();
     genHvrBtns();
     initSumView();
+    genBtnUser();
 }
 
 
@@ -70,13 +70,6 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 }
 
 
-function genBtnUser() {
-    let currentUser = loadLocalStorageObject('currentUser');
-    document.getElementById('btnUser').innerHTML = '';
-    document.getElementById('btnUser').innerHTML = genHTMLBtnUser(currentUser['initial']);
-}
-
-
 // --------------------
 // 1st-level-functions:
 // --------------------
@@ -91,6 +84,7 @@ function genBtnUser() {
 // defaultNavView()
 // genHvrBtns()
 // initSumView()
+// genBtnUser()
 
 // --> returnToLogIn()
 
@@ -146,6 +140,13 @@ function initSumView() {
 }
 
 
+function genBtnUser() {
+    let currentUser = loadLocalStorageObject('currentUser');
+    document.getElementById('btnUser').innerHTML = '';
+    document.getElementById('btnUser').innerHTML = genHTMLBtnUser(currentUser['initial']);
+}
+
+
 // --------------------
 // 2nd-level-functions:
 // --------------------
@@ -174,6 +175,10 @@ function initSumView() {
 // resetOverlayV2() --> main.js
 // loadLocalStorageObject() --> main.js
 // toggleGreeting() --> sum.js
+
+
+// loadLocalStorageObject() --> main.js
+// genHTMLBtnUser() --> genHTMLElements.js
 
 
 function guestHeader() {

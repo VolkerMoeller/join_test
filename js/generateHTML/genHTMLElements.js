@@ -25,11 +25,11 @@ function genHTMLSmallMenu() {
 }
 
 
-function genHTMLWelcomeDesktop(greeting) {
+function genHTMLWelcomeDesktop(greeting, name) {
     return `
     <div id="greetingUser" class="greeting display-none">
         <span>${greeting},</span>
-        <span>Sofia Müller</span>
+        <span>${name}</span>
     </div>
     <div id="greetingGuest" class="greeting">
         <span>${greeting}!</span>
@@ -38,12 +38,12 @@ function genHTMLWelcomeDesktop(greeting) {
 }
 
 
-function genHTMLWelcomeMobile(greeting) {
+function genHTMLWelcomeMobile(greeting, name) {
     return `
     <div class="main-center-welcome-mobile">
         <div id="greetingUser" class="greeting-mobile display-none">
             <span>${greeting},</span>
-            <span>Sophia Müller</span>
+            <span>${name}</span>
         </div>
         <div id="greetingGuest" class="greeting-mobile">
             <span>${greeting}!</span>

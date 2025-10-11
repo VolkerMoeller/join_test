@@ -14,15 +14,18 @@ function toggleGreeting() {
 
 function genWelcomeDesktop() {
     let greeting = appropriateGreeting();
+    let userName = loadLocalStorageObject('currentUser');
     document.getElementById('mainCenterWelcome').innerHTML = '';
-    document.getElementById('mainCenterWelcome').innerHTML = genHTMLWelcomeDesktop(greeting);
+    document.getElementById('mainCenterWelcome').innerHTML = genHTMLWelcomeDesktop(greeting, userName['name']);
 }
 
 
 function genWelcomeMobile() {
     let greeting = appropriateGreeting();
+    let userName = loadLocalStorageObject('currentUser');
+    console.log(userName['name']);
     document.getElementById('ovlFrame').innerHTML = '';
-    document.getElementById('ovlFrame').innerHTML = genHTMLWelcomeMobile(greeting);
+    document.getElementById('ovlFrame').innerHTML = genHTMLWelcomeMobile(greeting, userName['name']);
 }
 
 

@@ -46,14 +46,14 @@ async function storageGuest() {
         'name': 'Guest User',
         'password': '',
         'color': 'var(--main2nd)',
-        'initial': 'GU',
+        'initial': 'G',
         'eMail': 'guest@user.de',
         'tasksGroups': {
-            'toDo': '1',
-            'progress': '1',
-            'feedback': '2',
-            'done': '1',
-            'inBoard': '5',
+            'toDo': '4',
+            'progress': '2',
+            'feedback': '3',
+            'done': '2',
+            'inBoard': '9',
             'urgend': '1'
         }
     }

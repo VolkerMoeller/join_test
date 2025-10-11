@@ -142,7 +142,7 @@ async function storageFirebaseNewUser(newUser) {
 
 
 // ------------------
-// new-user-functions
+// new-task-functions
 // ------------------
 
 
@@ -155,6 +155,12 @@ async function initGetNextTaskId() {
 }
 
 
+// -------------------
+// 1st-level-functions
+// -------------------
+
+// getNextId() --> see above
+// updateNextId() --> see above
 
 
 

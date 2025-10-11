@@ -22,6 +22,7 @@ async function initNewTask() {
 async function getTaskData() {
     let taskData = [];
     let taskIndex = await initGetNextTaskId();
+    debugger;
     let data = await getFormInputData();
     let state = loadLocalStorageObject('currentState');
     let newTask = new Task(data, taskIndex, state);
@@ -30,3 +31,10 @@ async function getTaskData() {
     taskData.push(userIndex, taskIndex, newTask);
     return taskData;
 }
+
+
+// --------------------
+// 2nd-level-functions:
+// --------------------
+
+// initGetNextTaskId() --> general.js

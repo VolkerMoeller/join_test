@@ -390,7 +390,15 @@ function rememberGuestData() {
     {
         'name': 'Guest User',
         'initial': 'G',
-        'color': 'var(--main2nd)'
+        'color': 'var(--main2nd)',
+        'tasksGroups': {
+            'toDo': '4',
+            'progress': '2',
+            'feedback': '3',
+            'done': '2',
+            'inBoard': '9',
+            'urgend': '1'
+        }
     };
     let currentUser = new CurrentUser(id, guest);
     saveLocalStorageObject('currentUser', currentUser);

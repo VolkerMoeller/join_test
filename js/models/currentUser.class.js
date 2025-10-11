@@ -3,6 +3,7 @@ class CurrentUser {
     name = '';
     initial = '';
     color = '';
+    tasksGroups = '';
 
 
     constructor(userId, user) {
@@ -11,6 +12,7 @@ class CurrentUser {
         this.name = user.name;
         this.initial = user.initial;
         this.color = user.color;
+        this.tasksGroups = user.tasksGroups;
     }
 
 

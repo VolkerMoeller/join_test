@@ -397,7 +397,7 @@ function rememberGuestData() {
             'feedback': '3',
             'done': '2',
             'inBoard': '9',
-            'urgend': '1'
+            'urgent': '1'
         }
     };
     let currentUser = new CurrentUser(id, guest);

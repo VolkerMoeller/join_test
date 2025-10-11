@@ -11,7 +11,7 @@ class User {
         'feedback': '0',
         'done': '0',
         'inBoard': '0',
-        'urgend': '0'
+        'urgent': '0'
     }
     contacts = '';
     tasks = '';

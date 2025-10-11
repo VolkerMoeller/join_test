@@ -54,7 +54,7 @@ async function storageGuest() {
             'feedback': '3',
             'done': '2',
             'inBoard': '9',
-            'urgend': '1'
+            'urgent': '1'
         }
     }
     await putData(`users/userId0000/`, guestData);

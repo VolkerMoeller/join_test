@@ -11,7 +11,7 @@
                     <div class="rectangle-btn-anchor">
                         <button class="rectangle-btn pencil-btn abs-cnt">
                             <div class="rect-btn-cnt-lft" w3-include-svg="./assets/img/svgHTML/30-pencil.html"></div>
-                            <div class="rect-btn-cnt-rgt">
+                            <div id="rectToDo" class="rect-btn-cnt-rgt">
                                 <span>1</span>
                                 <span>To-do</span>
                             </div>
@@ -22,7 +22,7 @@
                     <div class="rectangle-btn-anchor">
                         <button class="rectangle-btn check-btn abs-cnt">
                             <div class="rect-btn-cnt-lft" w3-include-svg="./assets/img/svgHTML/31-check.html"></div>
-                            <div class="rect-btn-cnt-rgt">
+                            <div id="rectDone" class="rect-btn-cnt-rgt">
                                 <span>1</span>
                                 <span>Done</span>
                             </div>
@@ -37,7 +37,7 @@
                             <div class="urgency-btn-lft">
                                 <div class="rect-btn-cnt-lft" w3-include-svg="./assets/img/svgHTML/32-urgent.html">
                                 </div>
-                                <div class="urgency-btn-cnt-rgt">
+                                <div id="rectUrgent" class="urgency-btn-cnt-rgt">
                                     <span>1</span>
                                     <span>Urgent</span>
                                 </div>
@@ -54,7 +54,7 @@
             <div class="dashboard-row">
                 <div class="frame-btn">
                     <div class="square-btn-anchor">
-                        <button class="square-btn abs-cnt">
+                        <button id="rectBoard" class="square-btn abs-cnt">
                             <span>5</span>
                             <span>Tasks in <br>Board</span>
                         </button>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="frame-btn">
                     <div class="square-btn-anchor">
-                        <button class="square-btn abs-cnt">
+                        <button id="rectProgress" class="square-btn abs-cnt">
                             <span>2</span>
                             <span>Tasks in <br>Progress</span>
                         </button>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="frame-btn">
                     <div class="square-btn-anchor">
-                        <button class="square-btn abs-cnt">
+                        <button id="rectFeedback" class="square-btn abs-cnt">
                             <span>2</span>
                             <span>Awaiting <br>Feedback</span>
                         </button>

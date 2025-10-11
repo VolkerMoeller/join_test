@@ -29,6 +29,7 @@ async function initWork() {
     genHvrBtns();
     initSumView();
     genBtnUser();
+    genSumRect();
 }
 
 
@@ -85,6 +86,7 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 // genHvrBtns()
 // initSumView()
 // genBtnUser()
+// genSumRect()
 
 // --> returnToLogIn()
 
@@ -144,6 +146,23 @@ function genBtnUser() {
     let currentUser = loadLocalStorageObject('currentUser');
     document.getElementById('btnUser').innerHTML = '';
     document.getElementById('btnUser').innerHTML = genHTMLBtnUser(currentUser['initial']);
+}
+
+
+function genSumRect() {
+    let tasksGroups = loadLocalStorageObject('currentUser').tasksGroups;
+    let sumRects = {
+        'rectToDo': [tasksGroups['toDo'], 'To-Do'],
+        'rectDone': [tasksGroups['done'], 'Done'],
+        'rectUrgent': [tasksGroups['urgent'], 'Urgent'],
+        'rectBoard': [tasksGroups['inBoard'], 'Tasks in <br>Board'],
+        'rectProgress': [tasksGroups['progress'], 'Tasks in <br>Progress'],
+        'rectFeedback': [tasksGroups['feedback'], 'Awaiting <br>Feedback']
+    };
+    Object.entries(sumRects).forEach(([key, value]) => {
+        document.getElementById(key).innerHTML = '';
+        document.getElementById(key).innerHTML = genHTMLSumRect(value[0], value[1]);
+    });
 }
 
 

@@ -29,7 +29,7 @@ async function initWork() {
     genHvrBtns();
     initSumView();
     genBtnUser();
-    genSumRect();
+    genSumRectCnt();
 }
 
 
@@ -86,7 +86,7 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 // genHvrBtns()
 // initSumView()
 // genBtnUser()
-// genSumRect()
+// genSumRectCnt()
 
 // --> returnToLogIn()
 
@@ -149,7 +149,7 @@ function genBtnUser() {
 }
 
 
-function genSumRect() {
+function genSumRectCnt() {
     let tasksGroups = loadLocalStorageObject('currentUser').tasksGroups;
     let sumRects = {
         'rectToDo': [tasksGroups['toDo'], 'To-Do'],
@@ -161,7 +161,7 @@ function genSumRect() {
     };
     Object.entries(sumRects).forEach(([key, value]) => {
         document.getElementById(key).innerHTML = '';
-        document.getElementById(key).innerHTML = genHTMLSumRect(value[0], value[1]);
+        document.getElementById(key).innerHTML = genHTMLSumRectCnt(value[0], value[1]);
     });
 }
 
@@ -195,9 +195,11 @@ function genSumRect() {
 // loadLocalStorageObject() --> main.js
 // toggleGreeting() --> sum.js
 
-
 // loadLocalStorageObject() --> main.js
 // genHTMLBtnUser() --> genHTMLElements.js
+
+// loadLocalStorageObject() --> main.js
+// genHTMLSumRectCnt() --> genHTMLElements.js
 
 
 function guestHeader() {

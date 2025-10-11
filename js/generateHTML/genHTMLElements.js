@@ -64,7 +64,7 @@ function genHTMLBtnUser(initial) {
 }
 
 
-function genHTMLSumRect(nr, title) {
+function genHTMLSumRectCnt(nr, title) {
     return `
     <span>${nr}</span>
     <span>${title}</span>

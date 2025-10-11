@@ -8,6 +8,7 @@
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
+// setUserProfileInitial()
 
 // --> content functions:
 
@@ -66,6 +67,12 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
             }
         }
     }
+}
+
+
+function setUserProfileInitial() {
+    let userInitial = loadLocalStorageObject('currentUser');
+    console.log(userInitial['initial']);
 }
 
 

@@ -23,7 +23,6 @@ function genWelcomeDesktop() {
 function genWelcomeMobile() {
     let greeting = appropriateGreeting();
     let userName = loadLocalStorageObject('currentUser');
-    console.log(userName['name']);
     document.getElementById('ovlFrame').innerHTML = '';
     document.getElementById('ovlFrame').innerHTML = genHTMLWelcomeMobile(greeting, userName['name']);
 }

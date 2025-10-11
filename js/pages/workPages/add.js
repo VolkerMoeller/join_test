@@ -238,7 +238,6 @@ function resetSpaceforList() {
 
 
 function tglCSSCheckBox(id) {
-    console.log('hier');
     let rectId = id + 'Rect';
     let path0Id = id + 'Path0';
     let path1Id = id + 'Path1';

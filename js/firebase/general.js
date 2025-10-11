@@ -1,9 +1,11 @@
 // ----------------------
-// new-database-functions
+// general-functions
 // ----------------------
 
 
 // initDatabase()
+// getNextId()
+// updateNextId()
 
 
 async function initDatabase() {
@@ -13,12 +15,35 @@ async function initDatabase() {
 }
 
 
+async function getNextId(path) {
+    let nextId = await loadData(path);
+    nextId = paddingId(nextId);
+    return nextId;
+}
+
+
+async function updateNextId(path) {
+    let nextId = await loadData(path);
+    nextId++;
+    nextId = nextId.toString();
+    await putData(path, nextId);
+    nextId = paddingId(nextId);
+}
+
+
 // -------------------
 // 1st-level-functions
 // -------------------
 
 // deleteData() --> basic.js
 // putInitDataToFirebase()
+
+// loadData() --> basic.js
+// paddingId() --> main.js
+
+// loadData() --> basic.js
+// putData() --> basic.js
+// paddingId() --> main.js
 
 
 function putInitDataToFirebase() {
@@ -106,45 +131,36 @@ async function storageFirebaseNewUser(newUser) {
 // 1st-level-functions
 // -------------------
 
-// getNextId()
-// updateNextId()
+// getNextId() --> see above
+// updateNextId() --> see above
 
 // putData() --> basic.js
 
-
-async function getNextId(path) {
-    let nextId = await loadData(path);
-    nextId = paddingId(nextId);
-    return nextId;
-}
-
-
-async function updateNextId(path) {
-    let nextId = await loadData(path);
-    nextId++;
-    nextId = nextId.toString();
-    await putData(path, nextId);
-    nextId = paddingId(nextId);
-}
-
-
-// -------------------
-// 3rd-level-functions
-// -------------------
-
-// loadData() --> basic.js
-// paddingId() --> main.js
-
-// loadData() --> basic.js
-// putData() --> basic.js
-// paddingId() --> main.js
 
 
 
 
 
 // ------------------
-// use data functions
+// new-user-functions
+// ------------------
+
+
+// initGetNextTaskId()
+
+async function initGetNextTaskId() {
+    let nextTaskId = await getNextId('initData/nextTaskId/');
+    await updateNextId('initData/nextTaskId/');
+    return nextTaskId;
+}
+
+
+
+
+
+
+// ------------------
+// use-data-functions
 // ------------------
 
 // getAllUsers()

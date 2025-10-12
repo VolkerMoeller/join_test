@@ -21,6 +21,7 @@ class Task {
 
     getFormInputData() {
         const inputs = document.getElementById("formAddTask").elements;
+        console.log(inputs);
         const formData = {
             'title': inputs.title.value,
             'dueDate': inputs.dueDate.value,
@@ -28,7 +29,6 @@ class Task {
             'priority': inputs.priority.value,
             'description': inputs.description.value
         }
-        console.log(inputs);
         return formData;
     }
 }

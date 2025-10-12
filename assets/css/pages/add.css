@@ -198,6 +198,15 @@
     fill: var(--drop-down-icon-V2);
 }
 
+.user-subtask-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-subtask-list li {
+    padding: 6px 0px;
+}
+
 @keyframes drop-down {
     from {
         max-height: 0px;

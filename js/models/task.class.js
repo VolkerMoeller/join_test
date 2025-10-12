@@ -3,18 +3,19 @@ class Task {
     title = '';
     dueDate = '';
     category = '';
-    prio = '';
+    priority = '';
     description = '';
     state = 'toDo';
 
-    
+
     constructor(taskIndex) {
         this.taskId = 'taskId' + taskIndex;
-        this.title = this.getFormInputData().title;
-        this.dueDate = this.getFormInputData().dueDate;
-        this.category = this.getFormInputData().category;
-        this.prio = this.getFormInputData().priority;
-        this.description = this.getFormInputData().description;
+        this.formData = this.getFormInputData();
+        this.title = this.formData.title;
+        this.dueDate = this.formData.dueDate;
+        this.category = this.formData.category;
+        this.priority = this.formData.priority;
+        this.description = this.formData.description;
     }
 
 
@@ -27,6 +28,7 @@ class Task {
             'priority': inputs.priority.value,
             'description': inputs.description.value
         }
+        console.log(inputs);
         return formData;
     }
 }

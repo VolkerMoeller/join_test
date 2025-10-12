@@ -38,14 +38,15 @@ async function getTaskData() {
 // initGetNextTaskId() --> general.js
 // getFormInputData()
 
+
 async function getFormInputData() {
-    let formInputData = [];
     const inputs = document.getElementById("formAddTask").elements;
-    let title = inputs.title.value;
-    let dueDate = inputs.dueDate.value;
-    let category = inputs.category.value;
-    let prio = inputs.priority.value;
-    let description = inputs.description.value;
-    formInputData.push(title, dueDate, category, prio, description);
+    const formInputData = {
+        'title': inputs.title.value,
+        'dueDate': inputs.dueDate.value,
+        'category': inputs.category.value,
+        'prio': inputs.priority.value,
+        'description': inputs.description.value
+    }
     return formInputData;
 }

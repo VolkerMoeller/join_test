@@ -5,8 +5,8 @@
 // initNewTask()
 
 async function initNewTask() {
-    // setCurrentState('ToDo');
     let taskData = await getTaskData();
+    debugger;
     handleSubtasks(taskData);
     handleAssignedContacts(taskData);
     animateMsg('addTask.html', 'msgAddTaskSuccess', 'board.html');
@@ -25,7 +25,6 @@ async function getTaskData() {
     let data = await getFormInputData();
     let newTask = new Task(data, taskIndex);
     let userIndex = loadLocalStorageObject('currentUser').id;
-    debugger;
     await storageNewTask(userIndex, newTask);
     taskData.push(userIndex, taskIndex, newTask);
     return taskData;

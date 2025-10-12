@@ -147,11 +147,16 @@ async function storageFirebaseNewUser(newUser) {
 
 
 // initGetNextTaskId()
+// storageNewTask()
 
 async function initGetNextTaskId() {
     let nextTaskId = await getNextId('initData/nextTaskId/');
     await updateNextId('initData/nextTaskId/');
     return nextTaskId;
+}
+
+async function storageNewTask(userIndex, newTask) {
+    await putData(`users/${userIndex}/tasks/${newTask.taskId}`, newTask);
 }
 
 
@@ -161,6 +166,8 @@ async function initGetNextTaskId() {
 
 // getNextId() --> see above
 // updateNextId() --> see above
+
+// putData --> basic.js
 
 
 

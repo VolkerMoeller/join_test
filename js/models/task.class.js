@@ -7,23 +7,16 @@ class Task {
     description = '';
     state = 'toDo';
 
-    // constructor(taskData, taskIndex) {
-    //     this.taskId = 'taskId' + taskIndex;
-    //     this.title = taskData['title'];
-    //     this.dueDate = taskData['dueDate'];
-    //     this.category = taskData['category'];
-    //     this.prio = taskData['priority'];
-    //     this.description = taskData['description'];
-    // }
-
+    
     constructor(taskIndex) {
         this.taskId = 'taskId' + taskIndex;
         this.title = this.getFormInputData().title;
-        // this.dueDate = taskData['dueDate'];
-        // this.category = taskData['category'];
-        // this.prio = taskData['priority'];
-        // this.description = taskData['description'];
+        this.dueDate = this.getFormInputData().dueDate;
+        this.category = this.getFormInputData().category;
+        this.prio = this.getFormInputData().priority;
+        this.description = this.getFormInputData().description;
     }
+
 
     getFormInputData() {
         const inputs = document.getElementById("formAddTask").elements;
@@ -31,7 +24,7 @@ class Task {
             'title': inputs.title.value,
             'dueDate': inputs.dueDate.value,
             'category': inputs.category.value,
-            'prio': inputs.priority.value,
+            'priority': inputs.priority.value,
             'description': inputs.description.value
         }
         return formData;

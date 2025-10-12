@@ -22,8 +22,9 @@ async function initNewTask() {
 async function getTaskData() {
     let taskData = [];
     let taskIndex = await initGetNextTaskId();
-    let data = await getFormInputData();
-    let newTask = new Task(data, taskIndex);
+    // let data = await getFormInputData();
+    // let newTask = new Task(data, taskIndex);
+    let newTask = new Task(taskIndex);
     let userIndex = loadLocalStorageObject('currentUser').id;
     await storageNewTask(userIndex, newTask);
     taskData.push(userIndex, taskIndex, newTask);
@@ -39,14 +40,14 @@ async function getTaskData() {
 // getFormInputData()
 
 
-async function getFormInputData() {
-    const inputs = document.getElementById("formAddTask").elements;
-    const formInputData = {
-        'title': inputs.title.value,
-        'dueDate': inputs.dueDate.value,
-        'category': inputs.category.value,
-        'prio': inputs.priority.value,
-        'description': inputs.description.value
-    }
-    return formInputData;
-}
+// async function getFormInputData() {
+//     const inputs = document.getElementById("formAddTask").elements;
+//     const formInputData = {
+//         'title': inputs.title.value,
+//         'dueDate': inputs.dueDate.value,
+//         'category': inputs.category.value,
+//         'prio': inputs.priority.value,
+//         'description': inputs.description.value
+//     }
+//     return formInputData;
+// }

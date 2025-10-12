@@ -22,11 +22,10 @@ async function initNewTask() {
 async function getTaskData() {
     let taskData = [];
     let taskIndex = await initGetNextTaskId();
-    debugger;
     let data = await getFormInputData();
-    let state = loadLocalStorageObject('currentState');
-    let newTask = new Task(data, taskIndex, state);
+    let newTask = new Task(data, taskIndex);
     let userIndex = loadLocalStorageObject('currentUser').id;
+    debugger;
     await storageNewTask(userIndex, newTask);
     taskData.push(userIndex, taskIndex, newTask);
     return taskData;
@@ -38,3 +37,16 @@ async function getTaskData() {
 // --------------------
 
 // initGetNextTaskId() --> general.js
+// getFormInputData()
+
+async function getFormInputData() {
+    let formInputData = [];
+    const inputs = document.getElementById("formAddTask").elements;
+    let title = inputs.title.value;
+    let dueDate = inputs.dueDate.value;
+    let category = inputs.category.value;
+    let prio = inputs.priority.value;
+    let description = inputs.description.value;
+    formInputData.push(title, dueDate, category, prio, description);
+    return formInputData;
+}

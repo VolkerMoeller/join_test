@@ -212,6 +212,7 @@
 
 .subtask-list-container {
     position: relative;
+    padding-bottom: 48px;
 }
 
 .user-subtask-list-inputs {
@@ -220,10 +221,8 @@
 }
 
 .user-subtask-list-inputs input {
-    width: (0%, 440px, 440px);
+    width: clamp(0%, 440px, 440px);
 }
-
-
 
 .user-subtask-list-text {
     display: flex;

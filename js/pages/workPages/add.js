@@ -223,7 +223,7 @@ function closeSubtaskInput() {
 
 
 // 7th
-//  tglCSSCheckBox()
+// tglCSSCheckBox()
 
 
 function resetInputAssigned() {

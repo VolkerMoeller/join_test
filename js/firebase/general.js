@@ -73,6 +73,7 @@ async function storageGuest() {
         'color': 'var(--main2nd)',
         'initial': 'G',
         'eMail': 'guest@user.de',
+        'nextSubtaskId': '0',
         'tasksGroups': {
             'toDo': '4',
             'progress': '2',
@@ -80,7 +81,7 @@ async function storageGuest() {
             'done': '2',
             'inBoard': '9',
             'urgent': '1'
-        }
+        },
     }
     await putData(`users/userId0000/`, guestData);
 }

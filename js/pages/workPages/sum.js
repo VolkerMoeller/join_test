@@ -43,7 +43,7 @@ function genWelcomeMobile() {
 
 
 function appropriateGreeting() {
-    let greeting = 'Guten Morgen';
+    let greeting = 'Good morning';
     let now = Date.now();
     let date = new Date(now);
     let hour = date.getHours();

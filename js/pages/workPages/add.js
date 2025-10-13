@@ -11,6 +11,7 @@
 // tglContactListBtnCSS()
 // handleCategorySelection()
 // checkIfChecked(id)
+// showSubtaskPanel()
 
 
 // 1st
@@ -120,6 +121,21 @@ function checkIfChecked(id) {
     let checked = false;
     checked = document.getElementById(id).classList.contains('display-none');
     return checked;
+}
+
+// 10th
+function showSubtaskPanel() {
+    document.getElementById('inputSubtaskPanel').classList.remove('display-none');
+}
+
+// 11th
+function hideSubtaskPanel() {
+    document.getElementById('inputSubtaskPanel').classList.add('display-none');
+}
+
+// 12th
+function closeInput(id) {
+    document.getElementById(id).value = "";
 }
 
 

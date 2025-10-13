@@ -51,6 +51,8 @@
 // goBack()
 // emptyInputFieldById()
 // resetFormById()
+// closeInput()
+
 
 
 
@@ -329,6 +331,10 @@ function paddingId(id) {
     id = id.toString();
     id = id.padStart(4, "0");
     return id;
+}
+
+function closeInput(id) {
+    document.getElementById(id).value = "";
 }
 
 

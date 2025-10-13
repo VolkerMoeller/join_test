@@ -130,18 +130,19 @@ function showSubtaskPanel() {
 }
 
 // 11th
+
 function hideSubtaskPanel() {
     document.getElementById('inputSubtaskPanel').classList.add('display-none');
 }
 
 // 12th
+
 function initShowSubtaskPanel(inputId) {
     handleOverlayForSubtasks(inputId);
     showSubtaskPanel();
 }
 
 // 13th
-
 function resetOverlayFrameSubtask(inputId) {
     resetOverlayFrame();
     hideSubtaskPanel();

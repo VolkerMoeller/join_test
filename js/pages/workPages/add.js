@@ -2,17 +2,21 @@
 //add.js-functions:
 // ----------------
 
-// setupAddElementsOnTop()
-// resetAddElementsDefault()
-// resetOverlayFrameSelect()
-// initFocusInputSelect()
-// initOnclickDropDownOpen()
-// initOnclickDropDownClose()
-// tglContactListBtnCSS()
-// handleCategorySelection()
-// checkIfChecked(id)
-// showSubtaskPanel()
-// setupSubtasksElementsOnTop()
+// 1st setupAddElementsOnTop()
+// 2nd resetAddElementsDefault()
+// 3rd resetOverlayFrameSelect()
+// 4th initFocusInputSelect()
+// 5th initOnclickDropDownOpen()
+// 6th initOnclickDropDownClose()
+// 7th tglContactListBtnCSS()
+// 8th handleCategorySelection()
+// 9th checkIfChecked(id)
+// 10th showSubtaskPanel()
+// 11th hideSubtaskPanel()
+// 12th initShowSubtaskPanel()
+// 13th resetOverlayFrameSubtask()
+// 14th setupSubtasksElementsOnTop()
+// 15th closeSubtaskInput()
 
 
 // 1st
@@ -143,7 +147,7 @@ function initShowSubtaskPanel(inputId) {
 }
 
 // 13th
-function resetOverlayFrameSubtask(inputId) {
+function resetOverlayFrameSubtask() {
     resetOverlayFrame();
     hideSubtaskPanel();
 }

@@ -186,6 +186,18 @@
     fill: none;
 }
 
+.input-subtask-panel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-89%);
+    right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    cursor: pointer;
+}
+
 .input-subtask-panel div:nth-child(3):hover svg rect {
     fill: var(--drop-down-icon-V2);
 }
@@ -198,6 +210,17 @@
     fill: var(--drop-down-icon-V2);
 }
 
+.subtask-list-container {
+    position: relative;
+}
+
+.user-subtask-list-input {
+
+    position: absolute;
+    top: 0;
+
+}
+
 .user-subtask-list-text {
     display: flex;
     flex-direction: column;
@@ -206,6 +229,7 @@
 .user-subtask-list-text li {
     padding: 6px 0px;
 }
+
 
 @keyframes drop-down {
     from {

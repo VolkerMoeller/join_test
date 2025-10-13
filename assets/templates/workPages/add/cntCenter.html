@@ -22,7 +22,7 @@
                         <div class="input-container">
                             <textarea class="version-2-t6" type="text" id="description" name="description"
                                 placeholder="Enter a description" autocomplete="off"></textarea>
-                            <div class="input-container-icon description-icon" onclick="doSth('subtask')">
+                            <div class="input-container-icon description-icon">
                                 <div w3-include-svg="./assets/img/svgHTML/33-recurso.html"></div>
                             </div>
 
@@ -180,7 +180,7 @@
                 <div class="form-inputs-v2">
                     <div class="housing-input">
                         <label for="title">Subtasks</label>
-                        <div class="input-container">
+                        <div id="inputContainerSubtask" class="input-container">
                             <input class="version-2-t6" type="text" id="subtask" name="subtask"
                                 placeholder="Add new subtask" autocomplete="off"
                                 onfocus="initShowSubtaskPanel('subtask')">

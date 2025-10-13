@@ -12,6 +12,7 @@
 // handleCategorySelection()
 // checkIfChecked(id)
 // showSubtaskPanel()
+// setupSubtasksElementsOnTop()
 
 
 // 1st
@@ -136,12 +137,20 @@ function hideSubtaskPanel() {
 // 12th
 function initShowSubtaskPanel(inputId) {
     handleOverlayForSubtasks(inputId);
+    showSubtaskPanel();
 }
 
 // 13th
 
 function resetOverlayFrameSubtask(inputId) {
     resetOverlayFrame();
+    hideSubtaskPanel();
+}
+
+// 14th
+
+function setupSubtasksElementsOnTop() {
+    document.getElementById('inputContainerSubtask').classList.add('z-index-4');
 }
 
 

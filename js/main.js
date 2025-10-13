@@ -246,7 +246,7 @@ function handleOverlayForSubtasks(inputId) {
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
         setupOverlayForSubtasks(inputId);
-        // setupSubtasksElementsOnTop(inputId);
+        setupSubtasksElementsOnTop(inputId);
     }
 }
 
@@ -379,7 +379,7 @@ function closeInput(id) {
 // setupSignElementsOnTop() --> sign.js
 
 // setupOverlayForSubtasks();
-// setupSubtasksElementsOnTop() --> ?
+// setupSubtasksElementsOnTop() --> add.js
 
 // handleOverlayForInput() --> see above
 

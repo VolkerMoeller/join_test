@@ -198,12 +198,12 @@
     fill: var(--drop-down-icon-V2);
 }
 
-.user-subtask-list {
+.user-subtask-list-text {
     display: flex;
     flex-direction: column;
 }
 
-.user-subtask-list li {
+.user-subtask-list-text li {
     padding: 6px 0px;
 }
 

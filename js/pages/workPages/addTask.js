@@ -10,8 +10,8 @@ async function initNewTask() {
     debugger;
     // handleSubtasks(taskData);
     // handleAssignedContacts(taskData);
-    animateMsg('addTask.html', 'msgAddTaskSuccess', 'board.html');
-    await saveTasksGroups();
+    // animateMsg('addTask.html', 'msgAddTaskSuccess', 'board.html');
+    // await saveTasksGroups();
 }
 
 
@@ -42,3 +42,9 @@ async function createNewTask() {
 // initGetNextTaskId() --> general.js
 // getFormInputData()
 // storageNewTask() --> general.js
+
+
+function getFormInputDataTest() {
+    const inputs = document.getElementById("formAddTask").elements;
+    return inputs;
+}

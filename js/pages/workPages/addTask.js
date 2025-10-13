@@ -48,3 +48,14 @@ function getFormInputDataTest() {
     const inputs = document.getElementById("formAddTask").elements;
     return inputs;
 }
+
+
+
+
+function selectSubtasks() {
+    const subtasks = document.querySelectorAll('.user-subtasks-list-text li');
+    subtasks.forEach(subtask => {
+        console.log(subtask.innerHTML);
+    });
+    return subtasks;
+}

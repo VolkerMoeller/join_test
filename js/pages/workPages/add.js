@@ -20,6 +20,7 @@
 
 
 // 1st
+
 function setupAddElementsOnTop(inputId) {
     if (inputId == 'assigned') {
         document.getElementById('assignedContainer').classList.add('z-index-4');
@@ -30,6 +31,7 @@ function setupAddElementsOnTop(inputId) {
 }
 
 // 2nd
+
 function resetAddElementsDefault(inputId) {
     if (inputId == 'assigned') {
         document.getElementById('assignedContainer').classList.remove('z-index-4');
@@ -41,6 +43,7 @@ function resetAddElementsDefault(inputId) {
 
 
 // 3rd
+
 function resetOverlayFrameSelect(inputId) {
     resetOverlayFrame();
     if (inputId == 'assigned') {
@@ -57,6 +60,7 @@ function resetOverlayFrameSelect(inputId) {
 
 
 // 4th
+
 function initFocusInputSelect(inputId) {
     handleOverlayForSelect(inputId);
     initToggleDropDown(inputId);
@@ -71,6 +75,7 @@ function initFocusInputSelect(inputId) {
 
 
 // 5th
+
 function initOnclickDropDownOpen(inputId) {
     if (inputId == 'assigned') {
         justOpened = selectAssignedBtnDefault();
@@ -88,6 +93,7 @@ function initOnclickDropDownOpen(inputId) {
 }
 
 // 6th
+
 function initOnclickDropDownClose(inputId) {
     if (inputId == 'assigned') {
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
@@ -108,6 +114,7 @@ function initOnclickDropDownClose(inputId) {
 
 
 // 7th
+
 function tglContactListBtnCSS(id) {
     document.getElementById(id).classList.toggle('contactListBtn');
     document.getElementById(id).classList.toggle('contactListBtnClicked');
@@ -116,12 +123,14 @@ function tglContactListBtnCSS(id) {
 
 
 // 8th
+
 function handleCategorySelection(text) {
     let category = document.getElementById('category');
     category.value = text;
 }
 
 // 9th
+
 function checkIfChecked(id) {
     let checked = false;
     checked = document.getElementById(id).classList.contains('display-none');
@@ -129,6 +138,7 @@ function checkIfChecked(id) {
 }
 
 // 10th
+
 function showSubtaskPanel() {
     document.getElementById('inputSubtaskPanel').classList.remove('display-none');
 }
@@ -147,6 +157,7 @@ function initShowSubtaskPanel(inputId) {
 }
 
 // 13th
+
 function resetOverlayFrameSubtask() {
     resetOverlayFrame();
     hideSubtaskPanel();

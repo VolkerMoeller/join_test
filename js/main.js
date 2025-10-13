@@ -40,6 +40,7 @@
 // --- help-functions:
 
 // toggleElements()
+// toggleElementsZindex()
 // focusInput()
 // blurInput()
 // readingUserStatus()
@@ -259,10 +260,8 @@ function toggleElements(id1st, id2nd) {
 function toggleElementsZindex(id1st, id2nd) {
     const element1st = document.getElementById(id1st);
     const element2nd = document.getElementById(id2nd);
-    element1st.classList.toggle('z-index-1');
-    element1st.classList.toggle('z-index--1');
-    element2nd.classList.toggle('z-index-1');
-    element2nd.classList.toggle('z-index--1');
+    toggleElementZindex(element1st);
+    toggleElementZindex(element2nd);
 }
 
 
@@ -338,22 +337,40 @@ function paddingId(id) {
 // -------------------
 
 // includeHTMLById()
+
 // checkColorSchemeId()
 // setClrScheme()
+
 // changeSvgPathClass() --> see above
+
 // saveLocalStorageObject() --> see above
+
 // saveLocalStorageObject() --> see above
+
 // saveLocalStorageObject() --> see above
+
 // setUserStatusGuest() --> see above
 // rememberGuestData()
+
+// setUserStatusExternal()
+// removeLocalStorageObject()
+
 // includeHTMLById() --> see above
+
 // resetOverlayFrame()
 // resetOverlayMsg()
 // resetOverlayNav()
+
 // setupOverlayForInput()
+// setupSignElementsOnTop() --> sign.js
+
 // setupOverlayForSelect()
 // setupSignElementsOnTop() --> sign.js
+
 // handleOverlayForInput() --> see above
+
+// toggleElementZindex()
+
 // loadLocalStorageObject() --> see above
 
 
@@ -461,6 +478,11 @@ function setupOverlayForSelect(inputId) {
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-select');
     overlay.setAttribute('onclick', `resetOverlayFrameSelect('${inputId}')`)
+}
+
+function toggleElementZindex(element) {
+    element.classList.toggle('z-index-1');
+    element.classList.toggle('z-index--1');
 }
 
 

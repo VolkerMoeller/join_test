@@ -256,11 +256,21 @@ function toggleElements(id1st, id2nd) {
 }
 
 
-function toggleElementsOpacity(id) {
-    const element = document.getElementById(id);
-    element.classList.toggle('opacity-0');
-    element.classList.toggle('opacity-1');
+function toggleElementsZindex(id1st, id2nd) {
+    const element1st = document.getElementById(id1st);
+    const element2nd = document.getElementById(id2nd);
+    element1st.classList.toggle('z-index-1');
+    element1st.classList.toggle('z-index--1');
+    element2nd.classList.toggle('z-index-1');
+    element2nd.classList.toggle('z-index--1');
 }
+
+
+// function toggleElementsOpacity(id) {
+//     const element = document.getElementById(id);
+//     element.classList.toggle('opacity-0');
+//     element.classList.toggle('opacity-1');
+// }
 
 
 function focusInput(fieldId) {

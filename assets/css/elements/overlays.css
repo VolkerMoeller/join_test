@@ -71,6 +71,12 @@
     /* background-color: var(--black-transp-50); */
 }
 
+.ovl-show-subtask {
+    z-index: 2;
+    background-color: transparent;
+    background-color: var(--black-transp-50);
+}
+
 .msg-cnt {
     position: absolute;
     background-color: var(--main);

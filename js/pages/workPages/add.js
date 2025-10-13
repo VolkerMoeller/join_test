@@ -134,8 +134,8 @@ function hideSubtaskPanel() {
 }
 
 // 12th
-function closeInput(id) {
-    document.getElementById(id).value = "";
+function initShowSubtaskPanel(inputId) {
+    handleOverlayForSubtasks(inputId);
 }
 
 

@@ -241,12 +241,24 @@ function handleOverlayForSelect(inputId) {
 }
 
 
+function handleOverlayForSubtasks(inputId) {
+    let overlay = document.querySelector('.ovl-frame');
+    let overlayNotShown = overlay.classList.contains('ovl-hide');
+    if (overlayNotShown) {
+        setupOverlayForSubtasks(inputId);
+        setupSubtasksElementsOnTop(inputId);
+    }
+}
+
+
 function checkOverlay() {
     let overlay = document.querySelector('.ovl-frame');
     if (!overlay.classList.contains('ovl-show-input')) {
         handleOverlayForInput();
     }
 }
+
+
 
 // --- help-functions:
 
@@ -265,13 +277,6 @@ function toggleElementsZindex(id1st, id2nd) {
     toggleElementZindex(element1st);
     toggleElementZindex(element2nd);
 }
-
-
-// function toggleElementsOpacity(id) {
-//     const element = document.getElementById(id);
-//     element.classList.toggle('opacity-0');
-//     element.classList.toggle('opacity-1');
-// }
 
 
 function focusInput(fieldId) {
@@ -372,6 +377,9 @@ function closeInput(id) {
 
 // setupOverlayForSelect()
 // setupSignElementsOnTop() --> sign.js
+
+// setupOverlayForSubtasks();
+// setupSubtasksElementsOnTop() --> ?
 
 // handleOverlayForInput() --> see above
 
@@ -485,6 +493,16 @@ function setupOverlayForSelect(inputId) {
     overlay.classList.add('ovl-show-select');
     overlay.setAttribute('onclick', `resetOverlayFrameSelect('${inputId}')`)
 }
+
+
+function setupOverlayForSubtasks(inputId) {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.remove('ovl-hide');
+    overlay.classList.add('ovl-show-subtask');
+    debugger;
+    overlay.setAttribute('onclick', `resetOverlayFrameSubtask('${inputId}')`)
+}
+
 
 function toggleElementZindex(element) {
     element.classList.toggle('z-index-1');

@@ -138,6 +138,12 @@ function initShowSubtaskPanel(inputId) {
     handleOverlayForSubtasks(inputId);
 }
 
+// 13th
+
+function resetOverlayFrameSubtask(inputId) {
+    resetOverlayFrame();
+}
+
 
 // --------------------
 // 1st-level-functions:

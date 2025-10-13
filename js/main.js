@@ -246,7 +246,7 @@ function handleOverlayForSubtasks(inputId) {
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
         setupOverlayForSubtasks(inputId);
-        setupSubtasksElementsOnTop(inputId);
+        // setupSubtasksElementsOnTop(inputId);
     }
 }
 
@@ -453,6 +453,7 @@ function resetOverlayFrame() {
     overlay.classList.remove('ovl-show-input');
     overlay.classList.remove('ovl-show-nav');
     overlay.classList.remove('ovl-show-select');
+    overlay.classList.remove('ovl-show-subtask');
     overlay.removeAttribute('onclick');
 }
 
@@ -499,7 +500,6 @@ function setupOverlayForSubtasks(inputId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-subtask');
-    debugger;
     overlay.setAttribute('onclick', `resetOverlayFrameSubtask('${inputId}')`)
 }
 

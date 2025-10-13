@@ -7,6 +7,7 @@ class Task {
     description = '';
     state = 'toDo';
     formData = '';
+    subtaskId = '0';
 
 
     constructor(taskIndex) {

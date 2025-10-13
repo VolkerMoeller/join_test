@@ -214,12 +214,16 @@
     position: relative;
 }
 
-.user-subtask-list-input {
-
+.user-subtask-list-inputs {
     position: absolute;
     top: 0;
-
 }
+
+.user-subtask-list-inputs input {
+    width: (0%, 440px, 440px);
+}
+
+
 
 .user-subtask-list-text {
     display: flex;

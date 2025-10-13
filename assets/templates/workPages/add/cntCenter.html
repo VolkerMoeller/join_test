@@ -185,7 +185,8 @@
                                 placeholder="Add new subtask" autocomplete="off"
                                 onfocus="initShowSubtaskPanel('subtask')">
                             <div id="inputSubtaskPanel" class="input-subtask-panel display-none">
-                                <div class="flx-cnt" onclick="" w3-include-svg="./assets/img/svgHTML/52-close_hvr.html">
+                                <div class="flx-cnt" onclick="closeSubtaskInput()"
+                                    w3-include-svg="./assets/img/svgHTML/52-close_hvr.html">
                                 </div>
                                 <p class="subtask-vector"></p>
                                 <div class="flx-cnt" w3-include-svg="./assets/img/svgHTML/51-check_hvr.html"></div>
@@ -213,18 +214,17 @@
                 </div>
             </div>
         </div>
-</div>
-<div class="footnote version-2-body">
-    <span class="version-warning-V2">*</span>This field is required
-</div>
-<div class="form-panel-add-task">
-    <div class="hover-container-v3 rel">
-        <input class="btn-wo-icn-2nd version-btn abs-cnt" type="button" name="clear"
-            onclick="resetFormById('formAddTask')" value="Clear">
-    </div>
-    <div class="hover-container-v3 rel">
-        <input class="btn-wo-icn version-btn" type="submit" onclick="doSth('addTask')" value="Add Task">
-    </div>
-</div>
-</form>
+        <div class="footnote version-2-body">
+            <span class="version-warning-V2">*</span>This field is required
+        </div>
+        <div class="form-panel-add-task">
+            <div class="hover-container-v3 rel">
+                <input class="btn-wo-icn-2nd version-btn abs-cnt" type="button" name="clear"
+                    onclick="resetFormById('formAddTask')" value="Clear">
+            </div>
+            <div class="hover-container-v3 rel">
+                <input class="btn-wo-icn version-btn" type="submit" onclick="doSth('addTask')" value="Add Task">
+            </div>
+        </div>
+    </form>
 </div>

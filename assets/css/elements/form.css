@@ -117,6 +117,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: 5;
 }
 
 
@@ -187,7 +188,6 @@
         width: clamp(0px, 100%, 440px);
         background-color: var(--main-background);
         position: sticky;
-        z-index: 4;
         bottom: -48px;
         right: auto;
         display: flex;

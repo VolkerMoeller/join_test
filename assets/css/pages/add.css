@@ -175,7 +175,7 @@
     border: solid 1px var(--input-border);
     height: 24px;
     margin-left: 2px !important;
-    margin-right: 2px !important;
+    margin-right: 3px !important;
 }
 
 .select::placeholder {
@@ -212,7 +212,6 @@
 
 .subtasks-list-container {
     position: relative;
-    padding-bottom: 48px;
 }
 
 .user-subtasks {

@@ -74,7 +74,7 @@
 .ovl-show-subtask {
     z-index: 2;
     background-color: transparent;
-    background-color: var(--black-transp-50);
+    /* background-color: var(--black-transp-50); */
 }
 
 .msg-cnt {

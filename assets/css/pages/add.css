@@ -210,27 +210,41 @@
     fill: var(--drop-down-icon-V2);
 }
 
-.subtask-list-container {
+.subtasks-list-container {
     position: relative;
     padding-bottom: 48px;
 }
 
-.user-subtask-list-inputs {
+.user-subtasks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.user-subtasks-list-inputs {
     position: absolute;
     top: 0;
 }
 
-.user-subtask-list-inputs input {
+.user-subtasks-list-inputs input {
+    height: 32px;
     width: clamp(0%, 440px, 440px);
+    border-radius: 0;
+    border: unset;
+    padding: 4px 16px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--white);
 }
 
-.user-subtask-list-text {
-    display: flex;
-    flex-direction: column;
+.user-subtasks-list-inputs input:focus {
+    border: unset;
+    border-bottom: 1px solid var(--main2nd);
 }
 
-.user-subtask-list-text li {
+.user-subtasks-list-text li {
+    height: 32px;
     padding: 6px 0px;
+    font-size: 16px;
 }
 
 

@@ -182,6 +182,10 @@ ul span {
     position: relative;
 }
 
+.abs {
+    position: absolute;
+}
+
 label {
     color: var(--black-dark-view);
     font-size: 20px;

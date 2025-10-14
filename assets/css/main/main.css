@@ -65,8 +65,19 @@ menu {
 }
 
 ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    padding-left: 32px;
+}
+
+li {
+    position: relative;
+}
+
+li:before {
+    position: absolute;
+    left: 8px;
+    content: "•";
 }
 
 .ghost {

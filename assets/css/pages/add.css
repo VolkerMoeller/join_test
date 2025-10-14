@@ -252,8 +252,27 @@
 
 .user-subtasks-list-text li {
     height: 32px;
-    padding: 6px 0px;
+    padding: 6px 32px;
     font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: var(--black);
+}
+
+.user-subtasks-list-text li span {
+    color: var(--black);
+}
+
+.user-subtasks-list-text li:hover {
+    background-color: var(--drop-down-icon-V2);
+}
+
+.user-subtasks-list-text li .input-subtask-panel {
+    display: none;
+}
+
+.user-subtasks-list-text li:hover .input-subtask-panel {
+    display: flex;
 }
 
 

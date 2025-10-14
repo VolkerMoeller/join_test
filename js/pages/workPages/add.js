@@ -193,16 +193,19 @@ function initShowSubtaskInput(subtaskId) {
 // 17th
 
 function resetOverlayFrameSubtaskEdit(subtaskId) {
+    let editSubtaskId = subtaskId + 'InputContainer';
     resetOverlayFrame();
-    // document.getElementById('inputContainerSubtask').classList.remove('z-index-4')
+    document.getElementById(editSubtaskId).classList.remove('z-index-4');
+    document.getElementById(editSubtaskId).classList.add('z-index--1');
 }
 
 // 18th
 
 function setupSubtasksEditElementsOnTop(subtaskId) {
     let editSubtaskId = subtaskId + 'InputContainer';
-    console.log(editSubtaskId);
+
     document.getElementById(editSubtaskId).classList.add('z-index-4');
+    document.getElementById(editSubtaskId).classList.toggle('z-index-1');
 }
 
 

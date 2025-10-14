@@ -18,6 +18,8 @@
 // 14th setupSubtasksElementsOnTop()
 // 15th closeSubtaskInput()
 // 16th initShowSubtaskInput()
+// ...
+// 19th updateDefaultSubtaskId()
 
 
 // 1st
@@ -206,6 +208,19 @@ function setupSubtasksEditElementsOnTop(subtaskId) {
 
     document.getElementById(editSubtaskId).classList.add('z-index-4');
     document.getElementById(editSubtaskId).classList.toggle('z-index-1');
+}
+
+// 19th
+
+function updateCurrentSubtaskId() {
+    let currentSubtaskId = loadLocalStorageObject('currentSubtaskId');
+    if (!currentSubtaskId) {
+        currentSubtaskId = '0';
+    } else {
+        currentSubtaskId++;
+        currentSubtaskId = currentSubtaskId.toString();
+    }
+    saveLocalStorageObject('currentSubtaskId', currentSubtaskId);
 }
 
 

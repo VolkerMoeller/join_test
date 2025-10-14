@@ -16,6 +16,7 @@ class User {
     }
     nextContactId = '0';
     nextTaskId = '0';
+    nextSubtaskId = '0';
     contacts = '';
     tasks = '';
 

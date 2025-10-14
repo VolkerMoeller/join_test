@@ -1,7 +1,6 @@
 <div id="mainCenterAddTask" class="main-center">
     <!-- later to be generated as formAddTask element -->
-    <form id="formAddTask" class="form-add"
-        onsubmit="initCreateNewTask(); return false;">
+    <form id="formAddTask" class="form-add" onsubmit="initCreateNewTask(); return false;">
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>
@@ -190,7 +189,8 @@
                                     w3-include-svg="./assets/img/svgHTML/52-close_hvr.html">
                                 </div>
                                 <p class="subtask-vector"></p>
-                                <div class="flx-cnt" w3-include-svg="./assets/img/svgHTML/51-check_hvr.html"></div>
+                                <div class="flx-cnt" w3-include-svg="./assets/img/svgHTML/51-check_hvr.html"
+                                    onclick="updateCurrentSubtaskId()"></div>
                             </div>
                             <span class="version-warning-V2 ghost">ghost</span>
                         </div>

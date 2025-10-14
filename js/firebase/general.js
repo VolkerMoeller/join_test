@@ -31,6 +31,18 @@ async function updateNextId(path) {
 }
 
 
+async function getNextSubtaskId() {
+    let userId = loadLocalStorageObject('currentUser').id;
+    let nextSubtaskId = await loadData(`users/${userId}/nextSubtaskId`)
+    return nextSubtaskId;
+}
+
+async function saveNextSubtaskId(nextSubtaskId) {
+    let userId = loadLocalStorageObject('currentUser').id;
+    await putData(`users/${userId}/nextSubtaskId`, nextSubtaskId);
+}
+
+
 // -------------------
 // 1st-level-functions
 // -------------------
@@ -84,7 +96,8 @@ async function storageGuest() {
         'contacts': '',
         'tasks': '',
         'nextContactId': '0',
-        'nextTaskId': '0'
+        'nextTaskId': '0',
+        'nextSubtaskId': '0'
     }
     await putData(`users/userId0000/`, guestData);
 }

@@ -23,68 +23,8 @@ function getFormInputDataTest() {
 }
 
 
-// function selectSubtasks() {
-//     const subtaskInputs = getSubtaskInputs()
-//     const subtaskTexts = getSubtaskTexts()
-//     const subtaskInputIds = getSubtaskInputIds(subtaskInputs);
-//     const subtaskTextIds = getSubtaskInputIds(subtaskTexts);
-//     const subtaskValues = getSubtaskInputValues(subtaskInputs);
-//     const subtasks = {
-//         'subtasksInputIds': subtaskInputIds,
-//         'subtasksTextIds': subtaskTextIds,
-//         'subtasksValues': subtaskValues,
-//     };
-//     return subtasks;
-// }
-
-
-// function getSubtaskInputs() {
-//     const subtaskInputs = document.querySelectorAll('.subtask-edit-container input');
-//     return subtaskInputs;
-// }
-
-
-// function getSubtaskTexts() {
-//     const subtaskTexts = document.querySelectorAll('.user-subtasks-list-text li');
-//     return subtaskTexts;
-// }
-
-
-// function getSubtaskInputIds(subtaskInputs) {
-//     const subtaskInputIds = [];
-//     subtaskInputs.forEach(subtask => {
-//         subtaskInputIds.push(subtask.id);
-//     });
-//     return subtaskInputIds;
-// }
-
-
-// function getSubtaskTextIds(subtaskInputs) {
-//     const subtaskInputIds = [];
-//     subtaskInputs.forEach(subtask => {
-//         subtaskInputIds.push(subtask.id);
-//     });
-//     return subtaskInputIds;
-// }
-
-
-// function getSubtaskInputValues(subtaskInputs) {
-//     const subtaskInputValues = [];
-//     subtaskInputs.forEach(subtask => {
-//         subtaskInputValues.push(subtask.value);
-//     });
-//     return subtaskInputValues;
-// }
-
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-// createNewTask()
-// viewDefaultContent() --> work.js
-
-
 async function createNewTask() {
+    updateNextSubtaskId();
     let taskIndex = await initGetNextTaskId();
     let newTask = new Task(taskIndex);
     let userIndex = loadLocalStorageObject('currentUser').id;
@@ -100,3 +40,15 @@ async function createNewTask() {
 // initGetNextTaskId() --> general.js
 // loadLocalStorageObject() --> main.js
 // storageNewTask() --> general.js
+
+
+async function updateNextSubtaskId() {
+    let defaultId = await getNextSubtaskId();
+    defaultId = parseInt(defaultId);
+    let currentId = loadLocalStorageObject('currentSubtaskId');
+    currentId = parseInt(currentId);
+    defaultId = defaultId + currentId;
+    defaultId = defaultId.toString();
+    await saveNextSubtaskId(defaultId);
+    saveLocalStorageObject('currentSubtaskId', '0');
+}

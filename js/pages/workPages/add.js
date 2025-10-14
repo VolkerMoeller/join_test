@@ -177,6 +177,15 @@ function closeSubtaskInput() {
     resetOverlayFrameSubtask();
 }
 
+// 16th
+
+function initShowSubtaskInput(subtaskId) {
+    let subtaskTextId = subtaskId + 'Text';
+    let subtaskInputId = subtaskId + 'Input';
+    toggleElementsZindex(subtaskTextId, subtaskInputId);
+    focusInput(subtaskInputId);
+}
+
 
 // --------------------
 // 1st-level-functions:

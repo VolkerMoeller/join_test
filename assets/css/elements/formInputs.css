@@ -83,6 +83,13 @@
     cursor: text;
 }
 
+.subtask-edit-container {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+
 .input-container-icon button:hover svg rect {
     fill: var(--drop-down-icon-V2);
 }

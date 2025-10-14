@@ -188,14 +188,24 @@
 
 .input-subtask-panel {
     position: absolute;
-    top: 50%;
-    transform: translateY(-89%);
-    right: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 24px;
     cursor: pointer;
+}
+
+.subtask-panel-v1 {
+    top: 50%;
+    transform: translateY(-89%);
+    right: 4px;
+    height: 24px;
+}
+
+.subtask-panel-v2 {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    height: 32px;
 }
 
 .input-subtask-panel div:nth-child(3):hover svg rect {

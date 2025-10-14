@@ -181,10 +181,14 @@ function closeSubtaskInput() {
 // 16th
 
 function initShowSubtaskInput(subtaskId) {
+    let subtaskContainerInputId = subtaskId + 'InputContainer';
     let subtaskTextId = subtaskId + 'Text';
     let subtaskInputId = subtaskId + 'Input';
-    toggleElementsZindex(subtaskTextId, subtaskInputId);
     focusInput(subtaskInputId);
+    // toggleElementsZindex(subtaskTextId, subtaskInputId);
+    document.getElementById(subtaskContainerInputId).classList.toggle('z-index--1')
+    document.getElementById(subtaskContainerInputId).classList.toggle('z-index-1')
+
 }
 
 
@@ -235,7 +239,7 @@ function initShowSubtaskInput(subtaskId) {
 // 7th
 // tglCSSCheckBox()
 
-
+// 16th
 // toggleElementsZindex() --> main.js
 // focusInput() --> main.js
 

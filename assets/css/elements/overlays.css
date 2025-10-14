@@ -80,7 +80,7 @@
 .msg-cnt {
     position: absolute;
     background-color: var(--main);
-    color: white;
+    color: var(--white);
     box-shadow: var(--nuevo);
     height: 74px;
     border-radius: 20px;

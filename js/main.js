@@ -533,8 +533,8 @@ function toggleElementZindex(element) {
 // 2nd-level-functions
 // -------------------
 
-// loadLocalStorageObject() - see above
-// saveLocalStorageObject() - see above
+// loadLocalStorageObject() --> see above
+// saveLocalStorageObject() --> see above
 // changeClrScheme()
 
 
@@ -548,4 +548,4 @@ function changeClrScheme() {
 // 3rd-level-functions
 // -------------------
 
-// loadLocalStorageObject() - see above
+// loadLocalStorageObject() --> see above

@@ -1,6 +1,7 @@
 <div id="mainCenterAddTask" class="main-center">
     <!-- later to be generated as formAddTask element -->
-    <form id="formAddTask" class="form-add" onsubmit="viewDefaultContent('mnuBtn4th'); return false;">
+    <form id="formAddTask" class="form-add"
+        onsubmit="initCreateNewTask(); return false;">
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>
@@ -258,7 +259,7 @@
                     onclick="resetFormById('formAddTask')" value="Clear">
             </div>
             <div class="hover-container-v3 rel">
-                <input class="btn-wo-icn version-btn" type="submit" onclick="doSth('addTask')" value="Add Task">
+                <input class="btn-wo-icn version-btn" type="submit" onclick="getFormInputDataTest()" value="Add Task">
             </div>
         </div>
     </form>

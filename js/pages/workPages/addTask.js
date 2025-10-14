@@ -3,20 +3,31 @@
 // ---------------------
 
 // initNewTask()
+// getFormInputDataTest()
 
-async function initNewTask() {
+async function initCreateNewTask() {
     let newTask = await createNewTask();
     console.log(newTask);
     // handleSubtasks(taskData);
     // handleAssignedContacts(taskData);
     // animateMsg('addTask.html', 'msgAddTaskSuccess', 'board.html');
     // await saveTasksGroups();
+    viewDefaultContent('mnuBtn4th');
+}
+
+
+function getFormInputDataTest() {
+    const inputs = document.getElementById("formAddTask").elements;
+    console.log(inputs);
 }
 
 
 // --------------------
 // 1st-level-functions:
 // --------------------
+
+// createNewTask()
+// viewDefaultContent() --> work.js
 
 
 async function createNewTask() {
@@ -27,28 +38,14 @@ async function createNewTask() {
     return newTask;
 }
 
-// async function getTaskData() {
-//     let taskData = [];
-//     taskData.push(userIndex, taskIndex, newTask);
-//     return taskData;
-// }
-
 
 // --------------------
 // 2nd-level-functions:
 // --------------------
 
 // initGetNextTaskId() --> general.js
-// getFormInputData()
+// loadLocalStorageObject() --> main.js
 // storageNewTask() --> general.js
-
-
-function getFormInputDataTest() {
-    const inputs = document.getElementById("formAddTask").elements;
-    return inputs;
-}
-
-
 
 
 function selectSubtasks() {

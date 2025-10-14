@@ -73,7 +73,6 @@ async function storageGuest() {
         'color': 'var(--main2nd)',
         'initial': 'G',
         'eMail': 'guest@user.de',
-        'nextSubtaskId': '0',
         'tasksGroups': {
             'toDo': '4',
             'progress': '2',

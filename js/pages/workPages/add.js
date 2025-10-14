@@ -188,7 +188,21 @@ function initShowSubtaskInput(subtaskId) {
     focusInput(subtaskInputId);
     document.getElementById(subtaskContainerInputId).classList.toggle('z-index--1')
     document.getElementById(subtaskContainerInputId).classList.toggle('z-index-1')
+}
 
+// 17th
+
+function resetOverlayFrameSubtaskEdit(subtaskId) {
+    resetOverlayFrame();
+    // document.getElementById('inputContainerSubtask').classList.remove('z-index-4')
+}
+
+// 18th
+
+function setupSubtasksEditElementsOnTop(subtaskId) {
+    let editSubtaskId = subtaskId + 'InputContainer';
+    console.log(editSubtaskId);
+    document.getElementById(editSubtaskId).classList.add('z-index-4');
 }
 
 

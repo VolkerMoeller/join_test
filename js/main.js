@@ -252,12 +252,12 @@ function handleOverlayForSubtasks(inputId) {
 }
 
 
-function handleOverlayForEditSubtask(inputId) {
+function handleOverlayForEditSubtask(subtaskId) {
     let overlay = document.querySelector('.ovl-frame');
     let overlayNotShown = overlay.classList.contains('ovl-hide');
     if (overlayNotShown) {
-        setupOverlayForEditSubtask(inputId);
-        // setupSubtasksElementsOnTop(inputId);
+        setupOverlayForEditSubtask(subtaskId);
+        setupSubtasksEditElementsOnTop(subtaskId);
     }
 }
 
@@ -515,11 +515,11 @@ function setupOverlayForSubtasks(inputId) {
 }
 
 
-function setupOverlayForEditSubtask(inputId) {
+function setupOverlayForEditSubtask(subtaskId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-subtask');
-    // overlay.setAttribute('onclick', `resetOverlayFrameSubtask('${inputId}')`)
+    overlay.setAttribute('onclick', `resetOverlayFrameSubtaskEdit('${subtaskId}')`)
 }
 
 

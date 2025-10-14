@@ -5,6 +5,7 @@ class User {
     password = '';
     initial = '';
     color = 'var(--main2nd)';
+    nextTaskId = '0';
     tasksGroups = {
         'toDo': '0',
         'progress': '0',

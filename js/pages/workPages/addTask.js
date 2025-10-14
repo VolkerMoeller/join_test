@@ -4,6 +4,7 @@
 
 // initNewTask()
 // getFormInputDataTest()
+// selectSubtasks()
 
 async function initCreateNewTask() {
     let newTask = await createNewTask();
@@ -21,6 +22,59 @@ function getFormInputDataTest() {
     console.log(inputs);
 }
 
+
+function selectSubtasks() {
+    const subtaskInputs = getSubtaskInputs()
+    const subtaskTexts = getSubtaskTexts()
+    const subtaskInputIds = getSubtaskInputIds(subtaskInputs);
+    const subtaskTextIds = getSubtaskInputIds(subtaskTexts);
+    const subtaskValues = getSubtaskInputValues(subtaskInputs);
+    const subtasks = {
+        'subtasksInputIds': subtaskInputIds,
+        'subtasksTextIds': subtaskTextIds,
+        'subtasksValues': subtaskValues,
+    };
+    return subtasks;
+}
+
+
+function getSubtaskInputs() {
+    const subtaskInputs = document.querySelectorAll('.subtask-edit-container input');
+    return subtaskInputs;
+}
+
+
+function getSubtaskTexts() {
+    const subtaskTexts = document.querySelectorAll('.user-subtasks-list-text li');
+    return subtaskTexts;
+}
+
+
+function getSubtaskInputIds(subtaskInputs) {
+    const subtaskInputIds = [];
+    subtaskInputs.forEach(subtask => {
+        subtaskInputIds.push(subtask.id);
+    });
+    return subtaskInputIds;
+}
+
+
+function getSubtaskTextIds(subtaskInputs) {
+    const subtaskInputIds = [];
+    subtaskInputs.forEach(subtask => {
+        subtaskInputIds.push(subtask.id);
+    });
+    return subtaskInputIds;
+}
+
+
+function getSubtaskInputValues(subtaskInputs) {
+    const subtaskInputValues = [];
+    subtaskInputs.forEach(subtask => {
+        subtaskInputValues.push(subtask.value);
+    });
+    return subtaskInputValues;
+}
 
 // --------------------
 // 1st-level-functions:
@@ -46,12 +100,3 @@ async function createNewTask() {
 // initGetNextTaskId() --> general.js
 // loadLocalStorageObject() --> main.js
 // storageNewTask() --> general.js
-
-
-function selectSubtasks() {
-    const subtasks = document.querySelectorAll('.user-subtasks-list-text li');
-    subtasks.forEach(subtask => {
-        console.log(subtask.innerHTML);
-    });
-    return subtasks;
-}

@@ -14,6 +14,8 @@ class User {
         'inBoard': '0',
         'urgent': '0'
     }
+    nextContactId = '0';
+    nextTaskId = '0';
     contacts = '';
     tasks = '';
 

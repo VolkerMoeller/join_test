@@ -6,6 +6,7 @@ class Task {
     priority = '';
     description = '';
     state = 'toDo';
+    nextSubtaskId = '0'
     subtasks = '';
 
 

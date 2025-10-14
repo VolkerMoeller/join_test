@@ -49,8 +49,8 @@ async function updateNextId(path) {
 function putInitDataToFirebase() {
     let initData = {
         'nextUserId': '1',
-        'nextContactId': '0',
-        'nextTaskId': '0'
+        // 'nextContactId': '0',
+        // 'nextTaskId': '0'
     }
     putData(`initData/`, initData);
     storageGuest();
@@ -73,7 +73,6 @@ async function storageGuest() {
         'color': 'var(--main2nd)',
         'initial': 'G',
         'eMail': 'guest@user.de',
-        'nextSubtaskId': '0',
         'tasksGroups': {
             'toDo': '4',
             'progress': '2',
@@ -83,7 +82,9 @@ async function storageGuest() {
             'urgent': '1'
         },
         'contacts': '',
-        'tasks': ''
+        'tasks': '',
+        'nextContactId': '0',
+        'nextTaskId': '0'
     }
     await putData(`users/userId0000/`, guestData);
 }
@@ -153,8 +154,9 @@ async function storageFirebaseNewUser(newUser) {
 // storageNewTask()
 
 async function initGetNextTaskId() {
-    let nextTaskId = await getNextId('initData/nextTaskId/');
-    await updateNextId('initData/nextTaskId/');
+    let userId = loadLocalStorageObject('currentUser').id;
+    let nextTaskId = await getNextId(`users/${userId}/nextTaskId`);
+    await updateNextId(`users/${userId}/nextTaskId`);
     return nextTaskId;
 }
 

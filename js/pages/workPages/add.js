@@ -17,6 +17,7 @@
 // 13th resetOverlayFrameSubtask()
 // 14th setupSubtasksElementsOnTop()
 // 15th closeSubtaskInput()
+// 16th initShowSubtaskInput()
 
 
 // 1st
@@ -233,6 +234,10 @@ function initShowSubtaskInput(subtaskId) {
 
 // 7th
 // tglCSSCheckBox()
+
+
+// toggleElementsZindex() --> main.js
+// focusInput() --> main.js
 
 
 function resetInputAssigned() {

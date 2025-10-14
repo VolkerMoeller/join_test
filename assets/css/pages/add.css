@@ -182,10 +182,6 @@
     color: var(--black);
 }
 
-.checkHvr51 {
-    fill: none;
-}
-
 .input-subtask-panel {
     position: absolute;
     display: flex;
@@ -212,7 +208,19 @@
     fill: var(--drop-down-icon-V2);
 }
 
-.closeHvr52 {
+.check-hvr-51 {
+    fill: none;
+}
+
+.close-hvr-52 {
+    fill: none;
+}
+
+.delete-hvr-53 {
+    fill: none;
+}
+
+.edit-hvr-54 {
     fill: none;
 }
 

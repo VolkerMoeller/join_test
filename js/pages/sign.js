@@ -19,6 +19,7 @@ async function createNewUser() {
     console.log(userData);
     let newUser = new User(userData);
     await storageFirebaseNewUser(newUser);
+    return newUser;
 }
 
 // --------------------
@@ -147,8 +148,9 @@ async function initCheckInputSignUp() {
         success = checkInputSignUp();
     }
     if (success) {
+        let newUser = await createNewUser();
+        console.log(newUser);
         initanimSignMessages();
-        await createNewUser();
     }
 }
 
@@ -294,7 +296,7 @@ function initanimSignMessages() {
     animSignMessages(currentForm);
     if (currentForm == 'SignUp') {
         setTimeout(() => {
-            switchToLoginForm(currentForm);
+            // switchToLoginForm(currentForm);
         }, 1000);
     }
 }

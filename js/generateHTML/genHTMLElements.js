@@ -100,7 +100,8 @@ function genHTMLSubtaskListInput(subtaskId, text) {
                 w3-include-svg="./assets/img/svgHTML/53-delete_hvr.html">
             </div>
             <p class="subtask-vector"></p>
-            <div class="flx-cnt" w3-include-svg="./assets/img/svgHTML/51-check_hvr.html">
+            <div class="flx-cnt" onclick="checkSubtask('${subtaskId}')"
+                w3-include-svg="./assets/img/svgHTML/51-check_hvr.html">
             </div>
         </div>
     </div>

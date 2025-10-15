@@ -284,6 +284,20 @@ function deleteSubtask(subtaskId) {
     rebuildSubtaskList();
 }
 
+// 25th
+
+function checkSubtask(subtaskId) {
+    let subtaskObj = loadLocalStorageObject('currentSubtaskObj');
+    if (subtaskObj) {
+        let inputId = subtaskId + 'Input';
+        let newText = document.getElementById(inputId).value;
+        console.log(newText);
+        subtaskObj[subtaskId] = newText;
+        saveLocalStorageObject('currentSubtaskObj', subtaskObj);
+    }
+    rebuildSubtaskList();
+}
+
 
 // --------------------
 // 1st-level-functions:

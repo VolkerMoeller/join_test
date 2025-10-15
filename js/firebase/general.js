@@ -129,18 +129,7 @@ async function initGetNextUserId() {
 }
 
 async function storageFirebaseNewUser(newUser) {
-    let userData = {
-        'eMail': newUser['eMail'],
-        'name': newUser['name'],
-        'password': newUser['password'],
-        'color': newUser['color'],
-        'contacts': newUser['contacts'],
-        'tasks': newUser['tasks'],
-        'tasksGroups': newUser['tasksGroups'],
-        'initial': newUser['initial'],
-        'eMail': newUser['eMail'],
-    }
-    await putData(`users/${newUser['id']}`, userData);
+    await putData(`users/${newUser['id']}`, newUser);
 }
 
 

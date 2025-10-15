@@ -72,11 +72,11 @@ function genHTMLSumRectCnt(nr, title) {
 }
 
 
-function genHTMLSubtaskListText(subtaskId) {
+function genHTMLSubtaskListText(subtaskId, text) {
     return `
     <li class="subtask-edit-container z-index-1"
         ondblclick="initShowSubtaskInput('${subtaskId}')" id="${subtaskId}Text">
-        <span>So was nicht!</span>
+        <span>${text}</span>
         <div class="input-subtask-panel subtask-panel-v2">
             <div class="flx-cnt" onclick="initShowSubtaskInput('${subtaskId}')"
                 w3-include-svg="./assets/img/svgHTML/54-edit_hvr.html">
@@ -90,10 +90,10 @@ function genHTMLSubtaskListText(subtaskId) {
 }
 
 
-function genHTMLSubtaskListInput(subtaskId) {
+function genHTMLSubtaskListInput(subtaskId, text) {
     return `
     <div id="${subtaskId}InputContainer" class="subtask-edit-container z-index--1">
-        <input id="${subtaskId}Input" type="text" value="So was nicht!">
+        <input id="${subtaskId}Input" type="text" value="${text}">
         <div class="input-subtask-panel subtask-panel-v2">
             <div class="flx-cnt" onclick=""
                 w3-include-svg="./assets/img/svgHTML/53-delete_hvr.html">

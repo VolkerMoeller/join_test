@@ -252,14 +252,12 @@ function updateCurrentSubtaskObj(key, value) {
 
 // 23th
 
-
 function rebuildSubtaskList() {
     let currentSubtaskObj = loadLocalStorageObject('currentSubtaskObj');
     if (currentSubtaskObj) {
         document.getElementById('subtaskListText').innerHTML = '';
         document.getElementById('subtaskListInput').innerHTML = '';
         subtaskArrs = Object.entries(currentSubtaskObj);
-        console.log(subtaskArrs);
         subtaskArrs.forEach(subtaskArr => {
             const subtaskId = subtaskArr[0];
             const text = subtaskArr[1];

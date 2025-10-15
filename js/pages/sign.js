@@ -148,7 +148,7 @@ async function initCheckInputSignUp() {
     }
     if (success) {
         await createNewUser();
-        initanimSignMessages();
+        initAnimSignMessages();
     }
 }
 
@@ -173,7 +173,7 @@ async function initCheckInputSignUp() {
 // toggleCheckboxIcns()
 // toggleOnOffSignUpBtn()
 // checkInputSignUp()
-// initanimSignMessages()
+// initAnimSignMessages()
 
 
 function checkCurrentForm() {
@@ -288,13 +288,13 @@ function checkInputSignUp() {
 }
 
 
-function initanimSignMessages() {
+function initAnimSignMessages() {
     let currentForm = checkCurrentForm();
     resetSignElementsOnTop();
     animSignMessages(currentForm);
     if (currentForm == 'SignUp') {
         setTimeout(() => {
-            // switchToLoginForm(currentForm);
+            switchToLoginForm(currentForm);
         }, 1000);
     }
 }

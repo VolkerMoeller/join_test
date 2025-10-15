@@ -21,6 +21,7 @@
 // 17th resetOverlayFrameSubtaskEdit()
 // 18th setupSubtasksEditElementsOnTop()
 // 19th updateDefaultSubtaskId()
+// 20th resetFormAddTask()
 
 
 // 1st
@@ -222,6 +223,15 @@ function updateCurrentSubtaskId() {
         currentSubtaskId = currentSubtaskId.toString();
     }
     saveLocalStorageObject('currentSubtaskId', currentSubtaskId);
+    return currentSubtaskId;
+}
+
+// 20th
+
+function resetFormAddTask() {
+    resetFormById('formAddTask');
+    saveLocalStorageObject('currentSubtaskId', '0');
+
 }
 
 

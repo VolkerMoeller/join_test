@@ -2,7 +2,8 @@
 // addTask.js-functions:
 // ---------------------
 
-// initNewCreateNewTask()
+// initCreateNewTask()
+// initCreateNewSubtask()
 
 async function initCreateNewTask() {
     let newTask = await createNewTask();
@@ -12,6 +13,12 @@ async function initCreateNewTask() {
     // animateMsg('addTask.html', 'msgAddTaskSuccess', 'board.html');
     // await saveTasksGroups();
     viewDefaultContent('mnuBtn4th');
+}
+
+function initCreateNewSubtask() {
+    let subtaskId = updateCurrentSubtaskId();
+    subtaskId = 'subtask' + subtaskId;
+    console.log(subtaskId);
 }
 
 

@@ -82,7 +82,8 @@ function genHTMLSubtaskListText(subtaskId, text) {
                 w3-include-svg="./assets/img/svgHTML/54-edit_hvr.html">
             </div>
             <p class="subtask-vector"></p>
-            <div class="flx-cnt" w3-include-svg="./assets/img/svgHTML/53-delete_hvr.html">
+            <div class="flx-cnt" onclick="deleteSubtask('${subtaskId}')" 
+                w3-include-svg="./assets/img/svgHTML/53-delete_hvr.html">
             </div>
         </div>
     </li>
@@ -95,7 +96,7 @@ function genHTMLSubtaskListInput(subtaskId, text) {
     <div id="${subtaskId}InputContainer" class="subtask-edit-container z-index--1">
         <input id="${subtaskId}Input" type="text" value="${text}">
         <div class="input-subtask-panel subtask-panel-v2">
-            <div class="flx-cnt" onclick=""
+            <div class="flx-cnt" onclick="deleteSubtask('${subtaskId}')"
                 w3-include-svg="./assets/img/svgHTML/53-delete_hvr.html">
             </div>
             <p class="subtask-vector"></p>

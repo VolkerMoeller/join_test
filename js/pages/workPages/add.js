@@ -199,17 +199,22 @@ function initShowSubtaskInput(subtaskId) {
 function resetOverlayFrameSubtaskEdit(subtaskId) {
     let editSubtaskId = subtaskId + 'InputContainer';
     resetOverlayFrame();
-    document.getElementById(editSubtaskId).classList.remove('z-index-4');
-    document.getElementById(editSubtaskId).classList.add('z-index--1');
+    let inputContainer = document.getElementById(editSubtaskId);
+    if (inputContainer) {
+        inputContainer.classList.remove('z-index-4');
+        inputContainer.classList.add('z-index--1');
+    }
 }
 
 // 18th
 
 function setupSubtasksEditElementsOnTop(subtaskId) {
     let editSubtaskId = subtaskId + 'InputContainer';
-
-    document.getElementById(editSubtaskId).classList.add('z-index-4');
-    document.getElementById(editSubtaskId).classList.toggle('z-index-1');
+    let inputContainer = document.getElementById(editSubtaskId);
+    if (inputContainer) {
+        inputContainer.classList.toggle('z-index-1');
+        inputContainer.classList.add('z-index-4');
+    }
 }
 
 // 19th
@@ -252,7 +257,7 @@ function updateCurrentSubtaskObj(key, value) {
 
 // 23th
 
-function rebuildSubtaskList() {
+async function rebuildSubtaskList() {
     let currentSubtaskObj = loadLocalStorageObject('currentSubtaskObj');
     if (currentSubtaskObj) {
         document.getElementById('subtaskListText').innerHTML = '';
@@ -265,6 +270,18 @@ function rebuildSubtaskList() {
             document.getElementById('subtaskListInput').innerHTML += genHTMLSubtaskListInput(subtaskId, text);
         });
     }
+    await includeHTMLById('w3-include-svg');
+}
+
+// 24th
+
+function deleteSubtask(subtaskId) {
+    let subtaskObj = loadLocalStorageObject('currentSubtaskObj');
+    if (subtaskObj) {
+        delete subtaskObj[subtaskId];
+        saveLocalStorageObject('currentSubtaskObj', subtaskObj);
+    }
+    rebuildSubtaskList();
 }
 
 

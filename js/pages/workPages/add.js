@@ -231,7 +231,9 @@ function updateCurrentSubtaskId() {
 function resetFormAddTask() {
     resetFormById('formAddTask');
     saveLocalStorageObject('currentSubtaskId', '0');
-
+    document.getElementById('subtaskListText').innerHTML = '';
+    document.getElementById('subtaskListInput').innerHTML = '';
+    resetOverlayFrameSubtask('subtask');
 }
 
 
@@ -367,6 +369,11 @@ function tglCSSCheckBox(id) {
     tglCSSRect(path0Id, pathClassClicked);
     tglCSSRect(path1Id, pathClassDef);
     tglCSSRect(path1Id, pathClassClicked);
+}
+
+function genSubtask() {
+
+    document.getElementById('subtaskListText').innerHTML += genHTMLSubtask
 }
 
 

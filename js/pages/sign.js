@@ -9,6 +9,7 @@
 async function initSign() {
     await includeHTML();
     setClrSchemeInit();
+    saveLocalStorageObject('currentSubtaskId', '0');
 }
 
 async function createNewUser() {

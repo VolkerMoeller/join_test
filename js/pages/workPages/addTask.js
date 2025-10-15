@@ -18,7 +18,8 @@ async function initCreateNewTask() {
 function initCreateNewSubtask() {
     let subtaskId = updateCurrentSubtaskId();
     subtaskId = 'subtask' + subtaskId;
-    console.log(subtaskId);
+    genSubtaskListText(subtaskId);
+    genSubtaskListInput(subtaskId);
 }
 
 
@@ -29,6 +30,10 @@ function initCreateNewSubtask() {
 // createNewTask()
 // viewDefaultContent() --> work.js
 
+// updateNextSubtaskId() --> add.js
+// genSubtaskListText()
+// genSubtaskListInput()
+
 async function createNewTask() {
     updateNextSubtaskId();
     let taskIndex = await initGetNextTaskId();
@@ -36,6 +41,20 @@ async function createNewTask() {
     let userIndex = loadLocalStorageObject('currentUser').id;
     await storageNewTask(userIndex, newTask);
     return newTask;
+}
+
+async function genSubtaskListText(subtaskId) {
+    document.getElementById('subtaskListText').innerHTML += genHTMLSubtaskListText(subtaskId);
+    await includeHTMLById('w3-include-svg');
+    focusInput('subtask');
+
+}
+
+
+async function genSubtaskListInput(subtaskId) {
+    document.getElementById('subtaskListInput').innerHTML += genHTMLSubtaskListInput(subtaskId);
+    await includeHTMLById('w3-include-svg')
+    focusInput('subtask');
 }
 
 

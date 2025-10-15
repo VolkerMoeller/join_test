@@ -25,7 +25,6 @@ class User {
         this.eMail = userData[2];
         this.password = userData[3];
         this.getInitials();
-        // this.getUserColor();
     }
 
     getInitials() {
@@ -37,9 +36,4 @@ class User {
             this.initial = this.initial.substring(0, 2);
         }
     }
-
-    // getUserColor() {
-    //     let colorNr = Math.floor(Math.random() * 15);
-    //     this.color = `var(--variant${colorNr})`;
-    // }
 }

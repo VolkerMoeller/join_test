@@ -53,7 +53,7 @@
 // emptyInputFieldById()
 // resetFormById()
 // closeInput()
-// resetSVG()
+// getRandomColor()
 
 // --- test-functions:
 
@@ -357,10 +357,11 @@ function closeInput(id) {
 }
 
 
-// async function resetSVG() {
-//     await includeHTMLById('w3-include-svg');
-//     invertLogoClr();
-// }
+function getRandomColor() {
+    let colorNr = Math.floor(Math.random() * 15);
+    let color = `var(--variant${colorNr})`;
+    return color;
+}
 
 
 // --- test-functions:

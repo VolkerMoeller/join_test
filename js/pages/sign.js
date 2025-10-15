@@ -147,8 +147,7 @@ async function initCheckInputSignUp() {
         success = checkInputSignUp();
     }
     if (success) {
-        let newUser = await createNewUser();
-        console.log(newUser);
+        await createNewUser();
         initanimSignMessages();
     }
 }

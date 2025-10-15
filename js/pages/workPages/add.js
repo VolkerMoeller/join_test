@@ -18,7 +18,8 @@
 // 14th setupSubtasksElementsOnTop()
 // 15th closeSubtaskInput()
 // 16th initShowSubtaskInput()
-// ...
+// 17th resetOverlayFrameSubtaskEdit()
+// 18th setupSubtasksEditElementsOnTop()
 // 19th updateDefaultSubtaskId()
 
 

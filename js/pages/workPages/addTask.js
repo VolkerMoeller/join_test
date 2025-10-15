@@ -2,9 +2,7 @@
 // addTask.js-functions:
 // ---------------------
 
-// initNewTask()
-// getFormInputDataTest()
-// selectSubtasks()
+// initNewCreateNewTask()
 
 async function initCreateNewTask() {
     let newTask = await createNewTask();
@@ -17,11 +15,12 @@ async function initCreateNewTask() {
 }
 
 
-function getFormInputDataTest() {
-    const inputs = document.getElementById("formAddTask").elements;
-    console.log(inputs);
-}
+// --------------------
+// 1st-level-functions:
+// --------------------
 
+// createNewTask()
+// viewDefaultContent() --> work.js
 
 async function createNewTask() {
     updateNextSubtaskId();
@@ -37,6 +36,7 @@ async function createNewTask() {
 // 2nd-level-functions:
 // --------------------
 
+// updateNextSubtaskId()
 // initGetNextTaskId() --> general.js
 // loadLocalStorageObject() --> main.js
 // storageNewTask() --> general.js

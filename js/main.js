@@ -54,8 +54,9 @@
 // resetFormById()
 // closeInput()
 
+// --- test-functions:
 
-
+// getFormInputDataTest()
 
 // --- initial-functions:
 
@@ -349,8 +350,16 @@ function paddingId(id) {
     return id;
 }
 
+
 function closeInput(id) {
     document.getElementById(id).value = "";
+}
+
+// --- test-functions:
+
+function getFormInputDataTest() {
+    const inputs = document.getElementById("formAddTask").elements;
+    console.log(inputs);
 }
 
 

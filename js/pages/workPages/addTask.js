@@ -15,11 +15,12 @@ async function initCreateNewTask() {
     viewDefaultContent('mnuBtn4th');
 }
 
-function initCreateNewSubtask() {
+async function initCreateNewSubtask() {
     let subtaskId = updateCurrentSubtaskId();
     subtaskId = 'subtask' + subtaskId;
-    genSubtaskListText(subtaskId);
+    let text = await genSubtaskListText(subtaskId);
     genSubtaskListInput(subtaskId);
+    updateCurrentSubtaskObj(subtaskId, text);
 }
 
 
@@ -49,7 +50,7 @@ async function genSubtaskListText(subtaskId) {
     document.getElementById('subtaskListText').innerHTML += genHTMLSubtaskListText(subtaskId, text);
     await includeHTMLById('w3-include-svg');
     focusInput('subtask');
-
+    return text;
 }
 
 

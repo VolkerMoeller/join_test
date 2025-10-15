@@ -231,9 +231,42 @@ function updateCurrentSubtaskId() {
 function resetFormAddTask() {
     resetFormById('formAddTask');
     saveLocalStorageObject('currentSubtaskId', '0');
+    saveLocalStorageObject('currentSubtaskObj', {});
     document.getElementById('subtaskListText').innerHTML = '';
     document.getElementById('subtaskListInput').innerHTML = '';
     resetOverlayFrameSubtask('subtask');
+}
+
+// 21th
+
+function updateCurrentSubtaskObj(key, value) {
+    let currentSubtaskObj = loadLocalStorageObject('currentSubtaskObj');
+    if (!currentSubtaskObj) {
+        currentSubtaskObj = {};
+    } else {
+        currentSubtaskObj[key] = value;
+    }
+    saveLocalStorageObject('currentSubtaskObj', currentSubtaskObj);
+}
+
+
+// 23th
+
+
+function rebuildSubtaskList() {
+    let currentSubtaskObj = loadLocalStorageObject('currentSubtaskObj');
+    if (currentSubtaskObj) {
+        document.getElementById('subtaskListText').innerHTML = '';
+        document.getElementById('subtaskListInput').innerHTML = '';
+        subtaskArrs = Object.entries(currentSubtaskObj);
+        console.log(subtaskArrs);
+        subtaskArrs.forEach(subtaskArr => {
+            const subtaskId = subtaskArr[0];
+            const text = subtaskArr[1];
+            document.getElementById('subtaskListText').innerHTML += genHTMLSubtaskListText(subtaskId, text);
+            document.getElementById('subtaskListInput').innerHTML += genHTMLSubtaskListInput(subtaskId, text);
+        });
+    }
 }
 
 

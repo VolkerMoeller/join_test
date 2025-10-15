@@ -7,7 +7,7 @@ class CurrentUser {
 
 
     constructor(userId, user) {
-        this.id = paddingId(userId);
+        this.id = 'userId' + paddingId(userId);
         this.name = user.name;
         this.initial = user.initial;
         this.color = user.color;

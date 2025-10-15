@@ -9,7 +9,6 @@
 
 
 async function initDatabase() {
-    // all data will be deleted with ''
     await deleteData('');
     putInitDataToFirebase();
 }
@@ -61,8 +60,6 @@ async function saveNextSubtaskId(nextSubtaskId) {
 function putInitDataToFirebase() {
     let initData = {
         'nextUserId': '1',
-        // 'nextContactId': '0',
-        // 'nextTaskId': '0'
     }
     putData(`initData/`, initData);
     storageGuest();

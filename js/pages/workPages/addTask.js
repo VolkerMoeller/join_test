@@ -16,9 +16,16 @@ async function initCreateNewTask() {
     viewDefaultContent('mnuBtn4th');
 }
 
+
 async function initCreateNewSubtask() {
     let subtaskId = updateCurrentSubtaskId();
+    let userId = loadLocalStorageObject('currentUser').id;
+    let nextSubtaskId = await loadData(`users/${userId}/nextSubtaskId`);
+    subtaskId = parseInt(subtaskId);
+    nextSubtaskId = parseInt(nextSubtaskId);
+    subtaskId = nextSubtaskId + subtaskId;
     subtaskId = 'subtask' + subtaskId;
+    console.log(subtaskId);
     let text = await genSubtaskListText(subtaskId);
     genSubtaskListInput(subtaskId);
     updateCurrentSubtaskObj(subtaskId, text);

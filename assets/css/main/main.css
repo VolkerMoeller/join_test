@@ -78,6 +78,7 @@ li:before {
     position: absolute;
     left: 8px;
     content: "•";
+    color: var(--main2nd);
 }
 
 .ghost {

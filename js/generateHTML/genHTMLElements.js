@@ -79,11 +79,11 @@ function genHTMLSubtaskListText(subtaskId, text) {
         <span>${text}</span>
         <div class="input-subtask-panel subtask-panel-v2">
             <div class="flx-cnt" onclick="initShowSubtaskInput('${subtaskId}')"
-                w3-include-svg="./assets/img/svgHTML/54-edit_hvr.html">
+                w3-include-svg-2nd="./assets/img/svgHTML/54-edit_hvr.html">
             </div>
             <p class="subtask-vector"></p>
             <div class="flx-cnt" onclick="deleteSubtask('${subtaskId}')" 
-                w3-include-svg="./assets/img/svgHTML/53-delete_hvr.html">
+                w3-include-svg-2nd="./assets/img/svgHTML/53-delete_hvr.html">
             </div>
         </div>
     </li>
@@ -97,11 +97,11 @@ function genHTMLSubtaskListInput(subtaskId, text) {
         <input id="${subtaskId}Input" type="text" value="${text}">
         <div class="input-subtask-panel subtask-panel-v2">
             <div class="flx-cnt" onclick="deleteSubtask('${subtaskId}')"
-                w3-include-svg="./assets/img/svgHTML/53-delete_hvr.html">
+                w3-include-svg-2nd="./assets/img/svgHTML/53-delete_hvr.html">
             </div>
             <p class="subtask-vector"></p>
             <div class="flx-cnt" onclick="checkSubtask('${subtaskId}')"
-                w3-include-svg="./assets/img/svgHTML/51-check_hvr.html">
+                w3-include-svg-2nd="./assets/img/svgHTML/51-check_hvr.html">
             </div>
         </div>
     </div>

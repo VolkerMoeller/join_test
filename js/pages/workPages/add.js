@@ -270,7 +270,7 @@ async function rebuildSubtaskList() {
             document.getElementById('subtaskListInput').innerHTML += genHTMLSubtaskListInput(subtaskId, text);
         });
     }
-    await includeHTMLById('w3-include-svg');
+    await includeHTMLById('w3-include-svg-2nd');
 }
 
 // 24th

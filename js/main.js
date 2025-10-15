@@ -53,6 +53,7 @@
 // emptyInputFieldById()
 // resetFormById()
 // closeInput()
+// resetSVG()
 
 // --- test-functions:
 
@@ -355,12 +356,20 @@ function closeInput(id) {
     document.getElementById(id).value = "";
 }
 
+
+// async function resetSVG() {
+//     await includeHTMLById('w3-include-svg');
+//     invertLogoClr();
+// }
+
+
 // --- test-functions:
 
 function getFormInputDataTest() {
     const inputs = document.getElementById("formAddTask").elements;
     console.log(inputs);
 }
+
 
 
 // -------------------

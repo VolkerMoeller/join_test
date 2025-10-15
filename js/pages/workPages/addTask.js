@@ -49,7 +49,7 @@ async function createNewTask() {
 async function genSubtaskListText(subtaskId) {
     const text = document.getElementById('subtask').value;
     document.getElementById('subtaskListText').innerHTML += genHTMLSubtaskListText(subtaskId, text);
-    await includeHTMLById('w3-include-svg');
+    await includeHTMLById('w3-include-svg-2nd');
     focusInput('subtask');
     return text;
 }
@@ -58,7 +58,7 @@ async function genSubtaskListText(subtaskId) {
 async function genSubtaskListInput(subtaskId) {
     const text = document.getElementById('subtask').value;
     document.getElementById('subtaskListInput').innerHTML += genHTMLSubtaskListInput(subtaskId, text);
-    await includeHTMLById('w3-include-svg')
+    await includeHTMLById('w3-include-svg-2nd');
     focusInput('subtask');
 }
 

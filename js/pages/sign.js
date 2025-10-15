@@ -13,8 +13,10 @@ async function initSign() {
     saveLocalStorageObject('currentSubtaskObj', {});
 }
 
+
 async function createNewUser() {
     let userData = await getUserData();
+    console.log(userData);
     let newUser = new User(userData);
     await storageFirebaseNewUser(newUser);
 }
@@ -146,7 +148,6 @@ async function initCheckInputSignUp() {
     }
     if (success) {
         initanimSignMessages();
-        doSth('firebase createNewUser()');
         await createNewUser();
     }
 }

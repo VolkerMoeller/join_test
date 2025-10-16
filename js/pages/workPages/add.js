@@ -305,9 +305,13 @@ function checkSubtask(subtaskId) {
 
 // 25th
 
-async function genUserContactList() {
+async function genUserContactList(userId = 'userId0000') {
     document.getElementById('userContactList').innerHTML = '';
-    document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn();
+    let userContacts = await getArrOfUserContacts(userId);
+    userContacts = Object.values(userContacts);
+    userContacts.forEach(contact => {
+        document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn();
+    });
     await includeHTMLById('w3-include-svg-2nd');
 
 }
@@ -360,9 +364,12 @@ async function genUserContactList() {
 // 7th
 // tglCSSCheckBox()
 
-// 16th
+// ad 16th
 // toggleElementsZindex() --> main.js
 // focusInput() --> main.js
+
+// ad 25th
+// getArrOfUserContacts()
 
 
 function resetInputAssigned() {
@@ -447,10 +454,17 @@ function tglCSSCheckBox(id) {
     tglCSSRect(path1Id, pathClassClicked);
 }
 
-function genSubtask() {
 
-    document.getElementById('subtaskListText').innerHTML += genHTMLSubtask
+async function getArrOfUserContacts(userId) {
+    let userContacts = await loadData(`users/${userId}/contacts`);
+    return userContacts;
 }
+
+
+// function genSubtask() {
+//     document.getElementById('subtaskListText').innerHTML += genHTMLSubtask
+// }
+
 
 
 // --------------------

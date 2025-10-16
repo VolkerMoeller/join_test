@@ -108,6 +108,10 @@ async function storageGuest() {
             1: {
                 0: 'taskId0001',
                 1: 'contactId0003'
+            },
+            2: {
+                0: 'taskId0002',
+                1: 'contactId0000'
             }
         },
         'eMail': 'guest@user.de',

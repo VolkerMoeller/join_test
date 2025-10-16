@@ -378,13 +378,13 @@ async function getSubtaskIdsObj() {
 }
 
 
-async function getContTaskRefsObj() {
-    const contTaskRefsObj = await loadData('users/userId0000/contTaskRefs/');
-    let taskId0001contacts = [];
-    contTaskRefsObj.forEach(refs => {
-        if (refs[0] == 'taskId0001') { taskId0001contacts.push(refs[1]) };
+async function getContTaskRefsObj(userId = 'userId0000', currentTaskId = 'taskId0001') {
+    let contactIds = [];
+    const refs = await loadData(`users/${userId}/contTaskRefs/`);
+    refs.forEach(ref => {
+        if (ref[0] == currentTaskId) { contactIds.push(ref[1]) };
     });
-    console.log(taskId0001contacts);
+    console.log(contactIds);
 }
 
 

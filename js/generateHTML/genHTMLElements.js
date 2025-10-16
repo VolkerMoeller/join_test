@@ -107,3 +107,29 @@ function genHTMLSubtaskListInput(subtaskId, text) {
     </div>
     `;
 }
+
+
+function genHTMLUserContactListBtn() {
+    return `
+    <button id="contactListBtn0" class="contactListBtn" type="button"
+        onclick="toggleElements('3checked0', '5default0'); checkIfChecked('5default0'); tglContactListBtnCSS('contactListBtn0')">
+        <div class=" contactListBtnLeft">
+            <div class="rel">
+                <div class="contactListBadge"
+                    w3-include-svg-2nd="./assets/img/svgHTML/40-badge.html">
+                </div>
+                <div class="abs-cnt contactListInitial">SM</div>
+            </div>
+            <span>Sophia Müller YOU</span>
+        </div>
+        <div class="checkbox-assigned" id="contact0" name="contact0">
+            <div id="5default0" class="rel"
+                w3-include-svg-2nd="./assets/img/svgHTML/041-default.html">
+            </div>
+            <div id="3checked0" class="display-none"
+                w3-include-svg-2nd="./assets/img/svgHTML/021-checked.html">
+            </div>
+        </div>
+    </button>
+    `;
+}

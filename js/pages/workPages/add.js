@@ -22,6 +22,11 @@
 // 18th setupSubtasksEditElementsOnTop()
 // 19th updateDefaultSubtaskId()
 // 20th resetFormAddTask()
+// 21th genUserContactList()
+// 22th
+// 23th
+// 24th
+// 25th
 
 
 // 1st
@@ -255,7 +260,7 @@ function updateCurrentSubtaskObj(key, value) {
 }
 
 
-// 23th
+// 22th
 
 async function rebuildSubtaskList() {
     let currentSubtaskObj = loadLocalStorageObject('currentSubtaskObj');
@@ -273,7 +278,7 @@ async function rebuildSubtaskList() {
     await includeHTMLById('w3-include-svg-2nd');
 }
 
-// 24th
+// 23th
 
 function deleteSubtask(subtaskId) {
     let subtaskObj = loadLocalStorageObject('currentSubtaskObj');
@@ -284,7 +289,7 @@ function deleteSubtask(subtaskId) {
     rebuildSubtaskList();
 }
 
-// 25th
+// 24th
 
 function checkSubtask(subtaskId) {
     let subtaskObj = loadLocalStorageObject('currentSubtaskObj');
@@ -296,6 +301,15 @@ function checkSubtask(subtaskId) {
         saveLocalStorageObject('currentSubtaskObj', subtaskObj);
     }
     rebuildSubtaskList();
+}
+
+// 25th
+
+async function genUserContactList() {
+    document.getElementById('userContactList').innerHTML = '';
+    document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn();
+    await includeHTMLById('w3-include-svg-2nd');
+
 }
 
 

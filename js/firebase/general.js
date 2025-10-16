@@ -100,6 +100,7 @@ async function storageGuest() {
                 'color': 'var(--variant6)'
             },
         },
+        'contactReference': {},
         'eMail': 'guest@user.de',
         'id': 'userId0000',
         'initial': 'G',
@@ -108,15 +109,37 @@ async function storageGuest() {
         'nextSubtaskId': '0',
         'nextTaskId': '0',
         'password': '',
-        'tasks': '',
-        'tasksGroups': {
-            'done': '2',
-            'feedback': '3',
-            'inBoard': '9',
-            'progress': '2',
-            'toDo': '4',
-            'urgent': '1'
-        },
+        'tasks': {
+            'category': 'Technical Task',
+            'description': "Schonblaumi",
+            'dueDate': '07/05/2026',
+            'priority': 'urgent',
+            'state': 'toDo',
+            'subtasks': {
+                'subtasksInputIds': {
+                    0: 'subtask1Input',
+                    1: 'subtask2Input'
+                },
+                'subtasksTextIds': {
+                    0: 'subtask1Text',
+                    1: 'subtask2Text'
+                },
+                'subtasksValues': {
+                    0: 'EDEKA',
+                    1: 'Aldi'
+                },
+            },
+            'taskId': 'taskId0000',
+            'title': 'Test',
+            'tasksGroups': {
+                'done': '2',
+                'feedback': '3',
+                'inBoard': '9',
+                'progress': '2',
+                'toDo': '4',
+                'urgent': '1'
+            }
+        }
     }
     await putData(`users/userId0000/`, guestData);
 }

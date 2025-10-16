@@ -101,8 +101,14 @@ async function storageGuest() {
             },
         },
         'contTaskRefs': {
-            'taskId0001': 'contactId0001',
-            'taskId0001': 'contactId0003'
+            'contTaskRef0': {
+                'task': 'taskId0001',
+                'contact': 'contactId0001'
+            },
+            'contTaskRef1': {
+                'task': 'taskId0001',
+                'contact': 'contactId0003'
+            }
         },
         'eMail': 'guest@user.de',
         'id': 'userId0000',
@@ -118,7 +124,14 @@ async function storageGuest() {
                 'description': "Schonblaumi",
                 'dueDate': '07/05/2026',
                 'priority': 'urgent',
-                'assigned': ['contactId0001', 'contactId0003'],
+                'assigneds': {
+                    'assigned0': {
+                        'contact': 'contactId0001'
+                    },
+                    'assigned1': {
+                        'contact': 'contactId0003'
+                    }
+                },
                 'state': 'toDo',
                 'subtasks': {
                     'subtasksInputIds': {

@@ -372,6 +372,22 @@ function getFormInputDataTest() {
 }
 
 
+async function getSubtaskIdsObj() {
+    const subtasksObj = await loadData('users/userId0000/tasks/taskId0001/subtasks/subtasksInputIds');
+    console.log(subtasksObj);
+}
+
+
+async function getContTaskRefsObj() {
+    const contTaskRefsObj = await loadData('users/userId0000/contTaskRefs/');
+    let taskId0001contacts = [];
+    contTaskRefsObj.forEach(refs => {
+        if (refs[0] == 'taskId0001') { taskId0001contacts.push(refs[1]) };
+    });
+    console.log(taskId0001contacts);
+}
+
+
 
 // -------------------
 // 1st-level-functions

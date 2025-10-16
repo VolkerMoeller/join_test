@@ -101,13 +101,13 @@ async function storageGuest() {
             },
         },
         'contTaskRefs': {
-            'contTaskRef0': {
-                'task': 'taskId0001',
-                'contact': 'contactId0001'
+            0: {
+                0: 'taskId0001',
+                1: 'contactId0001'
             },
-            'contTaskRef1': {
-                'task': 'taskId0001',
-                'contact': 'contactId0003'
+            1: {
+                0: 'taskId0001',
+                1: 'contactId0003'
             }
         },
         'eMail': 'guest@user.de',
@@ -120,18 +120,14 @@ async function storageGuest() {
         'password': '',
         'tasks': {
             'taskId0001': {
+                'assigneds': {
+                    0: 'contactId0001',
+                    1: 'contactId0003'
+                },
                 'category': 'Technical Task',
                 'description': "Schonblaumi",
                 'dueDate': '07/05/2026',
                 'priority': 'urgent',
-                'assigneds': {
-                    'assigned0': {
-                        'contact': 'contactId0001'
-                    },
-                    'assigned1': {
-                        'contact': 'contactId0003'
-                    }
-                },
                 'state': 'toDo',
                 'subtasks': {
                     'subtasksInputIds': {

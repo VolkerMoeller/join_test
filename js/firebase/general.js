@@ -77,12 +77,31 @@ function putInitDataToFirebase() {
 async function storageGuest() {
     let guestData = {
         'color': 'var(--main2nd)',
-        'contacts': '',
+        'contacts': {
+            'contactId0000': {
+                'id': 'contactId0000',
+                'name': 'Susanne Leitner',
+                'eMail': 'leitner@gmail.com',
+                'phone': '+49 150 54895654'
+            },
+            'contactId0001': {
+                'id': 'contactId0001',
+                'name': 'Martina Specht',
+                'eMail': 'specht@gmx.de',
+                'phone': '+49 160 12458869'
+            },
+            'contactId0002': {
+                'id': 'contactId0002',
+                'name': 'Armin Held',
+                'eMail': 'held@gmail.com',
+                'phone': '+49 151 32158778'
+            },
+        },
         'eMail': 'guest@user.de',
         'id': 'userId0000',
         'initial': 'G',
         'name': 'Guest User',
-        'nextContactId': '0',
+        'nextContactId': '3',
         'nextSubtaskId': '0',
         'nextTaskId': '0',
         'password': '',

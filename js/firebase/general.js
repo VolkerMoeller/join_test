@@ -100,7 +100,10 @@ async function storageGuest() {
                 'color': 'var(--variant6)'
             },
         },
-        'contactReference': {},
+        'contTaskRefs': {
+            'taskId0001': 'contactId0001',
+            'taskId0001': 'contactId0003'
+        },
         'eMail': 'guest@user.de',
         'id': 'userId0000',
         'initial': 'G',
@@ -110,35 +113,38 @@ async function storageGuest() {
         'nextTaskId': '0',
         'password': '',
         'tasks': {
-            'category': 'Technical Task',
-            'description': "Schonblaumi",
-            'dueDate': '07/05/2026',
-            'priority': 'urgent',
-            'state': 'toDo',
-            'subtasks': {
-                'subtasksInputIds': {
-                    0: 'subtask1Input',
-                    1: 'subtask2Input'
+            'taskId0001': {
+                'category': 'Technical Task',
+                'description': "Schonblaumi",
+                'dueDate': '07/05/2026',
+                'priority': 'urgent',
+                'assigned': ['contactId0001', 'contactId0003'],
+                'state': 'toDo',
+                'subtasks': {
+                    'subtasksInputIds': {
+                        0: 'subtask1Input',
+                        1: 'subtask2Input'
+                    },
+                    'subtasksTextIds': {
+                        0: 'subtask1Text',
+                        1: 'subtask2Text'
+                    },
+                    'subtasksValues': {
+                        0: 'EDEKA',
+                        1: 'Aldi'
+                    },
                 },
-                'subtasksTextIds': {
-                    0: 'subtask1Text',
-                    1: 'subtask2Text'
-                },
-                'subtasksValues': {
-                    0: 'EDEKA',
-                    1: 'Aldi'
-                },
-            },
-            'taskId': 'taskId0000',
-            'title': 'Test',
-            'tasksGroups': {
-                'done': '2',
-                'feedback': '3',
-                'inBoard': '9',
-                'progress': '2',
-                'toDo': '4',
-                'urgent': '1'
+                'taskId': 'taskId0001',
+                'title': 'Test'
             }
+        },
+        'tasksGroups': {
+            'done': '2',
+            'feedback': '3',
+            'inBoard': '9',
+            'progress': '2',
+            'toDo': '4',
+            'urgent': '1'
         }
     }
     await putData(`users/userId0000/`, guestData);

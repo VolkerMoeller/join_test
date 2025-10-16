@@ -109,27 +109,49 @@ function genHTMLSubtaskListInput(subtaskId, text) {
 }
 
 
-function genHTMLUserContactListBtn() {
+function genHTMLUserContactListBtn(name, initial, i) {
     return `
-    <button id="contactListBtn0" class="contactListBtn" type="button"
-        onclick="toggleElements('3checked0', '5default0'); checkIfChecked('5default0'); tglContactListBtnCSS('contactListBtn0')">
+    <button id="contactListBtn${i}" class="contactListBtn" type="button"
+        onclick="toggleElements('3checked${i}', '5default${i}'); checkIfChecked('5default${i}'); tglContactListBtnCSS('contactListBtn${i}')">
         <div class=" contactListBtnLeft">
             <div class="rel">
                 <div class="contactListBadge"
                     w3-include-svg-2nd="./assets/img/svgHTML/40-badge.html">
                 </div>
-                <div class="abs-cnt contactListInitial">SM</div>
+                <div class="abs-cnt contactListInitial">${initial}</div>
             </div>
-            <span>Sophia Müller YOU</span>
+            <span>${name}</span>
         </div>
-        <div class="checkbox-assigned" id="contact0" name="contact0">
-            <div id="5default0" class="rel"
+        <div class="checkbox-assigned" id="contact${i}" name="contact${i}">
+            <div id="5default${i}" class="rel"
                 w3-include-svg-2nd="./assets/img/svgHTML/041-default.html">
             </div>
-            <div id="3checked0" class="display-none"
+            <div id="3checked${i}" class="display-none"
                 w3-include-svg-2nd="./assets/img/svgHTML/021-checked.html">
             </div>
         </div>
     </button>
     `;
+}
+
+
+function genHTML021CheckedSVG() {
+    return `
+    <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+        <rect id="contactListBtn0Rect" class="checkbox-default-rect" height="24" width="24" y="0.96582" rx="12" />
+        <path id="contactListBtn0Path0" class="checkbox-default-path" stroke-linecap="round" stroke-width="2" d="
+            M 20 11.9658
+            V 17.9658
+            C 20 19.6227 18.6569 20.9658 17 20.9658
+            H 7
+            C 5.34315 20.9658 4 19.6227 4 17.9658
+            V 7.96582
+            C 4 6.30897 5.34315 4.96582 7 4.96582
+            H 15" />
+        <path id="contactListBtn0Path1" class="checkbox-default-path" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" d="
+            M 8 12.9658
+            L 12 16.9658
+            L 20 5.46582" />
+    </svg>`
 }

@@ -309,11 +309,23 @@ async function genUserContactList(userId = 'userId0000') {
     document.getElementById('userContactList').innerHTML = '';
     let userContacts = await getArrOfUserContacts(userId);
     userContacts = Object.values(userContacts);
-    userContacts.forEach(contact => {
-        document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn();
+    console.log(userContacts);
+    userContacts.forEach((contact, i) => {
+        let name = contact['name'];
+        let initial = contact['initial'];
+        let color = contact['color'];
+        console.log(name, initial, color);
+        document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn(name, initial, i);
     });
     await includeHTMLById('w3-include-svg-2nd');
-
+    let checkSVGRects = document.querySelectorAll('.checkbox-default-rect');
+    checkSVGRects.forEach((checkSVG, i) => {
+        checkSVG.id = 'contactListBtn' + i + 'Rect';
+    });
+    let checkSVGPaths = document.querySelectorAll('.checkbox-default-path');
+    checkSVGPaths.forEach((checkSVG, i) => {
+        checkSVG.id = 'contactListBtn' + i + 'Path0';
+    });
 }
 
 

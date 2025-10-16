@@ -83,21 +83,24 @@ async function storageGuest() {
                 'name': 'Susanne Leitner',
                 'eMail': 'leitner@gmail.com',
                 'phone': '+49 150 54895654',
-                'color': 'var(--variant10)'
+                'color': 'var(--variant10)',
+                'initial': 'SL'
             },
             'contactId0001': {
                 'id': 'contactId0001',
                 'name': 'Martina Specht',
                 'eMail': 'specht@gmx.de',
                 'phone': '+49 160 12458869',
-                'color': 'var(--variant8)'
+                'color': 'var(--variant8)',
+                'initial': 'MS'
             },
             'contactId0002': {
                 'id': 'contactId0002',
                 'name': 'Armin Held',
                 'eMail': 'held@gmail.com',
                 'phone': '+49 151 32158778',
-                'color': 'var(--variant6)'
+                'color': 'var(--variant6)',
+                'initial': 'AH'
             },
         },
         'contTaskRefs': {

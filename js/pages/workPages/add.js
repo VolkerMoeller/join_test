@@ -318,14 +318,14 @@ async function genUserContactList(userId = 'userId0000') {
         document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn(name, initial, i);
     });
     await includeHTMLById('w3-include-svg-2nd');
-    let checkSVGRects = document.querySelectorAll('.checkbox-default-rect');
-    checkSVGRects.forEach((checkSVG, i) => {
-        checkSVG.id = 'contactListBtn' + i + 'Rect';
-    });
-    let checkSVGPaths = document.querySelectorAll('.checkbox-default-path');
-    checkSVGPaths.forEach((checkSVG, i) => {
-        checkSVG.id = 'contactListBtn' + i + 'Path0';
-    });
+    // let checkSVGRects = document.querySelectorAll('.checkbox-default-rect');
+    // checkSVGRects.forEach((checkSVG, i) => {
+    //     checkSVG.id = 'contactListBtn' + i + 'Rect';
+    // });
+    // let checkSVGPaths = document.querySelectorAll('.checkbox-default-path');
+    // checkSVGPaths.forEach((checkSVG, i) => {
+    //     checkSVG.id = 'contactListBtn' + i + 'Path0';
+    // });
 }
 
 

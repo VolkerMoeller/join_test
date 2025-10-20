@@ -112,11 +112,13 @@
 }
 
 .form-panel-add-task {
+    width: 100%;
     display: flex;
+    justify-content: end;
     gap: 21px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    position: sticky;
+    /* right: 0; */
+    bottom: 56px;
     z-index: 5;
 }
 
@@ -191,9 +193,18 @@
         bottom: -48px;
         right: auto;
         display: flex;
-        justify-content: end;
+        justify-content: ;
         padding: 16px 0px;
     }
+
+    /* .form-panel-add-task {
+        display: flex;
+        gap: 21px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+    } */
 }
 
 @media(max-width: 414px) {

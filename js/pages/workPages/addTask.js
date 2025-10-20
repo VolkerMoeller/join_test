@@ -19,11 +19,11 @@ async function initCreateNewTask() {
 
 async function initCreateNewSubtask() {
     let subtaskId = await createNewSubtaskId();
-    console.log(subtaskId);
     let text = await genSubtaskListText(subtaskId);
     genSubtaskListInput(subtaskId);
     updateCurrentSubtaskObj(subtaskId, text);
-    scrollListToBottom();
+    scrollListToBottom('mainCenterAddTask');
+    scrollListToBottom('cntCenterAdd');
 }
 
 
@@ -41,7 +41,7 @@ async function initCreateNewSubtask() {
 // genSubtaskListText()
 // genSubtaskListInput()
 // updateCurrentSubtaskObj()
-// scrollListToBottom();
+// scrollListToBottom() --> main.js
 
 
 async function createNewSubtaskId() {
@@ -54,6 +54,7 @@ async function createNewSubtaskId() {
     subtaskId = 'subtask' + subtaskId;
     return subtaskId;
 }
+
 
 async function createNewTask() {
     updateNextSubtaskId();

@@ -364,6 +364,15 @@ function getRandomColor() {
 }
 
 
+function scrollListToBottom(id) {
+    document.getElementById(id).scroll({
+        top: 1000,
+        left: 100,
+        behavior: "smooth",
+    });
+}
+
+
 // --- test-functions:
 
 function getFormInputDataTest() {
@@ -387,16 +396,6 @@ async function getTaskContactIds(userId = 'userId0000', currentTaskId = 'taskId0
     console.log(contactIds);
     return contactIds
 }
-
-
-function scrollListToBottom() {
-    document.getElementById('mainCenterAddTask').scroll({
-        top: 1000,
-        left: 100,
-        behavior: "smooth",
-    });
-}
-
 
 
 // -------------------

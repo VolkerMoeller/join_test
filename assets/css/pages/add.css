@@ -45,6 +45,10 @@
     height: 24px;
 }
 
+.user-contact-badges {
+    display: flex;
+}
+
 .contactListBtn {
     color: var(--black);
     font-size: 16px;

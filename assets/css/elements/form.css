@@ -193,18 +193,9 @@
         bottom: -48px;
         right: auto;
         display: flex;
-        justify-content: ;
         padding: 16px 0px;
     }
 
-    /* .form-panel-add-task {
-        display: flex;
-        gap: 21px;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: 5;
-    } */
 }
 
 @media(max-width: 414px) {
@@ -252,9 +243,11 @@
 }
 
 .footnote {
-    position: absolute;
+    width: 100%;
+    position: sticky;
     left: 0;
     bottom: 0;
+    z-index: 1;
 }
 
 .footnote span {

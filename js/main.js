@@ -389,6 +389,15 @@ async function getTaskContactIds(userId = 'userId0000', currentTaskId = 'taskId0
 }
 
 
+function scrollListToBottom() {
+    document.getElementById('mainCenterAddTask').scroll({
+        top: 1000,
+        left: 100,
+        behavior: "smooth",
+    });
+}
+
+
 
 // -------------------
 // 1st-level-functions

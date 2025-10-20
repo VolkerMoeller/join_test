@@ -296,7 +296,6 @@ function checkSubtask(subtaskId) {
     if (subtaskObj) {
         let inputId = subtaskId + 'Input';
         let newText = document.getElementById(inputId).value;
-        console.log(newText);
         subtaskObj[subtaskId] = newText;
         saveLocalStorageObject('currentSubtaskObj', subtaskObj);
     }

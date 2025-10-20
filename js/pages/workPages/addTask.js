@@ -18,17 +18,12 @@ async function initCreateNewTask() {
 
 
 async function initCreateNewSubtask() {
-    let subtaskId = updateCurrentSubtaskId();
-    let userId = loadLocalStorageObject('currentUser').id;
-    let nextSubtaskId = await loadData(`users/${userId}/nextSubtaskId`);
-    subtaskId = parseInt(subtaskId);
-    nextSubtaskId = parseInt(nextSubtaskId);
-    subtaskId = nextSubtaskId + subtaskId;
-    subtaskId = 'subtask' + subtaskId;
+    let subtaskId = await createNewSubtaskId();
     console.log(subtaskId);
     let text = await genSubtaskListText(subtaskId);
     genSubtaskListInput(subtaskId);
     updateCurrentSubtaskObj(subtaskId, text);
+    scrollListToBottom();
 }
 
 
@@ -39,9 +34,26 @@ async function initCreateNewSubtask() {
 // createNewTask()
 // viewDefaultContent() --> work.js
 
+// createNewSubtaskId() 
 // updateNextSubtaskId() --> add.js
+// loadLocalStorageObject() --> 
+// loadData() -->
 // genSubtaskListText()
 // genSubtaskListInput()
+// updateCurrentSubtaskObj()
+// scrollListToBottom();
+
+
+async function createNewSubtaskId() {
+    let subtaskId = updateCurrentSubtaskId();
+    let userId = loadLocalStorageObject('currentUser').id;
+    let nextSubtaskId = await loadData(`users/${userId}/nextSubtaskId`);
+    subtaskId = parseInt(subtaskId);
+    nextSubtaskId = parseInt(nextSubtaskId);
+    subtaskId = nextSubtaskId + subtaskId;
+    subtaskId = 'subtask' + subtaskId;
+    return subtaskId;
+}
 
 async function createNewTask() {
     updateNextSubtaskId();

@@ -155,25 +155,3 @@ function genHTMLUserContactListBtn(name, initial, i, color) {
     </button>
     `;
 }
-
-
-function genHTML021CheckedSVG() {
-    return `
-    <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
-        <rect id="contactListBtn0Rect" class="checkbox-default-rect" height="24" width="24" y="0.96582" rx="12" />
-        <path id="contactListBtn0Path0" class="checkbox-default-path" stroke-linecap="round" stroke-width="2" d="
-            M 20 11.9658
-            V 17.9658
-            C 20 19.6227 18.6569 20.9658 17 20.9658
-            H 7
-            C 5.34315 20.9658 4 19.6227 4 17.9658
-            V 7.96582
-            C 4 6.30897 5.34315 4.96582 7 4.96582
-            H 15" />
-        <path id="contactListBtn0Path1" class="checkbox-default-path" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" d="
-            M 8 12.9658
-            L 12 16.9658
-            L 20 5.46582" />
-    </svg>`
-}

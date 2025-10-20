@@ -30,6 +30,7 @@ async function initWork() {
     initSumView();
     genBtnUser();
     genSumRectCnt();
+    genUserContactList();
 }
 
 

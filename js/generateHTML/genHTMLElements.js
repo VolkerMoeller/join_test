@@ -126,11 +126,30 @@ function genHTMLUserContactListBtn(name, initial, i, color) {
             <span>${name}</span>
         </div>
         <div class="checkbox-assigned" id="contact${i}" name="contact${i}">
-            <div id="5default${i}" class="rel"
-                w3-include-svg-2nd="./assets/img/svgHTML/041-default.html">
+            <div id="5default${i}" class="rel">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="checkboxRectChecked${i}" class="checkbox-default" height="24px" width="24px" y="0.96582" rx="12" />
+                    <rect width="16px" height="16px" rx="3px" stroke="var(--main)" stroke-width="2" x="4" y="4.96582" />
+                </svg>
             </div>
-            <div id="3checked${i}" class="display-none"
-                w3-include-svg-2nd="./assets/img/svgHTML/021-checked.html">
+            <div id="3checked${i}" class="display-none">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <rect id="contactListBtn${i}Rect" class="checkbox-default-rect" height="24" width="24" y="0.96582" rx="12" />
+                    <path id="contactListBtn${i}Path0" class="checkbox-default-path" stroke-linecap="round" stroke-width="2" d="
+                        M 20 11.9658
+                        V 17.9658
+                        C 20 19.6227 18.6569 20.9658 17 20.9658
+                        H 7
+                        C 5.34315 20.9658 4 19.6227 4 17.9658
+                        V 7.96582
+                        C 4 6.30897 5.34315 4.96582 7 4.96582
+                        H 15" />
+                    <path id="contactListBtn${i}Path1" class="checkbox-default-path" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" d="
+                        M 8 12.9658
+                        L 12 16.9658
+                        L 20 5.46582" />
+                </svg>
             </div>
         </div>
     </button>

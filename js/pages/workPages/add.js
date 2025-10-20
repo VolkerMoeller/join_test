@@ -314,7 +314,7 @@ async function genUserContactList(userId = 'userId0000') {
         let initial = contact['initial'];
         let color = contact['color'];
         console.log(name, initial, color);
-        document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn(name, initial, i);
+        document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn(name, initial, i, color);
     });
     await includeHTMLById('w3-include-svg-2nd');
     // let checkSVGRects = document.querySelectorAll('.checkbox-default-rect');

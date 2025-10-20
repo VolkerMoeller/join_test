@@ -8,7 +8,6 @@
 async function initCreateNewTask() {
     let newTask = await createNewTask();
     console.log(newTask);
-    // handleSubtasks(taskData);
     // handleAssignedContacts(taskData);
     // animateMsg('addTask.html', 'msgAddTaskSuccess', 'board.html');
     // await saveTasksGroups();

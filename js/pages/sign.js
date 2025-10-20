@@ -11,6 +11,7 @@ async function initSign() {
     setClrSchemeInit();
     saveLocalStorageObject('currentSubtaskId', '0');
     saveLocalStorageObject('currentSubtaskObj', {});
+    storageGuest();
 }
 
 

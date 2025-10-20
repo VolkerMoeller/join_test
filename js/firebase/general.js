@@ -123,10 +123,10 @@ async function storageGuest() {
         'name': 'Guest User',
         'nextContactId': '3',
         'nextSubtaskId': '0',
-        'nextTaskId': '0',
+        'nextTaskId': '1',
         'password': '',
         'tasks': {
-            'taskId0001': {
+            'taskId0000': {
                 'assigneds': {
                     0: 'contactId0001',
                     1: 'contactId0003'

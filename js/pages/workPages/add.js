@@ -60,6 +60,7 @@ function resetOverlayFrameSelect(inputId) {
         resetInputAssigned();
         dropDownCloseById('userContactList');
         resetAddElementsDefault(inputId);
+        document.getElementById('userContactBadges').classList.remove('display-none');
     }
     if (inputId == 'category') {
         resetInputCategory();

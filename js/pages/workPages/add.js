@@ -174,22 +174,22 @@ function resetOverlayFrameSubtask() {
     document.getElementById('inputContainerSubtask').classList.remove('z-index-4')
 }
 
-// 14th
 
+// 14th
 function setupSubtasksElementsOnTop() {
     document.getElementById('inputContainerSubtask').classList.add('z-index-4');
 }
 
-// 15th
 
+// 15th
 function closeSubtaskInput() {
     closeInput('subtask');
     hideSubtaskPanel();
     resetOverlayFrameSubtask();
 }
 
-// 16th
 
+// 16th
 function initShowSubtaskInput(subtaskId) {
     let subtaskContainerInputId = subtaskId + 'InputContainer';
     let subtaskInputId = subtaskId + 'Input';
@@ -199,8 +199,8 @@ function initShowSubtaskInput(subtaskId) {
     document.getElementById(subtaskContainerInputId).classList.toggle('z-index-1')
 }
 
-// 17th
 
+// 17th
 function resetOverlayFrameSubtaskEdit(subtaskId) {
     let editSubtaskId = subtaskId + 'InputContainer';
     resetOverlayFrame();
@@ -211,8 +211,8 @@ function resetOverlayFrameSubtaskEdit(subtaskId) {
     }
 }
 
-// 18th
 
+// 18th
 function setupSubtasksEditElementsOnTop(subtaskId) {
     let editSubtaskId = subtaskId + 'InputContainer';
     let inputContainer = document.getElementById(editSubtaskId);
@@ -222,8 +222,8 @@ function setupSubtasksEditElementsOnTop(subtaskId) {
     }
 }
 
-// 19th
 
+// 19th
 function updateCurrentSubtaskId() {
     let currentSubtaskId = loadLocalStorageObject('currentSubtaskId');
     if (!currentSubtaskId) {
@@ -236,8 +236,8 @@ function updateCurrentSubtaskId() {
     return currentSubtaskId;
 }
 
-// 20th
 
+// 20th
 function resetFormAddTask() {
     resetFormById('formAddTask');
     saveLocalStorageObject('currentSubtaskId', '0');
@@ -247,8 +247,8 @@ function resetFormAddTask() {
     resetOverlayFrameSubtask('subtask');
 }
 
-// 21th
 
+// 21th
 function updateCurrentSubtaskObj(key, value) {
     let currentSubtaskObj = loadLocalStorageObject('currentSubtaskObj');
     if (!currentSubtaskObj) {
@@ -261,7 +261,6 @@ function updateCurrentSubtaskObj(key, value) {
 
 
 // 22th
-
 async function rebuildSubtaskList() {
     let currentSubtaskObj = loadLocalStorageObject('currentSubtaskObj');
     if (currentSubtaskObj) {
@@ -278,6 +277,7 @@ async function rebuildSubtaskList() {
     await includeHTMLById('w3-include-svg-2nd');
 }
 
+
 // 23th
 function deleteSubtask(subtaskId) {
     let subtaskObj = loadLocalStorageObject('currentSubtaskObj');
@@ -287,6 +287,7 @@ function deleteSubtask(subtaskId) {
     }
     rebuildSubtaskList();
 }
+
 
 // 24th
 function checkSubtask(subtaskId) {
@@ -300,12 +301,11 @@ function checkSubtask(subtaskId) {
     rebuildSubtaskList();
 }
 
+
 // 25th
 async function genUserContactList(userId = 'userId0000') {
     document.getElementById('userContactList').innerHTML = '';
     let userContacts = await getArrOfUserContacts(userId);
-    userContacts = Object.values(userContacts);
-    console.log(userContacts);
     userContacts.forEach((contact, i) => {
         let name = contact['name'];
         let initial = contact['initial'];
@@ -316,6 +316,30 @@ async function genUserContactList(userId = 'userId0000') {
     await includeHTMLById('w3-include-svg-2nd');
 }
 
+
+// 26th
+async function genContactBadge(userId = 'userId0000') {
+    document.getElementById('userContactBadges').innerHTML = '';
+    let userContacts = await getArrsOfUserContacts(userId);
+    let badgeData = getArrOfBadgeData(userContacts);
+    badgeData[0].forEach((color, i) => {
+        let initial = badgeData[1][i];
+        document.getElementById('userContactBadges').innerHTML += genHTMLContactBadge(i, color, initial);
+    });
+}
+
+
+
+function getArrsOfBadgeData(userContacts) {
+    userContacts = Object.values(userContacts);
+    let colorsArr = [];
+    let initialsArr = [];
+    userContacts.forEach(element => {
+        colorsArr.push(element['color']);
+        initialsArr.push(element['initial']);
+    });
+    return [colorsArr, initialsArr];
+}
 
 // --------------------
 // 1st-level-functions:
@@ -457,6 +481,7 @@ function tglCSSCheckBox(id) {
 
 async function getArrOfUserContacts(userId) {
     let userContacts = await loadData(`users/${userId}/contacts`);
+    userContacts = Object.values(userContacts);
     return userContacts;
 }
 

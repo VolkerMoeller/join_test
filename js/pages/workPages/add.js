@@ -479,13 +479,13 @@ async function getArrOfUserContacts(userId) {
 
 
 function getArrsOfBadgeData(userContacts) {
-    userContacts = Object.values(userContacts);
     let colorsArr = [];
     let initialsArr = [];
-    userContacts.forEach(element => {
-        colorsArr.push(element['color']);
-        initialsArr.push(element['initial']);
-    });
+    // userContacts = Object.values(userContacts);
+    // userContacts.forEach(element => {
+    //     colorsArr.push(element['color']);
+    //     initialsArr.push(element['initial']);
+    // });
     return [colorsArr, initialsArr];
 }
 

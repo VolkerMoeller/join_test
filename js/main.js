@@ -54,6 +54,7 @@
 // resetFormById()
 // closeInput()
 // getRandomColor()
+// getFormInputData()
 
 // --- test-functions:
 
@@ -373,13 +374,13 @@ function scrollListToBottom(id) {
 }
 
 
-// --- test-functions:
-
-function getFormInputDataTest() {
-    const inputs = document.getElementById("formAddTask").elements;
+function getFormInputData(form = "formAddTask") {
+    const inputs = document.getElementById(form).elements;
     console.log(inputs);
 }
 
+
+// --- test-functions:
 
 async function getSubtaskIdsObj() {
     const subtasksObj = await loadData('users/userId0000/tasks/taskId0001/subtasks/subtasksInputIds');

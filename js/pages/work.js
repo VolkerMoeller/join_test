@@ -31,7 +31,6 @@ async function initWork() {
     genBtnUser();
     genSumRectCnt();
     genUserContactList();
-    genContactBadges();
 }
 
 

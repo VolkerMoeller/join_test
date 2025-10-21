@@ -252,6 +252,8 @@ function resetFormAddTask() {
     resetOverlayFrameSubtask('subtask');
     genUserContactList();
     genContactBadges();
+    document.getElementById('userContactBadges').classList.add('display-none');
+
 }
 
 

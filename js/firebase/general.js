@@ -131,7 +131,7 @@ async function storageGuest() {
         'name': 'Guest User',
         'nextContactId': '3',
         'nextSubtaskId': '0',
-        'nextTaskId': '1',
+        'nextTaskId': '2',
         'password': '',
         'tasks': {
             'taskId0000': {
@@ -140,8 +140,8 @@ async function storageGuest() {
                     1: 'contactId0003'
                 },
                 'category': 'Technical Task',
-                'description': "Schonblaumi",
-                'dueDate': '07/05/2026',
+                'description': "Festessen für Hochzeit kochen",
+                'dueDate': '26/10/2025',
                 'priority': 'urgent',
                 'state': 'toDo',
                 'subtasks': {
@@ -159,16 +159,43 @@ async function storageGuest() {
                     },
                 },
                 'taskId': 'taskId0001',
-                'title': 'Test'
+                'title': 'Lebensmittel Einkaufen'
+            },
+            'taskId0001': {
+                'assigneds': {
+                    0: 'contactId0003',
+                    1: 'contactId0004'
+                },
+                'category': 'Technical Task',
+                'description': "Brauche neues Sofa",
+                'dueDate': '27/10/2025',
+                'priority': 'urgent',
+                'state': 'progress',
+                'subtasks': {
+                    'subtasksInputIds': {
+                        0: 'subtask1Input',
+                        1: 'subtask2Input'
+                    },
+                    'subtasksTextIds': {
+                        0: 'subtask1Text',
+                        1: 'subtask2Text'
+                    },
+                    'subtasksValues': {
+                        0: 'Mobilia',
+                        1: 'Hofmeister'
+                    },
+                },
+                'taskId': 'taskId0001',
+                'title': 'Möbel einkaufen'
             }
         },
         'tasksGroups': {
-            'done': '2',
-            'feedback': '3',
-            'inBoard': '9',
-            'progress': '2',
-            'toDo': '4',
-            'urgent': '1'
+            'done': '0',
+            'feedback': '0',
+            'inBoard': '2',
+            'progress': '1',
+            'toDo': '1',
+            'urgent': '2'
         }
     }
     await putData(`users/userId0000/`, guestData);

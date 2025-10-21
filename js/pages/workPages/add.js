@@ -92,6 +92,7 @@ function initOnclickDropDownOpen(inputId) {
     }
     handleOverlayForSelect(inputId);
     if (inputId == 'assigned') {
+        document.getElementById('userContactBadges').classList.add('display-none');
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
         focusInput('assigned');
         dropDownOpenById('userContactList');
@@ -106,6 +107,7 @@ function initOnclickDropDownOpen(inputId) {
 
 function initOnclickDropDownClose(inputId) {
     if (inputId == 'assigned') {
+        document.getElementById('userContactBadges').classList.remove('display-none');
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
         resetOverlayFrame();
         emptyInputFieldById(inputId);
@@ -493,11 +495,9 @@ function getArrsOfBadgeData(userContacts) {
 function showClickedBadges() {
     getFormInputData();
     let contactBtns = document.querySelectorAll('.user-contact-list button');
-    console.log(contactBtns);
     contactBtns.forEach((contactBtn, i) => {
         document.getElementById(`contactListBadge${i}`).classList.add('display-none');
         if (contactBtn.classList.contains('contactListBtnClicked')) {
-            console.log(i);
             document.getElementById(`contactListBadge${i}`).classList.remove('display-none');
         };
     });

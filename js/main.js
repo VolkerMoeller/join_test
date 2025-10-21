@@ -376,9 +376,7 @@ function scrollListToBottom(id) {
 
 function getFormInputData(form = "formAddTask") {
     const inputs = document.getElementById(form).elements;
-    console.log(inputs);
 }
-
 
 // --- test-functions:
 

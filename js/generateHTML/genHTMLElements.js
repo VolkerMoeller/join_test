@@ -115,13 +115,13 @@ function genHTMLUserContactListBtn(name, initial, i, color) {
         onclick="toggleElements('3checked${i}', '5default${i}'); checkIfChecked('5default${i}'); tglContactListBtnCSS('contactListBtn${i}')">
         <div class=" contactListBtnLeft">
             <div class="rel">
-                <div class="contactListBadge">
+                <div class="contact-list-badge">
                     <svg width="42" height="43" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect y="0.931763" width="42" height="42" rx="21" fill="white" />
                         <circle cx="21" cy="21.9318" r="20" fill="${color}" stroke="white" stroke-width="2" />
                     </svg>
                 </div>
-                <div class="abs-cnt contactListInitial">${initial}</div>
+                <div class="abs-cnt contact-list-initial">${initial}</div>
             </div>
             <span>${name}</span>
         </div>
@@ -155,3 +155,21 @@ function genHTMLUserContactListBtn(name, initial, i, color) {
     </button>
     `;
 }
+
+
+function genHTMLContactBadgeContainer(color, initial) {
+    return `
+    <div class="rel">
+        <div class="contact-list-badge" >
+            <svg width="42" height="43" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="0.931763" width="42" height="42" rx="21" fill="white" />
+                <circle cx="21" cy="21.9318" r="20" fill="${color}" stroke="white" stroke-width="2" />
+            </svg>
+        </div>
+        <div class="abs-cnt contact-list-initial">${initial}</div>
+    </div>
+`;
+}
+
+
+

@@ -231,14 +231,14 @@
 }
 
 
-.contactListBadge {
+.contact-list-badge {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-.contactListInitial {
+.contact-list-initial {
     color: var(--white);
     font-size: 12px;
 }

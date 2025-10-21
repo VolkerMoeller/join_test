@@ -123,6 +123,10 @@ async function storageGuest() {
             2: {
                 0: 'taskId0002',
                 1: 'contactId0000'
+            },
+            3: {
+                0: 'taskId0002',
+                1: 'contactId0004'
             }
         },
         'eMail': 'guest@user.de',
@@ -163,7 +167,7 @@ async function storageGuest() {
             },
             'taskId0001': {
                 'assigneds': {
-                    0: 'contactId0003',
+                    0: 'contactId0000',
                     1: 'contactId0004'
                 },
                 'category': 'Technical Task',

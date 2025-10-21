@@ -112,7 +112,7 @@ function genHTMLSubtaskListInput(subtaskId, text) {
 function genHTMLUserContactListBtn(name, initial, i, color) {
     return `
     <button id="contactListBtn${i}" class="contactListBtn" type="button"
-        onclick="toggleElements('3checked${i}', '5default${i}'); checkIfChecked('5default${i}'); tglContactListBtnCSS('contactListBtn${i}')">
+        onclick="toggleElements('3checked${i}', '5default${i}'); checkIfChecked('5default${i}'); tglContactListBtnCSS('contactListBtn${i}'); showClickedBadges();">
         <div class=" contactListBtnLeft">
             <div class="rel">
                 <div class="contact-list-badge">
@@ -159,8 +159,8 @@ function genHTMLUserContactListBtn(name, initial, i, color) {
 
 function genHTMLContactBadge(i, color, initial) {
     return `
-    <div class="rel">
-        <div id="contactListBadge${i}" class="contact-list-badge">
+    <div id="contactListBadge${i}" class="rel display-none">
+        <div class="contact-list-badge">
             <svg width="42" height="43" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect y="0.931763" width="42" height="42" rx="21" fill="white" />
                 <circle cx="21" cy="21.9318" r="20" fill="${color}" stroke="white" stroke-width="2" />

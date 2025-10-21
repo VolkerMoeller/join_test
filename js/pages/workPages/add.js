@@ -481,12 +481,26 @@ async function getArrOfUserContacts(userId) {
 function getArrsOfBadgeData(userContacts) {
     let colorsArr = [];
     let initialsArr = [];
-    // userContacts = Object.values(userContacts);
-    // userContacts.forEach(element => {
-    //     colorsArr.push(element['color']);
-    //     initialsArr.push(element['initial']);
-    // });
+    userContacts = Object.values(userContacts);
+    userContacts.forEach(element => {
+        colorsArr.push(element['color']);
+        initialsArr.push(element['initial']);
+    });
     return [colorsArr, initialsArr];
+}
+
+
+function showClickedBadges() {
+    getFormInputData();
+    let contactBtns = document.querySelectorAll('.user-contact-list button');
+    console.log(contactBtns);
+    contactBtns.forEach((contactBtn, i) => {
+        document.getElementById(`contactListBadge${i}`).classList.add('display-none');
+        if (contactBtn.classList.contains('contactListBtnClicked')) {
+            console.log(i);
+            document.getElementById(`contactListBadge${i}`).classList.remove('display-none');
+        };
+    });
 }
 
 // function genSubtask() {

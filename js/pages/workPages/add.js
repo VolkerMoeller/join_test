@@ -310,7 +310,6 @@ async function genUserContactList(userId = 'userId0000') {
         let name = contact['name'];
         let initial = contact['initial'];
         let color = contact['color'];
-        console.log(name, initial, color);
         document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn(name, initial, i, color);
     });
     await includeHTMLById('w3-include-svg-2nd');
@@ -318,10 +317,10 @@ async function genUserContactList(userId = 'userId0000') {
 
 
 // 26th
-async function genContactBadge(userId = 'userId0000') {
+async function genContactBadges(userId = 'userId0000') {
     document.getElementById('userContactBadges').innerHTML = '';
-    let userContacts = await getArrsOfUserContacts(userId);
-    let badgeData = getArrOfBadgeData(userContacts);
+    let userContacts = await getArrOfUserContacts(userId);
+    let badgeData = getArrsOfBadgeData(userContacts);
     badgeData[0].forEach((color, i) => {
         let initial = badgeData[1][i];
         document.getElementById('userContactBadges').innerHTML += genHTMLContactBadge(i, color, initial);
@@ -330,16 +329,7 @@ async function genContactBadge(userId = 'userId0000') {
 
 
 
-function getArrsOfBadgeData(userContacts) {
-    userContacts = Object.values(userContacts);
-    let colorsArr = [];
-    let initialsArr = [];
-    userContacts.forEach(element => {
-        colorsArr.push(element['color']);
-        initialsArr.push(element['initial']);
-    });
-    return [colorsArr, initialsArr];
-}
+
 
 // --------------------
 // 1st-level-functions:
@@ -394,6 +384,8 @@ function getArrsOfBadgeData(userContacts) {
 
 // ad 25th
 // getArrOfUserContacts()
+// getArrsOfBadgeData()
+// genHTMLUserContactListBtn() --> genHTMLELements.js
 
 
 function resetInputAssigned() {
@@ -485,6 +477,17 @@ async function getArrOfUserContacts(userId) {
     return userContacts;
 }
 
+
+function getArrsOfBadgeData(userContacts) {
+    userContacts = Object.values(userContacts);
+    let colorsArr = [];
+    let initialsArr = [];
+    userContacts.forEach(element => {
+        colorsArr.push(element['color']);
+        initialsArr.push(element['initial']);
+    });
+    return [colorsArr, initialsArr];
+}
 
 // function genSubtask() {
 //     document.getElementById('subtaskListText').innerHTML += genHTMLSubtask

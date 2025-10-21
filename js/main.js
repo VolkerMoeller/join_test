@@ -397,6 +397,23 @@ async function getTaskContactIds(userId = 'userId0000', currentTaskId = 'taskId0
     return contactIds
 }
 
+function genContactBadge() {
+    let badges = {
+        'colors': ['var(--variant1)', 'var(--variant11)', 'var(--variant4)'],
+        'initials': ['TZ', 'AX', 'FG']
+    }
+    document.getElementById('userContactBadges').innerHTML = '';
+    let colors = badges['colors'];
+    let initials = badges['initials'];
+    console.log(colors);
+    colors.forEach((color, i) => {
+        console.log(color, i);
+        let initial = initials[i];
+        console.log(initial, i);
+        document.getElementById('userContactBadges').innerHTML += genHTMLContactBadge(i, color, initial);
+    });
+}
+
 
 // -------------------
 // 1st-level-functions

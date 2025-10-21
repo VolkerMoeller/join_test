@@ -102,6 +102,14 @@ async function storageGuest() {
                 'color': 'var(--variant6)',
                 'initial': 'AH'
             },
+            'contactId0003': {
+                'id': 'contactId0003',
+                'name': 'Tobias Tomm',
+                'eMail': 'tomm@gmail.com',
+                'phone': '+49 151 74858118',
+                'color': 'var(--variant14)',
+                'initial': 'TT'
+            },
         },
         'contTaskRefs': {
             0: {

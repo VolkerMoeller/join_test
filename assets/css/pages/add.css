@@ -82,7 +82,7 @@
     fill: var(--main-transp-10);
 }
 
-.contactListBtnClicked {
+.contact-list-btn-clicked {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -92,12 +92,12 @@
     background-color: var(--main);
 }
 
-.contactListBtnClicked span {
+.contact-list-btn-clicked span {
     color: var(--white);
     font-size: 16px;
 }
 
-.contactListBtnClicked:hover {
+.contact-list-btn-clicked:hover {
     background-color: var(--nav-left-button);
 }
 

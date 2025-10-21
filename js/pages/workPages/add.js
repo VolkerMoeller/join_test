@@ -132,7 +132,7 @@ function initOnclickDropDownClose(inputId) {
 
 function tglContactListBtnCSS(id) {
     document.getElementById(id).classList.toggle('contactListBtn');
-    document.getElementById(id).classList.toggle('contactListBtnClicked');
+    document.getElementById(id).classList.toggle('contact-list-btn-clicked');
     tglCSSCheckBox(id);
 }
 
@@ -250,6 +250,8 @@ function resetFormAddTask() {
     document.getElementById('subtaskListText').innerHTML = '';
     document.getElementById('subtaskListInput').innerHTML = '';
     resetOverlayFrameSubtask('subtask');
+    genUserContactList();
+    genContactBadges();
 }
 
 
@@ -382,7 +384,6 @@ async function genContactBadges(userId = 'userId0000') {
 // dropDownCloseById() --> see above
 // resetAddElementsDefault() --> see above
 
-
 // ..7th
 // tglCSSCheckBox()
 
@@ -507,7 +508,7 @@ function showClickedBadges() {
     let contactBtns = document.querySelectorAll('.user-contact-list button');
     contactBtns.forEach((contactBtn, i) => {
         document.getElementById(`contactListBadge${i}`).classList.add('display-none');
-        if (contactBtn.classList.contains('contactListBtnClicked')) {
+        if (contactBtn.classList.contains('contact-list-btn-clicked')) {
             document.getElementById(`contactListBadge${i}`).classList.remove('display-none');
         };
     });

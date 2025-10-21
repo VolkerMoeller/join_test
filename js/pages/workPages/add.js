@@ -30,7 +30,6 @@
 
 
 // 1st
-
 function setupAddElementsOnTop(inputId) {
     if (inputId == 'assigned') {
         document.getElementById('assignedContainer').classList.add('z-index-4');
@@ -40,8 +39,8 @@ function setupAddElementsOnTop(inputId) {
     }
 }
 
-// 2nd
 
+// 2nd
 function resetAddElementsDefault(inputId) {
     if (inputId == 'assigned') {
         document.getElementById('assignedContainer').classList.remove('z-index-4');
@@ -104,10 +103,7 @@ function initOnclickDropDownOpen(inputId) {
 }
 
 
-
-
 // 6th
-
 function initOnclickDropDownClose(inputId) {
     if (inputId == 'assigned') {
         showBadgeList();
@@ -129,7 +125,6 @@ function initOnclickDropDownClose(inputId) {
 
 
 // 7th
-
 function tglContactListBtnCSS(id) {
     document.getElementById(id).classList.toggle('contactListBtn');
     document.getElementById(id).classList.toggle('contact-list-btn-clicked');
@@ -138,14 +133,12 @@ function tglContactListBtnCSS(id) {
 
 
 // 8th
-
 function handleCategorySelection(text) {
     let category = document.getElementById('category');
     category.value = text;
 }
 
 // 9th
-
 function checkIfChecked(id) {
     let checked = false;
     checked = document.getElementById(id).classList.contains('display-none');
@@ -312,7 +305,8 @@ function checkSubtask(subtaskId) {
 
 
 // 25th
-async function genUserContactList(userId = 'userId0000') {
+async function genUserContactList() {
+    userId = loadLocalStorageObject('currentUser').id;
     document.getElementById('userContactList').innerHTML = '';
     let userContacts = await getArrOfUserContacts(userId);
     userContacts.forEach((contact, i) => {

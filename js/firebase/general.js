@@ -193,7 +193,7 @@ async function storageGuest() {
                 'title': 'Möbel einkaufen'
             }
         },
-        'tasksGroups': {
+        'tasksgroups': {
             'done': '0',
             'feedback': '0',
             'inBoard': '2',

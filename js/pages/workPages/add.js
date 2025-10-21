@@ -53,14 +53,13 @@ function resetAddElementsDefault(inputId) {
 
 
 // 3rd
-
 function resetOverlayFrameSelect(inputId) {
     resetOverlayFrame();
     if (inputId == 'assigned') {
         resetInputAssigned();
         dropDownCloseById('userContactList');
         resetAddElementsDefault(inputId);
-        document.getElementById('userContactBadges').classList.remove('display-none');
+        showBadgeList();
     }
     if (inputId == 'category') {
         resetInputCategory();
@@ -93,7 +92,7 @@ function initOnclickDropDownOpen(inputId) {
     }
     handleOverlayForSelect(inputId);
     if (inputId == 'assigned') {
-        document.getElementById('userContactBadges').classList.add('display-none');
+        hideBadgeList();
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
         focusInput('assigned');
         dropDownOpenById('userContactList');
@@ -104,11 +103,14 @@ function initOnclickDropDownOpen(inputId) {
     }
 }
 
+
+
+
 // 6th
 
 function initOnclickDropDownClose(inputId) {
     if (inputId == 'assigned') {
-        document.getElementById('userContactBadges').classList.remove('display-none');
+        showBadgeList();
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
         resetOverlayFrame();
         emptyInputFieldById(inputId);
@@ -343,6 +345,7 @@ async function genContactBadges(userId = 'userId0000') {
 // resetInputAssigned()
 // dropDownCloseById()
 // resetAddElementsDefault() --> see above
+// showBadgeList()
 // resetInputCategory()
 // dropDownCloseById() --> see above
 // resetAddElementsDefault() --> see above
@@ -358,6 +361,7 @@ async function genContactBadges(userId = 'userId0000') {
 // 5th
 // selectAssignedBtnDefault()
 // handleOverlayForSelect() --> main.js
+// hideBadgeList()
 // toggleElements() --> main.js
 // focusInput() --> main.js
 // dropDownOpenById() --> see above
@@ -366,6 +370,7 @@ async function genContactBadges(userId = 'userId0000') {
 
 
 // 6th
+// showBadgeList() -->
 // toggleElements() --> main.js
 // resetOverlayFrame() --> main.js
 // emptyInputFieldById() --> main.js
@@ -378,14 +383,14 @@ async function genContactBadges(userId = 'userId0000') {
 // resetAddElementsDefault() --> see above
 
 
-// 7th
+// ..7th
 // tglCSSCheckBox()
 
-// ad 16th
+// ..16th
 // toggleElementsZindex() --> main.js
 // focusInput() --> main.js
 
-// ad 25th
+// ..25th
 // getArrOfUserContacts()
 // getArrsOfBadgeData()
 // genHTMLUserContactListBtn() --> genHTMLELements.js
@@ -400,6 +405,10 @@ function resetInputAssigned() {
 function dropDownCloseById(id) {
     document.getElementById(id).classList.remove('drop-down-anim');
     document.getElementById(id).classList.add('drop-up-anim');
+}
+
+function showBadgeList() {
+    document.getElementById('userContactBadges').classList.remove('display-none');
 }
 
 
@@ -535,6 +544,12 @@ function selectAssignedBtnDefault() {
     let dropDownAssOpen = false;
     dropDownAssOpen = document.getElementById('dropDownAssClose').classList.contains('display-none');
     return dropDownAssOpen;
+}
+
+
+function hideBadgeList() {
+    document.getElementById('userContactBadges').classList.add('display-none');
+
 }
 
 

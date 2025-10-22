@@ -397,18 +397,6 @@ async function getTaskContactIds(userId = 'userId0000', currentTaskId = 'taskId0
 }
 
 
-async function getTasksgoups() {
-    let tasksgroups = new Tasksgroups();
-    console.log('taskgroups: ', tasksgroups);
-    console.log('taskgroups-done: ', tasksgroups['done']);
-    console.log('taskgroups-feedback: ', tasksgroups['feedback']);
-    console.log('taskgroups-urgent: ', tasksgroups['urgent']);
-    console.log('taskgroups-toDo: ', tasksgroups['toDo']);
-}
-
-
-
-
 // -------------------
 // 1st-level-functions
 // -------------------

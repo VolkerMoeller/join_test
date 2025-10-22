@@ -174,7 +174,7 @@ async function storageGuest() {
                 'description': "Brauche neues Sofa",
                 'dueDate': '27/10/2025',
                 'priority': 'urgent',
-                'state': 'progress',
+                'state': 'toDo',
                 'subtasks': {
                     'subtasksInputIds': {
                         0: 'subtask1Input',

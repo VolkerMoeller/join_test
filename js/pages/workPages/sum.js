@@ -43,7 +43,7 @@ function genWelcomeMobile() {
 async function updateSumContent() {
     let tasks = await getTasksFromFirebase();
     let tasksCnts = getTasksgroupsCnts(tasks);
-    let urgentTaskDate = await getUrgentTaskDate(tasks);
+    let urgentTaskDate = await getUrgentTaskDateArr(tasks);
     let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
     console.log(tasksgroups);
 }
@@ -69,7 +69,7 @@ async function updateSumContent() {
 // .4th
 // getTasksFromFirebase() --> general.js
 // getTasksgroupsCnts()
-// getUrgendTaskDate()
+// getUrgendTaskDateArr()
 
 
 // .2nd
@@ -96,18 +96,27 @@ function getTasksgroupsCnts(tasks) {
 }
 
 
-async function getUrgentTaskDate() {
+async function getUrgentTaskDateArr() {
     let urgentDateArr = [];
-    let dates = [];
     let tasks = await getTasksFromFirebase();
+    let dates = getDatesOutOf(tasks);
+    let urgentDate = getUrgentDateOutOf(dates);
+    urgentDateArr = buildUrgentDateArr(urgentDate);
+    return urgentDateArr;
+}
+
+
+function getDatesOutOf(tasks) {
+    let dates = [];
     tasks = Object.values(tasks);
     tasks.forEach(task => {
         let date = task['dueDate'];
         date = date.split('/');
         console.log(date);
-        date[1] = parseInt(date[1]);
-        date[1] = date[1] - 1;
-        date[1] = String(date[1]);
+        // date[1] = parseInt(date[1]);
+        // date[1] = date[1] - 1;
+        // date[1] = String(date[1]);
+        date[1] = String((parseInt(date[1]) - 1));
         date = new Date(date[2], date[1], date[0]);
         console.log(date);
         date = Date.parse(date);
@@ -115,12 +124,24 @@ async function getUrgentTaskDate() {
         dates.push(date);
         console.log(dates);
     });
+    return dates;
+}
+
+
+function getUrgentDateOutOf(dates) {
+    let urgentDate;
     let sortedDates = dates.sort();
     console.log(sortedDates);
-    let urgentDate = (sortedDates[0]);
+    urgentDate = (sortedDates[0]);
     console.log(urgentDate);
     urgentDate = new Date(urgentDate);
     console.log(urgentDate);
+    return urgentDate;
+}
+
+
+function buildUrgentDateArr(urgentDate) {
+    let urgentDateArr = [];
     const options = {
         month: 'long'
     }

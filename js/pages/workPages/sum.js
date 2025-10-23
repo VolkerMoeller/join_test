@@ -110,12 +110,16 @@ async function getUrgentTaskDate() {
         date[1] = String(date[1]);
         date = new Date(date[2], date[1], date[0]);
         console.log(date);
+        date = Date.parse(date);
+        console.log(date);
         dates.push(date);
         console.log(dates);
     });
-    dates.sort();
-    index = dates.length - 1;
-    let urgentDate = (dates[index]);
+    let sortedDates = dates.sort();
+    console.log(sortedDates);
+    let urgentDate = (sortedDates[0]);
+    console.log(urgentDate);
+    urgentDate = new Date(urgentDate);
     console.log(urgentDate);
     const options = {
         month: 'long'

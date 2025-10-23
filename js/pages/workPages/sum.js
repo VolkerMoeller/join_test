@@ -31,15 +31,17 @@ function genWelcomeMobile() {
 
 async function updateSumContent() {
     let tasks = await getTasksFromFirebase();
-    console.log(tasks);
+    let tasksCnts = getTasksgroupsCnts(tasks);
+    let tasksgroups = new Tasksgroups(tasksCnts);
+    console.log(tasksgroups);
 }
 
 
-function getTasksgroupsCnts() {
-    done = cntTask('done');
-    feedback = cntTask('feedback');
-    progress = cntTask('progress');
-    toDo = cntTask('toDo');
+function getTasksgroupsCnts(tasks) {
+    done = cntTask(tasks, 'done');
+    feedback = cntTask(tasks, 'feedback');
+    progress = cntTask(tasks, 'progress');
+    toDo = cntTask(tasks, 'toDo');
     return [done, feedback, progress, toDo];
 }
 

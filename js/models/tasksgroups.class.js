@@ -1,41 +1,23 @@
 class Tasksgroups {
-    done = 0;
-    feedback = 0;
-    inBoard = 0;
-    progress = 0;
-    toDo = 0;
-    urgent = 0;
+    done;
+    feedback;
+    inBoard;
+    progress;
+    toDo;
+    urgent;
 
 
-    constructor(done, feedback, inBoard, progress, toDo, urgent) {
-        this.done = done;
-        this.feedback = feedback;
-        this.inBoard = inBoard;
-        this.progress = progress;
-        this.toDo = toDo;
-        this.urgent = urgent;
+    constructor(tasksgroups) {
+        this.done = String(tasksgroups[0]);
+        this.feedback = (tasksgroups[1]);
+        this.progress = tasksgroups[2];
+        this.toDo = tasksgroups[3];
+        this.inBoard = String(this.toDo + this.progress + this.feedback);
+        this.feedback = String(tasksgroups[1]);
+        this.progress = String(tasksgroups[2]);
+        this.toDo = String(tasksgroups[3]);
+        this.urgent = '0';
     }
 
-
-
-    // async cntToDoTasks(state = 'toDo') {
-    //     this.tasks.then((values) => {
-    //         values = Object.values(values);
-    //         values.forEach(element => {
-    //             if (element['state'] == state) {
-    //                 ++this.toDo;
-    //             }
-    //         });
-    //     });
-    // }
-
-
-    // async cntToDoTasks(tasks, state = 'toDo') {
-    //     tasks = Object.values(tasks);
-    //     tasks.forEach(element => {
-    //         if (element['state'] == state) {
-    //             ++this.toDo;
-    //         }
-    //     });
-    // }
 }
+

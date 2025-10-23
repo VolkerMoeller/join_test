@@ -43,7 +43,8 @@ function genWelcomeMobile() {
 async function updateSumContent() {
     let tasks = await getTasksFromFirebase();
     let tasksCnts = getTasksgroupsCnts(tasks);
-    let tasksgroups = new Tasksgroups(tasksCnts);
+    let urgentTaskDate = getUrgentTaskDate(tasks);
+    let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
     console.log(tasksgroups);
 }
 
@@ -68,6 +69,7 @@ async function updateSumContent() {
 // .4th
 // getTasksFromFirebase() --> general.js
 // getTasksgroupsCnts()
+// getUrgendTaskDate()
 
 
 // .2nd
@@ -91,6 +93,28 @@ function getTasksgroupsCnts(tasks) {
     progress = cntTask(tasks, 'progress');
     toDo = cntTask(tasks, 'toDo');
     return [done, feedback, progress, toDo];
+}
+
+
+async function getUrgentTaskDate() {
+    let urgentDate = '';
+    let dates = [];
+    let tasks = await getTasksFromFirebase();
+    tasks = Object.values(tasks);
+    tasks.forEach(task => {
+        let date = task['dueDate'];
+        date = date.split('/');
+        date[1] = parseInt(date[1]);
+        date[1] = date[1] - 1;
+        date[1] = String(date[1]);
+        date = new Date(date[2], date[1], date[0]);
+        dates.push(
+            date
+        )
+    });
+    dates.sort();
+    console.log(dates[0]);
+    return urgentDate;
 }
 
 

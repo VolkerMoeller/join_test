@@ -7,7 +7,7 @@ class Tasksgroups {
     urgent;
 
 
-    constructor(tasksgroups) {
+    constructor(tasksgroups, urgentTaskDate) {
         this.done = String(tasksgroups[0]);
         this.feedback = (tasksgroups[1]);
         this.progress = tasksgroups[2];
@@ -16,7 +16,7 @@ class Tasksgroups {
         this.feedback = String(tasksgroups[1]);
         this.progress = String(tasksgroups[2]);
         this.toDo = String(tasksgroups[3]);
-        this.urgent = '0';
+        this.urgent = urgentTaskDate;
     }
 
 }

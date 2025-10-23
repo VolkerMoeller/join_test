@@ -10,7 +10,7 @@ class PageAssigns {
     initSumContent() {
         updateSumContent();
     };
-    initAddContent() { console.log('add') };
-    initBoardContent() { console.log('board') };
-    initContactsContent() { console.log('contacts') };
-}
+    initAddContent() { };
+    initBoardContent() { };
+    initContactsContent() { };
+};

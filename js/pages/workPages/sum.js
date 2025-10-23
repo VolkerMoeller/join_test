@@ -104,20 +104,29 @@ async function getUrgentTaskDate() {
     tasks.forEach(task => {
         let date = task['dueDate'];
         date = date.split('/');
+        console.log(date);
         date[1] = parseInt(date[1]);
         date[1] = date[1] - 1;
         date[1] = String(date[1]);
         date = new Date(date[2], date[1], date[0]);
+        console.log(date);
         dates.push(date);
+        console.log(dates);
     });
     dates.sort();
     index = dates.length - 1;
     let urgentDate = (dates[index]);
     console.log(urgentDate);
-    let year = urgentDate.getFullYear();
-    let month = urgentDate.getMonth();
-    let day = urgentDate.getDay();
-    urgentDateArr = urgentDateArr.push(year, month, day);
+    let year = String(urgentDate.getFullYear());
+    console.log(year);
+    urgentDateArr.push(year);
+    let month = String(urgentDate.getMonth() + 1);
+    console.log(month);
+    urgentDateArr.push(month);
+    let day = String(urgentDate.getDate());
+    console.log(day);
+    urgentDateArr.push(day);
+    console.log(urgentDateArr);
     return urgentDateArr;
 }
 

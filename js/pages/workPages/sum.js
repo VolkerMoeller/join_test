@@ -49,6 +49,8 @@ async function updateSumContent() {
 }
 
 
+
+
 // --------------------
 // 1st-level-functions:
 // --------------------
@@ -106,6 +108,35 @@ async function getUrgentTaskDateArr() {
 }
 
 
+
+
+
+// --------------------
+// 2nd-level-functions:
+// --------------------
+
+// .4th
+// cntTask()
+
+// getTasksFromFirebase() --> main.js
+// getDatesOutOf()
+// getUrgentDateOutOf()
+// buildUrgentDateArr()
+
+
+
+function cntTask(tasks, state) {
+    let counter = 0;
+    tasks = Object.values(tasks);
+    tasks.forEach(element => {
+        if (element['state'] == state) {
+            ++counter;
+        }
+    });
+    return counter;
+}
+
+
 function getDatesOutOf(tasks) {
     let dates = [];
     tasks = Object.values(tasks);
@@ -137,24 +168,4 @@ function buildUrgentDateArr(urgentDate) {
     let day = String(urgentDate.getDate());
     urgentDateArr.push(day);
     return urgentDateArr;
-}
-
-
-// --------------------
-// 3rd-level-functions:
-// --------------------
-
-// .4th
-// cntTask()
-
-
-function cntTask(tasks, state) {
-    let counter = 0;
-    tasks = Object.values(tasks);
-    tasks.forEach(element => {
-        if (element['state'] == state) {
-            ++counter;
-        }
-    });
-    return counter;
 }

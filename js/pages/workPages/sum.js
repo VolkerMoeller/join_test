@@ -43,7 +43,7 @@ function genWelcomeMobile() {
 async function updateSumContent() {
     let tasks = await getTasksFromFirebase();
     let tasksCnts = getTasksgroupsCnts(tasks);
-    let urgentTaskDate = await getUrgentTaskDateArr(tasks);
+    let urgentTaskDate = await getUrgentTaskDate(tasks);
     let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
     console.log(tasksgroups);
 }
@@ -99,13 +99,13 @@ function getTasksgroupsCnts(tasks) {
 }
 
 
-async function getUrgentTaskDateArr() {
-    let urgentDateArr = [];
+async function getUrgentTaskDate() {
+    let urgentDate = '';
     let tasks = await getTasksFromFirebase();
     let dates = getUrgentDatesOutOf(tasks);
-    let urgentDate = getUrgentDateOutOf(dates);
-    urgentDateArr = buildUrgentDateArr(urgentDate);
-    return urgentDateArr;
+    urgentDate = getUrgentDateOutOf(dates);
+    urgentDate = buildUrgentDate(urgentDate);
+    return urgentDate;
 }
 
 
@@ -161,14 +161,22 @@ function getUrgentDateOutOf(dates) {
 }
 
 
-function buildUrgentDateArr(urgentDate) {
-    let urgentDateArr = [];
+function buildUrgentDate(urgentDate) {
     let year = String(urgentDate.getFullYear());
-    urgentDateArr.push(year);
     const options = { month: 'long' };
     let month = new Intl.DateTimeFormat("de-GE", options).format(urgentDate);
-    urgentDateArr.push(month);
     let day = String(urgentDate.getDate());
-    urgentDateArr.push(day);
-    return urgentDateArr;
+    urgentDate = month + ' ' + day + ', ' + year;
+    return urgentDate;
 }
+// function buildUrgentDateArr(urgentDate) {
+//     let urgentDateArr = [];
+//     let year = String(urgentDate.getFullYear());
+//     urgentDateArr.push(year);
+//     const options = { month: 'long' };
+//     let month = new Intl.DateTimeFormat("de-GE", options).format(urgentDate);
+//     urgentDateArr.push(month);
+//     let day = String(urgentDate.getDate());
+//     urgentDateArr.push(day);
+//     return urgentDateArr;
+// }

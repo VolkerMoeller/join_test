@@ -160,9 +160,9 @@ function getUrgentDateOutOf(dates) {
 
 function buildUrgentDateArr(urgentDate) {
     let urgentDateArr = [];
-    const options = { month: 'long' };
     let year = String(urgentDate.getFullYear());
     urgentDateArr.push(year);
+    const options = { month: 'long' };
     let month = new Intl.DateTimeFormat("de-GE", options).format(urgentDate);
     urgentDateArr.push(month);
     let day = String(urgentDate.getDate());

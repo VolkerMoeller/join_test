@@ -15,11 +15,13 @@
 // updateSumContent()
 
 
+// 1st
 function toggleGreeting() {
     toggleElements('greetingUser', 'greetingGuest');
 }
 
 
+// 2nd
 function genWelcomeDesktop() {
     let greeting = appropriateGreeting();
     let userName = loadLocalStorageObject('currentUser');
@@ -28,6 +30,7 @@ function genWelcomeDesktop() {
 }
 
 
+// 3rd
 function genWelcomeMobile() {
     let greeting = appropriateGreeting();
     let userName = loadLocalStorageObject('currentUser');
@@ -36,6 +39,7 @@ function genWelcomeMobile() {
 }
 
 
+// 4th
 async function updateSumContent() {
     let tasks = await getTasksFromFirebase();
     let tasksCnts = getTasksgroupsCnts(tasks);
@@ -48,30 +52,25 @@ async function updateSumContent() {
 // 1st-level-functions:
 // --------------------
 
-// ..1st
+// .1st
 // toggleElements() --> main.js
 
-// ..2nd
+// .2nd
 // appropriateGreeting()
 // loadLocalStorageObject() --> main.js
 // genHTMLWelcomeDesktop() --> genHTMLElements.js
 
-// ..3rd
+// .3rd
 // appropriateGreeting() --> see above
 // loadLocalStorageObject() --> main.js
 // genHTMLWelcomeMobile() --> genHTMLElements.js
 
-// ..4th
+// .4th
 // getTasksFromFirebase() --> general.js
 // getTasksgroupsCnts()
 
 
-// --------------------
-// 3rd-level-functions:
-// --------------------
-
-
-// ...2nd
+// .2nd
 function appropriateGreeting() {
     let greeting = 'Good morning';
     let now = Date.now();
@@ -85,7 +84,7 @@ function appropriateGreeting() {
 }
 
 
-// ...4th
+// .4th
 function getTasksgroupsCnts(tasks) {
     done = cntTask(tasks, 'done');
     feedback = cntTask(tasks, 'feedback');
@@ -95,7 +94,12 @@ function getTasksgroupsCnts(tasks) {
 }
 
 
+// --------------------
+// 3rd-level-functions:
+// --------------------
 
+// .4th
+// cntTask()
 
 
 function cntTask(tasks, state) {

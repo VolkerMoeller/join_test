@@ -152,8 +152,8 @@ async function storageGuest() {
                 },
                 'category': 'Technical Task',
                 'description': "Festessen für Hochzeit kochen",
-                'dueDate': '13/11/2022',
-                'priority': 'low',
+                'dueDate': '30/10/2025',
+                'priority': 'urgent',
                 'state': 'toDo',
                 'subtasks': {
                     'subtasksInputIds': {
@@ -179,7 +179,7 @@ async function storageGuest() {
                 },
                 'category': 'Technical Task',
                 'description': "Brauche neues Sofa",
-                'dueDate': '17/09/2023',
+                'dueDate': '24/10/2025',
                 'priority': 'urgent',
                 'state': 'toDo',
                 'subtasks': {

@@ -110,8 +110,7 @@ function getDatesOutOf(tasks) {
     let dates = [];
     tasks = Object.values(tasks);
     tasks.forEach(task => {
-        let date = task['dueDate'];
-        date = date.split('/');
+        let date = task['dueDate'].split('/');
         date = Date.parse(new Date(date[2], String((parseInt(date[1]) - 1)), date[0]));
         dates.push(date);
     });
@@ -122,30 +121,21 @@ function getDatesOutOf(tasks) {
 function getUrgentDateOutOf(dates) {
     let urgentDate;
     let sortedDates = dates.sort();
-    console.log(sortedDates);
     urgentDate = (sortedDates[0]);
-    console.log(urgentDate);
     urgentDate = new Date(urgentDate);
-    console.log(urgentDate);
     return urgentDate;
 }
 
 
 function buildUrgentDateArr(urgentDate) {
     let urgentDateArr = [];
-    const options = {
-        month: 'long'
-    }
+    const options = { month: 'long' };
     let year = String(urgentDate.getFullYear());
-    console.log(year);
     urgentDateArr.push(year);
     let month = new Intl.DateTimeFormat("de-GE", options).format(urgentDate);
-    console.log(month);
     urgentDateArr.push(month);
     let day = String(urgentDate.getDate());
-    console.log(day);
     urgentDateArr.push(day);
-    console.log(urgentDateArr);
     return urgentDateArr;
 }
 

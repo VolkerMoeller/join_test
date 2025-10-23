@@ -179,7 +179,7 @@ async function storageGuest() {
                 },
                 'category': 'Technical Task',
                 'description': "Brauche neues Sofa",
-                'dueDate': '01/07/2025',
+                'dueDate': '01/01/2025',
                 'priority': 'urgent',
                 'state': 'toDo',
                 'subtasks': {

@@ -97,7 +97,7 @@ function getTasksgroupsCnts(tasks) {
 
 
 async function getUrgentTaskDate() {
-    let urgentDate = '';
+    let urgentDateArr = [];
     let dates = [];
     let tasks = await getTasksFromFirebase();
     tasks = Object.values(tasks);
@@ -111,8 +111,14 @@ async function getUrgentTaskDate() {
         dates.push(date);
     });
     dates.sort();
-    console.log(dates[0]);
-    return urgentDate;
+    index = dates.length - 1;
+    let urgentDate = (dates[index]);
+    console.log(urgentDate);
+    let year = urgentDate.getFullYear();
+    let month = urgentDate.getMonth();
+    let day = urgentDate.getDay();
+    urgentDateArr = urgentDateArr.push(year, month, day);
+    return urgentDateArr;
 }
 
 

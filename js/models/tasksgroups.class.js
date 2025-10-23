@@ -5,6 +5,7 @@ class Tasksgroups {
     progress;
     toDo;
     urgent;
+    urgentDate;
 
 
     constructor(tasksgroups, urgentTaskDate) {
@@ -16,7 +17,8 @@ class Tasksgroups {
         this.feedback = String(tasksgroups[1]);
         this.progress = String(tasksgroups[2]);
         this.toDo = String(tasksgroups[3]);
-        this.urgent = urgentTaskDate;
+        this.urgent = String(tasksgroups[4]);
+        this.urgentDate = urgentTaskDate;
     }
 
 }

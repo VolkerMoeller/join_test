@@ -152,8 +152,8 @@ async function storageGuest() {
                 },
                 'category': 'Technical Task',
                 'description': "Festessen für Hochzeit kochen",
-                'dueDate': '13/11/2027',
-                'priority': 'urgent',
+                'dueDate': '13/11/2022',
+                'priority': 'low',
                 'state': 'toDo',
                 'subtasks': {
                     'subtasksInputIds': {
@@ -179,7 +179,7 @@ async function storageGuest() {
                 },
                 'category': 'Technical Task',
                 'description': "Brauche neues Sofa",
-                'dueDate': '17/09/2025',
+                'dueDate': '17/09/2023',
                 'priority': 'urgent',
                 'state': 'toDo',
                 'subtasks': {
@@ -199,14 +199,6 @@ async function storageGuest() {
                 'taskId': 'taskId0001',
                 'title': 'Möbel einkaufen'
             }
-        },
-        'tasksgroups': {
-            'done': '0',
-            'feedback': '0',
-            'inBoard': '2',
-            'progress': '1',
-            'toDo': '1',
-            'urgent': '2'
         }
     }
     await putData(`users/userId0000/`, guestData);

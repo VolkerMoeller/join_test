@@ -90,18 +90,19 @@ function appropriateGreeting() {
 
 // .4th
 function getTasksgroupsCnts(tasks) {
-    done = cntTask(tasks, 'done');
-    feedback = cntTask(tasks, 'feedback');
-    progress = cntTask(tasks, 'progress');
-    toDo = cntTask(tasks, 'toDo');
-    return [done, feedback, progress, toDo];
+    done = cntTask(tasks, 'state', 'done');
+    feedback = cntTask(tasks, 'state', 'feedback');
+    progress = cntTask(tasks, 'state', 'progress');
+    toDo = cntTask(tasks, 'state', 'toDo');
+    urgent = cntTask(tasks, 'priority', 'urgent');
+    return [done, feedback, progress, toDo, urgent];
 }
 
 
 async function getUrgentTaskDateArr() {
     let urgentDateArr = [];
     let tasks = await getTasksFromFirebase();
-    let dates = getDatesOutOf(tasks);
+    let dates = getUrgentDatesOutOf(tasks);
     let urgentDate = getUrgentDateOutOf(dates);
     urgentDateArr = buildUrgentDateArr(urgentDate);
     return urgentDateArr;
@@ -119,17 +120,17 @@ async function getUrgentTaskDateArr() {
 // cntTask()
 
 // getTasksFromFirebase() --> main.js
-// getDatesOutOf()
+// getUrgentDatesOutOf()
 // getUrgentDateOutOf()
 // buildUrgentDateArr()
 
 
 
-function cntTask(tasks, state) {
+function cntTask(tasks, attr, state) {
     let counter = 0;
     tasks = Object.values(tasks);
     tasks.forEach(element => {
-        if (element['state'] == state) {
+        if (element[attr] == state) {
             ++counter;
         }
     });
@@ -137,15 +138,17 @@ function cntTask(tasks, state) {
 }
 
 
-function getDatesOutOf(tasks) {
-    let dates = [];
+function getUrgentDatesOutOf(tasks) {
+    let urgentDates = [];
     tasks = Object.values(tasks);
     tasks.forEach(task => {
-        let date = task['dueDate'].split('/');
-        date = Date.parse(new Date(date[2], String((parseInt(date[1]) - 1)), date[0]));
-        dates.push(date);
+        if (task['priority'] == 'urgent') {
+            let date = task['dueDate'].split('/');
+            date = Date.parse(new Date(date[2], String((parseInt(date[1]) - 1)), date[0]));
+            urgentDates.push(date);
+        }
     });
-    return dates;
+    return urgentDates;
 }
 
 

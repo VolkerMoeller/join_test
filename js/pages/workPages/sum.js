@@ -108,9 +108,7 @@ async function getUrgentTaskDate() {
         date[1] = date[1] - 1;
         date[1] = String(date[1]);
         date = new Date(date[2], date[1], date[0]);
-        dates.push(
-            date
-        )
+        dates.push(date);
     });
     dates.sort();
     console.log(dates[0]);

@@ -505,7 +505,7 @@ function viewDefaultBtnById(defaultBtnId) {
 }
 
 
-function initPageContent(defaultBtnId) {
+function initPageContent() {
     new PageAssigns();
 }
 

@@ -2,10 +2,17 @@
 // sum.js-functions:
 // -----------------
 
+// 1st
 // toggleGreeting()
+
+// 2nd
 // genWelcomeDesktop()
+
+// 3rd
 // genWelcomeMobile()
-// initSumContent()
+
+// 4th
+// updateSumContent()
 
 
 function toggleGreeting() {
@@ -37,6 +44,48 @@ async function updateSumContent() {
 }
 
 
+// --------------------
+// 1st-level-functions:
+// --------------------
+
+// ..1st
+// toggleElements() --> main.js
+
+// ..2nd
+// appropriateGreeting()
+// loadLocalStorageObject() --> main.js
+// genHTMLWelcomeDesktop() --> genHTMLElements.js
+
+// ..3rd
+// appropriateGreeting() --> see above
+// loadLocalStorageObject() --> main.js
+// genHTMLWelcomeMobile() --> genHTMLElements.js
+
+// ..4th
+// getTasksFromFirebase() --> general.js
+// getTasksgroupsCnts()
+
+
+// --------------------
+// 3rd-level-functions:
+// --------------------
+
+
+// ...2nd
+function appropriateGreeting() {
+    let greeting = 'Good morning';
+    let now = Date.now();
+    let date = new Date(now);
+    let hour = date.getHours();
+    if (hour <= 11) { greeting = 'Good morning' }
+    if (hour > 11 && hour <= 13) { greeting = 'Hello' }
+    if (hour > 13 && hour <= 16) { greeting = 'Good afternoon' }
+    if (hour > 16 && hour <= 24) { greeting = 'Good evening' }
+    return greeting;
+}
+
+
+// ...4th
 function getTasksgroupsCnts(tasks) {
     done = cntTask(tasks, 'done');
     feedback = cntTask(tasks, 'feedback');
@@ -44,6 +93,9 @@ function getTasksgroupsCnts(tasks) {
     toDo = cntTask(tasks, 'toDo');
     return [done, feedback, progress, toDo];
 }
+
+
+
 
 
 function cntTask(tasks, state) {
@@ -55,33 +107,4 @@ function cntTask(tasks, state) {
         }
     });
     return counter;
-
-
-}
-
-
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-
-// toggleElements() --> main.js
-
-// appropriateGreeting()
-// genHTMLWelcomeDesktop() --> genHTMLElements.js
-
-// appropriateGreeting() --> see above
-// genHTMLWelcomeMobile() --> genHTMLElements.js
-
-
-function appropriateGreeting() {
-    let greeting = 'Good morning';
-    let now = Date.now();
-    let date = new Date(now);
-    let hour = date.getHours();
-    if (hour <= 11) { greeting = 'Good morning' }
-    if (hour > 11 && hour <= 13) { greeting = 'Hello' }
-    if (hour > 13 && hour <= 16) { greeting = 'Good afternoon' }
-    if (hour > 16 && hour <= 24) { greeting = 'Good evening' }
-    return greeting;
 }

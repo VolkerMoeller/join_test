@@ -112,17 +112,8 @@ function getDatesOutOf(tasks) {
     tasks.forEach(task => {
         let date = task['dueDate'];
         date = date.split('/');
-        console.log(date);
-        // date[1] = parseInt(date[1]);
-        // date[1] = date[1] - 1;
-        // date[1] = String(date[1]);
-        date[1] = String((parseInt(date[1]) - 1));
-        date = new Date(date[2], date[1], date[0]);
-        console.log(date);
-        date = Date.parse(date);
-        console.log(date);
+        date = Date.parse(new Date(date[2], String((parseInt(date[1]) - 1)), date[0]));
         dates.push(date);
-        console.log(dates);
     });
     return dates;
 }

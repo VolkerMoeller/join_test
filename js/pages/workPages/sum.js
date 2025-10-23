@@ -5,6 +5,7 @@
 // toggleGreeting()
 // genWelcomeDesktop()
 // genWelcomeMobile()
+// initSumContent()
 
 
 function toggleGreeting() {
@@ -25,6 +26,35 @@ function genWelcomeMobile() {
     let userName = loadLocalStorageObject('currentUser');
     document.getElementById('ovlFrame').innerHTML = '';
     document.getElementById('ovlFrame').innerHTML = genHTMLWelcomeMobile(greeting, userName['name']);
+}
+
+
+async function updateSumContent() {
+    let tasks = await getTasksFromFirebase();
+    console.log(tasks);
+}
+
+
+function getTasksgroupsCnts() {
+    done = cntTask('done');
+    feedback = cntTask('feedback');
+    progress = cntTask('progress');
+    toDo = cntTask('toDo');
+    return [done, feedback, progress, toDo];
+}
+
+
+function cntTask(tasks, state) {
+    let counter = 0;
+    tasks = Object.values(tasks);
+    tasks.forEach(element => {
+        if (element['state'] == state) {
+            ++counter;
+        }
+    });
+    return counter;
+
+
 }
 
 

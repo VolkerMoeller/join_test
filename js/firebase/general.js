@@ -42,6 +42,13 @@ async function saveNextSubtaskId(nextSubtaskId) {
 }
 
 
+async function getTasksFromFirebase() {
+    let userId = loadLocalStorageObject('currentUser').id;
+    let currentTasks = await loadData(`users/${userId}/tasks`);
+    return currentTasks;
+}
+
+
 // -------------------
 // 1st-level-functions
 // -------------------

@@ -403,6 +403,9 @@ function showLeftAndBottomMenu() {
 
 
 
+
+
+
 // -----------------
 // cntTop-functions:
 // -----------------
@@ -467,6 +470,9 @@ function animSmallMenu() {
 
 
 
+
+
+
 // ------------------
 // cntMenu-functions:
 // ------------------
@@ -477,6 +483,7 @@ function animSmallMenu() {
 function viewDefaultContent(defaultBtnId) {
     viewDefaultBtnById(defaultBtnId);
     showCurrentContent();
+    initPageContent();
 }
 
 
@@ -486,6 +493,8 @@ function viewDefaultContent(defaultBtnId) {
 
 // viewDefaultBtnById()
 // showCurrentContent() --> see above
+// initPageContent(defaultBtnId)
+
 // resetSVGHvr()
 // currentNavView() --> see above
 
@@ -493,6 +502,11 @@ function viewDefaultContent(defaultBtnId) {
 function viewDefaultBtnById(defaultBtnId) {
     resetSVGHvr();
     currentNavView(defaultBtnId);
+}
+
+
+function initPageContent(defaultBtnId) {
+    new PageAssigns();
 }
 
 

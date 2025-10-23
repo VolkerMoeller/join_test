@@ -43,7 +43,7 @@ function genWelcomeMobile() {
 async function updateSumContent() {
     let tasks = await getTasksFromFirebase();
     let tasksCnts = getTasksgroupsCnts(tasks);
-    let urgentTaskDate = getUrgentTaskDate(tasks);
+    let urgentTaskDate = await getUrgentTaskDate(tasks);
     let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
     console.log(tasksgroups);
 }
@@ -117,10 +117,13 @@ async function getUrgentTaskDate() {
     index = dates.length - 1;
     let urgentDate = (dates[index]);
     console.log(urgentDate);
+    const options = {
+        month: 'long'
+    }
     let year = String(urgentDate.getFullYear());
     console.log(year);
     urgentDateArr.push(year);
-    let month = String(urgentDate.getMonth() + 1);
+    let month = new Intl.DateTimeFormat("de-GE", options).format(urgentDate);
     console.log(month);
     urgentDateArr.push(month);
     let day = String(urgentDate.getDate());

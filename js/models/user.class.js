@@ -10,14 +10,6 @@ class User {
     nextTaskId = '0';
     password = '';
     tasks = '';
-    tasksGroups = {
-        'toDo': '0',
-        'progress': '0',
-        'feedback': '0',
-        'done': '0',
-        'inBoard': '0',
-        'urgent': '0',
-    };
 
     constructor(userData) {
         this.id = 'userId' + userData[0];

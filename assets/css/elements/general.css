@@ -47,6 +47,10 @@
     color: var(--main);
 }
 
+.btn-wth-icn {
+    padding-right: 56px;
+}
+
 /* text button */
 
 .txt-btn {

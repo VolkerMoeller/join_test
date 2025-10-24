@@ -46,6 +46,7 @@ async function updateSumContent() {
     let urgentTaskDate = await getUrgentTaskDate(tasks);
     let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
     console.log(tasksgroups);
+    genSumContent();
 }
 
 
@@ -72,9 +73,11 @@ async function updateSumContent() {
 // getTasksFromFirebase() --> general.js
 // getTasksgroupsCnts()
 // getUrgendTaskDateArr()
+// genSumContent()
 
 
 // .2nd
+// ..
 function appropriateGreeting() {
     let greeting = 'Good morning';
     let now = Date.now();
@@ -89,6 +92,7 @@ function appropriateGreeting() {
 
 
 // .4th
+// ..
 function getTasksgroupsCnts(tasks) {
     done = cntTask(tasks, 'state', 'done');
     feedback = cntTask(tasks, 'state', 'feedback');
@@ -99,6 +103,8 @@ function getTasksgroupsCnts(tasks) {
 }
 
 
+// .4th
+// ..
 async function getUrgentTaskDate() {
     let urgentDate = '';
     let tasks = await getTasksFromFirebase();
@@ -106,6 +112,13 @@ async function getUrgentTaskDate() {
     urgentDate = getUrgentDateOutOf(dates);
     urgentDate = buildUrgentDate(urgentDate);
     return urgentDate;
+}
+
+
+// .4th
+// ..
+function genSumContent() {
+    console.log('genSum!');
 }
 
 

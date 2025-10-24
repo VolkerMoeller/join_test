@@ -151,21 +151,21 @@ function genBtnUser() {
 }
 
 
-function genSumRectCnt() {
-    let tasksGroups = loadLocalStorageObject('currentUser').tasksGroups;
-    let sumRects = {
-        'rectToDo': [tasksGroups['toDo'], 'To-Do'],
-        'rectDone': [tasksGroups['done'], 'Done'],
-        'rectUrgent': [tasksGroups['urgent'], 'Urgent'],
-        'rectBoard': [tasksGroups['inBoard'], 'Tasks in <br>Board'],
-        'rectProgress': [tasksGroups['progress'], 'Tasks in <br>Progress'],
-        'rectFeedback': [tasksGroups['feedback'], 'Awaiting <br>Feedback']
-    };
-    Object.entries(sumRects).forEach(([key, value]) => {
-        document.getElementById(key).innerHTML = '';
-        document.getElementById(key).innerHTML = genHTMLSumRectCnt(value[0], value[1]);
-    });
-}
+// function genSumRectCnt() {
+//     let tasksGroups = loadLocalStorageObject('currentUser').tasksGroups;
+//     let sumRects = {
+//         'rectToDo': [tasksGroups['toDo'], 'To-Do'],
+//         'rectDone': [tasksGroups['done'], 'Done'],
+//         'rectUrgent': [tasksGroups['urgent'], 'Urgent'],
+//         'rectBoard': [tasksGroups['inBoard'], 'Tasks in <br>Board'],
+//         'rectProgress': [tasksGroups['progress'], 'Tasks in <br>Progress'],
+//         'rectFeedback': [tasksGroups['feedback'], 'Awaiting <br>Feedback']
+//     };
+//     Object.entries(sumRects).forEach(([key, value]) => {
+//         document.getElementById(key).innerHTML = '';
+//         document.getElementById(key).innerHTML = genHTMLSumRectCnt(value[0], value[1]);
+//     });
+// }
 
 
 // --------------------

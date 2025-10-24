@@ -163,6 +163,7 @@ async function initCheckInputSignUp() {
     }
     if (success) {
         await createNewUser();
+        scrollWindowToTop();
         initAnimSignMessages();
     }
 }
@@ -309,7 +310,7 @@ function initAnimSignMessages() {
     animSignMessages(currentForm);
     if (currentForm == 'SignUp') {
         setTimeout(() => {
-            // switchToLoginForm(currentForm);
+            switchToLoginForm(currentForm);
         }, 1000);
     }
 }

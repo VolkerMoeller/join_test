@@ -123,12 +123,6 @@ function genSumContent(tasksgroups) {
         document.getElementById(id).innerHTML = '';
         document.getElementById(id).innerHTML = tasksgroups[id];
     });
-    // document.getElementById('cntDone').innerHTML = '';
-    // document.getElementById('cntUrgent').innerHTML = '';
-    // document.getElementById('urgentDate').innerHTML = '';
-    // document.getElementById('cntBoard').innerHTML = '';
-    // document.getElementById('cntProgress').innerHTML = '';
-    // document.getElementById('cntFeedback').innerHTML = '';
 }
 
 

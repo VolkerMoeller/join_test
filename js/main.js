@@ -378,7 +378,14 @@ function getFormInputData(form = "formAddTask") {
     const inputs = document.getElementById(form).elements;
 }
 
+
+function scrollWindowToTop() {
+    window.scroll(0, 0);
+}
+
+
 // --- test-functions:
+
 
 async function getSubtaskIdsObj() {
     const subtasksObj = await loadData('users/userId0000/tasks/taskId0001/subtasks/subtasksInputIds');

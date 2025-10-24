@@ -111,6 +111,7 @@ function toggleSignFormsBack() {
     setTimeout(() => {
         blurInputField();
     }, 1);
+    scrollWindowToTop();
 }
 
 
@@ -308,7 +309,7 @@ function initAnimSignMessages() {
     animSignMessages(currentForm);
     if (currentForm == 'SignUp') {
         setTimeout(() => {
-            switchToLoginForm(currentForm);
+            // switchToLoginForm(currentForm);
         }, 1000);
     }
 }
@@ -475,7 +476,7 @@ function animSignMessages(currentForm) {
     showCurrentMessage(currentForm);
     slideMessages();
     setTimeout(() => {
-        resetOverlay();
+        // resetOverlay();
     }, 1000);
 }
 
@@ -648,6 +649,7 @@ function toggleSignFormsForward() {
     defaultFormSettings();
     resetOverlayFrame();
     setupPasswordBtn();
+    scrollWindowToTop();
 }
 
 // -------------------

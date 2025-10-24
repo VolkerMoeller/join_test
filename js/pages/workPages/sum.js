@@ -99,12 +99,11 @@ function getTasksgroupsCnts(tasks) {
 
 
 // .4th
-async function getUrgentTaskDate() {
+async function getUrgentTaskDate(tasks) {
     let urgentDate = '';
-    let tasks = await getTasksFromFirebase();
     let dates = getUrgentDatesOutOf(tasks);
     urgentDate = getUrgentDateOutOf(dates);
-    if (urgentDate = '') urgentDate = buildUrgentDate(urgentDate);
+    if (urgentDate != '') urgentDate = buildUrgentDate(urgentDate);
     else urgentDate = 'No Date';
     return urgentDate;
 }

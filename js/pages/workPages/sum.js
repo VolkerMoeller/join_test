@@ -76,7 +76,6 @@ async function updateSumContent() {
 
 
 // .2nd
-// ..
 function appropriateGreeting() {
     let greeting = 'Good morning';
     let now = Date.now();
@@ -91,7 +90,6 @@ function appropriateGreeting() {
 
 
 // .4th
-// ..
 function getTasksgroupsCnts(tasks) {
     done = cntTask(tasks, 'state', 'done');
     feedback = cntTask(tasks, 'state', 'feedback');
@@ -103,7 +101,6 @@ function getTasksgroupsCnts(tasks) {
 
 
 // .4th
-// ..
 async function getUrgentTaskDate() {
     let urgentDate = '';
     let tasks = await getTasksFromFirebase();
@@ -115,9 +112,7 @@ async function getUrgentTaskDate() {
 
 
 // .4th
-// ..
 function genSumContent(tasksgroups) {
-    console.log(tasksgroups);
     let ids = ['done', 'feedback', 'inBoard', 'progress', 'toDo', 'urgent', 'urgentDate'];
     ids.forEach((id) => {
         document.getElementById(id).innerHTML = '';
@@ -134,8 +129,11 @@ function genSumContent(tasksgroups) {
 // --------------------
 
 // .4th
+// ..
 // cntTask()
 
+// .4th
+// ..
 // getTasksFromFirebase() --> main.js
 // getUrgentDatesOutOf()
 // getUrgentDateOutOf()
@@ -143,6 +141,8 @@ function genSumContent(tasksgroups) {
 
 
 
+// .4th
+// ..
 function cntTask(tasks, attr, state) {
     let counter = 0;
     tasks = Object.values(tasks);
@@ -155,6 +155,8 @@ function cntTask(tasks, attr, state) {
 }
 
 
+// .4th
+// ..
 function getUrgentDatesOutOf(tasks) {
     let urgentDates = [];
     tasks = Object.values(tasks);
@@ -169,6 +171,8 @@ function getUrgentDatesOutOf(tasks) {
 }
 
 
+// .4th
+// ..
 function getUrgentDateOutOf(dates) {
     let urgentDate;
     let sortedDates = dates.sort();
@@ -178,6 +182,8 @@ function getUrgentDateOutOf(dates) {
 }
 
 
+// .4th
+// ..
 function buildUrgentDate(urgentDate) {
     let year = String(urgentDate.getFullYear());
     const options = { month: 'long' };

@@ -2,10 +2,14 @@
 // signPage-functions:
 // -------------------
 
+// 1st
 // initSign()
+
+// 2nd
 // createNewUser()
 
 
+// 1st
 async function initSign() {
     await includeHTML();
     setClrSchemeInit();
@@ -14,7 +18,7 @@ async function initSign() {
     storageGuest();
 }
 
-
+// 2nd
 async function createNewUser() {
     let userData = await getUserData();
     let newUser = new User(userData);
@@ -22,17 +26,24 @@ async function createNewUser() {
     return newUser;
 }
 
+
 // --------------------
 // 1st-level-functions:
 // --------------------
 
+// .1st
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
+// saveLocalStorageObject() --> main.js
+// saveLocalStorageObject() --> main.js
+// storageGuest() --> general.js
 
+// .2nd
 // getUserData()
-// storageNewUser()
+// storageFirebaseNewUser() --> general.js
 
 
+// .1st
 async function getUserData() {
     let userData = [];
     let id = await initGetNextUserId();
@@ -48,6 +59,8 @@ async function getUserData() {
 // 2nd-level-functions:
 // --------------------
 
+// .1st
+// ..
 // initGetNextUserId() --> general.js
 
 

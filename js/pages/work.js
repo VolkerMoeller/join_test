@@ -29,7 +29,7 @@ async function initWork() {
     genHvrBtns();
     initSumView();
     genBtnUser();
-    genSumRectCnt();
+    // genSumRectCnt();
     genUserContactList();
     genContactBadges();
 }

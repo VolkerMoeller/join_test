@@ -2,9 +2,14 @@
 // addTask.js-functions:
 // ---------------------
 
+// 1st
 // initCreateNewTask()
+
+// 2nd
 // initCreateNewSubtask()
 
+
+// 1st
 async function initCreateNewTask() {
     let newTask = await createNewTask();
     console.log(newTask);
@@ -15,6 +20,7 @@ async function initCreateNewTask() {
 }
 
 
+// 2nd
 async function initCreateNewSubtask() {
     let subtaskId = await createNewSubtaskId();
     let text = await genSubtaskListText(subtaskId);
@@ -29,13 +35,13 @@ async function initCreateNewSubtask() {
 // 1st-level-functions:
 // --------------------
 
+// .1st
 // createNewTask()
+// resetFormAddTask() --> main.js
 // viewDefaultContent() --> work.js
 
+// .2nd
 // createNewSubtaskId() 
-// updateNextSubtaskId() --> add.js
-// loadLocalStorageObject() --> 
-// loadData() -->
 // genSubtaskListText()
 // genSubtaskListInput()
 // updateCurrentSubtaskObj()

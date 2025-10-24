@@ -442,8 +442,8 @@ function dropDownOpenById(id) {
 function makeSpaceforList() {
     let assignedInputs = document.getElementById('assignedInputs');
     assignedInputs.setAttribute('style', 'height: 300px');
-    let mainCenterAddTask = document.getElementById('mainCenterAddTask');
-    mainCenterAddTask.scrollTo({
+    let mainCenterAdd = document.getElementById('mainCenterAdd');
+    mainCenterAdd.scrollTo({
         top: 300,
         left: 0,
         behavior: "smooth",
@@ -454,8 +454,8 @@ function makeSpaceforList() {
 function resetSpaceforList() {
     let assignedInputs = document.getElementById('assignedInputs');
     assignedInputs.setAttribute('style', 'height: auto');
-    let mainCenterAddTask = document.getElementById('mainCenterAddTask');
-    mainCenterAddTask.scrollTo({
+    let mainCenterAdd = document.getElementById('mainCenterAdd');
+    mainCenterAdd.scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth",

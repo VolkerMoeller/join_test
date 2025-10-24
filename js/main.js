@@ -365,11 +365,20 @@ function getRandomColor() {
 }
 
 
-function scrollListToBottom(id) {
+function scrollElementToBottom(id) {
     document.getElementById(id).scroll({
         top: 1000,
         left: 100,
         behavior: "smooth",
+    });
+}
+
+
+function scrollElementToTop(id) {
+    document.getElementById(id).scroll({
+        top: 0,
+        left: 0,
+        behavior: "instant",
     });
 }
 

@@ -9,8 +9,11 @@ class PageAssigns {
 
     initSumContent() {
         updateSumContent();
+        scrollElementToTop('mainCenterSum');
     };
-    initAddContent() { };
+    initAddContent() {
+        scrollElementToTop('mainCenterAdd');
+    };
     initBoardContent() { };
     initContactsContent() { };
 };

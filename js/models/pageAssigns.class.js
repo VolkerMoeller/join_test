@@ -14,6 +14,10 @@ class PageAssigns {
     initAddContent() {
         scrollElementToTop('mainCenterAdd');
     };
-    initBoardContent() { };
-    initContactsContent() { };
+    initBoardContent() {
+        scrollElementToTop('mainCenterBoard');
+    };
+    initContactsContent() {
+        scrollElementToTop('mainCenterContacts');
+    };
 };

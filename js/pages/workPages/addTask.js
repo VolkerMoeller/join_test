@@ -10,7 +10,6 @@ async function initCreateNewTask() {
     console.log(newTask);
     // handleAssignedContacts(taskData);
     // animateMsg('addTask.html', 'msgAddTaskSuccess', 'board.html');
-    // await saveTasksGroups();
     resetFormAddTask();
     viewDefaultContent('mnuBtn4th');
 }

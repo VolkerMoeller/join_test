@@ -49,8 +49,6 @@ async function updateSumContent() {
 }
 
 
-
-
 // --------------------
 // 1st-level-functions:
 // --------------------

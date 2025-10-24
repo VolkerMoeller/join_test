@@ -44,10 +44,23 @@ async function initCreateNewSubtask() {
 // createNewSubtaskId() 
 // genSubtaskListText()
 // genSubtaskListInput()
-// updateCurrentSubtaskObj()
+// updateCurrentSubtaskObj() --> add.js
+// scrollElementToBottom() --> main.js
 // scrollElementToBottom() --> main.js
 
 
+// .1st
+async function createNewTask() {
+    updateNextSubtaskId();
+    let taskIndex = await initGetNextTaskId();
+    let newTask = new Task(taskIndex);
+    let userIndex = loadLocalStorageObject('currentUser').id;
+    await storageNewTask(userIndex, newTask);
+    return newTask;
+}
+
+
+// .2nd
 async function createNewSubtaskId() {
     let subtaskId = updateCurrentSubtaskId();
     let userId = loadLocalStorageObject('currentUser').id;
@@ -60,16 +73,7 @@ async function createNewSubtaskId() {
 }
 
 
-async function createNewTask() {
-    updateNextSubtaskId();
-    let taskIndex = await initGetNextTaskId();
-    let newTask = new Task(taskIndex);
-    let userIndex = loadLocalStorageObject('currentUser').id;
-    await storageNewTask(userIndex, newTask);
-    return newTask;
-}
-
-
+// .2nd
 async function genSubtaskListText(subtaskId) {
     const text = document.getElementById('subtask').value;
     document.getElementById('subtaskListText').innerHTML += genHTMLSubtaskListText(subtaskId, text);
@@ -79,6 +83,7 @@ async function genSubtaskListText(subtaskId) {
 }
 
 
+// .2nd
 async function genSubtaskListInput(subtaskId) {
     const text = document.getElementById('subtask').value;
     document.getElementById('subtaskListInput').innerHTML += genHTMLSubtaskListInput(subtaskId, text);
@@ -91,12 +96,37 @@ async function genSubtaskListInput(subtaskId) {
 // 2nd-level-functions:
 // --------------------
 
+// .1st
+// ..
 // updateNextSubtaskId()
 // initGetNextTaskId() --> general.js
 // loadLocalStorageObject() --> main.js
 // storageNewTask() --> general.js
 
 
+// .2nd
+// ..
+// updateCurrentSubtaskId() --> add.js
+// loadLocalStorageObject() --> main.js
+// loadData() --> basic.js
+
+
+// .2nd
+// ..
+// genHTMLSubtaskListText() --> genHTMLElements.js
+// includeHTMLById() --> main.js
+// focusInput() --> main.js
+
+
+// .2nd
+// ..
+// genHTMLSubtaskListInput() --> genHTMLElements.js
+// includeHTMLById() --> main.js
+// focusInput() --> main.js
+
+
+// .1st
+// ..
 async function updateNextSubtaskId() {
     let defaultId = await getNextSubtaskId();
     defaultId = parseInt(defaultId);

@@ -10,7 +10,7 @@
 // 6th initOnclickDropDownClose()
 // 7th tglContactListBtnCSS()
 // 8th handleCategorySelection()
-// 9th checkIfChecked(id)
+// 9th checkIfChecked()
 // 10th showSubtaskPanel()
 // 11th hideSubtaskPanel()
 // 12th initShowSubtaskPanel()

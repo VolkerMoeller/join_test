@@ -104,7 +104,8 @@ async function getUrgentTaskDate() {
     let tasks = await getTasksFromFirebase();
     let dates = getUrgentDatesOutOf(tasks);
     urgentDate = getUrgentDateOutOf(dates);
-    urgentDate = buildUrgentDate(urgentDate);
+    if (urgentDate = '') urgentDate = buildUrgentDate(urgentDate);
+    else urgentDate = 'No Date';
     return urgentDate;
 }
 

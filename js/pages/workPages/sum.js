@@ -45,8 +45,7 @@ async function updateSumContent() {
     let tasksCnts = getTasksgroupsCnts(tasks);
     let urgentTaskDate = await getUrgentTaskDate(tasks);
     let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
-    console.log(tasksgroups);
-    genSumContent();
+    genSumContent(tasksgroups);
 }
 
 
@@ -117,8 +116,19 @@ async function getUrgentTaskDate() {
 
 // .4th
 // ..
-function genSumContent() {
-    console.log('genSum!');
+function genSumContent(tasksgroups) {
+    console.log(tasksgroups);
+    let ids = ['done', 'feedback', 'inBoard', 'progress', 'toDo', 'urgent', 'urgentDate'];
+    ids.forEach((id) => {
+        document.getElementById(id).innerHTML = '';
+        document.getElementById(id).innerHTML = tasksgroups[id];
+    });
+    // document.getElementById('cntDone').innerHTML = '';
+    // document.getElementById('cntUrgent').innerHTML = '';
+    // document.getElementById('urgentDate').innerHTML = '';
+    // document.getElementById('cntBoard').innerHTML = '';
+    // document.getElementById('cntProgress').innerHTML = '';
+    // document.getElementById('cntFeedback').innerHTML = '';
 }
 
 
@@ -182,14 +192,3 @@ function buildUrgentDate(urgentDate) {
     urgentDate = month + ' ' + day + ', ' + year;
     return urgentDate;
 }
-// function buildUrgentDateArr(urgentDate) {
-//     let urgentDateArr = [];
-//     let year = String(urgentDate.getFullYear());
-//     urgentDateArr.push(year);
-//     const options = { month: 'long' };
-//     let month = new Intl.DateTimeFormat("de-GE", options).format(urgentDate);
-//     urgentDateArr.push(month);
-//     let day = String(urgentDate.getDate());
-//     urgentDateArr.push(day);
-//     return urgentDateArr;
-// }

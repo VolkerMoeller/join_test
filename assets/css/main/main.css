@@ -233,13 +233,22 @@ legend {
     align-items: center;
 }
 
-/* for btn wth */
+/* add for btn wth */
 .flx-cnt-btn-wth-icn {
     width: 100%;
     display: flex;
     justify-content: end;
     align-items: center;
     padding-right: 16px;
+}
+
+/* add for btn wth */
+.flx-cnt-btn-wth-icn-v2 {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .hover-container {
@@ -263,14 +272,6 @@ legend {
     align-items: center;
     width: 120px;
     height: 50px;
-}
-
-.hover-container-v3:hover .flx-cnt-btn-wth-icn svg path {
-    stroke: var(--main2nd);
-}
-
-.hover-container-v3:active .flx-cnt-btn-wth-icn svg path {
-    stroke: var(--nav-left-button);
 }
 
 @media(max-width: 1440px) {

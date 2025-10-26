@@ -47,6 +47,18 @@
     color: var(--main);
 }
 
+.hover-container-v3:hover .flx-cnt-btn-wth-icn svg path {
+    stroke: var(--main2nd);
+}
+
+.hover-container-v3:active .flx-cnt-btn-wth-icn svg path {
+    stroke: var(--nav-left-button);
+}
+
+/* .flx-cnt-btn-wth-icn-v2:hover hover-container-v3 {
+    background-color: green;
+} */
+
 .btn-wth-icn {
     padding-right: 56px;
 }

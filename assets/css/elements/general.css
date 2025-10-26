@@ -56,15 +56,9 @@
     stroke: var(--nav-left-button);
 }
 
-/* .flx-cnt-btn-wth-icn-v2:hover hover-container-v3 {
-    background-color: green;
-} */
-
-/* .btn-wth-icn {
-    padding-right: 56px;
-} */
-
-/* text button */
+.hover-container-v4:hover .flx-cnt-btn-wth-icn svg path {
+    stroke: var(--white);
+}
 
 .txt-btn {
     display: flex;

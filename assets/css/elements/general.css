@@ -9,6 +9,7 @@
     background: var(--main);
     border: none;
     cursor: pointer;
+    text-wrap: nowrap;
 }
 
 .btn-wo-icn-2nd {

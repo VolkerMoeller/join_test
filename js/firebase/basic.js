@@ -4,12 +4,20 @@ const BASE_URL = 'https://remotestorage-f5e66-default-rtdb.europe-west1.firebase
 // basic-functions:
 // ----------------
 
+// 1st
 // postData()
+
+// 2nd
 // putData()
+
+// 3rd
 // deleteData()
+
+// 4th
 // loadData()
 
 
+// 1st
 async function postData(path = '', data) {
     let response = await fetch(BASE_URL + path + '.json', {
         method: 'POST',
@@ -22,6 +30,7 @@ async function postData(path = '', data) {
 }
 
 
+// 2nd
 async function putData(path = '', data) {
     let response = await fetch(BASE_URL + path + '.json', {
         method: 'PUT',
@@ -34,6 +43,7 @@ async function putData(path = '', data) {
 }
 
 
+// 3rd
 async function deleteData(path) {
     let response = await fetch(BASE_URL + path + '.json', {
         method: 'DELETE',
@@ -42,6 +52,7 @@ async function deleteData(path) {
 }
 
 
+// 4th
 async function loadData(path = '') {
     let response = await fetch(BASE_URL + path + '.json');
     return responseToJson = await response.json();

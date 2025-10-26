@@ -36,6 +36,7 @@ async function getNextSubtaskId() {
     return nextSubtaskId;
 }
 
+
 async function saveNextSubtaskId(nextSubtaskId) {
     let userId = loadLocalStorageObject('currentUser').id;
     await putData(`users/${userId}/nextSubtaskId`, nextSubtaskId);
@@ -245,10 +246,6 @@ async function storageFirebaseNewUser(newUser) {
 // putData() --> basic.js
 
 
-
-
-
-
 // ------------------
 // new-task-functions
 // ------------------
@@ -277,7 +274,6 @@ async function storageNewTask(userIndex, newTask) {
 // updateNextId() --> see above
 
 // putData --> basic.js
-
 
 
 

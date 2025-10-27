@@ -267,5 +267,6 @@
         width: 100%;
         position: relative;
         width: clamp(0%, 100%, 440px);
+        bottom: 0;
     }
 }

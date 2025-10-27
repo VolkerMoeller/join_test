@@ -31,6 +31,7 @@
 
 // changeOvl()
 // showOverlayForMsg()
+// showOverlayForMsgV2()
 // resetOverlay()
 // handleOverlayForInput()
 // handleOverlayForSelect()
@@ -208,6 +209,13 @@ function showOverlayForMsg() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
     overlay.classList.add('ovl-show-anim-bg');
+}
+
+
+function showOverlayForMsgV2() {
+    const overlay = document.querySelector('.ovl-frame');
+    overlay.classList.remove('ovl-hide');
+    overlay.classList.add('ovl-show-anim-bg-v2');
 }
 
 

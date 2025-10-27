@@ -14,9 +14,11 @@ async function initCreateNewTask() {
     let newTask = await createNewTask();
     console.log(newTask);
     // handleAssignedContacts(taskData);
-    // animateMsg('addTask.html', 'msgAddTaskSuccess', 'board.html');
-    resetFormAddTask();
-    viewDefaultContent('mnuBtn4th');
+    animateMsg();
+    setTimeout(() => {
+        resetFormAddTask();
+    }, 800);
+    // viewDefaultContent('mnuBtn4th');
 }
 
 
@@ -37,6 +39,7 @@ async function initCreateNewSubtask() {
 
 // .1st
 // createNewTask()
+// animateMsg()
 // resetFormAddTask() --> main.js
 // viewDefaultContent() --> work.js
 
@@ -57,6 +60,12 @@ async function createNewTask() {
     let userIndex = loadLocalStorageObject('currentUser').id;
     await storageNewTask(userIndex, newTask);
     return newTask;
+}
+
+
+// .1st
+function animateMsg() {
+    showOverlayForMsgV2();
 }
 
 

@@ -118,6 +118,22 @@ async function storageGuest() {
                 'color': 'var(--variant14)',
                 'initial': 'TT'
             },
+            'contactId0004': {
+                'id': 'contactId0004',
+                'name': 'Bernd Bombe',
+                'eMail': 'bombe@gmail.com',
+                'phone': '+49 160 5214587',
+                'color': 'var(--variant14)',
+                'initial': 'BB'
+            },
+            'contactId0005': {
+                'id': 'contactId0005',
+                'name': 'Sabine Sense',
+                'eMail': 'sense@gmail.com',
+                'phone': '+49 148 1248578',
+                'color': 'var(--variant14)',
+                'initial': 'SS'
+            },
         },
         'contTaskRefs': {
             0: {

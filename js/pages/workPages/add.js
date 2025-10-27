@@ -334,7 +334,18 @@ async function genContactBadges(userId = 'userId0000') {
 
 // 27th
 function searchContactsByInput() {
-    let searchList = '';
+    let searchInput = document.getElementById('assigned').value;
+    console.log(searchInput);
+    let contactIds = [];
+    let searchListElements = document.querySelectorAll('.user-contact-list .contactListBtn');
+    console.log(searchListElements);
+    searchListElements.forEach(element => {
+        let contactId = (element.getAttribute('id'));
+        let contactValue = (element.getAttribute('value'));
+        contactIds.push(contactId);
+        contactIds.push(contactValue);
+    });
+    console.log(contactIds)
 }
 
 

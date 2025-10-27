@@ -123,7 +123,7 @@ async function storageGuest() {
                 'name': 'Bernd Bombe',
                 'eMail': 'bombe@gmail.com',
                 'phone': '+49 160 5214587',
-                'color': 'var(--variant14)',
+                'color': 'var(--variant6)',
                 'initial': 'BB'
             },
             'contactId0005': {
@@ -131,7 +131,7 @@ async function storageGuest() {
                 'name': 'Sabine Sense',
                 'eMail': 'sense@gmail.com',
                 'phone': '+49 148 1248578',
-                'color': 'var(--variant14)',
+                'color': 'var(--variant7)',
                 'initial': 'SS'
             },
             'contactId0006': {

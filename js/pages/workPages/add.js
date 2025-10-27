@@ -27,6 +27,8 @@
 // 23th
 // 24th
 // 25th
+// 26th
+// 27th searchContactsByInput()
 
 
 // 1st
@@ -328,6 +330,11 @@ async function genContactBadges(userId = 'userId0000') {
         let initial = badgeData[1][i];
         document.getElementById('userContactBadges').innerHTML += genHTMLContactBadge(i, color, initial);
     });
+}
+
+// 27th
+function searchContactsByInput() {
+    let searchList = '';
 }
 
 

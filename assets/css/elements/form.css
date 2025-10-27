@@ -246,7 +246,7 @@
     width: 100%;
     position: sticky;
     left: 0;
-    bottom: 0;
+    bottom: 56px;
     z-index: 1;
 }
 

@@ -88,11 +88,11 @@ async function storageGuest() {
         'contacts': {
             'contactId0000': {
                 'id': 'contactId0000',
-                'name': 'Susanne Leitner',
-                'eMail': 'leitner@gmail.com',
-                'phone': '+49 150 54895654',
-                'color': 'var(--variant10)',
-                'initial': 'SL'
+                'name': 'Guest (YOU)',
+                'eMail': 'guest@guest.com',
+                'phone': '+49 111 1234567',
+                'color': 'var(--main2nd)',
+                'initial': 'G'
             },
             'contactId0001': {
                 'id': 'contactId0001',
@@ -133,6 +133,14 @@ async function storageGuest() {
                 'phone': '+49 148 1248578',
                 'color': 'var(--variant14)',
                 'initial': 'SS'
+            },
+            'contactId0006': {
+                'id': 'contactId0006',
+                'name': 'Susanne Leitner',
+                'eMail': 'leitner@gmail.com',
+                'phone': '+49 150 54895654',
+                'color': 'var(--variant10)',
+                'initial': 'SL'
             },
         },
         'contTaskRefs': {

@@ -61,6 +61,7 @@ function resetOverlayFrameSelect(inputId) {
         dropDownCloseById('userContactList');
         resetAddElementsDefault(inputId);
         showBadgeList();
+        removeDisplayNone();
     }
     if (inputId == 'category') {
         resetInputCategory();
@@ -115,6 +116,7 @@ function initOnclickDropDownClose(inputId) {
         dropDownCloseById('userContactList');
         resetAddElementsDefault(inputId);
         document.getElementById('userContactList').classList.remove('drop-up-anim');
+        removeDisplayNone();
     }
     if (inputId == 'category') {
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
@@ -336,16 +338,26 @@ async function genContactBadges(userId = 'userId0000') {
 function searchContactsByInput() {
     let searchInput = document.getElementById('assigned').value;
     console.log(searchInput);
-    let contactIds = [];
     let searchListElements = document.querySelectorAll('.user-contact-list .contactListBtn');
     console.log(searchListElements);
+    if (searchInput) {
+        searchListElements.forEach(element => {
+            element.classList.add('display-none');
+        });
+    }
+    if (!searchInput) {
+        searchListElements.forEach(element => {
+            element.classList.remove('display-none');
+        });
+    }
     searchListElements.forEach(element => {
-        let contactId = (element.getAttribute('id'));
         let contactValue = (element.getAttribute('value'));
-        contactIds.push(contactId);
-        contactIds.push(contactValue);
+        searchInput = searchInput.toLowerCase();
+        contactValue = contactValue.toLowerCase();
+        if (contactValue.startsWith(searchInput)) {
+            element.classList.remove('display-none');
+        }
     });
-    console.log(contactIds)
 }
 
 
@@ -362,6 +374,7 @@ function searchContactsByInput() {
 // dropDownCloseById()
 // resetAddElementsDefault() --> see above
 // showBadgeList()
+// removeDisplayNone()
 // resetInputCategory()
 // dropDownCloseById() --> see above
 // resetAddElementsDefault() --> see above
@@ -397,6 +410,7 @@ function searchContactsByInput() {
 // emptyInputFieldById() --> main.js
 // dropDownCloseById() --> see above
 // resetAddElementsDefault() --> see above
+// removeDisplayNone() --> see above
 
 // ..7th
 // tglCSSCheckBox()
@@ -422,8 +436,17 @@ function dropDownCloseById(id) {
     document.getElementById(id).classList.add('drop-up-anim');
 }
 
+
 function showBadgeList() {
     document.getElementById('userContactBadges').classList.remove('display-none');
+}
+
+
+function removeDisplayNone() {
+    let searchListElements = document.querySelectorAll('.user-contact-list .contactListBtn');
+    searchListElements.forEach(element => {
+        element.classList.remove('display-none');
+    });
 }
 
 
@@ -448,7 +471,6 @@ function initToggleDropDown(inputId) {
         }
     }
 }
-
 
 
 function dropDownOpenById(id) {
@@ -527,10 +549,6 @@ function showClickedBadges() {
         };
     });
 }
-
-// function genSubtask() {
-//     document.getElementById('subtaskListText').innerHTML += genHTMLSubtask
-// }
 
 
 

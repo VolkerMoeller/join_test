@@ -77,6 +77,7 @@ function initFocusInputSelect(inputId) {
     handleOverlayForSelect(inputId);
     initToggleDropDown(inputId);
     if (inputId == 'assigned') {
+        hideBadgeList();
         dropDownOpenById('userContactList');
     }
     if (inputId == 'category') {

@@ -1,0 +1,10 @@
+.contact-frame {
+    display: flex;
+}
+
+
+@media (width <=1440px) {
+    .main-center {
+        display: none;
+    }
+}

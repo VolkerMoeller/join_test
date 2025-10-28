@@ -72,7 +72,7 @@ function resetSignElementsOnTop() {
 function animSignMessages(currentForm) {
     showOverlayForMsg();
     showCurrentMessage(currentForm);
-    slideMessages();
+    slideMessages(currentForm);
     setTimeout(() => {
         resetOverlay();
     }, 1000);
@@ -92,7 +92,7 @@ async function animWorkMessages(currentForm) {
     await includeHTMLById('w3-include-overlay');
     showOverlayForMsgV2();
     showCurrentMessage(currentForm);
-    slideMessages();
+    slideMessages(currentForm);
     setTimeout(() => {
         resetOverlay();
     }, 1000);
@@ -124,11 +124,16 @@ function showCurrentMessage(currentForm) {
 
 // .1st
 // ..
-function slideMessages() {
-    document.querySelector('.msg-btm-cnt').classList.add('from-bottom-to-center');
-    document.querySelector('.msg-btm-cnt-mbl').classList.add('from-bottom-to-center-mbl');
+function slideMessages(currentForm) {
+    if (currentForm == 'SignUp') {
+        document.querySelector('.msg-btm-cnt').classList.add('from-bottom-to-center');
+        document.querySelector('.msg-btm-cnt-mbl').classList.add('from-bottom-to-center-mbl');
+    }
+    if (currentForm == 'addTask') {
+        document.querySelector('.msg-btm-cnt').classList.add('from-bottom-to-center-v2');
+        document.querySelector('.msg-btm-cnt-mbl').classList.add('from-bottom-to-center-mbl-v2');
+    }
 }
-
 
 // --------------------
 // 3rd-level-functions:

@@ -198,8 +198,42 @@
     }
 }
 
+.from-bottom-to-center-v2 {
+    animation-duration: 0.4s;
+    animation-name: slide-msg-btm-cnt;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes slide-msg-btm-cnt {
+    from {
+        top: 100%;
+    }
+
+    to {
+        top: 50%;
+    }
+}
+
+.from-bottom-to-center-mbl-v2 {
+    animation-duration: 0.4s;
+    animation-name: slide-msg-btm-cnt-mbl;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+@keyframes slide-msg-btm-cnt-mbl {
+    from {
+        top: 100%;
+    }
+
+    to {
+        top: 50%;
+    }
+}
+
 .from-right-to-center {
-    animation-duration: 0.8s;
+    animation-duration: 0.s;
     animation-name: slide-nav-rgt-cnt;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);

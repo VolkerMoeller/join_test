@@ -1,10 +1,23 @@
-.contact-frame {
+.contacts-frame {
     display: flex;
+}
+
+.contacts-list {
+    background-color: var(--white);
+    box-shadow: var(--drop-shadow);
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    height: calc(100vh - 96px);
+    background-color: lightyellow;
 }
 
 
 @media (width <=1440px) {
-    .main-center {
+    .contacts-frame .main-center {
         display: none;
+    }
+
+    .contacts-list {
+        height: calc(100vh - 160px);
     }
 }

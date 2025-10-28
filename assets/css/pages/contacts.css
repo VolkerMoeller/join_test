@@ -9,6 +9,13 @@
     scrollbar-width: thin;
     height: calc(100vh - 96px);
     background-color: lightyellow;
+    padding-top: 101px;
+}
+
+.btn-add-new-contact {
+    width: 352px;
+    top: 20px;
+    left: 56px;
 }
 
 

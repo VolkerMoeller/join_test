@@ -521,6 +521,7 @@ function resetOverlayFrame() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.add('ovl-hide');
     overlay.classList.remove('ovl-show-anim-bg');
+    overlay.classList.remove('ovl-show-anim-bg-v2');
     overlay.classList.remove('ovl-show-input');
     overlay.classList.remove('ovl-show-nav');
     overlay.classList.remove('ovl-show-select');

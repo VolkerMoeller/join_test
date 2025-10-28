@@ -42,7 +42,7 @@
 }
 
 .ovl-show-anim-bg-v2 {
-    z-index: 5;
+    z-index: 6;
     animation-duration: 2s;
     animation-name: shadow-bg-v2;
     animation-fill-mode: forwards;
@@ -55,7 +55,7 @@
     }
 
     to {
-        background-color: var(--black-transp-10);
+        background-color: var(--black-transp);
     }
 }
 

@@ -89,15 +89,13 @@ function switchToLoginForm(currentForm) {
 
 // .2nd
 async function animWorkMessages(currentForm) {
-    console.log(currentForm);
     await includeHTMLById('w3-include-overlay');
-
-    showOverlayForMsg();
-    // showCurrentMessage(currentForm);
-    // slideMessages();
-    // setTimeout(() => {
-    //     resetOverlay();
-    // }, 1000);
+    showOverlayForMsgV2();
+    showCurrentMessage(currentForm);
+    slideMessages();
+    setTimeout(() => {
+        resetOverlay();
+    }, 1000);
 }
 
 
@@ -105,7 +103,7 @@ async function animWorkMessages(currentForm) {
 // 2nd-level-functions:
 // --------------------
 
-// showOverlayForMsg() --> main.js
+// showOverlayForMsgV2() --> main.js
 // showCurrentMessage()
 // slideMessages()
 // resetOverlay() --> main.js
@@ -156,8 +154,10 @@ function resetMessages() {
 // ...
 function animMsgDesktop(currentForm) {
     if (currentForm == 'SignUp') {
-        // document.querySelector('.msg-btm-cnt').classList.remove('display-none');
         document.getElementById('msgSign').classList.remove('display-none');
+    }
+    if (currentForm == 'addTask') {
+        document.getElementById('msgNewTask').classList.remove('display-none');
     }
 }
 
@@ -166,7 +166,9 @@ function animMsgDesktop(currentForm) {
 // ...
 function animMsgMobile(currentForm) {
     if (currentForm == 'SignUp') {
-        // document.querySelector('.msg-btm-cnt-mbl').classList.remove('display-none');
         document.getElementById('msgSignMbl').classList.remove('display-none');
+    }
+    if (currentForm == 'addTask') {
+        document.getElementById('msgNewTaskMbl').classList.remove('display-none');
     }
 }

@@ -14,7 +14,7 @@ async function initCreateNewTask() {
     let newTask = await createNewTask();
     console.log(newTask);
     // handleAssignedContacts(taskData);
-    animateMsg();
+    initAnimWorkMessages('addTask');
     setTimeout(() => {
         resetFormAddTask();
     }, 800);
@@ -39,7 +39,7 @@ async function initCreateNewSubtask() {
 
 // .1st
 // createNewTask()
-// animateMsg()
+// initAnimWorkMessages() --> animMessages.js
 // resetFormAddTask() --> main.js
 // viewDefaultContent() --> work.js
 
@@ -60,12 +60,6 @@ async function createNewTask() {
     let userIndex = loadLocalStorageObject('currentUser').id;
     await storageNewTask(userIndex, newTask);
     return newTask;
-}
-
-
-// .1st
-function animateMsg() {
-    showOverlayForMsgV2();
 }
 
 

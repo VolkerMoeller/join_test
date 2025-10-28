@@ -4,6 +4,10 @@
 
 // 1st
 // initAnimSignMessages
+// ---
+// 2nd
+// initAnimWorkMessages
+
 
 function initAnimSignMessages() {
     let currentForm = checkCurrentSignForm();
@@ -17,6 +21,16 @@ function initAnimSignMessages() {
 }
 
 
+function initAnimWorkMessages(form) {
+    animWorkMessages(form);
+    if (form == 'addTask') {
+        setTimeout(() => {
+            // switchToBoard();
+        }, 1000);
+    }
+}
+
+
 // --------------------
 // 1st-level-functions:
 // --------------------
@@ -25,6 +39,8 @@ function initAnimSignMessages() {
 // resetSignElementsOnTop()
 // animSignMessages()
 // switchToLoginForm()
+// ---
+// animWorkMessages()
 
 
 // .1st
@@ -71,6 +87,20 @@ function switchToLoginForm(currentForm) {
 }
 
 
+// .2nd
+async function animWorkMessages(currentForm) {
+    console.log(currentForm);
+    await includeHTMLById('w3-include-overlay');
+
+    showOverlayForMsg();
+    // showCurrentMessage(currentForm);
+    // slideMessages();
+    // setTimeout(() => {
+    //     resetOverlay();
+    // }, 1000);
+}
+
+
 // --------------------
 // 2nd-level-functions:
 // --------------------
@@ -97,7 +127,6 @@ function showCurrentMessage(currentForm) {
 // .1st
 // ..
 function slideMessages() {
-    document.querySelector('.msg-rgt-cnt').classList.add('from-right-to-center');
     document.querySelector('.msg-btm-cnt').classList.add('from-bottom-to-center');
     document.querySelector('.msg-btm-cnt-mbl').classList.add('from-bottom-to-center-mbl');
 }

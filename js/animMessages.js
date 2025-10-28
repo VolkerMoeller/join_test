@@ -16,6 +16,7 @@ function initAnimSignMessages() {
     }
 }
 
+
 // --------------------
 // 1st-level-functions:
 // --------------------
@@ -24,6 +25,7 @@ function initAnimSignMessages() {
 // resetSignElementsOnTop()
 // animSignMessages()
 // switchToLoginForm()
+
 
 // .1st
 function checkCurrentSignForm() {

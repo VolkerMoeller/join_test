@@ -270,7 +270,7 @@ legend {
     justify-content: center;
     align-items: center;
     /* width: 120px; */
-    height: 50px;
+    height: 56px;
 }
 
 @media(max-width: 1440px) {

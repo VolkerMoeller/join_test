@@ -477,7 +477,7 @@ function animSignMessages(currentForm) {
     showCurrentMessage(currentForm);
     slideMessages();
     setTimeout(() => {
-        // resetOverlay();
+        resetOverlay();
     }, 1000);
 }
 
@@ -614,14 +614,16 @@ function rememberUserData(userId, user) {
 
 function animMsgDesktop(currentForm) {
     if (currentForm == 'SignUp') {
-        document.querySelector('.msg-btm-cnt').classList.remove('display-none');
+        // document.querySelector('.msg-btm-cnt').classList.remove('display-none');
+        document.getElementById('msgSign').classList.remove('display-none');
     }
 }
 
 
 function animMsgMobile(currentForm) {
     if (currentForm == 'SignUp') {
-        document.querySelector('.msg-btm-cnt-mbl').classList.remove('display-none');
+        // document.querySelector('.msg-btm-cnt-mbl').classList.remove('display-none');
+        document.getElementById('msgSignMbl').classList.remove('display-none');
     }
 }
 

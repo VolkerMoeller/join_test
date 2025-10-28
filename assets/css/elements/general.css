@@ -251,4 +251,5 @@
 .contact-list-initial {
     color: var(--white);
     font-size: 12px;
+    line-height: 1em;
 }

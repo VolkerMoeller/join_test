@@ -97,7 +97,7 @@ async function getUserData() {
 
 
 function checkInput() {
-    let form = checkCurrentForm();
+    let form = checkCurrentSignForm();
     if (form == 'LogIn') {
         checkInputLogIn();
     }
@@ -173,7 +173,7 @@ async function initCheckInputSignUp() {
 // 1st-level-functions:
 // --------------------
 
-// checkCurrentForm()
+
 // checkInputLogIn()
 // setSignUpRequiredOff() see above
 // defaultFormSettings()
@@ -189,17 +189,7 @@ async function initCheckInputSignUp() {
 // toggleCheckboxIcns()
 // toggleOnOffSignUpBtn()
 // checkInputSignUp()
-// initAnimSignMessages()
-
-
-function checkCurrentForm() {
-    let form = 'LogIn';
-    let element = document.querySelector('.form-title');
-    if (element.classList.contains('display-none')) {
-        form = 'SignUp';
-    }
-    return form;
-}
+// initAnimSignMessages() --> animMessages.js
 
 
 async function checkInputLogIn() {
@@ -304,19 +294,6 @@ function checkInputSignUp() {
 }
 
 
-function initAnimSignMessages() {
-    let currentForm = checkCurrentForm();
-    resetSignElementsOnTop();
-    animSignMessages(currentForm);
-    if (currentForm == 'SignUp') {
-        setTimeout(() => {
-            switchToLoginForm(currentForm);
-        }, 1000);
-    }
-}
-
-
-
 // --------------------
 // 2nd-level-functions:
 // --------------------
@@ -343,11 +320,7 @@ function initAnimSignMessages() {
 // addWarningNoMatchSignUp()
 // warningTextOff() --> see above
 // removeWarningNoMatchSignUp()
-// ---
-// checkCurrentForm() --> see above
-// resetSignElementsOnTop()
-// animSignMessages()
-// switchToLoginForm()
+
 
 
 async function checkIfUser() {
@@ -459,36 +432,6 @@ function removeWarningNoMatchSignUp() {
 }
 
 
-function resetSignElementsOnTop() {
-    let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
-    for (let i = 0; i < selectors.length; i++) {
-        let elements = document.querySelectorAll(selectors[i]);
-        if (elements) {
-            elements.forEach(element => {
-                element.classList.remove('z-index-4');
-            });
-        }
-    }
-}
-
-
-function animSignMessages(currentForm) {
-    showOverlayForMsg();
-    showCurrentMessage(currentForm);
-    slideMessages();
-    setTimeout(() => {
-        resetOverlay();
-    }, 1000);
-}
-
-
-function switchToLoginForm(currentForm) {
-    if (currentForm == 'SignUp') {
-        toggleSignFormsBack();
-    }
-}
-
-
 // --------------------
 // 3rd-level-functions:
 // --------------------
@@ -500,11 +443,7 @@ function switchToLoginForm(currentForm) {
 // toggleCheckboxIcns() --> see above
 // visibilityPassword()
 // toggleElements() --> main.js
-// showOverlayForMsg() --> main.js
-// showCurrentMessage()
-// resetMessages()
-// slideMessages()
-// resetOverlay() --> main.js
+
 
 
 async function compare() {
@@ -568,40 +507,12 @@ function visibilityPassword(id) {
 }
 
 
-function showCurrentMessage(currentForm) {
-    resetMessages();
-    let windowWidth = getWindowWidth();
-    if (windowWidth >= 1440) {
-        animMsgDesktop(currentForm);
-    } else {
-        animMsgMobile(currentForm);
-    }
-}
-
-
-function resetMessages() {
-    let msgs = document.querySelectorAll('.msg-cnt');
-    msgs.forEach(msg => {
-        msg.classList.add('display-none');
-    });
-}
-
-
-function slideMessages() {
-    document.querySelector('.msg-rgt-cnt').classList.add('from-right-to-center');
-    document.querySelector('.msg-btm-cnt').classList.add('from-bottom-to-center');
-    document.querySelector('.msg-btm-cnt-mbl').classList.add('from-bottom-to-center-mbl');
-}
-
-
 // -------------------
 // level-4-functions:
 // -------------------
 
 // getAllUsers() --> general.js
 // rememberUserData()
-// animMsgDesktop()
-// animMsgMobile()
 
 
 
@@ -611,21 +522,6 @@ function rememberUserData(userId, user) {
     saveLocalStorageObject('currentUser', currentUser);
 }
 
-
-function animMsgDesktop(currentForm) {
-    if (currentForm == 'SignUp') {
-        // document.querySelector('.msg-btm-cnt').classList.remove('display-none');
-        document.getElementById('msgSign').classList.remove('display-none');
-    }
-}
-
-
-function animMsgMobile(currentForm) {
-    if (currentForm == 'SignUp') {
-        // document.querySelector('.msg-btm-cnt-mbl').classList.remove('display-none');
-        document.getElementById('msgSignMbl').classList.remove('display-none');
-    }
-}
 
 
 // -------------------

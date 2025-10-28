@@ -17,8 +17,8 @@ async function initCreateNewTask() {
     initAnimWorkMessages('addTask');
     setTimeout(() => {
         resetFormAddTask();
+        viewDefaultContent('mnuBtn4th');
     }, 800);
-    // viewDefaultContent('mnuBtn4th');
 }
 
 

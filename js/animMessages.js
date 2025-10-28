@@ -23,11 +23,11 @@ function initAnimSignMessages() {
 
 function initAnimWorkMessages(form) {
     animWorkMessages(form);
-    if (form == 'addTask') {
-        setTimeout(() => {
-            // switchToBoard();
-        }, 1000);
-    }
+    // if (form == 'addTask') {
+    // setTimeout(() => {
+    // switchToBoard();
+    // }, 1000);
+    // }
 }
 
 

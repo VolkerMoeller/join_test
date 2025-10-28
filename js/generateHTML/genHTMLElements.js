@@ -53,12 +53,22 @@ function genHTMLWelcomeMobile(greeting, name) {
 }
 
 
+// function genHTMLBtnUser(initial) {
+//     return `
+//     <div id="userInitial" class="initial version-initial">${initial}</div>
+//     <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+//         <rect class="guest-icn" width="48" height="48" rx="24" transform="matrix(1 0 0 -1 4 52.9658)" />
+//         <circle cx="28" cy="28.9658" r="26.5" stroke="var(--main)" stroke-width="3" />
+//     </svg>
+//     `;
+// }
+
+
 function genHTMLBtnUser(initial) {
     return `
     <div id="userInitial" class="initial version-initial">${initial}</div>
-    <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect class="guest-icn" width="48" height="48" rx="24" transform="matrix(1 0 0 -1 4 52.9658)" />
-        <circle cx="28" cy="28.9658" r="26.5" stroke="var(--main)" stroke-width="3" />
+    <svg width="56" height="56" viewBox="-28 -28 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="0" cy="0" r="25" stroke="var(--main)" stroke-width="3" />
     </svg>
     `;
 }

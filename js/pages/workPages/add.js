@@ -314,9 +314,8 @@ async function genUserContactList() {
     userId = loadLocalStorageObject('currentUser').id;
     document.getElementById('userContactList').innerHTML = '';
     let userContacts = await getArrOfUserContacts(userId);
-    console.log(userContacts);
     let userContactsSort = getUserContactsSort(userContacts);
-    console.log(userContactsSort);
+    userContactsSort = userFirst(userContactsSort);
     userContactsSort.forEach((contact, i) => {
         let name = contact['name'];
         let initial = contact['initial'];
@@ -426,6 +425,7 @@ function searchContactsByInput() {
 // .25th
 // getArrOfUserContacts()
 // getUserContactsSort()
+// userFirst()
 // getArrsOfBadgeData()
 // genHTMLUserContactListBtn() --> genHTMLELements.js
 
@@ -537,6 +537,11 @@ async function getArrOfUserContacts(userId) {
 function getUserContactsSort(userContacts) {
     let userContactsSort = [];
     userContactsSort = sortArrOfObj(userContacts);
+    return userContactsSort;
+}
+
+// .25th
+function userFirst(userContactsSort) {
     return userContactsSort;
 }
 

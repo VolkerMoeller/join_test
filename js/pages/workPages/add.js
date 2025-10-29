@@ -314,6 +314,7 @@ async function genUserContactList() {
     userId = loadLocalStorageObject('currentUser').id;
     document.getElementById('userContactList').innerHTML = '';
     let userContacts = await getArrOfUserContacts(userId);
+    console.log(userContacts);
     userContacts.forEach((contact, i) => {
         let name = contact['name'];
         let initial = contact['initial'];
@@ -413,14 +414,14 @@ function searchContactsByInput() {
 // resetAddElementsDefault() --> see above
 // removeDisplayNone() --> see above
 
-// ..7th
+// .7th
 // tglCSSCheckBox()
 
-// ..16th
+// .16th
 // toggleElementsZindex() --> main.js
 // focusInput() --> main.js
 
-// ..25th
+// .25th
 // getArrOfUserContacts()
 // getArrsOfBadgeData()
 // genHTMLUserContactListBtn() --> genHTMLELements.js
@@ -521,6 +522,7 @@ function tglCSSCheckBox(id) {
 }
 
 
+// .25th
 async function getArrOfUserContacts(userId) {
     let userContacts = await loadData(`users/${userId}/contacts`);
     userContacts = Object.values(userContacts);

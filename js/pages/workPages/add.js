@@ -317,7 +317,7 @@ async function genUserContactList() {
     console.log(userContacts);
     let userContactsSort = getUserContactsSort(userContacts);
     console.log(userContactsSort);
-    userContacts.forEach((contact, i) => {
+    userContactsSort.forEach((contact, i) => {
         let name = contact['name'];
         let initial = contact['initial'];
         let color = contact['color'];
@@ -536,6 +536,7 @@ async function getArrOfUserContacts(userId) {
 // .25th
 function getUserContactsSort(userContacts) {
     let userContactsSort = [];
+    userContactsSort = sortArrOfObj(userContacts);
     return userContactsSort;
 }
 

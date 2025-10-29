@@ -556,7 +556,8 @@ function userFirst(userContactsSort) {
         if (contact['id'] == 'contactId0000') fstContactId = i;
     });
     userContactsSort.splice(0, 0, userContactsSort[fstContactId]);
-    userContactsSort.splice(fstContactId++, 1);
+    fstContactId++;
+    userContactsSort.splice(fstContactId, 1);
     return userContactsSort;
 }
 

@@ -13,11 +13,10 @@
 async function initCreateNewTask() {
     let newTask = await createNewTask();
     console.log(newTask);
-    // handleAssignedContacts(taskData);
     initAnimWorkMessages('addTask');
     setTimeout(() => {
-        resetFormAddTask();
-        viewDefaultContent('mnuBtn4th');
+        // resetFormAddTask();
+        // viewDefaultContent('mnuBtn4th');
     }, 800);
 }
 

@@ -53,17 +53,6 @@ function genHTMLWelcomeMobile(greeting, name) {
 }
 
 
-// function genHTMLBtnUser(initial) {
-//     return `
-//     <div id="userInitial" class="initial version-initial">${initial}</div>
-//     <svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
-//         <rect class="guest-icn" width="48" height="48" rx="24" transform="matrix(1 0 0 -1 4 52.9658)" />
-//         <circle cx="28" cy="28.9658" r="26.5" stroke="var(--main)" stroke-width="3" />
-//     </svg>
-//     `;
-// }
-
-
 function genHTMLBtnUser(initial) {
     return `
     <div id="userInitial" class="initial version-initial">${initial}</div>
@@ -119,9 +108,9 @@ function genHTMLSubtaskListInput(subtaskId, text) {
 }
 
 
-function genHTMLUserContactListBtn(name, initial, i, color) {
+function genHTMLUserContactListBtn(name, initial, i, color, id) {
     return `
-    <button id="contactListBtn${i}" class="contactListBtn" type="button" value="${name}"
+    <button id="contactListBtn${i}" class="contactListBtn" type="button" value="${id}"
         onclick="toggleElements('3checked${i}', '5default${i}'); checkIfChecked('5default${i}'); tglContactListBtnCSS('contactListBtn${i}'); showClickedBadges();">
         <div class=" contactListBtnLeft">
             <div class="rel">

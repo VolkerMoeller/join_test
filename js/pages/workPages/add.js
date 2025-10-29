@@ -317,17 +317,29 @@ async function genUserContactList() {
         let name = contact['name'];
         let initial = contact['initial'];
         let color = contact['color'];
-        document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn(name, initial, i, color);
+        let id = contact['id'];
+        document.getElementById('userContactList').innerHTML += genHTMLUserContactListBtn(name, initial, i, color, id);
     });
     await includeHTMLById('w3-include-svg-2nd');
 }
 
 
 // 26th
+// async function genContactBadges(userId = 'userId0000') {
+//     document.getElementById('userContactBadges').innerHTML = '';
+//     let userContacts = await getArrOfUserContacts(userId);
+//     let badgeData = getArrsOfBadgeData(userContacts);
+//     badgeData[0].forEach((color, i) => {
+//         let initial = badgeData[1][i];
+//         document.getElementById('userContactBadges').innerHTML += genHTMLContactBadge(i, color, initial);
+//     });
+// }
+
+// 26th
 async function genContactBadges(userId = 'userId0000') {
+    let userContactsSort = await getContactsSort();
     document.getElementById('userContactBadges').innerHTML = '';
-    let userContacts = await getArrOfUserContacts(userId);
-    let badgeData = getArrsOfBadgeData(userContacts);
+    let badgeData = getArrsOfBadgeData(userContactsSort);
     badgeData[0].forEach((color, i) => {
         let initial = badgeData[1][i];
         document.getElementById('userContactBadges').innerHTML += genHTMLContactBadge(i, color, initial);
@@ -562,11 +574,23 @@ function userFirst(userContactsSort) {
 }
 
 
-function getArrsOfBadgeData(userContacts) {
+// function getArrsOfBadgeData(userContacts) {
+//     let colorsArr = [];
+//     let initialsArr = [];
+//     userContacts = Object.values(userContacts);
+//     userContacts.forEach(element => {
+//         colorsArr.push(element['color']);
+//         initialsArr.push(element['initial']);
+//     });
+//     return [colorsArr, initialsArr];
+// }
+
+
+function getArrsOfBadgeData(userContactsSort) {
     let colorsArr = [];
     let initialsArr = [];
-    userContacts = Object.values(userContacts);
-    userContacts.forEach(element => {
+    userContactsSort = Object.values(userContactsSort);
+    userContactsSort.forEach(element => {
         colorsArr.push(element['color']);
         initialsArr.push(element['initial']);
     });

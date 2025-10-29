@@ -18,6 +18,7 @@ class Task {
         this.priority = this.formData.priority.value;
         this.description = this.formData.description.value;
         this.subtasks = this.selectSubtasks();
+        this.assignedContacts = this.selectAssignedContacts();
     }
 
 
@@ -77,5 +78,13 @@ class Task {
             subtaskInputValues.push(subtask.value);
         });
         return subtaskInputValues;
+    }
+
+
+    selectAssignedContacts() {
+        let assignedContacts = document.querySelectorAll('.contact-list-btn-clicked');
+        assignedContacts.forEach(contact => {
+            console.log(contact['value']);
+        });
     }
 }

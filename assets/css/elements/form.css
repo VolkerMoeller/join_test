@@ -199,8 +199,8 @@
 
     .form-panel-add-task {
         background-color: var(--main-background);
-        position: sticky;
-        bottom: 0px;
+        position: fixed;
+        top: calc(100vh - 160px);
         right: auto;
         display: flex;
         padding-top: 18px;

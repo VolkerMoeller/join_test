@@ -312,10 +312,10 @@ function checkSubtask(subtaskId) {
 // 25th
 async function genUserContactList() {
     userId = loadLocalStorageObject('currentUser').id;
-    document.getElementById('userContactList').innerHTML = '';
     let userContacts = await getArrOfUserContacts(userId);
     let userContactsSort = getUserContactsSort(userContacts);
     userContactsSort = userFirst(userContactsSort);
+    document.getElementById('userContactList').innerHTML = '';
     userContactsSort.forEach((contact, i) => {
         let name = contact['name'];
         let initial = contact['initial'];
@@ -540,8 +540,15 @@ function getUserContactsSort(userContacts) {
     return userContactsSort;
 }
 
+
 // .25th
 function userFirst(userContactsSort) {
+    let fstContactId;
+    userContactsSort.forEach((contact, i) => {
+        if (contact['id'] == 'contactId0000') fstContactId = i;
+    });
+    userContactsSort.splice(0, 0, userContactsSort[fstContactId]);
+    userContactsSort.splice(fstContactId++, 1);
     return userContactsSort;
 }
 

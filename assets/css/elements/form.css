@@ -111,8 +111,20 @@
     justify-content: center;
 }
 
-.form-panel-add-task {
+.form-panel-add-task-frame {
     width: 100%;
+    display: flex;
+    gap: 48px;
+}
+
+.form-panel-add-task-ghost {
+    width: clamp(0%, 100%, 440px);
+    display: flex;
+    gap: 48px;
+}
+
+.form-panel-add-task {
+    width: clamp(0%, 100%, 440px);
     display: flex;
     justify-content: end;
     gap: 21px;
@@ -186,13 +198,17 @@
     }
 
     .form-panel-add-task {
-        width: clamp(0px, 100%, 440px);
         background-color: var(--main-background);
         position: sticky;
-        bottom: -48px;
+        bottom: 0px;
         right: auto;
         display: flex;
-        padding: 16px 0px;
+        padding-top: 18px;
+    }
+
+    .form-panel-add-task-ghost {
+        width: 100%;
+        display: none;
     }
 
 }
@@ -229,6 +245,12 @@
     margin: 0px;
 }
 
+.addTask-panel-container {
+    position: absolute;
+    top: calc(100vh - 320px);
+
+}
+
 .form-title-v2 {
     width: 100%;
     display: flex;
@@ -243,10 +265,9 @@
 
 .footnote {
     width: 100%;
-    position: sticky;
+    position: absolute;
     left: 0;
     bottom: 48px;
-    z-index: 1;
 }
 
 .footnote span {

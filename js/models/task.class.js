@@ -7,6 +7,7 @@ class Task {
     description = '';
     state = 'toDo';
     subtasks = '';
+    assignedContacts = [];
 
 
     constructor(taskIndex) {
@@ -82,9 +83,11 @@ class Task {
 
 
     selectAssignedContacts() {
-        let assignedContacts = document.querySelectorAll('.contact-list-btn-clicked');
-        assignedContacts.forEach(contact => {
-            console.log(contact['value']);
+        let assignedContacts = [];
+        let assignedContactsNodes = document.querySelectorAll('.contact-list-btn-clicked');
+        assignedContactsNodes.forEach(contact => {
+            assignedContacts.push((contact['value']));
         });
+        return assignedContacts;
     }
 }

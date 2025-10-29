@@ -247,7 +247,7 @@
 
 .addTask-panel-container {
     position: absolute;
-    top: calc(100vh - 320px);
+    top: calc(100vh - 360px);
 
 }
 
@@ -267,7 +267,7 @@
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: 48px;
+    bottom: 0;
 }
 
 .footnote span {

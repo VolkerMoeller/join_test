@@ -311,10 +311,7 @@ function checkSubtask(subtaskId) {
 
 // 25th
 async function genUserContactList() {
-    userId = loadLocalStorageObject('currentUser').id;
-    let userContacts = await getArrOfUserContacts(userId);
-    let userContactsSort = getUserContactsSort(userContacts);
-    userContactsSort = userFirst(userContactsSort);
+    let userContactsSort = await getContactsSort();
     document.getElementById('userContactList').innerHTML = '';
     userContactsSort.forEach((contact, i) => {
         let name = contact['name'];
@@ -423,6 +420,7 @@ function searchContactsByInput() {
 // focusInput() --> main.js
 
 // .25th
+
 // getArrOfUserContacts()
 // getUserContactsSort()
 // userFirst()
@@ -522,6 +520,16 @@ function tglCSSCheckBox(id) {
     tglCSSRect(path0Id, pathClassClicked);
     tglCSSRect(path1Id, pathClassDef);
     tglCSSRect(path1Id, pathClassClicked);
+}
+
+
+// .25th
+async function getContactsSort() {
+    userId = loadLocalStorageObject('currentUser').id;
+    let userContacts = await getArrOfUserContacts(userId);
+    let userContactsSort = getUserContactsSort(userContacts);
+    userContactsSort = userFirst(userContactsSort);
+    return userContactsSort;
 }
 
 

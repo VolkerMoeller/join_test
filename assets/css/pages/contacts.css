@@ -18,6 +18,25 @@
     left: 56px;
 }
 
+.contacts-list-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contacts-list-container li {
+    position: relative;
+}
+
+.index-tab {
+    display: flex;
+    flex-direction: column;
+}
 
 @media (width <=1440px) {
     .contacts-frame .main-center {

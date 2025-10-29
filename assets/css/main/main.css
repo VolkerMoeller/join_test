@@ -64,23 +64,6 @@ menu {
     padding: 0;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-li {
-    position: relative;
-}
-
-li:before {
-    position: absolute;
-    left: 8px;
-    content: "•";
-    color: var(--main2nd);
-}
-
 .ghost {
     opacity: 0;
 }

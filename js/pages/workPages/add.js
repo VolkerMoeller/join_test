@@ -335,8 +335,9 @@ async function genUserContactList() {
 //     });
 // }
 
+
 // 26th
-async function genContactBadges(userId = 'userId0000') {
+async function genContactBadges() {
     let userContactsSort = await getContactsSort();
     document.getElementById('userContactBadges').innerHTML = '';
     let badgeData = getArrsOfBadgeData(userContactsSort);

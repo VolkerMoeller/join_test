@@ -42,10 +42,12 @@ function genWelcomeMobile() {
 // 4th
 async function updateSumContent() {
     let tasks = await getTasksFromFirebase();
-    let tasksCnts = getTasksgroupsCnts(tasks);
-    let urgentTaskDate = await getUrgentTaskDate(tasks);
-    let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
-    genSumContent(tasksgroups);
+    if (tasks) {
+        let tasksCnts = getTasksgroupsCnts(tasks);
+        let urgentTaskDate = await getUrgentTaskDate(tasks);
+        let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
+        genSumContent(tasksgroups);
+    }
 }
 
 

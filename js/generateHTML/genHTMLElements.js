@@ -169,4 +169,25 @@ function genHTMLContactBadge(i, color, initial) {
 }
 
 
+function genHTMLContactsListBtn() {
+    return `
+    <li>
+        <div class="contacts-list-index-tab">
+            <div class="contacts-list-index">A</div>
+            <p class="contacts-list-vector"></p>
+        </div>
+        <button class="contacts-list-btn">
+            <div class="contacts-list-badge rel">
+                <div class="contacts-list-initial abs version-2-t7">AM</div>
+            </div>
+            <div class="contacts-list-info">
+                <span class="version-2-t6">Anton Mayer</span>
+                <span class="version-2-body">antonm@gmail.com</span>
+            </div>
+        </button>
+    </li>
+    `;
+}
+
+
 

@@ -24,8 +24,20 @@ async function genContactsListBtn() {
 }
 
 function initClickedContactBtn(indexBtn) {
+    let currentClickedBtn = document.querySelector('.contacts-list-btn-clicked');
+    let currentClickedBtnId;
+    if (currentClickedBtn) {
+        currentClickedBtnId = currentClickedBtn['id'];
+    }
+    let contactBtns = document.querySelectorAll('.contacts-list-btn');
+    contactBtns.forEach(contact => {
+        contact.classList.remove('contacts-list-btn-clicked');
+    });
     let btnId = 'contactsListBtn' + indexBtn;
-    document.getElementById(btnId).innerHTML = 'Fartz';
+    document.getElementById(btnId).classList.add('contacts-list-btn-clicked');
+    if (btnId == currentClickedBtnId) {
+        document.getElementById(btnId).classList.remove('contacts-list-btn-clicked');
+    }
 }
 
 

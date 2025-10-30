@@ -69,6 +69,18 @@
     color: var(--white);
 }
 
+.contacts-list-btn-clicked {
+    background: var(--main) !important;
+}
+
+.contacts-list-btn-clicked:hover {
+    background: var(--main) !important;
+}
+
+.contacts-list-btn-clicked span:first-child {
+    color: var(--white) !important;
+}
+
 .contacts-list-badge {
     width: 42px;
     height: 42px;

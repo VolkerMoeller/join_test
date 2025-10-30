@@ -73,6 +73,13 @@
     border: solid 2px var(--white);
 }
 
+.contacts-list-initial {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+}
+
 .contacts-list-info {
     display: flex;
     flex-direction: column;

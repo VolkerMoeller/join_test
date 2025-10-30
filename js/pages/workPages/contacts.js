@@ -18,8 +18,14 @@ async function genContactsListBtn() {
         let name = contact['name'];
         let mail = contact['eMail'];
         let state = checkState(i, indexTabs);
-        document.getElementById('contactsListBtns').innerHTML += genHTMLContactsListBtn(indexTab, color, initial, name, mail, state);
+        if (i > 0)
+            document.getElementById('contactsListBtns').innerHTML += genHTMLContactsListBtn(indexTab, color, initial, name, mail, state, i);
     });
+}
+
+function initClickedContactBtn(indexBtn) {
+    let btnId = 'contactsListBtn' + indexBtn;
+    document.getElementById(btnId).innerHTML = 'Fartz';
 }
 
 

@@ -51,7 +51,6 @@ function initClickedContactBtn(indexBtn) {
 // displayClickedBtn()
 
 
-
 // .1st
 // ..
 function getIndexTab(contact) {

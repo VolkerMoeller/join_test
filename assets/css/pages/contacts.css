@@ -33,9 +33,13 @@
     position: relative;
 }
 
-.index-tab {
+.contacts-list-index-tab {
     display: flex;
     flex-direction: column;
+}
+
+.contacts-list-index {
+    padding: 17px 36px;
 }
 
 .contacts-list-vector {

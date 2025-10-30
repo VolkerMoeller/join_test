@@ -169,20 +169,23 @@ function genHTMLContactBadge(i, color, initial) {
 }
 
 
-function genHTMLContactsListBtn(indexTab) {
+function genHTMLContactsListBtn(indexTab, color, initial, name, mail, state) {
     return `
     <li>
-        <div class="contacts-list-index-tab">
+        <div class="contacts-list-index-tab ${state}">
             <div class="contacts-list-index">${indexTab}</div>
             <p class="contacts-list-vector"></p>
         </div>
         <button class="contacts-list-btn">
             <div class="contacts-list-badge rel">
-                <div class="contacts-list-initial abs version-2-t7">AM</div>
+                <svg width="42" height="42" viewBox="-21 -21 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="0" cy="0" r="19" fill="${color}" stroke="white" stroke-width="2" />
+                </svg>
+                <div class="contacts-list-initial abs version-2-t7">${initial}</div>
             </div>
             <div class="contacts-list-info">
-                <span class="version-2-t6">Anton Mayer</span>
-                <span class="version-2-body">antonm@gmail.com</span>
+                <span class="version-2-t6">${name}</span>
+                <span class="version-2-body">${mail}</span>
             </div>
         </button>
     </li>

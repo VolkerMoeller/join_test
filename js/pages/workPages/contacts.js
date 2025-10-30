@@ -8,10 +8,18 @@
 
 async function genContactsListBtn() {
     let contacts = await getContactsSort();
-    console.log(contacts);
+    let indexTabs = [];
     document.getElementById('contactsListBtns').innerHTML = '';
-    let indexTab = getIndexTab();
-    document.getElementById('contactsListBtns').innerHTML += genHTMLContactsListBtn(indexTab);
+    contacts.forEach((contact, i) => {
+        let indexTab = getIndexTab(contact);
+        indexTabs.push(indexTab);
+        let color = contact['color'];
+        let initial = contact['initial'];
+        let name = contact['name'];
+        let mail = contact['eMail'];
+        let state = checkState(i, indexTabs);
+        document.getElementById('contactsListBtns').innerHTML += genHTMLContactsListBtn(indexTab, color, initial, name, mail, state);
+    });
 }
 
 
@@ -22,9 +30,30 @@ async function genContactsListBtn() {
 // .1st
 // getIndexTab()
 
+// .2nd
+// checkState()
 
-function getIndexTab() {
-    let indexTab = 'X';
 
+function getIndexTab(contact) {
+    let initial = contact['initial'];
+    let indexTab = initial.substring(0, 1);
     return indexTab;
+}
+
+
+function getIndexTabs(indexTab, indexTabs) {
+    indexTabs.push(indexTab);
+    return indexTab;
+
+}
+
+function checkState(i, indexTabs) {
+    let state = 'display';
+    if (i > 0) {
+        if (indexTabs[i - 1] == indexTabs[i]) {
+            state = 'display-none';
+        }
+    }
+    return state;
+
 }

@@ -131,7 +131,7 @@ async function storageGuest() {
                 'name': 'Armin Held',
                 'eMail': 'held@gmail.com',
                 'phone': '+49 151 32158778',
-                'color': 'var(--variant6)',
+                'color': 'var(--variant13)',
                 'initial': 'AH'
             },
             'contactId0003': {

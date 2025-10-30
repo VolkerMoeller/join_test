@@ -94,6 +94,10 @@
     color: var(--main2nd);
 }
 
+.contacts-list .btn-wo-icn {
+    gap: 16px;
+}
+
 @media (width <=1440px) {
     .contacts-frame .main-center {
         display: none;

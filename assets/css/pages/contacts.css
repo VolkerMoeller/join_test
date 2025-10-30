@@ -51,19 +51,40 @@
     width: 352px;
     border-radius: 10px;
     padding: 15px 24px;
-    background-color: lightskyblue;
+}
+
+.contacts-list-btn:hover {
+    background: var(--boton-gradient);
+}
+
+.contacts-list-btn:active {
+    background: var(--main);
+}
+
+.contacts-list-btn:active span:first-child {
+    color: var(--white);
 }
 
 .contacts-list-badge {
     width: 42px;
     height: 42px;
-    background-color: lightslategray;
+    background-color: var(--variant0);
+    border-radius: 100%;
+    border: solid 2px var(--white);
 }
 
 .contacts-list-info {
     display: flex;
     flex-direction: column;
     align-items: start;
+}
+
+.contacts-list-info span:first-child {
+    color: var(--black);
+}
+
+.contacts-list-info span:last-child {
+    color: var(--main2nd);
 }
 
 @media (width <=1440px) {

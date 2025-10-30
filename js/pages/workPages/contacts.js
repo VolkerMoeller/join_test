@@ -36,8 +36,6 @@ function initClickedContactBtn(indexBtn) {
 }
 
 
-
-
 // --------------------
 // 1st-level-functions:
 // --------------------

@@ -24,20 +24,37 @@ async function genContactsListBtn() {
 }
 
 function initClickedContactBtn(indexBtn) {
-    let currentClickedBtn = document.querySelector('.contacts-list-btn-clicked');
+    let currentClickedBtnId = getCurrentClickedBtnId();
+    unclickAllBtns();
+    displayClickedBtn(currentClickedBtnId, indexBtn);
+}
+
+
+function getCurrentClickedBtnId() {
     let currentClickedBtnId;
+    let currentClickedBtn = document.querySelector('.contacts-list-btn-clicked');
     if (currentClickedBtn) {
         currentClickedBtnId = currentClickedBtn['id'];
     }
+    return currentClickedBtnId;
+}
+
+
+function unclickAllBtns() {
     let contactBtns = document.querySelectorAll('.contacts-list-btn');
     contactBtns.forEach(contact => {
         contact.classList.remove('contacts-list-btn-clicked');
     });
+}
+
+
+function displayClickedBtn(currentClickedBtnId, indexBtn) {
     let btnId = 'contactsListBtn' + indexBtn;
     document.getElementById(btnId).classList.add('contacts-list-btn-clicked');
     if (btnId == currentClickedBtnId) {
         document.getElementById(btnId).classList.remove('contacts-list-btn-clicked');
     }
+
 }
 
 

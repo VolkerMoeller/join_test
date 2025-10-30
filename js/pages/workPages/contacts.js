@@ -7,5 +7,6 @@
 
 
 function genContactsListBtn() {
-    console.log('tada');
+    document.getElementById('contactsListBtns').innerHTML = '';
+    document.getElementById('contactsListBtns').innerHTML = genHTMLContactsListBtn();
 }

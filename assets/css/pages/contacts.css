@@ -9,7 +9,7 @@
     scrollbar-width: thin;
     height: calc(100vh - 96px);
     background-color: var(--white);
-    padding-top: 101px;
+    padding: 101px 24px 32px 24px;
 }
 
 .btn-add-new-contact {
@@ -36,6 +36,12 @@
 .index-tab {
     display: flex;
     flex-direction: column;
+}
+
+.contacts-list-vector {
+    margin: 8px 0px;
+    border-radius: 1px;
+    border: solid 1px var(--input-border);
 }
 
 @media (width <=1440px) {

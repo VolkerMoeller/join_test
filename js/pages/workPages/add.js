@@ -338,9 +338,7 @@ async function genContactBadges() {
 // 27th
 function searchContactsByInput() {
     let searchInput = document.getElementById('assigned').value;
-    console.log(searchInput);
     let searchListElements = document.querySelectorAll('.user-contact-list .contact-list-btn');
-    console.log(searchListElements);
     if (searchInput) {
         searchListElements.forEach(element => {
             element.classList.add('display-none');

@@ -169,11 +169,11 @@ function genHTMLContactBadge(i, color, initial) {
 }
 
 
-function genHTMLContactsListBtn() {
+function genHTMLContactsListBtn(indexTab) {
     return `
     <li>
         <div class="contacts-list-index-tab">
-            <div class="contacts-list-index">A</div>
+            <div class="contacts-list-index">${indexTab}</div>
             <p class="contacts-list-vector"></p>
         </div>
         <button class="contacts-list-btn">

@@ -536,7 +536,8 @@ async function getContactsSort() {
 
 // .25th
 async function getArrOfUserContacts(userId) {
-    let userContacts = await loadData(`users/${userId}/contacts`);
+    // let userContacts = await loadData(`users/${userId}/contacts`);
+    let userContacts = await getContactsFromFirebase();
     userContacts = Object.values(userContacts);
     return userContacts;
 }

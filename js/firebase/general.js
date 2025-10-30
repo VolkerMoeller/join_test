@@ -2,10 +2,27 @@
 // general-functions
 // ----------------------
 
-
+// 1st
 // initDatabase()
+
+// 2nd
 // getNextId()
+
+// 3rd
 // updateNextId()
+
+// 4th
+// getNextSubtaskId()
+
+// 5th
+// saveNextSubtaskId()
+
+// 6th
+// getTasksFromFirebase()
+
+// 7th
+// getContactsFromFirebase()
+
 
 
 async function initDatabase() {
@@ -47,6 +64,13 @@ async function getTasksFromFirebase() {
     let userId = loadLocalStorageObject('currentUser').id;
     let currentTasks = await loadData(`users/${userId}/tasks`);
     return currentTasks;
+}
+
+
+async function getContactsFromFirebase() {
+    let userId = loadLocalStorageObject('currentUser').id;
+    let currentContacts = await loadData(`users/${userId}/contacts`);
+    return currentContacts;
 }
 
 

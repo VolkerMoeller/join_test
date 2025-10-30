@@ -121,7 +121,7 @@ function genHTMLUserContactListBtn(name, initial, i, color, id) {
                 </div>
                 <div class="abs-cnt contact-list-initial">${initial}</div>
             </div>
-            <span>${name}</span>
+            <span id="contactListName${i}">${name}</span>
         </div>
         <div class="checkbox-assigned" id="contact${i}" name="contact${i}">
             <div id="5default${i}" class="rel">

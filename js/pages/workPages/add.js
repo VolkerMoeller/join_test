@@ -352,10 +352,12 @@ function searchContactsByInput() {
         });
     }
     searchListElements.forEach(element => {
-        let contactValue = (element.getAttribute('value'));
+        let btnId = element['id'].substring(element['id'].length - 1);
+        let contactNameId = 'contactListName' + btnId;
+        let contactName = document.getElementById(contactNameId).innerHTML;
         searchInput = searchInput.toLowerCase();
-        contactValue = contactValue.toLowerCase();
-        if (contactValue.startsWith(searchInput)) {
+        contactName = contactName.toLowerCase();
+        if (contactName.startsWith(searchInput)) {
             element.classList.remove('display-none');
         }
     });
@@ -421,7 +423,6 @@ function searchContactsByInput() {
 // focusInput() --> main.js
 
 // .25th
-
 // getArrOfUserContacts()
 // getUserContactsSort()
 // userFirst()

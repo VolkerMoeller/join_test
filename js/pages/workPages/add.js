@@ -131,7 +131,7 @@ function initOnclickDropDownClose(inputId) {
 
 // 7th
 function tglContactListBtnCSS(id) {
-    document.getElementById(id).classList.toggle('contactListBtn');
+    document.getElementById(id).classList.toggle('contact-list-btn');
     document.getElementById(id).classList.toggle('contact-list-btn-clicked');
     tglCSSCheckBox(id);
 }
@@ -339,7 +339,7 @@ async function genContactBadges() {
 function searchContactsByInput() {
     let searchInput = document.getElementById('assigned').value;
     console.log(searchInput);
-    let searchListElements = document.querySelectorAll('.user-contact-list .contactListBtn');
+    let searchListElements = document.querySelectorAll('.user-contact-list .contact-list-btn');
     console.log(searchListElements);
     if (searchInput) {
         searchListElements.forEach(element => {
@@ -447,7 +447,7 @@ function showBadgeList() {
 
 
 function removeDisplayNone() {
-    let searchListElements = document.querySelectorAll('.user-contact-list .contactListBtn');
+    let searchListElements = document.querySelectorAll('.user-contact-list .contact-list-btn');
     searchListElements.forEach(element => {
         element.classList.remove('display-none');
     });

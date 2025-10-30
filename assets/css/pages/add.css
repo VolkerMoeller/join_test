@@ -49,7 +49,7 @@
     display: flex;
 }
 
-.contactListBtn {
+.contact-list-btn {
     color: var(--black);
     font-size: 16px;
     width: 100%;
@@ -60,7 +60,7 @@
     cursor: pointer;
 }
 
-.contactListBtn input {
+.contact-list-btn input {
     position: relative;
     width: 100%;
     display: flex;
@@ -69,16 +69,16 @@
 }
 
 
-.contactListBtn span {
+.contact-list-btn span {
     color: var(--black);
     font-size: 16px;
 }
 
-.contactListBtn:hover {
+.contact-list-btn:hover {
     background-color: var(--drop-down-icon-V2);
 }
 
-.contactListBtn:hover div svg rect {
+.contact-list-btn:hover div svg rect {
     fill: var(--main-transp-10);
 }
 
@@ -101,11 +101,11 @@
     background-color: var(--nav-left-button);
 }
 
-.contactListBtnCli:hover div svg rect {
+.contact-list-btn-clicked:hover div svg rect {
     fill: var(--main-transp-10);
 }
 
-.contactListBtnLeft {
+.contact-list-btn-left {
     display: flex;
     align-items: center;
     gap: 16px;

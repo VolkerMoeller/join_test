@@ -27,11 +27,8 @@ async function initWork() {
     defaultHeaderView();
     defaultNavView();
     genHvrBtns();
-    initSumView();
     genBtnUser();
     initPageContent();
-    genUserContactList();
-    genContactBadges()
 }
 
 

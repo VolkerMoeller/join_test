@@ -7,17 +7,28 @@ class PageAssigns {
         this.initContactsContent();
     }
 
+
     initSumContent() {
-        updateSumContent();
         scrollElementToTop('mainCenterSum');
-    };
+        updateSumContent();
+        initSumView();
+    }
+
+
     initAddContent() {
         scrollElementToTop('mainCenterAdd');
-    };
+        genUserContactList();
+        genContactBadges();
+    }
+
+
     initBoardContent() {
         scrollElementToTop('mainCenterBoard');
-    };
+    }
+
+
     initContactsContent() {
         scrollElementToTop('mainCenterContacts');
-    };
-};
+        genContactsListBtn();
+    }
+}

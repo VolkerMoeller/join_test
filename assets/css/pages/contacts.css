@@ -138,19 +138,22 @@
 
 .floating-contact-header-panel {
     display: flex;
-    gap: 5px;
+    gap: 16px;
 }
 
-.floating-contact-header-panel-edit {
+.floating-contact-header-panel-icon {
+    width: 24px;
+    height: 24px;
     display: flex;
-    gap: 13px;
+    align-items: center;
+    justify-content: center;
 }
 
-.floating-contact-header-panel-delete {
+.floating-contact-header-panel-btn {
     display: flex;
+    align-items: center;
     gap: 8px;
 }
-
 
 .floating-contact-badge {
     display: flex;

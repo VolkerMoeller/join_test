@@ -122,6 +122,12 @@
 .floating-contact-header {
     display: flex;
     gap: 54px;
+    align-items: center;
+}
+
+
+.floating-contact-badge {
+    display: flex;
 }
 
 .floating-contact-title {
@@ -162,6 +168,7 @@
 .floating-contact-phone span:last-child {
     color: var(--black-dark-view);
 }
+
 
 @media (width <=1440px) {
     .contacts-frame .main-center {

@@ -232,13 +232,6 @@
 
 
 @media (width <=1440px) {
-
-    .contacts-frame .main-center {
-        display: none;
-        flex-direction: column;
-        overflow-y: hidden;
-    }
-
     .contacts-list {
         height: calc(100vh - 160px);
     }

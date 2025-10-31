@@ -9,6 +9,9 @@
 // initClickedContactBtn()
 
 
+// 3rd
+// contactMobileSwitchView()
+
 // 1st 
 async function genContactsListBtn() {
     let contacts = await getContactsSort();
@@ -35,6 +38,17 @@ function initClickedContactBtn(indexBtn) {
     displayClickedBtn(currentClickedBtnId, indexBtn);
 }
 
+
+// 3rd
+function contactMobileSwitchView() {
+    let windowWidth = getWindowWidth();
+    if (windowWidth < 1440) {
+        let mainCenterContacts = document.getElementById('mainCenterContacts').classList;
+        console.log(mainCenterContacts);
+        if (document.getElementById('mainCenterContacts').classList.contains('display-none')) {
+        }
+    }
+}
 
 // --------------------
 // 1st-level-functions:

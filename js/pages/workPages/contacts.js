@@ -80,9 +80,12 @@ function toggleContactMobileView() {
 
 
 // 5th
-function genFloatingContact {
-
+async function genFloatingContact() {
+    document.getElementById('floatingContactFrame').innerHTML = '';
+    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact();
+    await includeHTMLById('w3-include-svg');
 }
+
 
 // --------------------
 // 1st-level-functions:

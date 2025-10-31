@@ -149,10 +149,23 @@
     justify-content: center;
 }
 
+.contact-icon-svg {
+    fill: var(--main);
+}
+
 .floating-contact-header-panel-btn {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.floating-contact-header-panel-btn:hover div svg g path {
+    fill: var(--main2nd);
+}
+
+.floating-contact-header-panel-btn:hover span {
+    color: var(--main2nd);
+    font-weight: 700;
 }
 
 .floating-contact-badge {

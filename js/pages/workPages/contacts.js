@@ -14,7 +14,12 @@
 
 
 // 4th
-// toggleContactMobileView();
+// toggleContactMobileView()
+
+
+// 5th
+// genFloatingContact()
+
 
 
 // 1st 
@@ -71,6 +76,12 @@ function toggleContactMobileView() {
             document.getElementById('mainCenterContacts').classList.add('display-none');
         }
     }
+}
+
+
+// 5th
+function genFloatingContact {
+
 }
 
 // --------------------

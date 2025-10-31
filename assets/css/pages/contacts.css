@@ -111,6 +111,58 @@
     gap: 16px;
 }
 
+/* floating contact */
+
+.floating-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.floating-contact-header {
+    display: flex;
+    gap: 54px;
+}
+
+.floating-contact-title {
+    display: flex;
+    gap: 59px;
+}
+
+.floating-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.floating-contact-mail {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floating-contact-mail span:first-child {
+    color: var(--black-dark-view);
+}
+
+.floating-contact-mail span:last-child {
+    color: var(--main2nd);
+}
+
+.floating-contact-phone {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floating-contact-phone span:first-child {
+    color: var(--black-dark-view);
+}
+
+.floating-contact-phone span:last-child {
+    color: var(--black-dark-view);
+}
+
 @media (width <=1440px) {
     .contacts-frame .main-center {
         display: none;

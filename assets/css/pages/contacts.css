@@ -141,6 +141,16 @@
     gap: 5px;
 }
 
+.floating-contact-header-panel-edit {
+    display: flex;
+    gap: 13px;
+}
+
+.floating-contact-header-panel-delete {
+    display: flex;
+    gap: 8px;
+}
+
 
 .floating-contact-badge {
     display: flex;

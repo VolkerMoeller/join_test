@@ -125,6 +125,22 @@
     align-items: center;
 }
 
+.floating-contact-header-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.floating-contact-header-right span {
+    display: flex;
+    gap: 5px;
+}
+
+.floating-contact-header-panel {
+    display: flex;
+    gap: 5px;
+}
+
 
 .floating-contact-badge {
     display: flex;

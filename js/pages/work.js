@@ -2,14 +2,14 @@
 // work.js-functions:
 // -----------------
 
-// --> initial functions:
+// --initial functions:
 
 // initWork()
 // returnToLogIn()
 // setMenuIcnHvrClrSVG()
 // resetMenuIcnHvrClrSVG()
 
-// --> content functions:
+// --content functions:
 
 // showCurrentContent()
 // showHelpContent()

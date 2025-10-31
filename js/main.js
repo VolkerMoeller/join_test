@@ -55,6 +55,7 @@
 // closeInput()
 // getRandomColor()
 // getFormInputData()
+// checkIfMobileView()
 
 // --- test-functions:
 
@@ -402,6 +403,13 @@ function getFormInputData(form = "formAddTask") {
 
 function scrollWindowToTop() {
     window.scroll(0, 0);
+}
+
+
+function checkIfMobileView() {
+    let windowWidth = getWindowWidth();
+    if (windowWidth < 1440) return true;
+    else return false;
 }
 
 

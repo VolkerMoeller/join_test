@@ -30,5 +30,6 @@ class PageAssigns {
     initContactsContent() {
         scrollElementToTop('mainCenterContacts');
         genContactsListBtn();
+        showResponsiveView();
     }
 }

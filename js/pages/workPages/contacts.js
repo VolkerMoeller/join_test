@@ -10,7 +10,12 @@
 
 
 // 3rd
-// contactMobileSwitchView()
+// showResponsiveView()
+
+
+// 4th
+// toggleContactMobileView();
+
 
 // 1st 
 async function genContactsListBtn() {
@@ -40,12 +45,30 @@ function initClickedContactBtn(indexBtn) {
 
 
 // 3rd
-function contactMobileSwitchView() {
-    let windowWidth = getWindowWidth();
-    if (windowWidth < 1440) {
-        let mainCenterContacts = document.getElementById('mainCenterContacts').classList;
-        console.log(mainCenterContacts);
-        if (document.getElementById('mainCenterContacts').classList.contains('display-none')) {
+function showResponsiveView() {
+    let mobileView = checkIfMobileView();
+    if (mobileView) {
+        document.getElementById('contactsList').classList.remove('display-none');
+        document.getElementById('mainCenterContacts').classList.add('display-none');
+    } else {
+        document.getElementById('contactsList').classList.remove('display-none');
+        document.getElementById('mainCenterContacts').classList.remove('display-none');
+    }
+}
+
+
+// 4th
+function toggleContactMobileView() {
+
+    let mobileView = checkIfMobileView();
+    if (mobileView) {
+        let contactListShown = document.getElementById('mainCenterContacts').classList.contains('display-none');
+        if (contactListShown) {
+            document.getElementById('contactsList').classList.add('display-none');
+            document.getElementById('mainCenterContacts').classList.remove('display-none');
+        } else {
+            document.getElementById('contactsList').classList.remove('display-none');
+            document.getElementById('mainCenterContacts').classList.add('display-none');
         }
     }
 }
@@ -63,6 +86,10 @@ function contactMobileSwitchView() {
 // getCurrentClickedBtnId()
 // unclickAllBtns()
 // displayClickedBtn()
+
+
+// .3rd
+// checkIfMobileView() --> main.js
 
 
 // .1st

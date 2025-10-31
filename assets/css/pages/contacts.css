@@ -2,6 +2,10 @@
     display: flex;
 }
 
+/* .contacts-frame {
+    display: none;
+} */
+
 .contacts-list {
     background-color: var(--white);
     box-shadow: var(--drop-shadow);
@@ -232,13 +236,14 @@
 
 
 @media (width <=1440px) {
-    .contacts-list {
-        height: calc(100vh - 160px);
+
+    .contacts-frame .main-center {
+        flex-direction: column;
+        overflow-y: hidden;
     }
 
     .contacts-list {
-        display: flex;
-
+        height: calc(100vh - 160px);
     }
 
     .floating-contact-badge {

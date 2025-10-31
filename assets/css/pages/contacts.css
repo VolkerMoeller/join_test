@@ -246,8 +246,7 @@
         overflow-y: hidden;
     }
 
-    /* 
-        .contacts-list {
+    /* .contacts-list {
             height: calc(100vh - 160px);
             } */
 
@@ -264,5 +263,14 @@
     .floating-contact-badge-svg {
         width: 80px;
         height: 80px;
+    }
+
+    .floating-contact-initial {
+        font-size: 27px;
+        font-weight: 400;
+    }
+
+    .floating-contact-header-right span:nth-child(1) {
+        font-size: 36px;
     }
 }

@@ -25,6 +25,7 @@ async function genContactsListBtn() {
     let indexTabs = [];
     document.getElementById('contactsListBtns').innerHTML = '';
     contacts.forEach((contact, i) => {
+        let contactId = contact['id'];
         let indexTab = getIndexTab(contact);
         indexTabs.push(indexTab);
         let color = contact['color'];
@@ -33,16 +34,18 @@ async function genContactsListBtn() {
         let mail = contact['eMail'];
         let state = checkState(i, indexTabs);
         if (i > 0)
-            document.getElementById('contactsListBtns').innerHTML += genHTMLContactsListBtn(indexTab, color, initial, name, mail, state, i);
+            document.getElementById('contactsListBtns').innerHTML += genHTMLContactsListBtn(indexTab, color, initial, name, mail, state, i, contactId);
     });
 }
 
 
 // 2nd
-function initClickedContactBtn(indexBtn) {
+function initClickedContactBtn(indexBtn, contactId) {
+    console.log(contactId);
     let currentClickedBtnId = getCurrentClickedBtnId();
     unclickAllBtns();
     displayClickedBtn(currentClickedBtnId, indexBtn);
+    genFloatingContact(currentClickedBtnId, indexBtn);
 }
 
 
@@ -77,9 +80,10 @@ function toggleContactMobileView() {
 
 
 // 5th
-async function genFloatingContact() {
+async function genFloatingContact(currentClickedBtnId, indexBtn) {
+    console.log('davor: ', currentClickedBtnId, 'jetzt: ', indexBtn);
     document.getElementById('floatingContactFrame').innerHTML = '';
-    
+
     document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact();
     await includeHTMLById('w3-include-svg-2nd');
 }
@@ -98,7 +102,6 @@ async function genFloatingContact() {
 // getCurrentClickedBtnId()
 // unclickAllBtns()
 // displayClickedBtn()
-
 
 // .3rd
 // checkIfMobileView() --> main.js

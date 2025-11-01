@@ -8,14 +8,11 @@
 // 2nd
 // initClickedContactBtn()
 
-
 // 3rd
 // showResponsiveView()
 
-
 // 4th
 // toggleContactMobileView()
-
 
 // 5th
 // genFloatingContact()
@@ -82,8 +79,9 @@ function toggleContactMobileView() {
 // 5th
 async function genFloatingContact() {
     document.getElementById('floatingContactFrame').innerHTML = '';
+    
     document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact();
-    await includeHTMLById('w3-include-svg');
+    await includeHTMLById('w3-include-svg-2nd');
 }
 
 

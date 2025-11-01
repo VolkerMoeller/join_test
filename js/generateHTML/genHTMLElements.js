@@ -194,14 +194,14 @@ function genHTMLContactsListBtn(indexTab, color, initial, name, mail, state, i, 
 
 
 
-function genHTMLFloatingContact() {
+function genHTMLFloatingContact(color) {
     return `
     <div class="floating-contact">
         <div class="floating-contact-header">
             <div class="floating-contact-badge rel">
                 <svg class="floating-contact-badge-svg" viewBox="-60 -60 120 120"
                     xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="0" cy="0" r="57" fill="var(--variant0)" stroke="white" stroke-width="3" />
+                    <circle cx="0" cy="0" r="57" fill="${color}" stroke="white" stroke-width="3" />
                 </svg>
                 <div class="floating-contact-initial abs version-2-t2">AM</div>
             </div>

@@ -83,6 +83,7 @@ async function genFloatingContact(contactId, contacts) {
     document.getElementById('floatingContactFrame').innerHTML = '';
     // let color = getValueOutOfArrWthObjs(arr, ref, key, search)
     let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
+    // let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
     console.log(color);
     // console.log(contactId, contacts);
     // let color;
@@ -90,7 +91,7 @@ async function genFloatingContact(contactId, contacts) {
     //     if (contact['id'] == contactId) { color = contact['color'] }
     // });
     // console.log(color);
-    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact();
+    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color);
     await includeHTMLById('w3-include-svg-2nd');
 }
 

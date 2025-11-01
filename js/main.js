@@ -56,6 +56,7 @@
 // getRandomColor()
 // getFormInputData()
 // checkIfMobileView()
+// getValueOutOfArrWthObjs()
 
 // --- test-functions:
 
@@ -412,6 +413,22 @@ function checkIfMobileView() {
     else return false;
 }
 
+
+// function getValueOutOfArrWthObjs(ref, arr, key, search) {
+function getValueOutOfArrWthObjs(arr, ref, key, search) {
+    let value;
+    arr.forEach(obj => {
+        if (obj[key] == ref) { value = obj[search] }
+    });
+    return value
+}
+
+// console.log(contactId, contacts);
+// let color;
+// contacts.forEach(contact => {
+//     if (contact['id'] == contactId) { color = contact['color'] }
+// });
+// console.log(color);
 
 // --- test-functions:
 

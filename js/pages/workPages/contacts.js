@@ -40,12 +40,12 @@ async function genContactsListBtn() {
 
 
 // 2nd
-function initClickedContactBtn(indexBtn, contactId) {
-    console.log(contactId);
+async function initClickedContactBtn(indexBtn, contactId) {
+    let contacts = await getContactsSort();
     let currentClickedBtnId = getCurrentClickedBtnId();
     unclickAllBtns();
     displayClickedBtn(currentClickedBtnId, indexBtn);
-    genFloatingContact(currentClickedBtnId, indexBtn);
+    genFloatingContact(contactId, contacts);
 }
 
 
@@ -64,7 +64,6 @@ function showResponsiveView() {
 
 // 4th
 function toggleContactMobileView() {
-
     let mobileView = checkIfMobileView();
     if (mobileView) {
         let contactListShown = document.getElementById('mainCenterContacts').classList.contains('display-none');
@@ -80,10 +79,17 @@ function toggleContactMobileView() {
 
 
 // 5th
-async function genFloatingContact(currentClickedBtnId, indexBtn) {
-    console.log('davor: ', currentClickedBtnId, 'jetzt: ', indexBtn);
+async function genFloatingContact(contactId, contacts) {
     document.getElementById('floatingContactFrame').innerHTML = '';
-
+    // let color = getValueOutOfArrWthObjs(arr, ref, key, search)
+    let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
+    console.log(color);
+    // console.log(contactId, contacts);
+    // let color;
+    // contacts.forEach(contact => {
+    //     if (contact['id'] == contactId) { color = contact['color'] }
+    // });
+    // console.log(color);
     document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact();
     await includeHTMLById('w3-include-svg-2nd');
 }

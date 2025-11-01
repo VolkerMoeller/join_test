@@ -128,7 +128,6 @@ function checkState(i, indexTabs) {
         }
     }
     return state;
-
 }
 
 

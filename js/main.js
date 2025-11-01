@@ -414,7 +414,6 @@ function checkIfMobileView() {
 }
 
 
-// function getValueOutOfArrWthObjs(ref, arr, key, search) {
 function getValueOutOfArrWthObjs(arr, ref, key, search) {
     let value;
     arr.forEach(obj => {
@@ -422,15 +421,6 @@ function getValueOutOfArrWthObjs(arr, ref, key, search) {
     });
     return value
 }
-
-// console.log(contactId, contacts);
-// let color;
-// contacts.forEach(contact => {
-//     if (contact['id'] == contactId) { color = contact['color'] }
-// });
-// console.log(color);
-
-// --- test-functions:
 
 
 async function getSubtaskIdsObj() {

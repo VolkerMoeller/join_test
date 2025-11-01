@@ -194,7 +194,7 @@ function genHTMLContactsListBtn(indexTab, color, initial, name, mail, state, i, 
 
 
 
-function genHTMLFloatingContact(color) {
+function genHTMLFloatingContact(color, initial, name, email, phone) {
     return `
     <div class="floating-contact">
         <div class="floating-contact-header">
@@ -203,10 +203,10 @@ function genHTMLFloatingContact(color) {
                     xmlns="http://www.w3.org/2000/svg">
                     <circle cx="0" cy="0" r="57" fill="${color}" stroke="white" stroke-width="3" />
                 </svg>
-                <div class="floating-contact-initial abs version-2-t2">AM</div>
+                <div class="floating-contact-initial abs version-2-t2">${initial}</div>
             </div>
             <div class="floating-contact-header-right">
-                <span class="version-2-t2">Anton Müller</span>
+                <span class="version-2-t2">${name}</span>
                 <div class="floating-contact-header-panel">
                     <div class="floating-contact-header-panel-icon-hover-container rel">
                         <button class="floating-contact-header-panel-btn abs">
@@ -250,11 +250,11 @@ function genHTMLFloatingContact(color) {
         <div class="floating-contact-info">
             <div class="floating-contact-mail">
                 <span class="version-btn-2nd">Email</span>
-                <span class="version-2-body">antonm@gmail.com</span>
+                <span class="version-2-body">${email}</span>
             </div>
             <div class="floating-contact-phone">
                 <span class="version-btn-2nd">Phone</span>
-                <span class="version-2-body">+49 160 897545124</span>
+                <span class="version-2-body">${phone}</span>
             </div>
         </div>
     </div>

@@ -81,17 +81,12 @@ function toggleContactMobileView() {
 // 5th
 async function genFloatingContact(contactId, contacts) {
     document.getElementById('floatingContactFrame').innerHTML = '';
-    // let color = getValueOutOfArrWthObjs(arr, ref, key, search)
     let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
-    // let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
-    console.log(color);
-    // console.log(contactId, contacts);
-    // let color;
-    // contacts.forEach(contact => {
-    //     if (contact['id'] == contactId) { color = contact['color'] }
-    // });
-    // console.log(color);
-    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color);
+    let initial = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'initial');
+    let name = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'name');
+    let email = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'eMail');
+    let phone = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'phone');
+    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color, initial, name, email, phone);
     await includeHTMLById('w3-include-svg-2nd');
 }
 

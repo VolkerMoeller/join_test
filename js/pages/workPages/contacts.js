@@ -41,10 +41,14 @@ async function genContactsListBtn() {
 
 // 2nd
 async function initClickedContactBtn(indexBtn, contactId) {
+    console.log(indexBtn, contactId);
     let contacts = await getContactsSort();
-    let currentClickedBtnId = getCurrentClickedBtnId();
-    unclickAllBtns();
-    displayClickedBtn(currentClickedBtnId, indexBtn);
+    console.log(contacts);
+    let allreadyBtnId = getCurrentClickedBtnId(indexBtn, contactId);
+    console.log(allreadyBtnId);
+    // unclickAllBtns();
+    unclickNotAllBtns(idsSimilar, indexBtn);
+    displayClickedBtn(allreadyBtnId, indexBtn);
     genFloatingContact(contactId, contacts);
 }
 
@@ -75,19 +79,23 @@ function toggleContactMobileView() {
             document.getElementById('mainCenterContacts').classList.add('display-none');
         }
     }
+
 }
 
 
 // 5th
 async function genFloatingContact(contactId, contacts) {
+    let currentClickedBtnId = getCurrentClickedBtnId();
     document.getElementById('floatingContactFrame').innerHTML = '';
-    let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
-    let initial = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'initial');
-    let name = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'name');
-    let email = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'eMail');
-    let phone = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'phone');
-    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color, initial, name, email, phone);
-    await includeHTMLById('w3-include-svg-2nd');
+    if (currentClickedBtnId) {
+        let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
+        let initial = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'initial');
+        let name = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'name');
+        let email = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'eMail');
+        let phone = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'phone');
+        document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color, initial, name, email, phone);
+        await includeHTMLById('w3-include-svg-2nd');
+    }
 }
 
 
@@ -102,6 +110,7 @@ async function genFloatingContact(contactId, contacts) {
 
 // .2nd
 // getCurrentClickedBtnId()
+// checkIfJustSameAsAllready()
 // unclickAllBtns()
 // displayClickedBtn()
 
@@ -138,8 +147,19 @@ function getCurrentClickedBtnId() {
     let currentClickedBtn = document.querySelector('.contacts-list-btn-clicked');
     if (currentClickedBtn) {
         currentClickedBtnId = currentClickedBtn['id'];
-    }
+    } else { currentClickedBtnId = false; }
     return currentClickedBtnId;
+}
+
+
+// .2nd
+// ..
+function checkIfJustSameAsAllready(indexBtn, allreadyBtnId) {
+    if (allreadyBtnId) {
+        let alreadyId = allreadyBtnId.split('contactsListBtn');
+        alreadyId = parseInt(alreadyId[1]);
+        if (indexBtn == alreadyId) { return true; } else { return false }
+    }
 }
 
 
@@ -149,6 +169,22 @@ function unclickAllBtns() {
     let contactBtns = document.querySelectorAll('.contacts-list-btn');
     contactBtns.forEach(contact => {
         contact.classList.remove('contacts-list-btn-clicked');
+    });
+}
+
+
+// .2nd
+// ..
+function unclickNotAllBtns() {
+    let contactBtns = document.querySelectorAll('.contacts-list-btn');
+    contactBtns.forEach(contact => {
+        let idsSimilar = checkIfJustSameAsAllready(indexBtn, allreadyBtnId);
+        console.log(idsSimilar);
+        if (!idsSimilar) {
+            contact.classList.remove('contacts-list-btn-clicked');
+        }
+        // not the clicked button !
+        // contact.classList.remove('contacts-list-btn-clicked');
     });
 }
 

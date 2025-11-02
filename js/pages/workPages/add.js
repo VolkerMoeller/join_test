@@ -350,6 +350,7 @@ function searchContactsByInput() {
         });
     }
     searchListElements.forEach(element => {
+        // XXX Bug => was, wenn index über 9?
         let btnId = element['id'].substring(element['id'].length - 1);
         let contactNameId = 'contactListName' + btnId;
         let contactName = document.getElementById(contactNameId).innerHTML;

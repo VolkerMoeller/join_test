@@ -183,8 +183,6 @@ function unclickNotAllBtns() {
         if (!idsSimilar) {
             contact.classList.remove('contacts-list-btn-clicked');
         }
-        // not the clicked button !
-        // contact.classList.remove('contacts-list-btn-clicked');
     });
 }
 

@@ -74,12 +74,18 @@
 }
 
 .contacts-list-btn-clicked {
-    background: var(--main) !important;
+    display: flex;
+    justify-content: start;
+    gap: 35px;
+    width: 352px;
+    border-radius: 10px;
+    padding: 15px 24px;
+    background: var(--main);
 }
 
-.contacts-list-btn-clicked:hover {
-    background: var(--main) !important;
-}
+/* .contacts-list-btn-clicked:hover {
+    background: var(--main);
+} */
 
 .contacts-list-btn-clicked span:first-child {
     color: var(--white) !important;
@@ -127,7 +133,7 @@
 }
 
 .anim-float-contact {
-    animation-duration: 600ms;
+    animation-duration: 500ms;
     animation-name: float-contact;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;

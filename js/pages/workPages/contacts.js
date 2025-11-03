@@ -41,15 +41,33 @@ async function genContactsListBtn() {
 
 // 2nd
 async function initClickedContactBtn(indexBtn, contactId) {
-    console.log(indexBtn, contactId);
-    let contacts = await getContactsSort();
-    console.log(contacts);
-    let allreadyBtnId = getCurrentClickedBtnId(indexBtn, contactId);
-    console.log(allreadyBtnId);
-    debugger;
-    unclickAllBtns();
-    displayClickedBtn(allreadyBtnId, indexBtn);
-    genFloatingContact(contactId, contacts);
+    let justBtnId = 'contactsListBtn' + indexBtn;
+    let alreadyBtnId = getAlreadyClickedBtnId();
+    console.log('contact: ', contactId);
+    console.log('just clicked: ', justBtnId);
+    console.log('already clicked: ', alreadyBtnId);
+
+    if (alreadyBtnId !== false) {
+        document.getElementById(alreadyBtnId).classList.add('contacts-list-btn');
+        document.getElementById(alreadyBtnId).classList.remove('contacts-list-btn-clicked');
+    }
+
+    document.getElementById(justBtnId).classList.remove('contacts-list-btn');
+    document.getElementById(justBtnId).classList.add('contacts-list-btn-clicked');
+
+    if (justBtnId == alreadyBtnId) {
+        if (document.getElementById('floatingContactFrame').innerHTML == '') {
+            let contacts = await getContactsSort();
+            genFloatingContact(contactId, contacts);
+        } else {
+            document.getElementById('floatingContactFrame').innerHTML = '';
+            document.getElementById(justBtnId).classList.add('contacts-list-btn');
+            document.getElementById(justBtnId).classList.remove('contacts-list-btn-clicked');
+        }
+    } else {
+        let contacts = await getContactsSort();
+        genFloatingContact(contactId, contacts);
+    }
 }
 
 
@@ -85,17 +103,14 @@ function toggleContactMobileView() {
 
 // 5th
 async function genFloatingContact(contactId, contacts) {
-    let currentClickedBtnId = getCurrentClickedBtnId();
     document.getElementById('floatingContactFrame').innerHTML = '';
-    if (currentClickedBtnId) {
-        let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
-        let initial = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'initial');
-        let name = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'name');
-        let email = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'eMail');
-        let phone = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'phone');
-        document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color, initial, name, email, phone);
-        await includeHTMLById('w3-include-svg-2nd');
-    }
+    let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
+    let initial = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'initial');
+    let name = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'name');
+    let email = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'eMail');
+    let phone = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'phone');
+    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color, initial, name, email, phone);
+    await includeHTMLById('w3-include-svg-2nd');
 }
 
 
@@ -142,13 +157,17 @@ function checkState(i, indexTabs) {
 
 // .2nd
 // ..
-function getCurrentClickedBtnId() {
-    let currentClickedBtnId;
-    let currentClickedBtn = document.querySelector('.contacts-list-btn-clicked');
-    if (currentClickedBtn) {
-        currentClickedBtnId = currentClickedBtn['id'];
-    } else { currentClickedBtnId = false; }
-    return currentClickedBtnId;
+function getAlreadyClickedBtnId() {
+    let alreadyClickedBtnId;
+    // let currentClickedBtn = document.querySelector('.contacts-list-btn-clicked');
+    // if (currentClickedBtn) {
+    //     currentClickedBtnId = currentClickedBtn['id'];
+    // } else { currentClickedBtnId = false; }
+    let alreadyClickedBtn = document.querySelector('.contacts-list-btn-clicked');
+    if (alreadyClickedBtn) {
+        alreadyClickedBtnId = alreadyClickedBtn['id'];
+    } else { alreadyClickedBtnId = false; }
+    return alreadyClickedBtnId;
 }
 
 
@@ -175,10 +194,25 @@ function unclickAllBtns() {
 
 // .2nd
 // ..
-function displayClickedBtn(currentClickedBtnId, indexBtn) {
-    let btnId = 'contactsListBtn' + indexBtn;
-    document.getElementById(btnId).classList.add('contacts-list-btn-clicked');
-    if (btnId == currentClickedBtnId) {
-        document.getElementById(btnId).classList.remove('contacts-list-btn-clicked');
-    }
+// function displayClickedBtn(currentClickedBtnId, indexBtn) {
+//     let btnId = 'contactsListBtn' + indexBtn;
+//     document.getElementById(btnId).classList.add('contacts-list-btn-clicked');
+//     if (btnId == currentClickedBtnId) {
+//         document.getElementById(btnId).classList.remove('contacts-list-btn-clicked');
+//     }
+// }
+function displayClickedBtn(alreadyBtnId, indexBtn) {
+    let justBtnId = 'contactsListBtn' + indexBtn;
+    // let btnIdAlready = 'contactsListBtn' + currentClickedBtnId;
+    console.log(alreadyBtnId);
+    console.log(justBtnId);
+    if (alreadyBtnId == justBtnId) { console.log('equal') };
+    document.getElementById(justBtnId).classList.add('contacts-list-btn-clicked');
+    document.getElementById(justBtnId).classList.remove('contacts-list-btn');
+    document.getElementById(alreadyBtnId).classList.add('contacts-list-btn');
+    document.getElementById(alreadyBtnId).classList.remove('contacts-list-btn-clicked');
+    // if (btnId !== currentClickedBtnId) {
+    //     document.getElementById(btnId).classList.add('contacts-list-btn-clicked');
+    //     document.getElementById(btnId).classList.remove('contacts-list-btn');
+    // }
 }

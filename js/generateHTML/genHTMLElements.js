@@ -261,9 +261,9 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
     `;
 }
 
-function genHTMLFormAddTask() {
+function genHTMLFormAddTask(formId) {
     return `
-    <form id="formAddTask" class="form-add" onsubmit="initCreateNewTask(); return false;">
+    <form id="${formId}" class="form-add" onsubmit="initCreateNewTask(); return false;">
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>
@@ -286,7 +286,7 @@ function genHTMLFormAddTask() {
                             <textarea class="version-2-t6" type="text" id="description" name="description"
                                 placeholder="Enter a description" autocomplete="off"></textarea>
                             <div class="input-container-icon description-icon">
-                                <div w3-include-svg="./assets/img/svgHTML/33-recurso.html"></div>
+                                <div w3-include-svg-2nd="./assets/img/svgHTML/33-recurso.html"></div>
                             </div>
 
                         </div>
@@ -301,7 +301,7 @@ function genHTMLFormAddTask() {
                                 pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" autocomplete="off"
                                 required>
                                 <div class="input-container-icon" onclick="focusInput('dueDate')">
-                                    <div w3-include-svg="./assets/img/svgHTML/34-event.html"></div>
+                                    <div w3-include-svg-2nd="./assets/img/svgHTML/34-event.html"></div>
                                 </div>
                         </div>
                         <span class="version-warning-V2 ghost">ghost</span>
@@ -318,14 +318,14 @@ function genHTMLFormAddTask() {
                                 <input type="radio" id="urgentBtn" name="priority" value="urgent" />
                                 <label class="label-frame" for="urgentBtn">
                                     <span>Urgent</span>
-                                    <div class="prioAlta" w3-include-svg="./assets/img/svgHTML/35-prioAlta.html"></div>
+                                    <div class="prioAlta" w3-include-svg-2nd="./assets/img/svgHTML/35-prioAlta.html"></div>
                                 </label>
                             </div>
                             <div class="radio-frame radio-medium">
                                 <input type="radio" id="mediumBtn" name="priority" value="medium" checked />
                                 <label class="label-frame" for="mediumBtn">
                                     <span>Medium</span>
-                                    <div class="prioMedia" w3-include-svg="./assets/img/svgHTML/36-prioMedia.html">
+                                    <div class="prioMedia" w3-include-svg-2nd="./assets/img/svgHTML/36-prioMedia.html">
                                     </div>
                                 </label>
                             </div>
@@ -333,7 +333,7 @@ function genHTMLFormAddTask() {
                                 <input type="radio" id="lowBtn" name="priority" value="low" />
                                 <label class="label-frame" for="lowBtn">
                                     <span>Low</span>
-                                    <div class="prioBaja" w3-include-svg="./assets/img/svgHTML/37-prioBaja.html"></div>
+                                    <div class="prioBaja" w3-include-svg2nd="./assets/img/svgHTML/37-prioBaja.html"></div>
                                 </label>
                             </div>
                         </fieldset>
@@ -350,12 +350,12 @@ function genHTMLFormAddTask() {
                                 <div id="dropDownAssOpen" class="input-container-icon"
                                     onclick="initOnclickDropDownOpen('assigned')">
                                     <button type="button" type="button"
-                                        w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
+                                        w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                                 </div>
                                 <div id="dropDownAssClose" class="input-container-icon display-none"
                                     onclick="initOnclickDropDownClose('assigned')">
                                     <button type="button" type="button"
-                                        w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
+                                        w3-include-svg-2nd="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                                 </div>
                         </div>
                         <div id="userContactList" class="user-contact-list"></div>
@@ -373,12 +373,12 @@ function genHTMLFormAddTask() {
                                 <div id="dropDownCatOpen" class="input-container-icon"
                                     onclick="initOnclickDropDownOpen('category')">
                                     <button type="button" type="button"
-                                        w3-include-svg="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
+                                        w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                                 </div>
                                 <div id="dropDownCatClose" class="input-container-icon display-none"
                                     onclick="initOnclickDropDownClose('category')">
                                     <button type="button" type="button"
-                                        w3-include-svg="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
+                                        w3-include-svg-2nd="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                                 </div>
                         </div>
                         <fieldset id="categoryList" class="category-list">
@@ -409,10 +409,10 @@ function genHTMLFormAddTask() {
                                 onfocus="initShowSubtaskPanel('subtask')">
                                 <div id="inputSubtaskPanel" class="input-subtask-panel subtask-panel-v1 display-none">
                                     <div class="flx-cnt" onclick="closeSubtaskInput()"
-                                        w3-include-svg="./assets/img/svgHTML/52-close_hvr.html">
+                                        w3-include-svg-2nd="./assets/img/svgHTML/52-close_hvr.html">
                                     </div>
                                     <p class="subtask-vector"></p>
-                                    <div class="flx-cnt" w3-include-svg="./assets/img/svgHTML/51-check_hvr.html"
+                                    <div class="flx-cnt" w3-include-svg-2nd="./assets/img/svgHTML/51-check_hvr.html"
                                         onclick="initCreateNewSubtask()"></div>
                                 </div>
                                 <span class="version-warning-V2 ghost">ghost</span>
@@ -434,14 +434,14 @@ function genHTMLFormAddTask() {
                 <div class="hover-container-v3 rel">
                     <button class="btn-wo-icn-2nd btn-wth-icn version-btn" type="button"
                         onclick="resetFormAddTask()">Clear
-                        <div class="flx-cnt-btn-wth-icn" w3-include-svg="./assets/img/svgHTML/55-iconoir_cancel.html">
+                        <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/55-iconoir_cancel.html">
                         </div>
                     </button>
                 </div>
                 <div class="hover-container-v4 rel">
                     <button class="btn-wo-icn btn-wth-icn version-btn" type="submit" onclick="getFormInputData()">Add
                         Task
-                        <div class="flx-cnt-btn-wth-icn" w3-include-svg="./assets/img/svgHTML/56-check_white.html">
+                        <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/56-check_white.html">
                         </div>
                     </button>
                 </div>

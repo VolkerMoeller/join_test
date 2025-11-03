@@ -16,6 +16,7 @@ class PageAssigns {
 
 
     initAddContent() {
+        genAddTaskForm();
         scrollElementToTop('mainCenterAdd');
         genUserContactList();
         genContactBadges();

@@ -29,6 +29,7 @@
 // 25th genUserContactList
 // 26th
 // 27th searchContactsByInput()
+// 28th genAddTaskForm()
 
 
 // 1st
@@ -360,6 +361,14 @@ function searchContactsByInput() {
             element.classList.remove('display-none');
         }
     });
+}
+
+
+async function genAddTaskForm() {
+    document.getElementById('mainCenterAdd').innerHTML = '';
+    let formId = 'formAddTask';
+    document.getElementById('mainCenterAdd').innerHTML = genHTMLFormAddTask(formId);
+    await includeHTMLById('w3-include-svg-2nd');
 }
 
 

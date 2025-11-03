@@ -7,11 +7,11 @@
 
 
 // 1st:
-function viewDefaultContent(defaultBtnId) {
-    viewDefaultBtnById(defaultBtnId);
-    showCurrentContent();
-    initPageContent();
-}
+// function viewDefaultContent(defaultBtnId) {
+//     viewDefaultBtnById(defaultBtnId);
+//     showCurrentContent();
+//     initPageContent();
+// }
 
 
 // --------------------
@@ -27,16 +27,16 @@ function viewDefaultContent(defaultBtnId) {
 
 // 1st:
 // ..
-function viewDefaultBtnById(defaultBtnId) {
-    resetSVGHvr();
-    currentNavView(defaultBtnId);
-}
+// function viewDefaultBtnById(defaultBtnId) {
+//     resetSVGHvr();
+//     currentNavView(defaultBtnId);
+// }
 
 // 1st:
 // ..
-function initPageContent() {
-    new PageAssigns();
-}
+// function initPageContent() {
+//     new PageAssigns();
+// }
 
 
 // --------------------
@@ -51,10 +51,10 @@ function initPageContent() {
 
 // 1st:
 // ...
-function resetSVGHvr() {
-    let svgIcons = document.querySelectorAll('.menu-icon-hvr');
-    svgIcons.forEach(svgIcon => {
-        svgIcon.classList.remove('menu-icon-hvr');
-        svgIcon.classList.add('menu-icon');
-    });
-}
+// function resetSVGHvr() {
+//     let svgIcons = document.querySelectorAll('.menu-icon-hvr');
+//     svgIcons.forEach(svgIcon => {
+//         svgIcon.classList.remove('menu-icon-hvr');
+//         svgIcon.classList.add('menu-icon');
+//     });
+// }

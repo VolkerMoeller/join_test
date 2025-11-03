@@ -336,6 +336,7 @@ async function genContactBadges() {
     });
 }
 
+
 // 27th
 function searchContactsByInput() {
     let searchInput = document.getElementById('assigned').value;
@@ -363,7 +364,7 @@ function searchContactsByInput() {
     });
 }
 
-
+// 28th
 async function genAddTaskForm() {
     document.getElementById('mainCenterAdd').innerHTML = '';
     let formId = 'formAddTask';

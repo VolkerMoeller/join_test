@@ -278,6 +278,22 @@
         height: calc(100vh - 160px);
     }
 
+    .floating-contact {
+        transform: translateX(0%);
+    }
+
+    @keyframes float-contact {
+        from {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+
     .floating-contact-badge {
         width: 80px;
         height: 80px;
@@ -305,7 +321,6 @@
     .floating-contact-header {
         gap: 10px;
     }
-
 
     .contacts-list {
         padding: 32px 12px 32px 24px;

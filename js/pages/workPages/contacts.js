@@ -127,7 +127,6 @@ async function genFloatingContact(contactId, contacts) {
 
 // .2nd
 // getCurrentClickedBtnId()
-// checkIfJustSameAsAllready()
 // unclickAllBtns()
 // displayClickedBtn()
 
@@ -161,26 +160,11 @@ function checkState(i, indexTabs) {
 // ..
 function getAlreadyClickedBtnId() {
     let alreadyClickedBtnId;
-    // let currentClickedBtn = document.querySelector('.contacts-list-btn-clicked');
-    // if (currentClickedBtn) {
-    //     currentClickedBtnId = currentClickedBtn['id'];
-    // } else { currentClickedBtnId = false; }
     let alreadyClickedBtn = document.querySelector('.contacts-list-btn-clicked');
     if (alreadyClickedBtn) {
         alreadyClickedBtnId = alreadyClickedBtn['id'];
     } else { alreadyClickedBtnId = false; }
     return alreadyClickedBtnId;
-}
-
-
-// .2nd
-// ..
-function checkIfJustSameAsAllready(indexBtn, allreadyBtnId) {
-    if (allreadyBtnId) {
-        let alreadyId = allreadyBtnId.split('contactsListBtn');
-        alreadyId = parseInt(alreadyId[1]);
-        if (indexBtn == alreadyId) { return true; } else { return false }
-    }
 }
 
 

@@ -2,17 +2,20 @@
 // work.js-functions:
 // -----------------
 
-
+// 1st
 // initWork()
+
+// 2nd
 // returnToLogIn()
+
+// 3rd
 // setMenuIcnHvrClrSVG()
+
+// 4th
 // resetMenuIcnHvrClrSVG()
 
 
-// ------------------
-// initial-functions:
-// ------------------
-
+// 1st:
 async function initWork() {
     await includeHTML();
     setClrSchemeInit();
@@ -25,12 +28,14 @@ async function initWork() {
 }
 
 
+// 2nd:
 function returnToLogIn() {
     window.location.assign('./signPage.html');
     saveLocalStorageObject('userStatus', 'external');
 }
 
 
+// 3rd:
 function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
     let defaultBtn = document.getElementById(btnId).classList.contains('menu-btn-hvr-selected');
     if (!defaultBtn) {
@@ -47,6 +52,7 @@ function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 }
 
 
+// 4th:
 function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
     let defaultBtn = document.getElementById(btnId).classList.contains('menu-btn-hvr-selected');
     if (!defaultBtn) {
@@ -68,20 +74,17 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 // --------------------
 
 
-// --> initWork()
-
+// .1st
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
 // defaultHeaderView()
 // defaultNavView()
 // genHvrBtns()
-// initSumView()
 // genBtnUser()
-// genSumRectCnt()
+// initPageContent()
 
-// --> returnToLogIn()
-
+// .2nd
 // saveLocalStorageObject() --> main.js
 
 

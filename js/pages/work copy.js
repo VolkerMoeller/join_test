@@ -287,7 +287,6 @@ function showInfoContentById(cntId) {
 // hideAllWorkContent()
 // getSelectedMenuBtn()
 // provideCurrentContentId()
-// resetHelpBtns() 
 
 // hideAllWorkContent()
 // hideHelpBtns()
@@ -329,18 +328,6 @@ function provideCurrentContentId(menuBtnId) {
     let contentId = referenceObject[menuBtnId];
     return contentId;
 }
-
-
-// function resetHelpBtns() {
-//     document.getElementById('btnHelp').classList.remove('display-none');
-//     document.getElementById('helpBtnSmallMenu').classList.remove('display-none');
-// }
-
-
-// function hideHelpBtns() {
-//     document.getElementById('btnHelp').classList.add('display-none');
-//     document.getElementById('helpBtnSmallMenu').classList.add('display-none');
-// }
 
 
 function setTxtBtnInfoById(cntId) {

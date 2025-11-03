@@ -11,7 +11,11 @@
 // 3rd
 // showInfoContentById()
 
+// 4th
+// currentNavView()
 
+
+// 1st
 function showCurrentContent() {
     hideAllWorkContent();
     let selectedMenuBtn = getSelectedMenuBtn();
@@ -21,12 +25,14 @@ function showCurrentContent() {
 }
 
 
+// 2nd
 function showHelpContent() {
     hideAllWorkContent();
     document.getElementById('cntCenterHelp').classList.remove('display-none');
 }
 
 
+// 3rd
 function showInfoContentById(cntId) {
     resetNavigationView();
     hideAllWorkContent();
@@ -35,25 +41,50 @@ function showInfoContentById(cntId) {
 }
 
 
+// 4th
+function currentNavView(currentBtnId) {
+    let twinBtn = getTheButtonTwin(currentBtnId);
+    resetNavigationView();
+    resetNavigationViewMbl();
+    setCurrentBtnById(currentBtnId);
+    setCurrentBtnById(twinBtn);
+    showLeftAndBottomMenu();
+}
+
+
 // --------------------
 // 1st-level-functions:
 // --------------------
 
 
+// 1st
+// ..
 // hideAllWorkContent()
 // getSelectedMenuBtn()
 // provideCurrentContentId()
-// resetHelpBtns() 
 
-// hideAllWorkContent()
-// hideHelpBtns()
+// 2nd
+// ..
+// hideAllWorkContent() --> see above
 
+// 3rd
+// ..
 // resetNavigationView() --> main.js
-// hideAllWorkContent()
-// hideHelpBtns() --> see above
+// hideAllWorkContent() --> see above
 // setTxtBtnInfoById()
 
+// 4th
+// ..
+// getTheButtonTwin() --> workInitial.js
+// resetNavigationView() --> main.js
+// resetNavigationViewMbl() --> main.js
+// setCurrentBtnById() --> workInitial.js
+// setCurrentBtnById() --> workInitial.js
+// showLeftAndBottomMenu()
 
+
+// 1st:
+// ..
 function hideAllWorkContent() {
     let contents = document.querySelectorAll('.content');
     contents.forEach(content => {
@@ -62,6 +93,8 @@ function hideAllWorkContent() {
 }
 
 
+// 1st:
+// ..
 function getSelectedMenuBtn() {
     let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
     if (!selectedMenuBtn) {
@@ -71,6 +104,8 @@ function getSelectedMenuBtn() {
 }
 
 
+// 1st:
+// ..
 function provideCurrentContentId(menuBtnId) {
     let referenceObject = {
         mnuBtn2nd: 'cntCenterSum',
@@ -87,6 +122,8 @@ function provideCurrentContentId(menuBtnId) {
 }
 
 
+// 3rd
+// ..
 function setTxtBtnInfoById(cntId) {
     if (cntId == 'cntCenterPrivacy') {
         document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left');
@@ -103,21 +140,8 @@ function setTxtBtnInfoById(cntId) {
 }
 
 
-// showLeftAndBottomMenu()
-// saveLocalStorageObject() --> main.js
-
-
-
-function currentNavView(currentBtnId) {
-    let twinBtn = getTheButtonTwin(currentBtnId);
-    resetNavigationView();
-    resetNavigationViewMbl();
-    setCurrentBtnById(currentBtnId);
-    setCurrentBtnById(twinBtn);
-    showLeftAndBottomMenu();
-}
-
-
+// 4th
+// ..
 function showLeftAndBottomMenu() {
     setTimeout(() => {
         document.getElementById('left-menu').classList.remove('display-none');

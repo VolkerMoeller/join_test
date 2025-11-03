@@ -21,7 +21,7 @@ function viewDefaultContent(defaultBtnId) {
 // initPageContent(defaultBtnId)
 
 // resetSVGHvr()
-// currentNavView() --> see above
+// currentNavView() --> workContent.js
 
 
 function viewDefaultBtnById(defaultBtnId) {

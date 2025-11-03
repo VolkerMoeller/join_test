@@ -46,8 +46,8 @@ async function initClickedContactBtn(indexBtn, contactId) {
     console.log(contacts);
     let allreadyBtnId = getCurrentClickedBtnId(indexBtn, contactId);
     console.log(allreadyBtnId);
-    // unclickAllBtns();
-    unclickNotAllBtns(idsSimilar, indexBtn);
+    debugger;
+    unclickAllBtns();
     displayClickedBtn(allreadyBtnId, indexBtn);
     genFloatingContact(contactId, contacts);
 }
@@ -169,20 +169,6 @@ function unclickAllBtns() {
     let contactBtns = document.querySelectorAll('.contacts-list-btn');
     contactBtns.forEach(contact => {
         contact.classList.remove('contacts-list-btn-clicked');
-    });
-}
-
-
-// .2nd
-// ..
-function unclickNotAllBtns() {
-    let contactBtns = document.querySelectorAll('.contacts-list-btn');
-    contactBtns.forEach(contact => {
-        let idsSimilar = checkIfJustSameAsAllready(indexBtn, allreadyBtnId);
-        console.log(idsSimilar);
-        if (!idsSimilar) {
-            contact.classList.remove('contacts-list-btn-clicked');
-        }
     });
 }
 

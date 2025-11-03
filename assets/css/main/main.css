@@ -260,6 +260,11 @@ legend {
     display: none !important;
 }
 
+.only-desk {
+    display: flex !important;
+}
+
+
 @media(max-width: 1440px) {
     h1 {
         font-size: 47px;
@@ -283,5 +288,9 @@ legend {
 
     .only-resp {
         display: flex !important;
+    }
+
+    .only-desk {
+        display: none !important;
     }
 }

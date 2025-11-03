@@ -305,4 +305,9 @@
     .floating-contact-header {
         gap: 10px;
     }
+
+
+    .contacts-list {
+        padding: 32px 12px 32px 24px;
+    }
 }

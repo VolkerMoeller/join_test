@@ -68,6 +68,8 @@ async function initClickedContactBtn(indexBtn, contactId) {
         let contacts = await getContactsSort();
         genFloatingContact(contactId, contacts);
     }
+
+    toggleContactMobileView();
 }
 
 

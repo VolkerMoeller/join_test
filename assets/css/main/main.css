@@ -256,6 +256,10 @@ legend {
     height: 56px;
 }
 
+.only-resp {
+    display: none !important;
+}
+
 @media(max-width: 1440px) {
     h1 {
         font-size: 47px;
@@ -275,5 +279,9 @@ legend {
 
     label span {
         font-size: 16px;
+    }
+
+    .only-resp {
+        display: flex !important;
     }
 }

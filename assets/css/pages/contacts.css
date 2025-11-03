@@ -261,6 +261,11 @@
     color: var(--black-dark-view);
 }
 
+.btn-back-contacts {
+    top: 48px;
+    left: unset;
+    right: 0;
+}
 
 @media (width <=1440px) {
 

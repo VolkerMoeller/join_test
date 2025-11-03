@@ -169,6 +169,10 @@ h3+p span {
     color: var(--main2nd);
 }
 
+ul {
+    margin: 0;
+}
+
 ul span {
     color: var(--main2nd);
 }

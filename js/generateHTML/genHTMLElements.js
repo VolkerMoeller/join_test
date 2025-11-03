@@ -263,7 +263,7 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
 
 function genHTMLFormAddTask(formId) {
     return `
-    <form id="${formId}" class="form-add" onsubmit="initCreateNewTask(); return false;">
+    <form id="${formId}" class="form-add form-add-float" onsubmit="initCreateNewTask(); return false;">
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>

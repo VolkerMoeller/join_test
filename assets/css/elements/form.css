@@ -275,6 +275,18 @@
     font-size: 20px;
 }
 
+/* form float */
+
+.form-add-float {
+    background-color: lightgreen;
+    border-radius: 30px;
+    padding: 64px 74px;
+}
+
+.form-add-float .form-inputs-frame-container {
+    justify-content: center;
+}
+
 @media (width <=1440px) {
 
     .form-inputs-frame-container {

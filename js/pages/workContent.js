@@ -14,8 +14,11 @@
 // 4th
 // currentNavView()
 
+// 5th
+// viewDefaultContent()
 
-// 1st
+
+// 1st:
 function showCurrentContent() {
     hideAllWorkContent();
     let selectedMenuBtn = getSelectedMenuBtn();
@@ -25,14 +28,14 @@ function showCurrentContent() {
 }
 
 
-// 2nd
+// 2nd:
 function showHelpContent() {
     hideAllWorkContent();
     document.getElementById('cntCenterHelp').classList.remove('display-none');
 }
 
 
-// 3rd
+// 3rd:
 function showInfoContentById(cntId) {
     resetNavigationView();
     hideAllWorkContent();
@@ -41,7 +44,7 @@ function showInfoContentById(cntId) {
 }
 
 
-// 4th
+// 4th:
 function currentNavView(currentBtnId) {
     let twinBtn = getTheButtonTwin(currentBtnId);
     resetNavigationView();
@@ -49,6 +52,13 @@ function currentNavView(currentBtnId) {
     setCurrentBtnById(currentBtnId);
     setCurrentBtnById(twinBtn);
     showLeftAndBottomMenu();
+}
+
+// 5th
+function viewDefaultContent(defaultBtnId) {
+    viewDefaultBtnById(defaultBtnId);
+    showCurrentContent();
+    initPageContent();
 }
 
 
@@ -81,6 +91,17 @@ function currentNavView(currentBtnId) {
 // setCurrentBtnById() --> workInitial.js
 // setCurrentBtnById() --> workInitial.js
 // showLeftAndBottomMenu()
+
+// 5th
+// ..
+// viewDefaultBtnById()
+// showCurrentContent() --> see above
+// initPageContent()
+
+// 6th
+// ..
+// resetSVGHvr()
+// currentNavView() --> workContent.js
 
 
 // 1st:
@@ -122,7 +143,7 @@ function provideCurrentContentId(menuBtnId) {
 }
 
 
-// 3rd
+// 3rd:
 // ..
 function setTxtBtnInfoById(cntId) {
     if (cntId == 'cntCenterPrivacy') {
@@ -140,11 +161,37 @@ function setTxtBtnInfoById(cntId) {
 }
 
 
-// 4th
+// 4th:
 // ..
 function showLeftAndBottomMenu() {
     setTimeout(() => {
         document.getElementById('left-menu').classList.remove('display-none');
         document.getElementById('btm-menu').classList.remove('display-none');
     }, 10);
+}
+
+
+// 5th:
+// ..
+function viewDefaultBtnById(defaultBtnId) {
+    resetSVGHvr();
+    currentNavView(defaultBtnId);
+}
+
+
+// 5th:
+// ..
+function initPageContent() {
+    new PageAssigns();
+}
+
+
+// 6th:
+// ..
+function resetSVGHvr() {
+    let svgIcons = document.querySelectorAll('.menu-icon-hvr');
+    svgIcons.forEach(svgIcon => {
+        svgIcon.classList.remove('menu-icon-hvr');
+        svgIcon.classList.add('menu-icon');
+    });
 }

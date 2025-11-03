@@ -333,7 +333,7 @@ function genHTMLFormAddTask(formId) {
                                 <input type="radio" id="lowBtn" name="priority" value="low" />
                                 <label class="label-frame" for="lowBtn">
                                     <span>Low</span>
-                                    <div class="prioBaja" w3-include-svg2nd="./assets/img/svgHTML/37-prioBaja.html"></div>
+                                    <div class="prioBaja" w3-include-svg-2nd="./assets/img/svgHTML/37-prioBaja.html"></div>
                                 </label>
                             </div>
                         </fieldset>

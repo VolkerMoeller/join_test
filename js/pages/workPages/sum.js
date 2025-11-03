@@ -14,6 +14,9 @@
 // 4th
 // updateSumContent()
 
+// 5th
+// initSumView()
+
 
 // 1st
 function toggleGreeting() {
@@ -47,6 +50,25 @@ async function updateSumContent() {
         let urgentTaskDate = await getUrgentTaskDate(tasks);
         let tasksgroups = new Tasksgroups(tasksCnts, urgentTaskDate);
         genSumContent(tasksgroups);
+    }
+}
+
+// 5th
+function initSumView() {
+    let windowWidth = getWindowWidth();
+    if (windowWidth > 1440) {
+        genWelcomeDesktop();
+        resetOverlayV2();
+    } else {
+        document.getElementById('ovlFrame').classList.add('ovl-fade-out');
+        genWelcomeMobile();
+        setTimeout(() => {
+            resetOverlayV2();
+        }, 2000);
+    }
+    let userStatus = loadLocalStorageObject('userStatus');
+    if (userStatus == 'user') {
+        toggleGreeting();
     }
 }
 

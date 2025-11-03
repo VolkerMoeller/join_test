@@ -75,6 +75,7 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 
 
 // .1st
+// ..
 // includeHTML() --> main.js
 // setClrSchemeInit() --> main.js
 // invertLogoClr() --> main.js
@@ -82,13 +83,15 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 // defaultNavView()
 // genHvrBtns()
 // genBtnUser()
-// initPageContent()
+// initPageContent() --> workContent.js
 
 // .2nd
+// ..
 // saveLocalStorageObject() --> main.js
 
 
-
+// .1st:
+// ..
 function defaultHeaderView() {
     let userStatus = readingUserStatus()
     if (userStatus == 'guest') { guestHeader(); }
@@ -96,6 +99,8 @@ function defaultHeaderView() {
 }
 
 
+// .1st:
+// ..
 function defaultNavView() {
     resetNavigationView();
     resetNavigationViewMbl();
@@ -105,6 +110,8 @@ function defaultNavView() {
 }
 
 
+// .1st:
+// ..
 async function genHvrBtns() {
     let btnRefs = {
         'btnBackHelp': ['bntBack4', 'showCurrentContent()'],
@@ -118,25 +125,8 @@ async function genHvrBtns() {
 }
 
 
-function initSumView() {
-    let windowWidth = getWindowWidth();
-    if (windowWidth > 1440) {
-        genWelcomeDesktop();
-        resetOverlayV2();
-    } else {
-        document.getElementById('ovlFrame').classList.add('ovl-fade-out');
-        genWelcomeMobile();
-        setTimeout(() => {
-            resetOverlayV2();
-        }, 2000);
-    }
-    let userStatus = loadLocalStorageObject('userStatus');
-    if (userStatus == 'user') {
-        toggleGreeting();
-    }
-}
-
-
+// .1st:
+// ..
 function genBtnUser() {
     let currentUser = loadLocalStorageObject('currentUser');
     document.getElementById('btnUser').innerHTML = '';
@@ -148,10 +138,14 @@ function genBtnUser() {
 // 2nd-level-functions:
 // --------------------
 
+// 1st
+// ...
 // readingUserStatus() --> main.js
 // guestHeader()
 // userHeader()
 
+// 1st
+// ...
 // resetNavigationView() --> main.js
 // setCurrentBtnById()
 // showLeftAndBottomMenu() --> see above
@@ -162,9 +156,13 @@ function genBtnUser() {
 // setCurrentBtnById() --> see above
 // showLeftAndBottomMenu() --> see above
 
+// 1st
+// ...
 // genHTMLHvrBtn() --> genHovBtn.js
 // includeHTMLById() --> main.js
 
+// 1st
+// ...
 // getWindowWidth() --> main.js
 // genWelcomeDesktop() --> sum.js
 // resetOverlayV2() --> main.js
@@ -173,13 +171,19 @@ function genBtnUser() {
 // loadLocalStorageObject() --> main.js
 // toggleGreeting() --> sum.js
 
+// 1st
+// ...
 // loadLocalStorageObject() --> main.js
 // genHTMLBtnUser() --> genHTMLElements.js
 
+// 1st
+// ...
 // loadLocalStorageObject() --> main.js
 // genHTMLSumRectCnt() --> genHTMLElements.js
 
 
+// 1st:
+// ...
 function guestHeader() {
     document.querySelector('.housing-header-right').classList.remove('display-none');
     document.querySelector('.header-user-btn').classList.add('display-none');
@@ -187,6 +191,8 @@ function guestHeader() {
 };
 
 
+// 1st:
+// ...
 function userHeader() {
     document.querySelector('.housing-header-right').classList.remove('display-none');
     document.querySelector('.header-user-btn').classList.remove('display-none');
@@ -194,6 +200,8 @@ function userHeader() {
 };
 
 
+// 1st:
+// ...
 function setCurrentBtnById(defBtnId) {
     let sumNavBtn = document.getElementById(defBtnId);
     if (sumNavBtn.classList.contains('menu-btn-hvr')) {
@@ -209,6 +217,8 @@ function setCurrentBtnById(defBtnId) {
 }
 
 
+// 1st:
+// ...
 function getTheButtonTwin(defBtnId) {
     let twinBtnId;
     switch (defBtnId) {

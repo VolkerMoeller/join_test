@@ -195,3 +195,24 @@ function resetSVGHvr() {
         svgIcon.classList.add('menu-icon');
     });
 }
+
+
+// --------------------
+// 2nd-level-functions:
+// --------------------
+
+// 5th
+// ...
+// resetSVGHvr()
+// currentNavView() --> workContent.js
+
+
+// 5th:
+// ...
+function resetSVGHvr() {
+    let svgIcons = document.querySelectorAll('.menu-icon-hvr');
+    svgIcons.forEach(svgIcon => {
+        svgIcon.classList.remove('menu-icon-hvr');
+        svgIcon.classList.add('menu-icon');
+    });
+}

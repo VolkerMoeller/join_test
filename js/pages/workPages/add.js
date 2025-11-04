@@ -127,6 +127,7 @@ function initOnclickDropDownClose(inputId) {
         dropDownCloseById('categoryList');
         resetAddElementsDefault(inputId);
         document.getElementById('categoryList').classList.remove('drop-up-anim');
+        enableBtnIfFormFilled();
     }
 }
 
@@ -377,6 +378,9 @@ async function genAddTaskForm() {
 // 29th
 function enableBtnIfFormFilled() {
     let formFilled = checkIfFormFilled();
+    if (formFilled == true) {
+        document.getElementById('submitBtnAddTask').disabled = false;
+    }
     console.log(formFilled);
 }
 

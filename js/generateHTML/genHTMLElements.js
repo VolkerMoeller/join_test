@@ -274,7 +274,7 @@ function genHTMLFormAddTask(formId) {
                         <label for="title">Title<span>*</span></label>
                         <div class="input-container">
                             <input class="version-2-t6" type="text" id="title" name="title" placeholder="Enter a title"
-                                autocomplete="off" required>
+                                autocomplete="off" required onkeyup="enableBtnIfFormFilled()">
                         </div>
                         <span class="version-warning-V2 ghost">ghost</span>
                     </div>
@@ -299,7 +299,7 @@ function genHTMLFormAddTask(formId) {
                         <div class="input-container">
                             <input class="version-2-t6" type="text" id="dueDate" name="dueDate" placeholder="dd/mm/yyyy"
                                 pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" autocomplete="off"
-                                required>
+                                required onkeyup="enableBtnIfFormFilled()">
                                 <div class="input-container-icon" onclick="focusInput('dueDate')">
                                     <div w3-include-svg-2nd="./assets/img/svgHTML/34-event.html"></div>
                                 </div>
@@ -369,7 +369,7 @@ function genHTMLFormAddTask(formId) {
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="category" name="category"
                                 autocomplete="off" placeholder="Select task category"
-                                onclick="initFocusInputSelect('category')" required>
+                                onclick="initFocusInputSelect('category')" required">
                                 <div id="dropDownCatOpen" class="input-container-icon"
                                     onclick="initOnclickDropDownOpen('category')">
                                     <button type="button" type="button"
@@ -439,7 +439,7 @@ function genHTMLFormAddTask(formId) {
                                 </button>
                             </div>
                             <div class="hover-container-v4 rel">
-                                <button class="btn-wo-icn btn-wth-icn version-btn" type="submit" onclick="getFormInputData()" disabled>Add
+                                <button id="submitBtnAddTask" class="btn-wo-icn btn-wth-icn version-btn" type="submit" onclick="getFormInputData()" disabled>Add
                                     Task
                                     <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/56-check_white.html">
                                     </div>

@@ -239,7 +239,13 @@
     width: 100%;
     display: flex;
     gap: 48px;
+    overflow: auto;
 }
+
+.form-inputs-frame-container::-webkit-scrollbar {
+    display: none;
+}
+
 
 .form-inputs-frame-container p {
     margin: 0px;
@@ -293,14 +299,11 @@
         flex-direction: column;
         align-items: center;
         gap: 16px;
-        margin-bottom: 64px;
-
     }
 
     .footnote {
         width: 100%;
         position: relative;
         width: clamp(0%, 100%, 440px);
-        bottom: 8px;
     }
 }

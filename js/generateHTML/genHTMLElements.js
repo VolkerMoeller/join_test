@@ -267,7 +267,7 @@ function genHTMLFormAddTask(formId) {
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>
-        <div id="formInputsContainer" class="form-inputs-frame-container">
+        <div class="form-inputs-frame-container">
             <div class="form-inputs-frame-v2">
                 <div class="form-inputs-v2">
                     <div class="housing-input">

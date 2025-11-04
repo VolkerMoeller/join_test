@@ -181,13 +181,13 @@ function resetOverlayFrameSubtask() {
 }
 
 
-// 14th
+// 14th:
 function setupSubtasksElementsOnTop() {
     document.getElementById('inputContainerSubtask').classList.add('z-index-4');
 }
 
 
-// 15th
+// 15th:
 function closeSubtaskInput() {
     closeInput('subtask');
     hideSubtaskPanel();

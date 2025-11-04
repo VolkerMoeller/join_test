@@ -134,6 +134,18 @@
     left: calc(440px + 96px + 2px + 104px);
 }
 
+.form-panel-add-task .hover-container-v4 .btn-wo-icn:disabled {
+    background-color: var(--input-border);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.form-panel-add-task .hover-container-v4 .btn-wo-icn:hover:disabled {
+    background-color: var(--input-border);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
 /* frame sign */
 
 .frame-sign {
@@ -200,7 +212,7 @@
     .form-panel-add-task {
         position: relative;
         width: 396px;
-        bottom: unset;
+        bottom: 16px;
         left: unset;
     }
 

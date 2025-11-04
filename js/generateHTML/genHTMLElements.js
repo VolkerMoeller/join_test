@@ -439,7 +439,7 @@ function genHTMLFormAddTask(formId) {
                                 </button>
                             </div>
                             <div class="hover-container-v4 rel">
-                                <button class="btn-wo-icn btn-wth-icn version-btn" type="submit" onclick="getFormInputData()">Add
+                                <button class="btn-wo-icn btn-wth-icn version-btn" type="submit" onclick="getFormInputData()" disabled>Add
                                     Task
                                     <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/56-check_white.html">
                                     </div>

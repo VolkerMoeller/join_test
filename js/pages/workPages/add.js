@@ -369,7 +369,7 @@ function searchContactsByInput() {
 // 28th
 async function genAddTaskForm() {
     document.getElementById('mainCenterAdd').innerHTML = '';
-    document.getElementById('mainCenterAdd').innerHTML = genHTMLFormAddTask('formAddTask', 'title');
+    document.getElementById('mainCenterAdd').innerHTML = genHTMLFormAddTask('formAddTask');
     await includeHTMLById('w3-include-svg-2nd');
 }
 

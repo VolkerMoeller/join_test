@@ -261,9 +261,9 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
     `;
 }
 
-function genHTMLFormAddTask(formId, title) {
+function genHTMLFormAddTask() {
     return `
-    <form id="${formId}" class="form-add" onsubmit="initCreateNewTask(); return false;">
+    <form id="formAddTask" class="form-add" onsubmit="initCreateNewTask(); return false;">
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>
@@ -273,7 +273,7 @@ function genHTMLFormAddTask(formId, title) {
                     <div class="housing-input">
                         <label for="title">Title<span>*</span></label>
                         <div class="input-container">
-                            <input class="version-2-t6" type="text" id="${title}" name="title" placeholder="Enter a title"
+                            <input class="version-2-t6" type="text" id="title" name="title" placeholder="Enter a title"
                                 autocomplete="off" required onkeyup="enableBtnIfFormFilled()">
                         </div>
                         <span class="version-warning-V2 ghost">ghost</span>

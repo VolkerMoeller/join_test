@@ -92,7 +92,6 @@ function initFocusInputSelect(inputId) {
 // 5th
 
 function initOnclickDropDownOpen(inputId) {
-    let floatAddTask = document.querySelector('.form-add-float');
     if (inputId == 'assigned') {
         justOpened = selectAssignedBtnDefault();
     }

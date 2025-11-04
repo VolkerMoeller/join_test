@@ -263,7 +263,7 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
 
 function genHTMLFormAddTask(formId) {
     return `
-    <form id="${formId}" class="form-add form-add-float" onsubmit="initCreateNewTask(); return false;">
+    <form id="${formId}" class="form-add" onsubmit="initCreateNewTask(); return false;">
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>
@@ -423,30 +423,26 @@ function genHTMLFormAddTask(formId) {
                             <div id="subtaskListInput" class="user-subtasks user-subtasks-list-inputs">
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-inputs-frame-container addTask-panel-container">
-            <div class="form-inputs-frame-v2 "></div>
-            <div class="ghost"></div>
-            <div class="form-panel-add-task">
-                <div class="hover-container-v3 rel">
-                    <button class="btn-wo-icn-2nd btn-wth-icn version-btn" type="button"
-                        onclick="resetFormAddTask()">Clear
-                        <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/55-iconoir_cancel.html">
                         </div>
-                    </button>
-                </div>
-                <div class="hover-container-v4 rel">
-                    <button class="btn-wo-icn btn-wth-icn version-btn" type="submit" onclick="getFormInputData()">Add
-                        Task
-                        <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/56-check_white.html">
                         </div>
-                    </button>
-                </div>
-            </div>
-        </div>
+                        </div>
+                        </div>
+                        <div class="form-panel-add-task">
+                            <div class="hover-container-v3 rel">
+                                <button class="btn-wo-icn-2nd btn-wth-icn version-btn" type="button"
+                                    onclick="resetFormAddTask()">Clear
+                                    <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/55-iconoir_cancel.html">
+                                    </div>
+                                </button>
+                            </div>
+                            <div class="hover-container-v4 rel">
+                                <button class="btn-wo-icn btn-wth-icn version-btn" type="submit" onclick="getFormInputData()">Add
+                                    Task
+                                    <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/56-check_white.html">
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
         <div class="footnote version-2-body">
             <span class="version-warning-V2">*</span>This field is required
         </div>

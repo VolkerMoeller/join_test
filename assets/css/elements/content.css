@@ -1,7 +1,8 @@
 .main-center {
     height: 100%;
     position: relative;
-    padding: 96px;
+    /* padding: 96px; */
+    padding: 96px 0px 152px 96px;
 }
 
 .main-center-header {

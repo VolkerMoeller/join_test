@@ -124,15 +124,15 @@
 }
 
 .form-panel-add-task {
-    width: clamp(0%, 100%, 440px);
     display: flex;
     justify-content: end;
+    align-items: center;
     gap: 21px;
-    position: sticky;
-    bottom: 56px;
     z-index: 2;
+    position: absolute;
+    bottom: -72px;
+    left: calc(440px + 96px + 2px + 104px);
 }
-
 
 /* frame sign */
 
@@ -246,15 +246,8 @@
     display: none;
 }
 
-
 .form-inputs-frame-container p {
     margin: 0px;
-}
-
-.addTask-panel-container {
-    position: absolute;
-    top: calc(100vh - 360px);
-
 }
 
 .form-title-v2 {

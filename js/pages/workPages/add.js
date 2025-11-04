@@ -30,6 +30,7 @@
 // 26th
 // 27th searchContactsByInput()
 // 28th genAddTaskForm()
+// 29th checkIfFormFilled()
 
 
 // 1st
@@ -370,6 +371,17 @@ async function genAddTaskForm() {
     let formId = 'formAddTask';
     document.getElementById('mainCenterAdd').innerHTML = genHTMLFormAddTask(formId);
     await includeHTMLById('w3-include-svg-2nd');
+}
+
+
+// 29th
+function checkIfFormFilled() {
+    let formFilled = false;
+    let title = document.getElementById('title').value;
+    let dueDate = document.getElementById('dueDate').value;
+    let category = document.getElementById('category').value;
+    if (title && dueDate && category) { formFilled = true }
+    return formFilled;
 }
 
 

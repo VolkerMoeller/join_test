@@ -4,11 +4,15 @@
 
 // 1st
 // initAnimSignMessages
-// ---
+
 // 2nd
 // initAnimWorkMessages
 
+// 3rd
+// initAnimAddTaskFloat
 
+
+// 1st:
 function initAnimSignMessages() {
     let currentForm = checkCurrentSignForm();
     resetSignElementsOnTop();
@@ -21,24 +25,36 @@ function initAnimSignMessages() {
 }
 
 
+// 2nd:
 function initAnimWorkMessages(form) {
     animWorkMessages(form);
 }
+
+
+// 3rd:
+async function initAnimAddTaskFloat() {
+    await includeHTMLById('w3-include-overlay');
+    showOverlayForMsg();
+    genFloatingAddTask();
+}
+
 
 
 // --------------------
 // 1st-level-functions:
 // --------------------
 
+// .1st
 // checkCurrentSignForm()
 // resetSignElementsOnTop()
 // animSignMessages()
 // switchToLoginForm()
-// ---
+
+// .2nd
 // animWorkMessages()
 
 
-// .1st
+// .1st:
 function checkCurrentSignForm() {
     let form = 'LogIn';
     let element = document.querySelector('.form-title');
@@ -49,7 +65,7 @@ function checkCurrentSignForm() {
 }
 
 
-// .1st
+// .1st:
 function resetSignElementsOnTop() {
     let selectors = ['.input-container', '.form-sign input', '.cnt-right button', '.outside-bottom a', '.form-btn-back', '.clr-scheme-panel', '.accept-terms-container'];
     for (let i = 0; i < selectors.length; i++) {
@@ -63,7 +79,7 @@ function resetSignElementsOnTop() {
 }
 
 
-// .1st
+// .1st:
 function animSignMessages(currentForm) {
     showOverlayForMsg();
     showCurrentMessage(currentForm);
@@ -74,7 +90,7 @@ function animSignMessages(currentForm) {
 }
 
 
-// .1st
+// .1st:
 function switchToLoginForm(currentForm) {
     if (currentForm == 'SignUp') {
         toggleSignFormsBack();
@@ -82,7 +98,7 @@ function switchToLoginForm(currentForm) {
 }
 
 
-// .2nd
+// .2nd:
 async function animWorkMessages(currentForm) {
     await includeHTMLById('w3-include-overlay');
     showOverlayForMsgV2();
@@ -99,7 +115,7 @@ async function animWorkMessages(currentForm) {
 // --------------------
 
 // showOverlayForMsgV2() --> main.js
-// showCurrentMessage()
+// showCurrentMessage() --> main.js
 // slideMessages()
 // resetOverlay() --> main.js
 
@@ -129,6 +145,7 @@ function slideMessages(currentForm) {
         document.querySelector('.msg-btm-cnt-mbl').classList.add('from-bottom-to-center-mbl-v2');
     }
 }
+
 
 // --------------------
 // 3rd-level-functions:

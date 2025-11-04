@@ -290,9 +290,13 @@
 /* form float */
 
 .form-add-float {
-    background-color: lightgreen;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--white);
     border-radius: 30px;
     padding: 64px 74px;
+    height: unset;
 }
 
 .form-add-float .form-inputs-frame-container {

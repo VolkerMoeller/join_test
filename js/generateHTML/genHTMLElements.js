@@ -261,9 +261,9 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
     `;
 }
 
-function genHTMLFormAddTask() {
+function genHTMLFormAddTask(float = '') {
     return `
-    <form id="formAddTask" class="form-add" onsubmit="initCreateNewTask(); return false;">
+    <form id="formAddTask" class="form-add ${float}" onsubmit="initCreateNewTask(); return false;">
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>
@@ -403,17 +403,15 @@ function genHTMLFormAddTask() {
                         <label for="title">Subtasks</label>
                         <div id="inputContainerSubtask" class="input-container">
                             <input class="version-2-t6" type="text" id="subtask" name="subtask"
-                                placeholder="Add new subtask" autocomplete="off"
-                                onfocus="initShowSubtaskPanel('subtask')">
-                                <div id="inputSubtaskPanel" class="input-subtask-panel subtask-panel-v1 display-none">
-                                    <div class="flx-cnt" onclick="closeSubtaskInput()"
-                                        w3-include-svg-2nd="./assets/img/svgHTML/52-close_hvr.html">
-                                    </div>
-                                    <p class="subtask-vector"></p>
-                                    <div class="flx-cnt" w3-include-svg-2nd="./assets/img/svgHTML/51-check_hvr.html"
-                                        onclick="initCreateNewSubtask()"></div>
+                                placeholder="Add new subtask" autocomplete="off" onfocus="initShowSubtaskPanel('subtask')">
+                            <div id="inputSubtaskPanel" class="input-subtask-panel subtask-panel-v1 display-none">
+                                <div class="flx-cnt" onclick="closeSubtaskInput()"
+                                    w3-include-svg-2nd="./assets/img/svgHTML/52-close_hvr.html">
                                 </div>
-                                <span class="version-warning-V2 ghost">ghost</span>
+                                <p class="subtask-vector"></p>
+                                <div class="flx-cnt" w3-include-svg-2nd="./assets/img/svgHTML/51-check_hvr.html" onclick="initCreateNewSubtask()"></div>
+                            </div>
+                            <span class="version-warning-V2 ghost">ghost</span>
                         </div>
                         <div class="subtasks-list-container">
                             <ul id="subtaskListText" class="user-subtasks user-subtasks-list-text">

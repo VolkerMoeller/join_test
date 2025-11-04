@@ -17,9 +17,11 @@
 // 5th
 // genFloatingContact()
 
+// 6th
+// genFloatingAddTask()
 
 
-// 1st 
+// 1st: 
 async function genContactsListBtn() {
     let contacts = await getContactsSort();
     let indexTabs = [];
@@ -39,7 +41,7 @@ async function genContactsListBtn() {
 }
 
 
-// 2nd
+// 2nd:
 async function initClickedContactBtn(indexBtn, contactId) {
     let justBtnId = 'contactsListBtn' + indexBtn;
     let alreadyBtnId = getAlreadyClickedBtnId();
@@ -73,7 +75,7 @@ async function initClickedContactBtn(indexBtn, contactId) {
 }
 
 
-// 3rd
+// 3rd:
 function showResponsiveView() {
     let mobileView = checkIfMobileView();
     if (mobileView) {
@@ -86,7 +88,7 @@ function showResponsiveView() {
 }
 
 
-// 4th
+// 4th:
 function toggleContactMobileView() {
     let mobileView = checkIfMobileView();
     if (mobileView) {
@@ -103,7 +105,7 @@ function toggleContactMobileView() {
 }
 
 
-// 5th
+// 5th:
 async function genFloatingContact(contactId, contacts) {
     document.getElementById('floatingContactFrame').innerHTML = '';
     let color = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'color');
@@ -112,6 +114,15 @@ async function genFloatingContact(contactId, contacts) {
     let email = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'eMail');
     let phone = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'phone');
     document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color, initial, name, email, phone);
+    await includeHTMLById('w3-include-svg-2nd');
+}
+
+
+// 6th:
+async function genFloatingAddTask() {
+    document.getElementById('mainCenterAdd').innerHTML = '';
+    let float
+    document.getElementById('formContactsAddTask').innerHTML = genHTMLFormAddTask('form-add-float');
     await includeHTMLById('w3-include-svg-2nd');
 }
 

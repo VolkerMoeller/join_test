@@ -111,10 +111,12 @@ function initOnclickDropDownOpen(inputId) {
 
 // 6th
 function initOnclickDropDownClose(inputId) {
+    let floatAddTask = document.querySelector('.form-add-float');
+    console.log(floatAddTask);
     if (inputId == 'assigned') {
         showBadgeList();
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
-        resetOverlayFrame();
+        if (!floatAddTask) resetOverlayFrame();
         emptyInputFieldById(inputId);
         dropDownCloseById('userContactList');
         resetAddElementsDefault(inputId);
@@ -123,7 +125,7 @@ function initOnclickDropDownClose(inputId) {
     }
     if (inputId == 'category') {
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
-        resetOverlayFrame();
+        if (!floatAddTask) resetOverlayFrame();
         dropDownCloseById('categoryList');
         resetAddElementsDefault(inputId);
         document.getElementById('categoryList').classList.remove('drop-up-anim');

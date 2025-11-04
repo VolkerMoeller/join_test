@@ -288,7 +288,6 @@ function genHTMLFormAddTask() {
                             <div class="input-container-icon description-icon">
                                 <div w3-include-svg-2nd="./assets/img/svgHTML/33-recurso.html"></div>
                             </div>
-
                         </div>
                         <span class="version-warning-V2 ghost">ghost</span>
                     </div>

@@ -198,23 +198,10 @@
     }
 
     .form-panel-add-task {
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        gap: 21px;
-        z-index: 2;
         position: relative;
-        width: 440px;
+        width: 396px;
         bottom: unset;
         left: unset;
-        /* bottom: -72px; */
-        /* left: calc(440px + 96px + 2px + 104px); */
-        /* background-color: var(--main-background);
-        position: fixed;
-        top: calc(100vh - 180px);
-        right: auto;
-        display: flex;
-        padding-top: 18px; */
     }
 
     .form-panel-add-task-ghost {

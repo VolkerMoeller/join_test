@@ -166,17 +166,16 @@ function hideSubtaskPanel() {
     document.getElementById('inputSubtaskPanel').classList.add('display-none');
 }
 
-// 12th
-
+// 12th:
 function initShowSubtaskPanel(inputId) {
     handleOverlayForSubtasks(inputId);
     showSubtaskPanel();
 }
 
-// 13th
-
+// 13th:
 function resetOverlayFrameSubtask() {
-    resetOverlayFrame();
+    let floatAddTask = document.querySelector('.form-add-float');
+    if (!floatAddTask) resetOverlayFrame();
     hideSubtaskPanel();
     document.getElementById('inputContainerSubtask').classList.remove('z-index-4')
 }
@@ -557,8 +556,7 @@ async function getContactsSort() {
 
 
 // .25th
-async function getArrOfUserContacts(userId) {
-    // let userContacts = await loadData(`users/${userId}/contacts`);
+async function getArrOfUserContacts() {
     let userContacts = await getContactsFromFirebase();
     userContacts = Object.values(userContacts);
     return userContacts;
@@ -595,18 +593,6 @@ function checkIfFormFilled() {
     if (title && dueDate && category) { formFilled = true }
     return formFilled;
 }
-
-
-// function getArrsOfBadgeData(userContacts) {
-//     let colorsArr = [];
-//     let initialsArr = [];
-//     userContacts = Object.values(userContacts);
-//     userContacts.forEach(element => {
-//         colorsArr.push(element['color']);
-//         initialsArr.push(element['initial']);
-//     });
-//     return [colorsArr, initialsArr];
-// }
 
 
 function getArrsOfBadgeData(userContactsSort) {

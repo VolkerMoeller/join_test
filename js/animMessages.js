@@ -36,6 +36,9 @@ async function initAnimAddTaskFloat() {
     await includeHTMLById('w3-include-overlay');
     showOverlayForMsg();
     genFloatingAddTask();
+    scrollElementToTop('mainCenterAdd');
+    genUserContactList();
+    genContactBadges();
 }
 
 

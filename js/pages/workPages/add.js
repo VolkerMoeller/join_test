@@ -92,6 +92,7 @@ function initFocusInputSelect(inputId) {
 // 5th
 
 function initOnclickDropDownOpen(inputId) {
+    let floatAddTask = document.querySelector('.form-add-float');
     if (inputId == 'assigned') {
         justOpened = selectAssignedBtnDefault();
     }
@@ -112,7 +113,6 @@ function initOnclickDropDownOpen(inputId) {
 // 6th
 function initOnclickDropDownClose(inputId) {
     let floatAddTask = document.querySelector('.form-add-float');
-    console.log(floatAddTask);
     if (inputId == 'assigned') {
         showBadgeList();
         toggleElements('dropDownAssOpen', 'dropDownAssClose');

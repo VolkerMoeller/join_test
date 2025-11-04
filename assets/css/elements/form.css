@@ -198,12 +198,23 @@
     }
 
     .form-panel-add-task {
-        background-color: var(--main-background);
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 21px;
+        z-index: 2;
+        position: relative;
+        width: 440px;
+        bottom: unset;
+        left: unset;
+        /* bottom: -72px; */
+        /* left: calc(440px + 96px + 2px + 104px); */
+        /* background-color: var(--main-background);
         position: fixed;
         top: calc(100vh - 180px);
         right: auto;
         display: flex;
-        padding-top: 18px;
+        padding-top: 18px; */
     }
 
     .form-panel-add-task-ghost {
@@ -262,15 +273,19 @@
     margin: 0;
 }
 
-.footnote {
+.footnote-dsk {
     position: absolute;
     left: 0;
     bottom: -68px;
 }
 
-.footnote span {
+.footnote-dsk span {
     color: var(--warning-V2);
     font-size: 20px;
+}
+
+.footnote-mbl {
+    display: none;
 }
 
 /* form float */
@@ -293,9 +308,12 @@
         gap: 16px;
     }
 
-    .footnote {
-        width: 100%;
-        position: relative;
-        width: clamp(0%, 100%, 440px);
+    .footnote-dsk {
+        display: none;
+    }
+
+    .footnote-mbl {
+        display: flex;
+        padding-top: 8px;
     }
 }

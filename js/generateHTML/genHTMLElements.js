@@ -423,6 +423,9 @@ function genHTMLFormAddTask(formId) {
                             <div id="subtaskListInput" class="user-subtasks user-subtasks-list-inputs">
                             </div>
                         </div>
+                                <div class="footnote-mbl version-2-body">
+            <span class="version-warning-V2">*</span>This field is required
+        </div>
                         </div>
                         </div>
                         </div>
@@ -443,7 +446,7 @@ function genHTMLFormAddTask(formId) {
                                 </button>
                             </div>
                         </div>
-        <div class="footnote version-2-body">
+        <div class="footnote-dsk version-2-body">
             <span class="version-warning-V2">*</span>This field is required
         </div>
     </form>

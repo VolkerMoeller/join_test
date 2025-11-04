@@ -30,7 +30,7 @@
 // 26th
 // 27th searchContactsByInput()
 // 28th genAddTaskForm()
-// 29th checkIfFormFilled()
+// 29th enableBtnIfFormFilled()
 
 
 // 1st
@@ -375,13 +375,9 @@ async function genAddTaskForm() {
 
 
 // 29th
-function checkIfFormFilled() {
-    let formFilled = false;
-    let title = document.getElementById('title').value;
-    let dueDate = document.getElementById('dueDate').value;
-    let category = document.getElementById('category').value;
-    if (title && dueDate && category) { formFilled = true }
-    return formFilled;
+function enableBtnIfFormFilled() {
+    let formFilled = checkIfFormFilled();
+    console.log(formFilled);
 }
 
 
@@ -445,7 +441,10 @@ function checkIfFormFilled() {
 // getUserContactsSort()
 // userFirst()
 // getArrsOfBadgeData()
-// genHTMLUserContactListBtn() --> genHTMLELements.js
+// genHTMLUserContactListBtn() --> genHTMLELements.
+
+// .29th
+// checkIfFormFilled
 
 
 function resetInputAssigned() {
@@ -580,6 +579,17 @@ function userFirst(userContactsSort) {
     fstContactId++;
     userContactsSort.splice(fstContactId, 1);
     return userContactsSort;
+}
+
+
+// .29th:
+function checkIfFormFilled() {
+    let formFilled = false;
+    let title = document.getElementById('title').value;
+    let dueDate = document.getElementById('dueDate').value;
+    let category = document.getElementById('category').value;
+    if (title && dueDate && category) { formFilled = true }
+    return formFilled;
 }
 
 

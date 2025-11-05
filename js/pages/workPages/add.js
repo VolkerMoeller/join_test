@@ -168,8 +168,9 @@ function hideSubtaskPanel() {
 
 // 12th:
 function initShowSubtaskPanel(inputId) {
-    // handleOverlayForSubtasks(inputId);
+    // handleOverlayForSubtasks(inpu tId);
     showSubtaskPanel();
+    scrollElementToBottom('formInputsFrameContainer');
 }
 
 // 13th:
@@ -192,6 +193,7 @@ function closeSubtaskInput() {
     closeInput('subtask');
     hideSubtaskPanel();
     resetOverlayFrameSubtask();
+    scrollElementToTop('formInputsFrameContainer');
 }
 
 

@@ -368,16 +368,16 @@ function genHTMLFormAddTask(float = '') {
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="category" name="category"
                                 autocomplete="off" placeholder="Select task category" onclick="initFocusInputSelect('category')" required">
-                                <div id="dropDownCatOpen" class="input-container-icon"
-                                    onclick="initOnclickDropDownOpen('category')">
-                                    <button type="button" type="button"
-                                        w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
-                                </div>
-                                <div id="dropDownCatClose" class="input-container-icon display-none"
-                                    onclick="initOnclickDropDownClose('category')">
-                                    <button type="button" type="button"
-                                        w3-include-svg-2nd="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
-                                </div>
+                            <div id="dropDownCatOpen" class="input-container-icon"
+                                onclick="initOnclickDropDownOpen('category')">
+                                <button type="button" type="button"
+                                    w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
+                            </div>
+                            <div id="dropDownCatClose" class="input-container-icon display-none"
+                                onclick="initOnclickDropDownClose('category')">
+                                <button type="button" type="button"
+                                    w3-include-svg-2nd="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
+                            </div>
                         </div>
                         <fieldset id="categoryList" class="category-list">
                             <div class="radio-frame">
@@ -426,7 +426,7 @@ function genHTMLFormAddTask(float = '') {
                 </div>
             </div>
         </div>
-        <span class="ghost">ghost</span>
+        <span class="ghost" style="height: 12px">ghost</span>
         <div class="form-panel-add-task">
             <div class="hover-container-v3 rel">
                 <button class="btn-wo-icn-2nd btn-wth-icn version-btn" type="button"

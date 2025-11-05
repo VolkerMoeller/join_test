@@ -28,19 +28,8 @@ function initAnimSignMessages() {
 // 2nd:
 function initAnimWorkMessages(form) {
     animWorkMessages(form);
+    resetOverlay();
 }
-
-
-// 3rd:
-async function initAnimAddTaskFloat() {
-    await includeHTMLById('w3-include-overlay');
-    showOverlayForMsg();
-    genFloatingAddTask();
-    scrollElementToTop('mainCenterAdd');
-    genUserContactList();
-    genContactBadges();
-}
-
 
 
 // --------------------

@@ -104,7 +104,8 @@
 /* frame add task (v2) left */
 
 .form-inputs-frame-v2 {
-    width: clamp(0%, 100%, 440px);
+    /* width: clamp(0%, 100%, 440px); */
+    width: 440px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -148,7 +149,7 @@
 /* frame add task (v3) right*/
 
 .form-inputs-frame-v3 {
-    width: clamp(0%, 100%, 440px);
+    width: 440px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -295,8 +296,13 @@
     }
 
     .form-inputs-frame-v2 {
+        width: 392px;
         align-items: center;
         gap: 8px;
+    }
+
+    .form-inputs-frame-v3 {
+        width: 392px;
     }
 
     .form-inputs-v2 input {

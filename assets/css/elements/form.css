@@ -304,6 +304,9 @@
 }
 
 @media (width <=1440px) {
+    .form-add span:nth-child(3) {
+        height: 0;
+    }
 
     .form-inputs-frame-container {
         flex-direction: column;

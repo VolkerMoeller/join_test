@@ -426,6 +426,7 @@ function genHTMLFormAddTask(float = '') {
                 </div>
             </div>
         </div>
+        <span class="ghost">ghost</span>
         <div class="form-panel-add-task">
             <div class="hover-container-v3 rel">
                 <button class="btn-wo-icn-2nd btn-wth-icn version-btn" type="button"

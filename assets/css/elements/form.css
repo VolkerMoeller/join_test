@@ -306,7 +306,7 @@
     transform: translate(200%, -50%);
     background-color: var(--main-background);
     border-radius: 30px;
-    padding: 64px 74px;
+    padding: 64px 74px 140px 74px;
     height: 860px;
     opacity: 0;
 }

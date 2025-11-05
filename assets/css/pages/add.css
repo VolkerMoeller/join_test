@@ -1,6 +1,7 @@
 .add-task-vector {
     border-radius: 1px;
     border: solid 1px var(--input-border);
+    height: 435px;
 }
 
 .drop-down-icn {
@@ -241,6 +242,10 @@
     flex-direction: column;
     gap: 8px;
     width: 100%;
+}
+
+.subtasks-list-container ul {
+    background-color: var(--main-background);
 }
 
 .user-subtasks-list-inputs {

@@ -296,7 +296,7 @@
     background-color: var(--white);
     border-radius: 30px;
     padding: 64px 74px;
-    height: unset;
+    height: 860px;
 }
 
 .form-add-float .form-inputs-frame-container {

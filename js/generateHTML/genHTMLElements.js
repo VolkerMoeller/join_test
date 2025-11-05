@@ -267,10 +267,10 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '')
         <div class="form-btn-back btn-back-addTask">
             <button id="btnBack5Hvr" type="button" class="display-none" onclick="toggleSignFormsBack()"
                 onmouseleave="toggleElements('btnBack5','btnBack5Hvr')"
-                w3-include-svg-2nd="./assets/img/svgHTML/6-leftArrowHover.html">
+                w3-include-svg-2nd="./assets/img/svgHTML/61-close-hvr.html">
             </button>
             <button id="btnBack5" type="button" onmouseover="toggleElements('btnBack5','btnBack5Hvr')"
-                w3-include-svg-2nd="./assets/img/svgHTML/7-leftArrow.html">
+                w3-include-svg-2nd="./assets/img/svgHTML/60-close-def.html">
             </button>
         </div>
         <div class="form-title-v2">

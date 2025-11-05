@@ -304,7 +304,7 @@
     position: absolute;
     top: 50%;
     transform: translate(200%, -50%);
-    background-color: var(--white);
+    background-color: var(--main-background);
     border-radius: 30px;
     padding: 64px 74px;
     height: 860px;

@@ -261,7 +261,7 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
     `;
 }
 
-function genHTMLFormAddTask(float = '') {
+function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '') {
     return `
     <form id="formAddTask" class="form-add ${float}" onsubmit="initCreateNewTask(); return false;">
         <div class="form-title-v2">
@@ -426,7 +426,7 @@ function genHTMLFormAddTask(float = '') {
                 </div>
             </div>
         </div>
-        <div class="form-panel-add-task">
+        <div class="form-panel-add-task ${formPanelFloat}">
             <div class="hover-container-v3 rel">
                 <button class="btn-wo-icn-2nd btn-wth-icn version-btn" type="button"
                     onclick="resetFormAddTask()">Clear
@@ -440,7 +440,7 @@ function genHTMLFormAddTask(float = '') {
                 </button>
             </div>
         </div>
-        <div class="footnote-dsk version-2-body">
+        <div class="footnote-dsk ${footnoteFloat} version-2-body">
             <span class="version-warning-V2">*</span>This field is required
         </div>
     </form>

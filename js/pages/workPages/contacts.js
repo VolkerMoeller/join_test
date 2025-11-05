@@ -121,7 +121,7 @@ async function genFloatingContact(contactId, contacts) {
 // 6th:
 async function genFloatingAddTask() {
     document.getElementById('mainCenterAdd').innerHTML = '';
-    document.getElementById('formContactsAddTask').innerHTML = genHTMLFormAddTask('form-add-float');
+    document.getElementById('formContactsAddTask').innerHTML = genHTMLFormAddTask('form-add-float', 'footnote-dsk-float', 'form-panel-float');
     await includeHTMLById('w3-include-svg-2nd');
 }
 

@@ -134,6 +134,11 @@
     left: calc(440px + 96px + 2px + 104px);
 }
 
+.form-panel-float {
+    bottom: 74px;
+    left: calc(74px + 440px + 96px + 2px + 100px);
+}
+
 .form-panel-add-task .hover-container-v4 .btn-wo-icn:disabled {
     background-color: var(--input-border);
     box-shadow: none;
@@ -145,6 +150,7 @@
     box-shadow: none;
     cursor: not-allowed;
 }
+
 
 /* frame sign */
 
@@ -276,6 +282,11 @@
     position: absolute;
     left: 0;
     bottom: -68px;
+}
+
+.footnote-dsk-float {
+    left: 74px;
+    bottom: 74px;
 }
 
 .footnote-dsk span {

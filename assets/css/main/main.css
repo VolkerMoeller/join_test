@@ -256,6 +256,8 @@ legend {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 59px;
+    width: 141px;
 }
 
 .only-resp {

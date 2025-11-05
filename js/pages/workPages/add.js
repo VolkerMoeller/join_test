@@ -168,7 +168,7 @@ function hideSubtaskPanel() {
 
 // 12th:
 function initShowSubtaskPanel(inputId) {
-    handleOverlayForSubtasks(inputId);
+    // handleOverlayForSubtasks(inputId);
     showSubtaskPanel();
 }
 

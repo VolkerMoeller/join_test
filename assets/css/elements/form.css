@@ -303,12 +303,56 @@
 .form-add-float {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(200%, -50%);
     background-color: var(--white);
     border-radius: 30px;
     padding: 64px 74px;
     height: 860px;
+    opacity: 0;
 }
+
+.form-add-anim-show {
+    animation-duration: 500ms;
+    animation-name: float-add-task;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes float-add-task {
+    from {
+        transform: translate(200%, -50%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0%, -50%);
+        opacity: 1;
+    }
+}
+
+.form-add-anim-hide {
+    animation-duration: 500ms;
+    animation-name: float-add-task-v2;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes float-add-task-v2 {
+    from {
+        transform: translate(0%, -50%);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(200%, -50%);
+        opacity: 0;
+    }
+}
+
+
+
+
 
 .form-add-float .form-inputs-frame-container {
     justify-content: center;

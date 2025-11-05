@@ -261,9 +261,9 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
     `;
 }
 
-function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '', state = 'display-none') {
+function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '', state = 'display-none', anim) {
     return `
-    <form id="formAddTask" class="form-add ${float}" onsubmit="initCreateNewTask(); return false;">
+    <form id="formAddTask" class="form-add ${float} ${anim}" onsubmit="initCreateNewTask(); return false;">
         <div class="form-btn-back btn-back-addTask ${state}">
             <button id="btnBack5Hvr" type="button" class="display-none" onclick="toggleSignFormsBack()"
                 onmouseleave="toggleElements('btnBack5','btnBack5Hvr')"

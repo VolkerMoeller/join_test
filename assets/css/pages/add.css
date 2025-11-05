@@ -323,6 +323,13 @@
     }
 }
 
+
+.btn-back-addTask {
+    top: 64px;
+    left: unset;
+    right: 32px;
+}
+
 @media (width <=1440px) {
     .add-task-vector {
         display: none;

@@ -264,6 +264,15 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
 function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '') {
     return `
     <form id="formAddTask" class="form-add ${float}" onsubmit="initCreateNewTask(); return false;">
+        <div class="form-btn-back btn-back-addTask">
+            <button id="btnBack5Hvr" type="button" class="display-none" onclick="toggleSignFormsBack()"
+                onmouseleave="toggleElements('btnBack5','btnBack5Hvr')"
+                w3-include-svg-2nd="./assets/img/svgHTML/6-leftArrowHover.html">
+            </button>
+            <button id="btnBack5" type="button" onmouseover="toggleElements('btnBack5','btnBack5Hvr')"
+                w3-include-svg-2nd="./assets/img/svgHTML/7-leftArrow.html">
+            </button>
+        </div>
         <div class="form-title-v2">
             <h1>Add Task</h1>
         </div>

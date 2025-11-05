@@ -14,10 +14,13 @@ async function initCreateNewTask() {
     let newTask = await createNewTask();
     console.log(newTask);
     initAnimWorkMessages('addTask');
-    setTimeout(() => {
-        resetFormAddTask();
-        viewDefaultContent('mnuBtn4th');
-    }, 800);
+    let floatAddTask = document.querySelector('.form-add-float');
+    if (!floatAddTask) {
+        setTimeout(() => {
+            resetFormAddTask();
+            viewDefaultContent('mnuBtn4th');
+        }, 800);
+    }
 }
 
 

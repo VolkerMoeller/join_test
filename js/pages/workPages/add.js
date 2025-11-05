@@ -245,9 +245,8 @@ function updateCurrentSubtaskId() {
 }
 
 
-// 20th
+// 20th:
 function resetFormAddTask() {
-    resetFormById('formAddTask');
     saveLocalStorageObject('currentSubtaskId', '0');
     saveLocalStorageObject('currentSubtaskObj', {});
     document.getElementById('subtaskListText').innerHTML = '';

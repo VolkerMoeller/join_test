@@ -121,7 +121,6 @@ async function genFloatingContact(contactId, contacts) {
 // 6th:
 async function genFloatingAddTask() {
     document.getElementById('mainCenterAdd').innerHTML = '';
-    let float
     document.getElementById('formContactsAddTask').innerHTML = genHTMLFormAddTask('form-add-float');
     await includeHTMLById('w3-include-svg-2nd');
 }

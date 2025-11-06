@@ -19,12 +19,14 @@
 .btn-add-new-contact {
     width: 352px;
     top: 20px;
-    left: 24px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .contacts-list-container {
     display: flex;
     flex-direction: column;
+    width: 452px;
 }
 
 .contacts-list-container ul {
@@ -268,6 +270,10 @@
 }
 
 @media (width <=1440px) {
+
+    .contacts-list-container {
+        width: 400px;
+    }
 
     .contacts-frame .main-center {
         flex-direction: column;

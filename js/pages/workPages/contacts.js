@@ -26,9 +26,9 @@
 
 // 1st: 
 async function genContactsListBtn() {
+    document.getElementById('contactsListBtns').innerHTML = '';
     let contacts = await getContactsSort();
     let indexTabs = [];
-    document.getElementById('contactsListBtns').innerHTML = '';
     contacts.forEach((contact, i) => {
         let contactId = contact['id'];
         let indexTab = getIndexTab(contact);
@@ -127,9 +127,12 @@ async function genFloatingAddTask() {
 
 
 // 7th:
-function deleteContact(contactId = 'contactId0000') {
-    console.log(contactId);
-    deleteContactFromFirebase(contactId);
+async function deleteContact(contactId) {
+    document.getElementById('floatingContactFrame').innerHTML = '';
+    await deleteContactFromFirebase(contactId);
+    setTimeout(async () => {
+        await genContactsListBtn();
+    }, 500);
 }
 
 

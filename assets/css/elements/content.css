@@ -54,7 +54,7 @@
     .main-center {
         overflow-y: scroll;
         scrollbar-width: thin;
-        width: 100%;
+        min-width: 400px;
         padding: 48px 16px 0px 16px;
     }
 

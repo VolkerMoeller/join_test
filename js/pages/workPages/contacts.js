@@ -96,11 +96,11 @@ function toggleContactMobileView() {
         if (contactListShown) {
             document.getElementById('contactsList').classList.add('display-none');
             document.getElementById('mainCenterContacts').classList.remove('display-none');
-            document.getElementById('btnMobileContact').classList.remove('display-none');
+            document.getElementById('btnMobileContact').classList.add('display-none');
         } else {
             document.getElementById('contactsList').classList.remove('display-none');
             document.getElementById('mainCenterContacts').classList.add('display-none');
-            document.getElementById('btnMobileContact').classList.add('display-none');
+            document.getElementById('btnMobileContact').classList.remove('display-none');
         }
     }
 

@@ -120,6 +120,7 @@
 
 .contacts-list-info span:first-child {
     color: var(--black);
+    text-align: start;
 }
 
 .contacts-list-info span:last-child {
@@ -273,10 +274,16 @@
 .btn-back-contacts {
     top: 48px;
     left: unset;
-    right: 0;
+    right: 16px;
 }
 
 .btn-mobile-contact {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+.btn-mobile-option {
     position: absolute;
     bottom: 16px;
     right: 16px;
@@ -299,6 +306,7 @@
 
     .floating-contact {
         transform: translateX(0%);
+        height: calc(100vh - 364px);
     }
 
     @keyframes float-contact {

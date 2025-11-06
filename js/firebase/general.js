@@ -151,7 +151,7 @@ async function storageGuest() {
             },
             'contactId0003': {
                 'id': 'contactId0003',
-                'name': 'Tobias Tomm',
+                'name': 'Tobias Tomm von Tommhausen in Tamm',
                 'eMail': 'tomm@gmail.com',
                 'phone': '+49 151 74858118',
                 'color': 'var(--variant14)',

@@ -3,6 +3,7 @@
 }
 
 .contacts-list-frame {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -273,6 +274,12 @@
     top: 48px;
     left: unset;
     right: 0;
+}
+
+.btn-mobile-contact {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
 }
 
 @media (width <=1440px) {

@@ -194,7 +194,7 @@ function genHTMLContactsListBtn(indexTab, color, initial, name, mail, state, i, 
 
 
 
-function genHTMLFloatingContact(color, initial, name, email, phone) {
+function genHTMLFloatingContact(color, initial, name, email, phone, contactId) {
     return `
     <div class="floating-contact anim-float-contact">
         <div class="floating-contact-header">
@@ -227,7 +227,7 @@ function genHTMLFloatingContact(color, initial, name, email, phone) {
                     </div>
                 <div class="rel">
                     <div class="floating-contact-header-panel-icon-hover-container rel">
-                        <button class="floating-contact-header-panel-btn abs">
+                        <button class="floating-contact-header-panel-btn abs" onclick="deleteContact('${contactId}')">
                             <div class="floating-contact-header-panel-icon version-2-body">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <mask id="mask0_390515_3988" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">

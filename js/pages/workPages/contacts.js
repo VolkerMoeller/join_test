@@ -20,6 +20,9 @@
 // 6th
 // genFloatingAddTask()
 
+// 7th
+// deleteContact()
+
 
 // 1st: 
 async function genContactsListBtn() {
@@ -45,9 +48,6 @@ async function genContactsListBtn() {
 async function initClickedContactBtn(indexBtn, contactId) {
     let justBtnId = 'contactsListBtn' + indexBtn;
     let alreadyBtnId = getAlreadyClickedBtnId();
-    console.log('contact: ', contactId);
-    console.log('just clicked: ', justBtnId);
-    console.log('already clicked: ', alreadyBtnId);
 
     if (alreadyBtnId !== false) {
         document.getElementById(alreadyBtnId).classList.add('contacts-list-btn');
@@ -113,7 +113,7 @@ async function genFloatingContact(contactId, contacts) {
     let name = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'name');
     let email = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'eMail');
     let phone = getValueOutOfArrWthObjs(contacts, contactId, 'id', 'phone');
-    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color, initial, name, email, phone);
+    document.getElementById('floatingContactFrame').innerHTML = genHTMLFloatingContact(color, initial, name, email, phone, contactId);
     await includeHTMLById('w3-include-svg-2nd');
 }
 
@@ -123,6 +123,12 @@ async function genFloatingAddTask() {
     document.getElementById('mainCenterAdd').innerHTML = '';
     document.getElementById('formContactsAddTask').innerHTML = genHTMLFormAddTask('form-add-float', 'footnote-dsk-float', 'form-panel-float', '', 'form-add-anim-show');
     await includeHTMLById('w3-include-svg-2nd');
+}
+
+
+// 7th:
+function deleteContact(contactId = 'contactId0000') {
+    console.log(contactId)
 }
 
 

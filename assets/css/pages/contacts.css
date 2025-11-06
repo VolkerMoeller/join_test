@@ -25,16 +25,14 @@
 
 .btn-add-new-contact {
     position: sticky;
-    width: 100%;
+    width: 352px;
     top: 0;
-    left: 50%;
     z-index: 1;
 }
 
 .contacts-list-container {
     display: flex;
     flex-direction: column;
-    width: 452px;
 }
 
 .contacts-list-container ul {
@@ -66,7 +64,7 @@
     display: flex;
     justify-content: start;
     gap: 35px;
-    width: 100%;
+    width: 352px;
     border-radius: 10px;
     padding: 15px 24px;
 }
@@ -87,7 +85,7 @@
     display: flex;
     justify-content: start;
     gap: 35px;
-    width: 100%;
+    width: 352px;
     border-radius: 10px;
     padding: 15px 24px;
     background: var(--main);

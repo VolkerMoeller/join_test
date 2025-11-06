@@ -171,6 +171,9 @@ function handleMobileBtn() {
 // .3rd
 // checkIfMobileView() --> main.js
 
+// .8th
+// checkIfMobileView() --> main.js
+
 
 // .1st
 // ..

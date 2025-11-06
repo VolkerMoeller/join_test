@@ -23,14 +23,18 @@
 // 7th
 // getContactsFromFirebase()
 
+// 8th
+// deleteContactFromFirebase()
 
 
+// 1st:
 async function initDatabase() {
     await deleteData('');
     putInitDataToFirebase();
 }
 
 
+// 2nd:
 async function getNextId(path) {
     let nextId = await loadData(path);
     nextId = paddingId(nextId);
@@ -38,6 +42,7 @@ async function getNextId(path) {
 }
 
 
+// 3rd:
 async function updateNextId(path) {
     let nextId = await loadData(path);
     nextId++;
@@ -47,6 +52,7 @@ async function updateNextId(path) {
 }
 
 
+// 4th:
 async function getNextSubtaskId() {
     let userId = loadLocalStorageObject('currentUser').id;
     let nextSubtaskId = await loadData(`users/${userId}/nextSubtaskId`)
@@ -54,12 +60,14 @@ async function getNextSubtaskId() {
 }
 
 
+// 5th:
 async function saveNextSubtaskId(nextSubtaskId) {
     let userId = loadLocalStorageObject('currentUser').id;
     await putData(`users/${userId}/nextSubtaskId`, nextSubtaskId);
 }
 
 
+// 6th:
 async function getTasksFromFirebase() {
     let userId = loadLocalStorageObject('currentUser').id;
     let currentTasks = await loadData(`users/${userId}/tasks`);
@@ -67,12 +75,19 @@ async function getTasksFromFirebase() {
 }
 
 
+// 7th
 async function getContactsFromFirebase() {
     let userId = loadLocalStorageObject('currentUser').id;
     let currentContacts = await loadData(`users/${userId}/contacts`);
     return currentContacts;
 }
 
+
+// 8th:
+async function deleteContactFromFirebase(contactId) {
+    let userId = loadLocalStorageObject('currentUser').id;
+    deleteData(`users/${userId}/contacts/${contactId}`);
+}
 
 // -------------------
 // 1st-level-functions

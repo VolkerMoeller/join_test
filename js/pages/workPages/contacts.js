@@ -128,7 +128,8 @@ async function genFloatingAddTask() {
 
 // 7th:
 function deleteContact(contactId = 'contactId0000') {
-    console.log(contactId)
+    console.log(contactId);
+    deleteContactFromFirebase(contactId);
 }
 
 

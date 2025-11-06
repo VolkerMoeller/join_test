@@ -23,6 +23,9 @@
 // 7th
 // deleteContact()
 
+// 8th
+// handleMobileBtn()
+
 
 // 1st: 
 async function genContactsListBtn() {
@@ -138,6 +141,16 @@ async function deleteContact(contactId) {
     setTimeout(async () => {
         await genContactsListBtn();
     }, 500);
+}
+
+
+// 8th:
+function handleMobileBtn() {
+    let mobileView = checkIfMobileView();
+    if (mobileView) {
+        document.getElementById('btnMobileContact').classList.remove('display-none');
+    } else
+        document.getElementById('btnMobileContact').classList.add('display-none');
 }
 
 

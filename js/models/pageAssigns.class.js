@@ -20,6 +20,7 @@ class PageAssigns {
         scrollElementToTop('mainCenterAdd');
         genUserContactList();
         genContactBadges();
+        handleMobileBtn();
     }
 
 

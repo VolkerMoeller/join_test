@@ -48,14 +48,17 @@ async function genContactsListBtn() {
 async function initClickedContactBtn(indexBtn, contactId) {
     let justBtnId = 'contactsListBtn' + indexBtn;
     let alreadyBtnId = getAlreadyClickedBtnId();
+    let mobileView = checkIfMobileView();
 
     if (alreadyBtnId !== false) {
         document.getElementById(alreadyBtnId).classList.add('contacts-list-btn');
         document.getElementById(alreadyBtnId).classList.remove('contacts-list-btn-clicked');
     }
 
-    document.getElementById(justBtnId).classList.remove('contacts-list-btn');
-    document.getElementById(justBtnId).classList.add('contacts-list-btn-clicked');
+    if (!mobileView) {
+        document.getElementById(justBtnId).classList.add('contacts-list-btn-clicked');
+        document.getElementById(justBtnId).classList.remove('contacts-list-btn');
+    }
 
     if (justBtnId == alreadyBtnId) {
         if (document.getElementById('floatingContactFrame').innerHTML == '') {

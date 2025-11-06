@@ -2,9 +2,15 @@
     display: flex;
 }
 
-.contacts-list-top {
-    background-color: var(--white);
+.contacts-list-frame {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-list-ghost {
     height: 16px;
+    background-color: var(--white);
+    width: 100%;
 }
 
 .contacts-list {
@@ -12,7 +18,7 @@
     box-shadow: var(--drop-shadow);
     overflow-y: scroll;
     scrollbar-width: thin;
-    height: calc(100vh - 96px);
+    height: calc(100vh - 114px);
     background-color: var(--white);
     padding: 0px 16px 32px 24px;
 }

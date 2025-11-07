@@ -1,4 +1,75 @@
 :root {
+
+  /* === Hauptfarben === */
+  --main: #3d5afe;
+  /* Sternenflotten-Blau (Basis-UI) */
+  --main-pale: #3d5afe50;
+  --main2nd: #ffcc33;
+  /* Kommando-Gold */
+  --main2nd-trans-20: #ffcc3320;
+  --main-background: #0e0e0e;
+  /* dunkles Konsolen-Schwarz */
+
+  --main-transp: #3d5afe00;
+  --main-transp-10: #3d5afe10;
+  --main-transp-20: #3d5afe20;
+  --main-transp-25: #3d5afe25;
+  --main-transp-33: #3d5afe33;
+  --main-transp-50: #3d5afe50;
+
+  /* === Menü & Navigation === */
+  --sidebar-bg: #2a36a4;
+  /* kräftiges Uniformblau */
+  --menu-button-hover: #2f43bb;
+  /* hellerer Hover */
+  --nav-left-button: #c0392b;
+  /* Kommando-Rot (aktives Menü) */
+  --menu-color: #e5e9f2;
+  /* dezentes hellgrau für Text */
+
+  /* === Dunkelmodus-Kompatibilität === */
+  --black-dark-view: #E0E0E0;
+  --main-dark-view: #E0E0E0;
+  --menu-color-dark-view: #CFCFCF;
+
+  /* === Akzentfarben für Kontakte (variant0–14) === */
+  --variant0: #3d5afe;
+  /* Wissenschaft – Blau */
+  --variant1: #ff3d3d;
+  /* Kommando – Rot */
+  --variant2: #ffcc33;
+  /* Technik – Gold */
+  --variant3: #29abe2;
+  /* Kommunikation – Cyan */
+  --variant4: #8e44ad;
+  /* Subraum – Violett */
+  --variant5: #00bfa5;
+  /* Medizin – Türkis */
+  --variant6: #f39c12;
+  /* Maschinenraum – Orange */
+  --variant7: #c0392b;
+  /* Sicherheit – Dunkelrot */
+  --variant8: #16a085;
+  /* Biowissenschaft – Grünblau */
+  --variant9: #9b59b6;
+  /* Sensorik – Flieder */
+  --variant10: #2ecc71;
+  /* Erkundung – Smaragd */
+  --variant11: #3498db;
+  /* Navigation – Hellblau */
+  --variant12: #e67e22;
+  /* Warp-Kern – Bernstein */
+  --variant13: #5f6a7a;
+  /* Brückenkonsole – dunkles Stahlgrau */
+  --variant14: #7f8c8d;
+  /* Sekundärgrau – neutral, textfreundlich */
+
+}
+
+/* } */
+
+
+/* :root {
   --main: #4455ff;
   --main-pale: #4455ff50;
   --main2nd: #ffcc33;
@@ -18,4 +89,4 @@
   --black-dark-view: #D9D9D9;
   --main-dark-view: #D9D9D9;
   --menu-color-dark-view: #D9D9D9;
-}
+} */

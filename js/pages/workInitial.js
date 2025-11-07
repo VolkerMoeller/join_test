@@ -34,39 +34,95 @@ function returnToLogIn() {
     saveLocalStorageObject('userStatus', 'external');
 }
 
+// 3rd:
+// ------------------------------
+// Menü-Icon Hoverfarbe umschalten
+// ------------------------------
+
+// Zentraler Helfer:
+// Schaltet Hoverfarbe für ein oder zwei Icons ein/aus.
+// isActive = true → Hover aktivieren
+// isActive = false → Hover zurücksetzen
+function toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, isActive) {
+    const btnEl = document.getElementById(btnId);
+    if (!btnEl || btnEl.classList.contains('menu-btn-hvr-selected')) return;
+
+    [icnId1, icnId2].forEach(id => {
+        const iconEl = id && document.getElementById(id);
+        if (!iconEl) return;
+        // Klassen je nach Schalter setzen:
+        iconEl.classList.toggle('menu-icon-hvr', isActive); // Hover-Farbe an/aus
+        iconEl.classList.toggle('menu-icon', !isActive);    // Standardfarbe an/aus
+    });
+}
+
+// Wrapper-Funktion: aktiviert Hover-Farbe (wird z. B. bei MouseEnter genutzt)
+function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
+    toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, true);
+}
+
+// Wrapper-Funktion: deaktiviert Hover-Farbe (wird z. B. bei MouseLeave genutzt)
+function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
+    toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, false);
+}
 
 // 3rd:
-function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
-    let defaultBtn = document.getElementById(btnId).classList.contains('menu-btn-hvr-selected');
-    if (!defaultBtn) {
-        let menuIcnIds = [icnId1, icnId2];
-        for (let i = 0; i < menuIcnIds.length; i++) {
-            const menuIcnId = menuIcnIds[i];
-            if (menuIcnId) {
-                let menuIcn = document.getElementById(menuIcnId);
-                menuIcn.classList.remove('menu-icon');
-                menuIcn.classList.add('menu-icon-hvr');
-            }
-        }
-    }
-}
+// function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
+//     let defaultBtn = document.getElementById(btnId).classList.contains('menu-btn-hvr-selected');
+//     if (!defaultBtn) {
+//         let menuIcnIds = [icnId1, icnId2];
+//         for (let i = 0; i < menuIcnIds.length; i++) {
+//             const menuIcnId = menuIcnIds[i];
+//             if (menuIcnId) {
+//                 let menuIcn = document.getElementById(menuIcnId);
+//                 menuIcn.classList.remove('menu-icon');
+//                 menuIcn.classList.add('menu-icon-hvr');
+//             }
+//         }
+//     }
+// }
+
+
+
+
+// 3rd:
+// function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
+//     const btnEl = document.getElementById(btnId);
+//     if (!btnEl) return;
+
+//     const defaultBtn = btnEl.classList.contains('menu-btn-hvr-selected');
+//     if (defaultBtn) return;
+
+//     const menuIcnIds = [icnId1, icnId2];
+//     for (let i = 0; i < menuIcnIds.length; i++) {
+//         const menuIcnId = menuIcnIds[i];
+//         if (!menuIcnId) continue;
+//         const menuIcn = document.getElementById(menuIcnId);
+//         if (!menuIcn) continue;
+//         menuIcn.classList.remove('menu-icon');
+//         menuIcn.classList.add('menu-icon-hvr');
+//     }
+// }
 
 
 // 4th:
-function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
-    let defaultBtn = document.getElementById(btnId).classList.contains('menu-btn-hvr-selected');
-    if (!defaultBtn) {
-        let menuIcnIds = [icnId1, icnId2];
-        for (let i = 0; i < menuIcnIds.length; i++) {
-            const menuIcnId = menuIcnIds[i];
-            if (menuIcnId) {
-                let menuIcn = document.getElementById(menuIcnId);
-                menuIcn.classList.add('menu-icon');
-                menuIcn.classList.remove('menu-icon-hvr');
-            }
-        }
-    }
-}
+// function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
+//     const btnEl = document.getElementById(btnId);
+//     if (!btnEl) return;
+
+//     const defaultBtn = btnEl.classList.contains('menu-btn-hvr-selected');
+//     if (defaultBtn) return;
+
+//     const menuIcnIds = [icnId1, icnId2];
+//     for (let i = 0; i < menuIcnIds.length; i++) {
+//         const menuIcnId = menuIcnIds[i];
+//         if (!menuIcnId) continue;
+//         const menuIcn = document.getElementById(menuIcnId);
+//         if (!menuIcn) continue;
+//         menuIcn.classList.add('menu-icon');
+//         menuIcn.classList.remove('menu-icon-hvr');
+//     }
+// }
 
 
 // --------------------
@@ -204,6 +260,7 @@ function userHeader() {
 // ...
 function setCurrentBtnById(defBtnId) {
     let sumNavBtn = document.getElementById(defBtnId);
+    if (!sumNavBtn) return;
     if (sumNavBtn.classList.contains('menu-btn-hvr')) {
         sumNavBtn.classList.remove('menu-btn-hvr');
         sumNavBtn.classList.add('menu-btn-hvr-selected');

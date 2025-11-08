@@ -11,8 +11,14 @@
 // 3rd
 // setMenuIcnHvrClrSVG()
 
-
-// 1st:
+// 1st
+/**
+ * Initializes the work page with all required components and data.
+ *
+ * @async
+ * @function initWork
+ * @returns {Promise<void>} - Resolves after all setup functions are completed.
+ */
 async function initWork() {
     await includeHTML();
     setClrSchemeInit();
@@ -26,10 +32,17 @@ async function initWork() {
 
 
 // 2nd:
+/**
+ * Redirects the user back to the login page.
+ *
+ * @function returnToLogIn
+ * @returns {void} - Navigates the user to the login screen.
+ */
 function returnToLogIn() {
     window.location.assign('./signPage.html');
     saveLocalStorageObject('userStatus', 'external');
 }
+
 
 // 3rd:
 // ------------------------------
@@ -219,6 +232,12 @@ function setCurrentBtnById(defBtnId) {
 
 // 1st:
 // ...
+/**
+ * Short description of what this helper function does.
+ *
+ * @function functionName
+ * @returns {type} - Description of the returned value.
+ */
 function getTheButtonTwin(defBtnId) {
     let twinBtnId;
     switch (defBtnId) {

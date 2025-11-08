@@ -1,5 +1,5 @@
 // -----------------
-// work.js-functions:
+// workInitial.js-functions:
 // -----------------
 
 // 1st
@@ -10,6 +10,7 @@
 
 // 3rd
 // setMenuIcnHvrClrSVG()
+
 
 // 1st
 /**
@@ -45,6 +46,8 @@ function returnToLogIn() {
 
 
 // 3rd:
+// #region Menü-Icon Hoverfarbe
+
 // ------------------------------
 // SVG Hover Color Control
 // ------------------------------
@@ -80,6 +83,8 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
   toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, false);
 }
 
+// #endregion
+
 
 // --------------------
 // 1st-level-functions:
@@ -109,6 +114,14 @@ function defaultHeaderView() {
     if (userStatus == 'guest') { guestHeader(); }
     if (userStatus == 'user') { userHeader(); }
 }
+
+// .1st:
+function defaultHeaderView() {
+    const userStatus = readingUserStatus && readingUserStatus();
+    if (userStatus === 'guest') { guestHeader(); }
+    if (userStatus === 'user')  { userHeader(); }
+}
+
 
 
 // .1st:

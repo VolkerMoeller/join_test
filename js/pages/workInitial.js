@@ -14,21 +14,39 @@
 
 // 1st
 /**
- * Initializes the work page with all required components and data.
+ * Initializes the main JOIN workspace.
+ *
+ * Sequentially runs all required setup functions.
+ * If a step fails, the process continues and logs the error.
  *
  * @async
  * @function initWork
- * @returns {Promise<void>} - Resolves after all setup functions are completed.
+ * @returns {Promise<void>} Completes setup and logs results.
  */
 async function initWork() {
-    await includeHTML();
-    setClrSchemeInit();
-    invertLogoClr();
-    defaultHeaderView();
-    defaultNavView();
-    genHvrBtns();
-    genBtnUser();
-    initPageContent();
+    const setupSteps = [
+        { fn: includeHTML, label: 'includeHTML' },
+        { fn: setClrSchemeInit, label: 'setClrSchemeInit' },
+        { fn: invertLogoClr, label: 'invertLogoClr' },
+        { fn: defaultHeaderView, label: 'defaultHeaderView' },
+        { fn: defaultNavView, label: 'defaultNavView' },
+        { fn: genHvrBtns, label: 'genHvrBtns' },
+        { fn: genBtnUser, label: 'genBtnUser' },
+        { fn: initPageContent, label: 'initPageContent' }
+    ];
+
+    const errors = [];
+
+    for (const step of setupSteps) {
+        const ok = await safeCall(step.fn, step.label);
+        if (ok !== true) errors.push(ok);
+    }
+
+    if (errors.length > 0) {
+        console.warn('Initialization completed with warnings:', errors);
+    } else {
+        console.log('Initialization successful.');
+    }
 }
 
 
@@ -60,27 +78,27 @@ function returnToLogIn() {
  * @param {boolean} isActive - true = hover color on, false = reset to default.
  */
 function toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, isActive) {
-  const btnEl = document.getElementById(btnId);
-  if (!btnEl || btnEl.classList.contains('menu-btn-hvr-selected')) return;
+    const btnEl = document.getElementById(btnId);
+    if (!btnEl || btnEl.classList.contains('menu-btn-hvr-selected')) return;
 
-  [icnId1, icnId2].forEach(id => {
-    const iconEl = id && document.getElementById(id);
-    if (!iconEl) return;
+    [icnId1, icnId2].forEach(id => {
+        const iconEl = id && document.getElementById(id);
+        if (!iconEl) return;
 
-    // Apply or reset hover classes depending on state
-    iconEl.classList.toggle('menu-icon-hvr', isActive);
-    iconEl.classList.toggle('menu-icon', !isActive);
-  });
+        // Apply or reset hover classes depending on state
+        iconEl.classList.toggle('menu-icon-hvr', isActive);
+        iconEl.classList.toggle('menu-icon', !isActive);
+    });
 }
 
 /** Activates hover color (used on mouseenter). */
 function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
-  toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, true);
+    toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, true);
 }
 
 /** Resets hover color (used on mouseleave). */
 function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
-  toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, false);
+    toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, false);
 }
 
 // #endregion
@@ -119,7 +137,7 @@ function defaultHeaderView() {
 function defaultHeaderView() {
     const userStatus = readingUserStatus && readingUserStatus();
     if (userStatus === 'guest') { guestHeader(); }
-    if (userStatus === 'user')  { userHeader(); }
+    if (userStatus === 'user') { userHeader(); }
 }
 
 
@@ -246,44 +264,29 @@ function setCurrentBtnById(defBtnId) {
 // 1st:
 // ...
 /**
- * Short description of what this helper function does.
+ * Returns the twin button ID for a given menu button ID.
  *
- * @function functionName
- * @returns {type} - Description of the returned value.
+ * Strategy:
+ * 1. If the element declares a twin via `data-twin`, return that value (declarative).
+ * 2. Otherwise infer it from naming:
+ *    - If ID contains 'Mbl' → remove it.
+ *    - Else insert 'Mbl' after 'mnuBtn' (e.g., mnuBtn2nd → mnuBtnMbl2nd).
+ *
+ * @function getTheButtonTwin
+ * @param {string} defBtnId - Source button ID.
+ * @returns {string|null} Twin ID, or null if the element is missing.
  */
 function getTheButtonTwin(defBtnId) {
-    let twinBtnId;
-    switch (defBtnId) {
-        case 'mnuBtnMbl1st':
-            twinBtnId = 'mnuBtn1st';
-            break
-        case 'mnuBtnMbl2nd':
-            twinBtnId = 'mnuBtn2nd';
-            break
-        case 'mnuBtnMbl3rd':
-            twinBtnId = 'mnuBtn3rd';
-            break
-        case 'mnuBtnMbl4th':
-            twinBtnId = 'mnuBtn4th';
-            break
-        case 'mnuBtnMbl5th':
-            twinBtnId = 'mnuBtn5th';
-            break
-        case 'mnuBtn1st':
-            twinBtnId = 'mnuBtnMbl1st';
-            break
-        case 'mnuBtn2nd':
-            twinBtnId = 'mnuBtnMbl2nd';
-            break
-        case 'mnuBtn3rd':
-            twinBtnId = 'mnuBtnMbl3rd';
-            break
-        case 'mnuBtn4th':
-            twinBtnId = 'mnuBtnMbl4th';
-            break
-        case 'mnuBtn5th':
-            twinBtnId = 'mnuBtnMbl5th';
-            break
+    const el = document.getElementById(defBtnId);
+    if (!el) return null;
+
+    if (el.dataset?.twin) return el.dataset.twin;
+
+    if (!defBtnId.startsWith('mnuBtn')) {
+        console.warn('Unexpected ID format:', defBtnId);
     }
-    return twinBtnId;
+
+    return defBtnId.includes('Mbl')
+        ? defBtnId.replace('Mbl', '')
+        : defBtnId.replace(/^mnuBtn/, 'mnuBtnMbl');
 }

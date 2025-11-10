@@ -12,6 +12,7 @@
 // setUserStatusUser()
 // setUserStatusGuest()
 
+
 // --- local-storage-functions:
 
 // saveLocalStorageObject()
@@ -289,6 +290,38 @@ function checkOverlay() {
 
 
 // --- help-functions:
+
+
+/**
+ * Executes a given function safely and captures potential errors.
+ *
+ * Supports both synchronous and asynchronous functions.
+ * Returns `true` on success, or an error message on failure.
+ *
+ * @async
+ * @function safeCall
+ * @param {Function} fn - The function to execute.
+ * @param {string} label - Name used for logging or error reporting.
+ * @param {...any} args - Optional parameters passed to the function.
+ * @returns {Promise<boolean|string>} True if successful, or an error message string.
+ */
+async function safeCall(fn, label, ...args) {
+    if (typeof fn !== 'function') {
+        console.warn(`safeCall: '${label}' is not callable.`);
+        return false;
+    }
+
+    try {
+        const result = fn(...args);
+        if (result instanceof Promise) {
+            await result;
+        }
+        return true;
+    } catch (err) {
+        console.error(`${label} failed: ${err.message}`);
+        return `${label} failed: ${err.message}`;
+    }
+}
 
 
 function toggleElements(id1st, id2nd) {

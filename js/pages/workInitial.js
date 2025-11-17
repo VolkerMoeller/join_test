@@ -155,17 +155,102 @@ function defaultNavView() {
 
 // .1st:
 // ..
+// let btnMap = {
+//     'btnBackHelp': {
+//         icnId: 'bntBack4',
+//         handler: showCurrentContent
+//     },
+//     'btnBackLegal': {
+//         icnId: 'bntBack6',
+//         handler: showCurrentContent
+//     },
+//     'btnBackPrivacy':
+//     {
+//         icnId: 'bntBack5',
+//         handler: showCurrentContent
+//     }
+// };
+
+
+// async function genHvrBtns() {
+//     for (const [containerId, spec] of Object.entries(btnMap)) {
+//         const container = document.getElementById(containerId);
+//         if (!container) {
+//             console.warn(`Container "${containerId}" not found`);
+//             continue;
+//         }
+
+//         // Neue Button-HTML einfügen
+//         container.innerHTML = genHTMLHvrBtn(spec.icnId);
+
+//         // Event-Handler setzen
+//         container.onclick = spec.handler;
+//     }
+
+//     await includeHTMLById('w3-include-hvr-btn');
+// }
 async function genHvrBtns() {
-    let btnRefs = {
-        'btnBackHelp': ['bntBack4', 'showCurrentContent()'],
-        'btnBackLegal': ['bntBack6', 'showCurrentContent()'],
-        'btnBackPrivacy': ['bntBack5', 'showCurrentContent()']
+    const btnMap = {
+        btnBackHelp: {
+            icnId: 'bntBack4',
+            handler: showCurrentContent
+        },
+        btnBackLegal: {
+            icnId: 'bntBack6',
+            handler: showCurrentContent
+        },
+        btnBackPrivacy: {
+            icnId: 'bntBack5',
+            handler: showCurrentContent
+        }
     };
-    Object.keys(btnRefs).forEach(element => {
-        document.getElementById(element).innerHTML = genHTMLHvrBtn(btnRefs[element][0], btnRefs[element][1]);
-    });
+
+    // 1. Phase: Buttons als HTML einsetzen
+    for (const [containerId, spec] of Object.entries(btnMap)) {
+        const container = document.getElementById(containerId);
+        if (!container) {
+            console.warn(`Container "${containerId}" not found`);
+            continue;
+        }
+        container.innerHTML = genHTMLHvrBtn(spec.icnId);
+    }
+
+    // SVG/HTML-Includes laden
     await includeHTMLById('w3-include-hvr-btn');
+
+    // 2. Phase: Events für Hover + Click setzen
+    for (const [, spec] of Object.entries(btnMap)) {
+        const normalBtn = document.getElementById(spec.icnId);
+        const hoverBtn = document.getElementById(`${spec.icnId}Hvr`);
+
+        if (!normalBtn || !hoverBtn) {
+            console.warn(`Buttons for iconId "${spec.icnId}" not found`);
+            continue;
+        }
+
+        const showHover = () => {
+            normalBtn.classList.add('display-none');
+            hoverBtn.classList.remove('display-none');
+        };
+
+        const showNormal = () => {
+            hoverBtn.classList.add('display-none');
+            normalBtn.classList.remove('display-none');
+        };
+
+        normalBtn.addEventListener('mouseenter', showHover);
+        hoverBtn.addEventListener('mouseleave', showNormal);
+
+        const handleClick = event => {
+            event.preventDefault();
+            spec.handler();
+        };
+
+        normalBtn.addEventListener('click', handleClick);
+        hoverBtn.addEventListener('click', handleClick);
+    }
 }
+
 
 
 // .1st:

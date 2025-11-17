@@ -64,11 +64,11 @@ function returnToLogIn() {
 
 
 // 3rd:
-// #region Menü-Icon Hoverfarbe
+// #region SVG Hover Color Control – for the main menu btns
 
-// ------------------------------
+// -----------------------
 // SVG Hover Color Control
-// ------------------------------
+// -----------------------
 
 /**
  * Toggles the hover color for one or two <path> elements inside a button's SVG.

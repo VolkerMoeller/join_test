@@ -127,11 +127,11 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 
 // .1st:
 // ..
-function defaultHeaderView() {
-    let userStatus = readingUserStatus()
-    if (userStatus == 'guest') { guestHeader(); }
-    if (userStatus == 'user') { userHeader(); }
-}
+// function defaultHeaderView() {
+//     let userStatus = readingUserStatus()
+//     if (userStatus == 'guest') { guestHeader(); }
+//     if (userStatus == 'user') { userHeader(); }
+// }
 
 // .1st:
 function defaultHeaderView() {
@@ -155,40 +155,6 @@ function defaultNavView() {
 
 // .1st:
 // ..
-// let btnMap = {
-//     'btnBackHelp': {
-//         icnId: 'bntBack4',
-//         handler: showCurrentContent
-//     },
-//     'btnBackLegal': {
-//         icnId: 'bntBack6',
-//         handler: showCurrentContent
-//     },
-//     'btnBackPrivacy':
-//     {
-//         icnId: 'bntBack5',
-//         handler: showCurrentContent
-//     }
-// };
-
-
-// async function genHvrBtns() {
-//     for (const [containerId, spec] of Object.entries(btnMap)) {
-//         const container = document.getElementById(containerId);
-//         if (!container) {
-//             console.warn(`Container "${containerId}" not found`);
-//             continue;
-//         }
-
-//         // Neue Button-HTML einfügen
-//         container.innerHTML = genHTMLHvrBtn(spec.icnId);
-
-//         // Event-Handler setzen
-//         container.onclick = spec.handler;
-//     }
-
-//     await includeHTMLById('w3-include-hvr-btn');
-// }
 async function genHvrBtns() {
     const btnMap = {
         btnBackHelp: {

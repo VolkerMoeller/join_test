@@ -41,6 +41,7 @@
 
 // --- help-functions:
 
+// safeCall()
 // toggleElements()
 // toggleElementsZindex()
 // focusInput()

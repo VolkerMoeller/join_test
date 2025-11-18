@@ -19,13 +19,56 @@
 
 
 // 1st:
+/**
+ * Shows the currently selected work content.
+ *
+ * 1. Hides all content sections.
+ * 2. Reads the currently selected menu button.
+ * 3. Computes the corresponding content id.
+ * 4. Shows only that content element.
+ *
+ * Falls irgendetwas fehlt (Button, ID, Content-Element),
+ * wird eine Warnung geloggt und die Funktion bricht sauber ab.
+ */
 function showCurrentContent() {
+    // 1. Alle Work-Content-Bereiche ausblenden
     hideAllWorkContent();
-    let selectedMenuBtn = getSelectedMenuBtn();
-    let selectedMenuBtnId = selectedMenuBtn.getAttribute('id');
-    let currentCntId = provideCurrentContentId(selectedMenuBtnId);
-    document.getElementById(currentCntId).classList.remove('display-none');
+
+    // 2. Aktuellen Navigations-Button holen
+    const selectedMenuBtn = getSelectedMenuBtn();
+    if (!selectedMenuBtn) {
+        console.warn('showCurrentContent: no selected menu button found');
+        return;
+    }
+
+    const selectedMenuBtnId = selectedMenuBtn.id;
+    if (!selectedMenuBtnId) {
+        console.warn('showCurrentContent: selected menu button has no id');
+        return;
+    }
+
+    // 3. Zu diesem Button die Content-ID bestimmen
+    const currentCntId = provideCurrentContentId(selectedMenuBtnId);
+    if (!currentCntId) {
+        console.warn(
+            `showCurrentContent: no content id mapped for menu button "${selectedMenuBtnId}"`
+        );
+        return;
+    }
+
+    // 4. Das entsprechende Content-Element im DOM holen
+    const currentContent = document.getElementById(currentCntId);
+    if (!currentContent) {
+        console.warn(
+            `showCurrentContent: content element with id "${currentCntId}" not found`
+        );
+        return;
+    }
+
+    // 5. Nur dieses Element sichtbar machen
+    currentContent.classList.remove('display-none');
 }
+
 
 
 // 2nd:

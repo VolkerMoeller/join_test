@@ -149,39 +149,64 @@ function viewDefaultContent(defaultBtnId) {
 
 // 1st:
 // ..
+/**
+ * Hides all work content sections by adding the "display-none" class.
+ */
 function hideAllWorkContent() {
-    let contents = document.querySelectorAll('.content');
-    contents.forEach(content => {
-        content.classList.add('display-none');
-    });
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(el => el.classList.add('display-none'));
 }
+
 
 
 // 1st:
 // ..
+/**
+ * Returns the currently selected navigation button (desktop or mobile).
+ *
+ * @returns {HTMLElement|null} The selected button or null if none is active.
+ */
 function getSelectedMenuBtn() {
-    let selectedMenuBtn = document.querySelector('.menu-btn-hvr-selected');
-    if (!selectedMenuBtn) {
-        selectedMenuBtn = document.querySelector('.menu-btn-hvr-mbl-selected');
-    }
-    return selectedMenuBtn;
+    return (
+        document.querySelector('.menu-btn-hvr-selected') ||
+        document.querySelector('.menu-btn-hvr-mbl-selected') ||
+        null
+    );
 }
 
 
 // 1st:
 // ..
+/**
+ * Maps a navigation button ID to its corresponding content section ID.
+ *
+ * @param {string} menuBtnId - The ID of the selected menu button.
+ * @returns {string|null} The corresponding content ID or null if not found.
+ */
 function provideCurrentContentId(menuBtnId) {
-    let referenceObject = {
-        mnuBtn2nd: 'cntCenterSum',
-        mnuBtn3rd: 'cntCenterAdd',
-        mnuBtn4th: 'cntCenterBoard',
-        mnuBtn5th: 'cntCenterContacts',
-        mnuBtnMbl2nd: 'cntCenterSum',
-        mnuBtnMbl3rd: 'cntCenterAdd',
-        mnuBtnMbl4th: 'cntCenterBoard',
-        mnuBtnMbl5th: 'cntCenterContacts'
+    if (!menuBtnId) {
+        console.warn('provideCurrentContentId: no menuBtnId provided');
+        return null;
     }
-    let contentId = referenceObject[menuBtnId];
+
+    const map = {
+        mnuBtn2nd: 'cntCenterSum',
+        mnuBtnMbl2nd: 'cntCenterSum',
+        mnuBtn3rd: 'cntCenterAdd',
+        mnuBtnMbl3rd: 'cntCenterAdd',
+        mnuBtn4th: 'cntCenterBoard',
+        mnuBtnMbl4th: 'cntCenterBoard',
+        mnuBtn5th: 'cntCenterContacts',
+        mnuBtnMbl5th: 'cntCenterContacts'
+    };
+
+    const contentId = map[menuBtnId];
+
+    if (!contentId) {
+        console.warn(`provideCurrentContentId: no matching content for "${menuBtnId}"`);
+        return null;
+    }
+
     return contentId;
 }
 

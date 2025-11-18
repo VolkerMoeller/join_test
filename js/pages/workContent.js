@@ -1,24 +1,103 @@
+const VIEW_CONFIG = {
+    summary: {
+        desktopBtnId: 'mnuBtn2nd',
+        mobileBtnId: 'mnuBtnMbl2nd',
+        contentId: 'cntCenterSum'
+    },
+    add: {
+        desktopBtnId: 'mnuBtn3rd',
+        mobileBtnId: 'mnuBtnMbl3rd',
+        contentId: 'cntCenterAdd'
+    },
+    board: {
+        desktopBtnId: 'mnuBtn4th',
+        mobileBtnId: 'mnuBtnMbl4th',
+        contentId: 'cntCenterBoard'
+    },
+    contacts: {
+        desktopBtnId: 'mnuBtn5th',
+        mobileBtnId: 'mnuBtnMbl5th',
+        contentId: 'cntCenterContacts'
+    },
+    help: {
+        desktopBtnId: null,              // kein Menübutton
+        mobileBtnId: null,
+        contentId: 'cntCenterHelp'
+    }
+    // später evtl. legal, privacy usw.
+};
+
+
+
 // -----------------
 // work.js-functions:
 // -----------------
 
+
 // 1st
-// showCurrentContent()
+// setView(viewName)
 
 // 2nd
-// showHelpContent()
+// showCurrentContent()
 
 // 3rd
-// showInfoContentById()
+// showHelpContent()
 
 // 4th
-// currentNavView()
+// showInfoContentById()
 
 // 5th
+// currentNavView()
+
+// 6th
 // viewDefaultContent()
 
 
 // 1st:
+/**
+ * Aktiviert eine logische Ansicht (summary, board, contacts, help ...)
+ * - setzt Navigation (falls Buttons vorhanden)
+ * - zeigt den zugehörigen Content-Container
+ * - blendet alle anderen Inhalte aus
+ *
+ * @param {string} viewName - z.B. "summary", "board", "contacts", "help"
+ */
+function setView(viewName) {
+    const config = VIEW_CONFIG[viewName];
+
+    if (!config) {
+        console.warn(`setView: unknown view "${viewName}"`);
+        return;
+    }
+
+    // 1. Navigation setzen (falls es Menübuttons für diese View gibt)
+    if (config.desktopBtnId) {
+        // Deine Funktion kümmert sich um Desktop + Mobile Twin
+        currentNavView(config.desktopBtnId);
+    } else {
+        // Spezialfall: z.B. help/info ohne aktiven Menübutton
+        resetNavigationView();
+        resetNavigationViewMbl();
+        showLeftAndBottomMenu();
+    }
+
+    // 2. Alle Content-Bereiche verstecken
+    hideAllWorkContent();
+
+    // 3. Ziel-Content-Element anzeigen
+    const content = document.getElementById(config.contentId);
+    if (!content) {
+        console.warn(
+            `setView: content element "${config.contentId}" for view "${viewName}" not found`
+        );
+        return;
+    }
+
+    content.classList.remove('display-none');
+}
+
+
+// 2nd:
 /**
  * Shows the currently selected work content.
  *
@@ -71,14 +150,14 @@ function showCurrentContent() {
 
 
 
-// 2nd:
+// 3rd:
 function showHelpContent() {
     hideAllWorkContent();
     document.getElementById('cntCenterHelp').classList.remove('display-none');
 }
 
 
-// 3rd:
+// 4th:
 function showInfoContentById(cntId) {
     resetNavigationView();
     hideAllWorkContent();
@@ -87,7 +166,7 @@ function showInfoContentById(cntId) {
 }
 
 
-// 4th:
+// 5th
 function currentNavView(currentBtnId) {
     let twinBtn = getTheButtonTwin(currentBtnId);
     resetNavigationView();
@@ -97,7 +176,7 @@ function currentNavView(currentBtnId) {
     showLeftAndBottomMenu();
 }
 
-// 5th
+// 6th
 function viewDefaultContent(defaultBtnId) {
     viewDefaultBtnById(defaultBtnId);
     showCurrentContent();

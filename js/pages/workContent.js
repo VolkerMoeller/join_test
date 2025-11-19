@@ -344,10 +344,46 @@ function showLeftAndBottomMenu() {
 
 // 5th:
 // ..
+// function viewDefaultBtnById(defaultBtnId) {
+//     resetSVGHvr();
+//     currentNavView(defaultBtnId);
+// }
+
+/**
+ * Marks a navigation button (and its mobile twin) as the default active button.
+ *
+ * Steps:
+ *  1. Reset all SVG hover icons (so no button appears hovered on page load).
+ *  2. Validate the given button ID.
+ *  3. Delegate to `currentNavView(defaultBtnId)` to:
+ *      - reset desktop & mobile navigation
+ *      - apply "selected" classes
+ *      - ensure correct menu visibility
+ *
+ * @param {string} defaultBtnId - The ID of the navigation button to activate as default.
+ * @returns {void}
+ */
 function viewDefaultBtnById(defaultBtnId) {
+    // 1. Always reset SVG hover state.
     resetSVGHvr();
+
+    // 2. Defensive: missing ID
+    if (!defaultBtnId) {
+        console.warn('viewDefaultBtnById: defaultBtnId is missing');
+        return;
+    }
+
+    // 3. Defensive: check if button exists
+    const btn = document.getElementById(defaultBtnId);
+    if (!btn) {
+        console.warn(`viewDefaultBtnById: element "${defaultBtnId}" not found`);
+        return;
+    }
+
+    // 4. Hand over to your central navigation handling
     currentNavView(defaultBtnId);
 }
+
 
 
 // 5th:

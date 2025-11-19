@@ -20,11 +20,11 @@ const VIEW_CONFIG = {
         contentId: 'cntCenterContacts'
     },
     help: {
-        desktopBtnId: null,              // kein Menübutton
+        desktopBtnId: null,              // no menu button
         mobileBtnId: null,
         contentId: 'cntCenterHelp'
     }
-    // später evtl. legal, privacy usw.
+    // later possibly legal, privacy, etc.
 };
 
 
@@ -55,12 +55,20 @@ const VIEW_CONFIG = {
 
 // 1st:
 /**
- * Aktiviert eine logische Ansicht (summary, board, contacts, help ...)
- * - setzt Navigation (falls Buttons vorhanden)
- * - zeigt den zugehörigen Content-Container
- * - blendet alle anderen Inhalte aus
+ * Switches the application to a specific logical view (e.g. "summary", "board", "contacts", "help").
  *
- * @param {string} viewName - z.B. "summary", "board", "contacts", "help"
+ * Responsibilities:
+ *  - Activates the correct navigation button (desktop and mobile).
+ *  - Hides all other content sections.
+ *  - Displays the content section associated with the selected view.
+ *
+ * Behavior:
+ *  - If the view has no assigned navigation buttons (e.g. help/info views),
+ *    navigation styles are reset but content still switches correctly.
+ *  - Invalid or unknown view names produce a warning and stop the process safely.
+ *
+ * @param {string} viewName - The name of the view to activate.
+ * @returns {void}
  */
 function setView(viewName) {
     const config = VIEW_CONFIG[viewName];
@@ -70,21 +78,16 @@ function setView(viewName) {
         return;
     }
 
-    // 1. Navigation setzen (falls es Menübuttons für diese View gibt)
     if (config.desktopBtnId) {
-        // Deine Funktion kümmert sich um Desktop + Mobile Twin
         currentNavView(config.desktopBtnId);
     } else {
-        // Spezialfall: z.B. help/info ohne aktiven Menübutton
         resetNavigationView();
         resetNavigationViewMbl();
         showLeftAndBottomMenu();
     }
 
-    // 2. Alle Content-Bereiche verstecken
     hideAllWorkContent();
 
-    // 3. Ziel-Content-Element anzeigen
     const content = document.getElementById(config.contentId);
     if (!content) {
         console.warn(
@@ -99,54 +102,49 @@ function setView(viewName) {
 
 // 2nd:
 /**
- * Shows the currently selected work content.
+ * Displays the content section that corresponds to the currently selected
+ * navigation button.
  *
- * 1. Hides all content sections.
- * 2. Reads the currently selected menu button.
- * 3. Computes the corresponding content id.
- * 4. Shows only that content element.
+ * Workflow:
+ *  1. Hides all content sections.
+ *  2. Retrieves the currently active navigation button (desktop or mobile).
+ *  3. Resolves the content ID associated with that button.
+ *  4. Displays the correct content section.
  *
- * Falls irgendetwas fehlt (Button, ID, Content-Element),
- * wird eine Warnung geloggt und die Funktion bricht sauber ab.
+ * Defensive behavior:
+ *  - If no active button is found, a warning is logged and the function stops.
+ *  - If the button has no ID or the mapping fails, warnings are shown.
+ *  - If the target content element does not exist in the DOM, the function exits safely.
+ *
+ * @returns {void}
  */
 function showCurrentContent() {
-    // 1. Alle Work-Content-Bereiche ausblenden
-    hideAllWorkContent();
-
-    // 2. Aktuellen Navigations-Button holen
     const selectedMenuBtn = getSelectedMenuBtn();
     if (!selectedMenuBtn) {
         console.warn('showCurrentContent: no selected menu button found');
         return;
     }
 
-    const selectedMenuBtnId = selectedMenuBtn.id;
-    if (!selectedMenuBtnId) {
-        console.warn('showCurrentContent: selected menu button has no id');
+    const id = selectedMenuBtn.id; // z.B. "mnuBtn2nd" oder "mnuBtnMbl4th"
+    const normalizedId = id.replace('Mbl', ''); // mnuBtnMbl2nd -> mnuBtn2nd
+
+    const menuToView = {
+        mnuBtn2nd: 'summary',
+        mnuBtn3rd: 'add',
+        mnuBtn4th: 'board',
+        mnuBtn5th: 'contacts'
+    };
+
+    const viewName = menuToView[normalizedId];
+
+    if (!viewName) {
+        console.warn(`showCurrentContent: no view mapped for menu id "${id}"`);
         return;
     }
 
-    // 3. Zu diesem Button die Content-ID bestimmen
-    const currentCntId = provideCurrentContentId(selectedMenuBtnId);
-    if (!currentCntId) {
-        console.warn(
-            `showCurrentContent: no content id mapped for menu button "${selectedMenuBtnId}"`
-        );
-        return;
-    }
-
-    // 4. Das entsprechende Content-Element im DOM holen
-    const currentContent = document.getElementById(currentCntId);
-    if (!currentContent) {
-        console.warn(
-            `showCurrentContent: content element with id "${currentCntId}" not found`
-        );
-        return;
-    }
-
-    // 5. Nur dieses Element sichtbar machen
-    currentContent.classList.remove('display-none');
+    setView(viewName);
 }
+
 
 
 
@@ -177,11 +175,37 @@ function currentNavView(currentBtnId) {
 }
 
 // 6th
+/**
+ * Resets the work view to a default state based on a given
+ * navigation button ID.
+ *
+ * Steps:
+ *  1. Marks the given button as the default active navigation button.
+ *  2. Shows the content that corresponds to the currently selected button.
+ *  3. Re-initializes page-specific logic via initPageContent().
+ *
+ * If no default button ID is provided, the function logs a warning
+ * and exits safely.
+ *
+ * @param {string} defaultBtnId - The ID of the navigation button to use as default.
+ * @returns {void}
+ */
 function viewDefaultContent(defaultBtnId) {
+    if (!defaultBtnId) {
+        console.warn('viewDefaultContent: no defaultBtnId provided');
+        return;
+    }
+
+    // 1. Mark the default nav button (your existing helper)
     viewDefaultBtnById(defaultBtnId);
+
+    // 2. Show the content mapped to the currently selected button
     showCurrentContent();
+
+    // 3. Run any page-specific setup (PageAssigns, etc.)
     initPageContent();
 }
+
 
 
 // --------------------

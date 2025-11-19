@@ -165,14 +165,58 @@ function showInfoContentById(cntId) {
 
 
 // 5th
+/**
+ * Updates the navigation state when a menu button is activated.
+ *
+ * Responsibilities:
+ *  - Resets desktop and mobile navigation styles.
+ *  - Marks the given button and its "twin" (desktop/mobile counterpart) as selected.
+ *  - Ensures that the left and bottom navigation menus are visible.
+ *
+ * Defensive behavior:
+ *  - If the given button ID is missing or not found in the DOM, a warning is logged
+ *    and the function exits safely.
+ *  - If no twin button can be resolved, only the primary button is updated, and a
+ *    warning is logged (no hard failure).
+ *
+ * @param {string} currentBtnId - The ID of the navigation button that was activated.
+ * @returns {void}
+ */
 function currentNavView(currentBtnId) {
-    let twinBtn = getTheButtonTwin(currentBtnId);
+    if (!currentBtnId) {
+        console.warn('currentNavView: currentBtnId is missing');
+        return;
+    }
+
+    const btn = document.getElementById(currentBtnId);
+    if (!btn) {
+        console.warn(`currentNavView: button with id "${currentBtnId}" not found`);
+        return;
+    }
+
+    const twinBtnId = getTheButtonTwin(currentBtnId);
+    if (!twinBtnId) {
+        console.warn(
+            `currentNavView: no twin button id found for "${currentBtnId}"`
+        );
+    }
+
+    // Reset all navigation buttons (desktop + mobile)
     resetNavigationView();
     resetNavigationViewMbl();
+
+    // Activate the primary button
     setCurrentBtnById(currentBtnId);
-    setCurrentBtnById(twinBtn);
+
+    // Activate twin button if available
+    if (twinBtnId) {
+        setCurrentBtnById(twinBtnId);
+    }
+
+    // Ensure nav UI is visible
     showLeftAndBottomMenu();
 }
+
 
 // 6th
 /**
@@ -417,25 +461,3 @@ function resetSVGHvr() {
         icon.classList.add('menu-icon');
     });
 }
-
-
-
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// 5th
-// ...
-// resetSVGHvr()
-// currentNavView() --> workContent.js
-
-
-// 5th:
-// ...
-// function resetSVGHvr() {
-//     let svgIcons = document.querySelectorAll('.menu-icon-hvr');
-//     svgIcons.forEach(svgIcon => {
-//         svgIcon.classList.remove('menu-icon-hvr');
-//         svgIcon.classList.add('menu-icon');
-//     });
-// }

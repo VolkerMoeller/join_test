@@ -395,13 +395,29 @@ function initPageContent() {
 
 // 6th:
 // ..
+// function resetSVGHvr() {
+//     let svgIcons = document.querySelectorAll('.menu-icon-hvr');
+//     svgIcons.forEach(svgIcon => {
+//         svgIcon.classList.remove('menu-icon-hvr');
+//         svgIcon.classList.add('menu-icon');
+//     });
+// }
+
+/**
+ * Resets all SVG hover icons to their non-hover state.
+ *
+ * @returns {void}
+ */
 function resetSVGHvr() {
-    let svgIcons = document.querySelectorAll('.menu-icon-hvr');
-    svgIcons.forEach(svgIcon => {
-        svgIcon.classList.remove('menu-icon-hvr');
-        svgIcon.classList.add('menu-icon');
+    const icons = document.querySelectorAll('.menu-icon-hvr');
+    if (!icons.length) return;
+
+    icons.forEach(icon => {
+        icon.classList.remove('menu-icon-hvr');
+        icon.classList.add('menu-icon');
     });
 }
+
 
 
 // --------------------
@@ -416,10 +432,10 @@ function resetSVGHvr() {
 
 // 5th:
 // ...
-function resetSVGHvr() {
-    let svgIcons = document.querySelectorAll('.menu-icon-hvr');
-    svgIcons.forEach(svgIcon => {
-        svgIcon.classList.remove('menu-icon-hvr');
-        svgIcon.classList.add('menu-icon');
-    });
-}
+// function resetSVGHvr() {
+//     let svgIcons = document.querySelectorAll('.menu-icon-hvr');
+//     svgIcons.forEach(svgIcon => {
+//         svgIcon.classList.remove('menu-icon-hvr');
+//         svgIcon.classList.add('menu-icon');
+//     });
+// }

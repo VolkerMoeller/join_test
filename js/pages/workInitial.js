@@ -47,6 +47,7 @@ async function initWork() {
     } else {
         console.log('Initialization successful.');
     }
+
 }
 
 

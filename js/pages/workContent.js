@@ -55,9 +55,8 @@ const CONTACTS_NAV_BTN_ID = 'mnuBtn5th';
 // 5th
 // currentNavView()
 
-
 // 6th
-// 
+// initMenuButtonEvents()
 
 // 7th
 // viewDefaultContent()

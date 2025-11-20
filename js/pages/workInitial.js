@@ -148,6 +148,8 @@ function defaultHeaderView() {
 function defaultNavView() {
     resetNavigationView();
     resetNavigationViewMbl();
+    // XXX
+    initMenuButtonEvents();
     setCurrentBtnById('mnuBtn2nd');
     setCurrentBtnById('mnuBtnMbl2nd');
     showLeftAndBottomMenu();

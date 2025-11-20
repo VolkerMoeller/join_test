@@ -8,6 +8,8 @@
 
 function navigationView() {
     resetNavigationView();
+    // XXX
+    initMenuButtonEvents();
     let userStatus = readingUserStatus();
     if (userStatus == 'external') {
         toggleExternalNav();

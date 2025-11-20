@@ -28,6 +28,12 @@ const VIEW_CONFIG = {
 };
 
 
+const LOGIN_NAV_BTN_ID = 'mnuBtn1st';
+const SUMMARY_NAV_BTN_ID = 'mnuBtn2nd';
+const ADDTASK_NAV_BTN_ID = 'mnuBtn3rd';
+const BOARD_NAV_BTN_ID = 'mnuBtn4th';
+const CONTACTS_NAV_BTN_ID = 'mnuBtn5th';
+
 
 // -----------------
 // work.js-functions:
@@ -49,7 +55,11 @@ const VIEW_CONFIG = {
 // 5th
 // currentNavView()
 
+
 // 6th
+// 
+
+// 7th
 // viewDefaultContent()
 
 
@@ -219,6 +229,40 @@ function currentNavView(currentBtnId) {
 
 
 // 6th
+/**
+ * Attaches click handlers to all desktop and mobile menu buttons.
+ *
+ * - For login buttons (1st), it calls returnToLogIn().
+ * - For all other menu buttons, it calls viewDefaultContent(id),
+ *   so navigation state and content are updated consistently.
+ */
+function initMenuButtonEvents() {
+    const menuButtons = document.querySelectorAll('.menu-btn-hvr, .menu-btn-hvr-mbl');
+
+    menuButtons.forEach(btn => {
+        btn.addEventListener('click', event => {
+            event.preventDefault();
+
+            const id = btn.id;
+            if (!id) {
+                console.warn('initMenuButtonEvents: menu button without id', btn);
+                return;
+            }
+
+            // Special case: Login-Button
+            if (id === 'mnuBtn1st' || id === 'mnuBtnMbl1st') {
+                returnToLogIn();
+                return;
+            }
+
+            // Standard case: Summary/Add/Board/Contacts etc.
+            viewDefaultContent(id);
+        });
+    });
+}
+
+
+// 7th
 /**
  * Resets the work view to a default state based on a given
  * navigation button ID.

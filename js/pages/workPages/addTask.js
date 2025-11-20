@@ -18,7 +18,7 @@ async function initCreateNewTask() {
     if (!floatAddTask) {
         setTimeout(() => {
             resetFormAddTask();
-            viewDefaultContent('mnuBtn4th');
+            viewDefaultContent(BOARD_NAV_BTN_ID);
         }, 800);
     }
 }

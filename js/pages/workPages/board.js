@@ -18,7 +18,7 @@ function endAnimAddTaskFloat() {
     animFlowHideAddTask();
     setTimeout(() => {
         resetOverlay();
-        viewDefaultContent('mnuBtn4th');
+        viewDefaultContent(BOARD_NAV_BTN_ID);
     }, 225);
 }
 

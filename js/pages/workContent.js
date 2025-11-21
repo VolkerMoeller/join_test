@@ -239,6 +239,10 @@ function initMenuButtonEvents() {
     const menuButtons = document.querySelectorAll('.menu-btn-hvr, .menu-btn-hvr-mbl');
 
     menuButtons.forEach(btn => {
+        if (btn.dataset.menuBound === 'true') return;
+
+        btn.dataset.menuBound = 'true';
+
         btn.addEventListener('click', event => {
             event.preventDefault();
 

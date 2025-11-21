@@ -66,16 +66,6 @@ const CONTACTS_NAV_BTN_ID = 'mnuBtn5th';
 /**
  * Switches the application to a specific logical view (e.g. "summary", "board", "contacts", "help").
  *
- * Responsibilities:
- *  - Activates the correct navigation button (desktop and mobile).
- *  - Hides all other content sections.
- *  - Displays the content section associated with the selected view.
- *
- * Behavior:
- *  - If the view has no assigned navigation buttons (e.g. help/info views),
- *    navigation styles are reset but content still switches correctly.
- *  - Invalid or unknown view names produce a warning and stop the process safely.
- *
  * @param {string} viewName - The name of the view to activate.
  * @returns {void}
  */
@@ -87,6 +77,7 @@ function setView(viewName) {
         return;
     }
 
+    // --- 1) Navigation aktualisieren ---
     if (config.desktopBtnId) {
         currentNavView(config.desktopBtnId);
     } else {
@@ -95,6 +86,7 @@ function setView(viewName) {
         showLeftAndBottomMenu();
     }
 
+    // --- 2) Content aktualisieren ---
     hideAllWorkContent();
 
     const content = document.getElementById(config.contentId);
@@ -107,6 +99,7 @@ function setView(viewName) {
 
     content.classList.remove('display-none');
 }
+
 
 
 // 2nd:

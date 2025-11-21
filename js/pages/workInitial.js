@@ -105,36 +105,8 @@ function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 // #endregion
 
 
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-
-// .1st
-// ..
-// includeHTML() --> main.js
-// setClrSchemeInit() --> main.js
-// invertLogoClr() --> main.js
-// defaultHeaderView()
-// defaultNavView()
-// genHvrBtns()
-// genBtnUser()
-// initPageContent() --> workContent.js
-
-// .2nd
-// ..
-// saveLocalStorageObject() --> main.js
-
-
 // .1st:
 // ..
-// function defaultHeaderView() {
-//     let userStatus = readingUserStatus()
-//     if (userStatus == 'guest') { guestHeader(); }
-//     if (userStatus == 'user') { userHeader(); }
-// }
-
-// .1st:
 function defaultHeaderView() {
     const userStatus = readingUserStatus && readingUserStatus();
     if (userStatus === 'guest') { guestHeader(); }
@@ -142,13 +114,11 @@ function defaultHeaderView() {
 }
 
 
-
 // .1st:
 // ..
 function defaultNavView() {
     resetNavigationView();
     resetNavigationViewMbl();
-    // XXX
     initMenuButtonEvents();
     setCurrentBtnById('mnuBtn2nd');
     setCurrentBtnById('mnuBtnMbl2nd');
@@ -221,7 +191,6 @@ async function genHvrBtns() {
 }
 
 
-
 // .1st:
 // ..
 function genBtnUser() {
@@ -229,54 +198,6 @@ function genBtnUser() {
     document.getElementById('btnUser').innerHTML = '';
     document.getElementById('btnUser').innerHTML = genHTMLBtnUser(currentUser['initial']);
 }
-
-
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// 1st
-// ...
-// readingUserStatus() --> main.js
-// guestHeader()
-// userHeader()
-
-// 1st
-// ...
-// resetNavigationView() --> main.js
-// setCurrentBtnById()
-// showLeftAndBottomMenu() --> see above
-// getTheButtonTwin()
-// resetNavigationView() --> see above
-// resetNavigationViewMbl() --> main.js
-// setCurrentBtnById() --> see above
-// setCurrentBtnById() --> see above
-// showLeftAndBottomMenu() --> see above
-
-// 1st
-// ...
-// genHTMLHvrBtn() --> genHovBtn.js
-// includeHTMLById() --> main.js
-
-// 1st
-// ...
-// getWindowWidth() --> main.js
-// genWelcomeDesktop() --> sum.js
-// resetOverlayV2() --> main.js
-// genWelcomeMobile() --> sum .js
-// resetOverlayV2() --> main.js
-// loadLocalStorageObject() --> main.js
-// toggleGreeting() --> sum.js
-
-// 1st
-// ...
-// loadLocalStorageObject() --> main.js
-// genHTMLBtnUser() --> genHTMLElements.js
-
-// 1st
-// ...
-// loadLocalStorageObject() --> main.js
-// genHTMLSumRectCnt() --> genHTMLElements.js
 
 
 // 1st:

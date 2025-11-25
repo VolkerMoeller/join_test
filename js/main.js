@@ -208,6 +208,26 @@ function resetNavigationViewMbl() {
 }
 
 
+function showLeftAndBottomMenu() {
+    setTimeout(() => {
+        const leftMenu = document.getElementById('left-menu');
+        const bottomMenu = document.getElementById('btm-menu');
+
+        if (!leftMenu) {
+            console.warn('showLeftAndBottomMenu: element "#left-menu" not found');
+        } else {
+            leftMenu.classList.remove('display-none');
+        }
+
+        if (!bottomMenu) {
+            console.warn('showLeftAndBottomMenu: element "#btm-menu" not found');
+        } else {
+            bottomMenu.classList.remove('display-none');
+        }
+    }, 10);
+}
+
+
 
 // --- overlay-functions:
 

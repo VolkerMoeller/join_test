@@ -66,39 +66,78 @@ const CONTACTS_NAV_BTN_ID = 'mnuBtn5th';
 /**
  * Switches the application to a specific logical view (e.g. "summary", "board", "contacts", "help").
  *
+ * Responsibilities:
+ *  - Delegates navigation update to a dedicated helper.
+ *  - Hides all other content sections and shows the selected one.
+ *  - Wraps the whole process in a try/catch to avoid hard failures.
+ *
  * @param {string} viewName - The name of the view to activate.
  * @returns {void}
  */
 function setView(viewName) {
-    const config = VIEW_CONFIG[viewName];
+    try {
+        const config = VIEW_CONFIG[viewName];
 
-    if (!config) {
-        console.warn(`setView: unknown view "${viewName}"`);
-        return;
+        if (!config) {
+            throw new Error(`Unknown view "${viewName}"`);
+        }
+
+        updateNavigationForView(viewName, config);
+        updateContentForView(viewName, config);
+    } catch (error) {
+        logViewError(viewName, error);
     }
+}
 
-    // --- 1) Update navigation ---
-    if (config.desktopBtnId) {
-        currentNavView(config.desktopBtnId);
-    } else {
+/**
+ * Updates navigation state based on the provided view configuration.
+ *
+ * @param {string} viewName
+ * @param {{desktopBtnId: (string|null), mobileBtnId: (string|null)}} config
+ * @returns {void}
+ */
+function updateNavigationForView(viewName, config) {
+    const hasNavButtons = !!config.desktopBtnId || !!config.mobileBtnId;
+
+    if (!hasNavButtons) {
+        // Views wie "help", "legal", etc. ohne Menü-Button
         resetNavigationView();
         resetNavigationViewMbl();
         showLeftAndBottomMenu();
+        return;
     }
 
-    // --- 2) Update content ---
+    // Program-controlled call: Prefer desktop as primary button,
+    // otherwise mobile as a fallback.
+    const primaryBtnId = config.desktopBtnId || config.mobileBtnId;
+    const twinBtnId = config.mobileBtnId && config.desktopBtnId
+        ? config.mobileBtnId
+        : null;
+
+    currentNavView(primaryBtnId, twinBtnId);
+}
+
+
+/**
+ * Updates the visible content area for the given view.
+ *
+ * @param {string} viewName
+ * @param {{contentId: string}} config
+ * @returns {void}
+ */
+function updateContentForView(viewName, config) {
     hideAllWorkContent();
 
     const content = document.getElementById(config.contentId);
     if (!content) {
-        console.warn(
-            `setView: content element "${config.contentId}" for view "${viewName}" not found`
+        throw new Error(
+            `Content element "${config.contentId}" for view "${viewName}" not found`
         );
-        return;
     }
 
     content.classList.remove('display-none');
 }
+
 
 
 
@@ -176,31 +215,38 @@ function showInfoContentById(cntId) {
  *  - Ensures that the left and bottom navigation menus are visible.
  *
  * Defensive behavior:
- *  - If the given button ID is missing or not found in the DOM, a warning is logged
- *    and the function exits safely.
- *  - If no twin button can be resolved, only the primary button is updated, and a
- *    warning is logged (no hard failure).
+ *  - If neither primary nor twin ID are provided, a warning is logged.
+ *  - If the primary button cannot be resolved, a warning is logged and the function exits safely.
+ *  - If no twin button can be resolved, only the primary button is updated, and a warning is logged.
  *
- * @param {string} currentBtnId - The ID of the navigation button that was activated.
+ * @param {string} currentBtnId - The ID of the navigation button that was activated (desktop or mobile).
+ * @param {string} [twinBtnId] - Optional explicit twin button ID (desktop/mobile counterpart).
  * @returns {void}
  */
-function currentNavView(currentBtnId) {
-    if (!currentBtnId) {
-        console.warn('currentNavView: currentBtnId is missing');
+function currentNavView(currentBtnId, twinBtnId) {
+    if (!currentBtnId && !twinBtnId) {
+        console.warn('currentNavView: both currentBtnId and twinBtnId are missing');
         return;
     }
 
-    const btn = document.getElementById(currentBtnId);
-    if (!btn) {
-        console.warn(`currentNavView: button with id "${currentBtnId}" not found`);
-        return;
-    }
+    const primaryId = currentBtnId || twinBtnId;
+    const primaryBtn = primaryId ? document.getElementById(primaryId) : null;
 
-    const twinBtnId = getTheButtonTwin(currentBtnId);
-    if (!twinBtnId) {
+    if (!primaryBtn) {
         console.warn(
-            `currentNavView: no twin button id found for "${currentBtnId}"`
+            `currentNavView: primary button with id "${primaryId}" not found`
         );
+        return;
+    }
+
+    let resolvedTwinId = twinBtnId;
+    if (!resolvedTwinId) {
+        resolvedTwinId = getTheButtonTwin(primaryId);
+        if (!resolvedTwinId) {
+            console.warn(
+                `currentNavView: no twin button id found for "${primaryId}"`
+            );
+        }
     }
 
     // Reset all navigation buttons (desktop + mobile)
@@ -208,16 +254,17 @@ function currentNavView(currentBtnId) {
     resetNavigationViewMbl();
 
     // Activate the primary button
-    setCurrentBtnById(currentBtnId);
+    setCurrentBtnById(primaryId);
 
     // Activate twin button if available
-    if (twinBtnId) {
-        setCurrentBtnById(twinBtnId);
+    if (resolvedTwinId) {
+        setCurrentBtnById(resolvedTwinId);
     }
 
     // Ensure nav UI is visible
     showLeftAndBottomMenu();
 }
+
 
 
 // 6th

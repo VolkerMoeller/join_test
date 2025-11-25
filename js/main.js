@@ -25,6 +25,7 @@
 // switchToSignPages()
 // changeCntMain()
 // changePageCSS()
+// resetNavigationGroup()
 // resetNavigationView()
 // resetNavigationViewMbl()
 
@@ -166,39 +167,43 @@ function changePageCSS() {
 }
 
 
+/**
+ * Resets a navigation group (e.g. desktop or mobile) to its default state.
+ *
+ * @param {string} selectedClass - CSS class used for selected buttons.
+ * @param {string} baseClass - CSS class used for normal (unselected) buttons.
+ * @returns {void}
+ */
+function resetNavigationGroup(selectedClass, baseClass) {
+    const selectedButtons = document.querySelectorAll('.' + selectedClass);
+    selectedButtons.forEach(btn => {
+        btn.classList.remove(selectedClass);
+        btn.classList.add(baseClass);
+    });
+
+    const navButtons = document.querySelectorAll('.' + baseClass);
+    navButtons.forEach(btn => {
+        btn.classList.remove('display-none');
+        btn.disabled = false;
+    });
+
+    const firstNavBtn = document.querySelector('.' + baseClass);
+    if (!firstNavBtn) {
+        console.warn(`resetNavigationGroup: no element found for baseClass "${baseClass}"`);
+        return;
+    }
+
+    firstNavBtn.classList.add('display-none');
+}
+
+
 function resetNavigationView() {
-    let navBtnsSelected = document.querySelectorAll('.menu-btn-hvr-selected');
-    navBtnsSelected.forEach(navBtnSelected => {
-        navBtnSelected.classList.remove('menu-btn-hvr-selected');
-        navBtnSelected.classList.add('menu-btn-hvr');
-    });
-
-    let navBtns = document.querySelectorAll('.menu-btn-hvr');
-    navBtns.forEach(navBtn => {
-        navBtn.classList.remove('display-none');
-        navBtn.disabled = false;
-    });
-
-    let fstNavBtn = document.querySelector('.menu-btn-hvr');
-    fstNavBtn.classList.add('display-none');
+    resetNavigationGroup('menu-btn-hvr-selected', 'menu-btn-hvr');
 }
 
 
 function resetNavigationViewMbl() {
-    let navBtnsSelected = document.querySelectorAll('.menu-btn-hvr-mbl-selected');
-    navBtnsSelected.forEach(navBtnSelected => {
-        navBtnSelected.classList.remove('menu-btn-hvr-mbl-selected');
-        navBtnSelected.classList.add('menu-btn-hvr-mbl');
-    });
-
-    let navBtns = document.querySelectorAll('.menu-btn-hvr-mbl');
-    navBtns.forEach(navBtn => {
-        navBtn.classList.remove('display-none');
-        navBtn.disabled = false;
-    });
-
-    let fstNavBtn = document.querySelector('.menu-btn-hvr-mbl');
-    fstNavBtn.classList.add('display-none');
+    resetNavigationGroup('menu-btn-hvr-mbl-selected', 'menu-btn-hvr-mbl');
 }
 
 

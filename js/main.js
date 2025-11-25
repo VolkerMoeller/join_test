@@ -190,22 +190,23 @@ function resetNavigationGroup(selectedClass, baseClass) {
 
     const firstNavBtn = document.querySelector('.' + baseClass);
     if (!firstNavBtn) {
-        console.warn(`resetNavigationGroup: no element found for baseClass "${baseClass}"`);
+        console.warn(
+            `resetNavigationGroup: no element found for baseClass "${baseClass}"`
+        );
         return;
     }
 
     firstNavBtn.classList.add('display-none');
 }
 
-
 function resetNavigationView() {
     resetNavigationGroup('menu-btn-hvr-selected', 'menu-btn-hvr');
 }
 
-
 function resetNavigationViewMbl() {
     resetNavigationGroup('menu-btn-hvr-mbl-selected', 'menu-btn-hvr-mbl');
 }
+
 
 
 // --- overlay-functions:

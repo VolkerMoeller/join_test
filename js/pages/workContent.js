@@ -77,7 +77,7 @@ function setView(viewName) {
         return;
     }
 
-    // --- 1) Navigation aktualisieren ---
+    // --- 1) Update navigation ---
     if (config.desktopBtnId) {
         currentNavView(config.desktopBtnId);
     } else {
@@ -86,7 +86,7 @@ function setView(viewName) {
         showLeftAndBottomMenu();
     }
 
-    // --- 2) Content aktualisieren ---
+    // --- 2) Update content ---
     hideAllWorkContent();
 
     const content = document.getElementById(config.contentId);

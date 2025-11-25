@@ -43,6 +43,7 @@
 // --- help-functions:
 
 // safeCall()
+// logViewError()
 // toggleElements()
 // toggleElementsZindex()
 // focusInput()
@@ -327,6 +328,26 @@ async function safeCall(fn, label, ...args) {
         console.error(`${label} failed: ${err.message}`);
         return `${label} failed: ${err.message}`;
     }
+}
+
+
+/**
+ * Logs view-related errors in a consistent way.
+ *
+ * @param {string} viewName - The name of the view that was being processed.
+ * @param {unknown} error - The thrown error or value.
+ * @param {Object} [context] - Additional debug context.
+ * @returns {void}
+ */
+function logViewError(viewName, error, context) {
+    const baseMessage = `[ViewError] view="${viewName}"`;
+    const payload = {
+        error: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined,
+        context: context || null
+    };
+
+    console.warn(baseMessage, payload);
 }
 
 

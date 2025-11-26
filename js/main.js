@@ -321,35 +321,38 @@ function checkOverlay() {
 
 
 /**
- * Executes a given function safely and captures potential errors.
+ * Executes a function safely and catches all errors.
  *
- * Supports both synchronous and asynchronous functions.
- * Returns `true` on success, or an error message on failure.
+ * Works for both synchronous and asynchronous functions.
+ * Returns `true` on success, otherwise a formatted error string.
  *
  * @async
  * @function safeCall
- * @param {Function} fn - The function to execute.
+ * @param {Function} fn - The function to execute safely.
  * @param {string} label - Name used for logging or error reporting.
- * @param {...any} args - Optional parameters passed to the function.
- * @returns {Promise<boolean|string>} True if successful, or an error message string.
+ * @param {...any} args - Arguments passed to the function.
+ * @returns {Promise<boolean|string>} True on success, or error message on failure.
  */
 async function safeCall(fn, label, ...args) {
     if (typeof fn !== 'function') {
         console.warn(`safeCall: '${label}' is not callable.`);
-        return false;
+        return `${label} failed: not callable`;
     }
 
     try {
         const result = fn(...args);
-        if (result instanceof Promise) {
-            await result;
-        }
+
+        // robust: funktioniert auch, wenn andere Promise-Implementationen verwendet werden
+        await Promise.resolve(result);
+
         return true;
     } catch (err) {
-        console.error(`${label} failed: ${err.message}`);
-        return `${label} failed: ${err.message}`;
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error(`safeCall: ${label} failed: ${msg}`);
+        return `${label} failed: ${msg}`;
     }
 }
+
 
 
 /**

@@ -117,10 +117,10 @@ function defaultHeaderView() {
 // .1st:
 // ..
 function defaultNavView() {
-    // Buttons anbinden
+    // Attach buttons
     initMenuButtonEvents();
 
-    // Dann die Standard-View setzen (z.B. "summary")
+    // Then set the default view
     safeCall(() => setView('summary'), 'defaultNavView → setView(summary)');
 }
 

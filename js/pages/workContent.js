@@ -61,6 +61,9 @@ const CONTACTS_NAV_BTN_ID = 'mnuBtn5th';
 // 7th
 // viewDefaultContent()
 
+// 8th
+// getViewNameForButtonId()
+
 
 // 1st:
 /**
@@ -272,8 +275,8 @@ function currentNavView(currentBtnId, twinBtnId) {
  * Attaches click handlers to all desktop and mobile menu buttons.
  *
  * - For login buttons (1st), it calls returnToLogIn().
- * - For all other menu buttons, it calls viewDefaultContent(id),
- *   so navigation state and content are updated consistently.
+ * - For all other menu buttons, it resolves the logical view (VIEW_CONFIG)
+ *   and calls setView(viewName) in a safeCall wrapper.
  */
 function initMenuButtonEvents() {
     const menuButtons = document.querySelectorAll('.menu-btn-hvr, .menu-btn-hvr-mbl');
@@ -292,50 +295,76 @@ function initMenuButtonEvents() {
                 return;
             }
 
-            // Special case: Login-Button
+            // Special case: Login-Buttons
             if (id === 'mnuBtn1st' || id === 'mnuBtnMbl1st') {
                 returnToLogIn();
                 return;
             }
 
-            // Standard case: Summary/Add/Board/Contacts etc.
-            viewDefaultContent(id);
+            const viewName = getViewNameForButtonId(id);
+            if (!viewName) {
+                console.warn(
+                    'initMenuButtonEvents: no view mapped for button id',
+                    id
+                );
+                return;
+            }
+
+            safeCall(() => setView(viewName), `setView(${viewName}) from menu click`);
         });
     });
 }
 
 
+
 // 7th
 /**
- * Resets the work view to a default state based on a given
- * navigation button ID.
+ * Legacy helper: switches to the view that belongs to the given button id.
  *
- * Steps:
- *  1. Marks the given button as the default active navigation button.
- *  2. Shows the content that corresponds to the currently selected button.
- *  3. Re-initializes page-specific logic via initPageContent().
+ * Prefer using setView(viewName) directly where possible.
  *
- * If no default button ID is provided, the function logs a warning
- * and exits safely.
- *
- * @param {string} defaultBtnId - The ID of the navigation button to use as default.
+ * @param {string} buttonId
  * @returns {void}
  */
-function viewDefaultContent(defaultBtnId) {
-    if (!defaultBtnId) {
-        console.warn('viewDefaultContent: no defaultBtnId provided');
+function viewDefaultContent(buttonId) {
+    const viewName = getViewNameForButtonId(buttonId);
+
+    if (!viewName) {
+        console.warn(
+            'viewDefaultContent: no view mapped for button id',
+            buttonId
+        );
         return;
     }
 
-    // 1. Mark the default nav button (your existing helper)
-    viewDefaultBtnById(defaultBtnId);
-
-    // 2. Show the content mapped to the currently selected button
-    showCurrentContent();
-
-    // 3. Run any page-specific setup (PageAssigns, etc.)
-    initPageContent();
+    safeCall(() => setView(viewName), `setView(${viewName}) from viewDefaultContent`);
 }
+
+
+
+// 8th
+/**
+ * Resolves the logical view name for a given navigation button id.
+ *
+ * It checks both desktopBtnId and mobileBtnId in VIEW_CONFIG.
+ *
+ * @param {string} buttonId - The DOM id of the clicked navigation button.
+ * @returns {string|null} - The matching view name, or null if none found.
+ */
+function getViewNameForButtonId(buttonId) {
+    if (!buttonId) {
+        return null;
+    }
+
+    for (const [viewName, config] of Object.entries(VIEW_CONFIG)) {
+        if (config.desktopBtnId === buttonId || config.mobileBtnId === buttonId) {
+            return viewName;
+        }
+    }
+
+    return null;
+}
+
 
 
 

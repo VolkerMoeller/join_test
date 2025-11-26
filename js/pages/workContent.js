@@ -269,7 +269,6 @@ function currentNavView(currentBtnId, twinBtnId) {
 }
 
 
-
 // 6th
 /**
  * Attaches click handlers to all desktop and mobile menu buttons.
@@ -314,7 +313,6 @@ function initMenuButtonEvents() {
         });
     });
 }
-
 
 
 // 7th

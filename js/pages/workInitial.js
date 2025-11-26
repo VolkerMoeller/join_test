@@ -117,13 +117,13 @@ function defaultHeaderView() {
 // .1st:
 // ..
 function defaultNavView() {
-    resetNavigationView();
-    resetNavigationViewMbl();
+    // Buttons anbinden
     initMenuButtonEvents();
-    setCurrentBtnById('mnuBtn2nd');
-    setCurrentBtnById('mnuBtnMbl2nd');
-    showLeftAndBottomMenu();
+
+    // Dann die Standard-View setzen (z.B. "summary")
+    safeCall(() => setView('summary'), 'defaultNavView → setView(summary)');
 }
+
 
 
 // .1st:

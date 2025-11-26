@@ -342,7 +342,6 @@ async function safeCall(fn, label, ...args) {
     try {
         const result = fn(...args);
 
-        // robust: funktioniert auch, wenn andere Promise-Implementationen verwendet werden
         await Promise.resolve(result);
 
         return true;

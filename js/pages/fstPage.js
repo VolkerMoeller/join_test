@@ -121,7 +121,6 @@ function endIntroOverlay() {
 }
 
 
-
 function noAnimCSS() {
     const animCSS = document.getElementById('animCSS');
     if (!animCSS) {

@@ -8,7 +8,6 @@
 
 function navigationView() {
     resetNavigationView();
-    // XXX
     initMenuButtonEvents();
     let userStatus = readingUserStatus();
     if (userStatus == 'external') {
@@ -40,12 +39,3 @@ function toggleExternalNav() {
     txtBtnLegalMbl.classList.remove('display-none');
 
 }
-
-
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// resetNavigationView() --> main.js
-// readingUserStatus() --> main.js
-// showLeftAndBottomMenu() --> work.js

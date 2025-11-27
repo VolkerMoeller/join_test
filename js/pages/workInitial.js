@@ -1,7 +1,3 @@
-// -----------------
-// workInitial.js-functions:
-// -----------------
-
 // 1st
 // initWork()
 
@@ -12,7 +8,7 @@
 // setMenuIcnHvrClrSVG()
 
 
-// 1st
+// #region 1st: Initialize JOIN
 /**
  * Initializes the main JOIN workspace.
  *
@@ -43,10 +39,10 @@ async function initWork() {
         console.log('Initialization successful.');
     }
 }
+// #endregion 1st
 
 
-
-// 2nd:
+// #region 2nd: Redireciton
 /**
  * Redirects the user back to the login page.
  *
@@ -57,15 +53,10 @@ function returnToLogIn() {
     window.location.assign('./signPage.html');
     saveLocalStorageObject('userStatus', 'external');
 }
+// #endregion 2nd
 
 
-// 3rd:
-// #region SVG Hover Color Control – for the main menu btns
-
-// -----------------------
-// SVG Hover Color Control
-// -----------------------
-
+// #region 3rd: SVG Hover Color
 /**
  * Toggles the hover color for one or two <path> elements inside a button's SVG.
  * @param {string} btnId   - The button element ID.
@@ -96,12 +87,9 @@ function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
     toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, false);
 }
+// #endregion 3rd
 
-// #endregion
 
-
-// .1st:
-// ..
 function defaultHeaderView() {
     const userStatus = readingUserStatus && readingUserStatus();
     if (userStatus === 'guest') { guestHeader(); }
@@ -109,8 +97,6 @@ function defaultHeaderView() {
 }
 
 
-// .1st:
-// ..
 function defaultNavView() {
     // Attach buttons
     initMenuButtonEvents();
@@ -120,9 +106,6 @@ function defaultNavView() {
 }
 
 
-
-// .1st:
-// ..
 async function genHvrBtns() {
     const btnMap = {
         btnBackHelp: {
@@ -186,8 +169,6 @@ async function genHvrBtns() {
 }
 
 
-// .1st:
-// ..
 function genBtnUser() {
     let currentUser = loadLocalStorageObject('currentUser');
     document.getElementById('btnUser').innerHTML = '';
@@ -195,8 +176,6 @@ function genBtnUser() {
 }
 
 
-// 1st:
-// ...
 function guestHeader() {
     document.querySelector('.housing-header-right').classList.remove('display-none');
     document.querySelector('.header-user-btn').classList.add('display-none');
@@ -204,8 +183,6 @@ function guestHeader() {
 };
 
 
-// 1st:
-// ...
 function userHeader() {
     document.querySelector('.housing-header-right').classList.remove('display-none');
     document.querySelector('.header-user-btn').classList.remove('display-none');
@@ -213,8 +190,6 @@ function userHeader() {
 };
 
 
-// 1st:
-// ...
 function setCurrentBtnById(defBtnId) {
     let sumNavBtn = document.getElementById(defBtnId);
     if (!sumNavBtn) return;

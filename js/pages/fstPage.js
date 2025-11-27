@@ -1,26 +1,45 @@
-// -------------------
-// fstPage-functions:
-// -------------------
 
+// #region initFstPage()
+/**
+ * Initializes the very first landing page (index.html).
+ *
+ * Responsibilities:
+ *  - Includes shared HTML fragments.
+ *  - Starts the intro animation.
+ *  - Clears local storage and initializes color scheme and user status.
+ *
+ * Uses safeBatch/safeCall to avoid hard failures.
+ *
+ * @returns {Promise<void>}
+ */
 async function initFstPage() {
-    await includeHTML();
-    firstPageAnim();
-    localStorage.clear();
-    setClrSchemeInit();
-    setUserStatusExternal();
+    const steps = [
+        { fn: includeHTML, label: 'fstPage:includeHTML' },
+        { fn: firstPageAnim, label: 'fstPage:firstPageAnim' },
+        { fn: clearLocalStorage, label: 'fstPage:clearLocalStorage' },
+        { fn: setClrSchemeInit, label: 'fstPage:setClrSchemeInit' },
+        { fn: setUserStatusExternal, label: 'fstPage:setUserStatusExternal' }
+    ];
+
+    const errors = await safeBatch(steps);
+
+    if (errors.length > 0) {
+        console.warn('initFstPage completed with warnings:', errors);
+    } else {
+        console.log('initFstPage successful.');
+    }
 }
 
+/**
+ * Wrapped localStorage.clear() so we can use it in safeBatch.
+ */
+function clearLocalStorage() {
+    localStorage.clear();
+}
+// #endregion
 
-// --------------------
-// 1st-level-functions:
-// --------------------
 
-// includeHTML() --> main.js
-// firstPageAnim()
-// setClrSchemeInit() --> main.js
-// setUserStatusExternal() --> main.js
-
-async function firstPageAnim() {
+function firstPageAnim() {
     animFrame();
     animBg();
     animLogo();
@@ -29,17 +48,6 @@ async function firstPageAnim() {
     switchToSignPage();
 }
 
-
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// animFrame()
-// animBg()
-// animLogo()
-// animClr()
-// endAnim()
-// switchToSignPage()
 
 function animFrame() {
     const frame = document.querySelector('.ovl-frame');
@@ -86,13 +94,6 @@ function switchToSignPage() {
     }, 3000);
 }
 
-
-// --------------------
-// 3rd-level-functions:
-// --------------------
-
-// changeOvl('ovlSign.html') --> main.js
-// noAnimCSS()
 
 function noAnimCSS() {
     const animCSS = document.getElementById('animCSS');

@@ -1,5 +1,3 @@
-
-// #region initFstPage()
 /**
  * Initializes the very first landing page (index.html).
  *
@@ -36,7 +34,6 @@ async function initFstPage() {
 function clearLocalStorage() {
     localStorage.clear();
 }
-// #endregion
 
 
 function firstPageAnim() {

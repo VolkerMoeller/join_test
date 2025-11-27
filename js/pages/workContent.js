@@ -28,11 +28,7 @@ const VIEW_CONFIG = {
 };
 
 
-const LOGIN_NAV_BTN_ID = 'mnuBtn1st';
-const SUMMARY_NAV_BTN_ID = 'mnuBtn2nd';
-const ADDTASK_NAV_BTN_ID = 'mnuBtn3rd';
 const BOARD_NAV_BTN_ID = 'mnuBtn4th';
-const CONTACTS_NAV_BTN_ID = 'mnuBtn5th';
 
 
 // -----------------

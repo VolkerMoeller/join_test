@@ -44,6 +44,7 @@
 
 // safeCall()
 // logViewError()
+// safeBatch()
 // toggleElements()
 // toggleElementsZindex()
 // focusInput()
@@ -61,6 +62,7 @@
 // getFormInputData()
 // checkIfMobileView()
 // getValueOutOfArrWthObjs()
+// 
 
 // --- test-functions:
 
@@ -371,6 +373,31 @@ function logViewError(viewName, error, context) {
     };
 
     console.warn(baseMessage, payload);
+}
+
+
+/**
+ * Runs a sequence of setup steps using safeCall.
+ *
+ * Each step is an object: { fn, label, args? }.
+ * Returns an array of error messages (empty if all successful).
+ *
+ * @param {{ fn: Function, label: string, args?: any[] }[]} steps
+ * @returns {Promise<string[]>}
+ */
+async function safeBatch(steps) {
+    const errors = [];
+
+    for (const step of steps) {
+        const { fn, label, args = [] } = step;
+
+        const result = await safeCall(fn, label, ...args);
+        if (result !== true) {
+            errors.push(result);
+        }
+    }
+
+    return errors;
 }
 
 

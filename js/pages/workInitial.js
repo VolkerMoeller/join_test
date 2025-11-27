@@ -35,20 +35,15 @@ async function initWork() {
         { fn: initPageContent, label: 'initPageContent' }
     ];
 
-    const errors = [];
-
-    for (const step of setupSteps) {
-        const ok = await safeCall(step.fn, step.label);
-        if (ok !== true) errors.push(ok);
-    }
+    const errors = await safeBatch(setupSteps);
 
     if (errors.length > 0) {
         console.warn('Initialization completed with warnings:', errors);
     } else {
         console.log('Initialization successful.');
     }
-
 }
+
 
 
 // 2nd:

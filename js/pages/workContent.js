@@ -85,12 +85,26 @@ function setView(viewName) {
             throw new Error(`Unknown view "${viewName}"`);
         }
 
+        // 1) Prepare view-specific content only once
+        if (pageAssigns) {
+            pageAssigns.ensureInitialized(viewName);
+        } else {
+            console.warn(
+                'setView: pageAssigns is not initialized. Did initPageContent run?'
+            );
+        }
+
+        // 2) Update navigation
         updateNavigationForView(viewName, config);
+
+        // 3) Switch content area
         updateContentForView(viewName, config);
+
     } catch (error) {
         logViewError(viewName, error);
     }
 }
+
 
 /**
  * Updates navigation state based on the provided view configuration.

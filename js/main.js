@@ -170,13 +170,6 @@ function changePageCSS() {
 }
 
 
-/**
- * Resets a navigation group (e.g. desktop or mobile) to its default state.
- *
- * @param {string} selectedClass - CSS class used for selected buttons.
- * @param {string} baseClass - CSS class used for normal (unselected) buttons.
- * @returns {void}
- */
 function resetNavigationGroup(selectedClass, baseClass) {
     const selectedButtons = document.querySelectorAll('.' + selectedClass);
     selectedButtons.forEach(btn => {
@@ -186,9 +179,13 @@ function resetNavigationGroup(selectedClass, baseClass) {
 
     const navButtons = document.querySelectorAll('.' + baseClass);
     navButtons.forEach(btn => {
-        btn.classList.remove('display-none');
-        btn.disabled = false;
+        navButtons.forEach(btn => {
+            btn.classList.remove('display-none');
+            btn.disabled = false;
+        });
     });
+
+    resetMenuIconHoverStates();
 
     const firstNavBtn = document.querySelector('.' + baseClass);
     if (!firstNavBtn) {
@@ -201,9 +198,11 @@ function resetNavigationGroup(selectedClass, baseClass) {
     firstNavBtn.classList.add('display-none');
 }
 
+
 function resetNavigationView() {
     resetNavigationGroup('menu-btn-hvr-selected', 'menu-btn-hvr');
 }
+
 
 function resetNavigationViewMbl() {
     resetNavigationGroup('menu-btn-hvr-mbl-selected', 'menu-btn-hvr-mbl');
@@ -399,6 +398,24 @@ async function safeBatch(steps) {
 
     return errors;
 }
+
+
+/**
+ * Resets all menu icon hover states to their default color.
+ *
+ * Turns all `.menu-icon-hvr` elements back into `.menu-icon`.
+ *
+ * @returns {void}
+ */
+function resetMenuIconHoverStates() {
+    const hoveredIcons = document.querySelectorAll('.menu-icon-hvr');
+
+    hoveredIcons.forEach(icon => {
+        icon.classList.remove('menu-icon-hvr');
+        icon.classList.add('menu-icon');
+    });
+}
+
 
 
 function toggleElements(id1st, id2nd) {

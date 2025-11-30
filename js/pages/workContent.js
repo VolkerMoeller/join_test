@@ -31,6 +31,10 @@ const VIEW_CONFIG = {
 const BOARD_NAV_BTN_ID = 'mnuBtn4th';
 
 
+/** @type {PageAssigns|null} */
+let pageAssigns = null;
+
+
 // -----------------
 // work.js-functions:
 // -----------------
@@ -534,7 +538,8 @@ function viewDefaultBtnById(defaultBtnId) {
 // 5th:
 // ..
 function initPageContent() {
-    new PageAssigns();
+    pageAssigns = new PageAssigns();
+    pageAssigns.ensureInitialized('summary');
 }
 
 

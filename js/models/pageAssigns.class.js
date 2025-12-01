@@ -1,20 +1,27 @@
 /**
- * Handles one-time initialization for the different work views.
+ * Handles one-time initialization logic for all work views.
  *
- * Each view (summary, add, board, contacts) is initialized only once,
- * the first time it is requested.
+ * Each view (summary, add, board, contacts) has an initialization routine
+ * that prepares DOM content, generates lists, resets scroll positions, etc.
+ * 
+ * PageAssigns ensures that every view is initialized exactly once and only
+ * at the moment it is first requested (lazy initialization).
+ *
+ * Usage:
+ *   const assigns = new PageAssigns();
+ *   assigns.ensureInitialized('summary');
  */
 class PageAssigns {
     constructor() {
         /**
-         * Tracks which views have already been initialized.
+         * Tracks which views have already run their initialization logic.
          * @type {Set<string>}
          */
         this.initializedViews = new Set();
     }
 
     /**
-     * Ensures that the given view is initialized exactly once.
+     *  Ensures that a view is initialized only once
      *
      * @param {string} viewName - Logical view name (e.g. "summary", "add", "board", "contacts").
      * @returns {void}

@@ -33,7 +33,8 @@ async function initWork() {
         { fn: defaultHeaderView, label: 'defaultHeaderView' },
         { fn: defaultNavView, label: 'defaultNavView' },
         { fn: genHvrBtns, label: 'genHvrBtns' },
-        { fn: genBtnUser, label: 'genBtnUser' }
+        { fn: genBtnUser, label: 'genBtnUser' },
+        { fn: initHeaderHelpButton, label: 'initHeaderHelpButton' }
     ];
 
     const errors = await safeBatch(setupSteps);
@@ -222,6 +223,18 @@ function setCurrentBtnById(defBtnId) {
         sumNavBtn.disabled = true;
     }
 }
+
+
+function initHeaderHelpButton() {
+    const btnHelp = document.getElementById('helpBtnSmallMenu');
+    if (!btnHelp) return;
+
+    btnHelp.addEventListener('click', event => {
+        event.preventDefault();
+        safeCall(() => setView('help'), 'setView(help) from header');
+    });
+}
+
 
 
 // 1st:

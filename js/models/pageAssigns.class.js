@@ -57,6 +57,9 @@ class PageAssigns {
             case 'contacts':
                 this.initContactsContent();
                 break;
+            case 'help':
+                this.initHelpContent();
+                break;
             default:
                 console.warn(
                     `PageAssigns.ensureInitialized: no init handler for view "${viewName}"`
@@ -89,5 +92,15 @@ class PageAssigns {
         scrollElementToTop('mainCenterContacts');
         genContactsListBtn();
         showResponsiveView();
+    }
+
+    /**
+     * One-time initialization for the help view.
+     *
+     * @returns {void}
+     */
+    initHelpContent() {
+        scrollElementToTop('mainCenterHelp');
+        // weitere Help-spezifische Initialisierungen hier einbauen
     }
 }

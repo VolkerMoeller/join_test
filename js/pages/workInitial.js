@@ -10,14 +10,19 @@
 
 // #region 1st: Initialize JOIN
 /**
- * Initializes the main JOIN workspace.
+ * Initializes the main JOIN work page.
  *
- * Sequentially runs all required setup functions.
- * If a step fails, the process continues and logs the error.
+ * Runs a sequence of setup steps (HTML includes, color scheme, navigation,
+ * user controls, etc.) using safeCall/safeBatch. Each step is executed
+ * independently so that a failure in one does not break the entire page.
+ *
+ * Logging:
+ *  - On full success, logs a single "Initialization successful." message.
+ *  - On partial failure, logs a summary warning plus individual step errors.
  *
  * @async
  * @function initWork
- * @returns {Promise<void>} Completes setup and logs results.
+ * @returns {Promise<void>} Resolves when all setup steps have finished (successfully or with warnings).
  */
 async function initWork() {
     const setupSteps = [
@@ -97,6 +102,19 @@ function defaultHeaderView() {
 }
 
 
+/**
+ * Sets up the default navigation state for the work page.
+ *
+ * Responsibilities:
+ *  - Binds navigation event handlers (desktop + mobile).
+ *  - Activates the default view (typically "summary") via setView().
+ *  - Ensures that the navigation UI (left and bottom menus) is visible.
+ *
+ * This function should be called once during the initial work page setup
+ * (e.g. from initWork) after HTML and PageAssigns have been initialized.
+ *
+ * @returns {void}
+ */
 function defaultNavView() {
     // Attach buttons
     initMenuButtonEvents();

@@ -170,6 +170,22 @@ function changePageCSS() {
 }
 
 
+/**
+ * Resets a navigation button group (desktop or mobile) to its default state.
+ *
+ * Behavior:
+ *  - All buttons with the given selectedClass are downgraded to baseClass.
+ *  - All buttons with baseClass are made visible and enabled.
+ *  - The first button with baseClass is hidden (used for layout spacing).
+ *  - Optionally, icon hover states can be reset externally by the caller.
+ *
+ * This helper is used by resetNavigationView() and resetNavigationViewMbl()
+ * to avoid duplicating navigation reset logic.
+ *
+ * @param {string} selectedClass - CSS class name for "selected" buttons.
+ * @param {string} baseClass - CSS class name for normal (unselected) buttons.
+ * @returns {void}
+ */
 function resetNavigationGroup(selectedClass, baseClass) {
     const selectedButtons = document.querySelectorAll('.' + selectedClass);
     selectedButtons.forEach(btn => {

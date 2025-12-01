@@ -35,21 +35,25 @@ const BOARD_NAV_BTN_ID = 'mnuBtn4th';
 
 
 /**
- * Switches the work area to a specific logical view.
+ * Central SPA routing function for the JOIN work area.
+ *
+ * Switches the application to the specified logical view.
  *
  * Responsibilities:
- *  - Validates the view name via VIEW_CONFIG.
- *  - Ensures one-time initialization of the view (PageAssigns).
- *  - Updates navigation state (desktop + mobile).
- *  - Shows the corresponding content section and hides all others.
+ *  - Validates the view name against VIEW_CONFIG.
+ *  - Ensures one-time initialization of the view (via PageAssigns).
+ *  - Updates navigation state (desktop + mobile navigation).
+ *  - Hides all other content sections and shows the configured one.
  *
- * Defensive behavior:
- *  - Logs and aborts on unknown or missing view names.
- *  - Catches and reports unexpected runtime errors via logViewError().
+ * Error handling:
+ *  - On unknown view names, throws an Error which is caught locally.
+ *  - Wraps the entire routing logic in a try/catch and delegates logging
+ *    of unexpected runtime errors to logViewError().
  *
- * @param {string} viewName - Logical view identifier (e.g. "summary", "add", "board", "contacts").
+ * @param {string} viewName - Logical view identifier (e.g. "summary", "add", "board", "contacts", "help").
  * @returns {void}
  */
+
 function setView(viewName) {
     try {
         const config = VIEW_CONFIG[viewName];
@@ -76,17 +80,27 @@ function setView(viewName) {
 
 
 /**
- * Updates navigation state based on the provided view configuration.
+ * Updates navigation state for the given view configuration.
  *
- * @param {string} viewName
- * @param {{desktopBtnId: (string|null), mobileBtnId: (string|null)}} config
+ * Responsibilities:
+ *  - Determines whether the view is associated with navigation buttons.
+ *  - For navigable views, activates the primary button and its twin
+ *    (desktop + mobile) via currentNavView().
+ *  - For non-navigable views (e.g. help/legal overlays), resets navigation
+ *    and ensures the menus remain visible.
+ *
+ * This function does not manipulate content sections; it only deals with
+ * navigation styling and visibility.
+ *
+ * @param {string} viewName - Logical view identifier (for logging/debugging).
+ * @param {{desktopBtnId: (string|null), mobileBtnId: (string|null)}} config - Navigation-related view config.
  * @returns {void}
  */
 function updateNavigationForView(viewName, config) {
     const hasNavButtons = !!config.desktopBtnId || !!config.mobileBtnId;
 
     if (!hasNavButtons) {
-        // Views wie "help", "legal", etc. ohne Menü-Button
+        // Views such as “Help,” “Legal,” etc. without a menu button
         resetNavigationView();
         resetNavigationViewMbl();
         showLeftAndBottomMenu();
@@ -105,10 +119,19 @@ function updateNavigationForView(viewName, config) {
 
 
 /**
- * Updates the visible content area for the given view.
+ * Updates the visible content section for the given view configuration.
  *
- * @param {string} viewName
- * @param {{contentId: string}} config
+ * Responsibilities:
+ *  - Hides all existing work content sections (using hideAllWorkContent()).
+ *  - Looks up the configured content element by ID.
+ *  - Makes the matching content section visible.
+ *
+ * Defensive behavior:
+ *  - Throws an error if the expected content element cannot be found.
+ *    The caller (setView) is responsible for catching and logging it.
+ *
+ * @param {string} viewName - Logical view identifier (for logging/debugging).
+ * @param {{contentId: string}} config - Content-related view config.
  * @returns {void}
  */
 function updateContentForView(viewName, config) {
@@ -125,9 +148,6 @@ function updateContentForView(viewName, config) {
 }
 
 
-
-
-// 2nd:
 /**
  * Displays the content section that corresponds to the currently selected
  * navigation button.
@@ -173,16 +193,12 @@ function showCurrentContent() {
 }
 
 
-
-
-// 3rd:
 function showHelpContent() {
     hideAllWorkContent();
     document.getElementById('cntCenterHelp').classList.remove('display-none');
 }
 
 
-// 4th:
 function showInfoContentById(cntId) {
     resetNavigationView();
     hideAllWorkContent();
@@ -191,7 +207,6 @@ function showInfoContentById(cntId) {
 }
 
 
-// 5th
 /**
  * Updates the navigation state when a menu button is activated.
  *
@@ -252,7 +267,6 @@ function currentNavView(currentBtnId, twinBtnId) {
 }
 
 
-// 6th
 /**
  * Attaches click handlers to all desktop and mobile menu buttons.
  *
@@ -298,7 +312,6 @@ function initMenuButtonEvents() {
 }
 
 
-// 7th
 /**
  * Legacy helper: switches to the view that belongs to the given button id.
  *
@@ -322,8 +335,6 @@ function viewDefaultContent(buttonId) {
 }
 
 
-
-// 8th
 /**
  * Resolves the logical view name for a given navigation button id.
  *
@@ -347,52 +358,6 @@ function getViewNameForButtonId(buttonId) {
 }
 
 
-
-
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-
-// 1st
-// ..
-// hideAllWorkContent()
-// getSelectedMenuBtn()
-// provideCurrentContentId()
-
-// 2nd
-// ..
-// hideAllWorkContent() --> see above
-
-// 3rd
-// ..
-// resetNavigationView() --> main.js
-// hideAllWorkContent() --> see above
-// setTxtBtnInfoById()
-
-// 4th
-// ..
-// getTheButtonTwin() --> workInitial.js
-// resetNavigationView() --> main.js
-// resetNavigationViewMbl() --> main.js
-// setCurrentBtnById() --> workInitial.js
-// setCurrentBtnById() --> workInitial.js
-// showLeftAndBottomMenu()
-
-// 5th
-// ..
-// viewDefaultBtnById()
-// showCurrentContent() --> see above
-// initPageContent()
-
-// 6th
-// ..
-// resetSVGHvr()
-// currentNavView() --> workContent.js
-
-
-// 1st:
-// ..
 /**
  * Hides all work content sections by adding the "display-none" class.
  */
@@ -402,9 +367,6 @@ function hideAllWorkContent() {
 }
 
 
-
-// 1st:
-// ..
 /**
  * Returns the currently selected navigation button (desktop or mobile).
  *
@@ -419,8 +381,6 @@ function getSelectedMenuBtn() {
 }
 
 
-// 1st:
-// ..
 /**
  * Maps a navigation button ID to its corresponding content section ID.
  *
@@ -455,8 +415,6 @@ function provideCurrentContentId(menuBtnId) {
 }
 
 
-// 3rd:
-// ..
 function setTxtBtnInfoById(cntId) {
     if (cntId == 'cntCenterPrivacy') {
         document.getElementById('txtBtnPrivacy').classList.remove('txt-btn-left');
@@ -472,14 +430,6 @@ function setTxtBtnInfoById(cntId) {
     }
 }
 
-
-
-// 5th:
-// ..
-// function viewDefaultBtnById(defaultBtnId) {
-//     resetSVGHvr();
-//     currentNavView(defaultBtnId);
-// }
 
 /**
  * Marks a navigation button (and its mobile twin) as the default active button.
@@ -517,24 +467,11 @@ function viewDefaultBtnById(defaultBtnId) {
 }
 
 
-
-// 5th:
-// ..
 function initPageContent() {
     pageAssigns = new PageAssigns();
     pageAssigns.ensureInitialized('summary');
 }
 
-
-// 6th:
-// ..
-// function resetSVGHvr() {
-//     let svgIcons = document.querySelectorAll('.menu-icon-hvr');
-//     svgIcons.forEach(svgIcon => {
-//         svgIcon.classList.remove('menu-icon-hvr');
-//         svgIcon.classList.add('menu-icon');
-//     });
-// }
 
 /**
  * Resets all SVG hover icons to their non-hover state.

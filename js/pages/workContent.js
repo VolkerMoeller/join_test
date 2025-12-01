@@ -34,46 +34,20 @@ const VIEW_CONFIG = {
 const BOARD_NAV_BTN_ID = 'mnuBtn4th';
 
 
-// -----------------
-// work.js-functions:
-// -----------------
-
-
-// 1st
-// setView(viewName)
-
-// 2nd
-// showCurrentContent()
-
-// 3rd
-// showHelpContent()
-
-// 4th
-// showInfoContentById()
-
-// 5th
-// currentNavView()
-
-// 6th
-// initMenuButtonEvents()
-
-// 7th
-// viewDefaultContent()
-
-// 8th
-// getViewNameForButtonId()
-
-
-// 1st:
 /**
- * Switches the application to a specific logical view (e.g. "summary", "board", "contacts", "help").
+ * Switches the work area to a specific logical view.
  *
  * Responsibilities:
- *  - Delegates navigation update to a dedicated helper.
- *  - Hides all other content sections and shows the selected one.
- *  - Wraps the whole process in a try/catch to avoid hard failures.
+ *  - Validates the view name via VIEW_CONFIG.
+ *  - Ensures one-time initialization of the view (PageAssigns).
+ *  - Updates navigation state (desktop + mobile).
+ *  - Shows the corresponding content section and hides all others.
  *
- * @param {string} viewName - The name of the view to activate.
+ * Defensive behavior:
+ *  - Logs and aborts on unknown or missing view names.
+ *  - Catches and reports unexpected runtime errors via logViewError().
+ *
+ * @param {string} viewName - Logical view identifier (e.g. "summary", "add", "board", "contacts").
  * @returns {void}
  */
 function setView(viewName) {

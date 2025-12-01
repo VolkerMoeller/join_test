@@ -24,11 +24,11 @@ async function initWork() {
         { fn: includeHTML, label: 'includeHTML' },
         { fn: setClrSchemeInit, label: 'setClrSchemeInit' },
         { fn: invertLogoClr, label: 'invertLogoClr' },
+        { fn: initPageContent, label: 'initPageContent' },
         { fn: defaultHeaderView, label: 'defaultHeaderView' },
         { fn: defaultNavView, label: 'defaultNavView' },
         { fn: genHvrBtns, label: 'genHvrBtns' },
-        { fn: genBtnUser, label: 'genBtnUser' },
-        { fn: initPageContent, label: 'initPageContent' }
+        { fn: genBtnUser, label: 'genBtnUser' }
     ];
 
     const errors = await safeBatch(setupSteps);

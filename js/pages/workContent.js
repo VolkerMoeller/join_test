@@ -1,3 +1,6 @@
+/** @type {PageAssigns|null} */
+let pageAssigns = null;
+
 const VIEW_CONFIG = {
     summary: {
         desktopBtnId: 'mnuBtn2nd',
@@ -29,10 +32,6 @@ const VIEW_CONFIG = {
 
 
 const BOARD_NAV_BTN_ID = 'mnuBtn4th';
-
-
-/** @type {PageAssigns|null} */
-let pageAssigns = null;
 
 
 // -----------------
@@ -88,10 +87,6 @@ function setView(viewName) {
         // 1) Prepare view-specific content only once
         if (pageAssigns) {
             pageAssigns.ensureInitialized(viewName);
-        } else {
-            console.warn(
-                'setView: pageAssigns is not initialized. Did initPageContent run?'
-            );
         }
 
         // 2) Update navigation

@@ -226,7 +226,7 @@ function setCurrentBtnById(defBtnId) {
 
 
 function initHeaderHelpButton() {
-    const btnHelp = document.getElementById('helpBtnSmallMenu');
+    const btnHelp = document.getElementById('btnHelp1Hvr');
     if (!btnHelp) return;
 
     btnHelp.addEventListener('click', event => {

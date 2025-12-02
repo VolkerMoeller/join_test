@@ -100,7 +100,7 @@ class PageAssigns {
      * @returns {void}
      */
     initHelpContent() {
-        scrollElementToTop('mainCenterHelp');
+        scrollElementToTop('cntCenterHelp');
         // weitere Help-spezifische Initialisierungen hier einbauen
     }
 }

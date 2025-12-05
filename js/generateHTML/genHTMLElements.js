@@ -39,19 +39,47 @@ function genHTMLHvrBtn(iconId) {
 //     `;
 // }
 
+// function genHTMLSmallMenu() {
+//     return `
+//     <div class="ovl" onclick="hideSmallMenu()">
+//         <div class="nav-cnt nav-top-rgt display-none">
+//             <button id="helpBtnSmallMenu" class="version-2-body"
+//                 onclick="showInfoContentById('cntCenterHelp')">Help</button>
+//             <button class="version-2-body" onclick="showInfoContentById('cntCenterLegal')">Legal Notice</button>
+//             <button class="version-2-body" onclick="showInfoContentById('cntCenterPrivacy')">Privacy Policy</button>
+//             <button class="version-2-body" onclick="switchToSignPages()">Log out</button>
+//         </div>
+//     </div>
+//     `;
+// }
+
 function genHTMLSmallMenu() {
     return `
-    <div class="ovl" onclick="hideSmallMenu()">
+    <div class="ovl js-small-menu-overlay">
         <div class="nav-cnt nav-top-rgt display-none">
-            <button id="helpBtnSmallMenu" class="version-2-body"
-                onclick="showInfoContentById('cntCenterHelp')">Help</button>
-            <button class="version-2-body" onclick="showInfoContentById('cntCenterLegal')">Legal Notice</button>
-            <button class="version-2-body" onclick="showInfoContentById('cntCenterPrivacy')">Privacy Policy</button>
-            <button class="version-2-body" onclick="switchToSignPages()">Log out</button>
+            <button
+                class="version-2-body js-small-menu-link"
+                data-view="help"
+            >Help</button>
+
+            <button
+                class="version-2-body js-small-menu-link"
+                data-view="legal"
+            >Legal Notice</button>
+
+            <button
+                class="version-2-body js-small-menu-link"
+                data-view="privacy"
+            >Privacy Policy</button>
+
+            <button
+                class="version-2-body js-small-menu-logout"
+            >Log out</button>
         </div>
     </div>
     `;
 }
+
 
 
 function genHTMLWelcomeDesktop(greeting, name) {

@@ -23,12 +23,22 @@ const VIEW_CONFIG = {
         contentId: 'cntCenterContacts'
     },
     help: {
-        desktopBtnId: null,              // no menu button
+        desktopBtnId: null,
         mobileBtnId: null,
         contentId: 'cntCenterHelp'
+    },
+    legal: {
+        desktopBtnId: null,
+        mobileBtnId: null,
+        contentId: 'cntCenterLegal'
+    },
+    privacy: {
+        desktopBtnId: null,
+        mobileBtnId: null,
+        contentId: 'cntCenterPrivacy'
     }
-    // later possibly legal, privacy, etc.
 };
+
 
 
 const BOARD_NAV_BTN_ID = 'mnuBtn4th';

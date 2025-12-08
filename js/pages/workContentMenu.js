@@ -16,38 +16,6 @@
 // animSmallMenuFwd()
 
 
-// 1st:
-// function showSmallMenu() {
-//     genSmallMenu();
-//     animSmallMenu();
-// }
-
-
-// function showSmallMenu() {
-//     let overlay = document.querySelector('.js-small-menu-overlay');
-
-//     if (!overlay) {
-//         document.body.insertAdjacentHTML('beforeend', genHTMLSmallMenu());
-//         overlay = document.querySelector('.js-small-menu-overlay');
-
-//         if (!overlay) {
-//             console.warn('showSmallMenu: failed to create small menu overlay');
-//             return;
-//         }
-
-//         initSmallMenuEvents(overlay);
-//     }
-
-//     const menuContainer = overlay.querySelector('.nav-cnt');
-//     if (!menuContainer) {
-//         console.warn('showSmallMenu: .nav-cnt not found inside overlay');
-//         return;
-//     }
-
-//     menuContainer.classList.remove('display-none');
-//     overlay.classList.add('from-top-right-into-view'); // optional eigene Klasse
-// }
-
 
 function showSmallMenu() {
     const overlay = genSmallMenu();

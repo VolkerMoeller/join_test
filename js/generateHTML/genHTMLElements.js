@@ -53,6 +53,7 @@ function genHTMLHvrBtn(iconId) {
 //     `;
 // }
 
+
 function genHTMLSmallMenu() {
     return `
     <div class="ovl js-small-menu-overlay">
@@ -79,7 +80,6 @@ function genHTMLSmallMenu() {
     </div>
     `;
 }
-
 
 
 function genHTMLWelcomeDesktop(greeting, name) {

@@ -8,7 +8,6 @@
 // setMenuIcnHvrClrSVG()
 
 
-// #region 1st: Initialize JOIN
 /**
  * Initializes the main JOIN work page.
  *
@@ -32,9 +31,9 @@ async function initWork() {
         { fn: initPageContent, label: 'initPageContent' },
         { fn: defaultHeaderView, label: 'defaultHeaderView' },
         { fn: defaultNavView, label: 'defaultNavView' },
+        { fn: initHeaderHelpButton, label: 'initHeaderHelpButton' },
         { fn: genHvrBtns, label: 'genHvrBtns' },
-        { fn: genBtnUser, label: 'genBtnUser' },
-        { fn: initHeaderHelpButton, label: 'initHeaderHelpButton' }
+        { fn: genBtnUser, label: 'genBtnUser' }
     ];
 
     const errors = await safeBatch(setupSteps);
@@ -45,10 +44,8 @@ async function initWork() {
         console.log('Initialization successful.');
     }
 }
-// #endregion 1st
 
 
-// #region 2nd: Redireciton
 /**
  * Redirects the user back to the login page.
  *
@@ -59,10 +56,8 @@ function returnToLogIn() {
     window.location.assign('./signPage.html');
     saveLocalStorageObject('userStatus', 'external');
 }
-// #endregion 2nd
 
 
-// #region 3rd: SVG Hover Color
 /**
  * Toggles the hover color for one or two <path> elements inside a button's SVG.
  * @param {string} btnId   - The button element ID.
@@ -93,7 +88,6 @@ function setMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
 function resetMenuIcnHvrClrSVG(btnId, icnId1, icnId2) {
     toggleMenuIcnHvrClrSVG(btnId, icnId1, icnId2, false);
 }
-// #endregion 3rd
 
 
 function defaultHeaderView() {
@@ -225,15 +219,36 @@ function setCurrentBtnById(defBtnId) {
 }
 
 
+/**
+ * Initializes the desktop help button in the header.
+ *
+ * Wires a click handler to both the default and hover buttons so that
+ * clicking the help icon always routes to the "help" view.
+ *
+ * @returns {void}
+ */
 function initHeaderHelpButton() {
-    const btnHelp = document.getElementById('btnHelp1Hvr');
-    if (!btnHelp) return;
+    const btnDefault = document.getElementById('btnHelp1');
+    const btnHover = document.getElementById('btnHelp1Hvr');
 
-    btnHelp.addEventListener('click', event => {
+    if (!btnDefault && !btnHover) {
+        console.warn('initHeaderHelpButton: no help buttons found');
+        return;
+    }
+
+    const handleClick = event => {
         event.preventDefault();
         safeCall(() => setView('help'), 'setView(help) from header');
-    });
+    };
+
+    if (btnDefault) {
+        btnDefault.addEventListener('click', handleClick);
+    }
+    if (btnHover) {
+        btnHover.addEventListener('click', handleClick);
+    }
 }
+
 
 
 
@@ -266,3 +281,53 @@ function getTheButtonTwin(defBtnId) {
         ? defBtnId.replace('Mbl', '')
         : defBtnId.replace(/^mnuBtn/, 'mnuBtnMbl');
 }
+
+
+/**
+ * Wires up click handling for the given small-menu overlay element.
+ *
+ * @param {HTMLElement} overlay - The overlay root element.
+ * @returns {void}
+ */
+function initSmallMenuEvents(overlay) {
+    if (!overlay) {
+        console.warn('initSmallMenuEvents: overlay is missing');
+        return;
+    }
+
+    const menuContainer = overlay.querySelector('.nav-cnt');
+    if (!menuContainer) {
+        console.warn('initSmallMenuEvents: small menu container not found');
+        return;
+    }
+
+    // Klick auf Hintergrund → Menü schließen
+    overlay.addEventListener('click', event => {
+        if (event.target === overlay) {
+            hideSmallMenu();
+        }
+    });
+
+    // Klicks im Menü (Delegation)
+    menuContainer.addEventListener('click', event => {
+        const linkBtn = event.target.closest('.js-small-menu-link');
+        const logoutBtn = event.target.closest('.js-small-menu-logout');
+
+        if (linkBtn) {
+            event.preventDefault();
+            const viewName = linkBtn.dataset.view;
+            if (viewName) {
+                hideSmallMenu();
+                safeCall(() => setView(viewName), `setView(${viewName}) from small menu`);
+            }
+            return;
+        }
+
+        if (logoutBtn) {
+            event.preventDefault();
+            hideSmallMenu();
+            switchToSignPages();
+        }
+    });
+}
+

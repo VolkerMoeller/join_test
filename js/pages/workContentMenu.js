@@ -31,15 +31,6 @@ function showSmallMenu() {
 }
 
 
-
-
-// 2nd:
-// function hideSmallMenu() {
-//     setTimeout(() => {
-//         resetOverlayV2();
-//     }, 10);
-// }
-
 function hideSmallMenu() {
     const ovlFrame = document.getElementById('ovlFrame');
     if (!ovlFrame) return;

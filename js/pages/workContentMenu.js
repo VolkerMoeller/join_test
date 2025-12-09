@@ -21,7 +21,7 @@ function showSmallMenu() {
     const overlay = genSmallMenu();
     if (!overlay) return;
 
-    // Events nur einmal initialisieren (z.B. über Daten-Flag)
+    // Initialize events only once (e.g., via data flag)
     if (!overlay.dataset.bound) {
         initSmallMenuEvents(overlay);
         overlay.dataset.bound = 'true';
@@ -31,24 +31,43 @@ function showSmallMenu() {
 }
 
 
+/**
+ * Soft-closes the small user menu overlay without destroying its DOM structure.
+ *
+ * Responsibilities:
+ *  - Hides the small menu container inside #ovlFrame.
+ *  - Resets basic animation/visibility classes on #ovlFrame.
+ *
+ * The markup and event handlers remain intact so the menu can be shown again
+ * without re-binding events.
+ *
+ * @returns {void}
+ */
 function hideSmallMenu() {
     const ovlFrame = document.getElementById('ovlFrame');
-    if (!ovlFrame) return;
+    if (!ovlFrame) {
+        console.warn('hideSmallMenu: #ovlFrame not found');
+        return;
+    }
 
     const overlay = ovlFrame.querySelector('.js-small-menu-overlay');
-    if (!overlay) return;
+    if (!overlay) {
+        // Kein Small-Menu-Overlay → nichts zu tun
+        return;
+    }
 
     const menuContainer = overlay.querySelector('.nav-cnt');
     if (menuContainer) {
         menuContainer.classList.add('display-none');
         menuContainer.classList.remove('from-top-right-into-view');
-        // Optional: wenn du eine "zurück raus"-Animation hast:
+        // Optional: zurück-raus-Animation:
         // menuContainer.classList.add('from-left-out-off-sight');
     }
 
     ovlFrame.classList.remove('ovl-show-nav');
     ovlFrame.classList.add('ovl-hide');
 }
+
 
 
 

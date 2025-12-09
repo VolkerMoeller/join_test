@@ -264,6 +264,10 @@
     width: 100%;
 }
 
+.js-small-menu-link[data-view="help"] {
+    display: none;
+}
+
 @media (max-width: 1000px) {
     .headline-work-pages {
         width: 100%;
@@ -271,6 +275,9 @@
 }
 
 @media (max-width: 1440px) {
+    .js-small-menu-link[data-view="help"] {
+        display: flex;
+    }
 
     .outside+.left {
         display: none;

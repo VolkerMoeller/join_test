@@ -270,11 +270,20 @@ function showOverlayForMsgV2() {
 }
 
 
+/**
+ * Soft-resets the generic overlay state (frame, messages, navigation).
+ *
+ * Does not destroy DOM nodes or event handlers, only resets classes and
+ * visibility so the overlay can be reused.
+ *
+ * @returns {void}
+ */
 function resetOverlay() {
     resetOverlayFrame();
     resetOverlayMsg();
     resetOverlayNav();
 }
+
 
 
 function resetOverlayV2() {
@@ -551,10 +560,9 @@ function scrollWindowToTop() {
 
 
 function checkIfMobileView() {
-    let windowWidth = getWindowWidth();
-    if (windowWidth < 1440) return true;
-    else return false;
+    return getWindowWidth() < 1440;
 }
+
 
 
 function getValueOutOfArrWthObjs(arr, ref, key, search) {
@@ -693,39 +701,66 @@ function rememberGuestData() {
 }
 
 
+/**
+ * Resets the overlay frame classes to a hidden, neutral state.
+ *
+ * @returns {void}
+ */
 function resetOverlayFrame() {
     const overlay = document.querySelector('.ovl-frame');
+    if (!overlay) {
+        console.warn('resetOverlayFrame: ".ovl-frame" not found');
+        return;
+    }
+
     overlay.classList.add('ovl-hide');
-    overlay.classList.remove('ovl-show-anim-bg');
-    overlay.classList.remove('ovl-show-anim-bg-v2');
-    overlay.classList.remove('ovl-show-input');
-    overlay.classList.remove('ovl-show-nav');
-    overlay.classList.remove('ovl-show-select');
-    overlay.classList.remove('ovl-show-subtask');
+
+    const activeClasses = [
+        'ovl-show-anim-bg',
+        'ovl-show-anim-bg-v2',
+        'ovl-show-input',
+        'ovl-show-nav',
+        'ovl-show-select',
+        'ovl-show-subtask'
+    ];
+
+    activeClasses.forEach(cls => overlay.classList.remove(cls));
+
+    // Alte Inline-onclicks entfernen (moderne Events verwenden addEventListener).
     overlay.removeAttribute('onclick');
 }
 
 
+/**
+ * Hides and resets all overlay message containers.
+ *
+ * @returns {void}
+ */
 function resetOverlayMsg() {
-    let msgAnims = ['from-bottom-to-center', 'from-right-to-center'];
-    let overlMsgs = document.querySelectorAll('.msg-cnt');
+    const msgAnims = ['from-bottom-to-center', 'from-right-to-center'];
+    const overlMsgs = document.querySelectorAll('.msg-cnt');
+
     overlMsgs.forEach(overlMsg => {
-        for (let i = 0; i < msgAnims.length; i++) {
-            const msgAnim = msgAnims[i];
-            overlMsg.classList.remove(msgAnim);
-            overlMsg.classList.add('display-none');
-        }
+        msgAnims.forEach(anim => overlMsg.classList.remove(anim));
+        overlMsg.classList.add('display-none');
     });
 }
 
 
+
+/**
+ * Hides any overlay navigation container (e.g. small nav).
+ *
+ * @returns {void}
+ */
 function resetOverlayNav() {
-    let msgAnim = 'from-top-right-into-view';
-    let overlNav = document.querySelector('.nav-cnt');
-    if (overlNav) {
-        overlNav.classList.remove(msgAnim);
-        overlNav.classList.add('display-none');
+    const overlNav = document.querySelector('.nav-cnt');
+    if (!overlNav) {
+        return;
     }
+
+    overlNav.classList.remove('from-top-right-into-view');
+    overlNav.classList.add('display-none');
 }
 
 

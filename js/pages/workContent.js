@@ -5,39 +5,47 @@ const VIEW_CONFIG = {
     summary: {
         desktopBtnId: 'mnuBtn2nd',
         mobileBtnId: 'mnuBtnMbl2nd',
-        contentId: 'cntCenterSum'
+        contentId: 'cntCenterSum',
+        scrollTarget: null
     },
     add: {
         desktopBtnId: 'mnuBtn3rd',
         mobileBtnId: 'mnuBtnMbl3rd',
-        contentId: 'cntCenterAdd'
+        contentId: 'cntCenterAdd',
+        scrollTarget: 'formInputsFrameContainer'
     },
     board: {
         desktopBtnId: 'mnuBtn4th',
         mobileBtnId: 'mnuBtnMbl4th',
-        contentId: 'cntCenterBoard'
+        contentId: 'cntCenterBoard',
+        scrollTarget: null
     },
     contacts: {
         desktopBtnId: 'mnuBtn5th',
         mobileBtnId: 'mnuBtnMbl5th',
-        contentId: 'cntCenterContacts'
+        contentId: 'cntCenterContacts',
+        scrollTarget: 'contactsList'
     },
     help: {
         desktopBtnId: null,
         mobileBtnId: null,
-        contentId: 'cntCenterHelp'
+        contentId: 'cntCenterHelp',
+        scrollTarget: 'cntCenterHelp'
     },
     legal: {
         desktopBtnId: null,
         mobileBtnId: null,
-        contentId: 'cntCenterLegal'
+        contentId: 'cntCenterLegal',
+        scrollTarget: 'cntCenterLegal'
     },
     privacy: {
         desktopBtnId: null,
         mobileBtnId: null,
-        contentId: 'cntCenterPrivacy'
+        contentId: 'cntCenterPrivacy',
+        scrollTarget: 'cntCenterPrivacy'
     }
 };
+
 
 
 
@@ -133,15 +141,11 @@ function updateNavigationForView(viewName, config) {
  *
  * Responsibilities:
  *  - Hides all existing work content sections (using hideAllWorkContent()).
- *  - Looks up the configured content element by ID.
- *  - Makes the matching content section visible.
+ *  - Shows the configured content section.
+ *  - Optionally scrolls a configured scrollTarget element to the top.
  *
- * Defensive behavior:
- *  - Throws an error if the expected content element cannot be found.
- *    The caller (setView) is responsible for catching and logging it.
- *
- * @param {string} viewName - Logical view identifier (for logging/debugging).
- * @param {{contentId: string}} config - Content-related view config.
+ * @param {string} viewName
+ * @param {{contentId: string, scrollTarget?: string}} config
  * @returns {void}
  */
 function updateContentForView(viewName, config) {
@@ -155,7 +159,19 @@ function updateContentForView(viewName, config) {
     }
 
     content.classList.remove('display-none');
+
+    if (config.scrollTarget) {
+        const scrollEl = document.getElementById(config.scrollTarget);
+        if (!scrollEl) {
+            console.warn(
+                `updateContentForView: scrollTarget "${config.scrollTarget}" for view "${viewName}" not found`
+            );
+        } else {
+            scrollElementToTop(config.scrollTarget);
+        }
+    }
 }
+
 
 
 /**

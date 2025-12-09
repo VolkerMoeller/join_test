@@ -60,6 +60,12 @@ class PageAssigns {
             case 'help':
                 this.initHelpContent();
                 break;
+            case 'privacy':
+                this.initPrivacyContent();
+                break;
+            case 'legal':
+                this.initLegalContent();
+                break;
             default:
                 console.warn(
                     `PageAssigns.ensureInitialized: no init handler for view "${viewName}"`
@@ -71,36 +77,36 @@ class PageAssigns {
     }
 
     initSumContent() {
-        scrollElementToTop('mainCenterSum');
         updateSumContent();
         initSumView();
     }
 
     initAddContent() {
         genAddTaskForm();
-        scrollElementToTop('mainCenterAdd');
         genUserContactList();
         genContactBadges();
         handleMobileBtn();
     }
 
     initBoardContent() {
-        scrollElementToTop('mainCenterBoard');
+        // if necessary later: one-time board initialization (e.g., initial render logic)
     }
 
     initContactsContent() {
-        scrollElementToTop('mainCenterContacts');
         genContactsListBtn();
         showResponsiveView();
     }
 
-    /**
-     * One-time initialization for the help view.
-     *
-     * @returns {void}
-     */
     initHelpContent() {
-        scrollElementToTop('cntCenterHelp');
-        // weitere Help-spezifische Initialisierungen hier einbauen
+        // if necessary later: one-time help initialization (e.g., initial render logic)
     }
+
+    initPrivacyContent() {
+        // if necessary later: one-time privacy initialization (e.g., initial render logic)
+    }
+
+    initLegalContent() {
+        // if necessary later: one-time legal initialization (e.g., initial render logic)
+    }
+
 }

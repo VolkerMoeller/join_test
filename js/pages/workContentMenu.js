@@ -1,22 +1,3 @@
-// --------------------------
-// workContentMenu-functions:
-// --------------------------
-
-// 1st
-// showSmallMenu()
-
-// 2nd
-// hideSmallMenu()
-
-// 3rd
-// initOvlFrameForAnimMenu()
-
-
-// 4th
-// animSmallMenuFwd()
-
-
-
 function showSmallMenu() {
     const overlay = genSmallMenu();
     if (!overlay) return;

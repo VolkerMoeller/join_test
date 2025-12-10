@@ -1,50 +1,142 @@
 /** @type {PageAssigns|null} */
 let pageAssigns = null;
 
+/**
+ * @typedef {Object} ViewConfig
+ * @property {string|null} desktopBtnId - ID of the desktop navigation button for this view, or null if none.
+ * @property {string|null} mobileBtnId - ID of the mobile navigation button for this view, or null if none.
+ * @property {string} contentId - ID of the main content container for this view.
+ * @property {string|null} scrollTarget - ID of the element that should be scrolled to top when entering the view, or null.
+ * @property {boolean} nav - Whether the main navigation bar should be visible for this view.
+ * @property {Function} [pageAssign] - Function that is executed once to initialize this view.
+ */
+
+/**
+ * Central configuration for all views.
+ * Static facts per view, not runtime state.
+ * @type {Record<string, ViewConfig>}
+ */
 const VIEW_CONFIG = {
     summary: {
         desktopBtnId: 'mnuBtn2nd',
         mobileBtnId: 'mnuBtnMbl2nd',
         contentId: 'cntCenterSum',
-        scrollTarget: null
+        scrollTarget: null,
+        nav: true,
+        pageAssign: initSummaryOnce
     },
     add: {
         desktopBtnId: 'mnuBtn3rd',
         mobileBtnId: 'mnuBtnMbl3rd',
         contentId: 'cntCenterAdd',
-        scrollTarget: 'formInputsFrameContainer'
+        scrollTarget: 'formInputsFrameContainer',
+        nav: true,
+        pageAssign: initAddTaskOnce
     },
     board: {
         desktopBtnId: 'mnuBtn4th',
         mobileBtnId: 'mnuBtnMbl4th',
         contentId: 'cntCenterBoard',
-        scrollTarget: null
+        scrollTarget: null,
+        nav: true,
+        pageAssign: initBoardOnce
     },
     contacts: {
         desktopBtnId: 'mnuBtn5th',
         mobileBtnId: 'mnuBtnMbl5th',
         contentId: 'cntCenterContacts',
-        scrollTarget: 'contactsList'
+        scrollTarget: 'contactsList',
+        nav: true,
+        pageAssign: initContactsOnce
     },
     help: {
         desktopBtnId: null,
         mobileBtnId: null,
         contentId: 'cntCenterHelp',
-        scrollTarget: 'cntCenterHelp'
+        scrollTarget: 'cntCenterHelp',
+        nav: false,
+        pageAssign: initHelpOnce
     },
     legal: {
         desktopBtnId: null,
         mobileBtnId: null,
         contentId: 'cntCenterLegal',
-        scrollTarget: 'cntCenterLegal'
+        scrollTarget: 'cntCenterLegal',
+        nav: false,
+        pageAssign: initLegalOnce
     },
     privacy: {
         desktopBtnId: null,
         mobileBtnId: null,
         contentId: 'cntCenterPrivacy',
-        scrollTarget: 'cntCenterPrivacy'
+        scrollTarget: 'cntCenterPrivacy',
+        nav: false,
+        pageAssign: initPrivacyOnce
     }
 };
+
+/**
+ * Hält den Laufzeit-Zustand pro View.
+ * initialized: wurde pageAssign schon ausgeführt?
+ * Weitere Felder können später ergänzt werden (z.B. lastSelectedContactId).
+ * @type {Record<string, { initialized: boolean }>}
+ */
+const VIEW_STATE = {};
+
+function initSummaryOnce() { }
+function initAddTaskOnce() { }
+function initBoardOnce() { }
+function initContactsOnce() { }
+function initHelpOnce() { }
+function initLegalOnce() { }
+function initPrivacyOnce() { }
+
+
+
+// const VIEW_CONFIG = {
+//     summary: {
+//         desktopBtnId: 'mnuBtn2nd',
+//         mobileBtnId: 'mnuBtnMbl2nd',
+//         contentId: 'cntCenterSum',
+//         scrollTarget: null
+//     },
+//     add: {
+//         desktopBtnId: 'mnuBtn3rd',
+//         mobileBtnId: 'mnuBtnMbl3rd',
+//         contentId: 'cntCenterAdd',
+//         scrollTarget: 'formInputsFrameContainer'
+//     },
+//     board: {
+//         desktopBtnId: 'mnuBtn4th',
+//         mobileBtnId: 'mnuBtnMbl4th',
+//         contentId: 'cntCenterBoard',
+//         scrollTarget: null
+//     },
+//     contacts: {
+//         desktopBtnId: 'mnuBtn5th',
+//         mobileBtnId: 'mnuBtnMbl5th',
+//         contentId: 'cntCenterContacts',
+//         scrollTarget: 'contactsList'
+//     },
+//     help: {
+//         desktopBtnId: null,
+//         mobileBtnId: null,
+//         contentId: 'cntCenterHelp',
+//         scrollTarget: 'cntCenterHelp'
+//     },
+//     legal: {
+//         desktopBtnId: null,
+//         mobileBtnId: null,
+//         contentId: 'cntCenterLegal',
+//         scrollTarget: 'cntCenterLegal'
+//     },
+//     privacy: {
+//         desktopBtnId: null,
+//         mobileBtnId: null,
+//         contentId: 'cntCenterPrivacy',
+//         scrollTarget: 'cntCenterPrivacy'
+//     }
+// };
 
 
 

@@ -80,20 +80,45 @@ function setView(viewName) {
             throw new Error(`Unknown view "${viewName}"`);
         }
 
-        // 1) Prepare view-specific content only once
         if (pageAssigns) {
             pageAssigns.ensureInitialized(viewName);
         }
 
-        // 2) Update navigation
+        rememberLastNavView(viewName, config);
+
         updateNavigationForView(viewName, config);
 
-        // 3) Switch content area
         updateContentForView(viewName, config);
 
     } catch (error) {
         logViewError(viewName, error);
     }
+}
+
+
+function rememberLastNavView(viewName, config) {
+    const hasNavButtons = !!config.desktopBtnId || !!config.mobileBtnId;
+    if (!hasNavButtons) {
+        return; // help/legal/privacy should NOT overwrite lastNavViewName
+    }
+    lastNavViewName = viewName;
+}
+
+
+/**
+ * Routes back from an info view (help/legal/privacy) to the last normal
+ * navigation view (summary/add/board/contacts).
+ *
+ * If nothing was noted, it returns to the “summary” view.
+ *
+ * @returns {void}
+ */
+function handleBackFromInfoView() {
+    const targetView = lastNavViewName || 'summary';
+    safeCall(
+        () => setView(targetView),
+        `setView(${targetView}) from info back button`
+    );
 }
 
 
@@ -225,12 +250,12 @@ function showHelpContent() {
 }
 
 
-function showInfoContentById(cntId) {
-    resetNavigationView();
-    hideAllWorkContent();
-    document.getElementById(cntId).classList.remove('display-none');
-    setTxtBtnInfoById(cntId);
-}
+// function showInfoContentById(cntId) {
+//     resetNavigationView();
+//     hideAllWorkContent();
+//     document.getElementById(cntId).classList.remove('display-none');
+//     setTxtBtnInfoById(cntId);
+// }
 
 
 /**

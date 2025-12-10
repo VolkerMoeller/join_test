@@ -33,7 +33,8 @@ async function initWork() {
         { fn: defaultNavView, label: 'defaultNavView' },
         { fn: initHeaderHelpButton, label: 'initHeaderHelpButton' },
         { fn: genHvrBtns, label: 'genHvrBtns' },
-        { fn: genBtnUser, label: 'genBtnUser' }
+        { fn: genBtnUser, label: 'genBtnUser' },
+        { fn: initDesktopInfoLinks, label: 'initDesktopInfoLinks' }
     ];
 
     const errors = await safeBatch(setupSteps);
@@ -123,15 +124,15 @@ async function genHvrBtns() {
     const btnMap = {
         btnBackHelp: {
             icnId: 'bntBack4',
-            handler: showCurrentContent
+            handler: handleBackFromInfoView
         },
         btnBackLegal: {
             icnId: 'bntBack6',
-            handler: showCurrentContent
+            handler: handleBackFromInfoView
         },
         btnBackPrivacy: {
             icnId: 'bntBack5',
-            handler: showCurrentContent
+            handler: handleBackFromInfoView
         }
     };
 
@@ -301,14 +302,14 @@ function initSmallMenuEvents(overlay) {
         return;
     }
 
-    // Klick auf Hintergrund → Menü schließen
+    // Klick auf den grauen Hintergrund → Menü schließen
     overlay.addEventListener('click', event => {
         if (event.target === overlay) {
             hideSmallMenu();
         }
     });
 
-    // Klicks im Menü (Delegation)
+    // Delegation für Buttons im Menü
     menuContainer.addEventListener('click', event => {
         const linkBtn = event.target.closest('.js-small-menu-link');
         const logoutBtn = event.target.closest('.js-small-menu-logout');
@@ -331,3 +332,39 @@ function initSmallMenuEvents(overlay) {
     });
 }
 
+
+/**
+ * Initializes desktop info links (Privacy / Legal) in the left navigation.
+ *
+ * Each link carries a data-view attribute and will call setView(viewName)
+ * when clicked.
+ *
+ * @returns {void}
+ */
+function initDesktopInfoLinks() {
+    const infoLinks = document.querySelectorAll('.js-info-link[data-view]');
+
+    if (!infoLinks.length) {
+        return;
+    }
+
+    infoLinks.forEach(link => {
+        if (link.dataset.bound === 'true') return;
+        link.dataset.bound = 'true';
+
+        link.addEventListener('click', event => {
+            event.preventDefault();
+
+            const viewName = link.dataset.view;
+            if (!viewName) {
+                console.warn('initDesktopInfoLinks: info link without data-view', link);
+                return;
+            }
+
+            safeCall(
+                () => setView(viewName),
+                `setView(${viewName}) from desktop info link`
+            );
+        });
+    });
+}

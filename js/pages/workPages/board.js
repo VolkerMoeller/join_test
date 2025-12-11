@@ -1,8 +1,3 @@
-// ------------------
-//board.js-functions:
-// ------------------
-
-// 1st:
 async function initAnimAddTaskFloat() {
     await includeHTMLById('w3-include-overlay');
     showOverlayForMsg();
@@ -12,7 +7,6 @@ async function initAnimAddTaskFloat() {
     genContactBadges();
 }
 
-// 2nd:
 function endAnimAddTaskFloat() {
     resetFormAddTask();
     animFlowHideAddTask();

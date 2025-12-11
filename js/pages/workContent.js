@@ -94,6 +94,16 @@ function initHelpOnce() { }
 function initLegalOnce() { }
 function initPrivacyOnce() { }
 
+function updateContentSummary() { }
+function updateContentAdd() { }
+function updateContentBoard() { }
+function updateContentContacts() { }
+function updateContentHelp() { }
+function updateContentLegal() { }
+function updateContentPrivacy() { }
+
+function showMainNavigation() { }
+function hideMainNavigation() { }
 
 
 
@@ -104,9 +114,9 @@ function initPrivacyOnce() { }
  *
  * Responsibilities:
  *  - Validates the view name against VIEW_CONFIG.
- *  - Ensures one-time initialization of the view (via PageAssigns).
+ *  - Ensures one-time initialization of the view (via ensureInitialized).
  *  - Updates navigation state (desktop + mobile navigation).
- *  - Hides all other content sections and shows the configured one.
+ *  - Updates the main content for the target view.
  *
  * Error handling:
  *  - On unknown view names, throws an Error which is caught locally.
@@ -116,7 +126,6 @@ function initPrivacyOnce() { }
  * @param {string} viewName - Logical view identifier (e.g. "summary", "add", "board", "contacts", "help").
  * @returns {void}
  */
-
 function setView(viewName) {
     try {
         const config = VIEW_CONFIG[viewName];
@@ -125,18 +134,77 @@ function setView(viewName) {
             throw new Error(`Unknown view "${viewName}"`);
         }
 
-        if (pageAssigns) {
-            pageAssigns.ensureInitialized(viewName);
-        }
+        // 1. One-time initialization for this view
+        ensureInitialized(viewName);
 
+        // 2. Remember last navigation view (for back button logic)
         rememberLastNavView(viewName, config);
 
-        updateNavigationForView(viewName, config);
+        // 3. Update navigation (desktop + mobile)
+        updateNavigation(viewName);
 
-        updateContentForView(viewName, config);
+        // 4. Update content (data + DOM)
+        updateContent(viewName);
 
     } catch (error) {
         logViewError(viewName, error);
+    }
+}
+
+
+/**
+ * Ensures that the given view has been initialized exactly once.
+ * If a pageAssign function is configured, it will be executed at most once.
+ *
+ * @param {string} viewName
+ */
+function ensureInitialized(viewName) {
+    const config = VIEW_CONFIG[viewName];
+    if (!config) return;
+
+    const state = (VIEW_STATE[viewName] ??= { initialized: false });
+
+    if (!state.initialized && typeof config.pageAssign === 'function') {
+        config.pageAssign();
+        state.initialized = true;
+    }
+}
+
+
+function updateNavigation(viewName) {
+    const config = VIEW_CONFIG[viewName];
+    if (!config) return;
+
+    // Vorhandene Logik aus updateNavigationForView hierhin ziehen
+    updateNavigationForView(viewName, config);
+}
+
+
+function updateContent(viewName) {
+    const config = VIEW_CONFIG[viewName];
+    if (!config) return;
+
+    // Vorhandene Logik aus updateContentForView hierhin ziehen
+    updateContentForView(viewName, config);
+
+    resetScrollPosition(viewName);
+}
+
+
+
+/**
+ * Resets the scroll position for the configured scroll target of the view.
+ *
+ * @param {string} viewName
+ */
+function resetScrollPosition(viewName) {
+    const config = VIEW_CONFIG[viewName];
+    if (!config || !config.scrollTarget) return;
+
+    // scrollTarget is treated as an element ID
+    const target = document.getElementById(config.scrollTarget);
+    if (target) {
+        target.scrollTop = 0;
     }
 }
 

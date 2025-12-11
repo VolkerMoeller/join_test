@@ -28,7 +28,6 @@ async function initWork() {
         { fn: includeHTML, label: 'includeHTML' },
         { fn: setClrSchemeInit, label: 'setClrSchemeInit' },
         { fn: invertLogoClr, label: 'invertLogoClr' },
-        // { fn: initPageContent, label: 'initPageContent' },
         { fn: defaultHeaderView, label: 'defaultHeaderView' },
         { fn: defaultNavView, label: 'defaultNavView' },
         { fn: initHeaderHelpButton, label: 'initHeaderHelpButton' },

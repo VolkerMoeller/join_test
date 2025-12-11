@@ -89,25 +89,23 @@ const BOARD_NAV_BTN_ID = 'mnuBtn4th';
 
 /**
  * One-time initialization for the "add" view.
- * - Builds the add task form.
- * - Wires up any DOM that must exist only once.
-*
-* This function is called at most once per app lifetime
-* through ensureInitialized('add').
-*/
+ * - Builds the add task form DOM structure.
+ * - Wires all event listeners that belong to the add view.
+ *
+ * Called at most once via ensureInitialized('add').
+ */
 async function initAddTaskOnce() {
-    // 1. Build the main add task form inside "cntCenterAdd"
-    await genAddTaskForm();
+    // 1. Build the main form inside the content container
+    await genAddTaskForm(); // creates #formAddTask and all its children
 
-    // 2. Optionally: initial contacts & badges (can later move to updateContentAdd)
+    // 2. Wire up event listeners for this view
+    wireAddViewEvents();
+
+    // 3. Optional: initial contacts/badges on first load
     await genUserContactList();
     await genContactBadges();
-
-    // 3. Later: move inline onclick handlers in HTML into proper addEventListener calls here.
-
-    // XXX von mir aus page Assigns
-    handleMobileBtn();
 }
+
 
 function initSummaryOnce() {
     updateSumContent();

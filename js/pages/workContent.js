@@ -221,11 +221,17 @@ function updateNavigation(viewName) {
 
 /**
  * Updates the content for the given view.
- * This function is called on every view change, not only once.
+ * - Switches visible content container based on VIEW_CONFIG[viewName].contentId
+ * - Runs view-specific content logic
+ * - Resets scroll position
  *
  * @param {string} viewName
  */
 function updateContent(viewName) {
+    // 1. Switch visible content container
+    showContentForView(viewName);
+
+    // 2. Run view-specific content update
     switch (viewName) {
         case 'summary':
             updateContentSummary();
@@ -252,6 +258,7 @@ function updateContent(viewName) {
             console.warn(`No updateContent implementation for view: ${viewName}`);
     }
 
+    // 3. Reset scroll
     resetScrollPosition(viewName);
 }
 
@@ -374,6 +381,46 @@ function updateContentForView(viewName, config) {
     }
 }
 
+/**
+ * Shows the content container for the given view
+ * and hides all other view content containers.
+ *
+ * Uses VIEW_CONFIG[viewName].contentId for lookup.
+ *
+ * @param {string} viewName
+ */
+function showContentForView(viewName) {
+    const targetConfig = VIEW_CONFIG[viewName];
+    if (!targetConfig) {
+        console.warn(`showContentForView: unknown view "${viewName}"`);
+        return;
+    }
+
+    const targetContentId = targetConfig.contentId;
+    if (!targetContentId) {
+        console.warn(`showContentForView: no contentId configured for view "${viewName}"`);
+        return;
+    }
+
+    // 1. Hide all known content containers
+    Object.values(VIEW_CONFIG).forEach(cfg => {
+        if (!cfg.contentId) return;
+
+        const el = document.getElementById(cfg.contentId);
+        if (!el) return;
+
+        el.classList.add('display-none');
+    });
+
+    // 2. Show the target content container
+    const targetEl = document.getElementById(targetContentId);
+    if (!targetEl) {
+        console.warn(`showContentForView: element with id "${targetContentId}" not found`);
+        return;
+    }
+
+    targetEl.classList.remove('display-none');
+}
 
 
 /**

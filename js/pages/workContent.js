@@ -83,6 +83,9 @@ const VIEW_CONFIG = {
  */
 const VIEW_STATE = {};
 
+const BOARD_NAV_BTN_ID = 'mnuBtn4th';
+
+
 function initSummaryOnce() { }
 function initAddTaskOnce() { }
 function initBoardOnce() { }
@@ -92,56 +95,6 @@ function initLegalOnce() { }
 function initPrivacyOnce() { }
 
 
-
-// const VIEW_CONFIG = {
-//     summary: {
-//         desktopBtnId: 'mnuBtn2nd',
-//         mobileBtnId: 'mnuBtnMbl2nd',
-//         contentId: 'cntCenterSum',
-//         scrollTarget: null
-//     },
-//     add: {
-//         desktopBtnId: 'mnuBtn3rd',
-//         mobileBtnId: 'mnuBtnMbl3rd',
-//         contentId: 'cntCenterAdd',
-//         scrollTarget: 'formInputsFrameContainer'
-//     },
-//     board: {
-//         desktopBtnId: 'mnuBtn4th',
-//         mobileBtnId: 'mnuBtnMbl4th',
-//         contentId: 'cntCenterBoard',
-//         scrollTarget: null
-//     },
-//     contacts: {
-//         desktopBtnId: 'mnuBtn5th',
-//         mobileBtnId: 'mnuBtnMbl5th',
-//         contentId: 'cntCenterContacts',
-//         scrollTarget: 'contactsList'
-//     },
-//     help: {
-//         desktopBtnId: null,
-//         mobileBtnId: null,
-//         contentId: 'cntCenterHelp',
-//         scrollTarget: 'cntCenterHelp'
-//     },
-//     legal: {
-//         desktopBtnId: null,
-//         mobileBtnId: null,
-//         contentId: 'cntCenterLegal',
-//         scrollTarget: 'cntCenterLegal'
-//     },
-//     privacy: {
-//         desktopBtnId: null,
-//         mobileBtnId: null,
-//         contentId: 'cntCenterPrivacy',
-//         scrollTarget: 'cntCenterPrivacy'
-//     }
-// };
-
-
-
-
-const BOARD_NAV_BTN_ID = 'mnuBtn4th';
 
 
 /**

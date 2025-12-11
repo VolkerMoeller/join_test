@@ -86,29 +86,6 @@ function animSmallMenu(overlay) {
 }
 
 
-
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-// 1st
-// ..
-// genSmallMenu()
-// animSmallMenu()
-
-// 2nd
-// ..
-// resetOverlay() --> main.js
-
-
-// 1st:
-// ..
-// function genSmallMenu() {
-//     document.getElementById('ovlFrame').innerHTML = '';
-//     document.getElementById('ovlFrame').innerHTML = genHTMLSmallMenu();
-// }
-
-
 /**
  * Ensures that the small menu HTML exists inside #ovlFrame.
  *
@@ -138,25 +115,3 @@ function genSmallMenu() {
 
     return overlay;
 }
-
-
-// 1st:
-// ..
-// function animSmallMenu() {
-//     initOvlFrameForAnimMenu();
-//     animSmallMenuFwd();
-// }
-
-
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// 1st
-// ...
-// genHTMLSmallMenu() --> genOvls.js
-
-// 1st
-// ...
-// initOvlFrameForAnimMenu() --> work.js
-// animSmallMenuFwd() --> work.js

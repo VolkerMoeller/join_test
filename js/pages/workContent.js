@@ -86,16 +86,54 @@ const VIEW_STATE = {};
 const BOARD_NAV_BTN_ID = 'mnuBtn4th';
 
 
-function initSummaryOnce() { }
-function initAddTaskOnce() { }
+
+/**
+ * One-time initialization for the "add" view.
+ * - Builds the add task form.
+ * - Wires up any DOM that must exist only once.
+*
+* This function is called at most once per app lifetime
+* through ensureInitialized('add').
+*/
+async function initAddTaskOnce() {
+    // 1. Build the main add task form inside "cntCenterAdd"
+    await genAddTaskForm();
+
+    // 2. Optionally: initial contacts & badges (can later move to updateContentAdd)
+    await genUserContactList();
+    await genContactBadges();
+
+    // 3. Later: move inline onclick handlers in HTML into proper addEventListener calls here.
+
+    // XXX von mir aus page Assigns
+    handleMobileBtn();
+}
+
+function initSummaryOnce() {
+    updateSumContent();
+    initSumView();
+}
 function initBoardOnce() { }
-function initContactsOnce() { }
+function initContactsOnce() {
+    genContactsListBtn();
+    showResponsiveView();
+}
 function initHelpOnce() { }
 function initLegalOnce() { }
 function initPrivacyOnce() { }
 
+
+/**
+ * Updates the content of the "add" view.
+ * Called on every view change to "add".
+ * - Resets the form to a clean state.
+ * - Rebuilds contacts and badges.
+ */
+function updateContentAdd() {
+    resetFormAddTask();
+}
+
 function updateContentSummary() { }
-function updateContentAdd() { }
 function updateContentBoard() { }
 function updateContentContacts() { }
 function updateContentHelp() { }
@@ -171,6 +209,7 @@ function ensureInitialized(viewName) {
 }
 
 
+
 function updateNavigation(viewName) {
     const config = VIEW_CONFIG[viewName];
     if (!config) return;
@@ -180,16 +219,41 @@ function updateNavigation(viewName) {
 }
 
 
+/**
+ * Updates the content for the given view.
+ * This function is called on every view change, not only once.
+ *
+ * @param {string} viewName
+ */
 function updateContent(viewName) {
-    const config = VIEW_CONFIG[viewName];
-    if (!config) return;
-
-    // Vorhandene Logik aus updateContentForView hierhin ziehen
-    updateContentForView(viewName, config);
+    switch (viewName) {
+        case 'summary':
+            updateContentSummary();
+            break;
+        case 'add':
+            updateContentAdd();
+            break;
+        case 'board':
+            updateContentBoard();
+            break;
+        case 'contacts':
+            updateContentContacts();
+            break;
+        case 'help':
+            updateContentHelp();
+            break;
+        case 'legal':
+            updateContentLegal();
+            break;
+        case 'privacy':
+            updateContentPrivacy();
+            break;
+        default:
+            console.warn(`No updateContent implementation for view: ${viewName}`);
+    }
 
     resetScrollPosition(viewName);
 }
-
 
 
 /**
@@ -631,10 +695,10 @@ function viewDefaultBtnById(defaultBtnId) {
 }
 
 
-function initPageContent() {
-    pageAssigns = new PageAssigns();
-    pageAssigns.ensureInitialized('summary');
-}
+// function initPageContent() {
+//     pageAssigns = new PageAssigns();
+//     pageAssigns.ensureInitialized('summary');
+// }
 
 
 /**

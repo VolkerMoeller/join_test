@@ -34,58 +34,58 @@ class PageAssigns {
      * @param {string} viewName - Logical view identifier (e.g. "summary", "add", "board", "contacts").
      * @returns {void}
      */
-    ensureInitialized(viewName) {
-        if (!viewName) {
-            console.warn('PageAssigns.ensureInitialized: viewName is missing');
-            return;
-        }
+    // ensureInitialized(viewName) {
+    //     if (!viewName) {
+    //         console.warn('PageAssigns.ensureInitialized: viewName is missing');
+    //         return;
+    //     }
 
-        if (this.initializedViews.has(viewName)) {
-            return; // Already initialized → nothing to do
-        }
+    //     if (this.initializedViews.has(viewName)) {
+    //         return; // Already initialized → nothing to do
+    //     }
 
-        switch (viewName) {
-            case 'summary':
-                this.initSumContent();
-                break;
-            case 'add':
-                this.initAddContent();
-                break;
-            case 'board':
-                this.initBoardContent();
-                break;
-            case 'contacts':
-                this.initContactsContent();
-                break;
-            case 'help':
-                this.initHelpContent();
-                break;
-            case 'privacy':
-                this.initPrivacyContent();
-                break;
-            case 'legal':
-                this.initLegalContent();
-                break;
-            default:
-                console.warn(
-                    `PageAssigns.ensureInitialized: no init handler for view "${viewName}"`
-                );
-                return;
-        }
+    //     switch (viewName) {
+    //         case 'summary':
+    //             this.initSumContent();
+    //             break;
+    //         case 'add':
+    //             this.initAddContent();
+    //             break;
+    //         case 'board':
+    //             this.initBoardContent();
+    //             break;
+    //         case 'contacts':
+    //             this.initContactsContent();
+    //             break;
+    //         case 'help':
+    //             this.initHelpContent();
+    //             break;
+    //         case 'privacy':
+    //             this.initPrivacyContent();
+    //             break;
+    //         case 'legal':
+    //             this.initLegalContent();
+    //             break;
+    //         default:
+    //             console.warn(
+    //                 `PageAssigns.ensureInitialized: no init handler for view "${viewName}"`
+    //             );
+    //             return;
+    //     }
 
-        this.initializedViews.add(viewName);
-    }
+    //     this.initializedViews.add(viewName);
+    // }
 
     initSumContent() {
-        updateSumContent();
-        initSumView();
+        // updateSumContent();
+        // initSumView();
     }
 
     initAddContent() {
-        genAddTaskForm();
-        genUserContactList();
-        genContactBadges();
-        handleMobileBtn();
+        // genAddTaskForm();
+        // genUserContactList();
+        // genContactBadges();
+        // handleMobileBtn();
     }
 
     initBoardContent() {
@@ -93,8 +93,8 @@ class PageAssigns {
     }
 
     initContactsContent() {
-        genContactsListBtn();
-        showResponsiveView();
+        // genContactsListBtn();
+        // showResponsiveView();
     }
 
     initHelpContent() {

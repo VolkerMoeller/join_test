@@ -438,6 +438,7 @@ function updateContentForView(viewName, config) {
     }
 }
 
+
 /**
  * Shows the content container for the given view
  * and hides all other view content containers.
@@ -797,12 +798,6 @@ function viewDefaultBtnById(defaultBtnId) {
     // 4. Hand over to your central navigation handling
     currentNavView(defaultBtnId);
 }
-
-
-// function initPageContent() {
-//     pageAssigns = new PageAssigns();
-//     pageAssigns.ensureInitialized('summary');
-// }
 
 
 /**

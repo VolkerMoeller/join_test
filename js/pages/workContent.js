@@ -127,9 +127,17 @@ function initPrivacyOnce() { }
  */
 function wireAddViewEvents() {
     // 1) Task creation
+    const form = document.getElementById('formAddTask');
+    if (!form) return;
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        await initCreateNewTask();
+    });
+
     const submitBtn = document.getElementById('submitBtnAddTask');
     if (submitBtn) {
-        submitBtn.addEventListener('click', initCreateNewTask);
+        submitBtn.addEventListener('click', getFormInputData);
     }
 
     // 2) Subtask creation

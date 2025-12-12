@@ -122,6 +122,65 @@ function initPrivacyOnce() { }
 
 
 /**
+ * Attaches all event listeners for the "add" view.
+ * This is called only once from initAddTaskOnce().
+ */
+function wireAddViewEvents() {
+    // 1) Task creation
+    const submitBtn = document.getElementById('submitBtnAddTask');
+    if (submitBtn) {
+        submitBtn.addEventListener('click', initCreateNewTask);
+    }
+
+    // 2) Subtask creation
+    const addSubtaskBtn = document.getElementById('btnAddSubtask');
+    if (addSubtaskBtn) {
+        addSubtaskBtn.addEventListener('click', initCreateNewSubtask);
+    }
+
+    // 3) Assigned input / dropdown
+    const assignedInput = document.getElementById('assigned');
+    if (assignedInput) {
+        assignedInput.addEventListener('focus', () => initFocusInputSelect('assigned'));
+        assignedInput.addEventListener('input', () => {
+            searchContactsByInput();
+            enableBtnIfFormFilled();
+        });
+    }
+
+    // 4) Category input / dropdown
+    const categoryInput = document.getElementById('category');
+    if (categoryInput) {
+        categoryInput.addEventListener('focus', () => initFocusInputSelect('category'));
+        categoryInput.addEventListener('input', enableBtnIfFormFilled);
+    }
+
+    // 5) Due date
+    const dueDateInput = document.getElementById('dueDate');
+    if (dueDateInput) {
+        dueDateInput.addEventListener('input', enableBtnIfFormFilled);
+    }
+
+    // 6) Subtask panel toggles etc.
+    // Hier hängst du die Buttons an, die showSubtaskPanel(), closeSubtaskInput(), etc. auslösen.
+    // Beispiel (IDs bitte an dein HTML anpassen):
+
+    const openSubtaskPanelBtn = document.getElementById('btnOpenSubtaskPanel');
+    if (openSubtaskPanelBtn) {
+        openSubtaskPanelBtn.addEventListener('click', () => initShowSubtaskPanel('subtask'));
+    }
+
+    const closeSubtaskPanelBtn = document.getElementById('btnCloseSubtaskPanel');
+    if (closeSubtaskPanelBtn) {
+        closeSubtaskPanelBtn.addEventListener('click', closeSubtaskInput);
+    }
+
+    // 7) Weitere Events (Contacts anklicken, Kategorie-Auswahl, etc.)
+    // -> dort, wo du aktuell onclick="..." im HTML hast, gehst du Schritt für Schritt
+    //    zu addEventListener in dieser Funktion über.
+}
+
+/**
  * Updates the content of the "add" view.
  * Called on every view change to "add".
  * - Resets the form to a clean state.

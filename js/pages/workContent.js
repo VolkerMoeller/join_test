@@ -199,21 +199,19 @@ function wireAddViewEvents() {
             return;
         }
 
-        // Subtask panel close (your close icon div has class "flx-cnt")
-        // In your HTML: <div class="flx-cnt" onclick="closeSubtaskInput()"...>
-        if (t.closest('#inputSubtaskPanel .flx-cnt')) {
+        // Subtask panel close
+        if (t.closest('#inputSubtaskClose')) {
             closeSubtaskInput();
             return;
         }
 
-        // Add subtask (your "btnAddSubtask" is a DIV)
-        if (t.closest('#btnAddSubtask')) {
+        // Subtask panel add subtask
+        if (t.closest('#inputSubtaskAdd')) {
             initCreateNewSubtask();
             return;
         }
 
         // Clear button
-        // if (t.closest('button')?.textContent?.trim() === 'Clear') {
         if (t.closest('#clearBtnAddTask')) {
             resetFormAddTask();
             return;

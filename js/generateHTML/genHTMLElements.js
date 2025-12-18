@@ -424,11 +424,10 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                             <input class="version-2-t6" type="text" id="subtask" name="subtask"
                                 placeholder="Add new subtask" autocomplete="off" onfocus="initShowSubtaskPanel('subtask')">
                             <div id="inputSubtaskPanel" class="input-subtask-panel subtask-panel-v1 display-none">
-                                <div class="flx-cnt" onclick="closeSubtaskInput()"
-                                    w3-include-svg-2nd="./assets/img/svgHTML/52-close_hvr.html">
+                                <div id="inputSubtaskClose" class="flx-cnt" w3-include-svg-2nd="./assets/img/svgHTML/52-close_hvr.html">
                                 </div>
                                 <p class="subtask-vector"></p>
-                                <div class="flx-cnt" w3-include-svg-2nd="./assets/img/svgHTML/51-check_hvr.html" onclick="initCreateNewSubtask()"></div>
+                                <div id="inputSubtaskAdd"class="flx-cnt" w3-include-svg-2nd="./assets/img/svgHTML/51-check_hvr.html"></div>
                             </div>
                             <span class="version-warning-V2 ghost">ghost</span>
                         </div>

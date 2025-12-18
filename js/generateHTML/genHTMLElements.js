@@ -447,8 +447,7 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
         </div>
         <div class="form-panel-add-task ${formPanelFloat}">
             <div class="hover-container-v3 rel">
-                <button class="btn-wo-icn-2nd btn-wth-icn version-btn" type="button"
-                    onclick="resetFormAddTask()">Clear
+                <button id="clearBtnAddTask" class="btn-wo-icn-2nd btn-wth-icn version-btn" type="button">Clear
                     <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/55-iconoir_cancel.html"></div>
                 </button>
             </div>

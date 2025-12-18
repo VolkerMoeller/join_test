@@ -213,7 +213,8 @@ function wireAddViewEvents() {
         }
 
         // Clear button
-        if (t.closest('button')?.textContent?.trim() === 'Clear') {
+        // if (t.closest('button')?.textContent?.trim() === 'Clear') {
+        if (t.closest('#clearBtnAddTask')) {
             resetFormAddTask();
             return;
         }

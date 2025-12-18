@@ -255,6 +255,7 @@ function resetFormAddTask() {
     genUserContactList();
     genContactBadges();
     document.getElementById('userContactBadges').classList.add('display-none');
+    resetFormById('formAddTask');
 
 }
 
@@ -381,7 +382,7 @@ function enableBtnIfFormFilled() {
     if (formFilled == true) {
         document.getElementById('submitBtnAddTask').disabled = false;
     }
-    console.log(formFilled);
+    // console.log(formFilled);
 }
 
 

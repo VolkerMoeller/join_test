@@ -123,70 +123,144 @@ function initPrivacyOnce() { }
 
 /**
  * Attaches all event listeners for the "add" view.
- * This is called only once from initAddTaskOnce().
+ * Called only once from initAddTaskOnce().
  */
 function wireAddViewEvents() {
-    // 1) Task creation
     const form = document.getElementById('formAddTask');
     if (!form) return;
 
+    // --- 1) Submit: the single source of truth for creating a task ---
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
+
+        // Collect form state FIRST (your existing logic)
+        getFormInputData();
+
+        // Then create the task (your existing logic)
         await initCreateNewTask();
     });
 
-    const submitBtn = document.getElementById('submitBtnAddTask');
-    if (submitBtn) {
-        submitBtn.addEventListener('click', getFormInputData);
-    }
-
-    // 2) Subtask creation
-    const addSubtaskBtn = document.getElementById('btnAddSubtask');
-    if (addSubtaskBtn) {
-        addSubtaskBtn.addEventListener('click', initCreateNewSubtask);
-    }
-
-    // 3) Assigned input / dropdown
-    const assignedInput = document.getElementById('assigned');
-    if (assignedInput) {
-        assignedInput.addEventListener('focus', () => initFocusInputSelect('assigned'));
-        assignedInput.addEventListener('input', () => {
+    // --- 2) Input validation / enabling submit button ---
+    // Replace inline onkeyup="enableBtnIfFormFilled()"
+    form.addEventListener('input', (event) => {
+        const id = event.target?.id;
+        if (id === 'title' || id === 'dueDate' || id === 'category') {
+            enableBtnIfFormFilled();
+        }
+        if (id === 'assigned') {
             searchContactsByInput();
             enableBtnIfFormFilled();
+        }
+    });
+
+    // --- 3) Focus-based behaviors (bubbling focusin) ---
+    // Replace inline onfocus / onclick on inputs
+    form.addEventListener('focusin', (event) => {
+        const id = event.target?.id;
+
+        if (id === 'assigned') {
+            initFocusInputSelect('assigned');
+        }
+        if (id === 'category') {
+            initFocusInputSelect('category');
+        }
+        if (id === 'subtask') {
+            initShowSubtaskPanel('subtask');
+        }
+    });
+
+    // --- 4) Click handling via delegation (icons, dropdowns, subtask panel, clear, etc.) ---
+    form.addEventListener('click', (event) => {
+        const t = event.target;
+
+        // Due date icon: <div class="input-container-icon" onclick="focusInput('dueDate')">
+        if (t.closest('.input-container-icon')?.querySelector('[w3-include-svg-2nd="./assets/img/svgHTML/34-event.html"]')) {
+            focusInput('dueDate');
+            return;
+        }
+
+        // Assigned dropdown open/close (wrappers have ids)
+        if (t.closest('#dropDownAssOpen')) {
+            initOnclickDropDownOpen('assigned');
+            return;
+        }
+        if (t.closest('#dropDownAssClose')) {
+            initOnclickDropDownClose('assigned');
+            return;
+        }
+
+        // Category dropdown open/close
+        if (t.closest('#dropDownCatOpen')) {
+            initOnclickDropDownOpen('category');
+            return;
+        }
+        if (t.closest('#dropDownCatClose')) {
+            initOnclickDropDownClose('category');
+            return;
+        }
+
+        // Subtask panel close (your close icon div has class "flx-cnt")
+        // In your HTML: <div class="flx-cnt" onclick="closeSubtaskInput()"...>
+        if (t.closest('#inputSubtaskPanel .flx-cnt')) {
+            closeSubtaskInput();
+            return;
+        }
+
+        // Add subtask (your "btnAddSubtask" is a DIV)
+        if (t.closest('#btnAddSubtask')) {
+            initCreateNewSubtask();
+            return;
+        }
+
+        // Clear button
+        if (t.closest('button')?.textContent?.trim() === 'Clear') {
+            resetFormAddTask();
+            return;
+        }
+
+        // Back/close float button(s)
+        if (t.closest('#btnBack5Hvr')) {
+            endAnimAddTaskFloat();
+            return;
+        }
+        if (t.closest('#btnBack5')) {
+            // Your hover toggle is purely UI; if you also want it to close, do it here.
+            // toggleElements('btnBack5','btnBack5Hvr'); // leave hover to CSS ideally
+            return;
+        }
+    });
+
+    // --- 5) Category selection: radio change ---
+    // Replace inline onclick on #technicalTask / #userStory
+    const categoryList = document.getElementById('categoryList');
+    if (categoryList) {
+        categoryList.addEventListener('change', (event) => {
+            const radio = event.target;
+            if (radio && radio.name === 'category') {
+                handleCategorySelection(radio.value);
+                initOnclickDropDownClose('category');
+                enableBtnIfFormFilled();
+            }
         });
     }
 
-    // 4) Category input / dropdown
-    const categoryInput = document.getElementById('category');
-    if (categoryInput) {
-        categoryInput.addEventListener('focus', () => initFocusInputSelect('category'));
-        categoryInput.addEventListener('input', enableBtnIfFormFilled);
+    // --- 6) Assigned contacts list: delegation for dynamically generated buttons ---
+    // You generate buttons into #userContactList. Those clicks should be handled here.
+    const userContactList = document.getElementById('userContactList');
+    if (userContactList) {
+        userContactList.addEventListener('click', (event) => {
+            const btn = event.target.closest('button');
+            if (!btn) return;
+
+            // If your generated buttons have stable IDs, reuse your existing function:
+            tglContactListBtnCSS(btn.id);
+
+            // Optional: update badges immediately if needed
+            // showClickedBadges();
+        });
     }
-
-    // 5) Due date
-    const dueDateInput = document.getElementById('dueDate');
-    if (dueDateInput) {
-        dueDateInput.addEventListener('input', enableBtnIfFormFilled);
-    }
-
-    // 6) Subtask panel toggles etc.
-    // Hier hängst du die Buttons an, die showSubtaskPanel(), closeSubtaskInput(), etc. auslösen.
-    // Beispiel (IDs bitte an dein HTML anpassen):
-
-    const openSubtaskPanelBtn = document.getElementById('btnOpenSubtaskPanel');
-    if (openSubtaskPanelBtn) {
-        openSubtaskPanelBtn.addEventListener('click', () => initShowSubtaskPanel('subtask'));
-    }
-
-    const closeSubtaskPanelBtn = document.getElementById('btnCloseSubtaskPanel');
-    if (closeSubtaskPanelBtn) {
-        closeSubtaskPanelBtn.addEventListener('click', closeSubtaskInput);
-    }
-
-    // 7) Weitere Events (Contacts anklicken, Kategorie-Auswahl, etc.)
-    // -> dort, wo du aktuell onclick="..." im HTML hast, gehst du Schritt für Schritt
-    //    zu addEventListener in dieser Funktion über.
 }
+
 
 /**
  * Updates the content of the "add" view.

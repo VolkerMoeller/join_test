@@ -278,7 +278,7 @@ function genHTMLFloatingContact(color, initial, name, email, phone, contactId) {
 
 function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '', state = 'display-none', anim) {
     return `
-    <form id="formAddTask" class="form-add ${float} ${anim}" onsubmit="initCreateNewTask(); return false;">
+    <form id="formAddTask" class="form-add ${float} ${anim}">
         <div class="form-btn-back btn-back-addTask ${state}">
             <button id="btnBack5Hvr" type="button" class="display-none" onclick="endAnimAddTaskFloat()"
                 onmouseleave="toggleElements('btnBack5','btnBack5Hvr')"
@@ -298,7 +298,7 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                         <label for="title">Title<span>*</span></label>
                         <div class="input-container">
                             <input class="version-2-t6" type="text" id="title" name="title" placeholder="Enter a title"
-                                autocomplete="off" required onkeyup="enableBtnIfFormFilled()">
+                                autocomplete="off" required>
                         </div>
                         <span class="version-warning-V2 ghost">ghost</span>
                     </div>
@@ -322,7 +322,7 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                         <div class="input-container">
                             <input class="version-2-t6" type="text" id="dueDate" name="dueDate" placeholder="dd/mm/yyyy"
                                 pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}" autocomplete="off"
-                                required onkeyup="enableBtnIfFormFilled()">
+                                required>
                             <div class="input-container-icon" onclick="focusInput('dueDate')">
                                 <div w3-include-svg-2nd="./assets/img/svgHTML/34-event.html"></div>
                             </div>
@@ -370,8 +370,7 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                             <input class="version-2-t6 select" type="text" id="assigned" name="assigned"
                                 placeholder="Select contacts to assign" autocomplete="off"
                                 onfocus="initFocusInputSelect('assigned')" onkeyup="searchContactsByInput()">
-                                <div id="dropDownAssOpen" class="input-container-icon"
-                                    onclick="initOnclickDropDownOpen('assigned')">
+                                <div id="dropDownAssOpen" class="input-container-icon">
                                     <button type="button" type="button"
                                         w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                                 </div>
@@ -391,29 +390,25 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                         <label for="category">Category<span>*</span></label>
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="category" name="category"
-                                autocomplete="off" placeholder="Select task category" onclick="initFocusInputSelect('category')" required">
-                            <div id="dropDownCatOpen" class="input-container-icon"
-                                onclick="initOnclickDropDownOpen('category')">
+                                autocomplete="off" placeholder="Select task category" onclick="initFocusInputSelect('category')" required>
+                            <div id="dropDownCatOpen" class="input-container-icon">
                                 <button type="button" type="button"
                                     w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                             </div>
-                            <div id="dropDownCatClose" class="input-container-icon display-none"
-                                onclick="initOnclickDropDownClose('category')">
+                            <div id="dropDownCatClose" class="input-container-icon display-none">
                                 <button type="button" type="button"
                                     w3-include-svg-2nd="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                             </div>
                         </div>
                         <fieldset id="categoryList" class="category-list">
                             <div class="radio-frame">
-                                <input type="radio" id="technicalTask" name="category" value="Technical Task"
-                                    onclick="handleCategorySelection('Technical Task'); initOnclickDropDownClose('category')" />
+                                <input type="radio" id="technicalTask" name="category" value="Technical Task" />
                                 <div class="label-frame">
                                     <label for="technicalTask">Technical Task</label>
                                 </div>
                             </div>
                             <div class="radio-frame">
-                                <input type="radio" id="userStory" name="category" value="User Story"
-                                    onclick="handleCategorySelection('User Story'); initOnclickDropDownClose('category')" />
+                                <input type="radio" id="userStory" name="category" value="User Story" />
                                 <div class="label-frame">
                                     <label for="userStory">User Story</label>
                                 </div>
@@ -458,8 +453,7 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                 </button>
             </div>
             <div class="hover-container-v4 rel">
-                <button id="submitBtnAddTask" class="btn-wo-icn btn-wth-icn version-btn" type="submit" 
-                    onclick="getFormInputData()" disabled>Add Task
+                <button id="submitBtnAddTask" class="btn-wo-icn btn-wth-icn version-btn" type="submit" disabled>Add Task
                     <div class="flx-cnt-btn-wth-icn" w3-include-svg-2nd="./assets/img/svgHTML/56-check_white.html"></div>
                 </button>
             </div>

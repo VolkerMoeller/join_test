@@ -280,7 +280,7 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
     return `
     <form id="formAddTask" class="form-add ${float} ${anim}">
         <div class="form-btn-back btn-back-addTask ${state}">
-            <button id="btnBack5Hvr" type="button" class="display-none" onclick="endAnimAddTaskFloat()"
+            <button id="btnBack5Hvr" type="button" class="display-none" 
                 onmouseleave="toggleElements('btnBack5','btnBack5Hvr')"
                 w3-include-svg-2nd="./assets/img/svgHTML/61-close-hvr.html">
             </button>

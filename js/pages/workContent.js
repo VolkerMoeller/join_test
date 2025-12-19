@@ -217,20 +217,19 @@ function wireAddViewEvents() {
             return;
         }
 
-        // Back/close float button(s)
-        if (t.closest('#btnBack5Hvr')) {
-            endAnimAddTaskFloat();
-            return;
-        }
-        if (t.closest('#btnBack5')) {
-            // Your hover toggle is purely UI; if you also want it to close, do it here.
-            // toggleElements('btnBack5','btnBack5Hvr'); // leave hover to CSS ideally
-            return;
-        }
+        // Removed for now, as addTask does not yet work as a float.
+        // Back/close float button
+        // if (t.closest('#btnBack5Hvr')) {
+        //     endAnimAddTaskFloat();
+        //     return;
+        // }
+
+        // Open float button via initAnimAddTaskFloat() 
+        // - Not yet implemented, partly because the form does not yet function correctly as a float.
+
     });
 
     // --- 5) Category selection: radio change ---
-    // Replace inline onclick on #technicalTask / #userStory
     const categoryList = document.getElementById('categoryList');
     if (categoryList) {
         categoryList.addEventListener('change', (event) => {

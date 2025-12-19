@@ -148,11 +148,11 @@ function handleCategorySelection(text) {
 }
 
 // 9th
-function checkIfChecked(id) {
-    let checked = false;
-    checked = document.getElementById(id).classList.contains('display-none');
-    return checked;
-}
+// function checkIfChecked(id) {
+//     let checked = false;
+//     checked = document.getElementById(id).classList.contains('display-none');
+//     return checked;
+// }
 
 // 10th
 

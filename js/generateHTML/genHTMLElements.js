@@ -125,9 +125,8 @@ function genHTMLSubtaskListInput(subtaskId, text) {
 
 function genHTMLUserContactListBtn(name, initial, i, color, id) {
     return `
-    <button id="contactListBtn${i}" class="contact-list-btn" type="button" value="${id}"
-        onclick="toggleElements('3checked${i}', '5default${i}'); checkIfChecked('5default${i}'); tglContactListBtnCSS('contactListBtn${i}'); showClickedBadges();">
-        <div class=" contact-list-btn-left">
+    <button id="contactListBtn${i}" class="contact-list-btn" type="button" value="${id}">
+        <div class="contact-list-btn-left">
             <div class="rel">
                 <div class="contact-list-badge">
                     <svg width="44" height="44" viewBox="-22 -22 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">

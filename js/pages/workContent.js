@@ -247,16 +247,27 @@ function wireAddViewEvents() {
     const userContactList = document.getElementById('userContactList');
     if (userContactList) {
         userContactList.addEventListener('click', (event) => {
-            const btn = event.target.closest('button');
+            const btn = event.target.closest('button[id^="contactListBtn"]');
             if (!btn) return;
 
-            // If your generated buttons have stable IDs, reuse your existing function:
+            const index = btn.id.replace('contactListBtn', ''); // "0", "1", ...
+            const checkedId = `3checked${index}`;
+            const defaultId = `5default${index}`;
+
+            // 1) Toggle checkbox visuals (same as inline)
+            toggleElements(checkedId, defaultId);
+
+            // 2) Toggle button CSS + checkbox paths/rects
             tglContactListBtnCSS(btn.id);
 
-            // Optional: update badges immediately if needed
-            // showClickedBadges();
+            // 3) Update badges display
+            showClickedBadges();
+
+            // Optional: If you *really* need this side effect:
+            // checkIfChecked(defaultId);
         });
     }
+
 }
 
 

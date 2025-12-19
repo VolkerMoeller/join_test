@@ -354,6 +354,8 @@ function ensureInitialized(viewName) {
         config.pageAssign();
         state.initialized = true;
     }
+
+    
 }
 
 

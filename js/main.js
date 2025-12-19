@@ -442,6 +442,11 @@ function resetMenuIconHoverStates() {
 }
 
 
+function isAddViewActive() {
+    const addContent = document.getElementById(VIEW_CONFIG.add.contentId);
+    return addContent && !addContent.classList.contains('display-none');
+}
+
 
 function toggleElements(id1st, id2nd) {
     const element1st = document.getElementById(id1st);
@@ -816,8 +821,3 @@ function changeClrScheme() {
 }
 
 
-// -------------------
-// 3rd-level-functions
-// -------------------
-
-// loadLocalStorageObject() --> see above

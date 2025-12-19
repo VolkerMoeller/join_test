@@ -79,20 +79,20 @@
 
 .ovl-show-input {
     z-index: 3;
-    background-color: transparent;
-    /* background-color: lightgoldenrodyellow; */
+    /* background-color: transparent; */
+    background-color: rebeccapurple;
 }
 
 .ovl-show-select {
     z-index: 2;
-    background-color: transparent;
-    /* background-color: lightblue; */
+    /* background-color: transparent; */
+    background-color: greenyellow;
 }
 
 .ovl-show-subtask {
     z-index: 2;
-    background-color: transparent;
-    /* background-color: lightpink; */
+    /* background-color: transparent; */
+    background-color: lightpink;
 }
 
 .msg-cnt {

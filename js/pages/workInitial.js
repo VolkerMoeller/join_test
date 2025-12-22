@@ -43,7 +43,70 @@ async function initWork() {
     } else {
         console.log('Initialization successful.');
     }
+
+    initGlobalOutsideClickHandlersOnce();
 }
+
+
+function initGlobalOutsideClickHandlersOnce() {
+    document.addEventListener('click', handleGlobalOutsideClick, true);
+}
+
+
+function handleGlobalOutsideClick(event) {
+  if (!isAddViewActive()) return;
+
+  const t = event.target;
+
+  // 1) Assigned dropdown: close if click outside assigned container + list
+  const assignedContainer = document.getElementById('assignedContainer');
+  const userContactList = document.getElementById('userContactList');
+
+  const clickedInsideAssigned =
+    (assignedContainer && assignedContainer.contains(t)) ||
+    (userContactList && userContactList.contains(t));
+
+  if (!clickedInsideAssigned) {
+    // Close only if currently open (optional but nice)
+    const listOpen = userContactList?.classList.contains('drop-down-anim');
+    if (listOpen) {
+      initOnclickDropDownClose('assigned');
+    }
+  }
+
+  // 2) Category dropdown: close if click outside category container + list
+  const categoryContainer = document.getElementById('categoryContainer');
+  const categoryList = document.getElementById('categoryList');
+
+  const clickedInsideCategory =
+    (categoryContainer && categoryContainer.contains(t)) ||
+    (categoryList && categoryList.contains(t));
+
+  if (!clickedInsideCategory) {
+    const listOpen = categoryList?.classList.contains('drop-down-anim');
+    if (listOpen) {
+      initOnclickDropDownClose('category');
+    }
+  }
+
+  // 3) Subtask panel: close if click outside subtask container + panel
+  const subtaskContainer = document.getElementById('inputContainerSubtask');
+  const subtaskPanel = document.getElementById('inputSubtaskPanel');
+
+  const clickedInsideSubtask =
+    (subtaskContainer && subtaskContainer.contains(t)) ||
+    (subtaskPanel && subtaskPanel.contains(t));
+
+  if (!clickedInsideSubtask) {
+    // Close only if visible
+    const panelVisible = subtaskPanel && !subtaskPanel.classList.contains('display-none');
+    if (panelVisible) {
+      closeSubtaskInput();
+    }
+  }
+}
+
+
 
 
 /**

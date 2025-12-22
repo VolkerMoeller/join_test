@@ -85,8 +85,8 @@
 
 .ovl-show-select {
     z-index: 2;
-    /* background-color: transparent; */
-    background-color: greenyellow;
+    background-color: transparent;
+    /* background-color: greenyellow; */
 }
 
 .ovl-show-subtask {

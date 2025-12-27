@@ -181,27 +181,27 @@ function wireAddViewEvents() {
 
         // Assigned dropdown open/close (wrappers have ids)
         if (t.closest('#dropDownAssOpen')) {
-            initOnclickDropDownOpen('assigned');
+            openAssignedOverlay();
             return;
         }
         if (t.closest('#dropDownAssClose')) {
-            initOnclickDropDownClose('assigned');
+            OverlayManager.close('add.assigned');
             return;
         }
 
         // Category dropdown open/close
         if (t.closest('#dropDownCatOpen')) {
-            initOnclickDropDownOpen('category');
+            openCategoryOverlay();
             return;
         }
         if (t.closest('#dropDownCatClose')) {
-            initOnclickDropDownClose('category');
+            OverlayManager.close('add.category');
             return;
         }
 
         // Subtask panel close
         if (t.closest('#inputSubtaskClose')) {
-            closeSubtaskInput();
+            OverlayManager.close('add.subtask');
             return;
         }
 
@@ -292,6 +292,54 @@ function showMainNavigation() { }
 function hideMainNavigation() { }
 
 
+function openAssignedOverlay() {
+    initOnclickDropDownOpen('assigned');
+
+    const assignedContainer = document.getElementById('assignedContainer');
+    const userContactList = document.getElementById('userContactList');
+
+    OverlayManager.open(
+        'add.assigned',
+        (t) =>
+            (assignedContainer && assignedContainer.contains(t)) ||
+            (userContactList && userContactList.contains(t)),
+        () => initOnclickDropDownClose('assigned')
+    );
+}
+
+
+function openCategoryOverlay() {
+    initOnclickDropDownOpen('category');
+
+    const categoryContainer = document.getElementById('categoryContainer');
+    const categoryList = document.getElementById('categoryList');
+
+    OverlayManager.open(
+        'add.category',
+        (t) =>
+            (categoryContainer && categoryContainer.contains(t)) ||
+            (categoryList && categoryList.contains(t)),
+        () => initOnclickDropDownClose('category')
+    );
+}
+
+
+function openSubtaskPanelOverlay() {
+    initShowSubtaskPanel('subtask');
+
+    const subtaskContainer = document.getElementById('inputContainerSubtask');
+    const subtaskPanel = document.getElementById('inputSubtaskPanel');
+
+    OverlayManager.open(
+        'add.subtask',
+        (t) =>
+            (subtaskContainer && subtaskContainer.contains(t)) ||
+            (subtaskPanel && subtaskPanel.contains(t)),
+        () => closeSubtaskInput()
+    );
+}
+
+
 
 /**
  * Central SPA routing function for the JOIN work area.
@@ -355,7 +403,7 @@ function ensureInitialized(viewName) {
         state.initialized = true;
     }
 
-    
+
 }
 
 

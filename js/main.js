@@ -1,3 +1,68 @@
+const OverlayManager = (() => {
+    /** @type {{ name: string, isInside: (t: EventTarget) => boolean, close: () => void } | null} */
+    let active = null;
+    let bound = false;
+
+    function bindGlobalOutsideClickOnce() {
+        if (bound) return;
+        document.addEventListener('click', onGlobalClick, true); // capture
+        bound = true;
+    }
+
+    function onGlobalClick(event) {
+        if (!active) return;
+
+        const t = event.target;
+        if (active.isInside(t)) return;
+
+        // Outside click -> close active overlay
+        active.close();
+        active = null;
+    }
+
+    /**
+     * Opens (registers) an overlay as the currently active one.
+     * If another overlay is active, it will be closed first.
+     *
+     * @param {string} name
+     * @param {(t: EventTarget) => boolean} isInside
+     * @param {() => void} close
+     */
+    function open(name, isInside, close) {
+        bindGlobalOutsideClickOnce();
+
+        if (active && active.name !== name) {
+            active.close();
+        }
+
+        active = { name, isInside, close };
+    }
+
+    /**
+     * Closes the active overlay if it matches the given name.
+     * @param {string} name
+     */
+    function close(name) {
+        if (!active || active.name !== name) return;
+        active.close();
+        active = null;
+    }
+
+    /** Closes whatever is active. */
+    function closeActive() {
+        if (!active) return;
+        active.close();
+        active = null;
+    }
+
+    /** Debug helper */
+    function getActiveName() {
+        return active?.name ?? null;
+    }
+
+    return { open, close, closeActive, getActiveName, bindGlobalOutsideClickOnce };
+})();
+
 // ---------------
 // main-functions:
 // ---------------
@@ -340,6 +405,7 @@ function checkOverlay() {
         handleOverlayForInput();
     }
 }
+
 
 
 

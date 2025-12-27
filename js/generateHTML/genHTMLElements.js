@@ -367,14 +367,12 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                         <label for="assigned">Assigned to</label>
                         <div id="assignedContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="assigned" name="assigned"
-                                placeholder="Select contacts to assign" autocomplete="off"
-                                onfocus="initFocusInputSelect('assigned')" onkeyup="searchContactsByInput()">
+                                placeholder="Select contacts to assign" autocomplete="off" onkeyup="searchContactsByInput()">
                                 <div id="dropDownAssOpen" class="input-container-icon">
                                     <button type="button" type="button"
                                         w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                                 </div>
-                                <div id="dropDownAssClose" class="input-container-icon display-none"
-                                    onclick="initOnclickDropDownClose('assigned')">
+                                <div id="dropDownAssClose" class="input-container-icon display-none">
                                     <button type="button" type="button"
                                         w3-include-svg-2nd="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                                 </div>
@@ -389,7 +387,7 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                         <label for="category">Category<span>*</span></label>
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="category" name="category"
-                                autocomplete="off" placeholder="Select task category" onclick="initFocusInputSelect('category')" required>
+                                autocomplete="off" placeholder="Select task category" required>
                             <div id="dropDownCatOpen" class="input-container-icon">
                                 <button type="button" type="button"
                                     w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
@@ -421,7 +419,7 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                         <label for="title">Subtasks</label>
                         <div id="inputContainerSubtask" class="input-container">
                             <input class="version-2-t6" type="text" id="subtask" name="subtask"
-                                placeholder="Add new subtask" autocomplete="off" onfocus="initShowSubtaskPanel('subtask')">
+                                placeholder="Add new subtask" autocomplete="off">
                             <div id="inputSubtaskPanel" class="input-subtask-panel subtask-panel-v1 display-none">
                                 <div id="inputSubtaskClose" class="flx-cnt" w3-include-svg-2nd="./assets/img/svgHTML/52-close_hvr.html">
                                 </div>

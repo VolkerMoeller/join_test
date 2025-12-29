@@ -401,7 +401,7 @@ function handleOverlayForEditSubtask(subtaskId) {
 
 function checkOverlay() {
     let overlay = document.querySelector('.ovl-frame');
-    if (!overlay.classList.contains('ovl-show-input')) {
+    if (!overlay.classList.contains('ovl-show-select')) {
         handleOverlayForInput();
     }
 }
@@ -789,10 +789,8 @@ function resetOverlayFrame() {
     const activeClasses = [
         'ovl-show-anim-bg',
         'ovl-show-anim-bg-v2',
-        'ovl-show-input',
         'ovl-show-nav',
-        'ovl-show-select',
-        'ovl-show-subtask'
+        'ovl-show-select'
     ];
 
     activeClasses.forEach(cls => overlay.classList.remove(cls));
@@ -838,13 +836,15 @@ function resetOverlayNav() {
 function setupOverlayForInput() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show-input');
+    // z-index: 2;
+    overlay.classList.add('ovl-show-select');
 }
 
 
 function setupOverlayForSelect(inputId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
+    // z-index: 2;
     overlay.classList.add('ovl-show-select');
     overlay.setAttribute('onclick', `resetOverlayFrameSelect('${inputId}')`)
 }
@@ -853,7 +853,8 @@ function setupOverlayForSelect(inputId) {
 function setupOverlayForSubtasks(inputId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show-subtask');
+    // z-index: 2;
+    overlay.classList.add('ovl-show-select');
     overlay.setAttribute('onclick', `resetOverlayFrameSubtask('${inputId}')`)
 }
 
@@ -861,7 +862,8 @@ function setupOverlayForSubtasks(inputId) {
 function setupOverlayForEditSubtask(subtaskId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show-subtask');
+    // z-index: 2;
+    overlay.classList.add('ovl-show-select');
     overlay.setAttribute('onclick', `resetOverlayFrameSubtaskEdit('${subtaskId}')`)
 }
 

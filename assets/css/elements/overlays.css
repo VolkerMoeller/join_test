@@ -77,23 +77,13 @@
     }
 }
 
-.ovl-show-input {
-    z-index: 3;
-    /* background-color: transparent; */
-    background-color: rebeccapurple;
-}
 
 .ovl-show-select {
     z-index: 2;
-    background-color: transparent;
-    /* background-color: greenyellow; */
+    /* background-color: transparent; */
+    background-color: greenyellow;
 }
 
-.ovl-show-subtask {
-    z-index: 2;
-    /* background-color: transparent; */
-    background-color: lightpink;
-}
 
 .msg-cnt {
     position: absolute;

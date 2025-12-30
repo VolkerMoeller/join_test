@@ -399,12 +399,12 @@ function handleOverlayForEditSubtask(subtaskId) {
 }
 
 
-function checkOverlay() {
-    let overlay = document.querySelector('.ovl-frame');
-    if (!overlay.classList.contains('ovl-show-select')) {
-        handleOverlayForInput();
-    }
-}
+// function checkOverlay() {
+//     let overlay = document.querySelector('.ovl-frame');
+//     if (!overlay.classList.contains('ovl-show-select')) {
+//         handleOverlayForInput();
+//     }
+// }
 
 
 

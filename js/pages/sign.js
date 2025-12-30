@@ -616,13 +616,13 @@ function setVisibilityIconsDefault() {
 // ovlSign-functions:
 // ------------------
 
-// resetOverlyForInput()
+// setOverlyForInput()
 
-function resetOverlayForInput() {
-    setupOverlayForInput();
-    setupSignElementsOnTop();
-    setupPasswordBtn();
-}
+// function setOverlayForInput() {
+//     setupOverlayForInput();
+//     setupSignElementsOnTop();
+//     setupPasswordBtn();
+// }
 
 // --------------------
 // 1st-level-functions:

@@ -73,6 +73,27 @@ function resetOverlayFrameSelect(inputId) {
 }
 
 
+function closeAssignedDropdown() {
+    resetOverlayFrame();
+
+    resetInputAssigned();
+    dropDownCloseById('userContactList');
+    resetAddElementsDefault('assigned');
+    showBadgeList();
+    removeDisplayNone();
+}
+
+function closeCategoryDropdown() {
+    resetOverlayFrame();
+
+    resetInputCategory();
+    dropDownCloseById('categoryList');
+    resetAddElementsDefault('category');
+    enableBtnIfFormFilled();
+}
+
+
+
 // 4th
 
 function initFocusInputSelect(inputId) {

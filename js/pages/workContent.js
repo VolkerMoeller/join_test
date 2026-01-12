@@ -295,33 +295,29 @@ function hideMainNavigation() { }
 function openAssignedOverlay() {
     initOnclickDropDownOpen('assigned');
 
-    const assignedContainer = document.getElementById('assignedContainer');
-    const userContactList = document.getElementById('userContactList');
+    const container = document.getElementById('assignedContainer');
+    const list = document.getElementById('userContactList');
 
     OverlayManager.open(
         'add.assigned',
-        (t) =>
-            (assignedContainer && assignedContainer.contains(t)) ||
-            (userContactList && userContactList.contains(t)),
-        () => initOnclickDropDownClose('assigned')
+        (t) => (container && container.contains(t)) || (list && list.contains(t)),
+        closeAssignedDropdown
     );
 }
-
 
 function openCategoryOverlay() {
     initOnclickDropDownOpen('category');
 
-    const categoryContainer = document.getElementById('categoryContainer');
-    const categoryList = document.getElementById('categoryList');
+    const container = document.getElementById('categoryContainer');
+    const list = document.getElementById('categoryList');
 
     OverlayManager.open(
         'add.category',
-        (t) =>
-            (categoryContainer && categoryContainer.contains(t)) ||
-            (categoryList && categoryList.contains(t)),
-        () => initOnclickDropDownClose('category')
+        (t) => (container && container.contains(t)) || (list && list.contains(t)),
+        closeCategoryDropdown
     );
 }
+
 
 
 function openSubtaskPanelOverlay() {

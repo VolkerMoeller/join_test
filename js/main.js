@@ -63,83 +63,6 @@ const OverlayManager = (() => {
     return { open, close, closeActive, getActiveName, bindGlobalOutsideClickOnce };
 })();
 
-// ---------------
-// main-functions:
-// ---------------
-
-// --- initial-functions:
-
-// includeHTML()
-// changeSvgPathClass()
-// setClrSchemeInit()
-// invertLogoClr()
-// setUserStatusExternal()
-// setUserStatusUser()
-// setUserStatusGuest()
-
-
-// --- local-storage-functions:
-
-// saveLocalStorageObject()
-// loadLocalStorageObject()
-// loadLocalStorageObject()
-
-// --- basic-navigation-functions:
-
-// switchToWorkPagesAsGuest()
-// switchToSignPages()
-// changeCntMain()
-// changePageCSS()
-// resetNavigationGroup()
-// resetNavigationView()
-// resetNavigationViewMbl()
-
-// --- overlay-functions:
-
-// changeOvl()
-// showOverlayForMsg()
-// showOverlayForMsgV2()
-// resetOverlay()
-// handleOverlayForInput()
-// handleOverlayForSelect()
-// handleOverlayForEditSubtasks()
-// checkOverlay()
-
-// --- help-functions:
-
-// safeCall()
-// logViewError()
-// safeBatch()
-// toggleElements()
-// toggleElementsZindex()
-// focusInput()
-// blurInput()
-// readingUserStatus()
-// getWindowWidth()
-// getWindowHeight()
-// doSth()
-// windowClose()
-// goBack()
-// emptyInputFieldById()
-// resetFormById()
-// closeInput()
-// getRandomColor()
-// getFormInputData()
-// checkIfMobileView()
-// getValueOutOfArrWthObjs()
-// 
-
-// --- test-functions:
-
-// getFormInputDataTest()
-
-// --- sort-functions:
-
-// sortArrOfObj()
-
-
-// initial-functions:
-
 
 async function includeHTML() {
     await includeHTMLById('w3-include-html');
@@ -359,14 +282,7 @@ function resetOverlayV2() {
 }
 
 
-function handleOverlayForInput() {
-    let overlay = document.querySelector('.ovl-frame');
-    let overlayNotShown = overlay.classList.contains('ovl-hide');
-    if (overlayNotShown) {
-        setupOverlayForInput();
-        setupSignElementsOnTop();
-    }
-}
+
 
 
 function handleOverlayForSelect(inputId) {
@@ -379,16 +295,6 @@ function handleOverlayForSelect(inputId) {
 }
 
 
-function handleOverlayForSubtasks(inputId) {
-    let overlay = document.querySelector('.ovl-frame');
-    let overlayNotShown = overlay.classList.contains('ovl-hide');
-    if (overlayNotShown) {
-        setupOverlayForSubtasks(inputId);
-        setupSubtasksElementsOnTop(inputId);
-    }
-}
-
-
 function handleOverlayForEditSubtask(subtaskId) {
     let overlay = document.querySelector('.ovl-frame');
     let overlayNotShown = overlay.classList.contains('ovl-hide');
@@ -397,16 +303,6 @@ function handleOverlayForEditSubtask(subtaskId) {
         setupSubtasksEditElementsOnTop(subtaskId);
     }
 }
-
-
-// function checkOverlay() {
-//     let overlay = document.querySelector('.ovl-frame');
-//     if (!overlay.classList.contains('ovl-show-select')) {
-//         handleOverlayForInput();
-//     }
-// }
-
-
 
 
 // --- help-functions:
@@ -519,14 +415,6 @@ function toggleElements(id1st, id2nd) {
     const element2nd = document.getElementById(id2nd);
     element1st.classList.toggle('display-none');
     element2nd.classList.toggle('display-none');
-}
-
-
-function toggleElementsZindex(id1st, id2nd) {
-    const element1st = document.getElementById(id1st);
-    const element2nd = document.getElementById(id2nd);
-    toggleElementZindex(element1st);
-    toggleElementZindex(element2nd);
 }
 
 
@@ -662,7 +550,6 @@ async function getTaskContactIds(userId = 'userId0000', currentTaskId = 'taskId0
 }
 
 
-// sortArrOfObj()
 
 function sortArrOfObj(items) {
     items.sort((a, b) => a.value - b.value);
@@ -677,49 +564,6 @@ function sortArrOfObj(items) {
 }
 
 
-// -------------------
-// 1st-level-functions
-// -------------------
-
-// includeHTMLById()
-
-// checkColorSchemeId()
-// setClrScheme()
-
-// changeSvgPathClass() --> see above
-
-// saveLocalStorageObject() --> see above
-
-// saveLocalStorageObject() --> see above
-
-// saveLocalStorageObject() --> see above
-
-// setUserStatusGuest() --> see above
-// rememberGuestData()
-
-// setUserStatusExternal()
-// removeLocalStorageObject()
-
-// includeHTMLById() --> see above
-
-// resetOverlayFrame()
-// resetOverlayMsg()
-// resetOverlayNav()
-
-// setupOverlayForInput()
-// setupSignElementsOnTop() --> sign.js
-
-// setupOverlayForSelect()
-// setupSignElementsOnTop() --> sign.js
-
-// setupOverlayForSubtasks();
-// setupSubtasksElementsOnTop() --> add.js
-
-// handleOverlayForInput() --> see above
-
-// toggleElementZindex()
-
-// loadLocalStorageObject() --> see above
 
 
 async function includeHTMLById(name) {
@@ -836,7 +680,6 @@ function resetOverlayNav() {
 function setupOverlayForInput() {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
-    // z-index: 2;
     overlay.classList.add('ovl-show-select');
 }
 
@@ -844,25 +687,14 @@ function setupOverlayForInput() {
 function setupOverlayForSelect(inputId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
-    // z-index: 2;
     overlay.classList.add('ovl-show-select');
     overlay.setAttribute('onclick', `resetOverlayFrameSelect('${inputId}')`)
-}
-
-
-function setupOverlayForSubtasks(inputId) {
-    const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.remove('ovl-hide');
-    // z-index: 2;
-    overlay.classList.add('ovl-show-select');
-    overlay.setAttribute('onclick', `resetOverlayFrameSubtask('${inputId}')`)
 }
 
 
 function setupOverlayForEditSubtask(subtaskId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
-    // z-index: 2;
     overlay.classList.add('ovl-show-select');
     overlay.setAttribute('onclick', `resetOverlayFrameSubtaskEdit('${subtaskId}')`)
 }

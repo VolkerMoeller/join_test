@@ -189,7 +189,6 @@ function hideSubtaskPanel() {
 
 // 12th:
 function initShowSubtaskPanel(inputId) {
-    // handleOverlayForSubtasks(inpu tId);
     showSubtaskPanel();
     scrollElementToBottom('formInputsFrameContainer');
 }
@@ -403,74 +402,8 @@ function enableBtnIfFormFilled() {
     if (formFilled == true) {
         document.getElementById('submitBtnAddTask').disabled = false;
     }
-    // console.log(formFilled);
 }
 
-
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-// 3rd
-// resetOverlayFrame() --> main.js
-// resetInputAssigned()
-// dropDownCloseById()
-// resetAddElementsDefault() --> see above
-// showBadgeList()
-// removeDisplayNone()
-// resetInputCategory()
-// dropDownCloseById() --> see above
-// resetAddElementsDefault() --> see above
-
-
-// 4th
-// handleOverlayForSelect() --> main.js
-// initToggleDropDown()
-// dropDownOpenById() --> see above
-// dropDownOpenById() --> see above
-
-
-// 5th
-// selectAssignedBtnDefault()
-// handleOverlayForSelect() --> main.js
-// hideBadgeList()
-// toggleElements() --> main.js
-// focusInput() --> main.js
-// dropDownOpenById() --> see above
-// toggleElements() --> main.js
-// dropDownOpenById() -->see above
-
-
-// 6th
-// showBadgeList() -->
-// toggleElements() --> main.js
-// resetOverlayFrame() --> main.js
-// emptyInputFieldById() --> main.js
-// dropDownCloseById() --> see above
-// resetAddElementsDefault() --> see above
-// toggleElements() --> main.js
-// resetOverlayFrame() --> main.js
-// emptyInputFieldById() --> main.js
-// dropDownCloseById() --> see above
-// resetAddElementsDefault() --> see above
-// removeDisplayNone() --> see above
-
-// .7th
-// tglCSSCheckBox()
-
-// .16th
-// toggleElementsZindex() --> main.js
-// focusInput() --> main.js
-
-// .25th
-// getArrOfUserContacts()
-// getUserContactsSort()
-// userFirst()
-// getArrsOfBadgeData()
-// genHTMLUserContactListBtn() --> genHTMLELements.
-
-// .29th
-// checkIfFormFilled
 
 
 function resetInputAssigned() {

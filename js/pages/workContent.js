@@ -305,6 +305,7 @@ function openAssignedOverlay() {
     );
 }
 
+
 function openCategoryOverlay() {
     initOnclickDropDownOpen('category');
 
@@ -317,7 +318,6 @@ function openCategoryOverlay() {
         closeCategoryDropdown
     );
 }
-
 
 
 function openSubtaskPanelOverlay() {

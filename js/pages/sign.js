@@ -169,29 +169,6 @@ async function initCheckInputSignUp() {
 }
 
 
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-
-// checkInputLogIn()
-// setSignUpRequiredOff() see above
-// defaultFormSettings()
-// resetOverlayFrame() --> main.js
-// blurInputField()
-// removeWarningNoMatchLogIn()
-// removeWarningNoMatchSignUp()
-// warningTextOff()
-// setupOverlayForInput() --> main.js
-// setupSignElementsOnTop()
-// focusInput() --> main.js
-// handlePwIcn()
-// toggleCheckboxIcns()
-// toggleOnOffSignUpBtn()
-// checkInputSignUp()
-// initAnimSignMessages() --> animMessages.js
-
-
 async function checkInputLogIn() {
     let isUser = false;
     isUser = await checkIfUser();
@@ -610,24 +587,3 @@ function setVisibilityIconsDefault() {
         document.getElementById(id).classList.add('display-none');
     });
 }
-
-
-// ------------------
-// ovlSign-functions:
-// ------------------
-
-// setOverlyForInput()
-
-// function setOverlayForInput() {
-//     setupOverlayForInput();
-//     setupSignElementsOnTop();
-//     setupPasswordBtn();
-// }
-
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-// setupOverlayForInput() --> main.js
-// setupSignElementsOnTop() --> see above - cntCenter-functions
-// setupPasswordBtn() --> see above - cntRight-functions

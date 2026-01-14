@@ -273,25 +273,11 @@ function resetOverlay() {
 }
 
 
-
 function resetOverlayV2() {
     let ovlFrame = document.getElementById('ovlFrame');
     ovlFrame.innerHTML = '';
     ovlFrame.setAttribute('class', '');
     ovlFrame.classList.add('ovl-frame', 'ovl-hide');
-}
-
-
-
-
-
-function handleOverlayForSelect(inputId) {
-    let overlay = document.querySelector('.ovl-frame');
-    let overlayNotShown = overlay.classList.contains('ovl-hide');
-    if (overlayNotShown) {
-        setupOverlayForSelect(inputId);
-        setupAddElementsOnTop(inputId);
-    }
 }
 
 
@@ -564,8 +550,6 @@ function sortArrOfObj(items) {
 }
 
 
-
-
 async function includeHTMLById(name) {
     let selector = '[' + name + ']';
     let includeElement = document.querySelectorAll(selector);
@@ -677,21 +661,6 @@ function resetOverlayNav() {
 }
 
 
-function setupOverlayForInput() {
-    const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show-select');
-}
-
-
-function setupOverlayForSelect(inputId) {
-    const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show-select');
-    overlay.setAttribute('onclick', `resetOverlayFrameSelect('${inputId}')`)
-}
-
-
 function setupOverlayForEditSubtask(subtaskId) {
     const overlay = document.querySelector('.ovl-frame');
     overlay.classList.remove('ovl-hide');
@@ -700,24 +669,7 @@ function setupOverlayForEditSubtask(subtaskId) {
 }
 
 
-function toggleElementZindex(element) {
-    element.classList.toggle('z-index-1');
-    element.classList.toggle('z-index--1');
-}
-
-
-// -------------------
-// 2nd-level-functions
-// -------------------
-
-// loadLocalStorageObject() --> see above
-// saveLocalStorageObject() --> see above
-// changeClrScheme()
-
-
 function changeClrScheme() {
     let schemeId = loadLocalStorageObject('colorScheme');
     document.getElementById('linkClrs').setAttribute('href', `./assets/css/main/clrSchemes/${schemeId}-colors.css`);
 }
-
-

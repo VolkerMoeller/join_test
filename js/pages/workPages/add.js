@@ -1,39 +1,4 @@
-// ----------------
-//add.js-functions:
-// ----------------
 
-// 1st setupAddElementsOnTop()
-// 2nd resetAddElementsDefault()
-// 3rd resetOverlayFrameSelect()
-// 4th initFocusInputSelect()
-// 5th initOnclickDropDownOpen()
-// 6th initOnclickDropDownClose()
-// 7th tglContactListBtnCSS()
-// 8th handleCategorySelection()
-// 9th checkIfChecked()
-// 10th showSubtaskPanel()
-// 11th hideSubtaskPanel()
-// 12th initShowSubtaskPanel()
-// 13th resetOverlayFrameSubtask()
-// 14th setupSubtasksElementsOnTop()
-// 15th closeSubtaskInput()
-// 16th initShowSubtaskInput()
-// 17th resetOverlayFrameSubtaskEdit()
-// 18th setupSubtasksEditElementsOnTop()
-// 19th updateDefaultSubtaskId()
-// 20th resetFormAddTask()
-// 21th 
-// 22th
-// 23th
-// 24th
-// 25th genUserContactList
-// 26th
-// 27th searchContactsByInput()
-// 28th genAddTaskForm()
-// 29th enableBtnIfFormFilled()
-
-
-// 1st
 function setupAddElementsOnTop(inputId) {
     if (inputId == 'assigned') {
         document.getElementById('assignedContainer').classList.add('z-index-4');
@@ -44,31 +9,12 @@ function setupAddElementsOnTop(inputId) {
 }
 
 
-// 2nd
 function resetAddElementsDefault(inputId) {
     if (inputId == 'assigned') {
         document.getElementById('assignedContainer').classList.remove('z-index-4');
     }
     if (inputId == 'category') {
         document.getElementById('categoryContainer').classList.remove('z-index-4');
-    }
-}
-
-
-// 3rd
-function resetOverlayFrameSelect(inputId) {
-    resetOverlayFrame();
-    if (inputId == 'assigned') {
-        resetInputAssigned();
-        dropDownCloseById('userContactList');
-        resetAddElementsDefault(inputId);
-        showBadgeList();
-        removeDisplayNone();
-    }
-    if (inputId == 'category') {
-        resetInputCategory();
-        dropDownCloseById('categoryList');
-        resetAddElementsDefault(inputId);
     }
 }
 
@@ -97,7 +43,6 @@ function closeCategoryDropdown() {
 // 4th
 
 function initFocusInputSelect(inputId) {
-    handleOverlayForSelect(inputId);
     initToggleDropDown(inputId);
     if (inputId == 'assigned') {
         hideBadgeList();
@@ -116,7 +61,6 @@ function initOnclickDropDownOpen(inputId) {
     if (inputId == 'assigned') {
         justOpened = selectAssignedBtnDefault();
     }
-    handleOverlayForSelect(inputId);
     if (inputId == 'assigned') {
         hideBadgeList();
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
@@ -168,12 +112,6 @@ function handleCategorySelection(text) {
     category.value = text;
 }
 
-// 9th
-// function checkIfChecked(id) {
-//     let checked = false;
-//     checked = document.getElementById(id).classList.contains('display-none');
-//     return checked;
-// }
 
 // 10th
 
@@ -221,7 +159,7 @@ function closeSubtaskInput() {
 function initShowSubtaskInput(subtaskId) {
     let subtaskContainerInputId = subtaskId + 'InputContainer';
     let subtaskInputId = subtaskId + 'Input';
-    handleOverlayForEditSubtask(subtaskId);
+    // handleOverlayForEditSubtask(subtaskId);
     focusInput(subtaskInputId);
     document.getElementById(subtaskContainerInputId).classList.toggle('z-index--1')
     document.getElementById(subtaskContainerInputId).classList.toggle('z-index-1')

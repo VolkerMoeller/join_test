@@ -20,7 +20,7 @@ function resetAddElementsDefault(inputId) {
 
 
 function closeAssignedDropdown() {
-    resetOverlayFrame();
+    // resetOverlayFrame();
 
     resetInputAssigned();
     dropDownCloseById('userContactList');
@@ -30,7 +30,7 @@ function closeAssignedDropdown() {
 }
 
 function closeCategoryDropdown() {
-    resetOverlayFrame();
+    // resetOverlayFrame();
 
     resetInputCategory();
     dropDownCloseById('categoryList');
@@ -80,7 +80,7 @@ function initOnclickDropDownClose(inputId) {
     if (inputId == 'assigned') {
         showBadgeList();
         toggleElements('dropDownAssOpen', 'dropDownAssClose');
-        if (!floatAddTask) resetOverlayFrame();
+        // if (!floatAddTask) resetOverlayFrame();
         emptyInputFieldById(inputId);
         dropDownCloseById('userContactList');
         resetAddElementsDefault(inputId);
@@ -89,7 +89,7 @@ function initOnclickDropDownClose(inputId) {
     }
     if (inputId == 'category') {
         toggleElements('dropDownCatOpen', 'dropDownCatClose');
-        if (!floatAddTask) resetOverlayFrame();
+        // if (!floatAddTask) resetOverlayFrame();
         dropDownCloseById('categoryList');
         resetAddElementsDefault(inputId);
         document.getElementById('categoryList').classList.remove('drop-up-anim');
@@ -134,7 +134,7 @@ function initShowSubtaskPanel(inputId) {
 // 13th:
 function resetOverlayFrameSubtask() {
     let floatAddTask = document.querySelector('.form-add-float');
-    if (!floatAddTask) resetOverlayFrame();
+    // if (!floatAddTask) resetOverlayFrame();
     hideSubtaskPanel();
     document.getElementById('inputContainerSubtask').classList.remove('z-index-4')
 }
@@ -150,7 +150,7 @@ function setupSubtasksElementsOnTop() {
 function closeSubtaskInput() {
     closeInput('subtask');
     hideSubtaskPanel();
-    resetOverlayFrameSubtask();
+    // resetOverlayFrameSubtask();
     scrollElementToTop('formInputsFrameContainer');
 }
 
@@ -168,7 +168,7 @@ function initShowSubtaskInput(subtaskId) {
 // 17th
 function resetOverlayFrameSubtaskEdit(subtaskId) {
     let editSubtaskId = subtaskId + 'InputContainer';
-    resetOverlayFrame();
+    // resetOverlayFrame();
     let inputContainer = document.getElementById(editSubtaskId);
     if (inputContainer) {
         inputContainer.classList.remove('z-index-4');
@@ -197,7 +197,7 @@ function resetFormAddTask() {
     saveLocalStorageObject('currentSubtaskObj', {});
     document.getElementById('subtaskListText').innerHTML = '';
     document.getElementById('subtaskListInput').innerHTML = '';
-    resetOverlayFrameSubtask('subtask');
+    // resetOverlayFrameSubtask('subtask');
     genUserContactList();
     genContactBadges();
     document.getElementById('userContactBadges').classList.add('display-none');
@@ -499,28 +499,6 @@ function showClickedBadges() {
         };
     });
 }
-
-
-
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// toggleElements() --> main.js
-// emptyInputFieldById() --> main.js
-
-// toggleElements() --> main.js
-// emptyInputFieldById() --> main.js
-
-// selectAssignedBtnDefault()
-// toggleElements() --> main.js
-// focusInput() --> main.js
-
-// selectCategoryBtnDefault()
-// toggleElements() --> main.js
-// focusInput() --> main.js
-
-//  tglCSSRect()
 
 
 function selectAssignedBtnDefault() {

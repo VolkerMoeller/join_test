@@ -36,7 +36,7 @@ function checkInput() {
 function toggleSignFormsBack() {
     setSignUpRequiredOff();
     defaultFormSettings();
-    resetOverlayFrame();
+    // resetOverlayFrame();
     setTimeout(() => {
         blurInputField();
     }, 1);

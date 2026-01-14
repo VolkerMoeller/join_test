@@ -1,15 +1,3 @@
-// -------------------
-// signPage-functions:
-// -------------------
-
-// 1st
-// initSign()
-
-// 2nd
-// createNewUser()
-
-
-// 1st
 async function initSign() {
     await includeHTML();
     setClrSchemeInit();
@@ -18,7 +6,6 @@ async function initSign() {
     storageGuest();
 }
 
-// 2nd
 async function createNewUser() {
     let userData = await getUserData();
     let newUser = new User(userData);
@@ -27,23 +14,6 @@ async function createNewUser() {
 }
 
 
-// --------------------
-// 1st-level-functions:
-// --------------------
-
-// .1st
-// includeHTML() --> main.js
-// setClrSchemeInit() --> main.js
-// saveLocalStorageObject() --> main.js
-// saveLocalStorageObject() --> main.js
-// storageGuest() --> general.js
-
-// .2nd
-// getUserData()
-// storageFirebaseNewUser() --> general.js
-
-
-// .1st
 async function getUserData() {
     let userData = [];
     let id = await initGetNextUserId();
@@ -53,47 +23,6 @@ async function getUserData() {
     userData.push(id, name, eMail, password);
     return userData;
 }
-
-
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// .1st
-// ..
-// initGetNextUserId() --> general.js
-
-
-
-
-
-
-// --------------------
-// cntCenter-functions:
-// --------------------
-
-// checkInput()
-// toggleSignFormsBack()
-// toggleElements() --> main.js
-// focusInput() --> main.js
-// checkWarningStyle()
-// handleOverlayForInput() --> main.js
-// checkOverlay() --> main.js
-// checkWarningStyle() see above
-// focusInputField()
-// handleOverlayForInput() --> see above
-// checkOverlay() --> see above
-// checkWarningStyle() --> see above
-// focusInputField() --> see above
-// switchCheckboxIcnAndSignUpBtn()
-// hoverCheckboxIcns() 
-// hoverCheckboxIcns() --> see above
-// hoverCheckboxIcns() --> see above
-// hoverCheckboxIcns() --> see above
-// hoverCheckboxIcns() --> see above
-// setSignUpRequiredOff()
-// switchToWorkPagesAsGuest() --> main.js
-// initCheckInputSignUp()
 
 
 function checkInput() {
@@ -271,35 +200,6 @@ function checkInputSignUp() {
 }
 
 
-// --------------------
-// 2nd-level-functions:
-// --------------------
-
-// checkIfUser()
-// warningTextOn()
-// addWarningNoMatchLogIn()
-// warningTextOff() --> see above
-// removeWarningNoMatchLogIn - see above
-// setUserStatusUser() --> main.js
-// navToSumPage()
-// ---
-// toggleSignForms()
-// clearInputs()
-// warningTextOff() --> see above
-// resetWarningNoMatch()
-// resetCheckbox()
-// ---
-// handleLockIcn()
-// handleInputIcon()
-// ---
-// checkPwAndPwConfirm()
-// warningTextOn() --> see above
-// addWarningNoMatchSignUp()
-// warningTextOff() --> see above
-// removeWarningNoMatchSignUp()
-
-
-
 async function checkIfUser() {
     let isUser = await compare();
     return isUser;
@@ -409,20 +309,6 @@ function removeWarningNoMatchSignUp() {
 }
 
 
-// --------------------
-// 3rd-level-functions:
-// --------------------
-
-// compare()
-// changeFormInputs()
-// toggleLoginElements()
-// toggleSignUpElements()
-// toggleCheckboxIcns() --> see above
-// visibilityPassword()
-// toggleElements() --> main.js
-
-
-
 async function compare() {
     let users = await getAllUsers();
     let email = document.getElementById('eMail').value;
@@ -484,39 +370,11 @@ function visibilityPassword(id) {
 }
 
 
-// -------------------
-// level-4-functions:
-// -------------------
-
-// getAllUsers() --> general.js
-// rememberUserData()
-
-
-
 function rememberUserData(userId, user) {
     let id = userId.toString();
     let currentUser = new CurrentUser(id, user);
     saveLocalStorageObject('currentUser', currentUser);
 }
-
-
-// -------------------
-// level-5-functions:
-// -------------------
-
-//  saveLocalStorageObject() --> main.js
-
-
-
-
-
-
-
-// -------------------
-// cntRight-functions:
-// -------------------
-
-// toggleSignFormsForward()
 
 
 function toggleSignFormsForward() {
@@ -526,15 +384,6 @@ function toggleSignFormsForward() {
     setupPasswordBtn();
     scrollWindowToTop();
 }
-
-// -------------------
-// 1st-level-functions
-// -------------------
-
-// setSignUpRequiredOn()
-// defaultFormSettings() --> see above
-// resetOverlayFrame() --> main.js
-// setupPasswordBtn() 
 
 
 function setSignUpRequiredOn() {
@@ -549,14 +398,6 @@ function setupPasswordBtn() {
     visibilityPasswordOff();
     setVisibilityIconsDefault();
 }
-
-// -------------------
-// 2nd-level-functions
-// -------------------
-
-// hideVisibilityBtn()
-// visibilityPasswordOff()
-// setVisibilityIconsDefault()
 
 
 function hideVisibilityBtn() {

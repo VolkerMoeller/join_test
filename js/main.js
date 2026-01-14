@@ -631,7 +631,6 @@ function resetOverlayMsg() {
 }
 
 
-
 /**
  * Hides any overlay navigation container (e.g. small nav).
  *

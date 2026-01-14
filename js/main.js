@@ -267,7 +267,6 @@ function showOverlayForMsgV2() {
  * @returns {void}
  */
 function resetOverlay() {
-    // resetOverlayFrame();
     resetOverlayMsg();
     resetOverlayNav();
 }

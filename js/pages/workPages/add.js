@@ -20,8 +20,6 @@ function resetAddElementsDefault(inputId) {
 
 
 function closeAssignedDropdown() {
-    // resetOverlayFrame();
-
     resetInputAssigned();
     dropDownCloseById('userContactList');
     resetAddElementsDefault('assigned');
@@ -30,8 +28,6 @@ function closeAssignedDropdown() {
 }
 
 function closeCategoryDropdown() {
-    // resetOverlayFrame();
-
     resetInputCategory();
     dropDownCloseById('categoryList');
     resetAddElementsDefault('category');
@@ -131,14 +127,6 @@ function initShowSubtaskPanel(inputId) {
     scrollElementToBottom('formInputsFrameContainer');
 }
 
-// 13th:
-function resetOverlayFrameSubtask() {
-    let floatAddTask = document.querySelector('.form-add-float');
-    // if (!floatAddTask) resetOverlayFrame();
-    hideSubtaskPanel();
-    document.getElementById('inputContainerSubtask').classList.remove('z-index-4')
-}
-
 
 // 14th:
 function setupSubtasksElementsOnTop() {
@@ -150,7 +138,6 @@ function setupSubtasksElementsOnTop() {
 function closeSubtaskInput() {
     closeInput('subtask');
     hideSubtaskPanel();
-    // resetOverlayFrameSubtask();
     scrollElementToTop('formInputsFrameContainer');
 }
 
@@ -197,7 +184,6 @@ function resetFormAddTask() {
     saveLocalStorageObject('currentSubtaskObj', {});
     document.getElementById('subtaskListText').innerHTML = '';
     document.getElementById('subtaskListInput').innerHTML = '';
-    // resetOverlayFrameSubtask('subtask');
     genUserContactList();
     genContactBadges();
     document.getElementById('userContactBadges').classList.add('display-none');

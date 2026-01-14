@@ -648,14 +648,6 @@ function resetOverlayNav() {
 }
 
 
-function setupOverlayForEditSubtask(subtaskId) {
-    const overlay = document.querySelector('.ovl-frame');
-    overlay.classList.remove('ovl-hide');
-    overlay.classList.add('ovl-show-select');
-    overlay.setAttribute('onclick', `resetOverlayFrameSubtaskEdit('${subtaskId}')`)
-}
-
-
 function changeClrScheme() {
     let schemeId = loadLocalStorageObject('colorScheme');
     document.getElementById('linkClrs').setAttribute('href', `./assets/css/main/clrSchemes/${schemeId}-colors.css`);

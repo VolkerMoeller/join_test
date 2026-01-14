@@ -159,7 +159,6 @@ function closeSubtaskInput() {
 function initShowSubtaskInput(subtaskId) {
     let subtaskContainerInputId = subtaskId + 'InputContainer';
     let subtaskInputId = subtaskId + 'Input';
-    // handleOverlayForEditSubtask(subtaskId);
     focusInput(subtaskInputId);
     document.getElementById(subtaskContainerInputId).classList.toggle('z-index--1')
     document.getElementById(subtaskContainerInputId).classList.toggle('z-index-1')
@@ -174,17 +173,6 @@ function resetOverlayFrameSubtaskEdit(subtaskId) {
     if (inputContainer) {
         inputContainer.classList.remove('z-index-4');
         inputContainer.classList.add('z-index--1');
-    }
-}
-
-
-// 18th
-function setupSubtasksEditElementsOnTop(subtaskId) {
-    let editSubtaskId = subtaskId + 'InputContainer';
-    let inputContainer = document.getElementById(editSubtaskId);
-    if (inputContainer) {
-        inputContainer.classList.toggle('z-index-1');
-        inputContainer.classList.add('z-index-4');
     }
 }
 

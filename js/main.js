@@ -281,19 +281,6 @@ function resetOverlayV2() {
 }
 
 
-function handleOverlayForEditSubtask(subtaskId) {
-    let overlay = document.querySelector('.ovl-frame');
-    let overlayNotShown = overlay.classList.contains('ovl-hide');
-    if (overlayNotShown) {
-        setupOverlayForEditSubtask(subtaskId);
-        setupSubtasksEditElementsOnTop(subtaskId);
-    }
-}
-
-
-// --- help-functions:
-
-
 /**
  * Executes a function safely and catches all errors.
  *

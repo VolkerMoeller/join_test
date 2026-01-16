@@ -368,11 +368,11 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                         <div id="assignedContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="assigned" name="assigned"
                                 placeholder="Select contacts to assign" autocomplete="off" onkeyup="searchContactsByInput()">
-                                <div id="dropDownAssOpen" class="input-container-icon">
+                                <div id="dropDownAssignedOpen" class="input-container-icon">
                                     <button type="button" type="button"
                                         w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                                 </div>
-                                <div id="dropDownAssClose" class="input-container-icon display-none">
+                                <div id="dropDownAssignedClose" class="input-container-icon display-none">
                                     <button type="button" type="button"
                                         w3-include-svg-2nd="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                                 </div>

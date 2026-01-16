@@ -180,11 +180,11 @@ function wireAddViewEvents() {
         }
 
         // Assigned dropdown open/close (wrappers have ids)
-        if (t.closest('#dropDownAssOpen')) {
+        if (t.closest('#dropDownAssignedOpen')) {
             openAssignedOverlay();
             return;
         }
-        if (t.closest('#dropDownAssClose')) {
+        if (t.closest('#dropDownAssignedClose')) {
             OverlayManager.close('add.assigned');
             return;
         }

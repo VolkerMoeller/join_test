@@ -59,7 +59,7 @@ function initOnclickDropDownOpen(inputId) {
     }
     if (inputId == 'assigned') {
         hideBadgeList();
-        toggleElements('dropDownAssOpen', 'dropDownAssClose');
+        toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
         focusInput('assigned');
         dropDownOpenById('userContactList');
     }
@@ -75,7 +75,7 @@ function initOnclickDropDownClose(inputId) {
     let floatAddTask = document.querySelector('.form-add-float');
     if (inputId == 'assigned') {
         showBadgeList();
-        toggleElements('dropDownAssOpen', 'dropDownAssClose');
+        toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
         // if (!floatAddTask) resetOverlayFrame();
         emptyInputFieldById(inputId);
         dropDownCloseById('userContactList');
@@ -319,7 +319,7 @@ function enableBtnIfFormFilled() {
 
 
 function resetInputAssigned() {
-    toggleElements('dropDownAssOpen', 'dropDownAssClose');
+    toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
     emptyInputFieldById('assigned');
 }
 
@@ -352,7 +352,7 @@ function initToggleDropDown(inputId) {
     if (inputId == 'assigned') {
         let assignedBtnDefault = selectAssignedBtnDefault();
         if (assignedBtnDefault) {
-            toggleElements('dropDownAssOpen', 'dropDownAssClose');
+            toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
             focusInput(inputId);
         }
     }
@@ -488,9 +488,9 @@ function showClickedBadges() {
 
 
 function selectAssignedBtnDefault() {
-    let dropDownAssOpen = false;
-    dropDownAssOpen = document.getElementById('dropDownAssClose').classList.contains('display-none');
-    return dropDownAssOpen;
+    let dropDownAssignedOpen = false;
+    dropDownAssignedOpen = document.getElementById('dropDownAssignedClose').classList.contains('display-none');
+    return dropDownAssignedOpen;
 }
 
 

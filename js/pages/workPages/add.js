@@ -1,3 +1,24 @@
+function setAssignedIconOpenState(isOpen) {
+    if (isOpen) {
+        hideElement('dropDownAssignedOpen');
+        showElement('dropDownAssignedClose');
+    } else {
+        showElement('dropDownAssignedOpen');
+        hideElement('dropDownAssignedClose');
+    }
+}
+
+
+function setCategoryIconOpenState(isOpen) {
+    if (isOpen) {
+        hideElement('dropDownCategoryOpen');
+        showElement('dropDownCategoryClose');
+    } else {
+        showElement('dropDownCategoryOpen');
+        hideElement('dropDownCategoryClose');
+    }
+}
+
 
 function setupAddElementsOnTop(inputId) {
     if (inputId == 'assigned') {
@@ -35,11 +56,7 @@ function closeCategoryDropdown() {
 }
 
 
-
-// 4th
-
 function initFocusInputSelect(inputId) {
-    initToggleDropDown(inputId);
     if (inputId == 'assigned') {
         hideBadgeList();
         dropDownOpenById('userContactList');
@@ -51,44 +68,49 @@ function initFocusInputSelect(inputId) {
 }
 
 
-// 5th
+function isAssignedDropdownOpen() {
+    const closeIcon = document.getElementById('dropDownAssignedClose');
+    return closeIcon && !closeIcon.classList.contains('display-none');
+}
+
+function isCategoryDropdownOpen() {
+    const closeIcon = document.getElementById('dropDownCategoryClose');
+    return closeIcon && !closeIcon.classList.contains('display-none');
+}
+
 
 function initOnclickDropDownOpen(inputId) {
-    if (inputId == 'assigned') {
-        justOpened = selectAssignedBtnDefault();
-    }
-    if (inputId == 'assigned') {
+    if (inputId === 'assigned') {
+        if (isAssignedDropdownOpen()) return; // schon offen -> nichts tun
+
         hideBadgeList();
-        toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
+        setAssignedIconOpenState(true);
         focusInput('assigned');
         dropDownOpenById('userContactList');
     }
-    if (inputId == 'category') {
-        toggleElements('dropDownCatOpen', 'dropDownCatClose');
+
+    if (inputId === 'category') {
+        if (isCategoryDropdownOpen()) return; // schon offen -> nichts tun
+        setCategoryIconOpenState(true);
         dropDownOpenById('categoryList');
     }
 }
 
 
-// 6th
 function initOnclickDropDownClose(inputId) {
     let floatAddTask = document.querySelector('.form-add-float');
     if (inputId == 'assigned') {
         showBadgeList();
-        toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
-        // if (!floatAddTask) resetOverlayFrame();
+        setAssignedIconOpenState(false);
         emptyInputFieldById(inputId);
         dropDownCloseById('userContactList');
         resetAddElementsDefault(inputId);
-        document.getElementById('userContactList').classList.remove('drop-up-anim');
         removeDisplayNone();
     }
     if (inputId == 'category') {
-        toggleElements('dropDownCatOpen', 'dropDownCatClose');
-        // if (!floatAddTask) resetOverlayFrame();
+        setAssignedIconOpenState(false);
         dropDownCloseById('categoryList');
         resetAddElementsDefault(inputId);
-        document.getElementById('categoryList').classList.remove('drop-up-anim');
         enableBtnIfFormFilled();
     }
 }
@@ -344,26 +366,26 @@ function removeDisplayNone() {
 
 
 function resetInputCategory() {
-    toggleElements('dropDownCatOpen', 'dropDownCatClose');
+    toggleElements('dropDownCategoryOpen', 'dropDownCategoryClose');
 }
 
 
-function initToggleDropDown(inputId) {
-    if (inputId == 'assigned') {
-        let assignedBtnDefault = selectAssignedBtnDefault();
-        if (assignedBtnDefault) {
-            toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
-            focusInput(inputId);
-        }
-    }
-    if (inputId == 'category') {
-        let assignedBtnDefault = selectCategoryBtnDefault();
-        if (assignedBtnDefault) {
-            toggleElements('dropDownCatOpen', 'dropDownCatClose');
-            focusInput(inputId);
-        }
-    }
-}
+// function initToggleDropDown(inputId) {
+//     if (inputId == 'assigned') {
+//         let assignedBtnDefault = selectAssignedBtnDefault();
+//         if (assignedBtnDefault) {
+//             toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
+//             focusInput(inputId);
+//         }
+//     }
+//     if (inputId == 'category') {
+//         let assignedBtnDefault = selectCategoryBtnDefault();
+//         if (assignedBtnDefault) {
+//             toggleElements('dropDownCategoryOpen', 'dropDownCategoryClose');
+//             focusInput(inputId);
+//         }
+//     }
+// }
 
 
 function dropDownOpenById(id) {
@@ -501,9 +523,9 @@ function hideBadgeList() {
 
 
 function selectCategoryBtnDefault() {
-    let dropDownCatOpen = false;
-    dropDownCatOpen = document.getElementById('dropDownCatClose').classList.contains('display-none');
-    return dropDownCatOpen;
+    let dropDownCategoryOpen = false;
+    dropDownCategoryOpen = document.getElementById('dropDownCategoryClose').classList.contains('display-none');
+    return dropDownCategoryOpen;
 }
 
 

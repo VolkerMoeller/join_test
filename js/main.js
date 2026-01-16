@@ -390,6 +390,19 @@ function toggleElements(id1st, id2nd) {
 }
 
 
+function showElement(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('display-none');
+}
+
+function hideElement(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add('display-none');
+}
+
+
 function focusInput(fieldId) {
     document.getElementById(fieldId).focus();
 }

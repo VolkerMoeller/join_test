@@ -388,11 +388,11 @@ function genHTMLFormAddTask(float = '', footnoteFloat = '', formPanelFloat = '',
                         <div id="categoryContainer" class="input-container">
                             <input class="version-2-t6 select" type="text" id="category" name="category"
                                 autocomplete="off" placeholder="Select task category" required>
-                            <div id="dropDownCatOpen" class="input-container-icon">
+                            <div id="dropDownCategoryOpen" class="input-container-icon">
                                 <button type="button" type="button"
                                     w3-include-svg-2nd="./assets/img/svgHTML/38-arrow_drop_down_open.html"></button>
                             </div>
-                            <div id="dropDownCatClose" class="input-container-icon display-none">
+                            <div id="dropDownCategoryClose" class="input-container-icon display-none">
                                 <button type="button" type="button"
                                     w3-include-svg-2nd="./assets/img/svgHTML/39-arrow_drop_down_close.html"></button>
                             </div>

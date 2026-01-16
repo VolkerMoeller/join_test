@@ -132,11 +132,7 @@ function wireAddViewEvents() {
     // --- 1) Submit: the single source of truth for creating a task ---
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
-
-        // Collect form state FIRST (your existing logic)
         getFormInputData();
-
-        // Then create the task (your existing logic)
         await initCreateNewTask();
     });
 
@@ -181,7 +177,10 @@ function wireAddViewEvents() {
 
         // Assigned dropdown open/close (wrappers have ids)
         if (t.closest('#dropDownAssignedOpen')) {
-            openAssignedOverlay();
+            // Nur öffnen, wenn nicht bereits offen
+            if (!OverlayManager.isActive('add.assigned')) {
+                openAssignedOverlay();
+            }
             return;
         }
         if (t.closest('#dropDownAssignedClose')) {
@@ -190,11 +189,11 @@ function wireAddViewEvents() {
         }
 
         // Category dropdown open/close
-        if (t.closest('#dropDownCatOpen')) {
+        if (t.closest('#dropDownCategoryOpen')) {
             openCategoryOverlay();
             return;
         }
-        if (t.closest('#dropDownCatClose')) {
+        if (t.closest('#dropDownCategoryClose')) {
             OverlayManager.close('add.category');
             return;
         }

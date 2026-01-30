@@ -164,6 +164,8 @@ function wireAddViewEvents() {
         const id = event.target?.id;
 
         if (id === 'assigned') {
+            if (isAssignedFocusOpenBlocked()) return;
+            if (isAssignedDropdownOpen()) return;
             initFocusInputSelect('assigned');
         }
         if (id === 'category') {

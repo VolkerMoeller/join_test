@@ -1,13 +1,3 @@
-// 1st
-// initWork()
-
-// 2nd
-// returnToLogIn()
-
-// 3rd
-// setMenuIcnHvrClrSVG()
-
-
 /**
  * Initializes the main JOIN work page.
  *

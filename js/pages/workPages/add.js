@@ -1,3 +1,27 @@
+let blockAssignedOpenOnFocusUntil = 0;
+
+function blockAssignedFocusOpen(ms = 250) {
+    blockAssignedOpenOnFocusUntil = Date.now() + ms;
+}
+
+function isAssignedFocusOpenBlocked() {
+    return Date.now() < blockAssignedOpenOnFocusUntil;
+}
+
+
+function isAssignedOpen() {
+    const list = document.getElementById('userContactList');
+    return list && list.classList.contains('drop-down-anim');
+    // oder: !list.classList.contains('drop-up-anim') je nach deinem CSS
+}
+
+
+function isAssignedDropdownOpen() {
+    const list = document.getElementById('userContactList');
+    return !!(list && list.classList.contains('drop-down-anim') && !list.classList.contains('drop-up-anim'));
+}
+
+
 function setAssignedIconOpenState(isOpen) {
     if (isOpen) {
         hideElement('dropDownAssignedOpen');
@@ -82,7 +106,6 @@ function isCategoryDropdownOpen() {
 function initOnclickDropDownOpen(inputId) {
     if (inputId === 'assigned') {
         if (isAssignedDropdownOpen()) return; // schon offen -> nichts tun
-
         hideBadgeList();
         setAssignedIconOpenState(true);
         focusInput('assigned');
@@ -98,8 +121,8 @@ function initOnclickDropDownOpen(inputId) {
 
 
 function initOnclickDropDownClose(inputId) {
-    let floatAddTask = document.querySelector('.form-add-float');
     if (inputId == 'assigned') {
+        blockAssignedFocusOpen(300); // verhindert sofortiges Re-Open durch Focus
         showBadgeList();
         setAssignedIconOpenState(false);
         emptyInputFieldById(inputId);
@@ -368,24 +391,6 @@ function removeDisplayNone() {
 function resetInputCategory() {
     toggleElements('dropDownCategoryOpen', 'dropDownCategoryClose');
 }
-
-
-// function initToggleDropDown(inputId) {
-//     if (inputId == 'assigned') {
-//         let assignedBtnDefault = selectAssignedBtnDefault();
-//         if (assignedBtnDefault) {
-//             toggleElements('dropDownAssignedOpen', 'dropDownAssignedClose');
-//             focusInput(inputId);
-//         }
-//     }
-//     if (inputId == 'category') {
-//         let assignedBtnDefault = selectCategoryBtnDefault();
-//         if (assignedBtnDefault) {
-//             toggleElements('dropDownCategoryOpen', 'dropDownCategoryClose');
-//             focusInput(inputId);
-//         }
-//     }
-// }
 
 
 function dropDownOpenById(id) {

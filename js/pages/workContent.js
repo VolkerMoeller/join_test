@@ -129,6 +129,15 @@ function wireAddViewEvents() {
     const form = document.getElementById('formAddTask');
     if (!form) return;
 
+    form.addEventListener('click', (event) => {
+        const t = event.target;
+        const openHit = !!t.closest('#dropDownAssignedOpen');
+        const closeHit = !!t.closest('#dropDownAssignedClose');
+        if (openHit || closeHit) {
+            console.log('Assigned icon click:', { openHit, closeHit, target: t });
+        }
+    });
+
     // --- 1) Submit: the single source of truth for creating a task ---
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -177,10 +186,7 @@ function wireAddViewEvents() {
 
         // Assigned dropdown open/close (wrappers have ids)
         if (t.closest('#dropDownAssignedOpen')) {
-            // Nur öffnen, wenn nicht bereits offen
-            if (!OverlayManager.isActive('add.assigned')) {
-                openAssignedOverlay();
-            }
+            openAssignedOverlay();
             return;
         }
         if (t.closest('#dropDownAssignedClose')) {
